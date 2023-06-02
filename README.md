@@ -26,6 +26,8 @@ Prompt Anonymizer is a demo scripts to anonymize text before sending it to the O
 - [ ] Separate the demo portion from the library portion so that they can be used independently.
 - [ ] Refactor the code. The first version has a lot of code that is not DRY.
 - [ ] Follow the best practices of Python.
+- [ ] Add validation and exception handling.
+- [ ] Add tests.
 
 ## Contributing
 Pull requests are welcome.
