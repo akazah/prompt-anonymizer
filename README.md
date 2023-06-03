@@ -1,4 +1,4 @@
-[日本語](README_ja.md)
+English | [日本語](README_ja.md)
 # Prompt Anonymizer
 Prompt Anonymizer is a demo scripts to anonymize text before sending it to the OpenAI API. It uses the Presidio Analyzer and Presidio Anonymizer to identify and replace PII entities in the text.
 - Prompt Anonymizer anonymize the original text in a format that allows the AI to recognize that the same thing is the same.
