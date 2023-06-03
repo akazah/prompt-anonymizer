@@ -1,7 +1,7 @@
 # Prompt Anonymizer
-Prompt Anonymizer は、OpenAI API に送信する前にテキストを匿名化するデモスクリプトです。Presidio AnalyzerとPresidio Anonymizerを使用して、テキスト内の個人情報を識別して置換します。
-  - Prompt Anonymizerは、元のテキストを AI が同じものであると認識できる形式で匿名化します。
-  - Prompt Anonymizerは日本語と英語で利用できます。
+Prompt Anonymizer は、OpenAI API に送信する前にテキストを匿名化するデモスクリプトです。Presidio AnalyzerとPresidio Anonymizerを使用しています。テキスト内の個人情報を識別して置換します。
+  - 元のテキストを AI が同じものであると認識できる形式で匿名化します。
+  - 日本語と英語で利用できます。
 
 ## セットアップ
 1. `git clone https://github.com/akazah/prompt-anonymizer.git`
