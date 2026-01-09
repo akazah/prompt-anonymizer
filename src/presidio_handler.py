@@ -25,17 +25,12 @@ class PresidioHandler:
 
         self.analyzer = AnalyzerEngine(
             nlp_engine=NlpEngineProvider(
-                nlp_configuration={
-                    "nlp_engine_name": NLP_ENGINE,
-                    "models": NLP_MODELS
-                }
+                nlp_configuration={"nlp_engine_name": NLP_ENGINE, "models": NLP_MODELS}
             ).create_engine(),
-            supported_languages=self.languages
+            supported_languages=self.languages,
         )
         self.anonymizer = AnonymizerEngine()
-        self.operators = {
-            entity: OperatorConfig("hash") for entity in self.entities
-        }
+        self.operators = {entity: OperatorConfig("hash") for entity in self.entities}
 
     def _build_entities_language_labels(
         self, language_labels_path: str
@@ -44,7 +39,8 @@ class PresidioHandler:
         Build dictionary mapping entities to their labels in each language.
 
         Args:
-            language_labels_path: Path to directory containing language label YAML files.
+            language_labels_path: Path to directory containing language
+                label YAML files.
 
         Returns:
             Dictionary mapping entity types to language-specific labels.
@@ -74,9 +70,9 @@ class PresidioHandler:
             FileNotFoundError: If language file doesn't exist.
             yaml.YAMLError: If YAML file is malformed.
         """
-        file_path = f'{language_labels_path}/{language}.yaml'
+        file_path = f"{language_labels_path}/{language}.yaml"
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(file_path, "r", encoding="utf-8") as f:
                 return yaml.safe_load(f)
         except FileNotFoundError:
             raise FileNotFoundError(
@@ -115,7 +111,8 @@ class PresidioHandler:
             language: Language code for label generation.
 
         Returns:
-            Dictionary mapping original text to replacement info with 'replace' and 'count' keys.
+            Dictionary mapping original text to replacement info with
+            'replace' and 'count' keys.
         """
         entities_hash_dict: Dict[str, Dict[str, Any]] = {}
 
@@ -128,7 +125,7 @@ class PresidioHandler:
                         replacement = f"{label}_{self._int_to_alphabet(order)}"
                         entities_hash_dict[item.text] = {
                             "replace": replacement,
-                            "count": 1
+                            "count": 1,
                         }
                         order += 1
                     else:
@@ -156,9 +153,7 @@ class PresidioHandler:
         return text
 
     @staticmethod
-    def _replace_hash(
-        text: str, entities_hash_dict: Dict[str, Dict[str, str]]
-    ) -> str:
+    def _replace_hash(text: str, entities_hash_dict: Dict[str, Dict[str, str]]) -> str:
         """
         Replace entities with plain text replacements.
 
@@ -170,7 +165,7 @@ class PresidioHandler:
             Text with plain replacements.
         """
         for key, value in entities_hash_dict.items():
-            text = text.replace(key, value['replace'])
+            text = text.replace(key, value["replace"])
         return text
 
     def anonymize_text(self, text: str, language: str) -> Dict[str, str]:
@@ -199,11 +194,9 @@ class PresidioHandler:
         anonymizer_result = self.anonymizer.anonymize(
             text=text,
             analyzer_results=self.analyzer.analyze(
-                text=text,
-                entities=self.entities,
-                language=language
+                text=text, entities=self.entities, language=language
             ),
-            operators=self.operators
+            operators=self.operators,
         )
 
         items = anonymizer_result.items
@@ -214,11 +207,9 @@ class PresidioHandler:
 
         return {
             "styled_text": self._replace_hash_styled(
-                text=anonymizer_result.text,
-                entities_hash_dict=entities_hash_dict
+                text=anonymizer_result.text, entities_hash_dict=entities_hash_dict
             ),
             "text": self._replace_hash(
-                text=anonymizer_result.text,
-                entities_hash_dict=entities_hash_dict
-            )
+                text=anonymizer_result.text, entities_hash_dict=entities_hash_dict
+            ),
         }

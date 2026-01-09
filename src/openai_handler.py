@@ -14,7 +14,8 @@ class OpenAIHandler:
         Initialize OpenAI handler.
 
         Args:
-            api_key: Optional API key. If not provided, reads from OPENAI_API_KEY env var.
+            api_key: Optional API key. If not provided, reads from
+                OPENAI_API_KEY env var.
 
         Raises:
             ValueError: If API key is not provided and not found in environment.
@@ -34,7 +35,8 @@ class OpenAIHandler:
 
         Args:
             prompt: The user prompt to send to the model.
-            temperature: Sampling temperature (0-2). Higher values make output more random.
+            temperature: Sampling temperature (0-2). Higher values make
+                output more random.
 
         Returns:
             The model's response content.
@@ -50,7 +52,7 @@ class OpenAIHandler:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                temperature=temperature
+                temperature=temperature,
             )
             return response.choices[0].message.content or ""
         except OpenAIError as e:
