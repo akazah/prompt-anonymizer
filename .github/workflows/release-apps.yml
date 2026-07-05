@@ -1,0 +1,104 @@
+name: Release (Desktop / Extension / Web)
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  web-and-extension:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build web app + extension (incl. core dependency)
+        working-directory: web
+        run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
+
+      - name: Zip artifacts
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          (cd web/apps/web/dist && zip -rq "$GITHUB_WORKSPACE/prompt-anonymizer-web-$VERSION.zip" .)
+          (cd web/apps/extension/dist && zip -rq "$GITHUB_WORKSPACE/prompt-anonymizer-extension-$VERSION.zip" .)
+
+      - name: Attach to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          generate_release_notes: true
+          files: |
+            prompt-anonymizer-web-*.zip
+            prompt-anonymizer-extension-*.zip
+
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            args: "--target aarch64-apple-darwin"
+          - platform: macos-latest
+            args: "--target x86_64-apple-darwin"
+          - platform: ubuntu-latest
+            args: ""
+          - platform: windows-latest
+            args: ""
+    runs-on: ${{ matrix.platform }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        if: matrix.platform == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev \
+            libayatana-appindicator3-dev librsvg2-dev patchelf
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: web/apps/desktop/src-tauri
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build and attach desktop bundles
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: web/apps/desktop
+          tagName: ${{ github.ref_name }}
+          releaseDraft: false
+          args: ${{ matrix.args }}

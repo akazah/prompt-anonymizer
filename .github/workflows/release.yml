@@ -1,0 +1,48 @@
+name: Release (PyPI)
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish-pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      # PyPI Trusted Publishing (OIDC) - no API token needed.
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Create GitHub Release with Python dists
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          generate_release_notes: true
+          files: dist/*

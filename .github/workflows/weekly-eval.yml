@@ -1,0 +1,30 @@
+name: Weekly accuracy evaluation
+
+on:
+  schedule:
+    - cron: "0 3 * * 1" # Mondays 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies (incl. spaCy sm + lg models)
+        run: uv sync --group models --group models-lg
+
+      - name: Accuracy regression tests
+        run: uv run pytest -m slow -q
+
+      - name: Full evaluation (lg models)
+        run: uv run python -m prompt_anonymizer.evals --model-size lg --output eval-lg.md
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval-lg.md

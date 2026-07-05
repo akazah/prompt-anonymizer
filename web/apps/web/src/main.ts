@@ -1,0 +1,196 @@
+import {
+  Anonymizer,
+  TransformersNerBackend,
+  detectWebGpu,
+  type AnonymizeResult,
+  type Language,
+  type NerProgress,
+} from "@prompt-anonymizer/core";
+import "./style.css";
+
+const SAMPLES: Record<Language, string> = {
+  ja: "山田太郎は、来月、誕生日を迎えます。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。",
+  en: "John Smith will have a birthday next month. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333.",
+};
+
+const app = document.querySelector<HTMLDivElement>("#app")!;
+app.innerHTML = `
+  <div class="container">
+    <header>
+      <h1>Prompt Anonymizer</h1>
+      <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">checking…</span></span>
+      <div class="spacer"></div>
+      <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+    <p class="privacy">
+      <strong>100% on-device.</strong> Detection runs in your browser via WebGPU/WASM —
+      your text is never sent to any server. <span lang="ja">テキストはサーバーへ一切送信されません（全処理がブラウザ内で完結します）。</span>
+    </p>
+
+    <div class="toolbar">
+      <label>Language
+        <select id="language">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="use-ner" checked /> NER model (names & locations)</label>
+      <button id="load-sample">Load sample</button>
+      <button id="anonymize" class="primary">Anonymize</button>
+    </div>
+
+    <div id="progress" class="progress">
+      <div class="bar-outer"><div id="progress-bar" class="bar-inner"></div></div>
+      <div id="progress-label" class="label">Loading model…</div>
+    </div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Original (stays on your device)</h2>
+        <textarea id="input" placeholder="Paste the text you were about to send to an LLM…"></textarea>
+      </section>
+      <section class="panel">
+        <h2>Anonymized (safe to send)</h2>
+        <div id="output" class="output"></div>
+        <div class="actions">
+          <button id="copy">Copy anonymized text</button>
+          <span id="copy-flash" class="flash"></span>
+        </div>
+        <table class="mapping" id="mapping-table" hidden>
+          <thead><tr><th>Label</th><th>Original (kept local)</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+
+    <section class="panel section-restore">
+      <h2>Restore (paste the LLM reply)</h2>
+      <textarea id="restore-input" placeholder="Paste the LLM response containing labels like <人名_1> …"></textarea>
+      <div class="actions">
+        <button id="restore" class="primary">Deanonymize</button>
+        <button id="copy-restored">Copy restored text</button>
+        <span id="restore-flash" class="flash"></span>
+      </div>
+      <div id="restore-output" class="output" style="margin-top:10px"></div>
+      <p class="hint">Detection is best-effort — always review the anonymized text before sending it anywhere.</p>
+    </section>
+  </div>
+`;
+
+const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
+const inputEl = $<HTMLTextAreaElement>("#input");
+const outputEl = $("#output");
+const languageEl = $<HTMLSelectElement>("#language");
+const useNerEl = $<HTMLInputElement>("#use-ner");
+const progressEl = $("#progress");
+const progressBar = $("#progress-bar");
+const progressLabel = $("#progress-label");
+const mappingTable = $<HTMLTableElement>("#mapping-table");
+const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
+
+let lastResult: AnonymizeResult | null = null;
+
+function onProgress(p: NerProgress): void {
+  progressEl.classList.add("visible");
+  if (p.status === "progress" && typeof p.progress === "number") {
+    progressBar.style.width = `${p.progress.toFixed(0)}%`;
+    progressLabel.textContent = `Downloading model: ${p.file ?? ""} ${p.progress.toFixed(0)}%`;
+  } else if (p.status === "ready") {
+    progressEl.classList.remove("visible");
+  } else {
+    progressLabel.textContent = p.status;
+  }
+}
+
+const ner = new TransformersNerBackend({ onProgress });
+const anonymizerWithNer = new Anonymizer({ ner });
+const anonymizerRegexOnly = new Anonymizer();
+
+async function updateEngineBadge(): Promise<void> {
+  const badge = $("#engine-badge");
+  const name = $("#engine-name");
+  const hasGpu = await detectWebGpu();
+  badge.classList.add(hasGpu ? "webgpu" : "wasm");
+  name.textContent = hasGpu ? "WebGPU" : "WASM (no WebGPU)";
+  badge.title = hasGpu
+    ? "Inference is GPU-accelerated in your browser."
+    : "WebGPU unavailable; falling back to WebAssembly (slower, still on-device).";
+}
+void updateEngineBadge();
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function renderWithHighlights(text: string, labels: string[], cls: string): string {
+  let html = escapeHtml(text);
+  for (const label of [...labels].sort((a, b) => b.length - a.length)) {
+    const esc = escapeHtml(label).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    html = html.replace(new RegExp(esc, "g"), `<span class="${cls}">${escapeHtml(label)}</span>`);
+  }
+  return html;
+}
+
+async function runAnonymize(): Promise<void> {
+  const text = inputEl.value;
+  if (!text.trim()) return;
+  const language = languageEl.value as Language;
+  anonymizeBtn.disabled = true;
+  anonymizeBtn.textContent = "Working…";
+  try {
+    const anonymizer = useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly;
+    const result = await anonymizer.anonymize(text, { language });
+    lastResult = result;
+    outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
+
+    const tbody = mappingTable.querySelector("tbody")!;
+    tbody.innerHTML = Object.entries(result.mapping)
+      .map(
+        ([label, original]) =>
+          `<tr><td class="label-cell">${escapeHtml(label)}</td><td>${escapeHtml(original)}</td></tr>`,
+      )
+      .join("");
+    mappingTable.hidden = Object.keys(result.mapping).length === 0;
+  } catch (error) {
+    outputEl.textContent = `Error: ${error instanceof Error ? error.message : String(error)}`;
+  } finally {
+    anonymizeBtn.disabled = false;
+    anonymizeBtn.textContent = "Anonymize";
+    progressEl.classList.remove("visible");
+  }
+}
+
+function flash(el: HTMLElement, message: string): void {
+  el.textContent = message;
+  setTimeout(() => (el.textContent = ""), 1600);
+}
+
+$("#anonymize").addEventListener("click", () => void runAnonymize());
+$("#load-sample").addEventListener("click", () => {
+  inputEl.value = SAMPLES[languageEl.value as Language];
+});
+$("#copy").addEventListener("click", () => {
+  if (!lastResult) return;
+  void navigator.clipboard.writeText(lastResult.text);
+  flash($("#copy-flash"), "Copied!");
+});
+$("#restore").addEventListener("click", () => {
+  const restoreInput = $<HTMLTextAreaElement>("#restore-input");
+  if (!lastResult || !restoreInput.value.trim()) return;
+  const anonymizer = useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly;
+  const restored = anonymizer.deanonymize(restoreInput.value, lastResult.mapping);
+  $("#restore-output").innerHTML = renderWithHighlights(
+    restored,
+    Object.values(lastResult.mapping),
+    "pii-restored",
+  );
+});
+$("#copy-restored").addEventListener("click", () => {
+  const restored = $("#restore-output").textContent ?? "";
+  if (!restored) return;
+  void navigator.clipboard.writeText(restored);
+  flash($("#restore-flash"), "Copied!");
+});

@@ -1,27 +1,102 @@
-[tool.poetry]
-name = "promptAnonymizer"
-version = "0.1.0"
-description = "Anonymize personal information in prompts before sending them to Chat AI."
-authors = ["akazah <679040+akazah@users.noreply.github.com>"]
+[project]
+name = "prompt-anonymizer"
+version = "0.2.0.dev0"
+description = "Anonymize PII before it reaches an LLM - with consistent, reversible labels. JA/EN."
 readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "akazah", email = "679040+akazah@users.noreply.github.com" }]
+requires-python = ">=3.10,<3.15"
+keywords = ["pii", "anonymization", "privacy", "llm", "presidio", "japanese"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "presidio-analyzer>=2.2.363",
+    "presidio-anonymizer>=2.2.363",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-presidio-analyzer = "^2.2.32"
-presidio-anonymizer = "^2.2.32"
-spacy = "^3.5.3"
-fire = "^0.5.0"
-faker = "^18.9.0"
-pytest = "^7.3.1"
-openai = "^0.27.7"
-colorama = "^0.4.6"
+[project.optional-dependencies]
+demo = ["openai>=2", "rich>=13"]
 
+[project.scripts]
+prompt-anonymizer = "prompt_anonymizer.cli:app"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.3.1"
-black = "^23.3.0"
-flake8 = "^6.0.0"
+[project.urls]
+Homepage = "https://github.com/akazah/prompt-anonymizer"
+Repository = "https://github.com/akazah/prompt-anonymizer"
+Issues = "https://github.com/akazah/prompt-anonymizer/issues"
+Changelog = "https://github.com/akazah/prompt-anonymizer/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pytest>=8",
+    "pytest-cov>=6",
+    "pre-commit>=4",
+    "faker>=30",
+    "types-pyyaml",
+]
+# spaCy models as locked direct-URL wheels: survives every `uv sync` / `uv run`
+# (a plain `uv pip install` gets removed when uv re-syncs the environment).
+models = [
+    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+    "ja-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.8.0/ja_core_news_sm-3.8.0-py3-none-any.whl",
+]
+models-lg = [
+    "en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl",
+    "ja-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_lg-3.8.0/ja_core_news_lg-3.8.0-py3-none-any.whl",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/prompt_anonymizer"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["RUF001", "RUF002", "RUF003"]
+"src/prompt_anonymizer/evals/generate.py" = ["RUF001"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["presidio_analyzer.*", "presidio_anonymizer.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: tests that require spaCy language models",
+    "slow: accuracy-regression tests run in weekly CI only",
+]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["prompt_anonymizer"]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:", "raise NotImplementedError"]

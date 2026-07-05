@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-latest]
+        include:
+          - python-version: "3.12"
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    env:
+      # Job-wide so every `uv run` uses the matrix interpreter
+      # (overrides .python-version).
+      UV_PYTHON: ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          # Caches downloaded wheels, including the spaCy model wheels
+          # locked in the `models` dependency group.
+          enable-cache: true
+
+      - name: Sync dependencies (incl. spaCy sm models)
+        run: uv sync --all-extras --group models
+
+      - name: Lint (ruff)
+        run: uv run ruff check .
+
+      - name: Format check (ruff)
+        run: uv run ruff format --check src tests demo
+
+      - name: Type check (mypy)
+        run: uv run mypy src
+
+      - name: Tests with coverage gate
+        run: uv run pytest -m "not slow" --cov --cov-fail-under=85
+
+      - name: Build sdist + wheel
+        run: uv build
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint (tsc)
+        working-directory: web
+        run: pnpm lint
+
+      - name: Test (vitest)
+        working-directory: web
+        run: pnpm --filter @prompt-anonymizer/core test
+
+      - name: Build web + extension (incl. core dependency)
+        working-directory: web
+        run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
