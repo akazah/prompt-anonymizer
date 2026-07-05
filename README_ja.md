@@ -1,42 +1,125 @@
 [English](README.md) | 日本語
+
 # Prompt Anonymizer
-Prompt Anonymizer は、OpenAI API に送信する前にテキストを匿名化するデモスクリプトです。Presidio AnalyzerとPresidio Anonymizerを使用しています。テキスト内の個人情報を識別して置換します。
-  - 元のテキストを AI が同じものであると認識できる形式で匿名化します。
-  - 日本語と英語で利用できます。
 
-## セットアップ
-1. `git clone https://github.com/akazah/prompt-anonymizer.git`
-2. `cd prompt-anonymizer`
-3. `poetry install`
-4. 環境変数にOpenAIのAPIキーをセットする。 `export OPENAI_API_KEY={YOUR_API_KEY}`  
-    または、direnvやdotenvなどを使ってもOKです。(私はdirenvを使っています)
-5. spacyのモデルをダウンロード。
-    - `poetry run python -m spacy download en_core_web_lg`
-    - `poetry run python -m spacy download ja_core_news_lg`
+> LLMに届く前にPIIを匿名化 — 一貫性のある**復元可能な**ラベルで。日本語・英語対応。
 
-## 使用方法
-### 日本語
-`poetry run python main.py --text "山田太郎は、来月、誕生日を迎えます。どんなプレゼントが適しているでしょうか。山田太郎は、おいしいものが大好きです。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは example@example.com です。彼の電話番号は 090-0000-0000 です。" --language ja`
+[![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer)](https://pypi.org/project/prompt-anonymizer/)
+[![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)](pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-### 英語
-`poetry run python main.py --text "John will have a birthday next month. What kind of gift would be appropriate? John loves nice cuisine. John lives in New York. His email is example@example.com. His mobile is (333)333-3333." --language en`
-
+LLMへプロンプトを送るとき、人名・電話番号・メールアドレス・住所も一緒に送ってしまいがちです。
+Prompt Anonymizerは、テキストが手元を離れる**前に**PIIを一貫したラベル（`<人名_1>` など）へ
+置き換えます。同じ値には常に同じラベルが割り当てられるため、LLMの回答は文脈を保ったまま。
+返ってきた応答は、手元に残しておいた対応表（mapping）で元の値に復元できます。
 
 ## デモ
-<img alt="demo_en" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="40%"> <img alt="demo_ja" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="40%">
 
-## TODO
-- [ ] Improve the anonymization process. The current version often fails to anonymize.
-- [ ] Find efficient ways for human to find fails to anonymize. 
-- [ ] Separate the demo portion from the library portion so that they can be used independently.
-- [ ] Refactor the code. The first version has a lot of code that is not DRY.
-- [ ] Follow the best practices of Python.
-- [ ] Add validation and exception handling.
-- [ ] Add tests.
+匿名化 → 対応表はローカルに残る → LLM応答にはラベルが残る → 復元:
 
-## Contributing
-Pull requests are welcome.
-This is my first python project, so I'm not sure if I'm following the best practices. If you have any suggestions, please let me know.
+<img alt="ブラウザ版デモ: 匿名化・対応表・復元のラウンドトリップ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
 
-## License
-Licensed under the [MIT](https://opensource.org/licenses/MIT) License.
+<details>
+<summary>CLIデモ（日本語 / 英語）</summary>
+
+<img alt="CLIデモ（日本語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLIデモ（英語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+</details>
+
+<details>
+<summary>Chrome拡張デモ（サイドパネル）</summary>
+
+<img alt="Chrome拡張デモ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+</details>
+
+## 使ってみる
+
+| ターゲット | 入手方法 | 補足 |
+|---|---|---|
+| **ブラウザ版（WebGPU）** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 完全オンデバイス。NERはWebGPU（非対応環境はWASM）でブラウザ内実行され、テキストはサーバーへ一切送信されません。 |
+| **デスクトップアプリ** | [Releases](https://github.com/akazah/prompt-anonymizer/releases) から `.dmg` / `.msi` / `.AppImage` / `.deb` | Tauri 2製。現状は未署名のため初回起動時にOSの警告が出ます。 |
+| **Chrome拡張** | [Releases](https://github.com/akazah/prompt-anonymizer/releases) の `prompt-anonymizer-extension-*.zip` | 展開 → `chrome://extensions` → デベロッパーモード → 「パッケージ化されていない拡張機能を読み込む」。テキスト選択 → 右クリック → *Anonymize selection*。 |
+| **Python / CLI** | `pip install prompt-anonymizer`（または `uv add prompt-anonymizer`） | Presidio + spaCy。下のQuickstart参照。 |
+
+## Quickstart（Python）
+
+```bash
+pip install prompt-anonymizer
+python -m spacy download ja_core_news_sm   # 英語も使う場合は en_core_web_sm も
+```
+
+```python
+from prompt_anonymizer import PromptAnonymizer
+
+pa = PromptAnonymizer(languages=["ja"])
+result = pa.anonymize("山田太郎の電話は090-1234-5678", language="ja")
+
+result.text     # '<人名_1>の電話は<電話番号_1>'
+result.mapping  # {'<人名_1>': '山田太郎', '<電話番号_1>': '090-1234-5678'}
+
+llm_output = call_your_llm(result.text)      # ラベルはLLM応答にそのまま残る
+pa.deanonymize(llm_output, result.mapping)   # ローカルで元の値に復元
+```
+
+CLI:
+
+```bash
+prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
+  -t "山田太郎の電話は090-1234-5678"
+prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
+```
+
+## 仕組み
+
+1. 検出 — Presidio + spaCy NER（Python）／transformers.js NER + 正規表現認識器
+   （ブラウザ・デスクトップ・拡張）。日本の電話番号・〒付き郵便番号・
+   マイナンバー（検査用数字の検証つき）などの日本語向けカスタム認識器を追加。
+2. 一貫ラベリング — スパンをスコア優先でマージし、末尾側からオフセットベースで
+   置換。同じ値には同じラベル。
+3. 復元 — `deanonymize(text, mapping)` がラベル長の降順で元の値に戻します。
+   mappingは呼び出し側に返され、ライブラリは**永続化しません**（保存する場合の
+   管理責任は利用者側にあります）。
+
+## 対応エンティティ
+
+| エンティティ | jaラベル | enラベル | エンジン |
+|---|---|---|---|
+| PERSON | 人名 | Name | NER |
+| LOCATION | 住所 | Location | NER |
+| EMAIL_ADDRESS | メールアドレス | Email | パターン |
+| PHONE_NUMBER | 電話番号 | Phone | パターン（JP/US表記ゆれ）+ libphonenumber（Python） |
+| JP_POSTAL_CODE | 郵便番号 | PostalCode | パターン（カスタム） |
+| JP_MY_NUMBER | マイナンバー | MyNumber | パターン + 検査用数字（カスタム） |
+| CREDIT_CARD | クレジットカード | CreditCard | パターン（Python, en） |
+| CUSTOM（deny list） | 秘匿情報 | Custom | 完全一致 |
+
+`deny_list` で特定の語を強制マスク、`allow_list` で除外できます。
+
+## 精度
+
+シード固定の合成ゴールデンセット（各言語200文書）でスパン単位計測。全表は
+[docs/EVAL.md](docs/EVAL.md)、再現は `python -m prompt_anonymizer.evals`。
+概要（Pythonコア・`sm`モデル）: ja の PHONE_NUMBER / EMAIL_ADDRESS /
+JP_POSTAL_CODE は recall 1.00、ja PERSON F1 0.93、ja LOCATION F1 0.87。
+
+## 制限事項
+
+- **検出はベストエフォートであり保証されません。** 見逃し（false negative）は
+  起こりえます。送信前に必ず匿名化結果を確認してください（そのための
+  `--interactive` と各UIの対応表表示です）。
+- LOCATIONが最も弱く、特に日本語住所の部分表記は苦手です。
+- ブラウザ版のNERモデルは初回のみ約100–300MBのダウンロードが発生します
+  （以降はキャッシュされます）。
+- デスクトップ版・拡張は現状未署名です。
+
+## ロードマップ
+
+[Issues](https://github.com/akazah/prompt-anonymizer/issues) と
+[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) を参照。主なもの:
+Chrome Web Store公開、コード署名、より小型の日本語NERモデル、MCPサーバー。
+
+## Contributing / Security / License
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — 開発環境（uv / pnpm）、テスト・評価の実行手順
+- [SECURITY.md](SECURITY.md) — 脆弱性・匿名化バイパスの報告窓口
+- ライセンス: [MIT](LICENSE)

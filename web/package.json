@@ -8,6 +8,7 @@
     "lint": "pnpm -r lint"
   },
   "devDependencies": {
+    "playwright": "^1.61.1",
     "typescript": "^5.7.2"
   },
   "packageManager": "pnpm@10.12.1"

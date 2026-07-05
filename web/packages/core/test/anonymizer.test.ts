@@ -51,6 +51,16 @@ describe("Anonymizer", () => {
     expect(result.text).toContain("<秘匿情報_1>");
   });
 
+  it("prefers structured recognizers over NER on overlap", async () => {
+    // NER often claims the local part of an email as a PERSON.
+    const anonymizer = new Anonymizer({ ner: new MockNer({ "taro.yamada": "PERSON" }) });
+    const result = await anonymizer.anonymize("メールは taro.yamada@example.com です", {
+      language: "ja",
+    });
+    expect(result.text).toBe("メールは <メールアドレス_1> です");
+    expect(result.mapping["<メールアドレス_1>"]).toBe("taro.yamada@example.com");
+  });
+
   it("works without a NER backend (regex-only)", async () => {
     const anonymizer = new Anonymizer();
     const result = await anonymizer.anonymize("Call (333) 333-3333 or mail a@b.co", {

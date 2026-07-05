@@ -36,12 +36,20 @@ export class Anonymizer {
 
   async anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult> {
     const { language } = options;
-    let spans: EntitySpan[] = [
+    const structured: EntitySpan[] = [
       ...detectWithRegex(text, language),
       ...detectDenyList(text, this.denyList),
     ];
+    let spans = [...structured];
     if (this.ner) {
-      spans.push(...(await this.ner.detect(text, language)));
+      // Structured recognizers (regex, deny list) win over NER on overlap:
+      // e.g. NER may claim the local part of an email address as PERSON.
+      const nerSpans = await this.ner.detect(text, language);
+      spans.push(
+        ...nerSpans.filter(
+          (n) => !structured.some((s) => n.start < s.end && s.start < n.end),
+        ),
+      );
     }
     spans = spans.filter(
       (s) =>
