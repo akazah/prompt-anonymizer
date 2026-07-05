@@ -1,0 +1,15 @@
+{
+  "name": "@prompt-anonymizer/desktop",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tauri dev",
+    "tauri": "tauri",
+    "build": "echo 'desktop: native bundles are built in CI via tauri-action (run: pnpm --filter @prompt-anonymizer/desktop tauri build)'",
+    "lint": "node -e \"JSON.parse(require('fs').readFileSync('src-tauri/tauri.conf.json','utf8')); console.log('tauri.conf.json: OK')\""
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0"
+  }
+}

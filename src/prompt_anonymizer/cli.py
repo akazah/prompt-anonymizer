@@ -24,7 +24,9 @@ def _read_input(text: str | None, file: Path | None) -> str:
     if file is not None:
         return file.read_text(encoding="utf-8")
     if not sys.stdin.isatty():
-        return sys.stdin.read()
+        data = sys.stdin.read()
+        if data.strip():
+            return data
     raise typer.BadParameter("Provide --text, --file, or pipe text via stdin.")
 
 

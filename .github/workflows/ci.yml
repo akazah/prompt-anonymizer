@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SPACY_MODEL_VERSION: "3.8.0"
+
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-latest]
+        include:
+          - python-version: "3.12"
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync --all-extras
+        env:
+          UV_PYTHON: ${{ matrix.python-version }}
+
+      - name: Cache spaCy models
+        id: spacy-cache
+        uses: actions/cache@v4
+        with:
+          path: .venv/lib/**/site-packages/*core*
+          key: spacy-sm-${{ env.SPACY_MODEL_VERSION }}-py${{ matrix.python-version }}-${{ runner.os }}
+
+      - name: Download spaCy models
+        if: steps.spacy-cache.outputs.cache-hit != 'true'
+        run: |
+          uv pip install \
+            "https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-${SPACY_MODEL_VERSION}/ja_core_news_sm-${SPACY_MODEL_VERSION}-py3-none-any.whl" \
+            "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-${SPACY_MODEL_VERSION}/en_core_web_sm-${SPACY_MODEL_VERSION}-py3-none-any.whl"
+
+      - name: Lint (ruff)
+        run: uv run ruff check .
+
+      - name: Format check (ruff)
+        run: uv run ruff format --check src tests demo
+
+      - name: Type check (mypy)
+        run: uv run mypy src
+
+      - name: Tests with coverage gate
+        run: uv run pytest -m "not slow" --cov --cov-fail-under=85
+
+      - name: Build sdist + wheel
+        run: uv build
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint (tsc)
+        working-directory: web
+        run: pnpm lint
+
+      - name: Test (vitest)
+        working-directory: web
+        run: pnpm --filter @prompt-anonymizer/core test
+
+      - name: Build web + extension
+        working-directory: web
+        run: pnpm --filter @prompt-anonymizer/web --filter @prompt-anonymizer/extension build

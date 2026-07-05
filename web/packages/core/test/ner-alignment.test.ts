@@ -11,7 +11,7 @@ describe("findSpan (token -> text alignment)", () => {
   it("aligns BERT ## continuations", () => {
     const text = "Contact Johnathan today";
     const span = findSpan(text, 0, ["John", "##athan"]);
-    expect(span).toEqual({ start: 8, end: 16 });
+    expect(span).toEqual({ start: 8, end: 17 });
   });
 
   it("searches from the cursor to disambiguate repeats", () => {

@@ -1,0 +1,50 @@
+name: Weekly accuracy evaluation
+
+on:
+  schedule:
+    - cron: "0 3 * * 1" # Mondays 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Cache spaCy lg models
+        id: spacy-cache
+        uses: actions/cache@v4
+        with:
+          path: .venv/lib/**/site-packages/*core*
+          key: spacy-lg-3.8.0-${{ runner.os }}
+
+      - name: Download spaCy lg models
+        if: steps.spacy-cache.outputs.cache-hit != 'true'
+        run: |
+          uv pip install \
+            "https://github.com/explosion/spacy-models/releases/download/ja_core_news_lg-3.8.0/ja_core_news_lg-3.8.0-py3-none-any.whl" \
+            "https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl"
+        # sm models for the slow marker tests
+      - name: Download spaCy sm models
+        run: |
+          uv pip install \
+            "https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.8.0/ja_core_news_sm-3.8.0-py3-none-any.whl" \
+            "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+
+      - name: Accuracy regression tests
+        run: uv run pytest -m slow -q
+
+      - name: Full evaluation (lg models)
+        run: uv run python -m prompt_anonymizer.evals --model-size lg --output eval-lg.md
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval-lg.md

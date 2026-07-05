@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Prompt Anonymizer",
+  "version": "0.2.0",
+  "identifier": "com.akazah.promptanonymizer",
+  "build": {
+    "beforeDevCommand": "pnpm --filter @prompt-anonymizer/web dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "pnpm --filter @prompt-anonymizer/web build",
+    "frontendDist": "../../web/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Prompt Anonymizer — on-device PII anonymization",
+        "width": 1240,
+        "height": 860,
+        "minWidth": 720,
+        "minHeight": 520
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "shortDescription": "Anonymize PII before it reaches an LLM - fully on-device.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

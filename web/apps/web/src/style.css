@@ -1,0 +1,109 @@
+:root {
+  --bg: #0d1117;
+  --bg-panel: #161b22;
+  --bg-input: #0b0f14;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-2: #3fb950;
+  --warn: #d29922;
+  --label-bg: #1f6feb33;
+  --label-border: #1f6feb;
+  --radius: 10px;
+  font-family: "Inter", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 24px 20px 60px; }
+
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 6px; }
+header h1 { font-size: 22px; margin: 0; letter-spacing: -0.02em; }
+header .spacer { flex: 1; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  border: 1px solid var(--border); color: var(--text-dim);
+}
+.badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-dim); }
+.badge.webgpu { color: var(--accent-2); border-color: var(--accent-2); }
+.badge.webgpu .dot { background: var(--accent-2); }
+.badge.wasm { color: var(--warn); border-color: var(--warn); }
+.badge.wasm .dot { background: var(--warn); }
+
+.privacy {
+  margin: 0 0 20px; font-size: 13.5px; color: var(--text-dim);
+}
+.privacy strong { color: var(--accent-2); }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.toolbar label { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
+select, button {
+  background: var(--bg-panel); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 7px 14px; font-size: 13.5px; cursor: pointer;
+}
+button.primary { background: #1f6feb; border-color: #1f6feb; font-weight: 600; }
+button.primary:hover { background: #388bfd; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.progress { margin: 10px 0 16px; display: none; }
+.progress.visible { display: block; }
+.progress .bar-outer {
+  height: 6px; background: var(--bg-panel); border-radius: 3px; overflow: hidden;
+}
+.progress .bar-inner { height: 100%; width: 0%; background: var(--accent); transition: width 0.2s; }
+.progress .label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--bg-panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); margin: 0 0 10px; }
+
+textarea {
+  width: 100%; min-height: 200px; resize: vertical;
+  background: var(--bg-input); color: var(--text);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; font-size: 14.5px; font-family: inherit; line-height: 1.7;
+}
+textarea:focus { outline: none; border-color: var(--accent); }
+
+.output {
+  min-height: 200px; background: var(--bg-input);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px; font-size: 14.5px; white-space: pre-wrap; word-break: break-word;
+}
+.output .pii-label {
+  background: var(--label-bg); border: 1px solid var(--label-border);
+  border-radius: 5px; padding: 0 4px; font-weight: 600; font-size: 0.92em;
+  color: var(--accent);
+}
+.output .pii-restored {
+  background: #3fb95022; border: 1px solid #3fb950; border-radius: 5px;
+  padding: 0 4px; color: var(--accent-2); font-weight: 600; font-size: 0.92em;
+}
+
+table.mapping { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
+table.mapping th, table.mapping td {
+  text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border);
+}
+table.mapping th { color: var(--text-dim); font-weight: 500; }
+table.mapping td.label-cell { color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+.actions { display: flex; gap: 8px; margin-top: 10px; }
+.hint { font-size: 12.5px; color: var(--text-dim); margin-top: 8px; }
+.section-restore { margin-top: 16px; }
+.flash { color: var(--accent-2); font-size: 12.5px; }
