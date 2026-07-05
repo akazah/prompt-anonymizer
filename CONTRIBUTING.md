@@ -9,10 +9,7 @@ check, tests) must pass before merge.
 git clone https://github.com/akazah/prompt-anonymizer.git
 cd prompt-anonymizer
 # https://docs.astral.sh/uv/
-uv sync --all-extras
-uv pip install \
-  "https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.8.0/ja_core_news_sm-3.8.0-py3-none-any.whl" \
-  "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+uv sync --all-extras --group models   # `models` = spaCy sm wheels (locked); add --group models-lg for the lg models
 ```
 
 Checks:

@@ -48,6 +48,16 @@ dev = [
     "faker>=30",
     "types-pyyaml",
 ]
+# spaCy models as locked direct-URL wheels: survives every `uv sync` / `uv run`
+# (a plain `uv pip install` gets removed when uv re-syncs the environment).
+models = [
+    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+    "ja-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.8.0/ja_core_news_sm-3.8.0-py3-none-any.whl",
+]
+models-lg = [
+    "en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl",
+    "ja-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_lg-3.8.0/ja_core_news_lg-3.8.0-py3-none-any.whl",
+]
 
 [build-system]
 requires = ["hatchling"]

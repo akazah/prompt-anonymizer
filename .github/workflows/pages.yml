@@ -38,9 +38,9 @@ jobs:
         working-directory: web
         run: pnpm install --frozen-lockfile
 
-      - name: Build web app
+      - name: Build web app (incl. core dependency)
         working-directory: web
-        run: pnpm --filter @prompt-anonymizer/web build
+        run: pnpm --filter "@prompt-anonymizer/web..." build
 
       - uses: actions/upload-pages-artifact@v3
         with:

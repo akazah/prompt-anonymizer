@@ -26,9 +26,9 @@ jobs:
         working-directory: web
         run: pnpm install --frozen-lockfile
 
-      - name: Build web app + extension
+      - name: Build web app + extension (incl. core dependency)
         working-directory: web
-        run: pnpm --filter @prompt-anonymizer/web --filter @prompt-anonymizer/extension build
+        run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
 
       - name: Zip artifacts
         run: |

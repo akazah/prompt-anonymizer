@@ -9,9 +9,6 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  SPACY_MODEL_VERSION: "3.8.0"
-
 jobs:
   python:
     strategy:
@@ -23,32 +20,22 @@ jobs:
           - python-version: "3.12"
             os: macos-latest
     runs-on: ${{ matrix.os }}
+    env:
+      # Job-wide so every `uv run` uses the matrix interpreter
+      # (overrides .python-version).
+      UV_PYTHON: ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
         with:
+          # Caches downloaded wheels, including the spaCy model wheels
+          # locked in the `models` dependency group.
           enable-cache: true
 
-      - name: Sync dependencies
-        run: uv sync --all-extras
-        env:
-          UV_PYTHON: ${{ matrix.python-version }}
-
-      - name: Cache spaCy models
-        id: spacy-cache
-        uses: actions/cache@v4
-        with:
-          path: .venv/lib/**/site-packages/*core*
-          key: spacy-sm-${{ env.SPACY_MODEL_VERSION }}-py${{ matrix.python-version }}-${{ runner.os }}
-
-      - name: Download spaCy models
-        if: steps.spacy-cache.outputs.cache-hit != 'true'
-        run: |
-          uv pip install \
-            "https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-${SPACY_MODEL_VERSION}/ja_core_news_sm-${SPACY_MODEL_VERSION}-py3-none-any.whl" \
-            "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-${SPACY_MODEL_VERSION}/en_core_web_sm-${SPACY_MODEL_VERSION}-py3-none-any.whl"
+      - name: Sync dependencies (incl. spaCy sm models)
+        run: uv sync --all-extras --group models
 
       - name: Lint (ruff)
         run: uv run ruff check .
@@ -92,6 +79,6 @@ jobs:
         working-directory: web
         run: pnpm --filter @prompt-anonymizer/core test
 
-      - name: Build web + extension
+      - name: Build web + extension (incl. core dependency)
         working-directory: web
-        run: pnpm --filter @prompt-anonymizer/web --filter @prompt-anonymizer/extension build
+        run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
