@@ -8,7 +8,7 @@ from prompt_anonymizer.exceptions import (
 )
 from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
 
-__version__ = "0.2.0.dev0"
+__version__ = "0.2.0"
 
 __all__ = [
     "DEFAULT_ENTITIES",
