@@ -127,7 +127,9 @@ export class TransformersNerBackend implements NerBackend {
   private readonly requestedDevice: NerDevice | "auto";
   private readonly onProgress?: (progress: NerProgress) => void;
   private readonly pipes = new Map<Language, Promise<Pipe>>();
-  /** Device actually in use, resolved on first load. */
+  /** Set once WebGPU init fails so later loads skip straight to WASM. */
+  private webGpuFailed = false;
+  /** Device actually in use, set after the first successful load. */
   device: NerDevice | null = null;
 
   constructor(options: TransformersNerOptions = {}) {
@@ -138,25 +140,51 @@ export class TransformersNerBackend implements NerBackend {
 
   private async resolveDevice(): Promise<NerDevice> {
     if (this.requestedDevice !== "auto") return this.requestedDevice;
+    if (this.webGpuFailed) return "wasm";
     return (await detectWebGpu()) ? "webgpu" : "wasm";
+  }
+
+  private async createPipeOn(language: Language, device: NerDevice): Promise<Pipe> {
+    // q8 requires @huggingface/transformers >= 4: v3's WebGPU EP mis-executed
+    // DequantizeLinear on int8 models, silently dropping PERSON/LOCATION
+    // detections (huggingface/transformers.js#1512).
+    const pipe = await pipeline("token-classification", this.models[language], {
+      device,
+      dtype: "q8",
+      progress_callback: this.onProgress as never,
+    });
+    return pipe as unknown as Pipe;
+  }
+
+  private async createPipe(language: Language): Promise<Pipe> {
+    const device = await this.resolveDevice();
+    try {
+      const pipe = await this.createPipeOn(language, device);
+      this.device = device;
+      return pipe;
+    } catch (error) {
+      // A WebGPU adapter can exist while ONNX Runtime's WebGPU init still
+      // fails (e.g. WebKit exposes navigator.gpu but webgpuInit is missing:
+      // "no available backend found"). Fall back to WASM unless the caller
+      // explicitly opted into WebGPU.
+      if (device !== "webgpu" || this.requestedDevice === "webgpu") throw error;
+      this.webGpuFailed = true;
+      const pipe = await this.createPipeOn(language, "wasm");
+      this.device = "wasm";
+      return pipe;
+    }
   }
 
   private loadPipe(language: Language): Promise<Pipe> {
     let promise = this.pipes.get(language);
     if (!promise) {
-      promise = (async () => {
-        const device = await this.resolveDevice();
-        this.device = device;
-        // q8 requires @huggingface/transformers >= 4: v3's WebGPU EP mis-executed
-        // DequantizeLinear on int8 models, silently dropping PERSON/LOCATION
-        // detections (huggingface/transformers.js#1512).
-        const pipe = await pipeline("token-classification", this.models[language], {
-          device,
-          dtype: "q8",
-          progress_callback: this.onProgress as never,
-        });
-        return pipe as unknown as Pipe;
-      })();
+      const created = this.createPipe(language);
+      promise = created;
+      // Evict failed loads (e.g. a network error mid-download) so a later
+      // detect()/warmup() can retry without a page reload.
+      created.catch(() => {
+        if (this.pipes.get(language) === created) this.pipes.delete(language);
+      });
       this.pipes.set(language, promise);
     }
     return promise;

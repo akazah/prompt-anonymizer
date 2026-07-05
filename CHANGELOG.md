@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- TS core: NER now falls back to WASM at runtime when ONNX Runtime's WebGPU
+  init fails despite a WebGPU adapter being detected (e.g. WebKit/Tauri:
+  "no available backend found. ERR: [webgpu] TypeError: … webgpuInit is not
+  a function"). Failed model loads are also no longer cached, so a network
+  error during download can be retried without reloading the page. The
+  browser app's engine badge now reflects the device actually in use.
 - TS core: upgraded transformers.js 3.x → 4.x. v3's WebGPU execution provider mis-executed
   `DequantizeLinear` on int8/q8 models ([transformers.js#1512](https://github.com/huggingface/transformers.js/issues/1512)),
   so NER silently returned no PERSON/LOCATION spans on WebGPU devices — names like 山田太郎
