@@ -17,6 +17,10 @@ jobs:
           path: dist/
 
   publish-pypi:
+    # Deferred: PyPI publishing is opt-in until Trusted Publishing is set up.
+    # Enable by adding a repository variable PYPI_PUBLISH=true
+    # (Settings -> Secrets and variables -> Actions -> Variables).
+    if: vars.PYPI_PUBLISH == 'true'
     needs: build
     runs-on: ubuntu-latest
     environment: pypi
