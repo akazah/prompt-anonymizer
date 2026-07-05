@@ -6,7 +6,7 @@
   "build": {
     "beforeDevCommand": "pnpm --filter @prompt-anonymizer/web dev",
     "devUrl": "http://localhost:5173",
-    "beforeBuildCommand": "pnpm --filter \"@prompt-anonymizer/web...\" build",
+    "beforeBuildCommand": "pnpm --filter @prompt-anonymizer/web... build",
     "frontendDist": "../../web/dist"
   },
   "app": {
