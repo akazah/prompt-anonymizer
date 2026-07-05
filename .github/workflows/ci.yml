@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v8
+        uses: astral-sh/setup-uv@v8.3.0
         with:
           # Caches downloaded wheels, including the spaCy model wheels
           # locked in the `models` dependency group.
