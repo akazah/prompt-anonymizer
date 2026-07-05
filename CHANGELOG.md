@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- TS core: upgraded transformers.js 3.x → 4.x. v3's WebGPU execution provider mis-executed
+  `DequantizeLinear` on int8/q8 models ([transformers.js#1512](https://github.com/huggingface/transformers.js/issues/1512)),
+  so NER silently returned no PERSON/LOCATION spans on WebGPU devices — names like 山田太郎
+  stayed unmasked while regex entities (email, phone) were still replaced.
+- Browser app & Chrome extension: show an explicit warning while the NER toggle is off,
+  since names and locations are not masked in regex-only mode.
+
 ## [0.2.0] - 2026-07-05
 
 ### Added

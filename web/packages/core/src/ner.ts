@@ -147,6 +147,9 @@ export class TransformersNerBackend implements NerBackend {
       promise = (async () => {
         const device = await this.resolveDevice();
         this.device = device;
+        // q8 requires @huggingface/transformers >= 4: v3's WebGPU EP mis-executed
+        // DequantizeLinear on int8 models, silently dropping PERSON/LOCATION
+        // detections (huggingface/transformers.js#1512).
         const pipe = await pipeline("token-classification", this.models[language], {
           device,
           dtype: "q8",
