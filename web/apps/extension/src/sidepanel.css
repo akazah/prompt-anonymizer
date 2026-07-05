@@ -54,4 +54,8 @@ td.label-cell { color: var(--accent); font-weight: 600; white-space: nowrap; }
 .progress { font-size: 11.5px; color: var(--text-dim); }
 .flash { color: var(--accent-2); font-size: 11.5px; }
 .warning { color: #e5a13c; font-size: 11.5px; margin: 6px 0 0; }
+.hints-panel { margin-top: 8px; font-size: 12px; }
+.hints-panel summary { cursor: pointer; color: var(--text-dim); }
+.hints-row { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.hints-row label { display: flex; flex-direction: column; gap: 3px; font-size: 11.5px; color: var(--text-dim); }
 .hidden { display: none; }

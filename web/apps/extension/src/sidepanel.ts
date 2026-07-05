@@ -3,6 +3,7 @@ import {
   RestoreSession,
   TransformersNerBackend,
   type AnonymizeResult,
+  type HintOptions,
   type Language,
   type MappingStore,
   type NerProgress,
@@ -53,6 +54,31 @@ panel.innerHTML = `
         <label style="font-size:12px;color:var(--text-dim)"><input type="checkbox" id="use-ner" checked /> NER</label>
         <button id="anonymize" class="btn primary">Anonymize</button>
       </div>
+      <details class="hints-panel">
+        <summary>Placeholder hints / ラベルに部分情報を残す</summary>
+        <div class="hints-row">
+          <label>住所
+            <select id="hint-location">
+              <option value="none" selected>なし</option>
+              <option value="prefecture">都道府県</option>
+              <option value="municipality">市区町村</option>
+            </select>
+          </label>
+          <label>電話
+            <select id="hint-phone">
+              <option value="none" selected>なし</option>
+              <option value="lineType">携帯/固定</option>
+              <option value="areaCode">市外局番</option>
+            </select>
+          </label>
+          <label>人名
+            <select id="hint-person">
+              <option value="none" selected>なし</option>
+              <option value="sharedSurname">同姓関係</option>
+            </select>
+          </label>
+        </div>
+      </details>
       <div id="progress" class="progress"></div>
       <div id="output" class="output" style="margin-top:8px"></div>
       <div class="row" style="margin-top:6px">
@@ -124,6 +150,14 @@ function guessLanguage(text: string): Language {
   return /[\u3040-\u30ff\u4e00-\u9fff]/.test(text) ? "ja" : "en";
 }
 
+function selectedHints(): HintOptions | undefined {
+  const location = $<HTMLSelectElement>("#hint-location").value as HintOptions["location"];
+  const phone = $<HTMLSelectElement>("#hint-phone").value as HintOptions["phone"];
+  const person = $<HTMLSelectElement>("#hint-person").value as HintOptions["person"];
+  if (location === "none" && phone === "none" && person === "none") return undefined;
+  return { location, phone, person };
+}
+
 async function runAnonymize(): Promise<void> {
   const text = inputEl.value;
   if (!text.trim()) return;
@@ -131,7 +165,7 @@ async function runAnonymize(): Promise<void> {
   anonymizeBtn.disabled = true;
   try {
     // RestoreSession persists the mapping via ChromeSessionMappingStore.
-    const result = await session.anonymize(text, { language });
+    const result = await session.anonymize(text, { language, hints: selectedHints() });
     lastResult = result;
     outputEl.innerHTML = highlight(result.text, Object.keys(result.mapping), "pii-label");
     const table = $<HTMLTableElement>("#mapping-table");

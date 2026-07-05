@@ -4,6 +4,7 @@ import {
   TransformersNerBackend,
   detectWebGpu,
   type AnonymizeResult,
+  type HintOptions,
   type Language,
   type NerProgress,
 } from "@prompt-anonymizer/core";
@@ -39,6 +40,33 @@ app.innerHTML = `
       <button id="load-sample">Load sample</button>
       <button id="anonymize" class="primary">Anonymize</button>
     </div>
+
+    <details class="hints-panel">
+      <summary>Placeholder hints — keep partial context in labels / ラベルに部分情報を残す</summary>
+      <div class="hints-grid">
+        <label>Location（住所）
+          <select id="hint-location">
+            <option value="none" selected>None（残さない）</option>
+            <option value="prefecture">Prefecture（都道府県）</option>
+            <option value="municipality">Municipality（市区町村）</option>
+          </select>
+        </label>
+        <label>Phone（電話番号）
+          <select id="hint-phone">
+            <option value="none" selected>None（残さない）</option>
+            <option value="lineType">Mobile/Landline（携帯・固定）</option>
+            <option value="areaCode">Area code（市外局番）</option>
+          </select>
+        </label>
+        <label>Person（人名）
+          <select id="hint-person">
+            <option value="none" selected>None（残さない）</option>
+            <option value="sharedSurname">Shared surname（同姓関係）</option>
+          </select>
+        </label>
+      </div>
+      <p class="hint">Hints keep coarse facts (e.g. <span class="mono">&lt;住所_1:東京都&gt;</span>, <span class="mono">&lt;電話番号_1:携帯&gt;</span>, <span class="mono">&lt;人名_1:同姓A&gt;</span>) inside the label so the LLM has more context — at the cost of revealing that much. ヒントはその分だけ情報が残ります。</p>
+    </details>
 
     <div id="progress" class="progress">
       <div class="bar-outer"><div id="progress-bar" class="bar-inner"></div></div>
@@ -145,6 +173,14 @@ function renderWithHighlights(text: string, labels: string[], cls: string): stri
   return html;
 }
 
+function selectedHints(): HintOptions | undefined {
+  const location = $<HTMLSelectElement>("#hint-location").value as HintOptions["location"];
+  const phone = $<HTMLSelectElement>("#hint-phone").value as HintOptions["phone"];
+  const person = $<HTMLSelectElement>("#hint-person").value as HintOptions["person"];
+  if (location === "none" && phone === "none" && person === "none") return undefined;
+  return { location, phone, person };
+}
+
 async function runAnonymize(): Promise<void> {
   const text = inputEl.value;
   if (!text.trim()) return;
@@ -152,7 +188,7 @@ async function runAnonymize(): Promise<void> {
   anonymizeBtn.disabled = true;
   anonymizeBtn.textContent = "Working…";
   try {
-    const result = await session.anonymize(text, { language });
+    const result = await session.anonymize(text, { language, hints: selectedHints() });
     lastResult = result;
     outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
 

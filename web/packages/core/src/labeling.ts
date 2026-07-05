@@ -50,6 +50,11 @@ export function applyLabels(
   text: string,
   spans: EntitySpan[],
   labels: Record<string, string>,
+  /**
+   * Optional hint per (entityType, source): appended as `<name_N:hint>`.
+   * Hints leak partial information by design — see `hints.ts`.
+   */
+  hintFor?: (entityType: string, source: string) => string | null,
 ): { text: string; mapping: Record<string, string> } {
   const merged = mergeSpans(spans);
 
@@ -64,7 +69,8 @@ export function applyLabels(
       const next = (counters.get(span.entityType) ?? 0) + 1;
       counters.set(span.entityType, next);
       const labelName = labels[span.entityType] ?? span.entityType;
-      const label = `<${labelName}_${next}>`;
+      const hint = hintFor?.(span.entityType, source) ?? null;
+      const label = hint ? `<${labelName}_${next}:${hint}>` : `<${labelName}_${next}>`;
       labelBySource.set(key, label);
       mapping[label] = source;
     }

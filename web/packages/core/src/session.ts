@@ -15,11 +15,18 @@
  * persist it beyond the user's session.
  */
 
+import type { HintOptions } from "./hints.js";
 import type { AnonymizeResult, Language } from "./types.js";
+
+export interface AnonymizeCallOptions {
+  language: Language;
+  /** Optional placeholder hints (opt-in partial context; see `hints.ts`). */
+  hints?: HintOptions;
+}
 
 /** Port: produces an `AnonymizeResult`. `Anonymizer` satisfies this. */
 export interface AnonymizeEngine {
-  anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
+  anonymize(text: string, options: AnonymizeCallOptions): Promise<AnonymizeResult>;
 }
 
 /** Port: per-target persistence of the label -> original mapping. */
@@ -50,10 +57,11 @@ export class InMemoryMappingStore implements MappingStore {
 }
 
 /**
- * Placeholder-shaped tokens such as `<人名_1>` or `<JP_POSTAL_CODE_2>`.
- * Bounded quantifiers only — this runs on untrusted LLM output.
+ * Placeholder-shaped tokens such as `<人名_1>`, `<JP_POSTAL_CODE_2>`, or the
+ * hinted form `<住所_1:東京都>`. Bounded quantifiers only — this runs on
+ * untrusted LLM output.
  */
-const PLACEHOLDER_PATTERN = /<[^<>\s]{1,64}_\d{1,6}>/gu;
+const PLACEHOLDER_PATTERN = /<[^<>\s:]{1,64}_\d{1,6}(?::[^<>\s:]{1,32})?>/gu;
 
 /** Unique placeholder-shaped tokens in `text`, in order of first appearance. */
 export function findPlaceholders(text: string): string[] {
@@ -124,7 +132,7 @@ export class RestoreSession {
   }
 
   /** Anonymize and remember the mapping for a later `restore()`. */
-  async anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult> {
+  async anonymize(text: string, options: AnonymizeCallOptions): Promise<AnonymizeResult> {
     const result = await this.engine.anonymize(text, options);
     await this.store.save(result.mapping);
     return result;

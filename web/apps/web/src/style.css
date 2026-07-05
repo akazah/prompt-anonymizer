@@ -106,5 +106,11 @@ table.mapping td.label-cell { color: var(--accent); font-weight: 600; white-spac
 .actions { display: flex; gap: 8px; margin-top: 10px; }
 .hint { font-size: 12.5px; color: var(--text-dim); margin-top: 8px; }
 .hint.warning { color: #e5a13c; }
+
+.hints-panel { margin: 10px 0; font-size: 13px; }
+.hints-panel summary { cursor: pointer; color: var(--text-dim); }
+.hints-grid { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
+.hints-grid label { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--text-dim); }
+.mono { font-family: ui-monospace, monospace; }
 .section-restore { margin-top: 16px; }
 .flash { color: var(--accent-2); font-size: 12.5px; }
