@@ -1,6 +1,6 @@
 [project]
 name = "prompt-anonymizer"
-version = "0.2.0.dev0"
+version = "0.2.0"
 description = "Anonymize PII before it reaches an LLM - with consistent, reversible labels. JA/EN."
 readme = "README.md"
 license = { file = "LICENSE" }
