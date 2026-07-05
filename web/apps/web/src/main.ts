@@ -131,10 +131,14 @@ const session = new RestoreSession({
 async function updateEngineBadge(): Promise<void> {
   const badge = $("#engine-badge");
   const name = $("#engine-name");
-  const hasGpu = await detectWebGpu();
-  badge.classList.add(hasGpu ? "webgpu" : "wasm");
-  name.textContent = hasGpu ? "WebGPU" : "WASM (no WebGPU)";
-  badge.title = hasGpu
+  // Before the first model load, guess from adapter detection; afterwards
+  // report the device the pipeline actually initialized on (WebGPU adapters
+  // can exist yet fail ONNX Runtime init, triggering the WASM fallback).
+  const usesGpu = ner.device ? ner.device === "webgpu" : await detectWebGpu();
+  badge.classList.remove("webgpu", "wasm");
+  badge.classList.add(usesGpu ? "webgpu" : "wasm");
+  name.textContent = usesGpu ? "WebGPU" : "WASM (no WebGPU)";
+  badge.title = usesGpu
     ? "Inference is GPU-accelerated in your browser."
     : "WebGPU unavailable; falling back to WebAssembly (slower, still on-device).";
 }
@@ -181,6 +185,7 @@ async function runAnonymize(): Promise<void> {
     anonymizeBtn.disabled = false;
     anonymizeBtn.textContent = "Anonymize";
     progressEl.classList.remove("visible");
+    void updateEngineBadge();
   }
 }
 
