@@ -10,6 +10,19 @@ import type {
 
 export * from "./types.js";
 export { LABELS, applyLabels, mergeSpans } from "./labeling.js";
+export {
+  InMemoryMappingStore,
+  RestoreSession,
+  findPlaceholders,
+  restoreText,
+} from "./session.js";
+export type {
+  AnonymizeEngine,
+  MappingStore,
+  RestoreReplacement,
+  RestoreResult,
+  RestoreSessionOptions,
+} from "./session.js";
 export { detectWithRegex, isValidMyNumber, myNumberCheckDigit } from "./recognizers.js";
 export {
   DEFAULT_NER_MODELS,
