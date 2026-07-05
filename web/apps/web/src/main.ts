@@ -10,8 +10,8 @@ import {
 import "./style.css";
 
 const SAMPLES: Record<Language, string> = {
-  ja: "山田太郎は、来月、誕生日を迎えます。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。",
-  en: "John Smith will have a birthday next month. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333.",
+  ja: "山田太郎は、来月、誕生日を迎えます。同僚の佐藤花子は、サプライズパーティーを計画しています。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。佐藤花子への連絡は hanako.sato@example.com までお願いします。",
+  en: "John Smith will have a birthday next month. His colleague Emily Johnson is planning a surprise party. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333. You can reach Emily Johnson at emily.johnson@example.com.",
 };
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
