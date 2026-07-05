@@ -39,6 +39,10 @@ app.innerHTML = `
       <button id="load-sample">Load sample</button>
       <button id="anonymize" class="primary">Anonymize</button>
     </div>
+    <p id="ner-off-warning" class="hint warning" hidden>
+      NER model is off: names and locations will NOT be masked (only emails, phone numbers, etc.).
+      <span lang="ja">NERモデルがオフのため、人名・住所はマスクされません（メールアドレスや電話番号などのみ）。</span>
+    </p>
 
     <div id="progress" class="progress">
       <div class="bar-outer"><div id="progress-bar" class="bar-inner"></div></div>
@@ -89,6 +93,13 @@ const progressBar = $("#progress-bar");
 const progressLabel = $("#progress-label");
 const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
+const nerOffWarning = $("#ner-off-warning");
+
+function syncNerWarning(): void {
+  nerOffWarning.hidden = useNerEl.checked;
+}
+useNerEl.addEventListener("change", syncNerWarning);
+syncNerWarning();
 
 let lastResult: AnonymizeResult | null = null;
 

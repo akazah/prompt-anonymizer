@@ -53,6 +53,7 @@ panel.innerHTML = `
         <label style="font-size:12px;color:var(--text-dim)"><input type="checkbox" id="use-ner" checked /> NER</label>
         <button id="anonymize" class="btn primary">Anonymize</button>
       </div>
+      <p id="ner-off-warning" class="warning" hidden>NER off: names & locations will NOT be masked. / 人名・住所はマスクされません。</p>
       <div id="progress" class="progress"></div>
       <div id="output" class="output" style="margin-top:8px"></div>
       <div class="row" style="margin-top:6px">
@@ -98,11 +99,19 @@ const ner = new TransformersNerBackend({ onProgress });
 const withNer = new Anonymizer({ ner });
 const regexOnly = new Anonymizer();
 
+const useNerEl = $<HTMLInputElement>("#use-ner");
+const nerOffWarning = $("#ner-off-warning");
+function syncNerWarning(): void {
+  nerOffWarning.hidden = useNerEl.checked;
+}
+useNerEl.addEventListener("change", syncNerWarning);
+syncNerWarning();
+
 // Shared restore flow from core; this target only injects its storage adapter.
 const session = new RestoreSession({
   engine: {
     anonymize: (text, options) =>
-      ($<HTMLInputElement>("#use-ner").checked ? withNer : regexOnly).anonymize(text, options),
+      (useNerEl.checked ? withNer : regexOnly).anonymize(text, options),
   },
   store: new ChromeSessionMappingStore(),
 });
