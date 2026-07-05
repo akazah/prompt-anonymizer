@@ -118,6 +118,41 @@ JP_POSTAL_CODE は recall 1.00、ja PERSON F1 0.93、ja LOCATION F1 0.87。
 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) を参照。主なもの:
 Chrome Web Store公開、コード署名、より小型の日本語NERモデル、MCPサーバー。
 
+## 外部参照・関連する議論
+
+Prompt Anonymizerは小さなプロジェクトですが、「テキストを保存・インデックス・
+ログ・LLM送信する前にPIIをマスク／仮名化する」という活発な問題領域に
+位置しています。
+
+- [Microsoft Presidio](https://github.com/microsoft/presidio) — Pythonコアの
+  検出エンジン。Presidio公式の
+  [OpenAI向け匿名化・復元サンプル](https://data-privacy-stack.github.io/presidio/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/)
+  は、本プロジェクトがエンドツーエンドのツールとして提供しているものと同じ
+  「セッション内で一貫したラベル」パターンを解説しています。
+- [LangChain `PresidioReversibleAnonymizer`](https://github.com/langchain-ai/langchain/pull/10093)
+  と [Handling PII data in LangChain](https://www.langchain.com/blog/handling-pii-data-in-langchain)
+  — 匿名化 → LLM → 復元というラウンドトリップをチェーンの1ステップとして
+  実装した例。モデルがラベルを言い換えると完全一致での復元が壊れる問題
+  （ファジーマッチ戦略）の議論も含まれます。
+- [LLM Guard](https://github.com/protectai/llm-guard)（Protect AI）—
+  `Anonymize` 入力スキャナと `Deanonymize` 出力スキャナが `Vault` に対応表を
+  保持する構成で、本プロジェクトのmappingに最も近いサーバーサイドの類例です。
+- [OWASP Top 10 for LLM Applications — LLM02:2025 Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/)
+  — プロンプトのサニタイズ・レダクションを主要な緩和策として挙げており、
+  本プロジェクトはそのクライアントサイド実装にあたります。
+- [Hide and Seek (HaS): A Lightweight Framework for Prompt Privacy Protection](https://arxiv.org/abs/2309.03057)
+  （arXiv:2309.03057）— クラウドLLMの前後でローカルの匿名化・復元モデルを
+  動かす研究。プロバイダー側から何が推測されうるかを評価する敵対者モデルも
+  提案しています。
+- [個人情報保護委員会「生成AIサービスの利用に関する注意喚起等」](https://www.ppc.go.jp/news/press/2023/230602kouhou/)
+  （2023年6月）— 生成AIのプロンプトへ個人情報を入力することに関する日本の
+  規制当局の注意喚起。本プロジェクトが日本語エンティティを最優先で
+  カバーしている動機のひとつです。
+
+これらと比べたときの本プロジェクトの焦点は、日本語＋英語のパリティ、
+ブラウザ内での完全オンデバイス動作（WebGPU/WASM）、そして呼び出し側に
+返却され永続化されないmappingです。
+
 ## Contributing / Security / License
 
 - [CONTRIBUTING.md](CONTRIBUTING.md) — 開発環境（uv / pnpm）、テスト・評価の実行手順

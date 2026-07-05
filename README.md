@@ -122,6 +122,41 @@ See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Highlights: store publication
 (Chrome Web Store), code signing, smaller Japanese NER models, MCP server.
 
+## External references and related discussions
+
+Prompt Anonymizer is a small project, but it sits in an active problem area:
+masking or pseudonymizing PII before text is stored, indexed, logged, or sent
+to LLMs.
+
+- [Microsoft Presidio](https://github.com/microsoft/presidio) — the detection
+  engine behind the Python core. Presidio's own
+  [OpenAI anonymization/de-anonymization sample](https://data-privacy-stack.github.io/presidio/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/)
+  describes the same session-scoped, consistent-label pattern this project
+  ships as an end-to-end tool.
+- [LangChain `PresidioReversibleAnonymizer`](https://github.com/langchain-ai/langchain/pull/10093)
+  and the [Handling PII data in LangChain](https://www.langchain.com/blog/handling-pii-data-in-langchain)
+  post — the same anonymize → LLM → deanonymize round trip as a chain step,
+  including a discussion of why exact-match restoration breaks when the model
+  rephrases a label (fuzzy-matching strategies).
+- [LLM Guard](https://github.com/protectai/llm-guard) (Protect AI) — its
+  `Anonymize` input scanner and `Deanonymize` output scanner with a `Vault`
+  mapping are the closest server-side analogue to this project's mapping.
+- [OWASP Top 10 for LLM Applications — LLM02:2025 Sensitive Information Disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/)
+  — lists sanitization/redaction of prompts as a primary mitigation; this
+  project is a client-side implementation of that guidance.
+- [Hide and Seek (HaS): A Lightweight Framework for Prompt Privacy Protection](https://arxiv.org/abs/2309.03057)
+  (arXiv:2309.03057) — research on local anonymize/de-anonymize models around
+  a cloud LLM, with adversary models for evaluating what a provider could
+  still infer.
+- [PPC (Japan) advisory on generative AI services](https://www.ppc.go.jp/news/press/2023/230602kouhou/)
+  (個人情報保護委員会, June 2023) — the Japanese regulator's caution about
+  entering personal data into generative AI prompts, one motivation for the
+  Japanese-first entity coverage here.
+
+Compared to these, this project focuses on: Japanese + English parity,
+on-device operation in the browser (WebGPU/WASM), and mappings that are
+returned to the caller and never persisted.
+
 ## Contributing / Security / License
 
 - [CONTRIBUTING.md](CONTRIBUTING.md) — dev setup (uv / pnpm), test and eval commands
