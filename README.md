@@ -5,7 +5,6 @@ English | [日本語](README_ja.md)
 > Anonymize PII before it reaches an LLM — with consistent, **reversible** labels. Japanese & English.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer)](https://pypi.org/project/prompt-anonymizer/)
 [![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -41,12 +40,13 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Browser (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100% on-device: NER runs in your browser via WebGPU (WASM fallback). Your text is never sent to a server. |
 | **Desktop app** | Download from [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.AppImage` / `.deb`) | Tauri 2. Unsigned for now — your OS will warn on first launch. |
 | **Chrome extension** | `prompt-anonymizer-extension-*.zip` from [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Unzip → `chrome://extensions` → enable Developer mode → "Load unpacked". Select text → right-click → *Anonymize selection*. |
-| **Python / CLI** | `pip install prompt-anonymizer` (or `uv add prompt-anonymizer`) | Presidio + spaCy. See Quickstart below. |
+| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (not on PyPI yet) | Presidio + spaCy. See Quickstart below. |
 
 ## Quickstart (Python)
 
 ```bash
-pip install prompt-anonymizer
+# Not published to PyPI yet - install from GitHub (a tag, or main for latest):
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
 python -m spacy download ja_core_news_sm   # and/or en_core_web_sm
 ```
 
