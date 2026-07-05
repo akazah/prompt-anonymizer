@@ -174,3 +174,6 @@ web/apps/desktop/src-tauri/gen/
 
 # demo build artifacts (GIFs are committed; intermediates are not)
 demo/out/
+
+# PII label mappings must never be committed (produced by demo tapes / CLI runs)
+mapping.json
