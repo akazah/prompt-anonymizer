@@ -105,5 +105,6 @@ table.mapping td.label-cell { color: var(--accent); font-weight: 600; white-spac
 
 .actions { display: flex; gap: 8px; margin-top: 10px; }
 .hint { font-size: 12.5px; color: var(--text-dim); margin-top: 8px; }
+.hint.warning { color: #e5a13c; }
 .section-restore { margin-top: 16px; }
 .flash { color: var(--accent-2); font-size: 12.5px; }

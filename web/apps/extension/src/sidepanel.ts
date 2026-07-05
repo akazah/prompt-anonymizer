@@ -1,11 +1,36 @@
 import {
   Anonymizer,
+  RestoreSession,
   TransformersNerBackend,
   type AnonymizeResult,
   type Language,
+  type MappingStore,
   type NerProgress,
 } from "@prompt-anonymizer/core";
 import "./sidepanel.css";
+
+/**
+ * MappingStore adapter for this target: the mapping lives in
+ * chrome.storage.session only, so it survives side-panel reloads but is
+ * dropped when the browser closes. Never use chrome.storage.local here —
+ * the mapping contains the original PII.
+ */
+class ChromeSessionMappingStore implements MappingStore {
+  private static readonly KEY = "mapping";
+
+  async load(): Promise<Record<string, string> | null> {
+    const stored = await chrome.storage.session.get(ChromeSessionMappingStore.KEY);
+    return (stored[ChromeSessionMappingStore.KEY] as Record<string, string> | undefined) ?? null;
+  }
+
+  async save(mapping: Record<string, string>): Promise<void> {
+    await chrome.storage.session.set({ [ChromeSessionMappingStore.KEY]: mapping });
+  }
+
+  async clear(): Promise<void> {
+    await chrome.storage.session.remove(ChromeSessionMappingStore.KEY);
+  }
+}
 
 const panel = document.querySelector<HTMLDivElement>("#panel")!;
 panel.innerHTML = `
@@ -48,6 +73,7 @@ panel.innerHTML = `
         <span id="restore-flash" class="flash"></span>
       </div>
       <div id="restore-output" class="output" style="margin-top:8px"></div>
+      <p id="restore-warning" class="warning" hidden></p>
     </div>
   </div>
 `;
@@ -72,6 +98,15 @@ const ner = new TransformersNerBackend({ onProgress });
 const withNer = new Anonymizer({ ner });
 const regexOnly = new Anonymizer();
 
+// Shared restore flow from core; this target only injects its storage adapter.
+const session = new RestoreSession({
+  engine: {
+    anonymize: (text, options) =>
+      ($<HTMLInputElement>("#use-ner").checked ? withNer : regexOnly).anonymize(text, options),
+  },
+  store: new ChromeSessionMappingStore(),
+});
+
 function escapeHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -95,11 +130,9 @@ async function runAnonymize(): Promise<void> {
   const language = $<HTMLSelectElement>("#language").value as Language;
   anonymizeBtn.disabled = true;
   try {
-    const anonymizer = $<HTMLInputElement>("#use-ner").checked ? withNer : regexOnly;
-    const result = await anonymizer.anonymize(text, { language });
+    // RestoreSession persists the mapping via ChromeSessionMappingStore.
+    const result = await session.anonymize(text, { language });
     lastResult = result;
-    // Session storage only: the mapping is dropped when the browser closes.
-    void chrome.storage.session.set({ mapping: result.mapping });
     outputEl.innerHTML = highlight(result.text, Object.keys(result.mapping), "pii-label");
     const table = $<HTMLTableElement>("#mapping-table");
     table.querySelector("tbody")!.innerHTML = Object.entries(result.mapping)
@@ -131,10 +164,17 @@ $("#copy").addEventListener("click", () => {
 $("#restore").addEventListener("click", async () => {
   const value = $<HTMLTextAreaElement>("#restore-input").value;
   if (!value.trim()) return;
-  const stored = await chrome.storage.session.get("mapping");
-  const mapping: Record<string, string> = lastResult?.mapping ?? stored["mapping"] ?? {};
-  const restored = regexOnly.deanonymize(value, mapping);
-  $("#restore-output").innerHTML = highlight(restored, Object.values(mapping), "pii-restored");
+  const result = await session.restore(value);
+  $("#restore-output").innerHTML = highlight(
+    result.text,
+    result.replacements.map((r) => r.value),
+    "pii-restored",
+  );
+  const warning = $("#restore-warning");
+  warning.hidden = result.unresolved.length === 0;
+  warning.textContent = result.unresolved.length
+    ? `Unresolved labels (no stored mapping): ${result.unresolved.join(", ")}`
+    : "";
 });
 $("#copy-restored").addEventListener("click", () => {
   const restored = $("#restore-output").textContent ?? "";

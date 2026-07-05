@@ -1,5 +1,6 @@
 import {
   Anonymizer,
+  RestoreSession,
   TransformersNerBackend,
   detectWebGpu,
   type AnonymizeResult,
@@ -72,6 +73,7 @@ app.innerHTML = `
         <span id="restore-flash" class="flash"></span>
       </div>
       <div id="restore-output" class="output" style="margin-top:10px"></div>
+      <p id="restore-warning" class="hint warning" hidden></p>
       <p class="hint">Detection is best-effort — always review the anonymized text before sending it anywhere.</p>
     </section>
   </div>
@@ -105,6 +107,15 @@ function onProgress(p: NerProgress): void {
 const ner = new TransformersNerBackend({ onProgress });
 const anonymizerWithNer = new Anonymizer({ ner });
 const anonymizerRegexOnly = new Anonymizer();
+
+// Restore flow goes through the core RestoreSession service; this app only
+// injects an engine (NER toggle) and keeps the default in-memory store.
+const session = new RestoreSession({
+  engine: {
+    anonymize: (text, options) =>
+      (useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly).anonymize(text, options),
+  },
+});
 
 async function updateEngineBadge(): Promise<void> {
   const badge = $("#engine-badge");
@@ -141,8 +152,7 @@ async function runAnonymize(): Promise<void> {
   anonymizeBtn.disabled = true;
   anonymizeBtn.textContent = "Working…";
   try {
-    const anonymizer = useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly;
-    const result = await anonymizer.anonymize(text, { language });
+    const result = await session.anonymize(text, { language });
     lastResult = result;
     outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
 
@@ -178,15 +188,21 @@ $("#copy").addEventListener("click", () => {
   flash($("#copy-flash"), "Copied!");
 });
 $("#restore").addEventListener("click", () => {
-  const restoreInput = $<HTMLTextAreaElement>("#restore-input");
-  if (!lastResult || !restoreInput.value.trim()) return;
-  const anonymizer = useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly;
-  const restored = anonymizer.deanonymize(restoreInput.value, lastResult.mapping);
-  $("#restore-output").innerHTML = renderWithHighlights(
-    restored,
-    Object.values(lastResult.mapping),
-    "pii-restored",
-  );
+  void (async () => {
+    const restoreInput = $<HTMLTextAreaElement>("#restore-input");
+    if (!restoreInput.value.trim()) return;
+    const result = await session.restore(restoreInput.value);
+    $("#restore-output").innerHTML = renderWithHighlights(
+      result.text,
+      result.replacements.map((r) => r.value),
+      "pii-restored",
+    );
+    const warning = $("#restore-warning");
+    warning.hidden = result.unresolved.length === 0;
+    warning.textContent = result.unresolved.length
+      ? `Unresolved labels (no stored mapping): ${result.unresolved.join(", ")}`
+      : "";
+  })();
 });
 $("#copy-restored").addEventListener("click", () => {
   const restored = $("#restore-output").textContent ?? "";
