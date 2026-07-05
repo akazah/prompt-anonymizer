@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Toolchain modernization (no behavior or label-format changes):
+  - Web: TypeScript 5.7 -> 6.0, Vite 6 -> 8 (Rolldown), Vitest 3 -> 4,
+    transformers.js 3.x -> 4.x (new WebGPU runtime; same `pipeline` API),
+    `@types/chrome` 0.0.x -> 0.2.x, pnpm 10 -> 11.
+  - CI: Node 22 -> 24 (Active LTS) and all GitHub Actions bumped to their
+    latest majors.
+  - Dev default Python 3.12 -> 3.13 (`.python-version`); supported range
+    is unchanged (3.10-3.13; the spaCy stack ships no 3.14 wheels yet).
+
 ## [0.2.0] - 2026-07-05
 
 ### Added
