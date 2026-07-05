@@ -4,7 +4,7 @@ Everything is driven by a `v*` tag push. One tag produces:
 
 | Artifact | Workflow | Destination |
 | --- | --- | --- |
-| sdist + wheel | `release.yml` | PyPI (Trusted Publishing) + GitHub Release |
+| sdist + wheel | `release.yml` | GitHub Release (PyPI publish is opt-in, see below) |
 | `prompt-anonymizer-web-<ver>.zip` / `prompt-anonymizer-extension-<ver>.zip` | `release-apps.yml` | GitHub Release |
 | Tauri desktop bundles (`.dmg` / `.msi` / `.AppImage` / `.deb`) | `release-apps.yml` | GitHub Release |
 
@@ -22,12 +22,20 @@ admin. Until they are done, the corresponding pipeline fails:
    is not allowed to create the Pages site itself.
    After enabling, re-run the latest "Deploy web app to GitHub Pages" run
    (or push to `main`).
-2. **PyPI Trusted Publishing** — on [pypi.org](https://pypi.org/manage/account/publishing/),
-   add a *pending publisher* for project `prompt-anonymizer`:
-   owner `akazah`, repository `prompt-anonymizer`, workflow `release.yml`,
-   environment `pypi`. The `pypi` environment already exists in the repo
-   (Settings → Environments); optionally add required reviewers to gate
-   publishes.
+2. **PyPI Trusted Publishing (deferred — only when we decide to publish to
+   PyPI)** — the `publish-pypi` job is skipped unless the repository variable
+   `PYPI_PUBLISH` is set to `true`. To turn it on later:
+   1. On [pypi.org](https://pypi.org/manage/account/publishing/), add a
+      *pending publisher* for project `prompt-anonymizer`: owner `akazah`,
+      repository `prompt-anonymizer`, workflow `release.yml`, environment
+      `pypi`. The `pypi` environment already exists in the repo
+      (Settings → Environments); optionally add required reviewers to gate
+      publishes.
+   2. Add the repository variable `PYPI_PUBLISH=true`
+      (Settings → Secrets and variables → Actions → Variables).
+
+   Until then, tag pushes still build sdist/wheel and attach them to the
+   GitHub Release, so `pip install` from the release asset works.
 
 ## Release steps
 
@@ -59,10 +67,11 @@ admin. Until they are done, the corresponding pipeline fails:
    GitHub Release for the tag. The desktop matrix (2× macOS, Linux, Windows)
    is the slowest leg.
 5. Verify:
-   - `pip install prompt-anonymizer==<ver>` works.
    - The GitHub Release lists wheel/sdist, web zip, extension zip, and
      desktop bundles for all four targets.
    - The Pages site serves the latest `main`.
+   - (Only if PyPI publishing is enabled)
+     `pip install prompt-anonymizer==<ver>` works.
 
 ## After the release
 
