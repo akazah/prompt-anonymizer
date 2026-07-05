@@ -17,7 +17,7 @@ jobs:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
         os: [ubuntu-latest]
         include:
-          - python-version: "3.12"
+          - python-version: "3.13"
             os: macos-latest
     runs-on: ${{ matrix.os }}
     env:
@@ -25,10 +25,10 @@ jobs:
       # (overrides .python-version).
       UV_PYTHON: ${{ matrix.python-version }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v8
         with:
           # Caches downloaded wheels, including the spaCy model wheels
           # locked in the `models` dependency group.
@@ -55,15 +55,15 @@ jobs:
   web:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           package_json_file: web/package.json
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
           cache-dependency-path: web/pnpm-lock.yaml
 

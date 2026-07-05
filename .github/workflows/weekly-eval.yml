@@ -9,9 +9,9 @@ jobs:
   eval:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: astral-sh/setup-uv@v5
+      - uses: astral-sh/setup-uv@v8
         with:
           enable-cache: true
 
@@ -24,7 +24,7 @@ jobs:
       - name: Full evaluation (lg models)
         run: uv run python -m prompt_anonymizer.evals --model-size lg --output eval-lg.md
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: eval-report
           path: eval-lg.md
