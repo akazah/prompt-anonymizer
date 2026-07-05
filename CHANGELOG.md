@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- **BREAKING**: minimum supported Python is now 3.12 (was 3.10). Python 3.10
+  reaches EOL in October 2026 and 3.11 is in security-only maintenance; new
+  installs should use 3.12+. Anonymization behavior and the label format are
+  unchanged.
 - Toolchain modernization (no behavior or label-format changes):
   - Web: TypeScript 5.7 -> 6.0, Vite 6 -> 8 (Rolldown), Vitest 3 -> 4,
     transformers.js 3.x -> 4.x (new WebGPU runtime; same `pipeline` API),
