@@ -1,0 +1,28 @@
+{
+  "name": "@prompt-anonymizer/core",
+  "version": "0.2.0",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Browser-first core (regex recognizers + transformers.js NER).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}

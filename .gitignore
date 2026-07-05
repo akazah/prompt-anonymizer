@@ -159,11 +159,18 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# lockfile
-poetry.lock
-
 # pylight config
 pyrightconfig.json
 
 # vscode
 .vscode/
+
+# node / web workspace
+node_modules/
+web/**/dist/
+web/apps/desktop/src-tauri/target/
+web/apps/desktop/src-tauri/gen/
+*.tsbuildinfo
+
+# demo build artifacts (GIFs are committed; intermediates are not)
+demo/out/

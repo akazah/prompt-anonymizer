@@ -1,0 +1,7206 @@
+[
+ {
+  "id": "ja-0000",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。斎藤 さゆりと申します。来月の打ち合わせについて相談させてください。会場は埼玉県西多摩郡檜原村鍛冶ケ沢6丁目21番17号 パレス外神田066を予定しています。連絡先は 0120-440-721、メールは nakajimakumiko@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "斎藤 さゆり"
+   },
+   {
+    "start": 49,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "埼玉県西多摩郡檜原村鍛冶ケ沢6丁目21番17号 パレス外神田066"
+   },
+   {
+    "start": 96,
+    "end": 108,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-440-721"
+   },
+   {
+    "start": 114,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nakajimakumiko@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0001",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 吉田 治、小林 陽一。次回会場の住所は 〒341-2801 鳥取県横浜市栄区西浅草25丁目1番17号 百村ハイツ093。決定事項: 資料は qyamaguchi@example.org へ送付する。担当者直通は 03-8273-2216。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "吉田 治"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "小林 陽一"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒341-2801"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "鳥取県横浜市栄区西浅草25丁目1番17号 百村ハイツ093"
+   },
+   {
+    "start": 80,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qyamaguchi@example.org"
+   },
+   {
+    "start": 116,
+    "end": 128,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8273-2216"
+   }
+  ]
+ },
+ {
+  "id": "ja-0002",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 千代 様、ご住所は 徳島県西東京市千束23丁目27番9号 で間違いないでしょうか。折り返しは 090-7633-3726 までお願いします。控えは satoyuta@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山本 千代"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "徳島県西東京市千束23丁目27番9号"
+   },
+   {
+    "start": 76,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-7633-3726"
+   },
+   {
+    "start": 103,
+    "end": 123,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "satoyuta@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0003",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 香織と申します。来月の打ち合わせについて相談させてください。会場は青森県富津市千塚40丁目21番3号 勝どきハイツ026を予定しています。連絡先は 0120-190-740、メールは sotaro05@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "鈴木 香織"
+   },
+   {
+    "start": 48,
+    "end": 75,
+    "entity_type": "LOCATION",
+    "value": "青森県富津市千塚40丁目21番3号 勝どきハイツ026"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-190-740"
+   },
+   {
+    "start": 107,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sotaro05@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0004",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 山田 修平、山田 健一。次回会場の住所は 〒485-7551 福岡県横浜市港南区花川戸31丁目3番15号 コーポ上高野232。決定事項: 資料は ryohei20@example.org へ送付する。担当者直通は 03-3929-1145。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "山田 修平"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "山田 健一"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒485-7551"
+   },
+   {
+    "start": 41,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "福岡県横浜市港南区花川戸31丁目3番15号 コーポ上高野232"
+   },
+   {
+    "start": 83,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ryohei20@example.org"
+   },
+   {
+    "start": 117,
+    "end": 129,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3929-1145"
+   }
+  ]
+ },
+ {
+  "id": "ja-0005",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐々木 和也 様、ご住所は 高知県羽村市丹勢4丁目27番20号 で間違いないでしょうか。折り返しは 0120-210-539 までお願いします。控えは yamadayuta@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "佐々木 和也"
+   },
+   {
+    "start": 40,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "高知県羽村市丹勢4丁目27番20号"
+   },
+   {
+    "start": 76,
+    "end": 88,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-210-539"
+   },
+   {
+    "start": 102,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yamadayuta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0006",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。藤井 拓真と申します。来月の打ち合わせについて相談させてください。会場は三重県横浜市南区木立41丁目17番18号 百村クレスト813を予定しています。連絡先は 0120-198-487、メールは saoki@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "藤井 拓真"
+   },
+   {
+    "start": 48,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "三重県横浜市南区木立41丁目17番18号 百村クレスト813"
+   },
+   {
+    "start": 92,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-198-487"
+   },
+   {
+    "start": 110,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "saoki@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0007",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 鈴木 香織、山口 翼。次回会場の住所は 〒144-8593 大阪府横浜市磯子区氏家38丁目14番7号 シティ南郷屋221。決定事項: 資料は etakahashi@example.net へ送付する。担当者直通は 0120-421-356。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "鈴木 香織"
+   },
+   {
+    "start": 16,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "山口 翼"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒144-8593"
+   },
+   {
+    "start": 40,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "大阪府横浜市磯子区氏家38丁目14番7号 シティ南郷屋221"
+   },
+   {
+    "start": 81,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "etakahashi@example.net"
+   },
+   {
+    "start": 117,
+    "end": 129,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-421-356"
+   }
+  ]
+ },
+ {
+  "id": "ja-0008",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 桃子 様、ご住所は 奈良県川崎市宮前区高輪38丁目1番14号 一ツ橋シャルム075 で間違いないでしょうか。折り返しは 03-9231-7257 までお願いします。控えは maedamanabu@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山本 桃子"
+   },
+   {
+    "start": 39,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "奈良県川崎市宮前区高輪38丁目1番14号 一ツ橋シャルム075"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9231-7257"
+   },
+   {
+    "start": 115,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maedamanabu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0009",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。阿部 零と申します。来月の打ち合わせについて相談させてください。会場は熊本県小平市柿木沢新田29丁目26番20号 コート太田ヶ谷815を予定しています。連絡先は 0120-917-769、メールは pyamazaki@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "阿部 零"
+   },
+   {
+    "start": 47,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "熊本県小平市柿木沢新田29丁目26番20号 コート太田ヶ谷815"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-917-769"
+   },
+   {
+    "start": 111,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pyamazaki@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0010",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 鈴木 浩、小林 里佳。次回会場の住所は 〒417-5948 北海道横浜市鶴見区平河町8丁目7番19号。決定事項: 資料は uyoshida@example.org へ送付する。担当者直通は 080-1348-4812。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "鈴木 浩"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "小林 里佳"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒417-5948"
+   },
+   {
+    "start": 40,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "北海道横浜市鶴見区平河町8丁目7番19号"
+   },
+   {
+    "start": 71,
+    "end": 91,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "uyoshida@example.org"
+   },
+   {
+    "start": 105,
+    "end": 118,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-1348-4812"
+   }
+  ]
+ },
+ {
+  "id": "ja-0011",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 伊藤 学 様、ご住所は 静岡県横浜市旭区藤金13丁目13番10号 シティ柿木沢新田856 で間違いないでしょうか。折り返しは 070-4330-2096 までお願いします。控えは naotoyamamoto@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "伊藤 学"
+   },
+   {
+    "start": 38,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "静岡県横浜市旭区藤金13丁目13番10号 シティ柿木沢新田856"
+   },
+   {
+    "start": 89,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-4330-2096"
+   },
+   {
+    "start": 116,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naotoyamamoto@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0012",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。高橋 あすかと申します。来月の打ち合わせについて相談させてください。会場は熊本県山武郡芝山町押上12丁目1番4号を予定しています。連絡先は 0120-474-459、メールは gsakamoto@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "高橋 あすか"
+   },
+   {
+    "start": 49,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "熊本県山武郡芝山町押上12丁目1番4号"
+   },
+   {
+    "start": 82,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-474-459"
+   },
+   {
+    "start": 100,
+    "end": 121,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gsakamoto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0013",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 石川 直子、加藤 陽一。次回会場の住所は 〒215-8433 富山県我孫子市平河町7丁目23番17号。決定事項: 資料は fyamamoto@example.net へ送付する。担当者直通は 03-5386-8454。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "石川 直子"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "加藤 陽一"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒215-8433"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "富山県我孫子市平河町7丁目23番17号"
+   },
+   {
+    "start": 71,
+    "end": 92,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fyamamoto@example.net"
+   },
+   {
+    "start": 106,
+    "end": 118,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-5386-8454"
+   }
+  ]
+ },
+ {
+  "id": "ja-0014",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 里佳 様、ご住所は 青森県世田谷区中三依5丁目11番3号 今戸パーク785 で間違いないでしょうか。折り返しは 090-6851-3513 までお願いします。控えは suzukimikako@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山本 里佳"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "青森県世田谷区中三依5丁目11番3号 今戸パーク785"
+   },
+   {
+    "start": 85,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-6851-3513"
+   },
+   {
+    "start": 112,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzukimikako@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0015",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。山本 英樹と申します。来月の打ち合わせについて相談させてください。会場は茨城県荒川区卯の里31丁目6番3号を予定しています。連絡先は 03-3312-1519、メールは takahashijun@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "山本 英樹"
+   },
+   {
+    "start": 48,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "茨城県荒川区卯の里31丁目6番3号"
+   },
+   {
+    "start": 79,
+    "end": 91,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3312-1519"
+   },
+   {
+    "start": 97,
+    "end": 121,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takahashijun@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0016",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 福田 充、田中 幹。次回会場の住所は 〒778-4771 山形県福生市中鉢石町42丁目10番20号。決定事項: 資料は osaito@example.org へ送付する。担当者直通は 03-1405-1727。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "福田 充"
+   },
+   {
+    "start": 15,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "田中 幹"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒778-4771"
+   },
+   {
+    "start": 39,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "山形県福生市中鉢石町42丁目10番20号"
+   },
+   {
+    "start": 70,
+    "end": 88,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osaito@example.org"
+   },
+   {
+    "start": 102,
+    "end": 114,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1405-1727"
+   }
+  ]
+ },
+ {
+  "id": "ja-0017",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 藤田 浩 様、ご住所は 石川県川崎市川崎区上高野39丁目9番10号 秋葉原シャルム534 で間違いないでしょうか。折り返しは 0120-765-863 までお願いします。控えは mikako19@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "藤田 浩"
+   },
+   {
+    "start": 38,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "石川県川崎市川崎区上高野39丁目9番10号 秋葉原シャルム534"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-765-863"
+   },
+   {
+    "start": 115,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikako19@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0018",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。伊藤 春香と申します。来月の打ち合わせについて相談させてください。会場は茨城県横浜市戸塚区東大和町34丁目1番4号を予定しています。連絡先は 03-2131-5885、メールは watanaberyosuke@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "伊藤 春香"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "茨城県横浜市戸塚区東大和町34丁目1番4号"
+   },
+   {
+    "start": 83,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2131-5885"
+   },
+   {
+    "start": 101,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "watanaberyosuke@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0019",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 小林 直樹、佐藤 加奈。次回会場の住所は 〒305-4341 岐阜県印旛郡酒々井町三ノ輪19丁目9番8号。決定事項: 資料は osamusakamoto@example.com へ送付する。担当者直通は 03-3654-8431。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "小林 直樹"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "佐藤 加奈"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒305-4341"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "LOCATION",
+    "value": "岐阜県印旛郡酒々井町三ノ輪19丁目9番8号"
+   },
+   {
+    "start": 73,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osamusakamoto@example.com"
+   },
+   {
+    "start": 112,
+    "end": 124,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3654-8431"
+   }
+  ]
+ },
+ {
+  "id": "ja-0020",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 小林 智也 様、ご住所は 青森県羽村市中小来川42丁目24番6号 大中コート304 で間違いないでしょうか。折り返しは 03-3176-4057 までお願いします。控えは sotaro23@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "小林 智也"
+   },
+   {
+    "start": 39,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "青森県羽村市中小来川42丁目24番6号 大中コート304"
+   },
+   {
+    "start": 86,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3176-4057"
+   },
+   {
+    "start": 112,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sotaro23@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0021",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 学と申します。来月の打ち合わせについて相談させてください。会場は神奈川県印西市虎ノ門虎ノ門ヒルズ森タワー39丁目26番9号 コート神明内240を予定しています。連絡先は 070-1255-9386、メールは nkato@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "鈴木 学"
+   },
+   {
+    "start": 47,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "神奈川県印西市虎ノ門虎ノ門ヒルズ森タワー39丁目26番9号 コート神明内240"
+   },
+   {
+    "start": 100,
+    "end": 113,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-1255-9386"
+   },
+   {
+    "start": 119,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nkato@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0022",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 藤原 太一、田中 修平。次回会場の住所は 〒892-7481 鳥取県横浜市青葉区鳥越25丁目16番1号 浅草橋パーク655。決定事項: 資料は kobayashikyosuke@example.com へ送付する。担当者直通は 03-3147-4136。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "藤原 太一"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "田中 修平"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒892-7481"
+   },
+   {
+    "start": 41,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "鳥取県横浜市青葉区鳥越25丁目16番1号 浅草橋パーク655"
+   },
+   {
+    "start": 82,
+    "end": 110,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashikyosuke@example.com"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3147-4136"
+   }
+  ]
+ },
+ {
+  "id": "ja-0023",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 松田 裕美子 様、ご住所は 島根県八丈島八丈町西神田8丁目1番20号 コート台東124 で間違いないでしょうか。折り返しは 070-3661-2358 までお願いします。控えは yumiko93@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "松田 裕美子"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "島根県八丈島八丈町西神田8丁目1番20号 コート台東124"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-3661-2358"
+   },
+   {
+    "start": 115,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yumiko93@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0024",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。橋本 桃子と申します。来月の打ち合わせについて相談させてください。会場は宮城県北区蟇沼11丁目23番7号 氏家シティ614を予定しています。連絡先は 03-1373-4106、メールは mikako62@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "橋本 桃子"
+   },
+   {
+    "start": 48,
+    "end": 73,
+    "entity_type": "LOCATION",
+    "value": "宮城県北区蟇沼11丁目23番7号 氏家シティ614"
+   },
+   {
+    "start": 87,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1373-4106"
+   },
+   {
+    "start": 105,
+    "end": 125,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikako62@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0025",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 岡田 充、中村 修平。次回会場の住所は 〒333-1035 茨城県立川市睦26丁目20番11号。決定事項: 資料は shota03@example.net へ送付する。担当者直通は 03-7033-2799。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "岡田 充"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "中村 修平"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒333-1035"
+   },
+   {
+    "start": 40,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "茨城県立川市睦26丁目20番11号"
+   },
+   {
+    "start": 68,
+    "end": 87,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shota03@example.net"
+   },
+   {
+    "start": 101,
+    "end": 113,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7033-2799"
+   }
+  ]
+ },
+ {
+  "id": "ja-0026",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐藤 翔太 様、ご住所は 岡山県中央区千塚8丁目5番3号 で間違いないでしょうか。折り返しは 090-2567-8808 までお願いします。控えは takahashisatomi@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "佐藤 翔太"
+   },
+   {
+    "start": 39,
+    "end": 54,
+    "entity_type": "LOCATION",
+    "value": "岡山県中央区千塚8丁目5番3号"
+   },
+   {
+    "start": 73,
+    "end": 86,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-2567-8808"
+   },
+   {
+    "start": 100,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takahashisatomi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0027",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。木村 香織と申します。来月の打ち合わせについて相談させてください。会場は山形県西多摩郡奥多摩町日光31丁目27番11号 シャルム無栗屋984を予定しています。連絡先は 0120-929-533、メールは moriminoru@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "木村 香織"
+   },
+   {
+    "start": 48,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "山形県西多摩郡奥多摩町日光31丁目27番11号 シャルム無栗屋984"
+   },
+   {
+    "start": 96,
+    "end": 108,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-929-533"
+   },
+   {
+    "start": 114,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "moriminoru@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0028",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 渡辺 七夏、阿部 篤司。次回会場の住所は 〒476-4292 長崎県江戸川区戸塚町23丁目13番8号 高輪クレスト963。決定事項: 資料は fendo@example.com へ送付する。担当者直通は 03-4079-7578。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "渡辺 七夏"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "阿部 篤司"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒476-4292"
+   },
+   {
+    "start": 41,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "長崎県江戸川区戸塚町23丁目13番8号 高輪クレスト963"
+   },
+   {
+    "start": 81,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fendo@example.com"
+   },
+   {
+    "start": 112,
+    "end": 124,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4079-7578"
+   }
+  ]
+ },
+ {
+  "id": "ja-0029",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 石井 陽子 様、ご住所は 宮城県横浜市都筑区大京町5丁目3番12号 で間違いないでしょうか。折り返しは 0120-622-891 までお願いします。控えは kaori69@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "石井 陽子"
+   },
+   {
+    "start": 39,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "宮城県横浜市都筑区大京町5丁目3番12号"
+   },
+   {
+    "start": 78,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-622-891"
+   },
+   {
+    "start": 104,
+    "end": 123,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kaori69@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0030",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。石川 くみ子と申します。来月の打ち合わせについて相談させてください。会場は長崎県横浜市泉区外国府間2丁目13番20号を予定しています。連絡先は 03-9256-8898、メールは yukinakamura@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "石川 くみ子"
+   },
+   {
+    "start": 49,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "長崎県横浜市泉区外国府間2丁目13番20号"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9256-8898"
+   },
+   {
+    "start": 102,
+    "end": 126,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yukinakamura@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0031",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 阿部 真綾、鈴木 里佳。次回会場の住所は 〒353-6232 石川県君津市前弥六39丁目27番13号 コーポ芝大門933。決定事項: 資料は lnakamura@example.org へ送付する。担当者直通は 0120-187-843。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "阿部 真綾"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "鈴木 里佳"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒353-6232"
+   },
+   {
+    "start": 41,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "石川県君津市前弥六39丁目27番13号 コーポ芝大門933"
+   },
+   {
+    "start": 81,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lnakamura@example.org"
+   },
+   {
+    "start": 116,
+    "end": 128,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-187-843"
+   }
+  ]
+ },
+ {
+  "id": "ja-0032",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 岡本 裕樹 様、ご住所は 埼玉県川崎市宮前区明石町32丁目22番12号 ハイツ横林866 で間違いないでしょうか。折り返しは 070-1839-9422 までお願いします。控えは rei05@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "岡本 裕樹"
+   },
+   {
+    "start": 39,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "埼玉県川崎市宮前区明石町32丁目22番12号 ハイツ横林866"
+   },
+   {
+    "start": 89,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-1839-9422"
+   },
+   {
+    "start": 116,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rei05@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0033",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。福田 あすかと申します。来月の打ち合わせについて相談させてください。会場は福井県中央区轟32丁目26番5号 アーバン幸手061を予定しています。連絡先は 03-3392-5049、メールは harukafujiwara@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "福田 あすか"
+   },
+   {
+    "start": 49,
+    "end": 75,
+    "entity_type": "LOCATION",
+    "value": "福井県中央区轟32丁目26番5号 アーバン幸手061"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3392-5049"
+   },
+   {
+    "start": 107,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "harukafujiwara@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0034",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 高橋 翼、伊藤 陽子。次回会場の住所は 〒949-3561 宮崎県印西市中小来川14丁目12番9号 土呂部パレス892。決定事項: 資料は hayashinaoto@example.com へ送付する。担当者直通は 0120-729-525。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "高橋 翼"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "伊藤 陽子"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒949-3561"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "宮崎県印西市中小来川14丁目12番9号 土呂部パレス892"
+   },
+   {
+    "start": 80,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hayashinaoto@example.com"
+   },
+   {
+    "start": 118,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-729-525"
+   }
+  ]
+ },
+ {
+  "id": "ja-0035",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 小林 修平 様、ご住所は 千葉県羽村市花島22丁目21番1号 シティ今戸477 で間違いないでしょうか。折り返しは 0120-527-901 までお願いします。控えは yoichi38@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "小林 修平"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "千葉県羽村市花島22丁目21番1号 シティ今戸477"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-527-901"
+   },
+   {
+    "start": 110,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoichi38@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0036",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 和也と申します。来月の打ち合わせについて相談させてください。会場は茨城県八千代市入谷33丁目16番12号を予定しています。連絡先は 080-3425-3880、メールは asukakondo@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "鈴木 和也"
+   },
+   {
+    "start": 48,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "茨城県八千代市入谷33丁目16番12号"
+   },
+   {
+    "start": 81,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-3425-3880"
+   },
+   {
+    "start": 100,
+    "end": 122,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "asukakondo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0037",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 小林 真綾、池田 洋介。次回会場の住所は 〒400-8237 宮城県印旛郡印旛村北上野29丁目10番18号。決定事項: 資料は kumiko82@example.net へ送付する。担当者直通は 03-9416-1193。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "小林 真綾"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "池田 洋介"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒400-8237"
+   },
+   {
+    "start": 41,
+    "end": 63,
+    "entity_type": "LOCATION",
+    "value": "宮城県印旛郡印旛村北上野29丁目10番18号"
+   },
+   {
+    "start": 74,
+    "end": 94,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kumiko82@example.net"
+   },
+   {
+    "start": 108,
+    "end": 120,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9416-1193"
+   }
+  ]
+ },
+ {
+  "id": "ja-0038",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 斎藤 智也 様、ご住所は 埼玉県白井市鳥越25丁目23番5号 独鈷沢パレス160 で間違いないでしょうか。折り返しは 03-2647-2540 までお願いします。控えは momokoikeda@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "斎藤 智也"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "埼玉県白井市鳥越25丁目23番5号 独鈷沢パレス160"
+   },
+   {
+    "start": 85,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2647-2540"
+   },
+   {
+    "start": 111,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "momokoikeda@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0039",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。加藤 浩と申します。来月の打ち合わせについて相談させてください。会場は石川県長生郡白子町芝大門27丁目26番19号 パーク筑土八幡町055を予定しています。連絡先は 03-8201-7595、メールは suzukinaoko@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "加藤 浩"
+   },
+   {
+    "start": 47,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "石川県長生郡白子町芝大門27丁目26番19号 パーク筑土八幡町055"
+   },
+   {
+    "start": 95,
+    "end": 107,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8201-7595"
+   },
+   {
+    "start": 113,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzukinaoko@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0040",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 佐藤 太郎、阿部 舞。次回会場の住所は 〒609-5504 秋田県横浜市旭区東浅草6丁目25番16号 長畑パーク176。決定事項: 資料は kobayashirei@example.com へ送付する。担当者直通は 0120-537-438。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "佐藤 太郎"
+   },
+   {
+    "start": 16,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "阿部 舞"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒609-5504"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "秋田県横浜市旭区東浅草6丁目25番16号 長畑パーク176"
+   },
+   {
+    "start": 80,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashirei@example.com"
+   },
+   {
+    "start": 118,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-537-438"
+   }
+  ]
+ },
+ {
+  "id": "ja-0041",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 伊藤 知実 様、ご住所は 東京都目黒区元浅草12丁目14番9号 で間違いないでしょうか。折り返しは 090-8430-6875 までお願いします。控えは cshimizu@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "伊藤 知実"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "東京都目黒区元浅草12丁目14番9号"
+   },
+   {
+    "start": 76,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-8430-6875"
+   },
+   {
+    "start": 103,
+    "end": 123,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cshimizu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0042",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。青木 拓真と申します。来月の打ち合わせについて相談させてください。会場は京都府横浜市泉区湯宮33丁目19番2号を予定しています。連絡先は 0120-114-303、メールは fujitaatsushi@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "青木 拓真"
+   },
+   {
+    "start": 48,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "京都府横浜市泉区湯宮33丁目19番2号"
+   },
+   {
+    "start": 81,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-114-303"
+   },
+   {
+    "start": 99,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fujitaatsushi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0043",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 高橋 幹、伊藤 幹。次回会場の住所は 〒905-4012 岐阜県小金井市神明内32丁目24番15号 シャルム百村896。決定事項: 資料は taroyamaguchi@example.net へ送付する。担当者直通は 0120-347-688。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "高橋 幹"
+   },
+   {
+    "start": 15,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "伊藤 幹"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒905-4012"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "岐阜県小金井市神明内32丁目24番15号 シャルム百村896"
+   },
+   {
+    "start": 80,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taroyamaguchi@example.net"
+   },
+   {
+    "start": 119,
+    "end": 131,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-347-688"
+   }
+  ]
+ },
+ {
+  "id": "ja-0044",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐藤 洋介 様、ご住所は 三重県武蔵村山市中川崎41丁目4番15号 で間違いないでしょうか。折り返しは 03-5402-5769 までお願いします。控えは hideki71@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "佐藤 洋介"
+   },
+   {
+    "start": 39,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "三重県武蔵村山市中川崎41丁目4番15号"
+   },
+   {
+    "start": 78,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-5402-5769"
+   },
+   {
+    "start": 104,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hideki71@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0045",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。吉田 京助と申します。来月の打ち合わせについて相談させてください。会場は静岡県千代田区台東22丁目6番8号 クレスト雷門450を予定しています。連絡先は 080-4811-2680、メールは yuta14@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "吉田 京助"
+   },
+   {
+    "start": 48,
+    "end": 75,
+    "entity_type": "LOCATION",
+    "value": "静岡県千代田区台東22丁目6番8号 クレスト雷門450"
+   },
+   {
+    "start": 89,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-4811-2680"
+   },
+   {
+    "start": 108,
+    "end": 126,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yuta14@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0046",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 林 くみ子、近藤 千代。次回会場の住所は 〒534-4941 神奈川県小笠原村池之端1丁目1番10号 下吉羽ハイツ858。決定事項: 資料は nyoshida@example.net へ送付する。担当者直通は 03-8773-7154。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "林 くみ子"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "近藤 千代"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒534-4941"
+   },
+   {
+    "start": 41,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "神奈川県小笠原村池之端1丁目1番10号 下吉羽ハイツ858"
+   },
+   {
+    "start": 81,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nyoshida@example.net"
+   },
+   {
+    "start": 115,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8773-7154"
+   }
+  ]
+ },
+ {
+  "id": "ja-0047",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 坂本 直人 様、ご住所は 東京都八王子市脚折30丁目3番5号 で間違いないでしょうか。折り返しは 0120-353-197 までお願いします。控えは naoko88@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "坂本 直人"
+   },
+   {
+    "start": 39,
+    "end": 56,
+    "entity_type": "LOCATION",
+    "value": "東京都八王子市脚折30丁目3番5号"
+   },
+   {
+    "start": 75,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-353-197"
+   },
+   {
+    "start": 101,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naoko88@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0048",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。高橋 淳と申します。来月の打ち合わせについて相談させてください。会場は岐阜県長生郡長南町虎ノ門虎ノ門ヒルズ森タワー22丁目1番11号を予定しています。連絡先は 070-4008-4607、メールは nyamamoto@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "高橋 淳"
+   },
+   {
+    "start": 47,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "岐阜県長生郡長南町虎ノ門虎ノ門ヒルズ森タワー22丁目1番11号"
+   },
+   {
+    "start": 92,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-4008-4607"
+   },
+   {
+    "start": 111,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nyamamoto@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0049",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 加藤 涼平、岡本 稔。次回会場の住所は 〒280-5173 香川県品川区中鉢石町18丁目8番7号 猿楽町クレスト824。決定事項: 資料は kyosuke15@example.com へ送付する。担当者直通は 0120-630-829。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "加藤 涼平"
+   },
+   {
+    "start": 16,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "岡本 稔"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒280-5173"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "香川県品川区中鉢石町18丁目8番7号 猿楽町クレスト824"
+   },
+   {
+    "start": 80,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kyosuke15@example.com"
+   },
+   {
+    "start": 115,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-630-829"
+   }
+  ]
+ },
+ {
+  "id": "ja-0050",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 近藤 結衣 様、ご住所は 兵庫県世田谷区入谷28丁目4番3号 コーポ渡辺454 で間違いないでしょうか。折り返しは 03-6812-6613 までお願いします。控えは syamada@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "近藤 結衣"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "兵庫県世田谷区入谷28丁目4番3号 コーポ渡辺454"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6812-6613"
+   },
+   {
+    "start": 110,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "syamada@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0051",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。木村 太一と申します。来月の打ち合わせについて相談させてください。会場は秋田県武蔵村山市大中20丁目25番20号 ハイツ細竹786を予定しています。連絡先は 080-6082-7842、メールは mikifukuda@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "木村 太一"
+   },
+   {
+    "start": 48,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "秋田県武蔵村山市大中20丁目25番20号 ハイツ細竹786"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-6082-7842"
+   },
+   {
+    "start": 110,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikifukuda@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0052",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 中村 美加子、遠藤 修平。次回会場の住所は 〒644-6969 沖縄県台東区独鈷沢19丁目21番18号 コーポ五味ヶ谷916。決定事項: 資料は takahashisotaro@example.net へ送付する。担当者直通は 0120-787-531。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "中村 美加子"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "遠藤 修平"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒644-6969"
+   },
+   {
+    "start": 42,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "沖縄県台東区独鈷沢19丁目21番18号 コーポ五味ヶ谷916"
+   },
+   {
+    "start": 83,
+    "end": 110,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takahashisotaro@example.net"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-787-531"
+   }
+  ]
+ },
+ {
+  "id": "ja-0053",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 藤原 陽一 様、ご住所は 山口県山武市西神田19丁目1番6号 南郷屋ハイツ442 で間違いないでしょうか。折り返しは 03-7794-3556 までお願いします。控えは manabukobayashi@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "藤原 陽一"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "山口県山武市西神田19丁目1番6号 南郷屋ハイツ442"
+   },
+   {
+    "start": 85,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7794-3556"
+   },
+   {
+    "start": 111,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "manabukobayashi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0054",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。高橋 直樹と申します。来月の打ち合わせについて相談させてください。会場は兵庫県横浜市緑区富久町13丁目14番6号を予定しています。連絡先は 03-6281-2642、メールは katoshohei@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "高橋 直樹"
+   },
+   {
+    "start": 48,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "兵庫県横浜市緑区富久町13丁目14番6号"
+   },
+   {
+    "start": 82,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6281-2642"
+   },
+   {
+    "start": 100,
+    "end": 122,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "katoshohei@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0055",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 山口 晃、山口 花子。次回会場の住所は 〒283-3851 鹿児島県横浜市中区浅草14丁目18番17号。決定事項: 資料は miki59@example.net へ送付する。担当者直通は 090-2379-4517。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "山口 晃"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "山口 花子"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒283-3851"
+   },
+   {
+    "start": 40,
+    "end": 61,
+    "entity_type": "LOCATION",
+    "value": "鹿児島県横浜市中区浅草14丁目18番17号"
+   },
+   {
+    "start": 72,
+    "end": 90,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "miki59@example.net"
+   },
+   {
+    "start": 104,
+    "end": 117,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-2379-4517"
+   }
+  ]
+ },
+ {
+  "id": "ja-0056",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 加藤 亮介 様、ご住所は 山形県足立区無栗屋9丁目1番12号 細竹パーク775 で間違いないでしょうか。折り返しは 070-5292-3780 までお願いします。控えは takumaabe@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "加藤 亮介"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "山形県足立区無栗屋9丁目1番12号 細竹パーク775"
+   },
+   {
+    "start": 84,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-5292-3780"
+   },
+   {
+    "start": 111,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takumaabe@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0057",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。松本 太一と申します。来月の打ち合わせについて相談させてください。会場は佐賀県横浜市栄区四番町1丁目2番8号を予定しています。連絡先は 03-8112-5737、メールは suzukishota@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "松本 太一"
+   },
+   {
+    "start": 48,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "佐賀県横浜市栄区四番町1丁目2番8号"
+   },
+   {
+    "start": 80,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8112-5737"
+   },
+   {
+    "start": 98,
+    "end": 121,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzukishota@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0058",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 斎藤 あすか、前田 直人。次回会場の住所は 〒108-6504 鹿児島県長生郡睦沢町台場10丁目5番4号 虎ノ門虎ノ門ヒルズ森タワーパレス705。決定事項: 資料は cyamashita@example.net へ送付する。担当者直通は 0120-200-340。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "斎藤 あすか"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "前田 直人"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒108-6504"
+   },
+   {
+    "start": 42,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "鹿児島県長生郡睦沢町台場10丁目5番4号 虎ノ門虎ノ門ヒルズ森タワーパレス705"
+   },
+   {
+    "start": 93,
+    "end": 115,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cyamashita@example.net"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-200-340"
+   }
+  ]
+ },
+ {
+  "id": "ja-0059",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 中村 淳 様、ご住所は 長野県夷隅郡大多喜町竜泉40丁目14番12号 で間違いないでしょうか。折り返しは 090-9628-5301 までお願いします。控えは atsushiito@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "中村 淳"
+   },
+   {
+    "start": 38,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "長野県夷隅郡大多喜町竜泉40丁目14番12号"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-9628-5301"
+   },
+   {
+    "start": 106,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "atsushiito@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0060",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。池田 幹と申します。来月の打ち合わせについて相談させてください。会場は長野県横浜市港北区天神島23丁目24番1号を予定しています。連絡先は 0120-929-759、メールは kumikoyoshida@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "池田 幹"
+   },
+   {
+    "start": 47,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "長野県横浜市港北区天神島23丁目24番1号"
+   },
+   {
+    "start": 82,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-929-759"
+   },
+   {
+    "start": 100,
+    "end": 125,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kumikoyoshida@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0061",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 高橋 花子、橋本 拓真。次回会場の住所は 〒187-5907 三重県横浜市鶴見区轟18丁目17番12号 小入クレスト182。決定事項: 資料は miki69@example.net へ送付する。担当者直通は 070-7327-2302。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "高橋 花子"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "橋本 拓真"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒187-5907"
+   },
+   {
+    "start": 41,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "三重県横浜市鶴見区轟18丁目17番12号 小入クレスト182"
+   },
+   {
+    "start": 82,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "miki69@example.net"
+   },
+   {
+    "start": 114,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-7327-2302"
+   }
+  ]
+ },
+ {
+  "id": "ja-0062",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 小川 桃子 様、ご住所は 愛知県墨田区猿楽町20丁目9番10号 パーク睦360 で間違いないでしょうか。折り返しは 03-1267-7289 までお願いします。控えは shoheiendo@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "小川 桃子"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "愛知県墨田区猿楽町20丁目9番10号 パーク睦360"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1267-7289"
+   },
+   {
+    "start": 110,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shoheiendo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0063",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。村上 陽一と申します。来月の打ち合わせについて相談させてください。会場は群馬県長生郡長南町白金台29丁目7番12号 長間ハイツ736を予定しています。連絡先は 080-2369-8557、メールは fwatanabe@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "村上 陽一"
+   },
+   {
+    "start": 48,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "群馬県長生郡長南町白金台29丁目7番12号 長間ハイツ736"
+   },
+   {
+    "start": 92,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-2369-8557"
+   },
+   {
+    "start": 111,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fwatanabe@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0064",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 森 充、池田 裕太。次回会場の住所は 〒326-6193 奈良県山武郡横芝光町大京町25丁目24番15号。決定事項: 資料は naoto84@example.org へ送付する。担当者直通は 03-9489-6841。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "森 充"
+   },
+   {
+    "start": 14,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "池田 裕太"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒326-6193"
+   },
+   {
+    "start": 39,
+    "end": 62,
+    "entity_type": "LOCATION",
+    "value": "奈良県山武郡横芝光町大京町25丁目24番15号"
+   },
+   {
+    "start": 73,
+    "end": 92,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naoto84@example.org"
+   },
+   {
+    "start": 106,
+    "end": 118,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9489-6841"
+   }
+  ]
+ },
+ {
+  "id": "ja-0065",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 村上 浩 様、ご住所は 愛知県目黒区三筋40丁目16番18号 で間違いないでしょうか。折り返しは 03-9780-9671 までお願いします。控えは tkimura@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "村上 浩"
+   },
+   {
+    "start": 38,
+    "end": 56,
+    "entity_type": "LOCATION",
+    "value": "愛知県目黒区三筋40丁目16番18号"
+   },
+   {
+    "start": 75,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9780-9671"
+   },
+   {
+    "start": 101,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tkimura@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0066",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。高橋 翔太と申します。来月の打ち合わせについて相談させてください。会場は埼玉県渋谷区卯の里39丁目2番19号 日光シティ914を予定しています。連絡先は 070-3179-1614、メールは suzukiyumiko@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "高橋 翔太"
+   },
+   {
+    "start": 48,
+    "end": 75,
+    "entity_type": "LOCATION",
+    "value": "埼玉県渋谷区卯の里39丁目2番19号 日光シティ914"
+   },
+   {
+    "start": 89,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-3179-1614"
+   },
+   {
+    "start": 108,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzukiyumiko@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0067",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 田中 晃、佐々木 千代。次回会場の住所は 〒290-2199 群馬県荒川区柿木沢新田8丁目14番2号 アーバン前弥六南町171。決定事項: 資料は kyosukenakamura@example.net へ送付する。担当者直通は 03-3717-8701。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "田中 晃"
+   },
+   {
+    "start": 15,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "佐々木 千代"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒290-2199"
+   },
+   {
+    "start": 41,
+    "end": 73,
+    "entity_type": "LOCATION",
+    "value": "群馬県荒川区柿木沢新田8丁目14番2号 アーバン前弥六南町171"
+   },
+   {
+    "start": 84,
+    "end": 111,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kyosukenakamura@example.net"
+   },
+   {
+    "start": 125,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3717-8701"
+   }
+  ]
+ },
+ {
+  "id": "ja-0068",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐藤 千代 様、ご住所は 秋田県小平市外神田24丁目3番13号 で間違いないでしょうか。折り返しは 080-6105-4222 までお願いします。控えは yutamurakami@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "佐藤 千代"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "秋田県小平市外神田24丁目3番13号"
+   },
+   {
+    "start": 76,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-6105-4222"
+   },
+   {
+    "start": 103,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yutamurakami@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0069",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 桃子と申します。来月の打ち合わせについて相談させてください。会場は岩手県西多摩郡日の出町羽折町42丁目22番3号 明石町パーク151を予定しています。連絡先は 0120-282-329、メールは hanako10@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "鈴木 桃子"
+   },
+   {
+    "start": 48,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "岩手県西多摩郡日の出町羽折町42丁目22番3号 明石町パーク151"
+   },
+   {
+    "start": 95,
+    "end": 107,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-282-329"
+   },
+   {
+    "start": 113,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanako10@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0070",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 前田 あすか、松田 拓真。次回会場の住所は 〒709-1592 鳥取県山武郡九十九里町北青山31丁目15番8号。決定事項: 資料は lsuzuki@example.org へ送付する。担当者直通は 090-1704-5615。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "前田 あすか"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "松田 拓真"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒709-1592"
+   },
+   {
+    "start": 42,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "鳥取県山武郡九十九里町北青山31丁目15番8号"
+   },
+   {
+    "start": 76,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lsuzuki@example.org"
+   },
+   {
+    "start": 109,
+    "end": 122,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-1704-5615"
+   }
+  ]
+ },
+ {
+  "id": "ja-0071",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 森 さゆり 様、ご住所は 秋田県杉並区隼町26丁目13番13号 四区町シャルム818 で間違いないでしょうか。折り返しは 090-3837-5420 までお願いします。控えは kobayashimai@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "森 さゆり"
+   },
+   {
+    "start": 39,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "秋田県杉並区隼町26丁目13番13号 四区町シャルム818"
+   },
+   {
+    "start": 87,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-3837-5420"
+   },
+   {
+    "start": 114,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashimai@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0072",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。田中 知実と申します。来月の打ち合わせについて相談させてください。会場は高知県江戸川区皇居外苑31丁目22番6号 松浦町パーク179を予定しています。連絡先は 0120-172-713、メールは owatanabe@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "田中 知実"
+   },
+   {
+    "start": 48,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "高知県江戸川区皇居外苑31丁目22番6号 松浦町パーク179"
+   },
+   {
+    "start": 92,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-172-713"
+   },
+   {
+    "start": 110,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "owatanabe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0073",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 石井 陽一、岡本 裕美子。次回会場の住所は 〒411-8313 広島県荒川区平須賀26丁目2番10号。決定事項: 資料は chiyoyamada@example.org へ送付する。担当者直通は 03-4173-5350。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "石井 陽一"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "岡本 裕美子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒411-8313"
+   },
+   {
+    "start": 42,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "広島県荒川区平須賀26丁目2番10号"
+   },
+   {
+    "start": 71,
+    "end": 94,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chiyoyamada@example.org"
+   },
+   {
+    "start": 108,
+    "end": 120,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4173-5350"
+   }
+  ]
+ },
+ {
+  "id": "ja-0074",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 岡本 充 様、ご住所は 神奈川県大島町日本堤7丁目5番9号 で間違いないでしょうか。折り返しは 03-9396-7127 までお願いします。控えは eabe@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "岡本 充"
+   },
+   {
+    "start": 38,
+    "end": 55,
+    "entity_type": "LOCATION",
+    "value": "神奈川県大島町日本堤7丁目5番9号"
+   },
+   {
+    "start": 74,
+    "end": 86,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9396-7127"
+   },
+   {
+    "start": 100,
+    "end": 116,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eabe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0075",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。後藤 京助と申します。来月の打ち合わせについて相談させてください。会場は静岡県新宿区東上野9丁目24番1号を予定しています。連絡先は 080-7493-4520、メールは ssato@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "後藤 京助"
+   },
+   {
+    "start": 48,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "静岡県新宿区東上野9丁目24番1号"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-7493-4520"
+   },
+   {
+    "start": 98,
+    "end": 115,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ssato@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0076",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 加藤 さゆり、山田 篤司。次回会場の住所は 〒122-5464 京都府世田谷区丹勢5丁目9番15号。決定事項: 資料は momokowatanabe@example.com へ送付する。担当者直通は 03-7353-8950。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "加藤 さゆり"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "山田 篤司"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒122-5464"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "京都府世田谷区丹勢5丁目9番15号"
+   },
+   {
+    "start": 70,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "momokowatanabe@example.com"
+   },
+   {
+    "start": 110,
+    "end": 122,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7353-8950"
+   }
+  ]
+ },
+ {
+  "id": "ja-0077",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 田中 修平 様、ご住所は 群馬県富津市外神田11丁目5番13号 コーポ土沢691 で間違いないでしょうか。折り返しは 03-8147-2691 までお願いします。控えは manabu27@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "田中 修平"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "群馬県富津市外神田11丁目5番13号 コーポ土沢691"
+   },
+   {
+    "start": 85,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8147-2691"
+   },
+   {
+    "start": 111,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "manabu27@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0078",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。山下 直子と申します。来月の打ち合わせについて相談させてください。会場は広島県川崎市川崎区柿木沢26丁目26番16号 パーク月島816を予定しています。連絡先は 0120-112-203、メールは harukawatanabe@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "山下 直子"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "広島県川崎市川崎区柿木沢26丁目26番16号 パーク月島816"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-112-203"
+   },
+   {
+    "start": 111,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "harukawatanabe@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0079",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 松田 京助、長谷川 幹。次回会場の住所は 〒613-5800 奈良県横浜市緑区勝どき3丁目4番1号 大京町クレスト993。決定事項: 資料は hideki35@example.net へ送付する。担当者直通は 0120-599-688。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "松田 京助"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "長谷川 幹"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒613-5800"
+   },
+   {
+    "start": 41,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "奈良県横浜市緑区勝どき3丁目4番1号 大京町クレスト993"
+   },
+   {
+    "start": 81,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hideki35@example.net"
+   },
+   {
+    "start": 115,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-599-688"
+   }
+  ]
+ },
+ {
+  "id": "ja-0080",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 田中 直子 様、ご住所は 神奈川県大田区横林6丁目9番3号 渡辺アーバン870 で間違いないでしょうか。折り返しは 080-2642-9334 までお願いします。控えは kana27@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "田中 直子"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "神奈川県大田区横林6丁目9番3号 渡辺アーバン870"
+   },
+   {
+    "start": 84,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-2642-9334"
+   },
+   {
+    "start": 111,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kana27@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0081",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 修平と申します。来月の打ち合わせについて相談させてください。会場は長崎県長生郡白子町勝どき9丁目20番4号 蟇沼パレス911を予定しています。連絡先は 080-4738-6170、メールは qyamamoto@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "鈴木 修平"
+   },
+   {
+    "start": 48,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "長崎県長生郡白子町勝どき9丁目20番4号 蟇沼パレス911"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-4738-6170"
+   },
+   {
+    "start": 110,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qyamamoto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0082",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 佐藤 真綾、加藤 明美。次回会場の住所は 〒206-7398 神奈川県印旛郡本埜村中川崎29丁目18番2号 パーク入谷180。決定事項: 資料は zkato@example.com へ送付する。担当者直通は 03-5423-4975。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "佐藤 真綾"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "加藤 明美"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒206-7398"
+   },
+   {
+    "start": 41,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "神奈川県印旛郡本埜村中川崎29丁目18番2号 パーク入谷180"
+   },
+   {
+    "start": 83,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zkato@example.com"
+   },
+   {
+    "start": 114,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-5423-4975"
+   }
+  ]
+ },
+ {
+  "id": "ja-0083",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 村上 翔太 様、ご住所は 大分県あきる野市前弥六7丁目15番11号 で間違いないでしょうか。折り返しは 03-8751-7673 までお願いします。控えは matsumotosatomi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "村上 翔太"
+   },
+   {
+    "start": 39,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "大分県あきる野市前弥六7丁目15番11号"
+   },
+   {
+    "start": 78,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8751-7673"
+   },
+   {
+    "start": 104,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "matsumotosatomi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0084",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。佐々木 くみ子と申します。来月の打ち合わせについて相談させてください。会場は富山県長生郡長柄町明石町13丁目2番12号を予定しています。連絡先は 070-4473-8957、メールは shoheinakamura@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "佐々木 くみ子"
+   },
+   {
+    "start": 50,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "富山県長生郡長柄町明石町13丁目2番12号"
+   },
+   {
+    "start": 85,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-4473-8957"
+   },
+   {
+    "start": 104,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shoheinakamura@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0085",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 石井 明美、加藤 舞。次回会場の住所は 〒770-3909 滋賀県川崎市中原区丸の内24丁目27番17号 筑土八幡町コーポ980。決定事項: 資料は naokikato@example.com へ送付する。担当者直通は 0120-139-939。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "石井 明美"
+   },
+   {
+    "start": 16,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "加藤 舞"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒770-3909"
+   },
+   {
+    "start": 40,
+    "end": 74,
+    "entity_type": "LOCATION",
+    "value": "滋賀県川崎市中原区丸の内24丁目27番17号 筑土八幡町コーポ980"
+   },
+   {
+    "start": 85,
+    "end": 106,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naokikato@example.com"
+   },
+   {
+    "start": 120,
+    "end": 132,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-139-939"
+   }
+  ]
+ },
+ {
+  "id": "ja-0086",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 吉田 春香 様、ご住所は 新潟県立川市上吉羽24丁目5番4号 上吉羽クレスト749 で間違いないでしょうか。折り返しは 0120-276-775 までお願いします。控えは kobayashihanako@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "吉田 春香"
+   },
+   {
+    "start": 39,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "新潟県立川市上吉羽24丁目5番4号 上吉羽クレスト749"
+   },
+   {
+    "start": 86,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-276-775"
+   },
+   {
+    "start": 112,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashihanako@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0087",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。伊藤 太郎と申します。来月の打ち合わせについて相談させてください。会場は青森県横浜市西区山中新田7丁目20番20号を予定しています。連絡先は 0120-863-315、メールは dabe@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "伊藤 太郎"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "青森県横浜市西区山中新田7丁目20番20号"
+   },
+   {
+    "start": 83,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-863-315"
+   },
+   {
+    "start": 101,
+    "end": 117,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dabe@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0088",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 佐藤 七夏、長谷川 篤司。次回会場の住所は 〒522-7059 富山県小金井市秋葉原42丁目7番17号 ハイツ長畑070。決定事項: 資料は yuta73@example.net へ送付する。担当者直通は 070-2512-8699。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "佐藤 七夏"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "長谷川 篤司"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒522-7059"
+   },
+   {
+    "start": 42,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "富山県小金井市秋葉原42丁目7番17号 ハイツ長畑070"
+   },
+   {
+    "start": 81,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yuta73@example.net"
+   },
+   {
+    "start": 113,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-2512-8699"
+   }
+  ]
+ },
+ {
+  "id": "ja-0089",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 田中 充 様、ご住所は 福島県福生市外神田34丁目12番2号 で間違いないでしょうか。折り返しは 0120-253-840 までお願いします。控えは moritaichi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "田中 充"
+   },
+   {
+    "start": 38,
+    "end": 56,
+    "entity_type": "LOCATION",
+    "value": "福島県福生市外神田34丁目12番2号"
+   },
+   {
+    "start": 75,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-253-840"
+   },
+   {
+    "start": 101,
+    "end": 123,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "moritaichi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0090",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。吉田 美加子と申します。来月の打ち合わせについて相談させてください。会場は島根県横浜市神奈川区前弥六南町1丁目22番2号 脚折シャルム931を予定しています。連絡先は 080-5502-9629、メールは naoki92@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "吉田 美加子"
+   },
+   {
+    "start": 49,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "島根県横浜市神奈川区前弥六南町1丁目22番2号 脚折シャルム931"
+   },
+   {
+    "start": 96,
+    "end": 109,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-5502-9629"
+   },
+   {
+    "start": 115,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naoki92@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0091",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 林 陽一、加藤 さゆり。次回会場の住所は 〒341-9454 栃木県川崎市幸区西神田32丁目25番13号。決定事項: 資料は mikimaeda@example.net へ送付する。担当者直通は 080-1757-9815。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "林 陽一"
+   },
+   {
+    "start": 15,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "加藤 さゆり"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒341-9454"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "LOCATION",
+    "value": "栃木県川崎市幸区西神田32丁目25番13号"
+   },
+   {
+    "start": 73,
+    "end": 94,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikimaeda@example.net"
+   },
+   {
+    "start": 108,
+    "end": 121,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-1757-9815"
+   }
+  ]
+ },
+ {
+  "id": "ja-0092",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山田 修平 様、ご住所は 千葉県東久留米市太田ヶ谷21丁目1番7号 氏家新田シャルム922 で間違いないでしょうか。折り返しは 03-2832-4375 までお願いします。控えは ishikawakazuya@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山田 修平"
+   },
+   {
+    "start": 39,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "千葉県東久留米市太田ヶ谷21丁目1番7号 氏家新田シャルム922"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2832-4375"
+   },
+   {
+    "start": 116,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ishikawakazuya@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0093",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。田中 桃子と申します。来月の打ち合わせについて相談させてください。会場は岡山県横浜市青葉区轟4丁目10番3号を予定しています。連絡先は 080-2046-9101、メールは ryosuke63@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "田中 桃子"
+   },
+   {
+    "start": 48,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "岡山県横浜市青葉区轟4丁目10番3号"
+   },
+   {
+    "start": 80,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-2046-9101"
+   },
+   {
+    "start": 99,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ryosuke63@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0094",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 岡本 あすか、田中 智也。次回会場の住所は 〒582-1390 北海道印旛郡栄町戸山24丁目19番6号 パレス松浦町437。決定事項: 資料は yoichishimizu@example.com へ送付する。担当者直通は 0120-608-487。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "岡本 あすか"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "田中 智也"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒582-1390"
+   },
+   {
+    "start": 42,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "北海道印旛郡栄町戸山24丁目19番6号 パレス松浦町437"
+   },
+   {
+    "start": 82,
+    "end": 107,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoichishimizu@example.com"
+   },
+   {
+    "start": 121,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-608-487"
+   }
+  ]
+ },
+ {
+  "id": "ja-0095",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山口 太一 様、ご住所は 熊本県葛飾区戸山13丁目27番18号 百村パーク230 で間違いないでしょうか。折り返しは 03-6300-1867 までお願いします。控えは maayatakahashi@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山口 太一"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "熊本県葛飾区戸山13丁目27番18号 百村パーク230"
+   },
+   {
+    "start": 85,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6300-1867"
+   },
+   {
+    "start": 111,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maayatakahashi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0096",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。高橋 直子と申します。来月の打ち合わせについて相談させてください。会場は北海道西多摩郡檜原村東上野28丁目25番19号を予定しています。連絡先は 0120-434-725、メールは zota@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "高橋 直子"
+   },
+   {
+    "start": 48,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "北海道西多摩郡檜原村東上野28丁目25番19号"
+   },
+   {
+    "start": 85,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-434-725"
+   },
+   {
+    "start": 103,
+    "end": 119,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zota@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0097",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 木村 美加子、小川 真綾。次回会場の住所は 〒203-4906 北海道渋谷区丸の内4丁目1番5号 ハイツ上広谷348。決定事項: 資料は momoko36@example.com へ送付する。担当者直通は 03-9794-2924。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "木村 美加子"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "小川 真綾"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒203-4906"
+   },
+   {
+    "start": 42,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "北海道渋谷区丸の内4丁目1番5号 ハイツ上広谷348"
+   },
+   {
+    "start": 79,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "momoko36@example.com"
+   },
+   {
+    "start": 113,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9794-2924"
+   }
+  ]
+ },
+ {
+  "id": "ja-0098",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 田中 拓真 様、ご住所は 宮城県川崎市多摩区戸島29丁目18番6号 シャルム高輪762 で間違いないでしょうか。折り返しは 0120-932-663 までお願いします。控えは okadahiroshi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "田中 拓真"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "宮城県川崎市多摩区戸島29丁目18番6号 シャルム高輪762"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-932-663"
+   },
+   {
+    "start": 114,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "okadahiroshi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0099",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。橋本 和也と申します。来月の打ち合わせについて相談させてください。会場は広島県青ヶ島村高田馬場36丁目13番20号を予定しています。連絡先は 03-9845-9011、メールは kumiko71@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "橋本 和也"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "広島県青ヶ島村高田馬場36丁目13番20号"
+   },
+   {
+    "start": 83,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9845-9011"
+   },
+   {
+    "start": 101,
+    "end": 121,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kumiko71@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0100",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 高橋 学、高橋 篤司。次回会場の住所は 〒439-2607 富山県府中市白金33丁目22番8号 シティ白金985。決定事項: 資料は harukasuzuki@example.org へ送付する。担当者直通は 070-9237-9073。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "高橋 学"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "高橋 篤司"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒439-2607"
+   },
+   {
+    "start": 40,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "富山県府中市白金33丁目22番8号 シティ白金985"
+   },
+   {
+    "start": 77,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "harukasuzuki@example.org"
+   },
+   {
+    "start": 115,
+    "end": 128,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-9237-9073"
+   }
+  ]
+ },
+ {
+  "id": "ja-0101",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 吉田 裕太 様、ご住所は 高知県文京区一ツ橋31丁目18番8号 で間違いないでしょうか。折り返しは 080-5390-1262 までお願いします。控えは kobayashisotaro@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "吉田 裕太"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "LOCATION",
+    "value": "高知県文京区一ツ橋31丁目18番8号"
+   },
+   {
+    "start": 76,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-5390-1262"
+   },
+   {
+    "start": 103,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashisotaro@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0102",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。井上 直樹と申します。来月の打ち合わせについて相談させてください。会場は東京都川崎市幸区上広谷10丁目6番2号 ハイツ筑土八幡町985を予定しています。連絡先は 0120-639-991、メールは yoko21@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "井上 直樹"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "東京都川崎市幸区上広谷10丁目6番2号 ハイツ筑土八幡町985"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-639-991"
+   },
+   {
+    "start": 111,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoko21@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0103",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 小林 淳、田中 明美。次回会場の住所は 〒450-7524 佐賀県西東京市元浅草13丁目19番15号。決定事項: 資料は kobayashimikako@example.org へ送付する。担当者直通は 0120-644-633。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "小林 淳"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "田中 明美"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒450-7524"
+   },
+   {
+    "start": 40,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "佐賀県西東京市元浅草13丁目19番15号"
+   },
+   {
+    "start": 71,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobayashimikako@example.org"
+   },
+   {
+    "start": 112,
+    "end": 124,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-644-633"
+   }
+  ]
+ },
+ {
+  "id": "ja-0104",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 伊藤 里佳 様、ご住所は 北海道鴨川市猿楽町12丁目27番10号 コーポ上野公園842 で間違いないでしょうか。折り返しは 0120-261-364 までお願いします。控えは jun67@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "伊藤 里佳"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "北海道鴨川市猿楽町12丁目27番10号 コーポ上野公園842"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-261-364"
+   },
+   {
+    "start": 114,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jun67@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0105",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。藤原 幹と申します。来月の打ち合わせについて相談させてください。会場は北海道印旛郡本埜村平河町34丁目23番11号 シャルム箪笥町244を予定しています。連絡先は 03-2215-3637、メールは osamu29@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "藤原 幹"
+   },
+   {
+    "start": 47,
+    "end": 80,
+    "entity_type": "LOCATION",
+    "value": "北海道印旛郡本埜村平河町34丁目23番11号 シャルム箪笥町244"
+   },
+   {
+    "start": 94,
+    "end": 106,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2215-3637"
+   },
+   {
+    "start": 112,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osamu29@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0106",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 鈴木 学、佐藤 治。次回会場の住所は 〒173-6027 栃木県印旛郡印旛村太田ヶ谷15丁目2番17号 アーバン西小来川997。決定事項: 資料は atsushiaoki@example.net へ送付する。担当者直通は 080-4355-7872。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "鈴木 学"
+   },
+   {
+    "start": 15,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "佐藤 治"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒173-6027"
+   },
+   {
+    "start": 39,
+    "end": 73,
+    "entity_type": "LOCATION",
+    "value": "栃木県印旛郡印旛村太田ヶ谷15丁目2番17号 アーバン西小来川997"
+   },
+   {
+    "start": 84,
+    "end": 107,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "atsushiaoki@example.net"
+   },
+   {
+    "start": 121,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-4355-7872"
+   }
+  ]
+ },
+ {
+  "id": "ja-0107",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 近藤 桃子 様、ご住所は 青森県夷隅郡大多喜町池之端24丁目22番2号 東大和町コーポ868 で間違いないでしょうか。折り返しは 0120-637-118 までお願いします。控えは asukaabe@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "近藤 桃子"
+   },
+   {
+    "start": 39,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "青森県夷隅郡大多喜町池之端24丁目22番2号 東大和町コーポ868"
+   },
+   {
+    "start": 91,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-637-118"
+   },
+   {
+    "start": 117,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "asukaabe@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0108",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。田中 涼平と申します。来月の打ち合わせについて相談させてください。会場は山梨県西多摩郡瑞穂町花島40丁目23番6号 コーポ猿楽町220を予定しています。連絡先は 03-4287-6674、メールは kfukuda@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "田中 涼平"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "山梨県西多摩郡瑞穂町花島40丁目23番6号 コーポ猿楽町220"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4287-6674"
+   },
+   {
+    "start": 111,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kfukuda@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0109",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 森 加奈、高橋 結衣。次回会場の住所は 〒598-2866 福岡県山武郡芝山町下宇和田5丁目6番3号 ハイツ氏家932。決定事項: 資料は yasuhirowatanabe@example.net へ送付する。担当者直通は 090-1698-3041。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "森 加奈"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "高橋 結衣"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒598-2866"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "福岡県山武郡芝山町下宇和田5丁目6番3号 ハイツ氏家932"
+   },
+   {
+    "start": 80,
+    "end": 108,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yasuhirowatanabe@example.net"
+   },
+   {
+    "start": 122,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-1698-3041"
+   }
+  ]
+ },
+ {
+  "id": "ja-0110",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 藤井 くみ子 様、ご住所は 長野県君津市所野30丁目19番19号 で間違いないでしょうか。折り返しは 03-6349-2933 までお願いします。控えは yoshidayosuke@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "藤井 くみ子"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "長野県君津市所野30丁目19番19号"
+   },
+   {
+    "start": 77,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6349-2933"
+   },
+   {
+    "start": 103,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoshidayosuke@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0111",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。小林 真綾と申します。来月の打ち合わせについて相談させてください。会場は大分県小金井市湯宮21丁目10番5号を予定しています。連絡先は 080-5758-2409、メールは taichi43@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "小林 真綾"
+   },
+   {
+    "start": 48,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "大分県小金井市湯宮21丁目10番5号"
+   },
+   {
+    "start": 80,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-5758-2409"
+   },
+   {
+    "start": 99,
+    "end": 119,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taichi43@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0112",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 村上 零、松田 結衣。次回会場の住所は 〒104-9312 岡山県中野区浅草橋21丁目22番20号 秋葉原アーバン765。決定事項: 資料は kumiko66@example.com へ送付する。担当者直通は 0120-686-584。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "村上 零"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "松田 結衣"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒104-9312"
+   },
+   {
+    "start": 40,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "岡山県中野区浅草橋21丁目22番20号 秋葉原アーバン765"
+   },
+   {
+    "start": 81,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kumiko66@example.com"
+   },
+   {
+    "start": 115,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-686-584"
+   }
+  ]
+ },
+ {
+  "id": "ja-0113",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 松田 稔 様、ご住所は 徳島県川崎市高津区湯宮19丁目12番17号 アーバン上高野799 で間違いないでしょうか。折り返しは 03-4766-2904 までお願いします。控えは mikako34@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "松田 稔"
+   },
+   {
+    "start": 38,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "徳島県川崎市高津区湯宮19丁目12番17号 アーバン上高野799"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4766-2904"
+   },
+   {
+    "start": 115,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikako34@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0114",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。阿部 太郎と申します。来月の打ち合わせについて相談させてください。会場は青森県荒川区湯宮11丁目20番1号を予定しています。連絡先は 0120-896-536、メールは itohanako@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "阿部 太郎"
+   },
+   {
+    "start": 48,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "青森県荒川区湯宮11丁目20番1号"
+   },
+   {
+    "start": 79,
+    "end": 91,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-896-536"
+   },
+   {
+    "start": 97,
+    "end": 118,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "itohanako@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0115",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 渡辺 幹、藤井 充。次回会場の住所は 〒187-9892 島根県調布市大中19丁目26番19号 横林シャルム416。決定事項: 資料は kondoakemi@example.net へ送付する。担当者直通は 03-8106-3081。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "渡辺 幹"
+   },
+   {
+    "start": 15,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "藤井 充"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒187-9892"
+   },
+   {
+    "start": 39,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "島根県調布市大中19丁目26番19号 横林シャルム416"
+   },
+   {
+    "start": 78,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kondoakemi@example.net"
+   },
+   {
+    "start": 114,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8106-3081"
+   }
+  ]
+ },
+ {
+  "id": "ja-0116",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 加藤 陽一 様、ご住所は 神奈川県小平市南赤田29丁目18番13号 渡辺クレスト500 で間違いないでしょうか。折り返しは 0120-217-781 までお願いします。控えは hiroshihayashi@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "加藤 陽一"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "神奈川県小平市南赤田29丁目18番13号 渡辺クレスト500"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-217-781"
+   },
+   {
+    "start": 114,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hiroshihayashi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0117",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 学と申します。来月の打ち合わせについて相談させてください。会場は千葉県香取郡東庄町港南38丁目15番14号 パレス押上245を予定しています。連絡先は 03-2312-1969、メールは reimatsuda@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "鈴木 学"
+   },
+   {
+    "start": 47,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "千葉県香取郡東庄町港南38丁目15番14号 パレス押上245"
+   },
+   {
+    "start": 91,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2312-1969"
+   },
+   {
+    "start": 109,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reimatsuda@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0118",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 藤田 康弘、佐藤 美加子。次回会場の住所は 〒845-1209 佐賀県八街市芝公園15丁目9番2号 シティ竜泉411。決定事項: 資料は nishimuramai@example.com へ送付する。担当者直通は 03-8969-2795。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "藤田 康弘"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "佐藤 美加子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒845-1209"
+   },
+   {
+    "start": 42,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "佐賀県八街市芝公園15丁目9番2号 シティ竜泉411"
+   },
+   {
+    "start": 79,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nishimuramai@example.com"
+   },
+   {
+    "start": 117,
+    "end": 129,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8969-2795"
+   }
+  ]
+ },
+ {
+  "id": "ja-0119",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 吉田 陽一 様、ご住所は 滋賀県横浜市中区外国府間41丁目10番11号 パレス月島064 で間違いないでしょうか。折り返しは 0120-644-402 までお願いします。控えは hidekinakamura@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "吉田 陽一"
+   },
+   {
+    "start": 39,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "滋賀県横浜市中区外国府間41丁目10番11号 パレス月島064"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-644-402"
+   },
+   {
+    "start": 115,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hidekinakamura@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0120",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。小林 零と申します。来月の打ち合わせについて相談させてください。会場は徳島県八王子市東神田7丁目17番1号 クレスト渡辺966を予定しています。連絡先は 080-5065-7783、メールは hiroshitakahashi@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "小林 零"
+   },
+   {
+    "start": 47,
+    "end": 75,
+    "entity_type": "LOCATION",
+    "value": "徳島県八王子市東神田7丁目17番1号 クレスト渡辺966"
+   },
+   {
+    "start": 89,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-5065-7783"
+   },
+   {
+    "start": 108,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hiroshitakahashi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0121",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 斉藤 結衣、清水 篤司。次回会場の住所は 〒464-8749 宮崎県町田市蔵前25丁目13番4号。決定事項: 資料は hideki50@example.com へ送付する。担当者直通は 03-2455-8718。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "斉藤 結衣"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "清水 篤司"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒464-8749"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "宮崎県町田市蔵前25丁目13番4号"
+   },
+   {
+    "start": 69,
+    "end": 89,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hideki50@example.com"
+   },
+   {
+    "start": 103,
+    "end": 115,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2455-8718"
+   }
+  ]
+ },
+ {
+  "id": "ja-0122",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 遠藤 加奈 様、ご住所は 徳島県夷隅郡大多喜町中三依33丁目12番17号 で間違いないでしょうか。折り返しは 03-6790-7596 までお願いします。控えは morishota@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "遠藤 加奈"
+   },
+   {
+    "start": 39,
+    "end": 62,
+    "entity_type": "LOCATION",
+    "value": "徳島県夷隅郡大多喜町中三依33丁目12番17号"
+   },
+   {
+    "start": 81,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6790-7596"
+   },
+   {
+    "start": 107,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "morishota@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0123",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。佐々木 聡太郎と申します。来月の打ち合わせについて相談させてください。会場は京都府杉並区港南13丁目21番18号を予定しています。連絡先は 03-5335-3639、メールは shohei97@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "佐々木 聡太郎"
+   },
+   {
+    "start": 50,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "京都府杉並区港南13丁目21番18号"
+   },
+   {
+    "start": 82,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-5335-3639"
+   },
+   {
+    "start": 100,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shohei97@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0124",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 長谷川 翔太、山口 花子。次回会場の住所は 〒451-3288 群馬県鴨川市虎ノ門虎ノ門ヒルズ森タワー6丁目17番9号 シャルム東大和町270。決定事項: 資料は kana55@example.org へ送付する。担当者直通は 080-8963-4417。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "長谷川 翔太"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "山口 花子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒451-3288"
+   },
+   {
+    "start": 42,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "群馬県鴨川市虎ノ門虎ノ門ヒルズ森タワー6丁目17番9号 シャルム東大和町270"
+   },
+   {
+    "start": 92,
+    "end": 110,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kana55@example.org"
+   },
+   {
+    "start": 124,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-8963-4417"
+   }
+  ]
+ },
+ {
+  "id": "ja-0125",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山口 真綾 様、ご住所は 高知県西多摩郡檜原村秋葉原15丁目27番3号 パレス独鈷沢553 で間違いないでしょうか。折り返しは 0120-370-616 までお願いします。控えは takahashitsubasa@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山口 真綾"
+   },
+   {
+    "start": 39,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "高知県西多摩郡檜原村秋葉原15丁目27番3号 パレス独鈷沢553"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-370-616"
+   },
+   {
+    "start": 116,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takahashitsubasa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0126",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。石井 あすかと申します。来月の打ち合わせについて相談させてください。会場は宮崎県国立市豊町29丁目27番7号 クレスト松が谷987を予定しています。連絡先は 070-7832-2129、メールは qyamada@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "石井 あすか"
+   },
+   {
+    "start": 49,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "宮崎県国立市豊町29丁目27番7号 クレスト松が谷987"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-7832-2129"
+   },
+   {
+    "start": 110,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qyamada@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0127",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 中村 直人、渡辺 七夏。次回会場の住所は 〒833-3068 宮崎県横浜市旭区無栗屋11丁目7番9号。決定事項: 資料は rika93@example.org へ送付する。担当者直通は 0120-463-848。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "中村 直人"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "渡辺 七夏"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒833-3068"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "LOCATION",
+    "value": "宮崎県横浜市旭区無栗屋11丁目7番9号"
+   },
+   {
+    "start": 71,
+    "end": 89,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rika93@example.org"
+   },
+   {
+    "start": 103,
+    "end": 115,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-463-848"
+   }
+  ]
+ },
+ {
+  "id": "ja-0128",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 渡辺 裕美子 様、ご住所は 福岡県狛江市吾妻橋25丁目27番8号 で間違いないでしょうか。折り返しは 03-4352-8475 までお願いします。控えは saitoyuta@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "渡辺 裕美子"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "福岡県狛江市吾妻橋25丁目27番8号"
+   },
+   {
+    "start": 77,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4352-8475"
+   },
+   {
+    "start": 103,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "saitoyuta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0129",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。佐々木 太郎と申します。来月の打ち合わせについて相談させてください。会場は徳島県小平市湯本塩原4丁目22番5号を予定しています。連絡先は 03-6673-5839、メールは wkobayashi@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "佐々木 太郎"
+   },
+   {
+    "start": 49,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "徳島県小平市湯本塩原4丁目22番5号"
+   },
+   {
+    "start": 81,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6673-5839"
+   },
+   {
+    "start": 99,
+    "end": 121,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wkobayashi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0130",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 木村 晃、佐藤 京助。次回会場の住所は 〒818-1479 埼玉県福生市松石9丁目7番7号 手岡クレスト107。決定事項: 資料は jishikawa@example.com へ送付する。担当者直通は 0120-328-956。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "木村 晃"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "佐藤 京助"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒818-1479"
+   },
+   {
+    "start": 40,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "埼玉県福生市松石9丁目7番7号 手岡クレスト107"
+   },
+   {
+    "start": 76,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jishikawa@example.com"
+   },
+   {
+    "start": 111,
+    "end": 123,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-328-956"
+   }
+  ]
+ },
+ {
+  "id": "ja-0131",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐藤 結衣 様、ご住所は 群馬県豊島区鶴ヶ丘22丁目13番18号 で間違いないでしょうか。折り返しは 03-8384-7324 までお願いします。控えは ayoshida@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "佐藤 結衣"
+   },
+   {
+    "start": 39,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "群馬県豊島区鶴ヶ丘22丁目13番18号"
+   },
+   {
+    "start": 77,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8384-7324"
+   },
+   {
+    "start": 103,
+    "end": 123,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ayoshida@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0132",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。佐々木 花子と申します。来月の打ち合わせについて相談させてください。会場は静岡県青ヶ島村東三島4丁目21番14号 北青山コート820を予定しています。連絡先は 03-8494-6308、メールは shotatanaka@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "佐々木 花子"
+   },
+   {
+    "start": 49,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "静岡県青ヶ島村東三島4丁目21番14号 北青山コート820"
+   },
+   {
+    "start": 92,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8494-6308"
+   },
+   {
+    "start": 110,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shotatanaka@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0133",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 高橋 英樹、松本 京助。次回会場の住所は 〒139-2430 和歌山県横浜市港北区台東2丁目6番17号。決定事項: 資料は yosuke86@example.org へ送付する。担当者直通は 0120-946-362。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "高橋 英樹"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "松本 京助"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒139-2430"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "LOCATION",
+    "value": "和歌山県横浜市港北区台東2丁目6番17号"
+   },
+   {
+    "start": 72,
+    "end": 92,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yosuke86@example.org"
+   },
+   {
+    "start": 106,
+    "end": 118,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-946-362"
+   }
+  ]
+ },
+ {
+  "id": "ja-0134",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 青木 拓真 様、ご住所は 石川県長生郡長生村鍛冶ケ沢21丁目9番5号 シティ一ツ橋311 で間違いないでしょうか。折り返しは 0120-937-508 までお願いします。控えは morijun@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "青木 拓真"
+   },
+   {
+    "start": 39,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "石川県長生郡長生村鍛冶ケ沢21丁目9番5号 シティ一ツ橋311"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-937-508"
+   },
+   {
+    "start": 115,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "morijun@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0135",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。渡辺 幹と申します。来月の打ち合わせについて相談させてください。会場は高知県長生郡一宮町千塚18丁目15番13号 シャルム二つ室811を予定しています。連絡先は 03-2810-5027、メールは haruka45@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "渡辺 幹"
+   },
+   {
+    "start": 47,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "高知県長生郡一宮町千塚18丁目15番13号 シャルム二つ室811"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2810-5027"
+   },
+   {
+    "start": 111,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haruka45@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0136",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 近藤 治、鈴木 花子。次回会場の住所は 〒280-5724 岡山県君津市東和町39丁目14番9号 ハイツ箭坪343。決定事項: 資料は sayuri13@example.net へ送付する。担当者直通は 0120-497-910。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "近藤 治"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "鈴木 花子"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒280-5724"
+   },
+   {
+    "start": 40,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "岡山県君津市東和町39丁目14番9号 ハイツ箭坪343"
+   },
+   {
+    "start": 78,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sayuri13@example.net"
+   },
+   {
+    "start": 112,
+    "end": 124,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-497-910"
+   }
+  ]
+ },
+ {
+  "id": "ja-0137",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 松本 春香 様、ご住所は 沖縄県小笠原村鶴ヶ丘7丁目3番6号 ハイツ橋場352 で間違いないでしょうか。折り返しは 0120-438-575 までお願いします。控えは yumiko74@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "松本 春香"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "沖縄県小笠原村鶴ヶ丘7丁目3番6号 ハイツ橋場352"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-438-575"
+   },
+   {
+    "start": 110,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yumiko74@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0138",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。岡本 太郎と申します。来月の打ち合わせについて相談させてください。会場は茨城県横浜市中区東大和町25丁目19番19号 中鉢石町アーバン902を予定しています。連絡先は 03-3631-6872、メールは jun50@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "岡本 太郎"
+   },
+   {
+    "start": 48,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "茨城県横浜市中区東大和町25丁目19番19号 中鉢石町アーバン902"
+   },
+   {
+    "start": 96,
+    "end": 108,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3631-6872"
+   },
+   {
+    "start": 114,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jun50@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0139",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 加藤 拓真、田中 稔。次回会場の住所は 〒521-7236 長野県港区東神田4丁目3番7号 外神田シャルム736。決定事項: 資料は hiroshi56@example.com へ送付する。担当者直通は 070-1293-9291。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "加藤 拓真"
+   },
+   {
+    "start": 16,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "田中 稔"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒521-7236"
+   },
+   {
+    "start": 40,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "長野県港区東神田4丁目3番7号 外神田シャルム736"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hiroshi56@example.com"
+   },
+   {
+    "start": 112,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-1293-9291"
+   }
+  ]
+ },
+ {
+  "id": "ja-0140",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 森 健一 様、ご住所は 佐賀県中野区千束34丁目5番8号 クレスト下吉羽844 で間違いないでしょうか。折り返しは 03-1517-4651 までお願いします。控えは yosuke21@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "森 健一"
+   },
+   {
+    "start": 38,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "佐賀県中野区千束34丁目5番8号 クレスト下吉羽844"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1517-4651"
+   },
+   {
+    "start": 110,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yosuke21@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0141",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。長谷川 浩と申します。来月の打ち合わせについて相談させてください。会場は広島県稲城市外国府間40丁目15番15号を予定しています。連絡先は 03-3238-3326、メールは mituru54@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "長谷川 浩"
+   },
+   {
+    "start": 48,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "広島県稲城市外国府間40丁目15番15号"
+   },
+   {
+    "start": 82,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3238-3326"
+   },
+   {
+    "start": 100,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mituru54@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0142",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 佐藤 舞、石川 太郎。次回会場の住所は 〒785-9085 埼玉県福生市戸塚町1丁目2番2号 中三依パーク674。決定事項: 資料は hiroshi63@example.com へ送付する。担当者直通は 03-6068-1453。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "佐藤 舞"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "石川 太郎"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒785-9085"
+   },
+   {
+    "start": 40,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "埼玉県福生市戸塚町1丁目2番2号 中三依パーク674"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hiroshi63@example.com"
+   },
+   {
+    "start": 112,
+    "end": 124,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6068-1453"
+   }
+  ]
+ },
+ {
+  "id": "ja-0143",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 松本 千代 様、ご住所は 新潟県葛飾区白金台4丁目1番18号 パーク戸山539 で間違いないでしょうか。折り返しは 070-4403-9289 までお願いします。控えは qtanaka@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "松本 千代"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "新潟県葛飾区白金台4丁目1番18号 パーク戸山539"
+   },
+   {
+    "start": 84,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-4403-9289"
+   },
+   {
+    "start": 111,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qtanaka@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0144",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。吉田 裕美子と申します。来月の打ち合わせについて相談させてください。会場は秋田県あきる野市前弥六13丁目2番8号 柿木沢パーク293を予定しています。連絡先は 03-2804-1139、メールは hanako78@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "吉田 裕美子"
+   },
+   {
+    "start": 49,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "秋田県あきる野市前弥六13丁目2番8号 柿木沢パーク293"
+   },
+   {
+    "start": 92,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2804-1139"
+   },
+   {
+    "start": 110,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanako78@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0145",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 鈴木 直樹、佐藤 康弘。次回会場の住所は 〒754-5779 山形県国分寺市東三島42丁目15番9号 白金台クレスト250。決定事項: 資料は ryoheimiura@example.com へ送付する。担当者直通は 0120-641-846。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "鈴木 直樹"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "佐藤 康弘"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒754-5779"
+   },
+   {
+    "start": 41,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "山形県国分寺市東三島42丁目15番9号 白金台クレスト250"
+   },
+   {
+    "start": 82,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ryoheimiura@example.com"
+   },
+   {
+    "start": 119,
+    "end": 131,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-641-846"
+   }
+  ]
+ },
+ {
+  "id": "ja-0146",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 伊藤 翔太 様、ご住所は 長野県武蔵村山市東神田19丁目2番1号 パレス鍛冶ケ沢691 で間違いないでしょうか。折り返しは 070-2662-3484 までお願いします。控えは haruka71@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "伊藤 翔太"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "長野県武蔵村山市東神田19丁目2番1号 パレス鍛冶ケ沢691"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-2662-3484"
+   },
+   {
+    "start": 115,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haruka71@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0147",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。阿部 陽子と申します。来月の打ち合わせについて相談させてください。会場は島根県横浜市中区北上野34丁目26番12号 東和町パーク468を予定しています。連絡先は 03-2321-1621、メールは satomomoko@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "阿部 陽子"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "島根県横浜市中区北上野34丁目26番12号 東和町パーク468"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2321-1621"
+   },
+   {
+    "start": 111,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "satomomoko@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0148",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 岡田 陽一、藤原 香織。次回会場の住所は 〒721-3648 秋田県君津市麹町19丁目21番3号。決定事項: 資料は kondokana@example.net へ送付する。担当者直通は 03-1543-1298。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "岡田 陽一"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "藤原 香織"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒721-3648"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "秋田県君津市麹町19丁目21番3号"
+   },
+   {
+    "start": 69,
+    "end": 90,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kondokana@example.net"
+   },
+   {
+    "start": 104,
+    "end": 116,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1543-1298"
+   }
+  ]
+ },
+ {
+  "id": "ja-0149",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山口 零 様、ご住所は 福島県八丈島八丈町山中新田33丁目18番17号 細野アーバン539 で間違いないでしょうか。折り返しは 0120-910-678 までお願いします。控えは akemi04@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "山口 零"
+   },
+   {
+    "start": 38,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "福島県八丈島八丈町山中新田33丁目18番17号 細野アーバン539"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-910-678"
+   },
+   {
+    "start": 116,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "akemi04@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0150",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。中村 治と申します。来月の打ち合わせについて相談させてください。会場は神奈川県新島村京橋19丁目18番14号 氏家新田ハイツ400を予定しています。連絡先は 03-4103-3567、メールは yoshidamai@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "中村 治"
+   },
+   {
+    "start": 47,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "神奈川県新島村京橋19丁目18番14号 氏家新田ハイツ400"
+   },
+   {
+    "start": 91,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4103-3567"
+   },
+   {
+    "start": 109,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoshidamai@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0151",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 渡辺 太郎、佐藤 美加子。次回会場の住所は 〒767-9638 熊本県香取郡東庄町虎ノ門16丁目26番11号。決定事項: 資料は qota@example.com へ送付する。担当者直通は 03-7617-4821。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "渡辺 太郎"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "佐藤 美加子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒767-9638"
+   },
+   {
+    "start": 42,
+    "end": 64,
+    "entity_type": "LOCATION",
+    "value": "熊本県香取郡東庄町虎ノ門16丁目26番11号"
+   },
+   {
+    "start": 75,
+    "end": 91,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qota@example.com"
+   },
+   {
+    "start": 105,
+    "end": 117,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7617-4821"
+   }
+  ]
+ },
+ {
+  "id": "ja-0152",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山田 結衣 様、ご住所は 高知県大田区津久戸町20丁目5番9号 クレスト土呂部297 で間違いないでしょうか。折り返しは 090-4064-5129 までお願いします。控えは asuka19@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山田 結衣"
+   },
+   {
+    "start": 39,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "高知県大田区津久戸町20丁目5番9号 クレスト土呂部297"
+   },
+   {
+    "start": 87,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-4064-5129"
+   },
+   {
+    "start": 114,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "asuka19@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0153",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。三浦 洋介と申します。来月の打ち合わせについて相談させてください。会場は鳥取県富津市戸島29丁目18番1号 シャルム中川崎869を予定しています。連絡先は 03-8593-6350、メールは kyosuke80@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "三浦 洋介"
+   },
+   {
+    "start": 48,
+    "end": 76,
+    "entity_type": "LOCATION",
+    "value": "鳥取県富津市戸島29丁目18番1号 シャルム中川崎869"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8593-6350"
+   },
+   {
+    "start": 108,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kyosuke80@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0154",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 岡本 翼、佐々木 健一。次回会場の住所は 〒637-2745 大阪府横浜市港北区丹勢35丁目14番8号 コーポ油井298。決定事項: 資料は asukasuzuki@example.com へ送付する。担当者直通は 03-2253-2554。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "岡本 翼"
+   },
+   {
+    "start": 15,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "佐々木 健一"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒637-2745"
+   },
+   {
+    "start": 41,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "大阪府横浜市港北区丹勢35丁目14番8号 コーポ油井298"
+   },
+   {
+    "start": 81,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "asukasuzuki@example.com"
+   },
+   {
+    "start": 118,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2253-2554"
+   }
+  ]
+ },
+ {
+  "id": "ja-0155",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 鈴木 零 様、ご住所は 北海道鎌ケ谷市東和町22丁目6番5号 隼町パレス963 で間違いないでしょうか。折り返しは 0120-127-489 までお願いします。控えは yui43@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "鈴木 零"
+   },
+   {
+    "start": 38,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "北海道鎌ケ谷市東和町22丁目6番5号 隼町パレス963"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-127-489"
+   },
+   {
+    "start": 110,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yui43@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0156",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。田中 加奈と申します。来月の打ち合わせについて相談させてください。会場は山梨県小平市丸の内6丁目17番16号 アーバン天神島567を予定しています。連絡先は 080-2876-3047、メールは tanakaatsushi@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "田中 加奈"
+   },
+   {
+    "start": 48,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "山梨県小平市丸の内6丁目17番16号 アーバン天神島567"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-2876-3047"
+   },
+   {
+    "start": 110,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tanakaatsushi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0157",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 斉藤 千代、斎藤 陽子。次回会場の住所は 〒414-7342 宮崎県武蔵野市西川33丁目14番1号 湯宮クレスト110。決定事項: 資料は yumiko01@example.net へ送付する。担当者直通は 0120-580-461。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "斉藤 千代"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "斎藤 陽子"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒414-7342"
+   },
+   {
+    "start": 41,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "宮崎県武蔵野市西川33丁目14番1号 湯宮クレスト110"
+   },
+   {
+    "start": 80,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yumiko01@example.net"
+   },
+   {
+    "start": 114,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-580-461"
+   }
+  ]
+ },
+ {
+  "id": "ja-0158",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 渡辺 里佳 様、ご住所は 長崎県八千代市二つ室29丁目1番1号 コート秋葉原834 で間違いないでしょうか。折り返しは 0120-504-263 までお願いします。控えは miturukobayashi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "渡辺 里佳"
+   },
+   {
+    "start": 39,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "長崎県八千代市二つ室29丁目1番1号 コート秋葉原834"
+   },
+   {
+    "start": 86,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-504-263"
+   },
+   {
+    "start": 112,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "miturukobayashi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0159",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。山本 治と申します。来月の打ち合わせについて相談させてください。会場は大阪府川崎市川崎区前弥六26丁目16番18号 池之端コーポ031を予定しています。連絡先は 03-9755-9400、メールは yoshidatakuma@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "山本 治"
+   },
+   {
+    "start": 47,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "大阪府川崎市川崎区前弥六26丁目16番18号 池之端コーポ031"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9755-9400"
+   },
+   {
+    "start": 111,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoshidatakuma@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0160",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 前田 結衣、鈴木 裕美子。次回会場の住所は 〒923-1808 佐賀県新宿区南赤田1丁目8番14号。決定事項: 資料は mikako90@example.net へ送付する。担当者直通は 0120-303-992。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "前田 結衣"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "鈴木 裕美子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒923-1808"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "佐賀県新宿区南赤田1丁目8番14号"
+   },
+   {
+    "start": 70,
+    "end": 90,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mikako90@example.net"
+   },
+   {
+    "start": 104,
+    "end": 116,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-303-992"
+   }
+  ]
+ },
+ {
+  "id": "ja-0161",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 後藤 直子 様、ご住所は 福島県世田谷区三筋38丁目21番12号 で間違いないでしょうか。折り返しは 080-8278-5744 までお願いします。控えは tanakayuta@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "後藤 直子"
+   },
+   {
+    "start": 39,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "福島県世田谷区三筋38丁目21番12号"
+   },
+   {
+    "start": 77,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-8278-5744"
+   },
+   {
+    "start": 104,
+    "end": 126,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tanakayuta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0162",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。斎藤 洋介と申します。来月の打ち合わせについて相談させてください。会場は山形県横浜市西区東和町35丁目5番12号 シャルム秋葉原438を予定しています。連絡先は 0120-427-578、メールは yamaguchihiroshi@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "斎藤 洋介"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "山形県横浜市西区東和町35丁目5番12号 シャルム秋葉原438"
+   },
+   {
+    "start": 93,
+    "end": 105,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-427-578"
+   },
+   {
+    "start": 111,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yamaguchihiroshi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0163",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 田中 康弘、田中 拓真。次回会場の住所は 〒800-4118 茨城県清瀬市台東9丁目1番16号 ハイツ大中290。決定事項: 資料は katohideki@example.net へ送付する。担当者直通は 0120-324-846。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "田中 康弘"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "田中 拓真"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒800-4118"
+   },
+   {
+    "start": 41,
+    "end": 66,
+    "entity_type": "LOCATION",
+    "value": "茨城県清瀬市台東9丁目1番16号 ハイツ大中290"
+   },
+   {
+    "start": 77,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "katohideki@example.net"
+   },
+   {
+    "start": 113,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-324-846"
+   }
+  ]
+ },
+ {
+  "id": "ja-0164",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 康弘 様、ご住所は 神奈川県武蔵村山市所野30丁目6番9号 パレス東大和町311 で間違いないでしょうか。折り返しは 0120-375-275 までお願いします。控えは maayaikeda@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "山本 康弘"
+   },
+   {
+    "start": 39,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "神奈川県武蔵村山市所野30丁目6番9号 パレス東大和町311"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-375-275"
+   },
+   {
+    "start": 114,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maayaikeda@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0165",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。吉田 亮介と申します。来月の打ち合わせについて相談させてください。会場は福岡県横浜市青葉区神明内27丁目5番19号を予定しています。連絡先は 03-3226-1385、メールは ryosukenakamura@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "吉田 亮介"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "福岡県横浜市青葉区神明内27丁目5番19号"
+   },
+   {
+    "start": 83,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3226-1385"
+   },
+   {
+    "start": 101,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ryosukenakamura@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0166",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 小林 晃、森 明美。次回会場の住所は 〒980-1859 山口県鴨川市東大和町29丁目27番11号 クレスト上野公園281。決定事項: 資料は osamu43@example.org へ送付する。担当者直通は 03-2101-7961。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "小林 晃"
+   },
+   {
+    "start": 15,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "森 明美"
+   },
+   {
+    "start": 29,
+    "end": 38,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒980-1859"
+   },
+   {
+    "start": 39,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "山口県鴨川市東大和町29丁目27番11号 クレスト上野公園281"
+   },
+   {
+    "start": 82,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osamu43@example.org"
+   },
+   {
+    "start": 115,
+    "end": 127,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2101-7961"
+   }
+  ]
+ },
+ {
+  "id": "ja-0167",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 幹 様、ご住所は 石川県長生郡長柄町西浅草37丁目12番11号 箪笥町コーポ403 で間違いないでしょうか。折り返しは 0120-946-322 までお願いします。控えは yoshidaakemi@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "山本 幹"
+   },
+   {
+    "start": 38,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "石川県長生郡長柄町西浅草37丁目12番11号 箪笥町コーポ403"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-946-322"
+   },
+   {
+    "start": 115,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoshidaakemi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0168",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。佐々木 千代と申します。来月の打ち合わせについて相談させてください。会場は愛知県北区三筋27丁目5番20号を予定しています。連絡先は 0120-369-178、メールは tsubasa53@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "佐々木 千代"
+   },
+   {
+    "start": 49,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "愛知県北区三筋27丁目5番20号"
+   },
+   {
+    "start": 79,
+    "end": 91,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-369-178"
+   },
+   {
+    "start": 97,
+    "end": 118,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tsubasa53@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0169",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 渡辺 結衣、橋本 健一。次回会場の住所は 〒663-5123 愛媛県国分寺市丹勢10丁目7番2号 鶴ヶ丘コート981。決定事項: 資料は satotsubasa@example.net へ送付する。担当者直通は 070-7893-9197。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "渡辺 結衣"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "橋本 健一"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒663-5123"
+   },
+   {
+    "start": 41,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "愛媛県国分寺市丹勢10丁目7番2号 鶴ヶ丘コート981"
+   },
+   {
+    "start": 79,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "satotsubasa@example.net"
+   },
+   {
+    "start": 116,
+    "end": 129,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-7893-9197"
+   }
+  ]
+ },
+ {
+  "id": "ja-0170",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 伊藤 裕美子 様、ご住所は 鹿児島県狛江市猿楽町11丁目27番3号 で間違いないでしょうか。折り返しは 03-7374-7715 までお願いします。控えは taro48@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "伊藤 裕美子"
+   },
+   {
+    "start": 40,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "鹿児島県狛江市猿楽町11丁目27番3号"
+   },
+   {
+    "start": 78,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7374-7715"
+   },
+   {
+    "start": 104,
+    "end": 122,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taro48@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0171",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。斎藤 あすかと申します。来月の打ち合わせについて相談させてください。会場は愛知県鴨川市東神田3丁目11番13号を予定しています。連絡先は 03-2218-1061、メールは fsaito@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "斎藤 あすか"
+   },
+   {
+    "start": 49,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "愛知県鴨川市東神田3丁目11番13号"
+   },
+   {
+    "start": 81,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-2218-1061"
+   },
+   {
+    "start": 99,
+    "end": 117,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fsaito@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0172",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 山下 智也、佐藤 七夏。次回会場の住所は 〒454-8323 山口県横浜市戸塚区天神島2丁目26番9号。決定事項: 資料は takahashiyumiko@example.com へ送付する。担当者直通は 03-1985-1950。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "山下 智也"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "佐藤 七夏"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒454-8323"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "LOCATION",
+    "value": "山口県横浜市戸塚区天神島2丁目26番9号"
+   },
+   {
+    "start": 72,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "takahashiyumiko@example.com"
+   },
+   {
+    "start": 113,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-1985-1950"
+   }
+  ]
+ },
+ {
+  "id": "ja-0173",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 山本 裕美子 様、ご住所は 島根県江東区虎ノ門虎ノ門ヒルズ森タワー19丁目19番13号 で間違いないでしょうか。折り返しは 0120-885-520 までお願いします。控えは shoheiyoshida@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "山本 裕美子"
+   },
+   {
+    "start": 40,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "島根県江東区虎ノ門虎ノ門ヒルズ森タワー19丁目19番13号"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-885-520"
+   },
+   {
+    "start": 114,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shoheiyoshida@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0174",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。藤原 篤司と申します。来月の打ち合わせについて相談させてください。会場は長野県長生郡長南町西小来川21丁目22番16号 クレスト所野142を予定しています。連絡先は 03-7123-6760、メールは sakamotomanabu@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "藤原 篤司"
+   },
+   {
+    "start": 48,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "長野県長生郡長南町西小来川21丁目22番16号 クレスト所野142"
+   },
+   {
+    "start": 95,
+    "end": 107,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7123-6760"
+   },
+   {
+    "start": 113,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sakamotomanabu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0175",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 中村 舞、井上 和也。次回会場の住所は 〒585-1653 長崎県稲城市港南34丁目9番16号 ハイツ富久町688。決定事項: 資料は zhasegawa@example.org へ送付する。担当者直通は 0120-181-899。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "中村 舞"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "井上 和也"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒585-1653"
+   },
+   {
+    "start": 40,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "長崎県稲城市港南34丁目9番16号 ハイツ富久町688"
+   },
+   {
+    "start": 78,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhasegawa@example.org"
+   },
+   {
+    "start": 113,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-181-899"
+   }
+  ]
+ },
+ {
+  "id": "ja-0176",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 小川 直人 様、ご住所は 福井県足立区箪笥町7丁目1番14号 幸手コート894 で間違いないでしょうか。折り返しは 03-4350-2801 までお願いします。控えは matsumotoatsushi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "小川 直人"
+   },
+   {
+    "start": 39,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "福井県足立区箪笥町7丁目1番14号 幸手コート894"
+   },
+   {
+    "start": 84,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4350-2801"
+   },
+   {
+    "start": 110,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "matsumotoatsushi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0177",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。山口 健一と申します。来月の打ち合わせについて相談させてください。会場は宮城県横浜市西区東神田27丁目26番6号 三筋パレス998を予定しています。連絡先は 0120-604-344、メールは yoko56@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "山口 健一"
+   },
+   {
+    "start": 48,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "宮城県横浜市西区東神田27丁目26番6号 三筋パレス998"
+   },
+   {
+    "start": 91,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-604-344"
+   },
+   {
+    "start": 109,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yoko56@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0178",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 松本 香織、高橋 明美。次回会場の住所は 〒485-9924 東京都川崎市多摩区羽折町12丁目5番10号。決定事項: 資料は fukudayasuhiro@example.net へ送付する。担当者直通は 070-9968-2478。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "松本 香織"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "高橋 明美"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒485-9924"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "LOCATION",
+    "value": "東京都川崎市多摩区羽折町12丁目5番10号"
+   },
+   {
+    "start": 73,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fukudayasuhiro@example.net"
+   },
+   {
+    "start": 113,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-9968-2478"
+   }
+  ]
+ },
+ {
+  "id": "ja-0179",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 鈴木 あすか 様、ご住所は 岩手県調布市幸手35丁目9番18号 クレスト蔵前929 で間違いないでしょうか。折り返しは 03-4837-4219 までお願いします。控えは saitohiroshi@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "鈴木 あすか"
+   },
+   {
+    "start": 40,
+    "end": 67,
+    "entity_type": "LOCATION",
+    "value": "岩手県調布市幸手35丁目9番18号 クレスト蔵前929"
+   },
+   {
+    "start": 86,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4837-4219"
+   },
+   {
+    "start": 112,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "saitohiroshi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0180",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。遠藤 知実と申します。来月の打ち合わせについて相談させてください。会場は大阪府新島村皇居外苑15丁目27番1号 クレスト蔵前668を予定しています。連絡先は 080-5495-9404、メールは minoru86@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "遠藤 知実"
+   },
+   {
+    "start": 48,
+    "end": 77,
+    "entity_type": "LOCATION",
+    "value": "大阪府新島村皇居外苑15丁目27番1号 クレスト蔵前668"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-5495-9404"
+   },
+   {
+    "start": 110,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minoru86@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0181",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 山田 太一、小林 千代。次回会場の住所は 〒713-6934 島根県千代田区花島18丁目6番7号 麹町クレスト333。決定事項: 資料は mituru27@example.net へ送付する。担当者直通は 03-9470-6863。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "山田 太一"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "小林 千代"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒713-6934"
+   },
+   {
+    "start": 41,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "島根県千代田区花島18丁目6番7号 麹町クレスト333"
+   },
+   {
+    "start": 79,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mituru27@example.net"
+   },
+   {
+    "start": 113,
+    "end": 125,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-9470-6863"
+   }
+  ]
+ },
+ {
+  "id": "ja-0182",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 渡辺 裕樹 様、ご住所は 岡山県横浜市神奈川区南赤田10丁目14番5号 シティ平須賀712 で間違いないでしょうか。折り返しは 0120-896-214 までお願いします。控えは kaoriwatanabe@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "渡辺 裕樹"
+   },
+   {
+    "start": 39,
+    "end": 71,
+    "entity_type": "LOCATION",
+    "value": "岡山県横浜市神奈川区南赤田10丁目14番5号 シティ平須賀712"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-896-214"
+   },
+   {
+    "start": 116,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kaoriwatanabe@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0183",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。森 晃と申します。来月の打ち合わせについて相談させてください。会場は奈良県四街道市虎ノ門16丁目7番20号 ハイツ湯宮710を予定しています。連絡先は 080-4241-7560、メールは manabu06@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "森 晃"
+   },
+   {
+    "start": 46,
+    "end": 74,
+    "entity_type": "LOCATION",
+    "value": "奈良県四街道市虎ノ門16丁目7番20号 ハイツ湯宮710"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-4241-7560"
+   },
+   {
+    "start": 107,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "manabu06@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0184",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 佐藤 智也、松本 修平。次回会場の住所は 〒487-3065 奈良県川崎市幸区皇居外苑11丁目8番8号。決定事項: 資料は akemi36@example.com へ送付する。担当者直通は 0120-702-163。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "佐藤 智也"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "松本 修平"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒487-3065"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "LOCATION",
+    "value": "奈良県川崎市幸区皇居外苑11丁目8番8号"
+   },
+   {
+    "start": 72,
+    "end": 91,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "akemi36@example.com"
+   },
+   {
+    "start": 105,
+    "end": 117,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-702-163"
+   }
+  ]
+ },
+ {
+  "id": "ja-0185",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 佐藤 英樹 様、ご住所は 愛媛県西多摩郡瑞穂町皇居外苑2丁目20番1号 中小来川コート030 で間違いないでしょうか。折り返しは 080-7924-4771 までお願いします。控えは morishohei@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "佐藤 英樹"
+   },
+   {
+    "start": 39,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "愛媛県西多摩郡瑞穂町皇居外苑2丁目20番1号 中小来川コート030"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-7924-4771"
+   },
+   {
+    "start": 118,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "morishohei@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0186",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。石川 翼と申します。来月の打ち合わせについて相談させてください。会場は宮崎県日野市戸塚町9丁目13番17号を予定しています。連絡先は 070-9391-6198、メールは minoruaoki@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "石川 翼"
+   },
+   {
+    "start": 47,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "宮崎県日野市戸塚町9丁目13番17号"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-9391-6198"
+   },
+   {
+    "start": 98,
+    "end": 120,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minoruaoki@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0187",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 小林 美加子、小林 治。次回会場の住所は 〒220-1099 三重県墨田区東上野7丁目22番6号 アーバン六番町860。決定事項: 資料は chiyoota@example.org へ送付する。担当者直通は 03-8498-8206。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "小林 美加子"
+   },
+   {
+    "start": 17,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "小林 治"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒220-1099"
+   },
+   {
+    "start": 41,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "三重県墨田区東上野7丁目22番6号 アーバン六番町860"
+   },
+   {
+    "start": 80,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chiyoota@example.org"
+   },
+   {
+    "start": 114,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8498-8206"
+   }
+  ]
+ },
+ {
+  "id": "ja-0188",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 近藤 浩 様、ご住所は 石川県小笠原村東上野17丁目11番19号 アーバン南赤田038 で間違いないでしょうか。折り返しは 0120-762-728 までお願いします。控えは xtakahashi@example.org に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "近藤 浩"
+   },
+   {
+    "start": 38,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "石川県小笠原村東上野17丁目11番19号 アーバン南赤田038"
+   },
+   {
+    "start": 88,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-762-728"
+   },
+   {
+    "start": 114,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xtakahashi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0189",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。山本 知実と申します。来月の打ち合わせについて相談させてください。会場は島根県港区羽折町7丁目2番5号を予定しています。連絡先は 090-6455-9226、メールは atsushihashimoto@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "山本 知実"
+   },
+   {
+    "start": 48,
+    "end": 63,
+    "entity_type": "LOCATION",
+    "value": "島根県港区羽折町7丁目2番5号"
+   },
+   {
+    "start": 77,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-6455-9226"
+   },
+   {
+    "start": 96,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "atsushihashimoto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0190",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 吉田 知実、高橋 拓真。次回会場の住所は 〒571-4362 山梨県横浜市港南区上吉羽15丁目16番7号 千塚シャルム387。決定事項: 資料は harukawatanabe@example.net へ送付する。担当者直通は 03-8414-2472。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "吉田 知実"
+   },
+   {
+    "start": 16,
+    "end": 21,
+    "entity_type": "PERSON",
+    "value": "高橋 拓真"
+   },
+   {
+    "start": 31,
+    "end": 40,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒571-4362"
+   },
+   {
+    "start": 41,
+    "end": 72,
+    "entity_type": "LOCATION",
+    "value": "山梨県横浜市港南区上吉羽15丁目16番7号 千塚シャルム387"
+   },
+   {
+    "start": 83,
+    "end": 109,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "harukawatanabe@example.net"
+   },
+   {
+    "start": 123,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-8414-2472"
+   }
+  ]
+ },
+ {
+  "id": "ja-0191",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 村上 太郎 様、ご住所は 千葉県山武郡横芝光町花川戸41丁目9番10号 パーク橋場845 で間違いないでしょうか。折り返しは 03-4929-2996 までお願いします。控えは jsato@example.net に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "村上 太郎"
+   },
+   {
+    "start": 39,
+    "end": 70,
+    "entity_type": "LOCATION",
+    "value": "千葉県山武郡横芝光町花川戸41丁目9番10号 パーク橋場845"
+   },
+   {
+    "start": 89,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-4929-2996"
+   },
+   {
+    "start": 115,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jsato@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0192",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。鈴木 治と申します。来月の打ち合わせについて相談させてください。会場は滋賀県三宅島三宅村脚折町12丁目21番10号を予定しています。連絡先は 03-3465-2782、メールは shimizukenichi@example.org です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "鈴木 治"
+   },
+   {
+    "start": 47,
+    "end": 69,
+    "entity_type": "LOCATION",
+    "value": "滋賀県三宅島三宅村脚折町12丁目21番10号"
+   },
+   {
+    "start": 83,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-3465-2782"
+   },
+   {
+    "start": 101,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shimizukenichi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ja-0193",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 鈴木 零、小林 洋介。次回会場の住所は 〒398-3082 石川県長生郡白子町細野7丁目6番8号 芝浦アーバン684。決定事項: 資料は knakamura@example.com へ送付する。担当者直通は 03-7092-3030。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "鈴木 零"
+   },
+   {
+    "start": 15,
+    "end": 20,
+    "entity_type": "PERSON",
+    "value": "小林 洋介"
+   },
+   {
+    "start": 30,
+    "end": 39,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒398-3082"
+   },
+   {
+    "start": 40,
+    "end": 68,
+    "entity_type": "LOCATION",
+    "value": "石川県長生郡白子町細野7丁目6番8号 芝浦アーバン684"
+   },
+   {
+    "start": 79,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "knakamura@example.com"
+   },
+   {
+    "start": 114,
+    "end": 126,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-7092-3030"
+   }
+  ]
+ },
+ {
+  "id": "ja-0194",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 藤井 裕樹 様、ご住所は 佐賀県あきる野市湯宮41丁目1番18号 で間違いないでしょうか。折り返しは 0120-441-407 までお願いします。控えは hnakamura@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "藤井 裕樹"
+   },
+   {
+    "start": 39,
+    "end": 58,
+    "entity_type": "LOCATION",
+    "value": "佐賀県あきる野市湯宮41丁目1番18号"
+   },
+   {
+    "start": 77,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-441-407"
+   },
+   {
+    "start": 103,
+    "end": 124,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hnakamura@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0195",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。近藤 春香と申します。来月の打ち合わせについて相談させてください。会場は島根県武蔵村山市浅草橋40丁目20番6号 コーポ外国府間222を予定しています。連絡先は 070-5893-8812、メールは lsuzuki@example.com です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "近藤 春香"
+   },
+   {
+    "start": 48,
+    "end": 79,
+    "entity_type": "LOCATION",
+    "value": "島根県武蔵村山市浅草橋40丁目20番6号 コーポ外国府間222"
+   },
+   {
+    "start": 93,
+    "end": 106,
+    "entity_type": "PHONE_NUMBER",
+    "value": "070-5893-8812"
+   },
+   {
+    "start": 112,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lsuzuki@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0196",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 山本 美加子、渡辺 直人。次回会場の住所は 〒696-7047 北海道横浜市栄区土沢29丁目21番11号 勝どきアーバン776。決定事項: 資料は owatanabe@example.net へ送付する。担当者直通は 03-6601-1359。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "山本 美加子"
+   },
+   {
+    "start": 17,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "渡辺 直人"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒696-7047"
+   },
+   {
+    "start": 42,
+    "end": 73,
+    "entity_type": "LOCATION",
+    "value": "北海道横浜市栄区土沢29丁目21番11号 勝どきアーバン776"
+   },
+   {
+    "start": 84,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "owatanabe@example.net"
+   },
+   {
+    "start": 119,
+    "end": 131,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03-6601-1359"
+   }
+  ]
+ },
+ {
+  "id": "ja-0197",
+  "language": "ja",
+  "genre": "inquiry",
+  "text": "お問い合わせありがとうございます。ご登録のお名前は 橋本 聡太郎 様、ご住所は 青森県横浜市南区蔵前24丁目11番6号 で間違いないでしょうか。折り返しは 0120-247-364 までお願いします。控えは suzukinaoko@example.com に送信済みです。",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "橋本 聡太郎"
+   },
+   {
+    "start": 40,
+    "end": 59,
+    "entity_type": "LOCATION",
+    "value": "青森県横浜市南区蔵前24丁目11番6号"
+   },
+   {
+    "start": 78,
+    "end": 90,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0120-247-364"
+   },
+   {
+    "start": 104,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzukinaoko@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ja-0198",
+  "language": "ja",
+  "genre": "request",
+  "text": "お世話になっております。斎藤 修平と申します。来月の打ち合わせについて相談させてください。会場は富山県日野市千束38丁目27番7号を予定しています。連絡先は 080-8118-8228、メールは ymori@example.net です。よろしくお願いいたします。",
+  "spans": [
+   {
+    "start": 12,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "斎藤 修平"
+   },
+   {
+    "start": 48,
+    "end": 65,
+    "entity_type": "LOCATION",
+    "value": "富山県日野市千束38丁目27番7号"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "080-8118-8228"
+   },
+   {
+    "start": 98,
+    "end": 115,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ymori@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ja-0199",
+  "language": "ja",
+  "genre": "minutes",
+  "text": "【議事録】出席者: 中村 太一、池田 くみ子。次回会場の住所は 〒113-6101 山形県長生郡睦沢町松浦町38丁目9番12号。決定事項: 資料は esato@example.com へ送付する。担当者直通は 090-8489-1175。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "中村 太一"
+   },
+   {
+    "start": 16,
+    "end": 22,
+    "entity_type": "PERSON",
+    "value": "池田 くみ子"
+   },
+   {
+    "start": 32,
+    "end": 41,
+    "entity_type": "JP_POSTAL_CODE",
+    "value": "〒113-6101"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "LOCATION",
+    "value": "山形県長生郡睦沢町松浦町38丁目9番12号"
+   },
+   {
+    "start": 74,
+    "end": 91,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "esato@example.com"
+   },
+   {
+    "start": 105,
+    "end": 118,
+    "entity_type": "PHONE_NUMBER",
+    "value": "090-8489-1175"
+   }
+  ]
+ }
+]
