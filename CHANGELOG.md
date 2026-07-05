@@ -15,6 +15,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Browser app & Chrome extension: show an explicit warning while the NER toggle is off,
   since names and locations are not masked in regex-only mode.
 
+### Changed
+- **BREAKING**: minimum supported Python is now 3.12 (was 3.10). Python 3.10
+  reaches EOL in October 2026 and 3.11 is in security-only maintenance; new
+  installs should use 3.12+. Anonymization behavior and the label format are
+  unchanged.
+- Toolchain modernization (no behavior or label-format changes):
+  - Web: TypeScript 5.7 -> 6.0, Vite 6 -> 8 (Rolldown), Vitest 3 -> 4,
+    transformers.js 3.x -> 4.x (also a bug fix - see Fixed above),
+    `@types/chrome` 0.0.x -> 0.2.x, pnpm 10 -> 11.
+  - CI: Node 22 -> 24 (Active LTS) and all GitHub Actions bumped to their
+    latest majors.
+  - Dev default Python 3.12 -> 3.13 (`.python-version`). Python 3.14 is
+    still out of reach: the spaCy stack ships no 3.14 wheels yet.
+
 ## [0.2.0] - 2026-07-05
 
 ### Added

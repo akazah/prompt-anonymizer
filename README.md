@@ -5,7 +5,7 @@ English | [日本語](README_ja.md)
 > Anonymize PII before it reaches an LLM — with consistent, **reversible** labels. Japanese & English.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)](pyproject.toml)
+[![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Sending prompts to an LLM often means sending names, phone numbers, emails and

@@ -5,7 +5,7 @@
 > LLMに届く前にPIIを匿名化 — 一貫性のある**復元可能な**ラベルで。日本語・英語対応。
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue)](pyproject.toml)
+[![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 LLMへプロンプトを送るとき、人名・電話番号・メールアドレス・住所も一緒に送ってしまいがちです。

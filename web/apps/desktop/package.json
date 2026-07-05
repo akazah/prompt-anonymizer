@@ -10,6 +10,6 @@
     "lint": "node -e \"JSON.parse(require('fs').readFileSync('src-tauri/tauri.conf.json','utf8')); console.log('tauri.conf.json: OK')\""
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.5.0"
+    "@tauri-apps/cli": "^2.11.4"
   }
 }
