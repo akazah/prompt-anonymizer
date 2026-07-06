@@ -93,18 +93,38 @@ prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 | PHONE_NUMBER | 電話番号 | Phone | pattern (JP/US variants) + libphonenumber (Python) |
 | JP_POSTAL_CODE | 郵便番号 | PostalCode | pattern (custom) |
 | JP_MY_NUMBER | マイナンバー | MyNumber | pattern + check digit (custom) |
-| CREDIT_CARD | クレジットカード | CreditCard | pattern (Python, en) |
+| CREDIT_CARD | クレジットカード | CreditCard | pattern + Luhn check (both cores, ja/en) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | exact match |
 
 `deny_list` forces masking of specific strings; `allow_list` exempts them.
+
+### Optional transformer NER backend (Python)
+
+The default NER is spaCy. For markedly better Japanese PERSON/LOCATION
+recall, install the `hf` extra and switch the backend — it runs the same
+model family the browser targets use via transformers.js, fully locally:
+
+```bash
+pip install "prompt-anonymizer[hf]"
+```
+
+```python
+pa = PromptAnonymizer(languages=["ja"], ner_backend="hf")  # CLI: --ner-backend hf
+```
+
+Batch processing is also available and much faster than a loop:
+
+```python
+results = pa.anonymize_batch(texts, language="ja", batch_size=16)
+```
 
 ## Accuracy
 
 Measured span-level on a seeded synthetic golden set (200 documents per
 language) — see [docs/EVAL.md](docs/EVAL.md) for the full table and
 `python -m prompt_anonymizer.evals` to reproduce. Highlights (Python core,
-`sm` models): ja PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE recall 1.00,
-ja PERSON F1 0.93, ja LOCATION F1 0.87.
+`sm` models): ja PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD
+recall 1.00; ja PERSON recall 0.82 with spaCy, 1.00 with `ner_backend="hf"`.
 
 ## Limitations
 

@@ -90,17 +90,35 @@ prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 | PHONE_NUMBER | 電話番号 | Phone | パターン（JP/US表記ゆれ）+ libphonenumber（Python） |
 | JP_POSTAL_CODE | 郵便番号 | PostalCode | パターン（カスタム） |
 | JP_MY_NUMBER | マイナンバー | MyNumber | パターン + 検査用数字（カスタム） |
-| CREDIT_CARD | クレジットカード | CreditCard | パターン（Python, en） |
+| CREDIT_CARD | クレジットカード | CreditCard | パターン + Luhn検査（両コア, ja/en） |
 | CUSTOM（deny list） | 秘匿情報 | Custom | 完全一致 |
 
 `deny_list` で特定の語を強制マスク、`allow_list` で除外できます。
+
+### オプションのTransformer NERバックエンド（Python）
+
+デフォルトのNERはspaCyです。日本語の人名・住所の再現率を大きく上げたい
+場合は `hf` extra を入れてバックエンドを切り替えられます。ブラウザ版が
+transformers.jsで使うのと同系統のモデルを、完全にローカルで実行します:
+
+```bash
+pip install "prompt-anonymizer[hf]"
+```
+
+```python
+pa = PromptAnonymizer(languages=["ja"], ner_backend="hf")  # CLI: --ner-backend hf
+```
+
+複数テキストは `anonymize_batch(texts, language="ja", batch_size=16)` で
+ループより高速に処理できます。
 
 ## 精度
 
 シード固定の合成ゴールデンセット（各言語200文書）でスパン単位計測。全表は
 [docs/EVAL.md](docs/EVAL.md)、再現は `python -m prompt_anonymizer.evals`。
 概要（Pythonコア・`sm`モデル）: ja の PHONE_NUMBER / EMAIL_ADDRESS /
-JP_POSTAL_CODE は recall 1.00、ja PERSON F1 0.93、ja LOCATION F1 0.87。
+JP_POSTAL_CODE / CREDIT_CARD は recall 1.00、ja PERSON は spaCy で
+recall 0.82、`ner_backend="hf"` で 1.00。
 
 ## 制限事項
 
