@@ -9,6 +9,7 @@
  * downloaded: `detectLanguage` never triggers a model download itself.
  */
 
+import { SUPPORTED_LANGUAGES, languageFromBcp47 } from "./languages.js";
 import type { Language } from "./types.js";
 
 const VIETNAMESE_MARKERS = /[ăâđơưĂÂĐƠƯ\u01A0\u01A1\u01AF\u01B0\u1EA0-\u1EF9]/;
@@ -43,8 +44,7 @@ interface LanguageDetectorStatic {
   create(options?: { expectedInputLanguages?: string[] }): Promise<BuiltinLanguageDetector>;
 }
 
-const EXPECTED = { expectedInputLanguages: ["en", "ja", "es", "vi"] };
-const SUPPORTED_BASE_TAGS = new Set<Language>(["ja", "en", "es", "vi"]);
+const EXPECTED = { expectedInputLanguages: [...SUPPORTED_LANGUAGES] };
 
 let cachedDetector: Promise<BuiltinLanguageDetector | null> | null = null;
 
@@ -85,8 +85,8 @@ export async function detectLanguage(text: string): Promise<Language> {
   try {
     const results = await detector.detect(text);
     for (const result of results) {
-      const base = result.detectedLanguage.toLowerCase().split("-")[0] as Language;
-      if (SUPPORTED_BASE_TAGS.has(base)) return base;
+      const language = languageFromBcp47(result.detectedLanguage);
+      if (language) return language;
     }
     return fallback;
   } catch {

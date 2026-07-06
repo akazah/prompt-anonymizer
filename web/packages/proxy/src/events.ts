@@ -6,6 +6,7 @@
  * inside this capped buffer; nothing is written to disk or logs.
  */
 
+import type { Language } from "@prompt-anonymizer/core";
 import type { ProxyConfig, RedactionEvent } from "./api-types.js";
 
 export interface StoredEvent {
@@ -14,7 +15,7 @@ export interface StoredEvent {
   method: string;
   path: string;
   model?: string;
-  language: "en" | "ja" | "es" | "vi";
+  language: Language;
   stream: boolean;
   entityCounts: Record<string, number>;
   labels: string[];
