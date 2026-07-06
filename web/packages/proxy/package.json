@@ -1,0 +1,46 @@
+{
+  "name": "@prompt-anonymizer/proxy",
+  "version": "0.2.0",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. OpenAI-compatible local proxy (prompt-anonymizer-proxy) built on @prompt-anonymizer/core, with a localhost admin GUI.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "prompt-anonymizer-proxy": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akazah/prompt-anonymizer.git",
+    "directory": "web/packages/proxy"
+  },
+  "keywords": [
+    "pii",
+    "anonymization",
+    "privacy",
+    "llm",
+    "proxy",
+    "openai"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-ui.mjs",
+    "test": "vitest run",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@prompt-anonymizer/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@prompt-anonymizer/proxy-admin": "workspace:*",
+    "@types/node": "^24.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}
