@@ -11,6 +11,7 @@ MIN_RECALL = {
     ("ja", "PHONE_NUMBER"): 0.9,
     ("ja", "EMAIL_ADDRESS"): 0.9,
     ("ja", "JP_POSTAL_CODE"): 0.9,
+    ("ja", "JP_MY_NUMBER"): 0.9,
     ("ja", "CREDIT_CARD"): 0.9,
     ("en", "PHONE_NUMBER"): 0.9,
     ("en", "EMAIL_ADDRESS"): 0.9,

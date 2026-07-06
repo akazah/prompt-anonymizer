@@ -223,3 +223,73 @@ describe("detectDenyList", () => {
     expect(spans.every((s) => s.entityType === "CUSTOM")).toBe(true);
   });
 });
+
+/**
+ * Score parity table (Python vs web/packages/core recognizers.ts).
+ * Scores intentionally differ today; this pin makes future drift visible.
+ *   jp_mobile     py 0.6 / ts 0.7
+ *   jp_landline   py 0.5 / ts 0.6
+ *   jp_tollfree   py 0.6 / ts 0.7
+ *   us_phone      py 0.6 / ts 0.6
+ *   postal_marked py 0.9 / ts 0.9
+ *   postal_bare   py 0.3 (all langs, context-boosted) / ts 0.35 (ja only)
+ *   my_number     py 0.5 -> 1.0 on check-digit / ts 0.7 flat
+ *   credit_card   py 0.3 -> 1.0 on Luhn / ts 1.0 (pre-validated)
+ */
+describe("detectWithRegex score pins", () => {
+  it("emits JP mobile at 0.7", () => {
+    const spans = detectWithRegex("090-1234-5678", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.7);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits JP toll-free at 0.7", () => {
+    const spans = detectWithRegex("0120-123-456", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.7);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits JP landline at 0.6", () => {
+    const spans = detectWithRegex("03-1234-5678", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.6);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits US phone at 0.6", () => {
+    const spans = detectWithRegex("(333) 333-3333", "en");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.6);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits marked postal code at 0.9", () => {
+    const spans = detectWithRegex("〒100-0001", "ja");
+    const postal = spans.find((s) => s.entityType === "JP_POSTAL_CODE" && s.score === 0.9);
+    expect(postal).toBeDefined();
+  });
+
+  it("emits bare postal code at 0.35 (ja only)", () => {
+    const spans = detectWithRegex("100-0001", "ja");
+    const postal = spans.find((s) => s.entityType === "JP_POSTAL_CODE" && s.score === 0.35);
+    expect(postal).toBeDefined();
+  });
+
+  it("emits valid my number at 0.7", () => {
+    const body = "12345678901";
+    const myNumber = body + String(myNumberCheckDigit(body));
+    const spans = detectWithRegex(`マイナンバー${myNumber}です`, "ja");
+    const mn = spans.find((s) => s.entityType === "JP_MY_NUMBER" && s.score === 0.7);
+    expect(mn).toBeDefined();
+  });
+
+  it("emits Luhn-valid credit card at 1.0", () => {
+    const spans = detectWithRegex("4111111111111111", "ja");
+    const card = spans.find((s) => s.entityType === "CREDIT_CARD" && s.score === 1.0);
+    expect(card).toBeDefined();
+  });
+
+  it("emits email address at 0.9", () => {
+    const spans = detectWithRegex("taro@example.com", "en");
+    const email = spans.find((s) => s.entityType === "EMAIL_ADDRESS" && s.score === 0.9);
+    expect(email).toBeDefined();
+  });
+});

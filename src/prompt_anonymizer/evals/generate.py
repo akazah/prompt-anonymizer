@@ -8,6 +8,8 @@ from typing import Any
 
 from faker import Faker
 
+from prompt_anonymizer.recognizers.my_number import my_number_check_digit
+
 GENRES = ("request", "minutes", "inquiry")
 
 
@@ -89,6 +91,15 @@ def _ja_postal(rng: random.Random) -> str:
 
 def _us_phone(rng: random.Random) -> str:
     return f"({rng.randint(201, 989)}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
+
+
+def _my_number(rng: random.Random) -> str:
+    """A check-digit-valid 12-digit My Number, bare or hyphenated 4-4-4."""
+    body = "".join(str(rng.randint(0, 9)) for _ in range(11))
+    number = body + str(my_number_check_digit(body))
+    if rng.random() < 0.5:
+        return "-".join(number[i : i + 4] for i in range(0, 12, 4))
+    return number
 
 
 def _es_phone(rng: random.Random) -> str:
@@ -202,13 +213,16 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
         ).lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit("。")
     else:
         card = _credit_card(fake, rng)
+        my_number = _my_number(rng)
         b.lit("お問い合わせありがとうございます。ご登録のお名前は ").pii(name, "PERSON").lit(
             " 様、ご住所は "
         ).pii(city, "LOCATION").lit(" で間違いないでしょうか。折り返しは ").pii(
             phone, "PHONE_NUMBER"
         ).lit(" までお願いします。お支払いのカード番号は ").pii(card, "CREDIT_CARD").lit(
-            " 、控えは "
-        ).pii(email, "EMAIL_ADDRESS").lit(" に送信済みです。")
+            " 、ご本人確認のマイナンバーは "
+        ).pii(my_number, "JP_MY_NUMBER").lit(" 、控えは ").pii(email, "EMAIL_ADDRESS").lit(
+            " に送信済みです。"
+        )
 
     return GoldenCase(id=case_id, language="ja", genre=genre, text=b.text, spans=b.spans)
 
