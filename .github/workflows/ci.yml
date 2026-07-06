@@ -83,6 +83,13 @@ jobs:
         working-directory: web
         run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
 
+      # Fails when the TS regex recognizers drift from the table committed in
+      # docs/EVAL.md (fast: golden set + regexes only, no models). The Python
+      # counterpart is tests/unit/test_golden_freshness.py in the python job.
+      - name: Golden eval table check (TS core vs docs/EVAL.md)
+        working-directory: web/packages/core
+        run: node scripts/eval-golden.mjs --check
+
       # E2E reuses the dist/ built above (no rebuild). The default suite is
       # regex-only and fully offline; the NER suite runs in weekly-eval.
       - name: Cache Playwright browsers

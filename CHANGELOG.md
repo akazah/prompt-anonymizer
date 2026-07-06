@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Language registry as single source of truth per core
+  (`prompt_anonymizer.languages.SUPPORTED_LANGUAGES` /
+  `SUPPORTED_LANGUAGES` from `@prompt-anonymizer/core`, also exposed via
+  the dependency-free `@prompt-anonymizer/core/languages` subpath): type
+  unions, CLI validation/help, language pickers, detector tags and eval
+  loops all derive from it. New CI-enforced consistency guards:
+  cross-core label parity (`labels/*.yaml` ⟷ TS `LABELS`, byte-exact),
+  registry coverage of models/golden sets/README translations, golden-set
+  freshness vs `evals/generate.py`, and a `eval-golden.mjs --check` CI
+  step that fails when the TS table in `docs/EVAL.md` drifts. Adding a
+  language is documented in `docs/ADDING_A_LANGUAGE.md`.
+
 - Spanish (`es`) and Vietnamese (`vi`) support in both cores (non-breaking,
   additive): locale-specific labels (`Nombre`, `Teléfono`, `Tên`,
   `SốĐiệnThoại`, …), Spain and Vietnam phone recognizers, spaCy / HF /
@@ -157,6 +169,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   in `labeling.py`.
 
 ### Fixed
+- Proxy admin API and GUI now accept `es` / `vi` (config updates
+  previously collapsed them to `auto`, and an `es`/`vi` configured
+  language fell back to detection); admin GUI ships Spanish/Vietnamese
+  sample texts and displays all language names.
 - TS core: NER no longer errors with "no available backend found. ERR:
   [webgpu] TypeError: … webgpuInit is not a function" on Safari/WebKit
   (iOS/macOS Safari 26, Tauri's WKWebView). transformers.js <= 4.2 serves
