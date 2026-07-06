@@ -28,3 +28,61 @@ jobs:
         with:
           name: eval-report
           path: eval-lg.md
+
+  # Full-pipeline browser e2e including the transformers.js NER models.
+  # Kept out of PR CI (model download is large/slow); the browser profile is
+  # cached so subsequent weekly runs skip the download.
+  e2e-ner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build web app (incl. core dependency)
+        working-directory: web
+        run: pnpm --filter "@prompt-anonymizer/web..." build
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('web/pnpm-lock.yaml') }}
+
+      - name: Cache NER models (browser profile)
+        uses: actions/cache@v5
+        with:
+          path: web/e2e/.cache
+          # Model IDs live in ner.ts; a change there invalidates the cache.
+          key: ner-profile-${{ runner.os }}-${{ hashFiles('web/packages/core/src/ner.ts') }}
+
+      - name: Install Playwright Chromium
+        working-directory: web
+        run: pnpm --filter @prompt-anonymizer/e2e exec playwright install --with-deps chromium
+
+      - name: E2E tests (full NER pipeline)
+        working-directory: web
+        run: pnpm e2e:ner
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report-ner
+          path: |
+            web/e2e/playwright-report/
+            web/e2e/test-results/
+          retention-days: 7

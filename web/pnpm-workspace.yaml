@@ -1,6 +1,7 @@
 packages:
   - packages/*
   - apps/*
+  - e2e
 # Keep installs script-free: these transitive deps of transformers.js are
 # only needed for Node-side native inference, not the browser bundles.
 allowBuilds:

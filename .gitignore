@@ -172,6 +172,11 @@ web/apps/desktop/src-tauri/target/
 web/apps/desktop/src-tauri/gen/
 *.tsbuildinfo
 
+# playwright e2e artifacts (browser profile / model cache, reports, traces)
+web/e2e/.cache/
+web/e2e/test-results/
+web/e2e/playwright-report/
+
 # demo build artifacts (GIFs are committed; intermediates are not)
 demo/out/
 

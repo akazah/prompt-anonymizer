@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Playwright e2e suite (`web/e2e/`) covering the browser app and the real
+  MV3 Chrome extension: anonymize → mapping → restore round trips, label
+  consistency, golden-set round-trip identity through the UI, and
+  `chrome.storage.session` mapping persistence. The default suite is
+  regex-only and fully offline — every test asserts no request leaves the
+  device — and runs in PR CI; an opt-in `ner` project (`pnpm e2e:ner`)
+  exercises the full transformers.js pipeline with a cached model profile
+  and runs in the weekly workflow.
+
 ### Fixed
 - TS core: NER no longer errors with "no available backend found. ERR:
   [webgpu] TypeError: … webgpuInit is not a function" on Safari/WebKit

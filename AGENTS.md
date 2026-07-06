@@ -34,4 +34,6 @@ avoid style nits (ruff/tsc enforce style mechanically).
 
 - Python: `uv run pytest -m "not slow"`, `uv run ruff check .`, `uv run mypy src`
 - Web: `cd web && pnpm test && pnpm lint && pnpm build`
+- Web e2e (after build): `cd web && pnpm e2e` (offline, PR CI); `pnpm e2e:ner`
+ runs the full NER pipeline (model download, weekly CI)
 - Demo assets are script-generated only: `demo/README.md`
