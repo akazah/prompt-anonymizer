@@ -59,6 +59,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 | **Node CLI（npx）** | `npx @prompt-anonymizer/cli`（npm未公開 — `web/packages/cli` からビルド） | Python CLIと同じコマンド・フラグ。transformers.js NERで完全オンデバイス。 |
 | **Web Component** | `@prompt-anonymizer/element`（npm未公開） | フレームワーク非依存の `<prompt-anonymizer>` 要素。匿名化→復元パネルを任意のサイトへ埋め込み可能（素のHTML・Svelte・Angular等）。 |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue`（npm未公開） | 組み込み用 `<AnonymizerPanel />` コンポーネント + カスタムUI向け `useAnonymizer()` フック / コンポーザブル。下のQuickstart参照。 |
+| **ローカルプロキシ + 管理GUI** | `@prompt-anonymizer/proxy`（npm未公開 — `web/packages/proxy` からビルド） | OpenAI互換のリバースプロキシ。`OPENAI_BASE_URL` を向けるだけでPIIをマスクして送信し、応答内のラベルを復元（ストリーミング対応）。管理GUIは `http://127.0.0.1:8787/admin/`。下のQuickstart参照。 |
 
 ## Quickstart（Python）
 
@@ -137,6 +138,29 @@ const { text: restored, unresolved } = await restore(llmReply);
 デフォルトは正規表現のみの検出（メール・電話番号など）です。人名・住所も
 マスクするには `@prompt-anonymizer/core` の
 `new TransformersNerBackend()` を `ner` として渡してください。
+
+## Quickstart（ローカルプロキシ）
+
+OpenAI互換プロキシを起動してクライアントを向けるだけで、リクエストが
+マシンを離れる前にPIIがマスクされ、応答内のラベルは復元されます
+（ストリーミング対応）。マッピングはリクエスト単位でプロキシのメモリ内
+にのみ保持されます:
+
+```bash
+# npm未公開のためリポジトリからビルド:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # http://127.0.0.1:8787 で待ち受け
+# 公開後は: npx @prompt-anonymizer/proxy
+
+# アプリ / シェル側:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+管理GUI（`http://127.0.0.1:8787/admin/`）では、稼働状況とリダクション
+イベント（ラベルと件数のみ）の確認、設定（上流URL・NER・deny/allow
+リスト）の編集、ローカル完結の匿名化プレイグラウンドが使えます。
+プロキシはデフォルトで `127.0.0.1` にバインドされ、元の値のGUI表示は
+`--record-mappings` を明示的に有効化した場合のみ可能です。
 
 ## なぜ〇〇ではないのか？
 
