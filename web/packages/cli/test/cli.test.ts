@@ -80,6 +80,31 @@ describe("anonymize", () => {
     expect(stderr.join("\n")).toContain("names and locations will NOT be masked");
   });
 
+  it("passes --entities through to the engine factory", async () => {
+    let receivedEntities: string[] | undefined;
+    const factory: EngineFactory = ({ entities }) => {
+      receivedEntities = entities;
+      return new Anonymizer({ entities });
+    };
+    const { io } = makeIo();
+    const code = await run(
+      [
+        "anonymize",
+        "--no-ner",
+        "-l",
+        "en",
+        "-t",
+        "SSN 856-45-6780",
+        "--entities",
+        "US_SSN,EMAIL_ADDRESS",
+      ],
+      io,
+      factory,
+    );
+    expect(code).toBe(0);
+    expect(receivedEntities).toEqual(["US_SSN", "EMAIL_ADDRESS"]);
+  });
+
   it("exits 2 when the interactive review is rejected", async () => {
     const { io, stderr } = makeIo({ confirm: false });
     const code = await run(

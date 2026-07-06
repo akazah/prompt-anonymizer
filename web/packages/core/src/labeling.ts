@@ -18,6 +18,8 @@ export const LABELS: Record<Language, Record<string, string>> = {
     JP_POSTAL_CODE: "PostalCode",
     JP_MY_NUMBER: "MyNumber",
     CREDIT_CARD: "CreditCard",
+    US_SSN: "SSN",
+    IBAN_CODE: "IBAN",
     CUSTOM: "Custom",
   },
   ja: {
@@ -28,6 +30,8 @@ export const LABELS: Record<Language, Record<string, string>> = {
     JP_POSTAL_CODE: "郵便番号",
     JP_MY_NUMBER: "マイナンバー",
     CREDIT_CARD: "クレジットカード",
+    US_SSN: "社会保障番号",
+    IBAN_CODE: "IBAN",
     CUSTOM: "秘匿情報",
   },
 };

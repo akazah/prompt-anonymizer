@@ -206,8 +206,13 @@ the category has earned the skepticism.)
 | JP_MY_NUMBER | マイナンバー | MyNumber | pattern + check digit (custom) |
 | CREDIT_CARD | クレジットカード | CreditCard | pattern + Luhn check (both cores, ja/en) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | exact match |
+| US_SSN (opt-in) | 社会保障番号 | SSN | pattern + invalidation rules (both cores, ja/en) |
+| IBAN_CODE (opt-in) | IBAN | IBAN | pattern + mod-97 check (both cores, ja/en) |
 
 `deny_list` forces masking of specific strings; `allow_list` exempts them.
+Opt-in entities are not detected by default — request them explicitly:
+`PromptAnonymizer(entities=[...])`, `new Anonymizer({ entities })`, or
+`--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` on either CLI.
 
 ### Optional transformer NER backend (Python)
 

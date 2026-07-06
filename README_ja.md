@@ -208,8 +208,13 @@ Presidioを使いつつ、その上にLLMラウンドトリップのワークフ
 | JP_MY_NUMBER | マイナンバー | MyNumber | パターン + 検査用数字（カスタム） |
 | CREDIT_CARD | クレジットカード | CreditCard | パターン + Luhn検査（両コア, ja/en） |
 | CUSTOM（deny list） | 秘匿情報 | Custom | 完全一致 |
+| US_SSN（opt-in） | 社会保障番号 | SSN | パターン + 無効値ルール（両コア, ja/en） |
+| IBAN_CODE（opt-in） | IBAN | IBAN | パターン + mod-97検査（両コア, ja/en） |
 
 `deny_list` で特定の語を強制マスク、`allow_list` で除外できます。
+opt-inエンティティはデフォルトでは検出されません。
+`PromptAnonymizer(entities=[...])`、`new Anonymizer({ entities })`、または
+CLIの `--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` で明示指定してください。
 
 ### オプションのTransformer NERバックエンド（Python）
 

@@ -13,15 +13,18 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 |---|---|---|---|---|---|
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.92 | 0.78 | 0.85 | 200 |
+| ja | LOCATION | 0.92 | 0.79 | 0.85 | 200 |
 | ja | PERSON | 0.98 | 0.82 | 0.89 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| en | LOCATION | 0.99 | 0.94 | 0.96 | 200 |
-| en | PERSON | 0.98 | 0.97 | 0.97 | 267 |
+| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| en | LOCATION | 0.99 | 0.94 | 0.97 | 200 |
+| en | PERSON | 0.99 | 0.97 | 0.98 | 267 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
 
 Model size: `sm` / NER backend: `spacy` / cases per language: 200 (seed fixed).
 <!-- python-eval:end -->
@@ -39,15 +42,18 @@ and copy the table (the default run above owns the marker block).
 |---|---|---|---|---|---|
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.88 | 1.00 | 0.93 | 200 |
+| ja | LOCATION | 0.89 | 1.00 | 0.94 | 200 |
 | ja | PERSON | 0.94 | 1.00 | 0.97 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| en | LOCATION | 0.98 | 0.99 | 0.99 | 200 |
-| en | PERSON | 0.91 | 1.00 | 0.95 | 267 |
+| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| en | LOCATION | 1.00 | 1.00 | 1.00 | 200 |
+| en | PERSON | 0.90 | 1.00 | 0.95 | 267 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
 
 ## TypeScript core (regex recognizers, structured PII only)
 
@@ -60,8 +66,11 @@ and are not measured here. Regenerate with
 |---|---|---|---|---|---|
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
