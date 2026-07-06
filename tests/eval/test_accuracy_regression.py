@@ -2,6 +2,8 @@
 
 import pytest
 
+from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
+
 pytestmark = [pytest.mark.slow, pytest.mark.integration]
 
 # Regression floors, intentionally below current measured values so that
@@ -28,7 +30,7 @@ MIN_RECALL = {
 }
 
 
-@pytest.mark.parametrize("language", ["ja", "en", "es", "vi"])
+@pytest.mark.parametrize("language", SUPPORTED_LANGUAGES)
 def test_recall_floor(language: str) -> None:
     from prompt_anonymizer import PromptAnonymizer
     from prompt_anonymizer.evals.generate import generate_cases

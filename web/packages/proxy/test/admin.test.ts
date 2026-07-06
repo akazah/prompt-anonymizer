@@ -93,6 +93,26 @@ describe("admin API", () => {
     expect(got.body).toEqual(ok.body);
   });
 
+  it("accepts every registry language in config PUT", async () => {
+    const upstreamUrl = await startUpstream();
+    proxy = await startProxyServer({
+      port: 0,
+      engineFactory: regexEngine,
+      config: { upstreamUrl, ner: false },
+    });
+
+    const ok = await json(`${proxy.url}/admin/api/config`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ language: "vi" }),
+    });
+    expect(ok.status).toBe(200);
+    expect((ok.body as { language: string }).language).toBe("vi");
+
+    const got = await json(`${proxy.url}/admin/api/config`);
+    expect((got.body as { language: string }).language).toBe("vi");
+  });
+
   it("records events without mapping by default", async () => {
     const upstreamUrl = await startUpstream();
     proxy = await startProxyServer({

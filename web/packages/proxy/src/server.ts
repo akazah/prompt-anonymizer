@@ -15,9 +15,12 @@ import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   Anonymizer,
+  LANGUAGE_LIST,
   TransformersNerBackend,
   deanonymize,
   detectLanguage,
+  isLanguage,
+  isLanguageOption,
   type Language,
 } from "@prompt-anonymizer/core";
 import type {
@@ -185,7 +188,7 @@ async function resolveLanguage(
   configLang: ProxyConfig["language"],
   text: string,
 ): Promise<Language> {
-  if (configLang === "en" || configLang === "ja") return configLang;
+  if (isLanguage(configLang)) return configLang;
   return detectLanguage(text);
 }
 
@@ -317,8 +320,8 @@ function validateConfigPatch(
   }
 
   if ("language" in body) {
-    if (body.language !== "auto" && body.language !== "en" && body.language !== "ja") {
-      return { ok: false, error: "language must be auto, en, or ja." };
+    if (!isLanguageOption(body.language)) {
+      return { ok: false, error: `language must be ${LANGUAGE_LIST} or auto.` };
     }
     out.language = body.language;
   }

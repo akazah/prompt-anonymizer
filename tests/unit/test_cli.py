@@ -98,7 +98,8 @@ def test_confirm_loop_reprompts(monkeypatch: pytest.MonkeyPatch) -> None:
 
 def test_anonymize_unsupported_language_fails_cleanly() -> None:
     result = runner.invoke(app, ["anonymize", "--text", "hi", "--language", "xx"])
-    assert result.exit_code == 1
+    assert result.exit_code == 2
+    assert "Language must be one of" in result.output
     assert "Traceback" not in result.output
 
 
