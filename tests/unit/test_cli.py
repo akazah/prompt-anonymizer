@@ -100,3 +100,23 @@ def test_anonymize_unsupported_language_fails_cleanly() -> None:
     result = runner.invoke(app, ["anonymize", "--text", "hi", "--language", "xx"])
     assert result.exit_code == 1
     assert "Traceback" not in result.output
+
+
+@pytest.mark.integration
+def test_anonymize_entities_option_filters_detection() -> None:
+    result = runner.invoke(
+        app,
+        [
+            "anonymize",
+            "--text",
+            "Contact me at john@example.com or call 555-123-4567.",
+            "--language",
+            "en",
+            "--entities",
+            "EMAIL_ADDRESS",
+        ],
+    )
+    assert result.exit_code == 0
+    assert "<Email_1>" in result.output
+    assert "john@example.com" not in result.output
+    assert "555-123-4567" in result.output
