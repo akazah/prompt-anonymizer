@@ -50,6 +50,56 @@ test("EN sample: masks phone and emails with EN label names", async ({ page }) =
   expect(output).not.toContain("john@example.com");
 });
 
+test("ES sample: masks phone and emails with ES label names", async ({ page }) => {
+  const output = await anonymizeRegexOnly(page, { language: "es" });
+
+  expect(output).toContain("<Teléfono_1>");
+  expect(output).toContain("<Correo_1>");
+  expect(output).toContain("<Correo_2>");
+  expect(output).not.toContain("+34 612 345 678");
+  expect(output).not.toContain("maria.garcia@example.com");
+  expect(output).not.toContain("carlos.ruiz@example.com");
+});
+
+test("ES: restoring an LLM-style reply resolves every label", async ({ page }) => {
+  await anonymizeRegexOnly(page, { language: "es" });
+
+  const restored = await restore(
+    page,
+    "Entendido. Contacte a <Correo_1> o al <Teléfono_1>.",
+  );
+
+  expect(restored).toContain("maria.garcia@example.com");
+  expect(restored).toContain("+34 612 345 678");
+  expect(restored).not.toContain("<Correo_1>");
+  await expect(page.locator("#restore-warning")).toBeHidden();
+});
+
+test("VI sample: masks phone and emails with VI label names", async ({ page }) => {
+  const output = await anonymizeRegexOnly(page, { language: "vi" });
+
+  expect(output).toContain("<SốĐiệnThoại_1>");
+  expect(output).toContain("<Email_1>");
+  expect(output).toContain("<Email_2>");
+  expect(output).not.toContain("0912 345 678");
+  expect(output).not.toContain("an.nguyen@example.com");
+  expect(output).not.toContain("mai.tran@example.com");
+});
+
+test("VI: restoring an LLM-style reply resolves every label", async ({ page }) => {
+  await anonymizeRegexOnly(page, { language: "vi" });
+
+  const restored = await restore(
+    page,
+    "Đã hiểu. Vui lòng liên hệ <Email_1> hoặc <SốĐiệnThoại_1>.",
+  );
+
+  expect(restored).toContain("an.nguyen@example.com");
+  expect(restored).toContain("0912 345 678");
+  expect(restored).not.toContain("<Email_1>");
+  await expect(page.locator("#restore-warning")).toBeHidden();
+});
+
 test("repeated values share one label; distinct values get numbered", async ({ page }) => {
   const output = await anonymizeRegexOnly(page, {
     language: "en",

@@ -1,5 +1,5 @@
 /**
- * On-device language detection for choosing between "ja" and "en".
+ * On-device language detection for choosing between "en", "ja", "es", and "vi".
  *
  * Prefers the browser's built-in LanguageDetector API (Chrome 138+,
  * https://developer.mozilla.org/docs/Web/API/LanguageDetector) — an
@@ -11,9 +11,22 @@
 
 import type { Language } from "./types.js";
 
-/** Heuristic fallback: any kana/kanji means Japanese. */
+const VIETNAMESE_MARKERS = /[ăâđơưĂÂĐƠƯ\u01A0\u01A1\u01AF\u01B0\u1EA0-\u1EF9]/;
+const SPANISH_MARKERS = /[¿¡ñÑáéíóúüÁÉÍÓÚÜ]/;
+
+/**
+ * Heuristic fallback when the built-in LanguageDetector is unavailable.
+ *
+ * Ordering: (a) kana/kanji → "ja"; (b) Vietnamese-specific letters → "vi";
+ * (c) Spanish markers → "es"; (d) otherwise "en". Step (c) runs after (b)
+ * because Vietnamese also uses acute/grave vowels; other Romance languages
+ * may map to "es" — acceptable for a 4-way heuristic.
+ */
 export function guessLanguage(text: string): Language {
-  return /[\u3040-\u30ff\u4e00-\u9fff]/.test(text) ? "ja" : "en";
+  if (/[\u3040-\u30ff\u4e00-\u9fff]/.test(text)) return "ja";
+  if (VIETNAMESE_MARKERS.test(text)) return "vi";
+  if (SPANISH_MARKERS.test(text)) return "es";
+  return "en";
 }
 
 interface LanguageDetectionResult {
@@ -30,7 +43,8 @@ interface LanguageDetectorStatic {
   create(options?: { expectedInputLanguages?: string[] }): Promise<BuiltinLanguageDetector>;
 }
 
-const EXPECTED = { expectedInputLanguages: ["en", "ja"] };
+const EXPECTED = { expectedInputLanguages: ["en", "ja", "es", "vi"] };
+const SUPPORTED_BASE_TAGS = new Set<Language>(["ja", "en", "es", "vi"]);
 
 let cachedDetector: Promise<BuiltinLanguageDetector | null> | null = null;
 
@@ -58,9 +72,9 @@ export function resetLanguageDetector(): void {
 }
 
 /**
- * Detect whether `text` is Japanese or English, fully on-device.
- * Uses Chrome's built-in LanguageDetector when available and already
- * downloaded; otherwise (or on any error) uses {@link guessLanguage}.
+ * Detect whether `text` is Japanese, English, Spanish, or Vietnamese, fully
+ * on-device. Uses Chrome's built-in LanguageDetector when available and
+ * already downloaded; otherwise (or on any error) uses {@link guessLanguage}.
  */
 export async function detectLanguage(text: string): Promise<Language> {
   const fallback = guessLanguage(text);
@@ -71,9 +85,8 @@ export async function detectLanguage(text: string): Promise<Language> {
   try {
     const results = await detector.detect(text);
     for (const result of results) {
-      const base = result.detectedLanguage.toLowerCase().split("-")[0];
-      if (base === "ja") return "ja";
-      if (base === "en") return "en";
+      const base = result.detectedLanguage.toLowerCase().split("-")[0] as Language;
+      if (SUPPORTED_BASE_TAGS.has(base)) return base;
     }
     return fallback;
   } catch {

@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "vi-0000",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Trọng Đức Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số +84 787 387 276 hoặc email lejane@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Trọng Đức Lê"
+   },
+   {
+    "start": 93,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 130,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 787 387 276"
+   },
+   {
+    "start": 157,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lejane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0001",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Chị Nhật Trần và Linh Lê. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới buijane@example.net. Số máy trực tiếp: 034 954 2801.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Chị Nhật Trần"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Linh Lê"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 126,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijane@example.net"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "034 954 2801"
+   }
+  ]
+ },
+ {
+  "id": "vi-0002",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Kim Đặng, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 831 819 294. Thẻ thanh toán đã đăng ký là 4407786089114099. Bản sao đã được gửi tới zhoang@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Kim Đặng"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 831 819 294"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4407786089114099"
+   },
+   {
+    "start": 230,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhoang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0003",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bà Thảo Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số +84 350 283 109 hoặc email dangjane@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Bà Thảo Lê"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 134,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 350 283 109"
+   },
+   {
+    "start": 161,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0004",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bác Anh Dương và Nhật Trần. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới john03@example.com. Số máy trực tiếp: 092 539 6608.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Bác Anh Dương"
+   },
+   {
+    "start": 43,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Nhật Trần"
+   },
+   {
+    "start": 88,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 142,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john03@example.com"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "092 539 6608"
+   }
+  ]
+ },
+ {
+  "id": "vi-0005",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Thành Đặng, địa chỉ tại Đà Lạt. Chúng tôi sẽ gọi lại cho bạn qua số +84 358 722 929. Thẻ thanh toán đã đăng ký là 4026273372257209. Bản sao đã được gửi tới dangjohn@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Cô Thành Đặng"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 358 722 929"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4026273372257209"
+   },
+   {
+    "start": 220,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0006",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Yến Hoàng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Vũng Tàu. Vui lòng liên hệ với tôi qua số 038 997 8861 hoặc email janele@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Yến Hoàng"
+   },
+   {
+    "start": 90,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "038 997 8861"
+   },
+   {
+    "start": 156,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janele@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0007",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Cô Nhật Trần và Nam Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới duongjane@example.com. Số máy trực tiếp: 039 720 2971.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Cô Nhật Trần"
+   },
+   {
+    "start": 42,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Nam Phạm"
+   },
+   {
+    "start": 86,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 140,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duongjane@example.com"
+   },
+   {
+    "start": 181,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "039 720 2971"
+   }
+  ]
+ },
+ {
+  "id": "vi-0008",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Lâm Hoàng, địa chỉ tại Đà Nẵng. Chúng tôi sẽ gọi lại cho bạn qua số 034 417 5948. Thẻ thanh toán đã đăng ký là 4774-3653-8891-4890. Bản sao đã được gửi tới duongjane@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Lâm Hoàng"
+   },
+   {
+    "start": 84,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "034 417 5948"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4774-3653-8891-4890"
+   },
+   {
+    "start": 217,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duongjane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0009",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Ông Quang Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số 0319 111 821 hoặc email jduong@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Ông Quang Đặng"
+   },
+   {
+    "start": 95,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0319 111 821"
+   },
+   {
+    "start": 156,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jduong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0010",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Hoàng và Bảo Bảo Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới rtran@example.org. Số máy trực tiếp: 059 795 9030.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Nhật Hoàng"
+   },
+   {
+    "start": 40,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Bảo Bảo Phạm"
+   },
+   {
+    "start": 88,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 124,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rtran@example.org"
+   },
+   {
+    "start": 161,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "059 795 9030"
+   }
+  ]
+ },
+ {
+  "id": "vi-0011",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Nhật Đặng, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số 082 564 2419. Thẻ thanh toán đã đăng ký là 4747-6906-5740-7514. Bản sao đã được gửi tới jane41@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Cô Nhật Đặng"
+   },
+   {
+    "start": 87,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "082 564 2419"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4747-6906-5740-7514"
+   },
+   {
+    "start": 216,
+    "end": 234,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane41@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0012",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Xuân Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số 0728 132 462 hoặc email johnduong@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Xuân Nguyễn"
+   },
+   {
+    "start": 92,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0728 132 462"
+   },
+   {
+    "start": 153,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnduong@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0013",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Trọng Hoàng và Minh Trần. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới john10@example.net. Số máy trực tiếp: 031 778 4771.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Trọng Hoàng"
+   },
+   {
+    "start": 41,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Minh Trần"
+   },
+   {
+    "start": 86,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 127,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john10@example.net"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "031 778 4771"
+   }
+  ]
+ },
+ {
+  "id": "vi-0014",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thành Mai Bảo Hoàng, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số +84 356 170 810. Thẻ thanh toán đã đăng ký là 4923-9983-8245-9593. Bản sao đã được gửi tới nguyenjane@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Thành Mai Bảo Hoàng"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 139,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 356 170 810"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4923-9983-8245-9593"
+   },
+   {
+    "start": 230,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nguyenjane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0015",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Khoa Hoàng Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số 0830 564 305 hoặc email janemai@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Khoa Hoàng Bùi"
+   },
+   {
+    "start": 95,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0830 564 305"
+   },
+   {
+    "start": 162,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janemai@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0016",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Bảo Lê và Hưng Mai Bảo Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới buijohn@example.org. Số máy trực tiếp: 053 428 8399.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Nhật Bảo Lê"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Hưng Mai Bảo Đặng"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 134,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijohn@example.org"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "053 428 8399"
+   }
+  ]
+ },
+ {
+  "id": "vi-0017",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Hải Phạm, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số 0388 984 892. Thẻ thanh toán đã đăng ký là 4451130518440707. Bản sao đã được gửi tới john41@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Hải Phạm"
+   },
+   {
+    "start": 83,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0388 984 892"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4451130518440707"
+   },
+   {
+    "start": 214,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john41@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0018",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Yến Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số 0826 700 296 hoặc email jane06@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Yến Bùi"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0826 700 296"
+   },
+   {
+    "start": 155,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane06@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0019",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Thành Trần và Bác Trung Dương. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới john54@example.net. Số máy trực tiếp: 0530 778 184.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Thành Trần"
+   },
+   {
+    "start": 40,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Bác Trung Dương"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 130,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john54@example.net"
+   },
+   {
+    "start": 168,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0530 778 184"
+   }
+  ]
+ },
+ {
+  "id": "vi-0020",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bà An Lê, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 0712 966 294. Thẻ thanh toán đã đăng ký là 4354-3797-9231-2193. Bản sao đã được gửi tới ele@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Bà An Lê"
+   },
+   {
+    "start": 83,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0712 966 294"
+   },
+   {
+    "start": 170,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4354-3797-9231-2193"
+   },
+   {
+    "start": 215,
+    "end": 230,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ele@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0021",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Dương Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 034 901 1035 hoặc email janenguyen@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Dương Vũ"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "034 901 1035"
+   },
+   {
+    "start": 153,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janenguyen@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0022",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Vũ Trí Dương và Trung Hoàng. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới jane97@example.com. Số máy trực tiếp: +84 922 588 500.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Vũ Trí Dương"
+   },
+   {
+    "start": 42,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Trung Hoàng"
+   },
+   {
+    "start": 89,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 129,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane97@example.com"
+   },
+   {
+    "start": 167,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 922 588 500"
+   }
+  ]
+ },
+ {
+  "id": "vi-0023",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quang Hải Vũ, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số +84 866 562 389. Thẻ thanh toán đã đăng ký là 4691-1180-1169-7980. Bản sao đã được gửi tới jane70@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Quang Hải Vũ"
+   },
+   {
+    "start": 87,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 134,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 866 562 389"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4691-1180-1169-7980"
+   },
+   {
+    "start": 225,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane70@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0024",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Nam Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Cần Thơ. Vui lòng liên hệ với tôi qua số 0981 727 222 hoặc email johnduong@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Nam Vũ"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0981 727 222"
+   },
+   {
+    "start": 152,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnduong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0025",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hoàng Thế Vũ và Cô Hồng Dương. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới ebui@example.com. Số máy trực tiếp: +84 994 707 972.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Hoàng Thế Vũ"
+   },
+   {
+    "start": 42,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Cô Hồng Dương"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ebui@example.com"
+   },
+   {
+    "start": 166,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 994 707 972"
+   }
+  ]
+ },
+ {
+  "id": "vi-0026",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Chị Lâm Hoàng, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số +84 920 843 353. Thẻ thanh toán đã đăng ký là 4018-9919-7659-2313. Bản sao đã được gửi tới janepham@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Chị Lâm Hoàng"
+   },
+   {
+    "start": 88,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 129,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 920 843 353"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4018-9919-7659-2313"
+   },
+   {
+    "start": 220,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janepham@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0027",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Khoa Đức Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 0375 977 522 hoặc email john83@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Khoa Đức Mai"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0375 977 522"
+   },
+   {
+    "start": 157,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john83@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0028",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Tú Hoàng Bùi và Cô Hồng Trần. Cuộc họp tiếp theo sẽ diễn ra tại Nha Trang. Việc cần làm: gửi tài liệu tới edang@example.net. Số máy trực tiếp: 0518 820 729.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Tú Hoàng Bùi"
+   },
+   {
+    "start": 42,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Cô Hồng Trần"
+   },
+   {
+    "start": 90,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 132,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "edang@example.net"
+   },
+   {
+    "start": 169,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0518 820 729"
+   }
+  ]
+ },
+ {
+  "id": "vi-0029",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quý ông Châu Nguyễn, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 0963 901 295. Thẻ thanh toán đã đăng ký là 4138-4934-8751-0988. Bản sao đã được gửi tới jane98@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Quý ông Châu Nguyễn"
+   },
+   {
+    "start": 94,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0963 901 295"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4138-4934-8751-0988"
+   },
+   {
+    "start": 229,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane98@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0030",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bác Tú Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Cần Thơ. Vui lòng liên hệ với tôi qua số 0520 852 429 hoặc email janebui@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Bác Tú Lê"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0520 852 429"
+   },
+   {
+    "start": 155,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janebui@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0031",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bà Thành Nguyễn và Hà Xuân Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới janemai@example.net. Số máy trực tiếp: +84 911 400 552.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Bà Thành Nguyễn"
+   },
+   {
+    "start": 45,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Hà Xuân Phạm"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 133,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janemai@example.net"
+   },
+   {
+    "start": 172,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 911 400 552"
+   }
+  ]
+ },
+ {
+  "id": "vi-0032",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quý cô Xuân Trần, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0348 964 578. Thẻ thanh toán đã đăng ký là 4510390179169511. Bản sao đã được gửi tới lejane@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Quý cô Xuân Trần"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0348 964 578"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4510390179169511"
+   },
+   {
+    "start": 221,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lejane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0033",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Vân Phạm. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số 081 799 8004 hoặc email tranjohn@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Vân Phạm"
+   },
+   {
+    "start": 89,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 126,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "081 799 8004"
+   },
+   {
+    "start": 150,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tranjohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0034",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Ông Minh Vũ và Cô Lan Trần. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới ohoang@example.net. Số máy trực tiếp: 071 857 8430.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ông Minh Vũ"
+   },
+   {
+    "start": 41,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Cô Lan Trần"
+   },
+   {
+    "start": 88,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 124,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ohoang@example.net"
+   },
+   {
+    "start": 162,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "071 857 8430"
+   }
+  ]
+ },
+ {
+  "id": "vi-0035",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thành Bùi, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0395 114 303. Thẻ thanh toán đã đăng ký là 4757109847414832. Bản sao đã được gửi tới jane91@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Thành Bùi"
+   },
+   {
+    "start": 84,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0395 114 303"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4757109847414832"
+   },
+   {
+    "start": 214,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane91@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0036",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là An Hữu Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Vũng Tàu. Vui lòng liên hệ với tôi qua số +84 583 905 723 hoặc email wbui@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "An Hữu Bùi"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 583 905 723"
+   },
+   {
+    "start": 160,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wbui@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0037",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Thảo Lê và Lâm Mai Dương. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới janele@example.net. Số máy trực tiếp: 0886 675 375.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Quý cô Thảo Lê"
+   },
+   {
+    "start": 44,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Lâm Mai Dương"
+   },
+   {
+    "start": 93,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 134,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janele@example.net"
+   },
+   {
+    "start": 172,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0886 675 375"
+   }
+  ]
+ },
+ {
+  "id": "vi-0038",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Minh Bùi, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 797 797 620. Thẻ thanh toán đã đăng ký là 4637825548030694. Bản sao đã được gửi tới dangjane@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Minh Bùi"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 797 797 620"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4637825548030694"
+   },
+   {
+    "start": 230,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0039",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý ông Thành Trần. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số +84 986 915 825 hoặc email janenguyen@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Quý ông Thành Trần"
+   },
+   {
+    "start": 99,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 986 915 825"
+   },
+   {
+    "start": 169,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janenguyen@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0040",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Xuân Bùi và Nhật Hoàng. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới johnnguyen@example.net. Số máy trực tiếp: 0385 767 521.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Nhật Xuân Bùi"
+   },
+   {
+    "start": 43,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Nhật Hoàng"
+   },
+   {
+    "start": 89,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 125,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnnguyen@example.net"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0385 767 521"
+   }
+  ]
+ },
+ {
+  "id": "vi-0041",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bảo Thế Mai, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 097 534 4941. Thẻ thanh toán đã đăng ký là 4120-8664-0374-5228. Bản sao đã được gửi tới john57@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Bảo Thế Mai"
+   },
+   {
+    "start": 86,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "097 534 4941"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4120-8664-0374-5228"
+   },
+   {
+    "start": 221,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john57@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0042",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Khoa Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số 034 679 4008 hoặc email john61@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Khoa Nguyễn"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "034 679 4008"
+   },
+   {
+    "start": 159,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john61@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0043",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hương Bùi và Quang Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới hoangjohn@example.com. Số máy trực tiếp: +84 980 894 329.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Hương Bùi"
+   },
+   {
+    "start": 39,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Quang Phạm"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 126,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hoangjohn@example.com"
+   },
+   {
+    "start": 167,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 980 894 329"
+   }
+  ]
+ },
+ {
+  "id": "vi-0044",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quý ông Vũ Hoàng, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số +84 542 420 719. Thẻ thanh toán đã đăng ký là 4892835932434634. Bản sao đã được gửi tới jane00@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Quý ông Vũ Hoàng"
+   },
+   {
+    "start": 91,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 542 420 719"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4892835932434634"
+   },
+   {
+    "start": 220,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane00@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0045",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Chị Hải Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số 074 497 6082 hoặc email jane77@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Chị Hải Vũ"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "074 497 6082"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane77@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0046",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Phương Trần và Hồng Mai. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới lejane@example.net. Số máy trực tiếp: +84 577 787 531.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Phương Trần"
+   },
+   {
+    "start": 41,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Hồng Mai"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 126,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lejane@example.net"
+   },
+   {
+    "start": 164,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 577 787 531"
+   }
+  ]
+ },
+ {
+  "id": "vi-0047",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Hà Nguyễn, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 087 259 6564. Thẻ thanh toán đã đăng ký là 4488283027748396. Bản sao đã được gửi tới zhoang@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Hà Nguyễn"
+   },
+   {
+    "start": 84,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "087 259 6564"
+   },
+   {
+    "start": 171,
+    "end": 187,
+    "entity_type": "CREDIT_CARD",
+    "value": "4488283027748396"
+   },
+   {
+    "start": 213,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhoang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0048",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bảo Văn Trần. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Vũng Tàu. Vui lòng liên hệ với tôi qua số 037 322 2647 hoặc email johnduong@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Bảo Văn Trần"
+   },
+   {
+    "start": 93,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "037 322 2647"
+   },
+   {
+    "start": 159,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnduong@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0049",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Cô Nhật Nguyễn và Vũ Bùi. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới phamjane@example.org. Số máy trực tiếp: 0532 830 789.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Cô Nhật Nguyễn"
+   },
+   {
+    "start": 44,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Vũ Bùi"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 126,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjane@example.org"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0532 830 789"
+   }
+  ]
+ },
+ {
+  "id": "vi-0050",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Vũ Phạm, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0343 845 273. Thẻ thanh toán đã đăng ký là 4695691055005761. Bản sao đã được gửi tới buijane@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Vũ Phạm"
+   },
+   {
+    "start": 82,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0343 845 273"
+   },
+   {
+    "start": 170,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4695691055005761"
+   },
+   {
+    "start": 212,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijane@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0051",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Hồng Dương. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Thành phố Hồ Chí Minh. Vui lòng liên hệ với tôi qua số 085 472 2524 hoặc email duongjohn@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Hồng Dương"
+   },
+   {
+    "start": 91,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "085 472 2524"
+   },
+   {
+    "start": 170,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duongjohn@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0052",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Cô Chi Bùi và Anh Hưng Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới phamjohn@example.com. Số máy trực tiếp: 0353 201 819.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Cô Chi Bùi"
+   },
+   {
+    "start": 40,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Anh Hưng Phạm"
+   },
+   {
+    "start": 89,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 130,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjohn@example.com"
+   },
+   {
+    "start": 170,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0353 201 819"
+   }
+  ]
+ },
+ {
+  "id": "vi-0053",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Anh Trung Đặng, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 071 848 8818. Thẻ thanh toán đã đăng ký là 4951-7063-6289-0629. Bản sao đã được gửi tới nguyenjane@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Anh Trung Đặng"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "071 848 8818"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4951-7063-6289-0629"
+   },
+   {
+    "start": 221,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nguyenjane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0054",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Hồng Phạm. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 032 738 5907 hoặc email janemai@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Quý cô Hồng Phạm"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 738 5907"
+   },
+   {
+    "start": 161,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janemai@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0055",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý ông Trọng Dương và An Mai. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới dle@example.net. Số máy trực tiếp: 0816 171 433.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Quý ông Trọng Dương"
+   },
+   {
+    "start": 49,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "An Mai"
+   },
+   {
+    "start": 91,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dle@example.net"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0816 171 433"
+   }
+  ]
+ },
+ {
+  "id": "vi-0056",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Minh Trí Vũ, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số 074 599 9489. Thẻ thanh toán đã đăng ký là 4172-7217-2551-4298. Bản sao đã được gửi tới xpham@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Minh Trí Vũ"
+   },
+   {
+    "start": 86,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "074 599 9489"
+   },
+   {
+    "start": 170,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4172-7217-2551-4298"
+   },
+   {
+    "start": 215,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xpham@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0057",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Khoa Mai Bảo Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 099 279 6190 hoặc email vvu@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Khoa Mai Bảo Đặng"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "099 279 6190"
+   },
+   {
+    "start": 162,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vvu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0058",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhiên Trí Vũ và Anh Bảo Bùi. Cuộc họp tiếp theo sẽ diễn ra tại Nha Trang. Việc cần làm: gửi tài liệu tới mhoang@example.com. Số máy trực tiếp: 0514 162 226.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Nhiên Trí Vũ"
+   },
+   {
+    "start": 42,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Anh Bảo Bùi"
+   },
+   {
+    "start": 89,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 131,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mhoang@example.com"
+   },
+   {
+    "start": 169,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0514 162 226"
+   }
+  ]
+ },
+ {
+  "id": "vi-0059",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quý cô Ngọc Nguyễn, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 570 290 779. Thẻ thanh toán đã đăng ký là 4385-4759-8892-3745. Bản sao đã được gửi tới xmai@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Quý cô Ngọc Nguyễn"
+   },
+   {
+    "start": 93,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 152,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 570 290 779"
+   },
+   {
+    "start": 198,
+    "end": 217,
+    "entity_type": "CREDIT_CARD",
+    "value": "4385-4759-8892-3745"
+   },
+   {
+    "start": 243,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xmai@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0060",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Ông Hoàng Trần. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số 074 609 8835 hoặc email janedang@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Ông Hoàng Trần"
+   },
+   {
+    "start": 95,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "074 609 8835"
+   },
+   {
+    "start": 161,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0061",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Chị Mai Đặng và Huy Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới dangjohn@example.com. Số máy trực tiếp: 0524 249 194.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Chị Mai Đặng"
+   },
+   {
+    "start": 42,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Huy Đặng"
+   },
+   {
+    "start": 86,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 127,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjohn@example.com"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0524 249 194"
+   }
+  ]
+ },
+ {
+  "id": "vi-0062",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bà Hương Trần, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 0786 137 891. Thẻ thanh toán đã đăng ký là 4944986824718507. Bản sao đã được gửi tới john43@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Bà Hương Trần"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0786 137 891"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4944986824718507"
+   },
+   {
+    "start": 220,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john43@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0063",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Châu Mai Hoàng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số +84 544 163 724 hoặc email bduong@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Châu Mai Hoàng"
+   },
+   {
+    "start": 95,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 544 163 724"
+   },
+   {
+    "start": 159,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bduong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0064",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bảo Lê và Bà Linh Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới janedang@example.com. Số máy trực tiếp: +84 386 253 611.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Bảo Lê"
+   },
+   {
+    "start": 36,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Bà Linh Vũ"
+   },
+   {
+    "start": 82,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 122,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.com"
+   },
+   {
+    "start": 162,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 386 253 611"
+   }
+  ]
+ },
+ {
+  "id": "vi-0065",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Chị Hải Trần, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số +84 587 371 411. Thẻ thanh toán đã đăng ký là 4757-8238-1242-8508. Bản sao đã được gửi tới vujane@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Chị Hải Trần"
+   },
+   {
+    "start": 87,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 587 371 411"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4757-8238-1242-8508"
+   },
+   {
+    "start": 224,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0066",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Tùng Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Cần Thơ. Vui lòng liên hệ với tôi qua số +84 757 894 346 hoặc email buijohn@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Tùng Lê"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 129,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 757 894 346"
+   },
+   {
+    "start": 156,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0067",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hoàng Dương và Bà Thành Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới john54@example.org. Số máy trực tiếp: 053 920 6951.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Hoàng Dương"
+   },
+   {
+    "start": 41,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Bà Thành Vũ"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 128,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john54@example.org"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "053 920 6951"
+   }
+  ]
+ },
+ {
+  "id": "vi-0068",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Hà Lê, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 081 379 9174. Thẻ thanh toán đã đăng ký là 4349916813673620. Bản sao đã được gửi tới johndang@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Cô Hà Lê"
+   },
+   {
+    "start": 83,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "081 379 9174"
+   },
+   {
+    "start": 173,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4349916813673620"
+   },
+   {
+    "start": 215,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johndang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0069",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô An Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Thành phố Hồ Chí Minh. Vui lòng liên hệ với tôi qua số 0318 629 112 hoặc email duongjohn@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Cô An Đặng"
+   },
+   {
+    "start": 91,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0318 629 112"
+   },
+   {
+    "start": 170,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duongjohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0070",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Thảo Lê và Thành Dương. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới johnhoang@example.com. Số máy trực tiếp: 0889 599 688.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Quý cô Thảo Lê"
+   },
+   {
+    "start": 44,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Thành Dương"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 132,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0889 599 688"
+   }
+  ]
+ },
+ {
+  "id": "vi-0071",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Nhật Trần, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 035 202 9334. Thẻ thanh toán đã đăng ký là 4865-9405-3111-7250. Bản sao đã được gửi tới john77@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Nhật Trần"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "035 202 9334"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4865-9405-3111-7250"
+   },
+   {
+    "start": 219,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john77@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0072",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Ngọc Phạm. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Cần Thơ. Vui lòng liên hệ với tôi qua số 056 252 9751 hoặc email janedang@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Ngọc Phạm"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "056 252 9751"
+   },
+   {
+    "start": 155,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0073",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quang Hữu Lê và Cô Kim Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới cduong@example.com. Số máy trực tiếp: 052 499 8582.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Quang Hữu Lê"
+   },
+   {
+    "start": 42,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Cô Kim Nguyễn"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 130,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cduong@example.com"
+   },
+   {
+    "start": 168,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "052 499 8582"
+   }
+  ]
+ },
+ {
+  "id": "vi-0074",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Linh Nguyễn, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 036 254 3962. Thẻ thanh toán đã đăng ký là 4144896543704126. Bản sao đã được gửi tới johnnguyen@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Linh Nguyễn"
+   },
+   {
+    "start": 86,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "036 254 3962"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4144896543704126"
+   },
+   {
+    "start": 218,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnnguyen@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0075",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Phương Mai Bảo Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 0393 862 281 hoặc email hoangjane@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Phương Mai Bảo Lê"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0393 862 281"
+   },
+   {
+    "start": 163,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hoangjane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0076",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Phúc Đức Bùi và Thành Hữu Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Hải Phòng. Việc cần làm: gửi tài liệu tới vujane@example.org. Số máy trực tiếp: +84 956 829 863.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Phúc Đức Bùi"
+   },
+   {
+    "start": 42,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Thành Hữu Đặng"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 134,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujane@example.org"
+   },
+   {
+    "start": 172,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 956 829 863"
+   }
+  ]
+ },
+ {
+  "id": "vi-0077",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quang Trần, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số 0716 173 671. Thẻ thanh toán đã đăng ký là 4115544445113609. Bản sao đã được gửi tới johnnguyen@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Quang Trần"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0716 173 671"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4115544445113609"
+   },
+   {
+    "start": 216,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnnguyen@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0078",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Yến Hoàng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số 0970 522 478 hoặc email dangjohn@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Quý cô Yến Hoàng"
+   },
+   {
+    "start": 97,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0970 522 478"
+   },
+   {
+    "start": 163,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjohn@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0079",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Hoàng Đặng và Cô Hồng Dương. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới janepham@example.net. Số máy trực tiếp: 0520 521 709.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Nhật Hoàng Đặng"
+   },
+   {
+    "start": 45,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Cô Hồng Dương"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 134,
+    "end": 154,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janepham@example.net"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0520 521 709"
+   }
+  ]
+ },
+ {
+  "id": "vi-0080",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bà Hạnh Mai, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số +84 519 908 278. Thẻ thanh toán đã đăng ký là 4906-9968-8079-2250. Bản sao đã được gửi tới apham@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Bà Hạnh Mai"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 519 908 278"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4906-9968-8079-2250"
+   },
+   {
+    "start": 222,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "apham@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0081",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Tùng Mai Bảo Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số 0952 214 310 hoặc email johnhoang@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Tùng Mai Bảo Mai"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0952 214 310"
+   },
+   {
+    "start": 164,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0082",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hải Lê và Phúc Hữu Lê. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới hoangjohn@example.com. Số máy trực tiếp: 0358 849 165.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Hải Lê"
+   },
+   {
+    "start": 36,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Phúc Hữu Lê"
+   },
+   {
+    "start": 83,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 122,
+    "end": 143,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hoangjohn@example.com"
+   },
+   {
+    "start": 163,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0358 849 165"
+   }
+  ]
+ },
+ {
+  "id": "vi-0083",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Duyên Trần, địa chỉ tại Đà Lạt. Chúng tôi sẽ gọi lại cho bạn qua số 089 608 7207. Thẻ thanh toán đã đăng ký là 4832-1588-2692-1605. Bản sao đã được gửi tới janenguyen@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Duyên Trần"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "089 608 7207"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4832-1588-2692-1605"
+   },
+   {
+    "start": 217,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janenguyen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0084",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô Dương Hoàng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số 037 480 6350 hoặc email john63@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Cô Dương Hoàng"
+   },
+   {
+    "start": 95,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "037 480 6350"
+   },
+   {
+    "start": 161,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john63@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0085",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bà Ánh Nguyễn và Cô Hà Mai. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới jane16@example.net. Số máy trực tiếp: +84 961 649 699.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Bà Ánh Nguyễn"
+   },
+   {
+    "start": 43,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Cô Hà Mai"
+   },
+   {
+    "start": 88,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 142,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane16@example.net"
+   },
+   {
+    "start": 180,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 961 649 699"
+   }
+  ]
+ },
+ {
+  "id": "vi-0086",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Tú Mai, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0599 932 663. Thẻ thanh toán đã đăng ký là 4415599515150391. Bản sao đã được gửi tới john07@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Tú Mai"
+   },
+   {
+    "start": 81,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 126,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0599 932 663"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4415599515150391"
+   },
+   {
+    "start": 211,
+    "end": 229,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john07@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0087",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Kim Đức Dương. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số 0779 990 600 hoặc email jane73@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Kim Đức Dương"
+   },
+   {
+    "start": 94,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0779 990 600"
+   },
+   {
+    "start": 155,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane73@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0088",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hải Xuân Nguyễn và Hải Quang Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới cdang@example.org. Số máy trực tiếp: 0386 614 604.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Hải Xuân Nguyễn"
+   },
+   {
+    "start": 45,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Hải Quang Đặng"
+   },
+   {
+    "start": 95,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 131,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cdang@example.org"
+   },
+   {
+    "start": 168,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0386 614 604"
+   }
+  ]
+ },
+ {
+  "id": "vi-0089",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thành Hữu Bùi, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 0544 374 814. Thẻ thanh toán đã đăng ký là 4327649376974723. Bản sao đã được gửi tới john85@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Thành Hữu Bùi"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0544 374 814"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4327649376974723"
+   },
+   {
+    "start": 217,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john85@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0090",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Nhật Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số +84 940 765 641 hoặc email janehoang@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Nhật Đặng"
+   },
+   {
+    "start": 90,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 940 765 641"
+   },
+   {
+    "start": 159,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janehoang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0091",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Ông Nam Mai và Hạnh Hữu Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Nha Trang. Việc cần làm: gửi tài liệu tới john92@example.org. Số máy trực tiếp: +84 953 813 911.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ông Nam Mai"
+   },
+   {
+    "start": 41,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Hạnh Hữu Nguyễn"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 134,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john92@example.org"
+   },
+   {
+    "start": 172,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 953 813 911"
+   }
+  ]
+ },
+ {
+  "id": "vi-0092",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Hoàng Bùi, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số +84 543 436 162. Thẻ thanh toán đã đăng ký là 4283-9470-0825-5822. Bản sao đã được gửi tới johnle@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Hoàng Bùi"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 543 436 162"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4283-9470-0825-5822"
+   },
+   {
+    "start": 222,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnle@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0093",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Vi Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số 0530 507 664 hoặc email dbui@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Vi Bùi"
+   },
+   {
+    "start": 87,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0530 507 664"
+   },
+   {
+    "start": 154,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dbui@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0094",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bà Mai Dương và Quý cô Hồng Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Hà Nội. Việc cần làm: gửi tài liệu tới vujane@example.net. Số máy trực tiếp: 035 661 9604.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Bà Mai Dương"
+   },
+   {
+    "start": 42,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Quý cô Hồng Nguyễn"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 135,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujane@example.net"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "035 661 9604"
+   }
+  ]
+ },
+ {
+  "id": "vi-0095",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Lâm Phạm, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số +84 555 867 305. Thẻ thanh toán đã đăng ký là 4582095226205696. Bản sao đã được gửi tới janevu@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Lâm Phạm"
+   },
+   {
+    "start": 83,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 124,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 555 867 305"
+   },
+   {
+    "start": 170,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4582095226205696"
+   },
+   {
+    "start": 212,
+    "end": 230,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janevu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0096",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Phương Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 0585 143 227 hoặc email janehoang@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Phương Mai"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0585 143 227"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janehoang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0097",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Nhật Đặng và Vũ Quang Bùi. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới johnhoang@example.com. Số máy trực tiếp: +84 360 726 915.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Quý cô Nhật Đặng"
+   },
+   {
+    "start": 46,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Vũ Quang Bùi"
+   },
+   {
+    "start": 94,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 130,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.com"
+   },
+   {
+    "start": 171,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 360 726 915"
+   }
+  ]
+ },
+ {
+  "id": "vi-0098",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quý ông Anh Vũ, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0381 326 223. Thẻ thanh toán đã đăng ký là 4064-1993-6324-1022. Bản sao đã được gửi tới xduong@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Quý ông Anh Vũ"
+   },
+   {
+    "start": 89,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0381 326 223"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4064-1993-6324-1022"
+   },
+   {
+    "start": 222,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xduong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0099",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Minh Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 0575 686 584 hoặc email fle@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Minh Lê"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0575 686 584"
+   },
+   {
+    "start": 152,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fle@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0100",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bảo Phạm và Minh Mai Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới johnnguyen@example.org. Số máy trực tiếp: +84 739 219 250.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Bảo Phạm"
+   },
+   {
+    "start": 38,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Minh Mai Nguyễn"
+   },
+   {
+    "start": 89,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 143,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnnguyen@example.org"
+   },
+   {
+    "start": 185,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 739 219 250"
+   }
+  ]
+ },
+ {
+  "id": "vi-0101",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Nhiên Hoàng, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 882 753 817. Thẻ thanh toán đã đăng ký là 4107-9115-0365-6094. Bản sao đã được gửi tới xvu@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Nhiên Hoàng"
+   },
+   {
+    "start": 86,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 882 753 817"
+   },
+   {
+    "start": 191,
+    "end": 210,
+    "entity_type": "CREDIT_CARD",
+    "value": "4107-9115-0365-6094"
+   },
+   {
+    "start": 236,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xvu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0102",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Kim Thế Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số 0379 815 217 hoặc email janemai@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Kim Thế Bùi"
+   },
+   {
+    "start": 92,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0379 815 217"
+   },
+   {
+    "start": 153,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janemai@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0103",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bảo Xuân Trần và Ánh Lê. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới johnmai@example.com. Số máy trực tiếp: 092 823 1969.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Bảo Xuân Trần"
+   },
+   {
+    "start": 43,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Ánh Lê"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 124,
+    "end": 143,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnmai@example.com"
+   },
+   {
+    "start": 163,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "092 823 1969"
+   }
+  ]
+ },
+ {
+  "id": "vi-0104",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Phương Lê, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số 082 845 1209. Thẻ thanh toán đã đăng ký là 4226911315923456. Bản sao đã được gửi tới duongjane@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Phương Lê"
+   },
+   {
+    "start": 84,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "082 845 1209"
+   },
+   {
+    "start": 173,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4226911315923456"
+   },
+   {
+    "start": 215,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duongjane@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0105",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô Linh Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số 072 399 5065 hoặc email ahoang@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Cô Linh Vũ"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "072 399 5065"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ahoang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0106",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Hương Vũ và Thành Tấn Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới qle@example.net. Số máy trực tiếp: 0958 989 537.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Quý cô Hương Vũ"
+   },
+   {
+    "start": 45,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Thành Tấn Đặng"
+   },
+   {
+    "start": 95,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qle@example.net"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0958 989 537"
+   }
+  ]
+ },
+ {
+  "id": "vi-0107",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Khoa Thị Hoàng, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 078 544 6790. Thẻ thanh toán đã đăng ký là 4637352193447495. Bản sao đã được gửi tới tranjohn@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Khoa Thị Hoàng"
+   },
+   {
+    "start": 89,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "078 544 6790"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4637352193447495"
+   },
+   {
+    "start": 221,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tranjohn@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0108",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Lâm Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số 073 710 7949 hoặc email dle@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Lâm Nguyễn"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "073 710 7949"
+   },
+   {
+    "start": 158,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dle@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0109",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Cô Bảo Trần và An Thế Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới vujane@example.com. Số máy trực tiếp: 084 451 3288.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Cô Bảo Trần"
+   },
+   {
+    "start": 41,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "An Thế Phạm"
+   },
+   {
+    "start": 88,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 129,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujane@example.com"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "084 451 3288"
+   }
+  ]
+ },
+ {
+  "id": "vi-0110",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Chị Vân Dương, địa chỉ tại Đà Nẵng. Chúng tôi sẽ gọi lại cho bạn qua số 097 731 9498. Thẻ thanh toán đã đăng ký là 4385831423119580. Bản sao đã được gửi tới enguyen@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Chị Vân Dương"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "097 731 9498"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4385831423119580"
+   },
+   {
+    "start": 218,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "enguyen@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0111",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Hưng Hữu Dương. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 032 455 6822 hoặc email john92@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Hưng Hữu Dương"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 455 6822"
+   },
+   {
+    "start": 160,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john92@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0112",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Châu Trần và Dương Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới jane69@example.net. Số máy trực tiếp: 058 667 3739.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Châu Trần"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Dương Nguyễn"
+   },
+   {
+    "start": 87,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 123,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane69@example.net"
+   },
+   {
+    "start": 161,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "058 667 3739"
+   }
+  ]
+ },
+ {
+  "id": "vi-0113",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Yến Mai, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 079 136 4650. Thẻ thanh toán đã đăng ký là 4257-6379-3435-9069. Bản sao đã được gửi tới johnnguyen@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Cô Yến Mai"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "079 136 4650"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4257-6379-3435-9069"
+   },
+   {
+    "start": 217,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnnguyen@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0114",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Dương Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 087 171 6652 hoặc email phamjohn@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Dương Vũ"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "087 171 6652"
+   },
+   {
+    "start": 153,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjohn@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0115",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Khoa Lê và Bà Bảo Mai. Cuộc họp tiếp theo sẽ diễn ra tại Hà Nội. Việc cần làm: gửi tài liệu tới tranjohn@example.org. Số máy trực tiếp: 053 818 5204.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Khoa Lê"
+   },
+   {
+    "start": 37,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Bà Bảo Mai"
+   },
+   {
+    "start": 83,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 122,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tranjohn@example.org"
+   },
+   {
+    "start": 162,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "053 818 5204"
+   }
+  ]
+ },
+ {
+  "id": "vi-0116",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Huy Hữu Phạm, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 0961 857 276. Thẻ thanh toán đã đăng ký là 4801-3736-3702-7594. Bản sao đã được gửi tới vujohn@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Huy Hữu Phạm"
+   },
+   {
+    "start": 87,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0961 857 276"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4801-3736-3702-7594"
+   },
+   {
+    "start": 222,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0117",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô Hà Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Nha Trang. Vui lòng liên hệ với tôi qua số +84 539 792 137 hoặc email janetran@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Cô Hà Nguyễn"
+   },
+   {
+    "start": 93,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 136,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 539 792 137"
+   },
+   {
+    "start": 163,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janetran@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0118",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hoàng Lê và Bảo Mai Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Hà Nội. Việc cần làm: gửi tài liệu tới dangjohn@example.org. Số máy trực tiếp: 0774 438 575.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Hoàng Lê"
+   },
+   {
+    "start": 38,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Bảo Mai Phạm"
+   },
+   {
+    "start": 86,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 125,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjohn@example.org"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0774 438 575"
+   }
+  ]
+ },
+ {
+  "id": "vi-0119",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Dương Bùi, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số 073 467 9017. Thẻ thanh toán đã đăng ký là 4086-9690-7766-4360. Bản sao đã được gửi tới zduong@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Cô Dương Bùi"
+   },
+   {
+    "start": 87,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "073 467 9017"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4086-9690-7766-4360"
+   },
+   {
+    "start": 216,
+    "end": 234,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zduong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0120",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Ông Thành Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 0962 489 363 hoặc email vujohn@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Ông Thành Đặng"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0962 489 363"
+   },
+   {
+    "start": 159,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujohn@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0121",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Tùng Lê và Bà Kim Lê. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới vujohn@example.net. Số máy trực tiếp: +84 573 406 478.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Tùng Lê"
+   },
+   {
+    "start": 37,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Bà Kim Lê"
+   },
+   {
+    "start": 82,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 122,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujohn@example.net"
+   },
+   {
+    "start": 160,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 573 406 478"
+   }
+  ]
+ },
+ {
+  "id": "vi-0122",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Dương Phạm, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số +84 578 387 416. Thẻ thanh toán đã đăng ký là 4716128889587164. Bản sao đã được gửi tới janebui@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Dương Phạm"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 129,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 578 387 416"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4716128889587164"
+   },
+   {
+    "start": 217,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janebui@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0123",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Vân Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 0536 618 469 hoặc email johnle@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Vân Bùi"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0536 618 469"
+   },
+   {
+    "start": 152,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnle@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0124",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Lan Trần và Hà Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới rmai@example.org. Số máy trực tiếp: 031 227 7944.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Lan Trần"
+   },
+   {
+    "start": 38,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Hà Phạm"
+   },
+   {
+    "start": 81,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 122,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rmai@example.org"
+   },
+   {
+    "start": 158,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "031 227 7944"
+   }
+  ]
+ },
+ {
+  "id": "vi-0125",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Kim Văn Hoàng, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 740 308 736. Thẻ thanh toán đã đăng ký là 4521955783183749. Bản sao đã được gửi tới janevu@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Kim Văn Hoàng"
+   },
+   {
+    "start": 88,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 147,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 740 308 736"
+   },
+   {
+    "start": 193,
+    "end": 209,
+    "entity_type": "CREDIT_CARD",
+    "value": "4521955783183749"
+   },
+   {
+    "start": 235,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janevu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0126",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Chị Linh Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số 087 811 2321 hoặc email john20@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Chị Linh Lê"
+   },
+   {
+    "start": 92,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "087 811 2321"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john20@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0127",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Kim Vũ và Vũ Hữu Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Hà Nội. Việc cần làm: gửi tài liệu tới john01@example.com. Số máy trực tiếp: 0556 386 962.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Kim Vũ"
+   },
+   {
+    "start": 36,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Vũ Hữu Vũ"
+   },
+   {
+    "start": 81,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 120,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john01@example.com"
+   },
+   {
+    "start": 158,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0556 386 962"
+   }
+  ]
+ },
+ {
+  "id": "vi-0128",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Cô Hải Mai, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số 0930 675 910. Thẻ thanh toán đã đăng ký là 4676-0042-4275-8420. Bản sao đã được gửi tới johnhoang@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Cô Hải Mai"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0930 675 910"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4676-0042-4275-8420"
+   },
+   {
+    "start": 219,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0129",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Châu Văn Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số +84 557 698 293 hoặc email john25@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Châu Văn Bùi"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 134,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 557 698 293"
+   },
+   {
+    "start": 161,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john25@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0130",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Châu Bảo Vũ và Bà Hạnh Mai. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới tranjohn@example.net. Số máy trực tiếp: 055 513 4821.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Châu Bảo Vũ"
+   },
+   {
+    "start": 41,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Bà Hạnh Mai"
+   },
+   {
+    "start": 88,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 129,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tranjohn@example.net"
+   },
+   {
+    "start": 169,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "055 513 4821"
+   }
+  ]
+ },
+ {
+  "id": "vi-0131",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là An Bùi, địa chỉ tại Hà Nội. Chúng tôi sẽ gọi lại cho bạn qua số 0594 358 442. Thẻ thanh toán đã đăng ký là 4243089300997485. Bản sao đã được gửi tới zmai@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "An Bùi"
+   },
+   {
+    "start": 81,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 125,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0594 358 442"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4243089300997485"
+   },
+   {
+    "start": 210,
+    "end": 226,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zmai@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0132",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Vũ Phạm. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 086 379 8850 hoặc email qdang@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Vũ Phạm"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "086 379 8850"
+   },
+   {
+    "start": 152,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qdang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0133",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Khoa Lê và Quý cô Phương Trần. Cuộc họp tiếp theo sẽ diễn ra tại Hà Nội. Việc cần làm: gửi tài liệu tới janevu@example.net. Số máy trực tiếp: 0377 209 644.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Khoa Lê"
+   },
+   {
+    "start": 37,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Quý cô Phương Trần"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 130,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janevu@example.net"
+   },
+   {
+    "start": 168,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0377 209 644"
+   }
+  ]
+ },
+ {
+  "id": "vi-0134",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Anh Phúc Dương, địa chỉ tại Đà Lạt. Chúng tôi sẽ gọi lại cho bạn qua số 091 876 3264. Thẻ thanh toán đã đăng ký là 4220964142583643. Bản sao đã được gửi tới johnvu@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Anh Phúc Dương"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "091 876 3264"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4220964142583643"
+   },
+   {
+    "start": 218,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnvu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0135",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Chị Hương Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Vũng Tàu. Vui lòng liên hệ với tôi qua số +84 325 101 576 hoặc email johnhoang@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Chị Hương Lê"
+   },
+   {
+    "start": 93,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 135,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 325 101 576"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0136",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Chị Ánh Bùi và Bảo Lê. Cuộc họp tiếp theo sẽ diễn ra tại Đà Nẵng. Việc cần làm: gửi tài liệu tới johnduong@example.org. Số máy trực tiếp: 075 496 7472.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Chị Ánh Bùi"
+   },
+   {
+    "start": 41,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Bảo Lê"
+   },
+   {
+    "start": 83,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 123,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnduong@example.org"
+   },
+   {
+    "start": 164,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "075 496 7472"
+   }
+  ]
+ },
+ {
+  "id": "vi-0137",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Phương Quang Vũ, địa chỉ tại Vũng Tàu. Chúng tôi sẽ gọi lại cho bạn qua số +84 744 965 647. Thẻ thanh toán đã đăng ký là 4626405942431385. Bản sao đã được gửi tới lhoang@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Phương Quang Vũ"
+   },
+   {
+    "start": 90,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 136,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 744 965 647"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4626405942431385"
+   },
+   {
+    "start": 224,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lhoang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0138",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bà Hạnh Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số +84 516 263 986 hoặc email jane66@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Bà Hạnh Lê"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 516 263 986"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane66@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0139",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Tấn Hoàng và Anh Quang Dương. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới cdang@example.org. Số máy trực tiếp: 079 343 6242.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Nhật Tấn Hoàng"
+   },
+   {
+    "start": 44,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Anh Quang Dương"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 134,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cdang@example.org"
+   },
+   {
+    "start": 171,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "079 343 6242"
+   }
+  ]
+ },
+ {
+  "id": "vi-0140",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Ông Khoa Phạm, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 0398 324 846. Thẻ thanh toán đã đăng ký là 4357990592779139. Bản sao đã được gửi tới janedang@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Ông Khoa Phạm"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0398 324 846"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4357990592779139"
+   },
+   {
+    "start": 220,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0141",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là An Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 0390 802 760 hoặc email jane73@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "An Bùi"
+   },
+   {
+    "start": 87,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0390 802 760"
+   },
+   {
+    "start": 151,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane73@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0142",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Bảo Dương và Nhật Xuân Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới janetran@example.com. Số máy trực tiếp: 051 850 1632.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Bảo Dương"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Nhật Xuân Vũ"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 127,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janetran@example.com"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "051 850 1632"
+   }
+  ]
+ },
+ {
+  "id": "vi-0143",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Kim Hoàng, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 0816 889 812. Thẻ thanh toán đã đăng ký là 4949-7381-7862-4657. Bản sao đã được gửi tới ktran@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Kim Hoàng"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0816 889 812"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4949-7381-7862-4657"
+   },
+   {
+    "start": 219,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ktran@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0144",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Yến Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số +84 719 341 111 hoặc email nguyenjane@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Yến Nguyễn"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 719 341 111"
+   },
+   {
+    "start": 158,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nguyenjane@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0145",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Hồng Mai và Chị Kim Hoàng. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới cbui@example.net. Số máy trực tiếp: 0887 612 663.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Quý cô Hồng Mai"
+   },
+   {
+    "start": 45,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Chị Kim Hoàng"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cbui@example.net"
+   },
+   {
+    "start": 170,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0887 612 663"
+   }
+  ]
+ },
+ {
+  "id": "vi-0146",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Chị Bảo Vũ, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 087 912 6891. Thẻ thanh toán đã đăng ký là 4163406864111616. Bản sao đã được gửi tới maijane@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Chị Bảo Vũ"
+   },
+   {
+    "start": 85,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "087 912 6891"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4163406864111616"
+   },
+   {
+    "start": 217,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maijane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0147",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bà Linh Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hà Nội. Vui lòng liên hệ với tôi qua số 0351 463 161 hoặc email dangjohn@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Bà Linh Mai"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Hà Nội"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0351 463 161"
+   },
+   {
+    "start": 156,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dangjohn@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0148",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hạnh Hoàng Đặng và Hưng Hoàng Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới janedang@example.org. Số máy trực tiếp: 087 139 7181.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Hạnh Hoàng Đặng"
+   },
+   {
+    "start": 45,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Hưng Hoàng Vũ"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 133,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.org"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "087 139 7181"
+   }
+  ]
+ },
+ {
+  "id": "vi-0149",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thảo Lê, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số 072 992 9459. Thẻ thanh toán đã đăng ký là 4505450708987663. Bản sao đã được gửi tới zbui@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Thảo Lê"
+   },
+   {
+    "start": 82,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "072 992 9459"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4505450708987663"
+   },
+   {
+    "start": 226,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zbui@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0150",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Hạnh Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 0736 919 212 hoặc email johnhoang@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Hạnh Lê"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0736 919 212"
+   },
+   {
+    "start": 152,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0151",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Vân Vũ và Dương Mai. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới john71@example.com. Số máy trực tiếp: 084 159 4072.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Vân Vũ"
+   },
+   {
+    "start": 36,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Dương Mai"
+   },
+   {
+    "start": 81,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 135,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john71@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "084 159 4072"
+   }
+  ]
+ },
+ {
+  "id": "vi-0152",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Chị Phương Nguyễn, địa chỉ tại Vũng Tàu. Chúng tôi sẽ gọi lại cho bạn qua số 0921 485 747. Thẻ thanh toán đã đăng ký là 4638203585585518. Bản sao đã được gửi tới ovu@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Chị Phương Nguyễn"
+   },
+   {
+    "start": 92,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0921 485 747"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4638203585585518"
+   },
+   {
+    "start": 223,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ovu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0153",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô Kim Trần. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 054 477 9811 hoặc email lejane@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Cô Kim Trần"
+   },
+   {
+    "start": 92,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "054 477 9811"
+   },
+   {
+    "start": 157,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lejane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0154",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Minh Phạm và Nhật Đức Lê. Cuộc họp tiếp theo sẽ diễn ra tại Nha Trang. Việc cần làm: gửi tài liệu tới lejohn@example.org. Số máy trực tiếp: 079 173 1562.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Minh Phạm"
+   },
+   {
+    "start": 39,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Nhật Đức Lê"
+   },
+   {
+    "start": 86,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 128,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lejohn@example.org"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "079 173 1562"
+   }
+  ]
+ },
+ {
+  "id": "vi-0155",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Trọng Dương, địa chỉ tại Thành phố Hồ Chí Minh. Chúng tôi sẽ gọi lại cho bạn qua số +84 955 713 470. Thẻ thanh toán đã đăng ký là 4874084477673288. Bản sao đã được gửi tới phamjane@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Trọng Dương"
+   },
+   {
+    "start": 86,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 955 713 470"
+   },
+   {
+    "start": 191,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4874084477673288"
+   },
+   {
+    "start": 233,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjane@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0156",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Lâm Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 0835 916 510 hoặc email vle@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Quý cô Lâm Vũ"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0835 916 510"
+   },
+   {
+    "start": 159,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vle@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0157",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Hạnh Đức Vũ và Trọng Hoàng Lê. Cuộc họp tiếp theo sẽ diễn ra tại Hải Phòng. Việc cần làm: gửi tài liệu tới johnle@example.org. Số máy trực tiếp: +84 917 487 229.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Hạnh Đức Vũ"
+   },
+   {
+    "start": 41,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Trọng Hoàng Lê"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 133,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnle@example.org"
+   },
+   {
+    "start": 171,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 917 487 229"
+   }
+  ]
+ },
+ {
+  "id": "vi-0158",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Trọng Mai, địa chỉ tại Đà Nẵng. Chúng tôi sẽ gọi lại cho bạn qua số 084 205 9164. Thẻ thanh toán đã đăng ký là 4229-9863-8907-1512. Bản sao đã được gửi tới john39@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Trọng Mai"
+   },
+   {
+    "start": 84,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "084 205 9164"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4229-9863-8907-1512"
+   },
+   {
+    "start": 217,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john39@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0159",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Linh Đặng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số +84 950 664 955 hoặc email johnle@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Quý cô Linh Đặng"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 140,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 950 664 955"
+   },
+   {
+    "start": 167,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnle@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0160",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: An Phạm và Hồng Lê. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới jmai@example.com. Số máy trực tiếp: 088 220 1099.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "An Phạm"
+   },
+   {
+    "start": 37,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Hồng Lê"
+   },
+   {
+    "start": 80,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 121,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jmai@example.com"
+   },
+   {
+    "start": 157,
+    "end": 169,
+    "entity_type": "PHONE_NUMBER",
+    "value": "088 220 1099"
+   }
+  ]
+ },
+ {
+  "id": "vi-0161",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Phúc Hoàng, địa chỉ tại Vũng Tàu. Chúng tôi sẽ gọi lại cho bạn qua số +84 960 252 150. Thẻ thanh toán đã đăng ký là 4077048377690721. Bản sao đã được gửi tới johnvu@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Phúc Hoàng"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 960 252 150"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4077048377690721"
+   },
+   {
+    "start": 219,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnvu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0162",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Khoa Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 093 418 5371 hoặc email janenguyen@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Quý cô Khoa Vũ"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "093 418 5371"
+   },
+   {
+    "start": 159,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janenguyen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0163",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Anh Hoàng Trần và Cô Lan Dương. Cuộc họp tiếp theo sẽ diễn ra tại Hải Phòng. Việc cần làm: gửi tài liệu tới john06@example.com. Số máy trực tiếp: 0836 481 752.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Anh Hoàng Trần"
+   },
+   {
+    "start": 44,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Cô Lan Dương"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 134,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john06@example.com"
+   },
+   {
+    "start": 172,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0836 481 752"
+   }
+  ]
+ },
+ {
+  "id": "vi-0164",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Phương Xuân Nguyễn, địa chỉ tại Đà Lạt. Chúng tôi sẽ gọi lại cho bạn qua số +84 369 971 242. Thẻ thanh toán đã đăng ký là 4137702812643913. Bản sao đã được gửi tới johndang@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Phương Xuân Nguyễn"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 137,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 369 971 242"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4137702812643913"
+   },
+   {
+    "start": 225,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johndang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0165",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Cô Nhật Vũ. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Thành phố Hồ Chí Minh. Vui lòng liên hệ với tôi qua số 0831 473 480 hoặc email janedang@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Cô Nhật Vũ"
+   },
+   {
+    "start": 91,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0831 473 480"
+   },
+   {
+    "start": 170,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janedang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0166",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Cô Hương Vũ và Hoàng Dương. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới vujane@example.net. Số máy trực tiếp: 056 407 9113.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Cô Hương Vũ"
+   },
+   {
+    "start": 41,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Hoàng Dương"
+   },
+   {
+    "start": 88,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 124,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vujane@example.net"
+   },
+   {
+    "start": 162,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "056 407 9113"
+   }
+  ]
+ },
+ {
+  "id": "vi-0167",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Khoa Tấn Đặng, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số 0548 588 914. Thẻ thanh toán đã đăng ký là 4581-1910-1851-3552. Bản sao đã được gửi tới dbui@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Khoa Tấn Đặng"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0548 588 914"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4581-1910-1851-3552"
+   },
+   {
+    "start": 223,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dbui@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0168",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Lâm Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Cần Thơ. Vui lòng liên hệ với tôi qua số 0957 699 247 hoặc email gvu@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Lâm Mai"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0957 699 247"
+   },
+   {
+    "start": 153,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gvu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0169",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Lâm Phạm và Trung Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới jane79@example.com. Số máy trực tiếp: 058 544 8228.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Lâm Phạm"
+   },
+   {
+    "start": 38,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Trung Đặng"
+   },
+   {
+    "start": 84,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 125,
+    "end": 143,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane79@example.com"
+   },
+   {
+    "start": 163,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "058 544 8228"
+   }
+  ]
+ },
+ {
+  "id": "vi-0170",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Châu Thế Nguyễn, địa chỉ tại Vũng Tàu. Chúng tôi sẽ gọi lại cho bạn qua số +84 736 892 969. Thẻ thanh toán đã đăng ký là 4529-9225-7559-8429. Bản sao đã được gửi tới johnmai@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Châu Thế Nguyễn"
+   },
+   {
+    "start": 90,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 136,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 736 892 969"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4529-9225-7559-8429"
+   },
+   {
+    "start": 227,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnmai@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0171",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Nam Quang Bùi. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Thành phố Hồ Chí Minh. Vui lòng liên hệ với tôi qua số 0792 806 322 hoặc email phamjohn@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Nam Quang Bùi"
+   },
+   {
+    "start": 94,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 149,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0792 806 322"
+   },
+   {
+    "start": 173,
+    "end": 193,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0172",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Xuân Lê và Kim Hoàng. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới ntran@example.com. Số máy trực tiếp: +84 965 659 475.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Xuân Lê"
+   },
+   {
+    "start": 37,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Kim Hoàng"
+   },
+   {
+    "start": 82,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 123,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ntran@example.com"
+   },
+   {
+    "start": 160,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 965 659 475"
+   }
+  ]
+ },
+ {
+  "id": "vi-0173",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Khoa Đặng, địa chỉ tại Huế. Chúng tôi sẽ gọi lại cho bạn qua số +84 938 334 624. Thẻ thanh toán đã đăng ký là 4574736906214199. Bản sao đã được gửi tới jane01@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Khoa Đặng"
+   },
+   {
+    "start": 84,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 125,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 938 334 624"
+   },
+   {
+    "start": 171,
+    "end": 187,
+    "entity_type": "CREDIT_CARD",
+    "value": "4574736906214199"
+   },
+   {
+    "start": 213,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane01@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0174",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Huy Xuân Trần. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số 079 628 4030 hoặc email johnvu@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Huy Xuân Trần"
+   },
+   {
+    "start": 94,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "079 628 4030"
+   },
+   {
+    "start": 161,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnvu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0175",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Phương Đức Vũ và Ánh Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Thành phố Hồ Chí Minh. Việc cần làm: gửi tài liệu tới janepham@example.com. Số máy trực tiếp: 078 179 3388.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Phương Đức Vũ"
+   },
+   {
+    "start": 43,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Ánh Phạm"
+   },
+   {
+    "start": 87,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 141,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janepham@example.com"
+   },
+   {
+    "start": 181,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "078 179 3388"
+   }
+  ]
+ },
+ {
+  "id": "vi-0176",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Dũng Đặng, địa chỉ tại Đà Nẵng. Chúng tôi sẽ gọi lại cho bạn qua số 0944 819 916. Thẻ thanh toán đã đăng ký là 4016345446354295. Bản sao đã được gửi tới janeduong@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Dũng Đặng"
+   },
+   {
+    "start": 84,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0944 819 916"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4016345446354295"
+   },
+   {
+    "start": 214,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janeduong@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0177",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là An Thị Nguyễn. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Hải Phòng. Vui lòng liên hệ với tôi qua số +84 959 424 438 hoặc email janeduong@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "An Thị Nguyễn"
+   },
+   {
+    "start": 94,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 137,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 959 424 438"
+   },
+   {
+    "start": 164,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janeduong@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0178",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Tùng Phạm và Quang Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới buijohn@example.com. Số máy trực tiếp: 0550 372 523.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Tùng Phạm"
+   },
+   {
+    "start": 39,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Quang Vũ"
+   },
+   {
+    "start": 83,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 119,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijohn@example.com"
+   },
+   {
+    "start": 158,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0550 372 523"
+   }
+  ]
+ },
+ {
+  "id": "vi-0179",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Hoàng Phạm, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 0729 526 888. Thẻ thanh toán đã đăng ký là 4796814478471133. Bản sao đã được gửi tới jane15@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Hoàng Phạm"
+   },
+   {
+    "start": 85,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0729 526 888"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4796814478471133"
+   },
+   {
+    "start": 217,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane15@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0180",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Mai Lê. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Huế. Vui lòng liên hệ với tôi qua số +84 718 221 757 hoặc email johntran@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Mai Lê"
+   },
+   {
+    "start": 87,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 124,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 718 221 757"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johntran@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0181",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Anh Nam Mai và Quý cô Phương Vũ. Cuộc họp tiếp theo sẽ diễn ra tại Cần Thơ. Việc cần làm: gửi tài liệu tới john91@example.net. Số máy trực tiếp: 086 678 1745.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Anh Nam Mai"
+   },
+   {
+    "start": 41,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Quý cô Phương Vũ"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 133,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john91@example.net"
+   },
+   {
+    "start": 171,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "086 678 1745"
+   }
+  ]
+ },
+ {
+  "id": "vi-0182",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bác Thành Vũ, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số 0586 416 765. Thẻ thanh toán đã đăng ký là 4995719945400095. Bản sao đã được gửi tới phamjohn@example.com.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Bác Thành Vũ"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0586 416 765"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4995719945400095"
+   },
+   {
+    "start": 217,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjohn@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0183",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Quý cô Hồng Hoàng. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Thành phố Hồ Chí Minh. Vui lòng liên hệ với tôi qua số 093 403 9040 hoặc email tdang@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Quý cô Hồng Hoàng"
+   },
+   {
+    "start": 98,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Thành phố Hồ Chí Minh"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "093 403 9040"
+   },
+   {
+    "start": 177,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tdang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0184",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: An Đặng và Nhật Mai Bảo Mai. Cuộc họp tiếp theo sẽ diễn ra tại Đà Lạt. Việc cần làm: gửi tài liệu tới john58@example.com. Số máy trực tiếp: +84 712 440 608.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "An Đặng"
+   },
+   {
+    "start": 37,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Nhật Mai Bảo Mai"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 128,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john58@example.com"
+   },
+   {
+    "start": 166,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 712 440 608"
+   }
+  ]
+ },
+ {
+  "id": "vi-0185",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thành Mai, địa chỉ tại Nha Trang. Chúng tôi sẽ gọi lại cho bạn qua số +84 730 741 928. Thẻ thanh toán đã đăng ký là 4104-4128-0924-8572. Bản sao đã được gửi tới nguyenjohn@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Thành Mai"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Nha Trang"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 730 741 928"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4104-4128-0924-8572"
+   },
+   {
+    "start": 222,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nguyenjohn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0186",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Thảo Phạm. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số 032 291 3515 hoặc email john05@example.net. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Thảo Phạm"
+   },
+   {
+    "start": 90,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 291 3515"
+   },
+   {
+    "start": 156,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john05@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0187",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Chị Linh Bùi và An Phạm. Cuộc họp tiếp theo sẽ diễn ra tại Biên Hòa. Việc cần làm: gửi tài liệu tới johnbui@example.net. Số máy trực tiếp: 0756 415 317.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Chị Linh Bùi"
+   },
+   {
+    "start": 42,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "An Phạm"
+   },
+   {
+    "start": 85,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 126,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnbui@example.net"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0756 415 317"
+   }
+  ]
+ },
+ {
+  "id": "vi-0188",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Thành Phạm, địa chỉ tại Hải Phòng. Chúng tôi sẽ gọi lại cho bạn qua số 078 653 3566. Thẻ thanh toán đã đăng ký là 4140570677250362. Bản sao đã được gửi tới buijane@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Thành Phạm"
+   },
+   {
+    "start": 85,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "078 653 3566"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4140570677250362"
+   },
+   {
+    "start": 217,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "buijane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0189",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Bà Vân Dương. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Biên Hòa. Vui lòng liên hệ với tôi qua số +84 932 417 893 hoặc email jane57@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Bà Vân Dương"
+   },
+   {
+    "start": 93,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 135,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 932 417 893"
+   },
+   {
+    "start": 162,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jane57@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0190",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Nhật Bảo Vũ và Bà Hạnh Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới johnhoang@example.com. Số máy trực tiếp: 0347 559 887.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Nhật Bảo Vũ"
+   },
+   {
+    "start": 41,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Bà Hạnh Nguyễn"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 132,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johnhoang@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0347 559 887"
+   }
+  ]
+ },
+ {
+  "id": "vi-0191",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Bà Chi Nguyễn, địa chỉ tại Vũng Tàu. Chúng tôi sẽ gọi lại cho bạn qua số 086 762 8536. Thẻ thanh toán đã đăng ký là 4780739786916826. Bản sao đã được gửi tới phamjane@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Bà Chi Nguyễn"
+   },
+   {
+    "start": 88,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "086 762 8536"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4780739786916826"
+   },
+   {
+    "start": 219,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamjane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0192",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Anh Quang Dương. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 0918 269 399 hoặc email inguyen@example.com. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Anh Quang Dương"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0918 269 399"
+   },
+   {
+    "start": 161,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "inguyen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "vi-0193",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Chị Lan Trần và Cô Hà Hoàng. Cuộc họp tiếp theo sẽ diễn ra tại Vũng Tàu. Việc cần làm: gửi tài liệu tới john95@example.net. Số máy trực tiếp: +84 713 400 742.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Chị Lan Trần"
+   },
+   {
+    "start": 42,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Cô Hà Hoàng"
+   },
+   {
+    "start": 89,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Vũng Tàu"
+   },
+   {
+    "start": 130,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john95@example.net"
+   },
+   {
+    "start": 168,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 713 400 742"
+   }
+  ]
+ },
+ {
+  "id": "vi-0194",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Quang Bùi, địa chỉ tại Biên Hòa. Chúng tôi sẽ gọi lại cho bạn qua số 0750 799 909. Thẻ thanh toán đã đăng ký là 4959-6363-1738-9033. Bản sao đã được gửi tới john25@example.net.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Quang Bùi"
+   },
+   {
+    "start": 84,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Biên Hòa"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0750 799 909"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4959-6363-1738-9033"
+   },
+   {
+    "start": 218,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john25@example.net"
+   }
+  ]
+ },
+ {
+  "id": "vi-0195",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Hương Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Lạt. Vui lòng liên hệ với tôi qua số 055 937 3220 hoặc email maijane@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Hương Mai"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Đà Lạt"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "055 937 3220"
+   },
+   {
+    "start": 154,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maijane@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0196",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Quý cô Linh Bùi và Quý ông Quang Đặng. Cuộc họp tiếp theo sẽ diễn ra tại Huế. Việc cần làm: gửi tài liệu tới john19@example.com. Số máy trực tiếp: +84 549 483 367.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Quý cô Linh Bùi"
+   },
+   {
+    "start": 45,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Quý ông Quang Đặng"
+   },
+   {
+    "start": 99,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Huế"
+   },
+   {
+    "start": 135,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john19@example.com"
+   },
+   {
+    "start": 173,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 549 483 367"
+   }
+  ]
+ },
+ {
+  "id": "vi-0197",
+  "language": "vi",
+  "genre": "inquiry",
+  "text": "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là Ông Minh Bùi, địa chỉ tại Cần Thơ. Chúng tôi sẽ gọi lại cho bạn qua số +84 596 760 426. Thẻ thanh toán đã đăng ký là 4497-4253-5522-0170. Bản sao đã được gửi tới johntran@example.org.",
+  "spans": [
+   {
+    "start": 61,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Ông Minh Bùi"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Cần Thơ"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+84 596 760 426"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4497-4253-5522-0170"
+   },
+   {
+    "start": 223,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johntran@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0198",
+  "language": "vi",
+  "genre": "request",
+  "text": "Xin chào, tôi tên là Ngọc Mai. Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại Đà Nẵng. Vui lòng liên hệ với tôi qua số 0326 389 383 hoặc email john53@example.org. Xin cảm ơn!",
+  "spans": [
+   {
+    "start": 21,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Ngọc Mai"
+   },
+   {
+    "start": 89,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Đà Nẵng"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0326 389 383"
+   },
+   {
+    "start": 154,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "john53@example.org"
+   }
+  ]
+ },
+ {
+  "id": "vi-0199",
+  "language": "vi",
+  "genre": "minutes",
+  "text": "[Biên bản] Người tham dự: Linh Mai và Kim Nguyễn. Cuộc họp tiếp theo sẽ diễn ra tại Hải Phòng. Việc cần làm: gửi tài liệu tới janebui@example.org. Số máy trực tiếp: 0554 584 318.",
+  "spans": [
+   {
+    "start": 26,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Linh Mai"
+   },
+   {
+    "start": 38,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Kim Nguyễn"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Hải Phòng"
+   },
+   {
+    "start": 126,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "janebui@example.org"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0554 584 318"
+   }
+  ]
+ }
+]

@@ -36,39 +36,51 @@ STRUCTURED_ENTITIES = [
 DEFAULT_SCORE_THRESHOLD = 0.4
 
 _JA_SCRIPT = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+_VI_MARKERS = re.compile(r"[ăâđơưĂÂĐƠƯ\u01a0\u01a1\u01af\u01b0\u1ea0-\u1ef9]")
+_ES_MARKERS = re.compile(r"[¿¡ñÑáéíóúüÁÉÍÓÚÜ]")
 
-_recognizers: list[EntityRecognizer] | None = None
+_recognizers: dict[str, list[EntityRecognizer]] = {}
 
 
 def guess_language(text: str) -> str:
-    """Heuristic language guess: any kana/kanji means Japanese.
+    """Heuristic language guess from script ranges and marker letters.
 
-    Mirrors ``guessLanguage`` in the TypeScript core
-    (``web/packages/core/src/language-detect.ts``).
+    Ordering: kana/kanji → ``ja``; Vietnamese-specific letters → ``vi``;
+    Spanish markers → ``es``; otherwise ``en``. Mirrors ``guessLanguage``
+    in the TypeScript core (``web/packages/core/src/language-detect.ts``).
     """
-    return "ja" if _JA_SCRIPT.search(text) else "en"
+    if _JA_SCRIPT.search(text):
+        return "ja"
+    if _VI_MARKERS.search(text):
+        return "vi"
+    if _ES_MARKERS.search(text):
+        return "es"
+    return "en"
 
 
-def _structured_recognizers() -> list[EntityRecognizer]:
-    """Pattern recognizers usable without an NLP engine (built once).
+def _structured_recognizers(language: str = "en") -> list[EntityRecognizer]:
+    """Pattern recognizers usable without an NLP engine (built once per language).
 
     ``supported_language`` is only consulted by the analyzer registry, not
-    by direct ``analyze()`` calls, so a single language-agnostic list covers
-    both en and ja - like the TypeScript core's regex rule table.
+    by direct ``analyze()`` calls, so one language-agnostic base list covers
+    en and ja - like the TypeScript core's regex rule table. The es / vi
+    phone patterns are language-scoped (mirroring the TS rules' ``languages``
+    field) because e.g. a Vietnamese ``0912 345 678`` must not fire on en text.
     """
-    global _recognizers
-    if _recognizers is None:
+    if language not in _recognizers:
         from presidio_analyzer.predefined_recognizers import EmailRecognizer, PhoneRecognizer
 
         from prompt_anonymizer.recognizers import (
             CreditCardLookaroundRecognizer,
+            EsPhoneRegexRecognizer,
             JaPhoneRegexRecognizer,
             JaPostalCodeRecognizer,
             MyNumberRecognizer,
             UsPhoneRegexRecognizer,
+            VnPhoneRegexRecognizer,
         )
 
-        _recognizers = [
+        recognizers: list[EntityRecognizer] = [
             EmailRecognizer(),
             PhoneRecognizer(supported_regions=("JP", "US")),
             JaPhoneRegexRecognizer(),
@@ -77,17 +89,26 @@ def _structured_recognizers() -> list[EntityRecognizer]:
             MyNumberRecognizer(),
             CreditCardLookaroundRecognizer(),
         ]
-    return _recognizers
+        if language == "es":
+            recognizers.append(EsPhoneRegexRecognizer())
+        elif language == "vi":
+            recognizers.append(VnPhoneRegexRecognizer())
+        _recognizers[language] = recognizers
+    return _recognizers[language]
 
 
-def detect_structured(text: str) -> list[EntitySpan]:
+def detect_structured(text: str, language: str = "auto") -> list[EntitySpan]:
     """Detect structured PII with pattern recognizers only (no NLP engine).
 
-    Returns raw, unmerged spans; scores below recognizer context boosts
-    (which require the full engine) are reported as-is.
+    ``language`` selects the language-scoped patterns (es / vi phones);
+    ``"auto"`` uses :func:`guess_language`. Returns raw, unmerged spans;
+    scores below recognizer context boosts (which require the full engine)
+    are reported as-is.
     """
+    if language == "auto":
+        language = guess_language(text)
     spans: list[EntitySpan] = []
-    for recognizer in _structured_recognizers():
+    for recognizer in _structured_recognizers(language):
         # Pattern-based recognizers never read nlp_artifacts; the base
         # class annotates it as required, hence the ignore.
         results = recognizer.analyze(
@@ -112,6 +133,7 @@ def scan_text(
     deny_list: Sequence[str] = (),
     allow_list: Sequence[str] = (),
     score_threshold: float = DEFAULT_SCORE_THRESHOLD,
+    language: str = "auto",
 ) -> list[EntitySpan]:
     """Scan ``text`` for structured PII and deny-listed terms.
 
@@ -123,7 +145,7 @@ def scan_text(
     """
     spans = [
         span
-        for span in detect_structured(text)
+        for span in detect_structured(text, language=language)
         if span.score >= score_threshold and text[span.start : span.end] not in allow_list
     ]
     spans.extend(deny_list_spans(text, deny_list))

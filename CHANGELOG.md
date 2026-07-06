@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Spanish (`es`) and Vietnamese (`vi`) support in both cores (non-breaking,
+  additive): locale-specific labels (`Nombre`, `Teléfono`, `Tên`,
+  `SốĐiệnThoại`, …), Spain and Vietnam phone recognizers, spaCy / HF /
+  transformers.js NER models, golden sets (`tests/golden/golden_es.json`,
+  `golden_vi.json`, 200 cases each), Español / Tiếng Việt in the web UI
+  language picker, and auto-detection extended to distinguish `ja` / `en` /
+  `es` / `vi`. Default `PromptAnonymizer(languages=…)` remains `("en", "ja")`;
+  pass `languages=["es"]` or `languages=["vi"]` to opt in. Existing `ja`/`en`
+  labels unchanged. Vietnamese has no official spaCy pipeline (`xx_ent_wiki_sm`
+  for both model sizes); `ner_backend="hf"` (`NlpHUST/ner-vietnamese-electra-base`)
+  is recommended for name/location recall. The opt-in `US_SSN` / `IBAN_CODE`
+  entities get `SSN` / `IBAN` labels in both new languages, and the `scan`
+  gate's language auto-detection and language-scoped phone patterns cover
+  `es` / `vi` in both CLIs.
+- Translated READMEs: `README_es.md` (Español) and `README_vi.md`
+  (Tiếng Việt), cross-linked from the language switcher in `README.md` and
+  `README_ja.md`.
 - Commit-time / CI gate: new `scan` subcommand in BOTH CLIs (Python and
   Node) that exits `0` when the inputs are clean, `1` when PII is found
   and `2` on errors. It reports `file:line:col` and the entity type only —
@@ -59,7 +76,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     NER (transformers.js, native CPU backend) is on by default;
     `--no-ner` prints the same "names and locations will NOT be masked"
     warning as the browser targets. Language defaults to on-device
-    auto-detection (`-l en|ja` to force).
+    auto-detection (`-l en|ja|es|vi` to force).
   - `@prompt-anonymizer/element` — framework-agnostic `<prompt-anonymizer>`
     web component embedding the full anonymize → restore panel (shadow
     DOM UI mirroring the browser app, `pa-anonymize` / `pa-restore` /

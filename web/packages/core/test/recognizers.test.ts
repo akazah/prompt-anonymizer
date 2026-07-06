@@ -104,6 +104,46 @@ describe("detectWithRegex", () => {
     ).toBe(false);
   });
 
+  it("detects Spanish phone formats", () => {
+    for (const sample of [
+      "+34 612 345 678",
+      "612 345 678",
+      "612-345-678",
+      "91 234 56 78",
+    ]) {
+      const spans = detectWithRegex(`Llámame al ${sample}`, "es");
+      expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(true);
+    }
+  });
+
+  it("rejects bare 9-digit Spanish numbers without separators or prefix", () => {
+    const spans = detectWithRegex("612345678", "es");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
+  it("detects Vietnamese phone formats", () => {
+    for (const sample of [
+      "0912 345 678",
+      "091 234 5678",
+      "0912345678",
+      "+84 912 345 678",
+      "024 3826 8888",
+    ]) {
+      const spans = detectWithRegex(`Gọi ${sample}`, "vi");
+      expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(true);
+    }
+  });
+
+  it("does not detect Vietnamese phones when language is en", () => {
+    const spans = detectWithRegex("Call 0912 345 678", "en");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
+  it("does not match phone digits embedded in longer runs", () => {
+    const spans = detectWithRegex("id10912345678end", "vi");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
   it("detects US SSN in English prose", () => {
     const spans = detectWithRegex("SSN on file: 856-45-6780", "en");
     expect(spans.some((s) => s.entityType === "US_SSN")).toBe(true);

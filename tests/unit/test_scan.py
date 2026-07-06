@@ -13,6 +13,10 @@ def test_guess_language_matches_ts_heuristic() -> None:
     assert guess_language("カタカナのみ") == "ja"
     assert guess_language("Call me maybe") == "en"
     assert guess_language("") == "en"
+    assert guess_language("Gọi cho tôi nhé") == "vi"
+    assert guess_language("¿Cómo estás?") == "es"
+    # Vietnamese wins over Spanish when both marker sets appear (TS parity).
+    assert guess_language("Số điện thoại, ¿vale?") == "vi"
 
 
 def test_scan_text_detects_structured_pii() -> None:
@@ -30,6 +34,17 @@ def test_scan_text_detects_valid_my_number_only() -> None:
     # 123456789018 passes the MIC check digit; ...12 does not.
     assert [s.entity_type for s in scan_text("番号: 1234-5678-9018")] == ["JP_MY_NUMBER"]
     assert scan_text("番号: 1234-5678-9012") == []
+
+
+def test_scan_text_detects_es_vi_phones_language_scoped() -> None:
+    # Auto language guess picks the es / vi phone patterns from the prose.
+    es = scan_text("Llámame al 612 345 678, ¿vale?")
+    assert any(s.entity_type == "PHONE_NUMBER" for s in es)
+    vi = scan_text("Gọi cho tôi ở 0912 345 678")
+    assert any(s.entity_type == "PHONE_NUMBER" for s in vi)
+    # The same digits in English prose must not fire (language-scoped rules).
+    assert scan_text("Order id 0912 345 678 shipped") == []
+    assert scan_text("Gọi cho tôi ở 0912 345 678", language="en") == []
 
 
 def test_scan_text_clean_text_returns_empty() -> None:

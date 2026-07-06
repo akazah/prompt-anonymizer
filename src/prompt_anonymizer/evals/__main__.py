@@ -57,7 +57,7 @@ TABLE_HEADER = (
 def main() -> None:
     parser = argparse.ArgumentParser(description="prompt-anonymizer evaluation harness")
     parser.add_argument("--cases", type=int, default=200, help="cases per language")
-    parser.add_argument("--languages", nargs="+", default=["ja", "en"])
+    parser.add_argument("--languages", nargs="+", default=["ja", "en", "es", "vi"])
     parser.add_argument("--model-size", default="sm", choices=["sm", "lg"])
     parser.add_argument(
         "--ner-backend",

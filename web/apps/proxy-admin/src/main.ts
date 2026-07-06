@@ -73,6 +73,8 @@ app.innerHTML = `
             <option value="auto">Auto / 自動判定</option>
             <option value="ja">日本語</option>
             <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="vi">Tiếng Việt</option>
           </select>
         </div>
       </div>
@@ -122,6 +124,8 @@ app.innerHTML = `
             <option value="auto">Auto / 自動判定</option>
             <option value="ja">日本語</option>
             <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="vi">Tiếng Việt</option>
           </select>
         </label>
         <button id="load-sample">Load sample</button>

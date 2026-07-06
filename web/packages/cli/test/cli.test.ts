@@ -57,6 +57,28 @@ describe("anonymize", () => {
     expect(stdout.at(-1)).toBe("Mail <Email_1> please");
   });
 
+  it("uses Spanish labels with -l es", async () => {
+    const { io, stdout } = makeIo();
+    const code = await run(
+      ["anonymize", "--no-ner", "-l", "es", "-t", "Correo maria.garcia@example.com o +34 612 345 678"],
+      io,
+      regexOnly,
+    );
+    expect(code).toBe(0);
+    expect(stdout.at(-1)).toBe("Correo <Correo_1> o <Teléfono_1>");
+  });
+
+  it("uses Vietnamese labels with -l vi", async () => {
+    const { io, stdout } = makeIo();
+    const code = await run(
+      ["anonymize", "--no-ner", "-l", "vi", "-t", "Email an.nguyen@example.com hoặc 0912 345 678"],
+      io,
+      regexOnly,
+    );
+    expect(code).toBe(0);
+    expect(stdout.at(-1)).toBe("Email <Email_1> hoặc <SốĐiệnThoại_1>");
+  });
+
   it("outputs the Python CLI's --json shape (snake_case entity_type)", async () => {
     const { io, stdout } = makeIo();
     const code = await run(

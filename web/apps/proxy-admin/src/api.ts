@@ -10,7 +10,7 @@ export interface ProxyConfig {
   /** Use the transformers.js NER model (names & locations). */
   ner: boolean;
   /** Language for detection; `auto` = on-device detection per request. */
-  language: "auto" | "en" | "ja";
+  language: "auto" | "en" | "ja" | "es" | "vi";
   /** Strings to always mask (labelled CUSTOM / 秘匿情報). */
   denyList: string[];
   /** Strings to never mask even when detected. */
@@ -50,7 +50,7 @@ export interface RedactionEvent {
   path: string;
   /** `model` from the request body, when present. */
   model?: string;
-  language: "en" | "ja";
+  language: "en" | "ja" | "es" | "vi";
   stream: boolean;
   /** entityType -> number of masked occurrences, e.g. `{ PERSON: 2 }`. */
   entityCounts: Record<string, number>;
@@ -82,7 +82,7 @@ export interface EventMappingResponse {
 export interface PreviewRequest {
   text: string;
   /** Defaults to `auto`. */
-  language?: "auto" | "en" | "ja";
+  language?: "auto" | "en" | "ja" | "es" | "vi";
 }
 
 /**
@@ -95,7 +95,7 @@ export interface PreviewResponse {
   anonymized: string;
   mapping: Record<string, string>;
   entities: Array<{ start: number; end: number; entity_type: string; score: number }>;
-  language: "en" | "ja";
+  language: "en" | "ja" | "es" | "vi";
 }
 
 export interface AdminErrorResponse {

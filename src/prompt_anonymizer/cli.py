@@ -47,7 +47,9 @@ def anonymize(
     file: Annotated[
         Path | None, typer.Option("--file", "-f", exists=True, help="Read text from a file.")
     ] = None,
-    language: Annotated[str, typer.Option("--language", "-l", help="Language (en/ja).")] = "en",
+    language: Annotated[
+        str, typer.Option("--language", "-l", help="Language (en/ja/es/vi).")
+    ] = "en",
     model_size: Annotated[str, typer.Option(help="spaCy model size: sm or lg.")] = "sm",
     ner_backend: Annotated[
         str,
@@ -157,7 +159,7 @@ def scan(
     ] = None,
     text: Annotated[str | None, typer.Option("--text", "-t", help="Text to scan.")] = None,
     language: Annotated[
-        str, typer.Option("--language", "-l", help="Language for --ner: en, ja or auto.")
+        str, typer.Option("--language", "-l", help="Language: en, ja, es, vi or auto.")
     ] = "auto",
     ner: Annotated[
         bool,
@@ -190,8 +192,8 @@ def scan(
     from prompt_anonymizer.labeling import EntitySpan
     from prompt_anonymizer.scan import guess_language, scan_text
 
-    if language not in ("en", "ja", "auto"):
-        raise typer.BadParameter("Language must be en, ja or auto.")
+    if language not in ("en", "ja", "es", "vi", "auto"):
+        raise typer.BadParameter("Language must be en, ja, es, vi or auto.")
     deny = deny or []
     allow = allow or []
     inputs = _scan_inputs(files, text)
@@ -202,7 +204,7 @@ def scan(
 
     def spans_for(content: str) -> list[EntitySpan]:
         if not ner:
-            return scan_text(content, deny_list=deny, allow_list=allow)
+            return scan_text(content, deny_list=deny, allow_list=allow, language=language)
         lang = guess_language(content) if language == "auto" else language
         if lang not in anonymizers:
             anonymizers[lang] = PromptAnonymizer(languages=[lang], deny_list=deny, allow_list=allow)

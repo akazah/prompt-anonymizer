@@ -34,6 +34,30 @@ export const LABELS: Record<Language, Record<string, string>> = {
     IBAN_CODE: "IBAN",
     CUSTOM: "秘匿情報",
   },
+  es: {
+    PERSON: "Nombre",
+    EMAIL_ADDRESS: "Correo",
+    LOCATION: "Dirección",
+    PHONE_NUMBER: "Teléfono",
+    JP_POSTAL_CODE: "CódigoPostal",
+    JP_MY_NUMBER: "MyNumber",
+    CREDIT_CARD: "Tarjeta",
+    US_SSN: "SSN",
+    IBAN_CODE: "IBAN",
+    CUSTOM: "Personalizado",
+  },
+  vi: {
+    PERSON: "Tên",
+    EMAIL_ADDRESS: "Email",
+    LOCATION: "ĐịaChỉ",
+    PHONE_NUMBER: "SốĐiệnThoại",
+    JP_POSTAL_CODE: "MãBưuĐiện",
+    JP_MY_NUMBER: "MyNumber",
+    CREDIT_CARD: "ThẻTínDụng",
+    US_SSN: "SSN",
+    IBAN_CODE: "IBAN",
+    CUSTOM: "TùyChỉnh",
+  },
 };
 
 // Whitespace trimmed from the edges of remainder segments. An explicit set

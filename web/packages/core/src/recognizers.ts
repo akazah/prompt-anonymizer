@@ -119,6 +119,43 @@ const RULES: RegexRule[] = [
     score: 0.6,
     languages: "all",
   },
+  // ES mobile with country prefix: +34 612 345 678 / +34612345678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)\+34[ .-]?[6789]\d{2}[ .-]?\d{3}[ .-]?\d{3}(?!\d)/g,
+    score: 0.6,
+    languages: ["es"],
+  },
+  // ES 3-3-3 grouping, separators required without prefix: 612 345 678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)[6789]\d{2}[ .-]\d{3}[ .-]\d{3}(?!\d)/g,
+    score: 0.6,
+    languages: ["es"],
+  },
+  // ES landline 2-3-2-2 grouping: 91 234 56 78
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)[89]\d[ .-]\d{3}[ .-]\d{2}[ .-]\d{2}(?!\d)/g,
+    score: 0.5,
+    languages: ["es"],
+  },
+  // VN domestic: 0912 345 678 / 091 234 5678 / 0912345678 / 024 3826 8888
+  {
+    entityType: "PHONE_NUMBER",
+    regex:
+      /(?<!\d)0(?:\d{2}[ .-]?\d{3}[ .-]?\d{4}|\d{3}[ .-]?\d{3}[ .-]?\d{3}|\d{2}[ .-]?\d{4}[ .-]?\d{4})(?!\d)/g,
+    score: 0.6,
+    languages: ["vi"],
+  },
+  // VN with +84 prefix (leading 0 dropped): +84 912 345 678
+  {
+    entityType: "PHONE_NUMBER",
+    regex:
+      /(?<!\d)\+84[ .-]?(?:\d{2}[ .-]?\d{3}[ .-]?\d{4}|\d{3}[ .-]?\d{3}[ .-]?\d{3}|\d{2}[ .-]?\d{4}[ .-]?\d{4})(?!\d)/g,
+    score: 0.6,
+    languages: ["vi"],
+  },
   // JP postal code with 〒 mark (strong signal).
   {
     entityType: "JP_POSTAL_CODE",

@@ -16,10 +16,19 @@ MIN_RECALL = {
     ("en", "EMAIL_ADDRESS"): 0.9,
     ("en", "CREDIT_CARD"): 0.9,
     ("en", "PERSON"): 0.7,
+    ("es", "PHONE_NUMBER"): 0.9,
+    ("es", "EMAIL_ADDRESS"): 0.9,
+    ("es", "CREDIT_CARD"): 0.9,
+    ("es", "PERSON"): 0.5,
+    # vi PERSON/LOCATION recall with the spaCy backend (xx_ent_wiki_sm) is
+    # too weak to gate on; use ner_backend="hf" for Vietnamese names.
+    ("vi", "PHONE_NUMBER"): 0.9,
+    ("vi", "EMAIL_ADDRESS"): 0.9,
+    ("vi", "CREDIT_CARD"): 0.9,
 }
 
 
-@pytest.mark.parametrize("language", ["ja", "en"])
+@pytest.mark.parametrize("language", ["ja", "en", "es", "vi"])
 def test_recall_floor(language: str) -> None:
     from prompt_anonymizer import PromptAnonymizer
     from prompt_anonymizer.evals.generate import generate_cases
