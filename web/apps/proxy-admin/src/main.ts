@@ -9,6 +9,7 @@ import {
   type ProxyStatus,
   type RedactionEvent,
 } from "./api";
+import "@prompt-anonymizer/theme/fonts.css";
 import "./style.css";
 
 const SAMPLES = {
@@ -19,18 +20,21 @@ const SAMPLES = {
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
   <div class="container">
-    <header>
-      <h1>Prompt Anonymizer — Proxy Admin</h1>
-      <span id="proxy-badge" class="badge down"><span class="dot"></span><span id="proxy-status-text">proxy: offline</span></span>
-      <span id="version-badge" class="badge version">v—</span>
-      <div class="spacer"></div>
-      <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
-    </header>
-    <p class="privacy">
-      <strong>100% localhost.</strong> This admin UI and the proxy run on your machine —
-      only <em>anonymized</em> text is sent to your configured upstream; mappings stay in proxy memory.
-      <span lang="ja">マッピングはプロキシのメモリ内にのみ保持され、元の個人情報は上流へ送信されません。</span>
-    </p>
+    <div class="hero">
+      <header>
+        <span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="url(#pa-grad)" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="url(#pa-grad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="pa-grad" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#8b7cf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg></span>
+        <h1>Prompt Anonymizer — Proxy Admin</h1>
+        <span id="proxy-badge" class="badge down"><span class="dot"></span><span id="proxy-status-text">proxy: offline</span></span>
+        <span id="version-badge" class="badge version">v—</span>
+        <div class="spacer"></div>
+        <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
+      </header>
+      <p class="privacy">
+        <strong>100% localhost.</strong> This admin UI and the proxy run on your machine —
+        only <em>anonymized</em> text is sent to your configured upstream; mappings stay in proxy memory.
+        <span lang="ja">マッピングはプロキシのメモリ内にのみ保持され、元の個人情報は上流へ送信されません。</span>
+      </p>
+    </div>
 
     <section class="panel" id="status-panel">
       <h2>Status</h2>
@@ -55,7 +59,7 @@ app.innerHTML = `
       <div class="form-row">
         <label class="field-label">NER model</label>
         <div class="field-control">
-          <label><input type="checkbox" id="cfg-ner" checked /> NER model (names &amp; locations)</label>
+          <label class="switch-label"><input type="checkbox" id="cfg-ner" class="switch" checked /> NER model (names &amp; locations)</label>
         </div>
       </div>
       <p id="ner-off-warning" class="hint warning" hidden>
@@ -87,7 +91,7 @@ app.innerHTML = `
       <div class="form-row">
         <label class="field-label">Record mappings</label>
         <div class="field-control">
-          <label><input type="checkbox" id="cfg-record-mappings" /> Keep label → original mappings in proxy memory</label>
+          <label class="switch-label"><input type="checkbox" id="cfg-record-mappings" class="switch" /> Keep label → original mappings in proxy memory</label>
         </div>
       </div>
       <p id="record-mappings-warning" class="hint warning" hidden>

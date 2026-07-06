@@ -1,0 +1,71 @@
+/*
+ * Design tokens shared by every prompt-anonymizer UI surface.
+ * The published web component (packages/element) intentionally does NOT
+ * depend on this package — keep its --pa-* defaults in
+ * packages/element/src/styles.ts in sync with these values.
+ */
+:root {
+  color-scheme: dark;
+
+  /* surfaces */
+  --bg: #08090d;
+  --bg-panel: #10121a;
+  --bg-panel-2: #141724;
+  --bg-input: #0b0d13;
+
+  /* borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* text */
+  --text: #eceef4;
+  --text-dim: #9aa1b2;
+  --text-faint: #646b7c;
+
+  /* accents: violet→cyan brand, green = success / on-device */
+  --accent: #8b7cf8;
+  --accent-hover: #9d90fa;
+  --accent-cyan: #22d3ee;
+  --ok: #34d399;
+  --warn: #f0b34e;
+  --danger: #f47067;
+  --gradient-brand: linear-gradient(135deg, #8b7cf8 0%, #22d3ee 100%);
+  --gradient-btn: linear-gradient(180deg, #8b7cf8, #6d5ef5);
+
+  /* PII chips */
+  --chip-bg: rgba(139, 124, 248, 0.14);
+  --chip-border: rgba(139, 124, 248, 0.45);
+  --chip-ok-bg: rgba(52, 211, 153, 0.12);
+  --chip-ok-border: rgba(52, 211, 153, 0.45);
+
+  /* elevation / glow / focus */
+  --shadow-card: 0 0 0 1px var(--border), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --glow-accent: 0 0 24px rgba(109, 94, 245, 0.28);
+  --focus-ring: 0 0 0 3px rgba(139, 124, 248, 0.35);
+
+  /* geometry */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* spacing (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* type scale */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14.5px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --font-sans: "Inter Variable", "Inter", -apple-system, "Hiragino Sans",
+    "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+}

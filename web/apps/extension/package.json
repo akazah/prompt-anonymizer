@@ -9,7 +9,8 @@
     "package": "npm run build && cd dist && zip -rq ../prompt-anonymizer-extension.zip ."
   },
   "dependencies": {
-    "@prompt-anonymizer/core": "workspace:*"
+    "@prompt-anonymizer/core": "workspace:*",
+    "@prompt-anonymizer/theme": "workspace:*"
   },
   "devDependencies": {
     "@types/chrome": "^0.2.2",
