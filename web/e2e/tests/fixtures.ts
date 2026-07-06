@@ -32,7 +32,7 @@ export const test = base.extend<{ blockedExternalRequests: string[] }>({
 export { expect };
 
 export interface AnonymizeOptions {
-  language: "ja" | "en";
+  language: "ja" | "en" | "es" | "vi";
   /** Explicit input text; omit to use the app's built-in sample. */
   text?: string;
 }

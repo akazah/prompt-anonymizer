@@ -22,9 +22,22 @@ DEFAULT_ENTITIES = [
     "CREDIT_CARD",
 ]
 
+# Vietnamese has no official spaCy pipeline: the multi-language WikiNER
+# model (xx_ent_wiki_sm) provides tokenization plus baseline PER/LOC NER
+# for both sizes. Use ner_backend="hf" for markedly better vi recall.
 _SPACY_MODELS = {
-    "sm": {"en": "en_core_web_sm", "ja": "ja_core_news_sm"},
-    "lg": {"en": "en_core_web_lg", "ja": "ja_core_news_lg"},
+    "sm": {
+        "en": "en_core_web_sm",
+        "ja": "ja_core_news_sm",
+        "es": "es_core_news_sm",
+        "vi": "xx_ent_wiki_sm",
+    },
+    "lg": {
+        "en": "en_core_web_lg",
+        "ja": "ja_core_news_lg",
+        "es": "es_core_news_lg",
+        "vi": "xx_ent_wiki_sm",
+    },
 }
 
 _NER_BACKENDS = ("spacy", "hf")
@@ -32,9 +45,13 @@ _NER_BACKENDS = ("spacy", "hf")
 # Same model family as the TypeScript core (web/packages/core/src/ner.ts),
 # which runs ONNX exports of these models via transformers.js. Using the
 # original checkpoints here keeps NER behaviour aligned across both cores.
+# Exception: vi uses the native VLSP-trained ELECTRA model (no ONNX export
+# exists), while the TS core falls back to the multilingual HRL model.
 DEFAULT_HF_NER_MODELS = {
     "ja": "tsmatz/xlm-roberta-ner-japanese",
     "en": "dslim/bert-base-NER",
+    "es": "Davlan/bert-base-multilingual-cased-ner-hrl",
+    "vi": "NlpHUST/ner-vietnamese-electra-base",
 }
 
 # Mirror of the TS core's TAG_MAP (web/packages/core/src/ner.ts). Tags not
@@ -126,7 +143,9 @@ class PromptAnonymizer:
             MyNumberRecognizer,
             UsPhoneRegexRecognizer,
             build_credit_card_recognizers,
+            build_es_phone_recognizers,
             build_ja_phone_recognizers,
+            build_vn_phone_recognizers,
         )
 
         self._ensure_models()
@@ -156,6 +175,14 @@ class PromptAnonymizer:
                 analyzer.registry.add_recognizer(recognizer)
             analyzer.registry.add_recognizer(JaPostalCodeRecognizer())
             analyzer.registry.add_recognizer(MyNumberRecognizer())
+
+        if "es" in self.languages:
+            for recognizer in build_es_phone_recognizers():
+                analyzer.registry.add_recognizer(recognizer)
+
+        if "vi" in self.languages:
+            for recognizer in build_vn_phone_recognizers():
+                analyzer.registry.add_recognizer(recognizer)
 
         for language in self.languages:
             if language != "ja":

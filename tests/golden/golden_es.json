@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "es-0000",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Eva Lucas-Duque. Me gustaría programar una reunión el próximo mes. El lugar será Tarragona. Puede llamarme al 96 721 45 32 o escribirme a duquebarbara@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Eva Lucas-Duque"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 721 45 32"
+   },
+   {
+    "start": 160,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duquebarbara@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0001",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Pablo Borrego y Adora Miralles. La próxima reunión será en Las Palmas. Tarea pendiente: enviar la presentación a agapitopenalver@example.com. Línea directa: +34 719 341 954.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Pablo Borrego"
+   },
+   {
+    "start": 35,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Adora Miralles"
+   },
+   {
+    "start": 78,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Las Palmas"
+   },
+   {
+    "start": 132,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "agapitopenalver@example.com"
+   },
+   {
+    "start": 176,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 719 341 954"
+   }
+  ]
+ },
+ {
+  "id": "es-0002",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Anastasia Báez Pineda y su dirección está en Álava. Le devolveremos la llamada al 678 514 975. La tarjeta registrada es 4140934423311052. Se envió una copia a armando77@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Anastasia Báez Pineda"
+   },
+   {
+    "start": 104,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Álava"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "678 514 975"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4140934423311052"
+   },
+   {
+    "start": 218,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "armando77@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0003",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Cruz Trillo Palacio. Me gustaría programar una reunión el próximo mes. El lugar será Girona. Puede llamarme al 94 812 21 90 o escribirme a palaufabio@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Cruz Trillo Palacio"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Girona"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 812 21 90"
+   },
+   {
+    "start": 161,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "palaufabio@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0004",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Alcides Otero Nebot y Aitana Arregui Grau. La próxima reunión será en Álava. Tarea pendiente: enviar la presentación a parejabruno@example.net. Línea directa: 91 421 32 11.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Alcides Otero Nebot"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Aitana Arregui Grau"
+   },
+   {
+    "start": 89,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Álava"
+   },
+   {
+    "start": 138,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "parejabruno@example.net"
+   },
+   {
+    "start": 178,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "91 421 32 11"
+   }
+  ]
+ },
+ {
+  "id": "es-0005",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Guadalupe Cáceres Santana y su dirección está en Almería. Le devolveremos la llamada al +34 782 210 539. La tarjeta registrada es 4998-7172-9362-3216. Se envió una copia a glaucomontes@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Guadalupe Cáceres Santana"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Almería"
+   },
+   {
+    "start": 147,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 782 210 539"
+   },
+   {
+    "start": 189,
+    "end": 208,
+    "entity_type": "CREDIT_CARD",
+    "value": "4998-7172-9362-3216"
+   },
+   {
+    "start": 231,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "glaucomontes@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0006",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Prudencia Canales Llanos. Me gustaría programar una reunión el próximo mes. El lugar será Zamora. Puede llamarme al 92 487 87 66 o escribirme a xoller@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Prudencia Canales Llanos"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Zamora"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 487 87 66"
+   },
+   {
+    "start": 166,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xoller@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0007",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Máxima Abril Azorin Bustos y Genoveva Esparza Rocha. La próxima reunión será en Huesca. Tarea pendiente: enviar la presentación a ssanmiguel@example.org. Línea directa: 96 356 15 69.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Máxima Abril Azorin Bustos"
+   },
+   {
+    "start": 48,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Genoveva Esparza Rocha"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 149,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ssanmiguel@example.org"
+   },
+   {
+    "start": 188,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 356 15 69"
+   }
+  ]
+ },
+ {
+  "id": "es-0008",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Maximiano Viana y su dirección está en Guadalajara. Le devolveremos la llamada al +34 710 747 639. La tarjeta registrada es 4108672319629639. Se envió una copia a tvazquez@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Maximiano Viana"
+   },
+   {
+    "start": 98,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Guadalajara"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 710 747 639"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4108672319629639"
+   },
+   {
+    "start": 222,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tvazquez@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0009",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Aroa Lobato Colomer. Me gustaría programar una reunión el próximo mes. El lugar será Valladolid. Puede llamarme al 92 223 48 12 o escribirme a marinvasco@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Aroa Lobato Colomer"
+   },
+   {
+    "start": 107,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Valladolid"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 223 48 12"
+   },
+   {
+    "start": 165,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marinvasco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0010",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Evaristo Solera León y Graciana Almeida Roma. La próxima reunión será en Zaragoza. Tarea pendiente: enviar la presentación a anastasia40@example.net. Línea directa: 94 417 48 33.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Evaristo Solera León"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Graciana Almeida Roma"
+   },
+   {
+    "start": 92,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Zaragoza"
+   },
+   {
+    "start": 144,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anastasia40@example.net"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 417 48 33"
+   }
+  ]
+ },
+ {
+  "id": "es-0011",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Angelina Arce Alcalá y su dirección está en Salamanca. Le devolveremos la llamada al 618 177 111. La tarjeta registrada es 4815899310965795. Se envió una copia a consueloespejo@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Angelina Arce Alcalá"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Salamanca"
+   },
+   {
+    "start": 144,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "618 177 111"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4815899310965795"
+   },
+   {
+    "start": 221,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "consueloespejo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0012",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Imelda Hernandez Huertas. Me gustaría programar una reunión el próximo mes. El lugar será Segovia. Puede llamarme al +34 739 665 795 o escribirme a clarisaespejo@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Imelda Hernandez Huertas"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Segovia"
+   },
+   {
+    "start": 139,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 739 665 795"
+   },
+   {
+    "start": 170,
+    "end": 195,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "clarisaespejo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0013",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Olivia Echeverría y Faustino Pacheco-Noriega. La próxima reunión será en Ourense. Tarea pendiente: enviar la presentación a haroldo64@example.net. Línea directa: +34 744 565 215.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Olivia Echeverría"
+   },
+   {
+    "start": 39,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Faustino Pacheco-Noriega"
+   },
+   {
+    "start": 92,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 143,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haroldo64@example.net"
+   },
+   {
+    "start": 181,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 744 565 215"
+   }
+  ]
+ },
+ {
+  "id": "es-0014",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Juan Luis Robledo Pastor y su dirección está en Castellón. Le devolveremos la llamada al +34 699 465 257. La tarjeta registrada es 4813-2201-4241-6646. Se envió una copia a andres-felipe75@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Juan Luis Robledo Pastor"
+   },
+   {
+    "start": 107,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Castellón"
+   },
+   {
+    "start": 148,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 699 465 257"
+   },
+   {
+    "start": 190,
+    "end": 209,
+    "entity_type": "CREDIT_CARD",
+    "value": "4813-2201-4241-6646"
+   },
+   {
+    "start": 232,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andres-felipe75@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0015",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Araceli Cabello Gutierrez. Me gustaría programar una reunión el próximo mes. El lugar será Valencia. Puede llamarme al 728 132 462 o escribirme a marcio07@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Araceli Cabello Gutierrez"
+   },
+   {
+    "start": 113,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Valencia"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "728 132 462"
+   },
+   {
+    "start": 168,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcio07@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0016",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Ani Boada Marí y Adriana Plana Avilés. La próxima reunión será en Zamora. Tarea pendiente: enviar la presentación a morenocelso@example.com. Línea directa: +34 713 145 778.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Ani Boada Marí"
+   },
+   {
+    "start": 36,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Adriana Plana Avilés"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Zamora"
+   },
+   {
+    "start": 135,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "morenocelso@example.com"
+   },
+   {
+    "start": 175,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 713 145 778"
+   }
+  ]
+ },
+ {
+  "id": "es-0017",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Jose Francisco Villegas y su dirección está en Santa Cruz de Tenerife. Le devolveremos la llamada al 656 170 810. La tarjeta registrada es 4001-6272-1354-3797. Se envió una copia a luisamoliner@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Jose Francisco Villegas"
+   },
+   {
+    "start": 106,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 160,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "656 170 810"
+   },
+   {
+    "start": 198,
+    "end": 217,
+    "entity_type": "CREDIT_CARD",
+    "value": "4001-6272-1354-3797"
+   },
+   {
+    "start": 240,
+    "end": 264,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luisamoliner@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0018",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo María José Escalona Goicoechea. Me gustaría programar una reunión el próximo mes. El lugar será Cuenca. Puede llamarme al 93 494 30 68 o escribirme a dulce03@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "María José Escalona Goicoechea"
+   },
+   {
+    "start": 118,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 494 30 68"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dulce03@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0019",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Marcos Palomo Bejarano y Brígida Leticia Isern Ferrer. La próxima reunión será en Vizcaya. Tarea pendiente: enviar la presentación a marco97@example.com. Línea directa: 670 236 291.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Marcos Palomo Bejarano"
+   },
+   {
+    "start": 44,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Brígida Leticia Isern Ferrer"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Vizcaya"
+   },
+   {
+    "start": 152,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marco97@example.com"
+   },
+   {
+    "start": 188,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "670 236 291"
+   }
+  ]
+ },
+ {
+  "id": "es-0020",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Yéssica Hernando Meléndez y su dirección está en Madrid. Le devolveremos la llamada al +34 731 161 115. La tarjeta registrada es 4911180116979840. Se envió una copia a sarita67@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Yéssica Hernando Meléndez"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 146,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 731 161 115"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4911180116979840"
+   },
+   {
+    "start": 227,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sarita67@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0021",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Eutimio Cabrera Verdugo. Me gustaría programar una reunión el próximo mes. El lugar será Cuenca. Puede llamarme al 98 181 66 26 o escribirme a maximianocomas@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Eutimio Cabrera Verdugo"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 181 66 26"
+   },
+   {
+    "start": 165,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maximianocomas@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0022",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Baldomero del Sevillano y Griselda Bauzà Parra. La próxima reunión será en Albacete. Tarea pendiente: enviar la presentación a gerardogaray@example.net. Línea directa: 94 892 60 26.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Baldomero del Sevillano"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Griselda Bauzà Parra"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Albacete"
+   },
+   {
+    "start": 146,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gerardogaray@example.net"
+   },
+   {
+    "start": 187,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 892 60 26"
+   }
+  ]
+ },
+ {
+  "id": "es-0023",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Sebastián Elías Duque y su dirección está en Soria. Le devolveremos la llamada al 694 184 605. La tarjeta registrada es 4659231694831246. Se envió una copia a lucenabaldomero@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Sebastián Elías Duque"
+   },
+   {
+    "start": 104,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Soria"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "694 184 605"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4659231694831246"
+   },
+   {
+    "start": 218,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucenabaldomero@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0024",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Julio César Guzman Villalobos. Me gustaría programar una reunión el próximo mes. El lugar será Madrid. Puede llamarme al +34 634 115 572 o escribirme a efuentes@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Julio César Guzman Villalobos"
+   },
+   {
+    "start": 117,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 143,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 634 115 572"
+   },
+   {
+    "start": 174,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "efuentes@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0025",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Julie Valderrama Pinedo y Aitana Santana Morales. La próxima reunión será en Salamanca. Tarea pendiente: enviar la presentación a rodriguezramiro@example.net. Línea directa: +34 724 333 901.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Julie Valderrama Pinedo"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Aitana Santana Morales"
+   },
+   {
+    "start": 96,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Salamanca"
+   },
+   {
+    "start": 149,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rodriguezramiro@example.net"
+   },
+   {
+    "start": 193,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 724 333 901"
+   }
+  ]
+ },
+ {
+  "id": "es-0026",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Graciana Carpio y su dirección está en Pontevedra. Le devolveremos la llamada al 91 153 86 22. La tarjeta registrada es 4512440888838985. Se envió una copia a calista75@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Graciana Carpio"
+   },
+   {
+    "start": 98,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "91 153 86 22"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4512440888838985"
+   },
+   {
+    "start": 218,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "calista75@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0027",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Fabiana Puig. Me gustaría programar una reunión el próximo mes. El lugar será Cáceres. Puede llamarme al +34 664 550 562 o escribirme a tbenavent@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Fabiana Puig"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Cáceres"
+   },
+   {
+    "start": 127,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 664 550 562"
+   },
+   {
+    "start": 158,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tbenavent@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0028",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Mamen Fuentes Rivas y Fabio Zapata Alfaro. La próxima reunión será en Almería. Tarea pendiente: enviar la presentación a patriciofonseca@example.com. Línea directa: +34 661 476 937.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Mamen Fuentes Rivas"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Fabio Zapata Alfaro"
+   },
+   {
+    "start": 89,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Almería"
+   },
+   {
+    "start": 140,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patriciofonseca@example.com"
+   },
+   {
+    "start": 184,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 661 476 937"
+   }
+  ]
+ },
+ {
+  "id": "es-0029",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Manolo de Casanovas y su dirección está en Baleares. Le devolveremos la llamada al 643 740 616. La tarjeta registrada es 4411289708431212. Se envió una copia a maria-jesus10@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Manolo de Casanovas"
+   },
+   {
+    "start": 102,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Baleares"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "643 740 616"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4411289708431212"
+   },
+   {
+    "start": 219,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maria-jesus10@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0030",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Reyes del Bejarano. Me gustaría programar una reunión el próximo mes. El lugar será Teruel. Puede llamarme al +34 641 427 187 o escribirme a noguessantos@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Reyes del Bejarano"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Teruel"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 641 427 187"
+   },
+   {
+    "start": 163,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "noguessantos@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0031",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Venceslás Tejera Molins y Aura Alberto Marquez. La próxima reunión será en Sevilla. Tarea pendiente: enviar la presentación a fjuan@example.com. Línea directa: 675 977 522.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Venceslás Tejera Molins"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Aura Alberto Marquez"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Sevilla"
+   },
+   {
+    "start": 145,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fjuan@example.com"
+   },
+   {
+    "start": 179,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "675 977 522"
+   }
+  ]
+ },
+ {
+  "id": "es-0032",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Alma Peñas Roma y su dirección está en La Coruña. Le devolveremos la llamada al +34 641 934 167. La tarjeta registrada es 4296377993529483. Se envió una copia a wroura@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Alma Peñas Roma"
+   },
+   {
+    "start": 98,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "La Coruña"
+   },
+   {
+    "start": 139,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 641 934 167"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4296377993529483"
+   },
+   {
+    "start": 220,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wroura@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0033",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo María Manuela Villena Crespi. Me gustaría programar una reunión el próximo mes. El lugar será Las Palmas. Puede llamarme al +34 685 527 901 o escribirme a oliveracloe@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "María Manuela Villena Crespi"
+   },
+   {
+    "start": 116,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Las Palmas"
+   },
+   {
+    "start": 146,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 685 527 901"
+   },
+   {
+    "start": 177,
+    "end": 200,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oliveracloe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0034",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Javier Diego y Fanny Marquez Araujo. La próxima reunión será en Sevilla. Tarea pendiente: enviar la presentación a piedadandres@example.com. Línea directa: 723 384 251.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Javier Diego"
+   },
+   {
+    "start": 34,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Fanny Marquez Araujo"
+   },
+   {
+    "start": 83,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Sevilla"
+   },
+   {
+    "start": 134,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "piedadandres@example.com"
+   },
+   {
+    "start": 175,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "723 384 251"
+   }
+  ]
+ },
+ {
+  "id": "es-0035",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Florinda Baños Ochoa y su dirección está en Jaén. Le devolveremos la llamada al 93 185 51 46. La tarjeta registrada es 4933062485705598. Se envió una copia a antonio19@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Florinda Baños Ochoa"
+   },
+   {
+    "start": 103,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Jaén"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 185 51 46"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4933062485705598"
+   },
+   {
+    "start": 217,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antonio19@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0036",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Gastón Tovar Pallarès. Me gustaría programar una reunión el próximo mes. El lugar será Sevilla. Puede llamarme al 766 384 992 o escribirme a qpintor@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Gastón Tovar Pallarès"
+   },
+   {
+    "start": 109,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Sevilla"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "766 384 992"
+   },
+   {
+    "start": 163,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qpintor@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0037",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Jose Manuel del Pelayo y Nacio Cifuentes Lucas. La próxima reunión será en Málaga. Tarea pendiente: enviar la presentación a amaro72@example.org. Línea directa: 648 964 578.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Jose Manuel del Pelayo"
+   },
+   {
+    "start": 44,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Nacio Cifuentes Lucas"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Málaga"
+   },
+   {
+    "start": 144,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amaro72@example.org"
+   },
+   {
+    "start": 180,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "648 964 578"
+   }
+  ]
+ },
+ {
+  "id": "es-0038",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Mireia Aguilera Polo y su dirección está en Ciudad. Le devolveremos la llamada al +34 761 701 122. La tarjeta registrada es 4919247619035404. Se envió una copia a ualvaro@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Mireia Aguilera Polo"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Ciudad"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 761 701 122"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4919247619035404"
+   },
+   {
+    "start": 222,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ualvaro@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0039",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Marcio Cáceres Cifuentes. Me gustaría programar una reunión el próximo mes. El lugar será Cuenca. Puede llamarme al +34 793 381 990 o escribirme a faustinomercader@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Marcio Cáceres Cifuentes"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 138,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 793 381 990"
+   },
+   {
+    "start": 169,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "faustinomercader@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0040",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Cruz Águila Chaves y Narciso Iniesta Nadal. La próxima reunión será en Santa Cruz de Tenerife. Tarea pendiente: enviar la presentación a rocamorasamanta@example.net. Línea directa: 755 174 776.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Cruz Águila Chaves"
+   },
+   {
+    "start": 40,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Narciso Iniesta Nadal"
+   },
+   {
+    "start": 90,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 156,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rocamorasamanta@example.net"
+   },
+   {
+    "start": 200,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "755 174 776"
+   }
+  ]
+ },
+ {
+  "id": "es-0041",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Elena Tello Sola y su dirección está en Madrid. Le devolveremos la llamada al 635 356 972. La tarjeta registrada es 4107-8754-6962-5486. Se envió una copia a pintoaura@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Elena Tello Sola"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "635 356 972"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4107-8754-6962-5486"
+   },
+   {
+    "start": 217,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pintoaura@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0042",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Rebeca Escrivá. Me gustaría programar una reunión el próximo mes. El lugar será Murcia. Puede llamarme al 666 970 921 o escribirme a rosendatoledo@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Rebeca Escrivá"
+   },
+   {
+    "start": 102,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Murcia"
+   },
+   {
+    "start": 128,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "666 970 921"
+   },
+   {
+    "start": 155,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rosendatoledo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0043",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Marcial del Solsona y Aurelio Gimenez Falcón. La próxima reunión será en Zaragoza. Tarea pendiente: enviar la presentación a francisco-javier17@example.com. Línea directa: 95 724 84 96.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Marcial del Solsona"
+   },
+   {
+    "start": 41,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Aurelio Gimenez Falcón"
+   },
+   {
+    "start": 92,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Zaragoza"
+   },
+   {
+    "start": 144,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "francisco-javier17@example.com"
+   },
+   {
+    "start": 191,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 724 84 96"
+   }
+  ]
+ },
+ {
+  "id": "es-0044",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Quique Arias Manjón y su dirección está en Asturias. Le devolveremos la llamada al +34 655 672 697. La tarjeta registrada es 4001698844669566. Se envió una copia a sevecasanova@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Quique Arias Manjón"
+   },
+   {
+    "start": 102,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Asturias"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 655 672 697"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4001698844669566"
+   },
+   {
+    "start": 223,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sevecasanova@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0045",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Angelita Abril Moreno Pacheco. Me gustaría programar una reunión el próximo mes. El lugar será Huelva. Puede llamarme al 94 205 13 85 o escribirme a yarenas@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Angelita Abril Moreno Pacheco"
+   },
+   {
+    "start": 117,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 205 13 85"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yarenas@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0046",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Tristán Villalonga Bernad y Almudena Nicolás Fuente. La próxima reunión será en Ciudad. Tarea pendiente: enviar la presentación a taboadatomas@example.net. Línea directa: 97 479 70 91.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Tristán Villalonga Bernad"
+   },
+   {
+    "start": 47,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Almudena Nicolás Fuente"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Ciudad"
+   },
+   {
+    "start": 149,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taboadatomas@example.net"
+   },
+   {
+    "start": 190,
+    "end": 202,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 479 70 91"
+   }
+  ]
+ },
+ {
+  "id": "es-0047",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Ciríaco Cardona Guillen y su dirección está en La Rioja. Le devolveremos la llamada al 97 534 40 41. La tarjeta registrada es 4810-6895-9517-0632. Se envió una copia a haroldopedrosa@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Ciríaco Cardona Guillen"
+   },
+   {
+    "start": 106,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "La Rioja"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 534 40 41"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4810-6895-9517-0632"
+   },
+   {
+    "start": 227,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haroldopedrosa@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0048",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Ximena Cañizares Vilanova. Me gustaría programar una reunión el próximo mes. El lugar será Badajoz. Puede llamarme al +34 637 679 288 o escribirme a heliodorotomas@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Ximena Cañizares Vilanova"
+   },
+   {
+    "start": 113,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Badajoz"
+   },
+   {
+    "start": 140,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 637 679 288"
+   },
+   {
+    "start": 171,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heliodorotomas@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0049",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Catalina Duran Vigil y Ester Gimeno-Valbuena. La próxima reunión será en Burgos. Tarea pendiente: enviar la presentación a hsabater@example.org. Línea directa: 692 630 829.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Catalina Duran Vigil"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Ester Gimeno-Valbuena"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 142,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hsabater@example.org"
+   },
+   {
+    "start": 179,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "692 630 829"
+   }
+  ]
+ },
+ {
+  "id": "es-0050",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Lino Méndez Vallés y su dirección está en Santa Cruz de Tenerife. Le devolveremos la llamada al 750 719 463. La tarjeta registrada es 4727217255142956. Se envió una copia a sernahernan@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Lino Méndez Vallés"
+   },
+   {
+    "start": 101,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 155,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "750 719 463"
+   },
+   {
+    "start": 193,
+    "end": 209,
+    "entity_type": "CREDIT_CARD",
+    "value": "4727217255142956"
+   },
+   {
+    "start": 232,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sernahernan@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0051",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Jose Miguel Florencio Esteban Haro. Me gustaría programar una reunión el próximo mes. El lugar será Córdoba. Puede llamarme al +34 735 497 417 o escribirme a alfredo95@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Jose Miguel Florencio Esteban Haro"
+   },
+   {
+    "start": 122,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Córdoba"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 735 497 417"
+   },
+   {
+    "start": 180,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alfredo95@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0052",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Rita Gomila Solís y Isabela Lopez Gallardo. La próxima reunión será en Ávila. Tarea pendiente: enviar la presentación a aalarcon@example.com. Línea directa: 97 690 98 92.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Rita Gomila Solís"
+   },
+   {
+    "start": 39,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Isabela Lopez Gallardo"
+   },
+   {
+    "start": 90,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Ávila"
+   },
+   {
+    "start": 139,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aalarcon@example.com"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 690 98 92"
+   }
+  ]
+ },
+ {
+  "id": "es-0053",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Maristela Rubio-Pedraza y su dirección está en Cantabria. Le devolveremos la llamada al 778 473 494. La tarjeta registrada es 4471212942296552. Se envió una copia a rita47@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Maristela Rubio-Pedraza"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Cantabria"
+   },
+   {
+    "start": 147,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "778 473 494"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4471212942296552"
+   },
+   {
+    "start": 224,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rita47@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0054",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Candelario Fuster. Me gustaría programar una reunión el próximo mes. El lugar será Valencia. Puede llamarme al +34 653 136 974 o escribirme a nicolaueutropio@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Candelario Fuster"
+   },
+   {
+    "start": 105,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Valencia"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 653 136 974"
+   },
+   {
+    "start": 164,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nicolaueutropio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0055",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Anabel Carrera Noriega y Josefina Parra Arroyo. La próxima reunión será en Pontevedra. Tarea pendiente: enviar la presentación a jorge39@example.com. Línea directa: +34 722 484 322.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Anabel Carrera Noriega"
+   },
+   {
+    "start": 44,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Josefina Parra Arroyo"
+   },
+   {
+    "start": 94,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 148,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jorge39@example.com"
+   },
+   {
+    "start": 184,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 722 484 322"
+   }
+  ]
+ },
+ {
+  "id": "es-0056",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Iris de Martin y su dirección está en Cáceres. Le devolveremos la llamada al 695 319 283. La tarjeta registrada es 4676112293454391. Se envió una copia a mendezanabel@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Iris de Martin"
+   },
+   {
+    "start": 97,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Cáceres"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "695 319 283"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4676112293454391"
+   },
+   {
+    "start": 213,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mendezanabel@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0057",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Evangelina Valera Crespi. Me gustaría programar una reunión el próximo mes. El lugar será León. Puede llamarme al 93 102 24 43 o escribirme a matilde91@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Evangelina Valera Crespi"
+   },
+   {
+    "start": 112,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "León"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 102 24 43"
+   },
+   {
+    "start": 164,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "matilde91@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0058",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Ileana del Novoa y Liliana Diéguez Gelabert. La próxima reunión será en Albacete. Tarea pendiente: enviar la presentación a dazaluis@example.org. Línea directa: 93 385 25 61.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Ileana del Novoa"
+   },
+   {
+    "start": 38,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Liliana Diéguez Gelabert"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Albacete"
+   },
+   {
+    "start": 143,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dazaluis@example.org"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 385 25 61"
+   }
+  ]
+ },
+ {
+  "id": "es-0059",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Mauricio Julio César Duran Llorens y su dirección está en Pontevedra. Le devolveremos la llamada al 97 396 56 21. La tarjeta registrada es 4454582540211240. Se envió una copia a claralarranaga@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 93,
+    "entity_type": "PERSON",
+    "value": "Mauricio Julio César Duran Llorens"
+   },
+   {
+    "start": 117,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 159,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 396 56 21"
+   },
+   {
+    "start": 198,
+    "end": 214,
+    "entity_type": "CREDIT_CARD",
+    "value": "4454582540211240"
+   },
+   {
+    "start": 237,
+    "end": 263,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "claralarranaga@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0060",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Renato Escribano-Casares. Me gustaría programar una reunión el próximo mes. El lugar será Tarragona. Puede llamarme al 653 201 819 o escribirme a marciobustos@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Renato Escribano-Casares"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "653 201 819"
+   },
+   {
+    "start": 168,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marciobustos@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0061",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Salvador Rubio y Soledad Feliu Roma. La próxima reunión será en Huelva. Tarea pendiente: enviar la presentación a fulgenciovallejo@example.org. Línea directa: 95 410 13 92.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Salvador Rubio"
+   },
+   {
+    "start": 36,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Soledad Feliu Roma"
+   },
+   {
+    "start": 83,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 133,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fulgenciovallejo@example.org"
+   },
+   {
+    "start": 178,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 410 13 92"
+   }
+  ]
+ },
+ {
+  "id": "es-0062",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Herminia Nicolás y su dirección está en La Rioja. Le devolveremos la llamada al 98 126 17 59. La tarjeta registrada es 4246-7239-5171-2051. Se envió una copia a charozamorano@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Herminia Nicolás"
+   },
+   {
+    "start": 99,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "La Rioja"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 126 17 59"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4246-7239-5171-2051"
+   },
+   {
+    "start": 220,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "charozamorano@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0063",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Francisco Carmona Toledo. Me gustaría programar una reunión el próximo mes. El lugar será Castellón. Puede llamarme al 95 557 12 59 o escribirme a miguela94@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Francisco Carmona Toledo"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Castellón"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 557 12 59"
+   },
+   {
+    "start": 169,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "miguela94@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0064",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Aurelio Carmona Sancho y Mauricio Ortega Alcolea. La próxima reunión será en Soria. Tarea pendiente: enviar la presentación a herastoni@example.net. Línea directa: 651 185 910.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Aurelio Carmona Sancho"
+   },
+   {
+    "start": 44,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Mauricio Ortega Alcolea"
+   },
+   {
+    "start": 96,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Soria"
+   },
+   {
+    "start": 145,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "herastoni@example.net"
+   },
+   {
+    "start": 183,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "651 185 910"
+   }
+  ]
+ },
+ {
+  "id": "es-0065",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Reynaldo de Villaverde y su dirección está en Zamora. Le devolveremos la llamada al +34 735 599 630. La tarjeta registrada es 4606-7050-5041-5292. Se envió una copia a julieta36@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Reynaldo de Villaverde"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Zamora"
+   },
+   {
+    "start": 143,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 735 599 630"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4606-7050-5041-5292"
+   },
+   {
+    "start": 227,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "julieta36@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0066",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Virgilio de Gutiérrez. Me gustaría programar una reunión el próximo mes. El lugar será Madrid. Puede llamarme al +34 778 870 641 o escribirme a ypedrosa@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Virgilio de Gutiérrez"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 135,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 778 870 641"
+   },
+   {
+    "start": 166,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ypedrosa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0067",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Eleuterio Bayo Diéguez y Inés del Castañeda. La próxima reunión será en Ourense. Tarea pendiente: enviar la presentación a reina35@example.net. Línea directa: 715 263 754.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Eleuterio Bayo Diéguez"
+   },
+   {
+    "start": 44,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Inés del Castañeda"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reina35@example.net"
+   },
+   {
+    "start": 178,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "715 263 754"
+   }
+  ]
+ },
+ {
+  "id": "es-0068",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Bonifacio Tomás Morillo Cuesta y su dirección está en Cuenca. Le devolveremos la llamada al 617 226 543. La tarjeta registrada es 4245182638930035. Se envió una copia a ypazos@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 89,
+    "entity_type": "PERSON",
+    "value": "Bonifacio Tomás Morillo Cuesta"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 151,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "617 226 543"
+   },
+   {
+    "start": 189,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4245182638930035"
+   },
+   {
+    "start": 228,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ypazos@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0069",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Brunilda de Bustamante. Me gustaría programar una reunión el próximo mes. El lugar será La Rioja. Puede llamarme al 733 779 174 o escribirme a mariano51@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Brunilda de Bustamante"
+   },
+   {
+    "start": 110,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "La Rioja"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "733 779 174"
+   },
+   {
+    "start": 165,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariano51@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0070",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Daniel Pinedo Sans y Juan Bautista Bonilla-Cabanillas. La próxima reunión será en Huesca. Tarea pendiente: enviar la presentación a fabian46@example.com. Línea directa: 792 419 301.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Daniel Pinedo Sans"
+   },
+   {
+    "start": 40,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Juan Bautista Bonilla-Cabanillas"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fabian46@example.com"
+   },
+   {
+    "start": 188,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "792 419 301"
+   }
+  ]
+ },
+ {
+  "id": "es-0071",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Aurelio del Tur y su dirección está en Córdoba. Le devolveremos la llamada al +34 788 282 329. La tarjeta registrada es 4027-3667-9069-9686. Se envió una copia a griseldaexposito@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Aurelio del Tur"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Córdoba"
+   },
+   {
+    "start": 137,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 788 282 329"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4027-3667-9069-9686"
+   },
+   {
+    "start": 221,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "griseldaexposito@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0072",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Amelia del Clavero. Me gustaría programar una reunión el próximo mes. El lugar será Baleares. Puede llamarme al 693 388 709 o escribirme a kcasado@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Amelia del Clavero"
+   },
+   {
+    "start": 106,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Baleares"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "693 388 709"
+   },
+   {
+    "start": 161,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kcasado@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0073",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Adelina Armida Cases Oliver y Heliodoro Diaz Baquero. La próxima reunión será en Pontevedra. Tarea pendiente: enviar la presentación a romaetelvina@example.net. Línea directa: 685 864 277.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Adelina Armida Cases Oliver"
+   },
+   {
+    "start": 49,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Heliodoro Diaz Baquero"
+   },
+   {
+    "start": 100,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 154,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "romaetelvina@example.net"
+   },
+   {
+    "start": 195,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "685 864 277"
+   }
+  ]
+ },
+ {
+  "id": "es-0074",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Toni Mariscal Álvarez y su dirección está en Huelva. Le devolveremos la llamada al +34 688 920 469. La tarjeta registrada es 4692160319517154. Se envió una copia a amaya83@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Toni Mariscal Álvarez"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 688 920 469"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4692160319517154"
+   },
+   {
+    "start": 223,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amaya83@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0075",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Herminio Gomila Galván. Me gustaría programar una reunión el próximo mes. El lugar será Huesca. Puede llamarme al 673 359 814 o escribirme a escuderoariel@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Herminio Gomila Galván"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "673 359 814"
+   },
+   {
+    "start": 163,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "escuderoariel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0076",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Gustavo Jove Canals y Elisabet Daza. La próxima reunión será en Alicante. Tarea pendiente: enviar la presentación a eufemia10@example.com. Línea directa: 94 896 87 43.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Gustavo Jove Canals"
+   },
+   {
+    "start": 41,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Elisabet Daza"
+   },
+   {
+    "start": 83,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Alicante"
+   },
+   {
+    "start": 135,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eufemia10@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 896 87 43"
+   }
+  ]
+ },
+ {
+  "id": "es-0077",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Máximo Nicolás Buendía Palomar y su dirección está en Las Palmas. Le devolveremos la llamada al +34 766 624 482. La tarjeta registrada es 4793273577362060. Se envió una copia a cristian50@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 89,
+    "entity_type": "PERSON",
+    "value": "Máximo Nicolás Buendía Palomar"
+   },
+   {
+    "start": 113,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Las Palmas"
+   },
+   {
+    "start": 155,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 766 624 482"
+   },
+   {
+    "start": 197,
+    "end": 213,
+    "entity_type": "CREDIT_CARD",
+    "value": "4793273577362060"
+   },
+   {
+    "start": 236,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cristian50@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0078",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Noelia Beltran-Pazos. Me gustaría programar una reunión el próximo mes. El lugar será Jaén. Puede llamarme al +34 649 505 320 o escribirme a requenamiguel-angel@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Noelia Beltran-Pazos"
+   },
+   {
+    "start": 108,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Jaén"
+   },
+   {
+    "start": 132,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 649 505 320"
+   },
+   {
+    "start": 163,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "requenamiguel-angel@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0079",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Joel Marti Valverde y Julián Monreal Fábregas. La próxima reunión será en Córdoba. Tarea pendiente: enviar la presentación a isaac27@example.net. Línea directa: 746 997 497.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Joel Marti Valverde"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Julián Monreal Fábregas"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Córdoba"
+   },
+   {
+    "start": 144,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "isaac27@example.net"
+   },
+   {
+    "start": 180,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "746 997 497"
+   }
+  ]
+ },
+ {
+  "id": "es-0080",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Cristina Salgado-Puente y su dirección está en Ávila. Le devolveremos la llamada al +34 644 610 546. La tarjeta registrada es 4924929700864601. Se envió una copia a ortegamaria-carmen@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Cristina Salgado-Puente"
+   },
+   {
+    "start": 106,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Ávila"
+   },
+   {
+    "start": 143,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 644 610 546"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4924929700864601"
+   },
+   {
+    "start": 224,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ortegamaria-carmen@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0081",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo David Marc Casares Ferrández. Me gustaría programar una reunión el próximo mes. El lugar será Burgos. Puede llamarme al 618 629 112 o escribirme a omacias@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "David Marc Casares Ferrández"
+   },
+   {
+    "start": 116,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "618 629 112"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "omacias@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0082",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Wilfredo Garrido-Castejón y Crescencia Lopez. La próxima reunión será en Guipúzcoa. Tarea pendiente: enviar la presentación a bbalaguer@example.net. Línea directa: 658 736 599.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Wilfredo Garrido-Castejón"
+   },
+   {
+    "start": 47,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Crescencia Lopez"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Guipúzcoa"
+   },
+   {
+    "start": 145,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bbalaguer@example.net"
+   },
+   {
+    "start": 183,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "658 736 599"
+   }
+  ]
+ },
+ {
+  "id": "es-0083",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Loreto Casares Andres y su dirección está en Toledo. Le devolveremos la llamada al 95 124 48 22. La tarjeta registrada es 4373660147813317. Se envió una copia a segarratiburcio@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Loreto Casares Andres"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Toledo"
+   },
+   {
+    "start": 142,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 124 48 22"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4373660147813317"
+   },
+   {
+    "start": 220,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "segarratiburcio@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0084",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Bernardo Mateos Mendizábal. Me gustaría programar una reunión el próximo mes. El lugar será La Coruña. Puede llamarme al 94 145 70 39 o escribirme a aristidesmilla@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Bernardo Mateos Mendizábal"
+   },
+   {
+    "start": 114,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "La Coruña"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 145 70 39"
+   },
+   {
+    "start": 171,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aristidesmilla@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0085",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Aitor Navarro Quintana y Ani Ángel-Tena. La próxima reunión será en Pontevedra. Tarea pendiente: enviar la presentación a jenaro93@example.net. Línea directa: +34 678 402 376.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Aitor Navarro Quintana"
+   },
+   {
+    "start": 44,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Ani Ángel-Tena"
+   },
+   {
+    "start": 87,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 141,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jenaro93@example.net"
+   },
+   {
+    "start": 178,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 678 402 376"
+   }
+  ]
+ },
+ {
+  "id": "es-0086",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Luisa España y su dirección está en Burgos. Le devolveremos la llamada al 659 961 573. La tarjeta registrada es 4947-7443-5977-5013. Se envió una copia a imelda18@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Luisa España"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "659 961 573"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4947-7443-5977-5013"
+   },
+   {
+    "start": 213,
+    "end": 233,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "imelda18@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0087",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Sebastian Ribas Mercader. Me gustaría programar una reunión el próximo mes. El lugar será Burgos. Puede llamarme al 729 285 317 o escribirme a eugeniojara@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Sebastian Ribas Mercader"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "729 285 317"
+   },
+   {
+    "start": 165,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eugeniojara@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0088",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Juan Antonio Cipriano Valbuena Pascual y Curro Pizarro-Colom. La próxima reunión será en Huesca. Tarea pendiente: enviar la presentación a lledobuenaventura@example.org. Línea directa: 98 953 12 94.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Juan Antonio Cipriano Valbuena Pascual"
+   },
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Curro Pizarro-Colom"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 158,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lledobuenaventura@example.org"
+   },
+   {
+    "start": 204,
+    "end": 216,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 953 12 94"
+   }
+  ]
+ },
+ {
+  "id": "es-0089",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Josefina Andres y su dirección está en Córdoba. Le devolveremos la llamada al 694 276 775. La tarjeta registrada es 4452911079115039. Se envió una copia a constanza97@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Josefina Andres"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Córdoba"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "694 276 775"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4452911079115039"
+   },
+   {
+    "start": 214,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "constanza97@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0090",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Eva Priego Anaya. Me gustaría programar una reunión el próximo mes. El lugar será Navarra. Puede llamarme al +34 614 388 153 o escribirme a leticia32@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Eva Priego Anaya"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Navarra"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 614 388 153"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leticia32@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0091",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Félix Solano Duran y Lalo Asenjo Cañete. La próxima reunión será en Melilla. Tarea pendiente: enviar la presentación a amadovalles@example.com. Línea directa: 697 930 680.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Félix Solano Duran"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Lalo Asenjo Cañete"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 138,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amadovalles@example.com"
+   },
+   {
+    "start": 178,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "697 930 680"
+   }
+  ]
+ },
+ {
+  "id": "es-0092",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Silvestre Folch Aguilar y su dirección está en Salamanca. Le devolveremos la llamada al +34 757 728 253. La tarjeta registrada es 4131592345305403. Se envió una copia a amarilis72@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Silvestre Folch Aguilar"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Salamanca"
+   },
+   {
+    "start": 147,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 757 728 253"
+   },
+   {
+    "start": 189,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4131592345305403"
+   },
+   {
+    "start": 228,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amarilis72@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0093",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Hilda Rincón Guardiola. Me gustaría programar una reunión el próximo mes. El lugar será Cádiz. Puede llamarme al 662 709 916 o escribirme a roque55@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Hilda Rincón Guardiola"
+   },
+   {
+    "start": 110,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Cádiz"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "662 709 916"
+   },
+   {
+    "start": 162,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "roque55@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0094",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Gema de Núñez y Jessica Olivé Canet. La próxima reunión será en Zaragoza. Tarea pendiente: enviar la presentación a bastidapanfilo@example.net. Línea directa: +34 619 908 278.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Gema de Núñez"
+   },
+   {
+    "start": 35,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Jessica Olivé Canet"
+   },
+   {
+    "start": 83,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Zaragoza"
+   },
+   {
+    "start": 135,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bastidapanfilo@example.net"
+   },
+   {
+    "start": 178,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 619 908 278"
+   }
+  ]
+ },
+ {
+  "id": "es-0095",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Cruz Torralba Ferrán y su dirección está en Ceuta. Le devolveremos la llamada al +34 678 341 628. La tarjeta registrada es 4521-7627-2021-9986. Se envió una copia a macario74@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Cruz Torralba Ferrán"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Ceuta"
+   },
+   {
+    "start": 140,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 678 341 628"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4521-7627-2021-9986"
+   },
+   {
+    "start": 224,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "macario74@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0096",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Aitana Mendizábal García. Me gustaría programar una reunión el próximo mes. El lugar será Teruel. Puede llamarme al 658 309 978 o escribirme a leiregutierrez@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Aitana Mendizábal García"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Teruel"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "658 309 978"
+   },
+   {
+    "start": 165,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leiregutierrez@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0097",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Josué Canals y Juanito Ribes Barreda. La próxima reunión será en Castellón. Tarea pendiente: enviar la presentación a oadadia@example.net. Línea directa: 718 606 432.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Josué Canals"
+   },
+   {
+    "start": 34,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Juanito Ribes Barreda"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Castellón"
+   },
+   {
+    "start": 137,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oadadia@example.net"
+   },
+   {
+    "start": 173,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "718 606 432"
+   }
+  ]
+ },
+ {
+  "id": "es-0098",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Evelia de Carretero y su dirección está en Jaén. Le devolveremos la llamada al +34 758 582 124. La tarjeta registrada es 4784-4884-3925-4716. Se envió una copia a vanesa85@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Evelia de Carretero"
+   },
+   {
+    "start": 102,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Jaén"
+   },
+   {
+    "start": 138,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 758 582 124"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4784-4884-3925-4716"
+   },
+   {
+    "start": 222,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vanesa85@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0099",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Octavio Arroyo Losada. Me gustaría programar una reunión el próximo mes. El lugar será La Coruña. Puede llamarme al +34 664 480 798 o escribirme a cataladiana@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Octavio Arroyo Losada"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "La Coruña"
+   },
+   {
+    "start": 138,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 664 480 798"
+   },
+   {
+    "start": 169,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cataladiana@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0100",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Ceferino Alonso Chaparro y Federico Tovar Pinto. La próxima reunión será en Huelva. Tarea pendiente: enviar la presentación a abrilfrancisco@example.com. Línea directa: +34 778 699 220.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Ceferino Alonso Chaparro"
+   },
+   {
+    "start": 46,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Federico Tovar Pinto"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 145,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "abrilfrancisco@example.com"
+   },
+   {
+    "start": 188,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 778 699 220"
+   }
+  ]
+ },
+ {
+  "id": "es-0101",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Rosalva Adán-Revilla y su dirección está en Lleida. Le devolveremos la llamada al 699 932 663. La tarjeta registrada es 4922-5281-1005-6634. Se envió una copia a ruth50@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Rosalva Adán-Revilla"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Lleida"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "699 932 663"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4922-5281-1005-6634"
+   },
+   {
+    "start": 221,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ruth50@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0102",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Aránzazu Verdugo. Me gustaría programar una reunión el próximo mes. El lugar será Lleida. Puede llamarme al 94 369 79 72 o escribirme a dvilar@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Aránzazu Verdugo"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Lleida"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 369 79 72"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dvilar@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0103",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Heraclio Hierro y Miguela Acedo Dueñas. La próxima reunión será en Badajoz. Tarea pendiente: enviar la presentación a lparra@example.org. Línea directa: +34 611 714 614.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Heraclio Hierro"
+   },
+   {
+    "start": 37,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Miguela Acedo Dueñas"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Badajoz"
+   },
+   {
+    "start": 137,
+    "end": 155,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lparra@example.org"
+   },
+   {
+    "start": 172,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 611 714 614"
+   }
+  ]
+ },
+ {
+  "id": "es-0104",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Samu Iniesta Gallardo y su dirección está en Sevilla. Le devolveremos la llamada al +34 722 236 378. La tarjeta registrada es 4957-7389-1598-2235. Se envió una copia a sorianocandela@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Samu Iniesta Gallardo"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Sevilla"
+   },
+   {
+    "start": 143,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 722 236 378"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4957-7389-1598-2235"
+   },
+   {
+    "start": 227,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sorianocandela@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0105",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Maxi Polo Domingo. Me gustaría programar una reunión el próximo mes. El lugar será Vizcaya. Puede llamarme al 693 641 702 o escribirme a karaujo@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Maxi Polo Domingo"
+   },
+   {
+    "start": 105,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Vizcaya"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "693 641 702"
+   },
+   {
+    "start": 159,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "karaujo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0106",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Paz Rovira-Barranco y Leticia Rey Ramirez. La próxima reunión será en La Coruña. Tarea pendiente: enviar la presentación a macarena36@example.com. Línea directa: 96 813 60 30.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Paz Rovira-Barranco"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Leticia Rey Ramirez"
+   },
+   {
+    "start": 89,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "La Coruña"
+   },
+   {
+    "start": 142,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "macarena36@example.com"
+   },
+   {
+    "start": 181,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 813 60 30"
+   }
+  ]
+ },
+ {
+  "id": "es-0107",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Amparo Alcántara Coloma y su dirección está en Burgos. Le devolveremos la llamada al +34 717 535 175. La tarjeta registrada es 4408037827637622. Se envió una copia a celestina22@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Amparo Alcántara Coloma"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 144,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 717 535 175"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4408037827637622"
+   },
+   {
+    "start": 225,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "celestina22@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0108",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Pastor del Calderón. Me gustaría programar una reunión el próximo mes. El lugar será Melilla. Puede llamarme al 630 507 664 o escribirme a calista71@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Pastor del Calderón"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "630 507 664"
+   },
+   {
+    "start": 161,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "calista71@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0109",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Manu Quintero Anglada y Cándido Cortina Cerdá. La próxima reunión será en Ávila. Tarea pendiente: enviar la presentación a cuestafidela@example.org. Línea directa: 94 529 19 49.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Manu Quintero Anglada"
+   },
+   {
+    "start": 43,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Cándido Cortina Cerdá"
+   },
+   {
+    "start": 93,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Ávila"
+   },
+   {
+    "start": 142,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cuestafidela@example.org"
+   },
+   {
+    "start": 183,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 529 19 49"
+   }
+  ]
+ },
+ {
+  "id": "es-0110",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Juan Carlos del Vilanova y su dirección está en Toledo. Le devolveremos la llamada al 91 934 91 30. La tarjeta registrada es 4421-5219-5578-3186. Se envió una copia a evelia92@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Juan Carlos del Vilanova"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Toledo"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "91 934 91 30"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4421-5219-5578-3186"
+   },
+   {
+    "start": 226,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "evelia92@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0111",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Jose Angel del Huguet. Me gustaría programar una reunión el próximo mes. El lugar será Burgos. Puede llamarme al 725 157 945 o escribirme a ferrandovirginia@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Jose Angel del Huguet"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "725 157 945"
+   },
+   {
+    "start": 162,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ferrandovirginia@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0112",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Américo Bustos Ropero y Rico Seve Pedrero Bueno. La próxima reunión será en Vizcaya. Tarea pendiente: enviar la presentación a ujover@example.org. Línea directa: 625 598 682.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Américo Bustos Ropero"
+   },
+   {
+    "start": 43,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Rico Seve Pedrero Bueno"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Vizcaya"
+   },
+   {
+    "start": 146,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ujover@example.org"
+   },
+   {
+    "start": 181,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "625 598 682"
+   }
+  ]
+ },
+ {
+  "id": "es-0113",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Gastón Velasco Casares y su dirección está en Barcelona. Le devolveremos la llamada al 788 915 938. La tarjeta registrada es 4760-0424-2758-4283. Se envió una copia a jacobo23@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Gastón Velasco Casares"
+   },
+   {
+    "start": 105,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Barcelona"
+   },
+   {
+    "start": 146,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "788 915 938"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4760-0424-2758-4283"
+   },
+   {
+    "start": 226,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jacobo23@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0114",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Yaiza Suárez Acedo. Me gustaría programar una reunión el próximo mes. El lugar será Cáceres. Puede llamarme al 681 326 223 o escribirme a elisanadal@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Yaiza Suárez Acedo"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Cáceres"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "681 326 223"
+   },
+   {
+    "start": 160,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elisanadal@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0115",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Lourdes Milla Tomas y Débora Corral Luján. La próxima reunión será en Álava. Tarea pendiente: enviar la presentación a berta11@example.org. Línea directa: +34 721 211 232.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Lourdes Milla Tomas"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Débora Corral Luján"
+   },
+   {
+    "start": 89,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Álava"
+   },
+   {
+    "start": 138,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "berta11@example.org"
+   },
+   {
+    "start": 174,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 721 211 232"
+   }
+  ]
+ },
+ {
+  "id": "es-0116",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Ana Belén Ibañez Amores y su dirección está en Almería. Le devolveremos la llamada al 98 104 74 49. La tarjeta registrada es 4997-4841-3760-4750. Se envió una copia a javier08@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Ana Belén Ibañez Amores"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Almería"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 104 74 49"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4997-4841-3760-4750"
+   },
+   {
+    "start": 226,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "javier08@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0117",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Andrés Cortes Cañellas. Me gustaría programar una reunión el próximo mes. El lugar será Santa Cruz de Tenerife. Puede llamarme al 681 896 536 o escribirme a galindoelisa@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Andrés Cortes Cañellas"
+   },
+   {
+    "start": 110,
+    "end": 132,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 152,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "681 896 536"
+   },
+   {
+    "start": 179,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "galindoelisa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0118",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Úrsula Crespo Córdoba y Marcia Luz Infante. La próxima reunión será en Burgos. Tarea pendiente: enviar la presentación a eutimiomenendez@example.net. Línea directa: 92 449 65 26.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Úrsula Crespo Córdoba"
+   },
+   {
+    "start": 43,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Marcia Luz Infante"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 140,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eutimiomenendez@example.net"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 449 65 26"
+   }
+  ]
+ },
+ {
+  "id": "es-0119",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Albert Rovira Lopez y su dirección está en Valencia. Le devolveremos la llamada al 695 893 450. La tarjeta registrada es 4121-1922-9326-1229. Se envió una copia a remigiolarrea@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Albert Rovira Lopez"
+   },
+   {
+    "start": 102,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Valencia"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "695 893 450"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4121-1922-9326-1229"
+   },
+   {
+    "start": 222,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "remigiolarrea@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0120",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Marcos Botella Salom. Me gustaría programar una reunión el próximo mes. El lugar será Jaén. Puede llamarme al 671 951 424 o escribirme a anacleto07@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Marcos Botella Salom"
+   },
+   {
+    "start": 108,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Jaén"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "671 951 424"
+   },
+   {
+    "start": 159,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anacleto07@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0121",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Valero Pou Lamas y Federico Marín Cuervo. La próxima reunión será en Guadalajara. Tarea pendiente: enviar la presentación a inocencio13@example.net. Línea directa: +34 611 696 644.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Valero Pou Lamas"
+   },
+   {
+    "start": 38,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Federico Marín Cuervo"
+   },
+   {
+    "start": 88,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Guadalajara"
+   },
+   {
+    "start": 143,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "inocencio13@example.net"
+   },
+   {
+    "start": 183,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 611 696 644"
+   }
+  ]
+ },
+ {
+  "id": "es-0122",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Bruno Lucas Hervás Rueda y su dirección está en Lleida. Le devolveremos la llamada al +34 743 180 399. La tarjeta registrada es 4973376501791437. Se envió una copia a qromeu@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Bruno Lucas Hervás Rueda"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Lleida"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 743 180 399"
+   },
+   {
+    "start": 187,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4973376501791437"
+   },
+   {
+    "start": 226,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qromeu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0123",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Aureliano Víctor Cañas Lucena. Me gustaría programar una reunión el próximo mes. El lugar será Sevilla. Puede llamarme al 714 738 485 o escribirme a narcisotorralba@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Aureliano Víctor Cañas Lucena"
+   },
+   {
+    "start": 117,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Sevilla"
+   },
+   {
+    "start": 144,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "714 738 485"
+   },
+   {
+    "start": 171,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "narcisotorralba@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0124",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Marianela Cuenca Santana y Pili Caballero Hernando. La próxima reunión será en Cáceres. Tarea pendiente: enviar la presentación a alsinatoribio@example.net. Línea directa: +34 670 464 768.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Marianela Cuenca Santana"
+   },
+   {
+    "start": 46,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Pili Caballero Hernando"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Cáceres"
+   },
+   {
+    "start": 149,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alsinatoribio@example.net"
+   },
+   {
+    "start": 191,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 670 464 768"
+   }
+  ]
+ },
+ {
+  "id": "es-0125",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Petrona Adoración Pardo Lobo y su dirección está en Girona. Le devolveremos la llamada al +34 755 512 740. La tarjeta registrada es 4714-1691-6861-2341. Se envió una copia a alexandrapina@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Petrona Adoración Pardo Lobo"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Girona"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 755 512 740"
+   },
+   {
+    "start": 191,
+    "end": 210,
+    "entity_type": "CREDIT_CARD",
+    "value": "4714-1691-6861-2341"
+   },
+   {
+    "start": 233,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alexandrapina@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0126",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Emiliana María Pilar Segura Fuertes. Me gustaría programar una reunión el próximo mes. El lugar será Teruel. Puede llamarme al +34 686 534 305 o escribirme a leandrorincon@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Emiliana María Pilar Segura Fuertes"
+   },
+   {
+    "start": 123,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Teruel"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 686 534 305"
+   },
+   {
+    "start": 180,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leandrorincon@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0127",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Bernabé Benito Alcalde y Eligio Flor Segura. La próxima reunión será en Palencia. Tarea pendiente: enviar la presentación a lvila@example.org. Línea directa: +34 787 697 750.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Bernabé Benito Alcalde"
+   },
+   {
+    "start": 44,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Eligio Flor Segura"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Palencia"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lvila@example.org"
+   },
+   {
+    "start": 177,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 787 697 750"
+   }
+  ]
+ },
+ {
+  "id": "es-0128",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Imelda Araujo Elorza y su dirección está en Asturias. Le devolveremos la llamada al 727 688 370. La tarjeta registrada es 4163406864111616. Se envió una copia a josep35@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Imelda Araujo Elorza"
+   },
+   {
+    "start": 103,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Asturias"
+   },
+   {
+    "start": 143,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "727 688 370"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4163406864111616"
+   },
+   {
+    "start": 220,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "josep35@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0129",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Eliseo Pacheco. Me gustaría programar una reunión el próximo mes. El lugar será Ourense. Puede llamarme al 93 996 16 63 o escribirme a josefa50@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Eliseo Pacheco"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 996 16 63"
+   },
+   {
+    "start": 157,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "josefa50@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0130",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Abel Ribera Leal y Cintia Filomena Palmer Barceló. La próxima reunión será en Guadalajara. Tarea pendiente: enviar la presentación a luis-angelcespedes@example.net. Línea directa: 654 682 463.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Abel Ribera Leal"
+   },
+   {
+    "start": 38,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Cintia Filomena Palmer Barceló"
+   },
+   {
+    "start": 97,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Guadalajara"
+   },
+   {
+    "start": 152,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luis-angelcespedes@example.net"
+   },
+   {
+    "start": 199,
+    "end": 210,
+    "entity_type": "PHONE_NUMBER",
+    "value": "654 682 463"
+   }
+  ]
+ },
+ {
+  "id": "es-0131",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Juan Manuel Alfaro Marti y su dirección está en Santa Cruz de Tenerife. Le devolveremos la llamada al 93 995 64 36. La tarjeta registrada es 4054-5070-8987-6610. Se envió una copia a zpena@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Juan Manuel Alfaro Marti"
+   },
+   {
+    "start": 107,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 161,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 995 64 36"
+   },
+   {
+    "start": 200,
+    "end": 219,
+    "entity_type": "CREDIT_CARD",
+    "value": "4054-5070-8987-6610"
+   },
+   {
+    "start": 242,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zpena@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0132",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Ulises Casemiro Carpio Cortina. Me gustaría programar una reunión el próximo mes. El lugar será Tarragona. Puede llamarme al 754 402 650 o escribirme a lluchfidela@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Ulises Casemiro Carpio Cortina"
+   },
+   {
+    "start": 118,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 147,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "754 402 650"
+   },
+   {
+    "start": 174,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lluchfidela@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0133",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Matilde Angulo y Anita Machado Valls. La próxima reunión será en Badajoz. Tarea pendiente: enviar la presentación a jose-carlosvarela@example.org. Línea directa: 699 129 506.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Matilde Angulo"
+   },
+   {
+    "start": 36,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Anita Machado Valls"
+   },
+   {
+    "start": 84,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Badajoz"
+   },
+   {
+    "start": 135,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jose-carlosvarela@example.org"
+   },
+   {
+    "start": 181,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "699 129 506"
+   }
+  ]
+ },
+ {
+  "id": "es-0134",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Isidora Encarna Grau Quiroga y su dirección está en Soria. Le devolveremos la llamada al 98 779 59 58. La tarjeta registrada es 4855-1820-6184-7103. Se envió una copia a herediayaiza@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Isidora Encarna Grau Quiroga"
+   },
+   {
+    "start": 111,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Soria"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 779 59 58"
+   },
+   {
+    "start": 187,
+    "end": 206,
+    "entity_type": "CREDIT_CARD",
+    "value": "4855-1820-6184-7103"
+   },
+   {
+    "start": 229,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "herediayaiza@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0135",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Joaquín Amores Iniesta. Me gustaría programar una reunión el próximo mes. El lugar será Burgos. Puede llamarme al 98 431 39 85 o escribirme a qllorente@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Joaquín Amores Iniesta"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Burgos"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "98 431 39 85"
+   },
+   {
+    "start": 164,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qllorente@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0136",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Cruz Marco Samper y Sebastián de Aroca. La próxima reunión será en Melilla. Tarea pendiente: enviar la presentación a gomilanazaret@example.com. Línea directa: 714 189 710.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Cruz Marco Samper"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Sebastián de Aroca"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 137,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gomilanazaret@example.com"
+   },
+   {
+    "start": 179,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "714 189 710"
+   }
+  ]
+ },
+ {
+  "id": "es-0137",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Tecla Lladó Arregui y su dirección está en Melilla. Le devolveremos la llamada al +34 659 213 842. La tarjeta registrada es 4734819872589641. Se envió una copia a droca@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Tecla Lladó Arregui"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 659 213 842"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4734819872589641"
+   },
+   {
+    "start": 222,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "droca@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0138",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Ezequiel Pedraza Ferrán. Me gustaría programar una reunión el próximo mes. El lugar será Ourense. Puede llamarme al 696 137 908 o escribirme a juan-carlosseco@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Ezequiel Pedraza Ferrán"
+   },
+   {
+    "start": 111,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "696 137 908"
+   },
+   {
+    "start": 165,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juan-carlosseco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0139",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Nicolás Arsenio Ferrán Bosch y Primitiva Flora Cornejo Coll. La próxima reunión será en Madrid. Tarea pendiente: enviar la presentación a hgoicoechea@example.net. Línea directa: 97 910 32 46.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Nicolás Arsenio Ferrán Bosch"
+   },
+   {
+    "start": 50,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Primitiva Flora Cornejo Coll"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 157,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hgoicoechea@example.net"
+   },
+   {
+    "start": 197,
+    "end": 209,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 910 32 46"
+   }
+  ]
+ },
+ {
+  "id": "es-0140",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Gabriel Bayón Galan y su dirección está en Castellón. Le devolveremos la llamada al 96 575 16 54. La tarjeta registrada es 4030-6278-8542-9429. Se envió una copia a clementeaugusto@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Gabriel Bayón Galan"
+   },
+   {
+    "start": 102,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Castellón"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 575 16 54"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4030-6278-8542-9429"
+   },
+   {
+    "start": 224,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "clementeaugusto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0141",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Cleto Agullo. Me gustaría programar una reunión el próximo mes. El lugar será Madrid. Puede llamarme al 772 777 466 o escribirme a dtorrijos@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Cleto Agullo"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Madrid"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "772 777 466"
+   },
+   {
+    "start": 153,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dtorrijos@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0142",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Ileana Aguilar Sanabria y Calixto Robledo Macías. La próxima reunión será en Guadalajara. Tarea pendiente: enviar la presentación a sancho87@example.com. Línea directa: 612 991 618.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Ileana Aguilar Sanabria"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Calixto Robledo Macías"
+   },
+   {
+    "start": 96,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Guadalajara"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sancho87@example.com"
+   },
+   {
+    "start": 188,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "612 991 618"
+   }
+  ]
+ },
+ {
+  "id": "es-0143",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Graciano Salazar Colomer y su dirección está en Santa Cruz de Tenerife. Le devolveremos la llamada al +34 742 791 132. La tarjeta registrada es 4586820323828256. Se envió una copia a vascomendez@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Graciano Salazar Colomer"
+   },
+   {
+    "start": 107,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Santa Cruz de Tenerife"
+   },
+   {
+    "start": 161,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 742 791 132"
+   },
+   {
+    "start": 203,
+    "end": 219,
+    "entity_type": "CREDIT_CARD",
+    "value": "4586820323828256"
+   },
+   {
+    "start": 242,
+    "end": 265,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vascomendez@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0144",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Lina Reyes Carvajal. Me gustaría programar una reunión el próximo mes. El lugar será Jaén. Puede llamarme al +34 757 239 771 o escribirme a cuetoazahara@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Lina Reyes Carvajal"
+   },
+   {
+    "start": 107,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Jaén"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 757 239 771"
+   },
+   {
+    "start": 162,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cuetoazahara@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0145",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Victor Manuel Dimas Bastida Cañellas y Ovidio Jaume Herrera. La próxima reunión será en Segovia. Tarea pendiente: enviar la presentación a maximojara@example.org. Línea directa: 749 128 785.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Victor Manuel Dimas Bastida Cañellas"
+   },
+   {
+    "start": 58,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Ovidio Jaume Herrera"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Segovia"
+   },
+   {
+    "start": 158,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maximojara@example.org"
+   },
+   {
+    "start": 197,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "749 128 785"
+   }
+  ]
+ },
+ {
+  "id": "es-0146",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Leonor Ferrán Bou y su dirección está en Tarragona. Le devolveremos la llamada al +34 638 312 618. La tarjeta registrada es 4455-8933-4767-1588. Se envió una copia a tbernal@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Leonor Ferrán Bou"
+   },
+   {
+    "start": 100,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 638 312 618"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4455-8933-4767-1588"
+   },
+   {
+    "start": 225,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tbernal@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0147",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Roque Capdevila Beltrán. Me gustaría programar una reunión el próximo mes. El lugar será Cantabria. Puede llamarme al 724 678 108 o escribirme a jennymuniz@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Roque Capdevila Beltrán"
+   },
+   {
+    "start": 111,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Cantabria"
+   },
+   {
+    "start": 140,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "724 678 108"
+   },
+   {
+    "start": 167,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jennymuniz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0148",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Paloma de Alcolea y Guiomar Eli Cabello Carvajal. La próxima reunión será en Murcia. Tarea pendiente: enviar la presentación a ignaciolujan@example.org. Línea directa: 784 641 846.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Paloma de Alcolea"
+   },
+   {
+    "start": 39,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Guiomar Eli Cabello Carvajal"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Murcia"
+   },
+   {
+    "start": 146,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ignaciolujan@example.org"
+   },
+   {
+    "start": 187,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "784 641 846"
+   }
+  ]
+ },
+ {
+  "id": "es-0149",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Juana Solano Rodriguez y su dirección está en Ávila. Le devolveremos la llamada al 95 344 36 89. La tarjeta registrada es 4352992257559843. Se envió una copia a maldonadocristian@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Juana Solano Rodriguez"
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Ávila"
+   },
+   {
+    "start": 142,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 344 36 89"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4352992257559843"
+   },
+   {
+    "start": 220,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maldonadocristian@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0150",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Fernando Alsina Berrocal. Me gustaría programar una reunión el próximo mes. El lugar será Barcelona. Puede llamarme al 93 359 66 58 o escribirme a partigas@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Fernando Alsina Berrocal"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Barcelona"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 359 66 58"
+   },
+   {
+    "start": 169,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "partigas@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0151",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Hernando Portero Bermejo y Fidel Luque. La próxima reunión será en Granada. Tarea pendiente: enviar la presentación a marta56@example.com. Línea directa: 92 737 14 36.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Hernando Portero Bermejo"
+   },
+   {
+    "start": 46,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Fidel Luque"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Granada"
+   },
+   {
+    "start": 137,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marta56@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 737 14 36"
+   }
+  ]
+ },
+ {
+  "id": "es-0152",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Eugenia Baeza Barón y su dirección está en Ourense. Le devolveremos la llamada al +34 714 118 721. La tarjeta registrada es 4621-4199-9562-1789. Se envió una copia a flara@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Eugenia Baeza Barón"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 714 118 721"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4621-4199-9562-1789"
+   },
+   {
+    "start": 225,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flara@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0153",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Rosa Trillo Yáñez. Me gustaría programar una reunión el próximo mes. El lugar será Cantabria. Puede llamarme al 93 973 80 38 o escribirme a qvendrell@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Rosa Trillo Yáñez"
+   },
+   {
+    "start": 105,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Cantabria"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 973 80 38"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qvendrell@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0154",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Catalina Lerma-Flores y Marisol Lozano Morante. La próxima reunión será en Valencia. Tarea pendiente: enviar la presentación a lupe08@example.net. Línea directa: +34 630 418 826.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Catalina Lerma-Flores"
+   },
+   {
+    "start": 43,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Marisol Lozano Morante"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Valencia"
+   },
+   {
+    "start": 146,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lupe08@example.net"
+   },
+   {
+    "start": 181,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 630 418 826"
+   }
+  ]
+ },
+ {
+  "id": "es-0155",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Isidora Josefina Lobo Baena y su dirección está en Huesca. Le devolveremos la llamada al 761 338 767. La tarjeta registrada es 4296000052674483. Se envió una copia a irma44@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 86,
+    "entity_type": "PERSON",
+    "value": "Isidora Josefina Lobo Baena"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 148,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "761 338 767"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4296000052674483"
+   },
+   {
+    "start": 225,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "irma44@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0156",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Roberto del Gonzalo. Me gustaría programar una reunión el próximo mes. El lugar será Lleida. Puede llamarme al 93 775 42 52 o escribirme a purificacion42@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Roberto del Gonzalo"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Lleida"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 775 42 52"
+   },
+   {
+    "start": 161,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "purificacion42@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0157",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Amaya Aguirre Moliner y Salomé Casanovas Pastor. La próxima reunión será en Málaga. Tarea pendiente: enviar la presentación a triniiniguez@example.com. Línea directa: 91 892 64 69.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Amaya Aguirre Moliner"
+   },
+   {
+    "start": 43,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Salomé Casanovas Pastor"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Málaga"
+   },
+   {
+    "start": 145,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "triniiniguez@example.com"
+   },
+   {
+    "start": 186,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "91 892 64 69"
+   }
+  ]
+ },
+ {
+  "id": "es-0158",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Ramiro Martín Losada y su dirección está en Cádiz. Le devolveremos la llamada al 96 379 71 69. La tarjeta registrada es 4029-3015-7208-2783. Se envió una copia a bonetharoldo@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Ramiro Martín Losada"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Cádiz"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 379 71 69"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4029-3015-7208-2783"
+   },
+   {
+    "start": 221,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bonetharoldo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0159",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Eleuterio Bernal-Baró. Me gustaría programar una reunión el próximo mes. El lugar será Toledo. Puede llamarme al 92 644 13 58 o escribirme a eutropio50@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Eleuterio Bernal-Baró"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Toledo"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 644 13 58"
+   },
+   {
+    "start": 163,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eutropio50@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0160",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Severiano del Menendez y Oriana Perea-Tomás. La próxima reunión será en Alicante. Tarea pendiente: enviar la presentación a martinezfanny@example.com. Línea directa: 91 876 27 73.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Severiano del Menendez"
+   },
+   {
+    "start": 44,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Oriana Perea-Tomás"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Alicante"
+   },
+   {
+    "start": 143,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "martinezfanny@example.com"
+   },
+   {
+    "start": 185,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "91 876 27 73"
+   }
+  ]
+ },
+ {
+  "id": "es-0161",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Ovidio Anglada Falcó y su dirección está en Albacete. Le devolveremos la llamada al 92 227 10 69. La tarjeta registrada es 4677850586468151. Se envió una copia a ester75@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Ovidio Anglada Falcó"
+   },
+   {
+    "start": 103,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Albacete"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "92 227 10 69"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4677850586468151"
+   },
+   {
+    "start": 221,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ester75@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0162",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Angelina Amparo Acosta Zapata. Me gustaría programar una reunión el próximo mes. El lugar será Palencia. Puede llamarme al +34 759 685 504 o escribirme a lazaro12@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Angelina Amparo Acosta Zapata"
+   },
+   {
+    "start": 117,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Palencia"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 759 685 504"
+   },
+   {
+    "start": 176,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lazaro12@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0163",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Primitivo Mariño Vázquez y Julie Abad Mendez. La próxima reunión será en Málaga. Tarea pendiente: enviar la presentación a nataliocabrera@example.net. Línea directa: 744 965 647.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Primitivo Mariño Vázquez"
+   },
+   {
+    "start": 46,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Julie Abad Mendez"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Málaga"
+   },
+   {
+    "start": 142,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nataliocabrera@example.net"
+   },
+   {
+    "start": 185,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "744 965 647"
+   }
+  ]
+ },
+ {
+  "id": "es-0164",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Tere del Hervia y su dirección está en Zaragoza. Le devolveremos la llamada al 93 638 35 16. La tarjeta registrada es 4206-4635-4862-1642. Se envió una copia a pabloramis@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Tere del Hervia"
+   },
+   {
+    "start": 98,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Zaragoza"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "93 638 35 16"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4206-4635-4862-1642"
+   },
+   {
+    "start": 219,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pabloramis@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0165",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Alonso Benavides Llorente. Me gustaría programar una reunión el próximo mes. El lugar será Albacete. Puede llamarme al +34 747 659 343 o escribirme a csaldana@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Alonso Benavides Llorente"
+   },
+   {
+    "start": 113,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Albacete"
+   },
+   {
+    "start": 141,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 747 659 343"
+   },
+   {
+    "start": 172,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "csaldana@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0166",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Hernando Iborra y Magdalena Tovar Salvador. La próxima reunión será en Huelva. Tarea pendiente: enviar la presentación a morenomanu@example.net. Línea directa: 96 578 12 23.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Hernando Iborra"
+   },
+   {
+    "start": 37,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Magdalena Tovar Salvador"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 140,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "morenomanu@example.net"
+   },
+   {
+    "start": 179,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 578 12 23"
+   }
+  ]
+ },
+ {
+  "id": "es-0167",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Serafina Bernal Villanueva y su dirección está en Barcelona. Le devolveremos la llamada al 94 846 97 34. La tarjeta registrada es 4979347041803879. Se envió una copia a melisalluch@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Serafina Bernal Villanueva"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Barcelona"
+   },
+   {
+    "start": 150,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "94 846 97 34"
+   },
+   {
+    "start": 189,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4979347041803879"
+   },
+   {
+    "start": 228,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "melisalluch@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0168",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Diego Salamanca Andrade. Me gustaría programar una reunión el próximo mes. El lugar será Lugo. Puede llamarme al 690 802 760 o escribirme a bbusquets@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Diego Salamanca Andrade"
+   },
+   {
+    "start": 111,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Lugo"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "690 802 760"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bbusquets@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0169",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Candelaria de Valencia y Pancho Rodrigo Ricart. La próxima reunión será en Baleares. Tarea pendiente: enviar la presentación a rodriguezjeronimo@example.org. Línea directa: +34 798 239 926.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Candelaria de Valencia"
+   },
+   {
+    "start": 44,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Pancho Rodrigo Ricart"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Baleares"
+   },
+   {
+    "start": 146,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rodriguezjeronimo@example.org"
+   },
+   {
+    "start": 192,
+    "end": 207,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 798 239 926"
+   }
+  ]
+ },
+ {
+  "id": "es-0170",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Loreto Vall Alfaro y su dirección está en Álava. Le devolveremos la llamada al 647 168 805. La tarjeta registrada es 4052250959636317. Se envió una copia a macaria43@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Loreto Vall Alfaro"
+   },
+   {
+    "start": 101,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Álava"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "647 168 805"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4052250959636317"
+   },
+   {
+    "start": 215,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "macaria43@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0171",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Rosa Galán Alvarado. Me gustaría programar una reunión el próximo mes. El lugar será Tarragona. Puede llamarme al +34 699 946 322 o escribirme a villalucio@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Rosa Galán Alvarado"
+   },
+   {
+    "start": 107,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 136,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 699 946 322"
+   },
+   {
+    "start": 167,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "villalucio@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0172",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: José Mari Sáenz Galvez y Heraclio del Peñas. La próxima reunión será en Pontevedra. Tarea pendiente: enviar la presentación a dvizcaino@example.org. Línea directa: +34 683 369 178.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "José Mari Sáenz Galvez"
+   },
+   {
+    "start": 44,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Heraclio del Peñas"
+   },
+   {
+    "start": 91,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Pontevedra"
+   },
+   {
+    "start": 145,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dvizcaino@example.org"
+   },
+   {
+    "start": 183,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 683 369 178"
+   }
+  ]
+ },
+ {
+  "id": "es-0173",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Prudencia Emiliana Asensio Bastida y su dirección está en Ávila. Le devolveremos la llamada al 610 202 530. La tarjeta registrada es 4097497425355223. Se envió una copia a iamigo@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 93,
+    "entity_type": "PERSON",
+    "value": "Prudencia Emiliana Asensio Bastida"
+   },
+   {
+    "start": 117,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Ávila"
+   },
+   {
+    "start": 154,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "610 202 530"
+   },
+   {
+    "start": 192,
+    "end": 208,
+    "entity_type": "CREDIT_CARD",
+    "value": "4097497425355223"
+   },
+   {
+    "start": 231,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "iamigo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0174",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Anselmo Sancho Amo. Me gustaría programar una reunión el próximo mes. El lugar será Asturias. Puede llamarme al 95 356 59 62 o escribirme a mateohernandez@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Anselmo Sancho Amo"
+   },
+   {
+    "start": 106,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Asturias"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "95 356 59 62"
+   },
+   {
+    "start": 162,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mateohernandez@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0175",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Gaspar Villalobos Camacho y Almudena Fonseca Simó. La próxima reunión será en Barcelona. Tarea pendiente: enviar la presentación a zboix@example.com. Línea directa: 96 541 89 19.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Gaspar Villalobos Camacho"
+   },
+   {
+    "start": 47,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Almudena Fonseca Simó"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Barcelona"
+   },
+   {
+    "start": 150,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zboix@example.com"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 541 89 19"
+   }
+  ]
+ },
+ {
+  "id": "es-0176",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Patricio Asensio-Franco y su dirección está en Tarragona. Le devolveremos la llamada al 755 161 159. La tarjeta registrada es 4510367843213651. Se envió una copia a ciro09@example.com.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Patricio Asensio-Franco"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Tarragona"
+   },
+   {
+    "start": 147,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "755 161 159"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4510367843213651"
+   },
+   {
+    "start": 224,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ciro09@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0177",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Roldán Domínguez Campoy. Me gustaría programar una reunión el próximo mes. El lugar será Melilla. Puede llamarme al +34 714 486 889 o escribirme a zolivera@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Roldán Domínguez Campoy"
+   },
+   {
+    "start": 111,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 138,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 714 486 889"
+   },
+   {
+    "start": 169,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zolivera@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0178",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Elodia de Bru y Valero Corbacho Palomo. La próxima reunión será en Cuenca. Tarea pendiente: enviar la presentación a ksalvador@example.net. Línea directa: +34 755 936 980.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Elodia de Bru"
+   },
+   {
+    "start": 35,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Valero Corbacho Palomo"
+   },
+   {
+    "start": 86,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 136,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ksalvador@example.net"
+   },
+   {
+    "start": 174,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 755 936 980"
+   }
+  ]
+ },
+ {
+  "id": "es-0179",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Josué Criado y su dirección está en La Rioja. Le devolveremos la llamada al 670 140 447. La tarjeta registrada es 4919-9720-7129-6299. Se envió una copia a angelinapozo@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Josué Criado"
+   },
+   {
+    "start": 95,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "La Rioja"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "670 140 447"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4919-9720-7129-6299"
+   },
+   {
+    "start": 215,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "angelinapozo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0180",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Custodio Medina Lerma. Me gustaría programar una reunión el próximo mes. El lugar será Cuenca. Puede llamarme al 765 835 604 o escribirme a felicidadaliaga@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Custodio Medina Lerma"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "765 835 604"
+   },
+   {
+    "start": 162,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "felicidadaliaga@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0181",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Maximiano Bautista Larrañaga y Porfirio Carballo. La próxima reunión será en Guadalajara. Tarea pendiente: enviar la presentación a fuertestito@example.com. Línea directa: 634 885 217.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Maximiano Bautista Larrañaga"
+   },
+   {
+    "start": 50,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Porfirio Carballo"
+   },
+   {
+    "start": 96,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Guadalajara"
+   },
+   {
+    "start": 151,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fuertestito@example.com"
+   },
+   {
+    "start": 191,
+    "end": 202,
+    "entity_type": "PHONE_NUMBER",
+    "value": "634 885 217"
+   }
+  ]
+ },
+ {
+  "id": "es-0182",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Sonia Haro-Rubio y su dirección está en Huesca. Le devolveremos la llamada al 658 747 657. La tarjeta registrada es 4087050431880817. Se envió una copia a sebastianchacon@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Sonia Haro-Rubio"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Huesca"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "658 747 657"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4087050431880817"
+   },
+   {
+    "start": 214,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sebastianchacon@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0183",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Silvia Morata Martín. Me gustaría programar una reunión el próximo mes. El lugar será Cádiz. Puede llamarme al +34 635 477 650 o escribirme a izquierdoluis@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Silvia Morata Martín"
+   },
+   {
+    "start": 108,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Cádiz"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 635 477 650"
+   },
+   {
+    "start": 164,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "izquierdoluis@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0184",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Carlota Cadenas Salinas y Jordi Fabricio Roselló Jaén. La próxima reunión será en Cáceres. Tarea pendiente: enviar la presentación a anita95@example.com. Línea directa: 797 380 625.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Carlota Cadenas Salinas"
+   },
+   {
+    "start": 45,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Jordi Fabricio Roselló Jaén"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Cáceres"
+   },
+   {
+    "start": 152,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anita95@example.com"
+   },
+   {
+    "start": 188,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "797 380 625"
+   }
+  ]
+ },
+ {
+  "id": "es-0185",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Purificación Landa Baena y su dirección está en Valladolid. Le devolveremos la llamada al 661 957 944. La tarjeta registrada es 4425686297498029. Se envió una copia a baudeliopalomar@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Purificación Landa Baena"
+   },
+   {
+    "start": 107,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Valladolid"
+   },
+   {
+    "start": 149,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "661 957 944"
+   },
+   {
+    "start": 187,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4425686297498029"
+   },
+   {
+    "start": 226,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "baudeliopalomar@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0186",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Amaro Barrio Huguet. Me gustaría programar una reunión el próximo mes. El lugar será Ourense. Puede llamarme al +34 793 896 214 o escribirme a cortesiker@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Amaro Barrio Huguet"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Ourense"
+   },
+   {
+    "start": 134,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 793 896 214"
+   },
+   {
+    "start": 165,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cortesiker@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0187",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Adelaida Villalobos y Fidel Goñi Arévalo. La próxima reunión será en Melilla. Tarea pendiente: enviar la presentación a benitomariano@example.org. Línea directa: +34 663 937 302.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Adelaida Villalobos"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Fidel Goñi Arévalo"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 139,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "benitomariano@example.org"
+   },
+   {
+    "start": 181,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 663 937 302"
+   }
+  ]
+ },
+ {
+  "id": "es-0188",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Patricio Mesa Cánovas y su dirección está en Huelva. Le devolveremos la llamada al +34 675 702 163. La tarjeta registrada es 4505-6937-7074-0243. Se envió una copia a freina@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Patricio Mesa Cánovas"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Huelva"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 675 702 163"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4505-6937-7074-0243"
+   },
+   {
+    "start": 226,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "freina@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0189",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Álvaro Gual Alemán. Me gustaría programar una reunión el próximo mes. El lugar será Las Palmas. Puede llamarme al 764 335 205 o escribirme a jordancobo@example.org. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Álvaro Gual Alemán"
+   },
+   {
+    "start": 106,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Las Palmas"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "764 335 205"
+   },
+   {
+    "start": 163,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jordancobo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0190",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Eutropio Guijarro Torres y Sofía Riba Lumbreras. La próxima reunión será en Cuenca. Tarea pendiente: enviar la presentación a qcosta@example.org. Línea directa: +34 632 624 804.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Eutropio Guijarro Torres"
+   },
+   {
+    "start": 46,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Sofía Riba Lumbreras"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Cuenca"
+   },
+   {
+    "start": 145,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qcosta@example.org"
+   },
+   {
+    "start": 180,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 632 624 804"
+   }
+  ]
+ },
+ {
+  "id": "es-0191",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es León Batalla Muro y su dirección está en Palencia. Le devolveremos la llamada al 96 664 38 73. La tarjeta registrada es 4990714288965627. Se envió una copia a mirangela@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "León Batalla Muro"
+   },
+   {
+    "start": 100,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Palencia"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 664 38 73"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4990714288965627"
+   },
+   {
+    "start": 218,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mirangela@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0192",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Benigna de Quintana. Me gustaría programar una reunión el próximo mes. El lugar será Las Palmas. Puede llamarme al +34 725 106 970 o escribirme a amelia19@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Benigna de Quintana"
+   },
+   {
+    "start": 107,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Las Palmas"
+   },
+   {
+    "start": 137,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 725 106 970"
+   },
+   {
+    "start": 168,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amelia19@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0193",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Trini Flor y Lilia Busquets Nogués. La próxima reunión será en Valladolid. Tarea pendiente: enviar la presentación a vinasviviana@example.org. Línea directa: 97 252 16 81.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Trini Flor"
+   },
+   {
+    "start": 32,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Lilia Busquets Nogués"
+   },
+   {
+    "start": 82,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Valladolid"
+   },
+   {
+    "start": 136,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vinasviviana@example.org"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "97 252 16 81"
+   }
+  ]
+ },
+ {
+  "id": "es-0194",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Edelmira Sarmiento Rodríguez y su dirección está en Melilla. Le devolveremos la llamada al +34 649 373 563. La tarjeta registrada es 4632-5556-8705-6284. Se envió una copia a ascension94@example.net.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Edelmira Sarmiento Rodríguez"
+   },
+   {
+    "start": 111,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Melilla"
+   },
+   {
+    "start": 150,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 649 373 563"
+   },
+   {
+    "start": 192,
+    "end": 211,
+    "entity_type": "CREDIT_CARD",
+    "value": "4632-5556-8705-6284"
+   },
+   {
+    "start": 234,
+    "end": 257,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ascension94@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0195",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Íñigo Estrada Villanueva. Me gustaría programar una reunión el próximo mes. El lugar será Murcia. Puede llamarme al 791 345 752 o escribirme a ernesto00@example.com. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Íñigo Estrada Villanueva"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Murcia"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "791 345 752"
+   },
+   {
+    "start": 165,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ernesto00@example.com"
+   }
+  ]
+ },
+ {
+  "id": "es-0196",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Clemente Manzano Espada y Octavio Macias Lorenzo. La próxima reunión será en Asturias. Tarea pendiente: enviar la presentación a araujosancho@example.net. Línea directa: 727 557 993.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Clemente Manzano Espada"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Octavio Macias Lorenzo"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Asturias"
+   },
+   {
+    "start": 148,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "araujosancho@example.net"
+   },
+   {
+    "start": 189,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "727 557 993"
+   }
+  ]
+ },
+ {
+  "id": "es-0197",
+  "language": "es",
+  "genre": "inquiry",
+  "text": "Gracias por contactar con soporte. Su nombre registrado es Cruz Elodia Vizcaíno Arana y su dirección está en Castellón. Le devolveremos la llamada al 671 890 270. La tarjeta registrada es 4755860643047562. Se envió una copia a lespinosa@example.org.",
+  "spans": [
+   {
+    "start": 59,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Cruz Elodia Vizcaíno Arana"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Castellón"
+   },
+   {
+    "start": 150,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "671 890 270"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4755860643047562"
+   },
+   {
+    "start": 227,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lespinosa@example.org"
+   }
+  ]
+ },
+ {
+  "id": "es-0198",
+  "language": "es",
+  "genre": "request",
+  "text": "Buenos días, me llamo Odalys Costa Solana. Me gustaría programar una reunión el próximo mes. El lugar será Lugo. Puede llamarme al +34 725 398 230 o escribirme a reinaldomontenegro@example.net. ¡Gracias!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Odalys Costa Solana"
+   },
+   {
+    "start": 107,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Lugo"
+   },
+   {
+    "start": 131,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+34 725 398 230"
+   },
+   {
+    "start": 162,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reinaldomontenegro@example.net"
+   }
+  ]
+ },
+ {
+  "id": "es-0199",
+  "language": "es",
+  "genre": "minutes",
+  "text": "[Acta] Asistentes: Tania Esperanza Tovar Mateos y Enrique Escamilla-Ferrero. La próxima reunión será en Ciudad. Tarea pendiente: enviar la presentación a marc96@example.org. Línea directa: 96 407 73 52.",
+  "spans": [
+   {
+    "start": 19,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Tania Esperanza Tovar Mateos"
+   },
+   {
+    "start": 50,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Enrique Escamilla-Ferrero"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Ciudad"
+   },
+   {
+    "start": 154,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marc96@example.org"
+   },
+   {
+    "start": 189,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "96 407 73 52"
+   }
+  ]
+ }
+]

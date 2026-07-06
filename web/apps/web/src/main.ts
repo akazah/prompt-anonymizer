@@ -13,7 +13,17 @@ import "./style.css";
 const SAMPLES: Record<Language, string> = {
   ja: "山田太郎は、来月、誕生日を迎えます。同僚の佐藤花子は、サプライズパーティーを計画しています。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。佐藤花子への連絡は hanako.sato@example.com までお願いします。",
   en: "John Smith will have a birthday next month. His colleague Emily Johnson is planning a surprise party. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333. You can reach Emily Johnson at emily.johnson@example.com.",
+  es: "María García celebrará su cumpleaños el próximo mes. Su colega Carlos Ruiz está planeando una fiesta sorpresa. ¿Qué regalo sería apropiado? María García vive en Madrid. Su correo electrónico es maria.garcia@example.com y su teléfono es +34 612 345 678. Puede contactar a Carlos Ruiz en carlos.ruiz@example.com.",
+  vi: "Nguyễn Văn An sẽ có sinh nhật vào tháng tới. Đồng nghiệp Trần Thị Mai đang lên kế hoạch một bữa tiệc bất ngờ. Món quà nào sẽ phù hợp? Nguyễn Văn An sống ở Hà Nội. Email của anh ấy là an.nguyen@example.com và số điện thoại là 0912 345 678. Bạn có thể liên hệ Trần Thị Mai tại mai.tran@example.com.",
 };
+
+function sampleLanguageFromNavigator(): Language {
+  const lang = navigator.language?.toLowerCase() ?? "en";
+  if (lang.startsWith("ja")) return "ja";
+  if (lang.startsWith("es")) return "es";
+  if (lang.startsWith("vi")) return "vi";
+  return "en";
+}
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
@@ -35,6 +45,8 @@ app.innerHTML = `
           <option value="auto">Auto / 自動判定</option>
           <option value="ja">日本語</option>
           <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="vi">Tiếng Việt</option>
         </select>
       </label>
       <label><input type="checkbox" id="use-ner" checked /> NER model (names & locations)</label>
@@ -207,7 +219,7 @@ $("#anonymize").addEventListener("click", () => void runAnonymize());
 $("#load-sample").addEventListener("click", () => {
   const value = languageEl.value;
   const language: Language =
-    value === "auto" ? (navigator.language?.startsWith("ja") ? "ja" : "en") : (value as Language);
+    value === "auto" ? sampleLanguageFromNavigator() : (value as Language);
   inputEl.value = SAMPLES[language];
 });
 $("#copy").addEventListener("click", () => {

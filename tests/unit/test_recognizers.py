@@ -62,6 +62,39 @@ def test_ja_postal_regex_patterns() -> None:
     assert not patterns["jp_postal_bare"].search("090-1234-5678")
 
 
+def test_es_phone_regex_patterns() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.es_phone import EsPhoneRegexRecognizer
+
+    patterns = {p.name: re.compile(p.regex) for p in EsPhoneRegexRecognizer.PATTERNS}
+    assert patterns["es_phone_prefixed"].search("Llámame al +34 612 345 678.")
+    assert patterns["es_phone_prefixed"].search("+34612345678")
+    assert patterns["es_phone_grouped"].search("mi móvil es 612 345 678")
+    assert patterns["es_phone_grouped"].search("612-345-678")
+    assert patterns["es_phone_landline"].search("el fijo es 91 234 56 78")
+    # Bare 9-digit runs without separators or prefix are too ambiguous.
+    assert not patterns["es_phone_grouped"].search("612345678")
+    # Not inside longer digit runs.
+    assert not patterns["es_phone_grouped"].search("9612 345 678987")
+
+
+def test_vn_phone_regex_patterns() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.vn_phone import VnPhoneRegexRecognizer
+
+    patterns = {p.name: re.compile(p.regex) for p in VnPhoneRegexRecognizer.PATTERNS}
+    assert patterns["vn_phone_domestic"].search("gọi 0912 345 678 nhé")
+    assert patterns["vn_phone_domestic"].search("091 234 5678")
+    assert patterns["vn_phone_domestic"].search("0912345678")
+    assert patterns["vn_phone_domestic"].search("024 3826 8888")
+    assert patterns["vn_phone_prefixed"].search("+84 912 345 678")
+    assert patterns["vn_phone_prefixed"].search("+84912345678")
+    # Not inside longer digit runs.
+    assert not patterns["vn_phone_domestic"].search("10912345678")
+
+
 def test_credit_card_regex_matches_next_to_cjk() -> None:
     import re
 

@@ -48,7 +48,7 @@ test.afterAll(async () => {
   await context?.close();
 });
 
-async function anonymizeSample(language: "ja" | "en"): Promise<string> {
+async function anonymizeSample(language: "ja" | "en" | "es" | "vi"): Promise<string> {
   await page.goto(BASE_URL);
   await page.locator("#language").selectOption(language);
   await expect(page.locator("#use-ner")).toBeChecked();
@@ -88,6 +88,24 @@ test("EN: NER masks person names with EN labels", async () => {
   expect(output).toContain("<Name_2>");
   expect(output).toContain("<Email_1>");
   expect(output).toContain("<Phone_1>");
+});
+
+test("ES: NER masks person names with ES labels", async () => {
+  const output = await anonymizeSample("es");
+
+  expect(output).not.toContain("María García");
+  expect(output.match(/<Nombre_1>/g)?.length ?? 0).toBeGreaterThanOrEqual(2);
+  expect(output).toContain("<Correo_1>");
+  expect(output).toContain("<Teléfono_1>");
+});
+
+test("VI: NER masks person names with VI labels", async () => {
+  const output = await anonymizeSample("vi");
+
+  expect(output).not.toContain("Nguyễn Văn An");
+  expect(output.match(/<Tên_1>/g)?.length ?? 0).toBeGreaterThanOrEqual(2);
+  expect(output).toContain("<Email_1>");
+  expect(output).toContain("<SốĐiệnThoại_1>");
 });
 
 test("network stayed within localhost + Hugging Face model hosts", () => {

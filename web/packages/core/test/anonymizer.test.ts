@@ -68,4 +68,21 @@ describe("Anonymizer", () => {
     });
     expect(result.text).toBe("Call <Phone_1> or mail <Email_1>");
   });
+
+  it("round-trips Spanish text regex-only", async () => {
+    const anonymizer = new Anonymizer();
+    const text = "Llámame al 612 345 678 o escribe a maria@example.com";
+    const result = await anonymizer.anonymize(text, { language: "es" });
+    expect(result.text).toContain("<Teléfono_1>");
+    expect(result.text).toContain("<Correo_1>");
+    expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
+  });
+
+  it("round-trips Vietnamese text regex-only", async () => {
+    const anonymizer = new Anonymizer();
+    const text = "Gọi cho tôi ở 0912 345 678";
+    const result = await anonymizer.anonymize(text, { language: "vi" });
+    expect(result.text).toContain("<SốĐiệnThoại_1>");
+    expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
+  });
 });

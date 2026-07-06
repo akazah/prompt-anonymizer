@@ -3,7 +3,7 @@
 ## What this project is
 
 A PII anonymizer with **consistent, reversible labels** (`<人名_1>` /
-`<Name_1>`). Two cores that must stay in behavioural parity:
+`<Name_1>`, `<Nombre_1>`, `<Tên_1>`, …). Two cores that must stay in behavioural parity:
 
 - Python: `src/prompt_anonymizer/` (Presidio + spaCy) — PyPI package + CLI
 - TypeScript: `web/packages/core/` (regex + transformers.js NER) — browser app, Chrome extension, Tauri desktop, Node CLI (`web/packages/cli`), embeddable web component (`web/packages/element`), React/Vue bindings (`web/packages/{react,vue}`)

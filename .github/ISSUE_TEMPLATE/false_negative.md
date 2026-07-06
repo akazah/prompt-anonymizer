@@ -11,7 +11,7 @@ labels: false-negative
 ```
 ```
 
-**Language**: ja / en
+**Language**: ja / en / es / vi
 
 **Entity type that was missed**: PERSON / PHONE_NUMBER / ...
 

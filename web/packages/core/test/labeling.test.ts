@@ -118,3 +118,42 @@ describe("deanonymize", () => {
     ).toBe("Jane and John");
   });
 });
+
+describe("LABELS parity", () => {
+  it("es and vi share the same entity keys as en and ja", () => {
+    const enKeys = Object.keys(LABELS.en).sort();
+    expect(Object.keys(LABELS.es).sort()).toEqual(enKeys);
+    expect(Object.keys(LABELS.vi).sort()).toEqual(enKeys);
+    expect(Object.keys(LABELS.ja).sort()).toEqual(enKeys);
+  });
+
+  it("uses localized PERSON labels for es and vi", () => {
+    expect(LABELS.es.PERSON).toBe("Nombre");
+    expect(LABELS.vi.PERSON).toBe("Tên");
+  });
+});
+
+describe("applyLabels with es and vi", () => {
+  it("round-trips Spanish labels", () => {
+    const text = "Llámame al 612 345 678 o escribe a maria@example.com";
+    const { text: anonymized, mapping } = applyLabels(
+      text,
+      [span(12, 24, "PHONE_NUMBER"), span(38, 56, "EMAIL_ADDRESS")],
+      LABELS.es,
+    );
+    expect(anonymized).toContain("<Teléfono_1>");
+    expect(anonymized).toContain("<Correo_1>");
+    expect(deanonymize(anonymized, mapping)).toBe(text);
+  });
+
+  it("round-trips Vietnamese labels", () => {
+    const text = "Gọi cho tôi ở 0912 345 678";
+    const { text: anonymized, mapping } = applyLabels(
+      text,
+      [span(14, 26, "PHONE_NUMBER")],
+      LABELS.vi,
+    );
+    expect(anonymized).toBe("Gọi cho tôi ở <SốĐiệnThoại_1>");
+    expect(deanonymize(anonymized, mapping)).toBe(text);
+  });
+});

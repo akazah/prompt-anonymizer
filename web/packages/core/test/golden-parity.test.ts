@@ -42,7 +42,7 @@ function overlaps(aStart: number, aEnd: number, bStart: number, bEnd: number): b
   return aStart < bEnd && bStart < aEnd;
 }
 
-describe.each(["ja", "en"] as const)("golden set parity (%s)", (language) => {
+describe.each(["ja", "en", "es", "vi"] as const)("golden set parity (%s)", (language) => {
   it(`regex recall >= ${MIN_RECALL} on structured PII`, () => {
     const cases = loadGolden(language);
     expect(cases.length).toBeGreaterThan(0);

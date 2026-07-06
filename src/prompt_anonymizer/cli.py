@@ -47,7 +47,9 @@ def anonymize(
     file: Annotated[
         Path | None, typer.Option("--file", "-f", exists=True, help="Read text from a file.")
     ] = None,
-    language: Annotated[str, typer.Option("--language", "-l", help="Language (en/ja).")] = "en",
+    language: Annotated[
+        str, typer.Option("--language", "-l", help="Language (en/ja/es/vi).")
+    ] = "en",
     model_size: Annotated[str, typer.Option(help="spaCy model size: sm or lg.")] = "sm",
     ner_backend: Annotated[
         str,

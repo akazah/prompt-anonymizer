@@ -53,7 +53,7 @@ Usage:
 anonymize options:
   -t, --text TEXT          Text to anonymize.
   -f, --file FILE          Read text from a file.
-  -l, --language LANG      en, ja or auto (default: auto).
+  -l, --language LANG      en, ja, es, vi or auto (default: auto).
       --no-ner             Disable the NER model (names/locations NOT masked).
       --json               Output JSON with text, mapping and entities.
   -i, --interactive        Review the result before printing.
@@ -80,9 +80,11 @@ async function readInput(
 }
 
 function resolveLanguage(value: string, text: string): Promise<Language> {
-  if (value === "en" || value === "ja") return Promise.resolve(value);
+  if (value === "en" || value === "ja" || value === "es" || value === "vi") {
+    return Promise.resolve(value);
+  }
   if (value === "auto") return detectLanguage(text);
-  throw new CliError(`Unsupported language: ${value} (use en, ja or auto).`);
+  throw new CliError(`Unsupported language: ${value} (use en, ja, es, vi or auto).`);
 }
 
 /** Same JSON shape as the Python CLI's `--json` (`AnonymizeResult.to_dict()`). */
