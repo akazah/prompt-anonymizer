@@ -7,6 +7,7 @@ Everything is driven by a `v*` tag push. One tag produces:
 | sdist + wheel | `release.yml` | GitHub Release (PyPI publish is opt-in, see below) |
 | `prompt-anonymizer-web-<ver>.zip` / `prompt-anonymizer-extension-<ver>.zip` | `release-apps.yml` | GitHub Release |
 | Tauri desktop bundles (`.dmg` / `.msi` / `.AppImage` / `.deb`) | `release-apps.yml` | GitHub Release |
+| `@prompt-anonymizer/{core,cli,element,react,vue}` npm packages | `release-npm.yml` | npm registry (opt-in, see below) |
 
 The browser app on GitHub Pages is deployed separately, on every push to
 `main` that touches `web/**` (`pages.yml`) — it is not tied to tags.
@@ -36,6 +37,23 @@ admin. Until they are done, the corresponding pipeline fails:
 
    Until then, tag pushes still build sdist/wheel and attach them to the
    GitHub Release, so `pip install` from the release asset works.
+3. **npm Trusted Publishing (deferred — only when we decide to publish to
+   npm)** — the `publish-npm` job is skipped unless the repository variable
+   `NPM_PUBLISH` is set to `true`. To turn it on later:
+   1. Create the `@prompt-anonymizer` organization scope on
+      [npmjs.com](https://www.npmjs.com/) and, for each package
+      (`core`, `cli`, `element`, `react`, `vue`), add a *trusted publisher*: repository
+      `akazah/prompt-anonymizer`, workflow `release-npm.yml`, environment
+      `npm`. (First-ever publishes may need a one-time manual
+      `pnpm publish` to create the package before the publisher can be
+      attached.)
+   2. Create the `npm` environment in the repo (Settings → Environments);
+      optionally add required reviewers to gate publishes.
+   3. Add the repository variable `NPM_PUBLISH=true`
+      (Settings → Secrets and variables → Actions → Variables).
+
+   Until then, the JS packages are consumable by building from the repo
+   (`cd web && pnpm install && pnpm --filter "./packages/*" build`).
 
 ## Release steps
 
@@ -45,7 +63,10 @@ admin. Until they are done, the corresponding pipeline fails:
 
    ```bash
    rg '"version"|^version|__version__' pyproject.toml src/prompt_anonymizer/__init__.py \
-     web/package.json web/packages/core/package.json web/apps/web/package.json \
+     web/package.json web/packages/core/package.json web/packages/cli/package.json \
+     web/packages/element/package.json \
+     web/packages/react/package.json web/packages/vue/package.json \
+     web/apps/web/package.json \
      web/apps/extension/package.json web/apps/extension/public/manifest.json \
      web/apps/desktop/package.json web/apps/desktop/src-tauri/tauri.conf.json \
      web/apps/desktop/src-tauri/Cargo.toml
@@ -62,16 +83,18 @@ admin. Until they are done, the corresponding pipeline fails:
    git push origin v0.2.0
    ```
 
-4. Watch the two release workflows (`Release (PyPI)` and
-   `Release (Desktop / Extension / Web)`). Both attach artifacts to the same
-   GitHub Release for the tag. The desktop matrix (2× macOS, Linux, Windows)
-   is the slowest leg.
+4. Watch the release workflows (`Release (PyPI)`,
+   `Release (Desktop / Extension / Web)` and — if enabled — `Release (npm)`).
+   The first two attach artifacts to the same GitHub Release for the tag.
+   The desktop matrix (2× macOS, Linux, Windows) is the slowest leg.
 5. Verify:
    - The GitHub Release lists wheel/sdist, web zip, extension zip, and
-     desktop bundles for all four targets.
+     desktop bundles.
    - The Pages site serves the latest `main`.
    - (Only if PyPI publishing is enabled)
      `pip install prompt-anonymizer==<ver>` works.
+   - (Only if npm publishing is enabled)
+     `npx @prompt-anonymizer/cli@<ver> version` works.
 
 ## After the release
 

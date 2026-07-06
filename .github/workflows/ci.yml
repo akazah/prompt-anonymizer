@@ -75,9 +75,9 @@ jobs:
         working-directory: web
         run: pnpm lint
 
-      - name: Test (vitest)
+      - name: Test (vitest, all packages)
         working-directory: web
-        run: pnpm --filter @prompt-anonymizer/core test
+        run: pnpm test
 
       - name: Build web + extension (incl. core dependency)
         working-directory: web

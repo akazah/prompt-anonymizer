@@ -41,6 +41,9 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Desktop app** | Download from [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.AppImage` / `.deb`) | Tauri 2. Unsigned for now — your OS will warn on first launch. |
 | **Chrome extension** | `prompt-anonymizer-extension-*.zip` from [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Unzip → `chrome://extensions` → enable Developer mode → "Load unpacked". Select text → right-click → *Anonymize selection*. |
 | **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (not on PyPI yet) | Presidio + spaCy. See Quickstart below. |
+| **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (not on npm yet — build from `web/packages/cli`) | Same commands and flags as the Python CLI; transformers.js NER, fully on-device. |
+| **Web Component** | `@prompt-anonymizer/element` (not on npm yet) | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (not on npm yet) | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
 
 ## Quickstart (Python)
 
@@ -70,6 +73,55 @@ prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
   -t "山田太郎の電話は090-1234-5678"
 prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 ```
+
+## Quickstart (JavaScript / TypeScript)
+
+The Node CLI mirrors the Python CLI (same commands, flags and JSON output),
+running the TypeScript core with transformers.js NER on-device:
+
+```bash
+# Not published to npm yet — build from the repo:
+cd web && pnpm install && pnpm --filter "./packages/*" build
+node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
+# Once published: npx @prompt-anonymizer/cli anonymize -t "..."
+```
+
+To embed the ready-made anonymize → restore panel in any frontend, use the
+framework-agnostic web component:
+
+```html
+<script type="module">
+  import { definePromptAnonymizer } from "@prompt-anonymizer/element";
+  definePromptAnonymizer();
+</script>
+<prompt-anonymizer language="auto"></prompt-anonymizer>
+```
+
+React (`@prompt-anonymizer/react`) and Vue 3 (`@prompt-anonymizer/vue`) ship
+a typed `<AnonymizerPanel />` wrapping that element:
+
+```tsx
+import { AnonymizerPanel } from "@prompt-anonymizer/react"; // or "@prompt-anonymizer/vue"
+
+<AnonymizerPanel language="auto" denyList={["ProjectX"]}
+  onAnonymize={(result) => console.log(result.text)} />
+```
+
+For custom UIs, both packages also expose the anonymize → LLM → restore
+session as a hook / composable:
+
+```ts
+import { useAnonymizer } from "@prompt-anonymizer/react"; // or "@prompt-anonymizer/vue"
+
+const { anonymize, restore, mapping, busy, error } = useAnonymizer();
+const result = await anonymize(input, { language: "ja" });
+// send result.text to the LLM — the mapping never leaves the device — then:
+const { text: restored, unresolved } = await restore(llmReply);
+```
+
+By default detection is regex-only (emails, phone numbers, …); pass a
+`ner` (e.g. `new TransformersNerBackend()` from `@prompt-anonymizer/core`)
+to also mask names and locations.
 
 ## How it works
 
