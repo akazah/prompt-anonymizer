@@ -133,9 +133,7 @@ def _line_col(text: str, offset: int) -> tuple[int, int]:
     return line, offset - text.rfind("\n", 0, offset)
 
 
-def _scan_inputs(
-    files: list[Path] | None, text: str | None
-) -> list[tuple[str, str]]:
+def _scan_inputs(files: list[Path] | None, text: str | None) -> list[tuple[str, str]]:
     """Resolve scan targets to ``(display name, content)`` pairs."""
     if files:
         if text is not None:
@@ -207,9 +205,7 @@ def scan(
             return scan_text(content, deny_list=deny, allow_list=allow)
         lang = guess_language(content) if language == "auto" else language
         if lang not in anonymizers:
-            anonymizers[lang] = PromptAnonymizer(
-                languages=[lang], deny_list=deny, allow_list=allow
-            )
+            anonymizers[lang] = PromptAnonymizer(languages=[lang], deny_list=deny, allow_list=allow)
         return anonymizers[lang].anonymize(content, language=lang).entities
 
     findings: list[dict[str, object]] = []
