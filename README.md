@@ -26,11 +26,13 @@ always gets the same label, the LLM's answer still makes sense. When the reply
 comes back, the mapping — which never left your device — restores the real
 values.
 
-Supported languages: Japanese (`ja`), English (`en`), Spanish (`es`), and
-Vietnamese (`vi`). The default `PromptAnonymizer(languages=…)` remains
-`("en", "ja")`; pass `languages=["es"]` or `languages=["vi"]` (or include them
-in a multi-language list) to opt in. The browser UI adds Español / Tiếng Việt
-to the language picker; auto-detect distinguishes all four.
+Supported languages: English (`en`), Japanese (`ja`), Spanish (`es`),
+Vietnamese (`vi`), and — new — Chinese (`zh`), Korean (`ko`), French (`fr`),
+German (`de`), Portuguese (`pt`) and Italian (`it`). The default
+`PromptAnonymizer(languages=…)` remains `("en", "ja")`; every other language
+is opt-in via `languages=[...]`. All UI language pickers and auto-detect
+cover all ten. Language support is registry-driven — adding a language is one
+registry entry (`languages.py` / `types.ts`) plus one label file.
 
 Detection runs on-device (WebGPU / WASM in the browser, spaCy or local
 transformers in Python). Don't take our word for it: open DevTools, watch
@@ -63,7 +65,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 <img alt="Browser app demo: anonymize, mapping, restore round-trip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
 
 <details>
-<summary>CLI demo (Japanese / English — Spanish and Vietnamese also supported)</summary>
+<summary>CLI demo (Japanese / English — the other eight languages work the same)</summary>
 
 <img alt="CLI demo (Japanese)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLI demo (English)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
 </details>
@@ -95,6 +97,8 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: no official spaCy pipeline — WikiNER
+# zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — or
+# install every sm model at once: uv sync --group models (lg: --group models-lg)
 ```
 
 ```python
@@ -121,12 +125,13 @@ llm_output = call_your_llm(result.text)          # labels survive the round trip
 pa.deanonymize(llm_output, result.mapping)       # real values restored, locally
 ```
 
-CLI (`-l ja|en|es|vi`):
+CLI (`-l ja|en|es|vi|zh|ko|fr|de|pt|it`):
 
 ```bash
 prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
   -t "山田太郎の電話は090-1234-5678"
 prompt-anonymizer anonymize -l es -t "El cliente es Javier Moreno, teléfono 612 345 678"
+prompt-anonymizer anonymize -l fr -t "Le client est Pierre Durand, téléphone 06 12 34 56 78"
 prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 ```
 
@@ -265,9 +270,9 @@ the category has earned the skepticism.)
 ## How it works
 
 1. Detection — Presidio + spaCy NER (Python) or transformers.js NER + regex
-   recognizers (browser/desktop/extension), extended with locale-specific phone
-   patterns (JP, US/NANP, Spain +34 / grouped mobiles and landlines, Vietnam
-   mobile and landline formats) and Japanese-specific recognizers (〒 postal
+   recognizers (browser/desktop/extension), extended with registry-driven,
+   locale-specific phone patterns (JP, US/NANP, ES, VN, CN, KR, FR, DE, PT,
+   IT) and Japanese-specific recognizers (〒 postal
    codes, My Number with check-digit validation). Emails and credit cards are
    language-agnostic; JP_POSTAL_CODE and JP_MY_NUMBER are detected in every
    language mode.
@@ -284,13 +289,17 @@ the category has earned the skepticism.)
 | PERSON | 人名 | Name | Nombre | Tên | NER |
 | LOCATION | 住所 | Location | Dirección | ĐịaChỉ | NER |
 | EMAIL_ADDRESS | メールアドレス | Email | Correo | Email | pattern |
-| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | pattern (JP/US/ES/VI) + libphonenumber (Python) |
+| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | registry-driven per-language patterns + libphonenumber regions (JP/US/ES/VN/CN/KR/FR/DE/PT/IT) |
 | JP_POSTAL_CODE | 郵便番号 | PostalCode | CódigoPostal | MãBưuĐiện | pattern (custom) |
 | JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | pattern + check digit (custom) |
 | CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | pattern + Luhn check (both cores, all languages) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | exact match |
 | US_SSN (opt-in) | 社会保障番号 | SSN | SSN | SSN | pattern + invalidation rules (both cores, all languages) |
 | IBAN_CODE (opt-in) | IBAN | IBAN | IBAN | IBAN | pattern + mod-97 check (both cores, all languages) |
+
+Labels for the six new languages (zh, ko, fr, de, pt, it) ship in
+`src/prompt_anonymizer/labels/*.yaml` (Python) and in `LABELS` in
+`web/packages/core/src/labeling.ts` (TS).
 
 `deny_list` forces masking of specific strings; `allow_list` exempts them.
 Opt-in entities are not detected by default — request them explicitly:
@@ -299,12 +308,14 @@ Opt-in entities are not detected by default — request them explicitly:
 
 ### Optional transformer NER backend (Python)
 
-The default NER is spaCy (`ja` → `ja_core_news_sm` / `ja_core_news_lg`,
-`en` → `en_core_web_sm` / `en_core_web_lg`, `es` → `es_core_news_sm` /
-`es_core_news_lg`). Vietnamese has no official spaCy pipeline — both model
-sizes use the multi-language WikiNER model `xx_ent_wiki_sm` for tokenization
-and baseline PER/LOC NER. For good Vietnamese name/location recall, use the
-transformer backend instead (see below).
+The default NER is spaCy, with the per-language model resolved from the
+central registry (see the table below; install every `sm` model with
+`uv sync --group models`, the `lg` ones with `--group models-lg`, or use
+`python -m spacy download <model>`). Vietnamese has no official spaCy
+pipeline — both model sizes use the multi-language WikiNER model
+`xx_ent_wiki_sm` for tokenization and baseline PER/LOC NER. For good
+Vietnamese name/location recall, use the transformer backend instead (see
+below).
 
 For markedly better PERSON/LOCATION recall (especially `ja` and `vi`),
 install the `hf` extra and switch the backend — per-language Hugging Face
@@ -316,12 +327,23 @@ models, fully locally:
 | `en` | `en_core_web_sm` / `en_core_web_lg` | `dslim/bert-base-NER` |
 | `es` | `es_core_news_sm` / `es_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
 | `vi` | `xx_ent_wiki_sm` (both sizes) | `NlpHUST/ner-vietnamese-electra-base` |
+| `zh` | `zh_core_web_sm` / `zh_core_web_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `ko` | `ko_core_news_sm` / `ko_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `fr` | `fr_core_news_sm` / `fr_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `de` | `de_core_news_sm` / `de_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `pt` | `pt_core_news_sm` / `pt_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `it` | `it_core_news_sm` / `it_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+
+The multilingual HRL model covers `de`/`es`/`fr`/`it`/`pt`/`zh` natively;
+Korean has no dedicated checkpoint in this family and relies on mBERT's
+cross-lingual transfer.
 
 The TypeScript core (browser / extension / desktop / Node CLI) runs
 transformers.js ONNX models: `ja` and `en` use the same families as above;
-`es` and `vi` both use `Xenova/bert-base-multilingual-cased-ner-hrl` (no
-ONNX export of a dedicated Vietnamese NER model exists; the multilingual
-model transfers well to Vietnamese).
+`es`, `vi`, `zh`, `ko`, `fr`, `de`, `pt` and `it` all use
+`Xenova/bert-base-multilingual-cased-ner-hrl` (no ONNX export of a dedicated
+Vietnamese NER model exists; the multilingual model transfers well to
+Vietnamese, and the same transfer caveat applies to Korean).
 
 ```bash
 pip install "prompt-anonymizer[hf]"
@@ -341,13 +363,16 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 ## Accuracy
 
 Measured span-level on a seeded synthetic golden set (200 documents each for
-`ja`, `en`, `es`, and `vi` in `tests/golden/golden_{ja,en,es,vi}.json`) —
+all ten languages in `tests/golden/golden_{lang}.json`) —
 see [docs/EVAL.md](docs/EVAL.md) for the full table and
-`uv run python -m prompt_anonymizer.evals` to reproduce (defaults to all four
+`uv run python -m prompt_anonymizer.evals` to reproduce (defaults to all ten
 languages). Highlights (Python core, `sm` models): ja PHONE_NUMBER /
 EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD recall 1.00; ja PERSON recall
 0.82 with spaCy, 1.00 with `ner_backend="hf"`. es/vi PHONE_NUMBER recall is
 also 1.00; vi PERSON/LOCATION benefit strongly from `ner_backend="hf"`.
+Structured-PII recall (phone / email / card) is 1.00 for the six new
+languages (zh, ko, fr, de, pt, it) on the golden set — [docs/EVAL.md](docs/EVAL.md)
+has the TS-core table; Python NER numbers are produced by the weekly eval.
 
 These numbers exist to catch regressions, not to promise recall on
 real-world text.
