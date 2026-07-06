@@ -1,4 +1,4 @@
-[English](README.md) | 日本語
+[English](README.md) | 日本語 | [Español](README_es.md) | [Tiếng Việt](README_vi.md)
 
 # Prompt Anonymizer
 

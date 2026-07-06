@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   labels unchanged. Vietnamese has no official spaCy pipeline (`xx_ent_wiki_sm`
   for both model sizes); `ner_backend="hf"` (`NlpHUST/ner-vietnamese-electra-base`)
   is recommended for name/location recall.
+- Translated READMEs: `README_es.md` (Español) and `README_vi.md`
+  (Tiếng Việt), cross-linked from the language switcher in `README.md` and
+  `README_ja.md`.
 - New JS-ecosystem targets built on the shared TS core (label format and
   mapping semantics unchanged):
   - `@prompt-anonymizer/cli` — Node CLI (`npx @prompt-anonymizer/cli`)
