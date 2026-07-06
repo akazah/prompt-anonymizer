@@ -20,8 +20,8 @@
   inset: -80px -40px auto;
   height: 260px;
   background:
-    radial-gradient(600px 300px at 18% 0%, rgba(139, 124, 248, 0.16), transparent 70%),
-    radial-gradient(500px 260px at 75% -10%, rgba(34, 211, 238, 0.08), transparent 70%);
+    radial-gradient(600px 300px at 18% 0%, rgba(23, 24, 28, 0.05), transparent 70%),
+    radial-gradient(500px 260px at 75% -10%, rgba(23, 24, 28, 0.03), transparent 70%);
   pointer-events: none;
   z-index: -1;
 }
@@ -43,7 +43,8 @@ header {
   border-radius: var(--radius);
   background: var(--bg-panel);
   border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow-card-inset), 0 0 20px rgba(139, 124, 248, 0.18);
+  box-shadow: var(--shadow-card), var(--shadow-card-inset);
+  color: var(--text);
 }
 
 header h1 {
@@ -51,11 +52,7 @@ header h1 {
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.02em;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--text);
 }
 
 header .spacer,
@@ -127,13 +124,13 @@ input.switch::after {
 }
 
 input.switch:checked {
-  background: rgba(139, 124, 248, 0.35);
-  border-color: var(--chip-border);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 input.switch:checked::after {
   transform: translateX(15px);
-  background: var(--accent-hover);
+  background: #ffffff;
 }
 
 input.switch:focus-visible {

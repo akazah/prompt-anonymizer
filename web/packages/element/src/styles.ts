@@ -1,9 +1,9 @@
 /*
  * Self-contained styles for the published <prompt-anonymizer> element.
- * Dark by default to match the prompt-anonymizer brand; every color is
- * exposed as a --pa-* custom property so host pages can re-theme without
- * forking. Keep the default values in sync with
- * packages/theme/tokens.css (this package must stay dependency-free).
+ * Light, neutral-monochrome by default to match the prompt-anonymizer
+ * brand; every color is exposed as a --pa-* custom property so host
+ * pages can re-theme without forking. Keep the default values in sync
+ * with packages/theme/tokens.css (this package must stay dependency-free).
  */
 export const PANEL_STYLES = `
 :host {
@@ -12,20 +12,21 @@ export const PANEL_STYLES = `
     "Noto Sans JP", system-ui, sans-serif;
   line-height: 1.6;
 
-  --pa-bg: #10121a;
-  --pa-bg-input: #0b0d13;
-  --pa-border: rgba(255, 255, 255, 0.08);
-  --pa-border-strong: rgba(255, 255, 255, 0.14);
-  --pa-text: #eceef4;
-  --pa-text-dim: #9aa1b2;
-  --pa-text-faint: #646b7c;
-  --pa-accent: #8b7cf8;
-  --pa-accent-hover: #9d90fa;
-  --pa-ok: #34d399;
-  --pa-warn: #f0b34e;
-  --pa-warn-bg: rgba(240, 179, 78, 0.12);
-  --pa-gradient-btn: linear-gradient(180deg, #8b7cf8, #6d5ef5);
-  --pa-focus-ring: 0 0 0 3px rgba(139, 124, 248, 0.35);
+  --pa-bg: #ffffff;
+  --pa-bg-input: #fafafb;
+  --pa-border: rgba(0, 0, 0, 0.08);
+  --pa-border-strong: rgba(0, 0, 0, 0.14);
+  --pa-text: #17181c;
+  --pa-text-dim: #5c616b;
+  --pa-text-faint: #9aa0aa;
+  --pa-accent: #17181c;
+  --pa-accent-hover: #2e3138;
+  --pa-ok: #047857;
+  --pa-warn: #b45309;
+  --pa-warn-bg: rgba(180, 83, 9, 0.08);
+  --pa-btn-primary-bg: linear-gradient(180deg, #26282e, #17181c);
+  --pa-btn-primary-bg-hover: linear-gradient(180deg, #33363d, #232529);
+  --pa-focus-ring: 0 0 0 3px rgba(23, 24, 28, 0.18);
   --pa-radius: 12px;
   --pa-radius-sm: 8px;
   --pa-font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
@@ -37,14 +38,13 @@ export const PANEL_STYLES = `
   border: 1px solid var(--pa-border);
   border-radius: var(--pa-radius);
   padding: 16px 18px;
-  box-shadow: 0 0 0 1px var(--pa-border), 0 8px 24px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 1px 2px rgba(16, 17, 20, 0.04), 0 8px 24px rgba(16, 17, 20, 0.05);
 }
 
 .ner-warning {
   color: var(--pa-warn);
   background: var(--pa-warn-bg);
-  border: 1px solid rgba(240, 179, 78, 0.3);
+  border: 1px solid rgba(180, 83, 9, 0.25);
   padding: 8px 12px;
   border-radius: var(--pa-radius-sm);
   font-size: 13px;
@@ -82,7 +82,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background: #141724;
+  background: #f2f3f5;
 }
 
 button:active:not(:disabled) {
@@ -98,18 +98,18 @@ textarea:focus-visible {
 
 button.anonymize,
 button.restore {
-  background: var(--pa-gradient-btn);
+  background: var(--pa-btn-primary-bg);
   color: #fff;
   border-color: transparent;
   font-weight: 600;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 button.anonymize:hover:not(:disabled),
 button.restore:hover:not(:disabled) {
-  background: linear-gradient(180deg, var(--pa-accent-hover), #7a6cf7);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 0 24px rgba(109, 94, 245, 0.28);
+  background: var(--pa-btn-primary-bg-hover);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 2px 8px rgba(16, 17, 20, 0.18);
 }
 
 button:disabled {
@@ -183,7 +183,7 @@ table.mapping td.label-cell {
   font-family: var(--pa-font-mono);
   font-weight: 600;
   white-space: nowrap;
-  color: var(--pa-accent-hover);
+  color: var(--pa-text);
 }
 
 button.copy {
@@ -199,7 +199,7 @@ section.restore {
 .unresolved-warning {
   color: var(--pa-warn);
   background: var(--pa-warn-bg);
-  border: 1px solid rgba(240, 179, 78, 0.3);
+  border: 1px solid rgba(180, 83, 9, 0.25);
   padding: 8px 12px;
   border-radius: var(--pa-radius-sm);
   font-size: 13px;

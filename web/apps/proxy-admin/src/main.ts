@@ -22,7 +22,7 @@ app.innerHTML = `
   <div class="container">
     <div class="hero">
       <header>
-        <span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="url(#pa-grad)" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="url(#pa-grad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="pa-grad" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#8b7cf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg></span>
+        <span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h1>Prompt Anonymizer — Proxy Admin</h1>
         <span id="proxy-badge" class="badge down"><span class="dot"></span><span id="proxy-status-text">proxy: offline</span></span>
         <span id="version-badge" class="badge version">v—</span>
