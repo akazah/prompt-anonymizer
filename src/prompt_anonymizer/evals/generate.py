@@ -91,6 +91,14 @@ def _us_phone(rng: random.Random) -> str:
     return f"({rng.randint(201, 989)}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
 
 
+def _credit_card(fake: Faker, rng: random.Random) -> str:
+    """A Luhn-valid 16-digit Visa number, bare or hyphenated 4-4-4-4."""
+    number = fake.credit_card_number(card_type="visa16")
+    if rng.random() < 0.5:
+        return "-".join(number[i : i + 4] for i in range(0, 16, 4))
+    return number
+
+
 def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
     b = _Builder()
     name = fake.name()
@@ -115,11 +123,14 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             phone, "PHONE_NUMBER"
         ).lit("。")
     else:
+        card = _credit_card(fake, rng)
         b.lit("お問い合わせありがとうございます。ご登録のお名前は ").pii(name, "PERSON").lit(
             " 様、ご住所は "
         ).pii(city, "LOCATION").lit(" で間違いないでしょうか。折り返しは ").pii(
             phone, "PHONE_NUMBER"
-        ).lit(" までお願いします。控えは ").pii(email, "EMAIL_ADDRESS").lit(" に送信済みです。")
+        ).lit(" までお願いします。お支払いのカード番号は ").pii(card, "CREDIT_CARD").lit(
+            " 、控えは "
+        ).pii(email, "EMAIL_ADDRESS").lit(" に送信済みです。")
 
     return GoldenCase(id=case_id, language="ja", genre=genre, text=b.text, spans=b.spans)
 
@@ -145,11 +156,14 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             email, "EMAIL_ADDRESS"
         ).lit(". Direct line: ").pii(phone, "PHONE_NUMBER").lit(".")
     else:
+        card = _credit_card(fake, rng)
         b.lit("Thank you for contacting support. We have your name as ").pii(name, "PERSON").lit(
             " and your address in "
         ).pii(city, "LOCATION").lit(". We will call you back at ").pii(phone, "PHONE_NUMBER").lit(
-            ". A copy was sent to "
-        ).pii(email, "EMAIL_ADDRESS").lit(".")
+            ". The card on file is "
+        ).pii(card, "CREDIT_CARD").lit(". A copy was sent to ").pii(email, "EMAIL_ADDRESS").lit(
+            "."
+        )
 
     return GoldenCase(id=case_id, language="en", genre=genre, text=b.text, spans=b.spans)
 

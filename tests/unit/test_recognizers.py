@@ -60,3 +60,28 @@ def test_ja_postal_regex_patterns() -> None:
     assert patterns["jp_postal_bare"].search("100-0001")
     # Must not match inside a phone number.
     assert not patterns["jp_postal_bare"].search("090-1234-5678")
+
+
+def test_credit_card_regex_matches_next_to_cjk() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.credit_card import CreditCardLookaroundRecognizer
+
+    pattern = re.compile(CreditCardLookaroundRecognizer.PATTERNS[0].regex)
+    # Presidio's built-in \b anchors fail on both of these.
+    assert pattern.search("カード番号は4111111111111111です")
+    assert pattern.search("番号:4111-1111-1111-1111。")
+    assert pattern.search("The card is 4111 1111 1111 1111.")
+    # Not inside longer digit runs.
+    assert not pattern.search("94111111111111111")
+    # 13-digit Unix timestamps are excluded (upstream fix preserved).
+    assert not pattern.search("timestamp 1748503543012 end")
+
+
+def test_credit_card_luhn_validation() -> None:
+    from prompt_anonymizer.recognizers.credit_card import CreditCardLookaroundRecognizer
+
+    recognizer = CreditCardLookaroundRecognizer(supported_language="ja")
+    assert recognizer.validate_result("4111111111111111") is True
+    assert recognizer.validate_result("4111-1111-1111-1111") is True
+    assert recognizer.validate_result("4111111111111112") is False
