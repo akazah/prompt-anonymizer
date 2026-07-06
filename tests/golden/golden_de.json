@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "de-0000",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Lissy Holt. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Wesel sein. Sie erreichen mich unter +49 370 4817401 oder per E-Mail an solveigdoerschner@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Lissy Holt"
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Wesel"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 370 4817401"
+   },
+   {
+    "start": 177,
+    "end": 206,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "solveigdoerschner@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0001",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Univ.Prof. Donald Textor und Luigi Radisch. Das nächste Treffen findet in Klötze statt. Aufgabe: Unterlagen senden an johanntabea@example.org. Durchwahl: 0167 2245826.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Donald Textor"
+   },
+   {
+    "start": 53,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Luigi Radisch"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Klötze"
+   },
+   {
+    "start": 142,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "johanntabea@example.org"
+   },
+   {
+    "start": 178,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0167 2245826"
+   }
+  ]
+ },
+ {
+  "id": "de-0002",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Wera Rose-Dörr und Ihre Adresse liegt in Gransee. Wir rufen Sie zurück unter 0152 7793094. Die hinterlegte Karte ist 4778608911409342. Eine Kopie wurde gesendet an kostolzinedith@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Wera Rose-Dörr"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Gransee"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0152 7793094"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4778608911409342"
+   },
+   {
+    "start": 221,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kostolzinedith@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0003",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Constance Heidrich. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Jüterbog sein. Sie erreichen mich unter 0173 2486770 oder per E-Mail an niko38@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Constance Heidrich"
+   },
+   {
+    "start": 113,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Jüterbog"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0173 2486770"
+   },
+   {
+    "start": 185,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "niko38@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0004",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Ira Dowerg und Annie Thies B.Eng.. Das nächste Treffen findet in Backnang statt. Aufgabe: Unterlagen senden an aldograf@example.com. Durchwahl: +49 573 301177.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Ira Dowerg"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Annie Thies B.Eng."
+   },
+   {
+    "start": 89,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Backnang"
+   },
+   {
+    "start": 135,
+    "end": 155,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aldograf@example.com"
+   },
+   {
+    "start": 168,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 573 301177"
+   }
+  ]
+ },
+ {
+  "id": "de-0005",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Gerlinde Kuhl und Ihre Adresse liegt in Karlsruhe. Wir rufen Sie zurück unter 0988 3099587. Die hinterlegte Karte ist 4402-6273-3722-5722. Eine Kopie wurde gesendet an zehraschmidt@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Gerlinde Kuhl"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Karlsruhe"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0988 3099587"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4402-6273-3722-5722"
+   },
+   {
+    "start": 225,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zehraschmidt@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0006",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ahmet Trubin. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Niesky sein. Sie erreichen mich unter 0439 9561315 oder per E-Mail an pehlert@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ahmet Trubin"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Niesky"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0439 9561315"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pehlert@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0007",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Fred Barkholz und Ahmet Misicher B.Eng.. Das nächste Treffen findet in Badoberan statt. Aufgabe: Unterlagen senden an emanuel39@example.net. Durchwahl: 0165 2168319.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Fred Barkholz"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Ahmet Misicher B.Eng."
+   },
+   {
+    "start": 95,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Badoberan"
+   },
+   {
+    "start": 142,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emanuel39@example.net"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0165 2168319"
+   }
+  ]
+ },
+ {
+  "id": "de-0008",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ullrich Müller und Ihre Adresse liegt in Kelheim. Wir rufen Sie zurück unter +49 128 6441811. Die hinterlegte Karte ist 4889148978135114. Eine Kopie wurde gesendet an smentzel@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Ullrich Müller"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Kelheim"
+   },
+   {
+    "start": 134,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 128 6441811"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4889148978135114"
+   },
+   {
+    "start": 224,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "smentzel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0009",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Jiri Lehmann. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Burglengenfeld sein. Sie erreichen mich unter 0549 5367013 oder per E-Mail an damarislindau@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Jiri Lehmann"
+   },
+   {
+    "start": 107,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Burglengenfeld"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0549 5367013"
+   },
+   {
+    "start": 185,
+    "end": 210,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "damarislindau@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0010",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Caren Söding und Herr Patrick Jungfer. Das nächste Treffen findet in Görlitz statt. Aufgabe: Unterlagen senden an julie80@example.com. Durchwahl: 074 7875318.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Caren Söding"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Herr Patrick Jungfer"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Görlitz"
+   },
+   {
+    "start": 138,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "julie80@example.com"
+   },
+   {
+    "start": 170,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "074 7875318"
+   }
+  ]
+ },
+ {
+  "id": "de-0011",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Pierre Dehmel und Ihre Adresse liegt in Teterow. Wir rufen Sie zurück unter 0948 8528807. Die hinterlegte Karte ist 4574-0751-0034-6394. Eine Kopie wurde gesendet an mary76@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Pierre Dehmel"
+   },
+   {
+    "start": 97,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Teterow"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0948 8528807"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4574-0751-0034-6394"
+   },
+   {
+    "start": 223,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mary76@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0012",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dipl.-Ing. Silvio Schenk. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Burglengenfeld sein. Sie erreichen mich unter +49 569 2119040 oder per E-Mail an heidemarie81@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Silvio Schenk"
+   },
+   {
+    "start": 119,
+    "end": 133,
+    "entity_type": "LOCATION",
+    "value": "Burglengenfeld"
+   },
+   {
+    "start": 165,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 569 2119040"
+   },
+   {
+    "start": 200,
+    "end": 224,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heidemarie81@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0013",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Klaus-Werner Siering und Ing. Isolde Schwital. Das nächste Treffen findet in Brilon statt. Aufgabe: Unterlagen senden an ploeffler@example.net. Durchwahl: 0160 4903904.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Klaus-Werner Siering"
+   },
+   {
+    "start": 49,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Ing. Isolde Schwital"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Brilon"
+   },
+   {
+    "start": 145,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ploeffler@example.net"
+   },
+   {
+    "start": 179,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0160 4903904"
+   }
+  ]
+ },
+ {
+  "id": "de-0014",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Reza Kallert und Ihre Adresse liegt in Sondershausen. Wir rufen Sie zurück unter 0339 3237990. Die hinterlegte Karte ist 4459-5954-3646-9289. Eine Kopie wurde gesendet an heinz-walterschinke@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Reza Kallert"
+   },
+   {
+    "start": 96,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Sondershausen"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0339 3237990"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4459-5954-3646-9289"
+   },
+   {
+    "start": 228,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heinz-walterschinke@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0015",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Prof. Gretel Krause. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Burgdorf sein. Sie erreichen mich unter 0151 1185037 oder per E-Mail an gjunitz@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Prof. Gretel Krause"
+   },
+   {
+    "start": 114,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Burgdorf"
+   },
+   {
+    "start": 154,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0151 1185037"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gjunitz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0016",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Meinhard Hamann und Univ.Prof. Thomas Steinberg. Das nächste Treffen findet in Görlitz statt. Aufgabe: Unterlagen senden an abramdrewes@example.com. Durchwahl: +49 957 6238260.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Meinhard Hamann"
+   },
+   {
+    "start": 44,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Thomas Steinberg"
+   },
+   {
+    "start": 103,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Görlitz"
+   },
+   {
+    "start": 148,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "abramdrewes@example.com"
+   },
+   {
+    "start": 184,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 957 6238260"
+   }
+  ]
+ },
+ {
+  "id": "de-0017",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Hans-Werner Wernecke und Ihre Adresse liegt in Viersen. Wir rufen Sie zurück unter 0269 9358354. Die hinterlegte Karte ist 4407006119470605. Eine Kopie wurde gesendet an heinzalban@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Hans-Werner Wernecke"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Viersen"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0269 9358354"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4407006119470605"
+   },
+   {
+    "start": 227,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heinzalban@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0018",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Gotthold Carsten. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Wesel sein. Sie erreichen mich unter 0880 4591382 oder per E-Mail an heinz-willi54@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Gotthold Carsten"
+   },
+   {
+    "start": 111,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Wesel"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0880 4591382"
+   },
+   {
+    "start": 180,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heinz-willi54@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0019",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Uta Benthin und Univ.Prof. Cemal Bender. Das nächste Treffen findet in München statt. Aufgabe: Unterlagen senden an ebertsven@example.net. Durchwahl: 0145 7711491.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Uta Benthin"
+   },
+   {
+    "start": 40,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Cemal Bender"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "München"
+   },
+   {
+    "start": 140,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ebertsven@example.net"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0145 7711491"
+   }
+  ]
+ },
+ {
+  "id": "de-0020",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Univ.Prof. Ulrich Briemer und Ihre Adresse liegt in Gardelegen. Wir rufen Sie zurück unter 0175 3574079. Die hinterlegte Karte ist 4219-0490-3924-0953. Eine Kopie wurde gesendet an aleksandrascholl@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Ulrich Briemer"
+   },
+   {
+    "start": 109,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Gardelegen"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0175 3574079"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4219-0490-3924-0953"
+   },
+   {
+    "start": 238,
+    "end": 266,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aleksandrascholl@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0021",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Krzysztof Fischer. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Kitzingen sein. Sie erreichen mich unter 0162 1531750 oder per E-Mail an leif97@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Krzysztof Fischer"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Kitzingen"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0162 1531750"
+   },
+   {
+    "start": 185,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leif97@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0022",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Ing. Toni Kroker B.A. und Ing. Friedrich Kraushaar. Das nächste Treffen findet in Schweinfurt statt. Aufgabe: Unterlagen senden an rbarkholz@example.com. Durchwahl: 0375 6815132.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Ing. Toni Kroker B.A."
+   },
+   {
+    "start": 50,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Ing. Friedrich Kraushaar"
+   },
+   {
+    "start": 106,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Schweinfurt"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rbarkholz@example.com"
+   },
+   {
+    "start": 189,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0375 6815132"
+   }
+  ]
+ },
+ {
+  "id": "de-0023",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ulrich Dörschner und Ihre Adresse liegt in Rockenhausen. Wir rufen Sie zurück unter 0153 2424950. Die hinterlegte Karte ist 4041-9830-7352-8440. Eine Kopie wurde gesendet an boucseinralf-peter@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Ulrich Dörschner"
+   },
+   {
+    "start": 100,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Rockenhausen"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0153 2424950"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4041-9830-7352-8440"
+   },
+   {
+    "start": 231,
+    "end": 261,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "boucseinralf-peter@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0024",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Herr Hans-Martin Misicher MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Arnstadt sein. Sie erreichen mich unter +49 335 194161 oder per E-Mail an thedahahn@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Herr Hans-Martin Misicher MBA."
+   },
+   {
+    "start": 125,
+    "end": 133,
+    "entity_type": "LOCATION",
+    "value": "Arnstadt"
+   },
+   {
+    "start": 165,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 335 194161"
+   },
+   {
+    "start": 199,
+    "end": 220,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "thedahahn@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0025",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Wulf Sölzer und Univ.Prof. Diedrich Sorgatz. Das nächste Treffen findet in Bernburg statt. Aufgabe: Unterlagen senden an ingrid30@example.com. Durchwahl: +49 221 6570523.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Wulf Sölzer"
+   },
+   {
+    "start": 40,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Diedrich Sorgatz"
+   },
+   {
+    "start": 99,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Bernburg"
+   },
+   {
+    "start": 145,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ingrid30@example.com"
+   },
+   {
+    "start": 178,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 221 6570523"
+   }
+  ]
+ },
+ {
+  "id": "de-0026",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Miodrag Rosenow und Ihre Adresse liegt in Passau. Wir rufen Sie zurück unter 0163 4421415. Die hinterlegte Karte ist 4124-0838-5136-3167. Eine Kopie wurde gesendet an detlevlangern@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Miodrag Rosenow"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Passau"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0163 4421415"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4124-0838-5136-3167"
+   },
+   {
+    "start": 224,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "detlevlangern@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0027",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ivan Junk. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Magdeburg sein. Sie erreichen mich unter 0167 3827768 oder per E-Mail an metzvaleri@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Ivan Junk"
+   },
+   {
+    "start": 104,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Magdeburg"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0167 3827768"
+   },
+   {
+    "start": 177,
+    "end": 199,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "metzvaleri@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0028",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Marit Junken und Zita Reising-Sauer. Das nächste Treffen findet in Worbis statt. Aufgabe: Unterlagen senden an ditschlerinignatz@example.net. Durchwahl: 0159 9587391.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Marit Junken"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Zita Reising-Sauer"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Worbis"
+   },
+   {
+    "start": 135,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ditschlerinignatz@example.net"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0159 9587391"
+   }
+  ]
+ },
+ {
+  "id": "de-0029",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Francisco Reuter MBA. und Ihre Adresse liegt in Großenhain. Wir rufen Sie zurück unter 0111 7459902. Die hinterlegte Karte ist 4888-8389-8856-2452. Eine Kopie wurde gesendet an gkabus@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Francisco Reuter MBA."
+   },
+   {
+    "start": 105,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Großenhain"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0111 7459902"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4888-8389-8856-2452"
+   },
+   {
+    "start": 234,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gkabus@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0030",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Heini Briemer. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Lüdenscheid sein. Sie erreichen mich unter 0162 4970453 oder per E-Mail an wrohleder@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Heini Briemer"
+   },
+   {
+    "start": 108,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Lüdenscheid"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0162 4970453"
+   },
+   {
+    "start": 183,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wrohleder@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0031",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Gerhart Rogge und Rupert Schulz. Das nächste Treffen findet in Cloppenburg statt. Aufgabe: Unterlagen senden an nikolaosweiss@example.org. Durchwahl: 0171 9278615.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Gerhart Rogge"
+   },
+   {
+    "start": 42,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Rupert Schulz"
+   },
+   {
+    "start": 87,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Cloppenburg"
+   },
+   {
+    "start": 136,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nikolaosweiss@example.org"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0171 9278615"
+   }
+  ]
+ },
+ {
+  "id": "de-0032",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Sandor Hering und Ihre Adresse liegt in Cloppenburg. Wir rufen Sie zurück unter 0160 4180991. Die hinterlegte Karte ist 4831-4411-2897-0848. Eine Kopie wurde gesendet an hroskoth@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Sandor Hering"
+   },
+   {
+    "start": 97,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Cloppenburg"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0160 4180991"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4831-4411-2897-0848"
+   },
+   {
+    "start": 227,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hroskoth@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0033",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Herr Claus-Dieter Bohnbach MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Stollberg sein. Sie erreichen mich unter 0407 1943003 oder per E-Mail an detlefriehl@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Herr Claus-Dieter Bohnbach MBA."
+   },
+   {
+    "start": 126,
+    "end": 135,
+    "entity_type": "LOCATION",
+    "value": "Stollberg"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0407 1943003"
+   },
+   {
+    "start": 199,
+    "end": 222,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "detlefriehl@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0034",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Hella Schmidtke und Nikolas Bonbach. Das nächste Treffen findet in Roth statt. Aufgabe: Unterlagen senden an fjunck@example.org. Durchwahl: 0170 1870388.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Hella Schmidtke"
+   },
+   {
+    "start": 44,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Nikolas Bonbach"
+   },
+   {
+    "start": 91,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Roth"
+   },
+   {
+    "start": 133,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fjunck@example.org"
+   },
+   {
+    "start": 164,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0170 1870388"
+   }
+  ]
+ },
+ {
+  "id": "de-0035",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Jasmina Heß und Ihre Adresse liegt in Main-Höchst. Wir rufen Sie zurück unter +49 642 1705019. Die hinterlegte Karte ist 4757656364296372. Eine Kopie wurde gesendet an gertraudlehmann@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Jasmina Heß"
+   },
+   {
+    "start": 95,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Main-Höchst"
+   },
+   {
+    "start": 135,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 642 1705019"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4757656364296372"
+   },
+   {
+    "start": 225,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gertraudlehmann@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0036",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Prof. Lidia Schuster B.A.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Badalzungen sein. Sie erreichen mich unter 0216 7194275 oder per E-Mail an aloisia69@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Prof. Lidia Schuster B.A."
+   },
+   {
+    "start": 120,
+    "end": 131,
+    "entity_type": "LOCATION",
+    "value": "Badalzungen"
+   },
+   {
+    "start": 163,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0216 7194275"
+   },
+   {
+    "start": 195,
+    "end": 216,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aloisia69@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0037",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Frau Antonie Kensy und Monja Trubin. Das nächste Treffen findet in Rastatt statt. Aufgabe: Unterlagen senden an patrizialoeffler@example.org. Durchwahl: 0950 7670661.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Frau Antonie Kensy"
+   },
+   {
+    "start": 47,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Monja Trubin"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Rastatt"
+   },
+   {
+    "start": 136,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patrizialoeffler@example.org"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0950 7670661"
+   }
+  ]
+ },
+ {
+  "id": "de-0038",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ing. Hajo Hübel und Ihre Adresse liegt in Koblenz. Wir rufen Sie zurück unter 0929 3253374. Die hinterlegte Karte ist 4575-3924-0196-2616. Eine Kopie wurde gesendet an kruschwitzdesiree@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Ing. Hajo Hübel"
+   },
+   {
+    "start": 99,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Koblenz"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0929 3253374"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4575-3924-0196-2616"
+   },
+   {
+    "start": 225,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kruschwitzdesiree@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0039",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dr. Mijo Beier MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Kaiserslautern sein. Sie erreichen mich unter 0178 3010336 oder per E-Mail an wbloch@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Dr. Mijo Beier MBA."
+   },
+   {
+    "start": 114,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Kaiserslautern"
+   },
+   {
+    "start": 160,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0178 3010336"
+   },
+   {
+    "start": 192,
+    "end": 210,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wbloch@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0040",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Univ.Prof. Giuseppina Ditschlerin B.A. und Sönke Patberg. Das nächste Treffen findet in Stuttgart statt. Aufgabe: Unterlagen senden an qkramer@example.net. Durchwahl: 0670 8554640.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Giuseppina Ditschlerin B.A."
+   },
+   {
+    "start": 67,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Sönke Patberg"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Stuttgart"
+   },
+   {
+    "start": 159,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qkramer@example.net"
+   },
+   {
+    "start": 191,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0670 8554640"
+   }
+  ]
+ },
+ {
+  "id": "de-0041",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dipl.-Ing. Georgios Koch II B.A. und Ihre Adresse liegt in Ochsenfurt. Wir rufen Sie zurück unter +49 637 8187828. Die hinterlegte Karte ist 4061901698433916. Eine Kopie wurde gesendet an andrzej72@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 89,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Georgios Koch II B.A."
+   },
+   {
+    "start": 116,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Ochsenfurt"
+   },
+   {
+    "start": 155,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 637 8187828"
+   },
+   {
+    "start": 198,
+    "end": 214,
+    "entity_type": "CREDIT_CARD",
+    "value": "4061901698433916"
+   },
+   {
+    "start": 245,
+    "end": 266,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andrzej72@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0042",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ferdi Martin-Kostolzin. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Arnstadt sein. Sie erreichen mich unter +49 117 4254933 oder per E-Mail an haaseotmar@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Ferdi Martin-Kostolzin"
+   },
+   {
+    "start": 117,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Arnstadt"
+   },
+   {
+    "start": 157,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 117 4254933"
+   },
+   {
+    "start": 192,
+    "end": 214,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haaseotmar@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0043",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Prof. Riza Rosemann und Slawomir Röhrdanz-Hartmann. Das nächste Treffen findet in Guben statt. Aufgabe: Unterlagen senden an corinne32@example.com. Durchwahl: 0117 1241134.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Prof. Riza Rosemann"
+   },
+   {
+    "start": 48,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Slawomir Röhrdanz-Hartmann"
+   },
+   {
+    "start": 106,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Guben"
+   },
+   {
+    "start": 149,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "corinne32@example.com"
+   },
+   {
+    "start": 183,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0117 1241134"
+   }
+  ]
+ },
+ {
+  "id": "de-0044",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Edda Siering-Putz und Ihre Adresse liegt in Siegen. Wir rufen Sie zurück unter 0176 9289463. Die hinterlegte Karte ist 4477-1181-8068-0270. Eine Kopie wurde gesendet an mesut06@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Edda Siering-Putz"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Siegen"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0176 9289463"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4477-1181-8068-0270"
+   },
+   {
+    "start": 226,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mesut06@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0045",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Burkhardt Ackermann. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Guben sein. Sie erreichen mich unter 0179 7968588 oder per E-Mail an reimar96@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Burkhardt Ackermann"
+   },
+   {
+    "start": 114,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Guben"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0179 7968588"
+   },
+   {
+    "start": 183,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reimar96@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0046",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Prof. Eckehard Binner und Dipl.-Ing. Helfried Hoffmann. Das nächste Treffen findet in Burglengenfeld statt. Aufgabe: Unterlagen senden an dorotheajuncken@example.com. Durchwahl: 0176 4206097.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Prof. Eckehard Binner"
+   },
+   {
+    "start": 50,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Helfried Hoffmann"
+   },
+   {
+    "start": 110,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Burglengenfeld"
+   },
+   {
+    "start": 162,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dorotheajuncken@example.com"
+   },
+   {
+    "start": 202,
+    "end": 214,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0176 4206097"
+   }
+  ]
+ },
+ {
+  "id": "de-0047",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Univ.Prof. Miroslav Grein Groth B.Eng. und Ihre Adresse liegt in Wismar. Wir rufen Sie zurück unter 0134 4760560. Die hinterlegte Karte ist 4416-0361-9413-0013. Eine Kopie wurde gesendet an skraushaar@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 95,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Miroslav Grein Groth B.Eng."
+   },
+   {
+    "start": 122,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Wismar"
+   },
+   {
+    "start": 157,
+    "end": 169,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0134 4760560"
+   },
+   {
+    "start": 197,
+    "end": 216,
+    "entity_type": "CREDIT_CARD",
+    "value": "4416-0361-9413-0013"
+   },
+   {
+    "start": 247,
+    "end": 269,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "skraushaar@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0048",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Prof. Jo Rogner. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Malchin sein. Sie erreichen mich unter 0155 5826868 oder per E-Mail an pstriebitz@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Prof. Jo Rogner"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Malchin"
+   },
+   {
+    "start": 149,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0155 5826868"
+   },
+   {
+    "start": 181,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pstriebitz@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0049",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Abraham Warmer und Gislinde Bonbach. Das nächste Treffen findet in Bad Kissingen statt. Aufgabe: Unterlagen senden an kensytimm@example.net. Durchwahl: +49 556 298104.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Abraham Warmer"
+   },
+   {
+    "start": 43,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Gislinde Bonbach"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Bad Kissingen"
+   },
+   {
+    "start": 142,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kensytimm@example.net"
+   },
+   {
+    "start": 176,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 556 298104"
+   }
+  ]
+ },
+ {
+  "id": "de-0050",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Patricia Meyer-Zänker und Ihre Adresse liegt in Forchheim. Wir rufen Sie zurück unter 0482 4765737. Die hinterlegte Karte ist 4767303138168730. Eine Kopie wurde gesendet an zahnwillfried@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Patricia Meyer-Zänker"
+   },
+   {
+    "start": 105,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Forchheim"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0482 4765737"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4767303138168730"
+   },
+   {
+    "start": 230,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zahnwillfried@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0051",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Hans-Erich Renner B.A.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Sankt Goarshausen sein. Sie erreichen mich unter 0167 5535303 oder per E-Mail an beerroland@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Hans-Erich Renner B.A."
+   },
+   {
+    "start": 117,
+    "end": 134,
+    "entity_type": "LOCATION",
+    "value": "Sankt Goarshausen"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0167 5535303"
+   },
+   {
+    "start": 198,
+    "end": 220,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "beerroland@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0052",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Wibke Sölzer und Ramazan Mohaupt. Das nächste Treffen findet in Delitzsch statt. Aufgabe: Unterlagen senden an lindnermargrit@example.org. Durchwahl: 0442 9953959.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Wibke Sölzer"
+   },
+   {
+    "start": 41,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Ramazan Mohaupt"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Delitzsch"
+   },
+   {
+    "start": 135,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lindnermargrit@example.org"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0442 9953959"
+   }
+  ]
+ },
+ {
+  "id": "de-0053",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Hans-Henning Eberth und Ihre Adresse liegt in Querfurt. Wir rufen Sie zurück unter 0176 6547132. Die hinterlegte Karte ist 4779-7108-9620-8589. Eine Kopie wurde gesendet an ortmannhans-erich@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Hans-Henning Eberth"
+   },
+   {
+    "start": 103,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Querfurt"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0176 6547132"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4779-7108-9620-8589"
+   },
+   {
+    "start": 230,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ortmannhans-erich@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0054",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Gerold Hethur-Mentzel. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Mellrichstadt sein. Sie erreichen mich unter 0920 211236 oder per E-Mail an fadime31@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Gerold Hethur-Mentzel"
+   },
+   {
+    "start": 116,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Mellrichstadt"
+   },
+   {
+    "start": 161,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0920 211236"
+   },
+   {
+    "start": 192,
+    "end": 212,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fadime31@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0055",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Bert Nette-Wirth und Ing. Hans-Gerd Ebert. Das nächste Treffen findet in Hoyerswerda statt. Aufgabe: Unterlagen senden an ferdinand95@example.com. Durchwahl: +49 727 7708985.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Bert Nette-Wirth"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Ing. Hans-Gerd Ebert"
+   },
+   {
+    "start": 97,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Hoyerswerda"
+   },
+   {
+    "start": 146,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ferdinand95@example.com"
+   },
+   {
+    "start": 182,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 727 7708985"
+   }
+  ]
+ },
+ {
+  "id": "de-0056",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dr. Thies Huhn und Ihre Adresse liegt in Mühlhausen. Wir rufen Sie zurück unter 0104 714215. Die hinterlegte Karte ist 4799438700431991. Eine Kopie wurde gesendet an cornelia24@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Dr. Thies Huhn"
+   },
+   {
+    "start": 98,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Mühlhausen"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0104 714215"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4799438700431991"
+   },
+   {
+    "start": 223,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cornelia24@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0057",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Prof. Grit Riehl. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Fallingbostel sein. Sie erreichen mich unter 0154 7495229 oder per E-Mail an mkeudel@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Prof. Grit Riehl"
+   },
+   {
+    "start": 111,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Fallingbostel"
+   },
+   {
+    "start": 156,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0154 7495229"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mkeudel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0058",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Ing. Olena Metz B.Sc. und Randolf Seip-Bolnbach. Das nächste Treffen findet in Deggendorf statt. Aufgabe: Unterlagen senden an edithheydrich@example.net. Durchwahl: +49 277 9741286.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Ing. Olena Metz B.Sc."
+   },
+   {
+    "start": 50,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Randolf Seip-Bolnbach"
+   },
+   {
+    "start": 103,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Deggendorf"
+   },
+   {
+    "start": 151,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "edithheydrich@example.net"
+   },
+   {
+    "start": 189,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 277 9741286"
+   }
+  ]
+ },
+ {
+  "id": "de-0059",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Frida Kabus-Hahn und Ihre Adresse liegt in Lübz. Wir rufen Sie zurück unter +49 713 9459983. Die hinterlegte Karte ist 4511-5779-5904-3390. Eine Kopie wurde gesendet an sebastian50@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Frida Kabus-Hahn"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Lübz"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 713 9459983"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4511-5779-5904-3390"
+   },
+   {
+    "start": 226,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sebastian50@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0060",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Margareta Herrmann. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Artern sein. Sie erreichen mich unter +49 605 4608358 oder per E-Mail an vera71@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Margareta Herrmann"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Artern"
+   },
+   {
+    "start": 151,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 605 4608358"
+   },
+   {
+    "start": 186,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vera71@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0061",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Jennifer Meyer und Carolina Schomber. Das nächste Treffen findet in Berlin statt. Aufgabe: Unterlagen senden an dkrebs@example.com. Durchwahl: +49 628 4984444.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Jennifer Meyer"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Carolina Schomber"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Berlin"
+   },
+   {
+    "start": 136,
+    "end": 154,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dkrebs@example.com"
+   },
+   {
+    "start": 167,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 628 4984444"
+   }
+  ]
+ },
+ {
+  "id": "de-0062",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Univ.Prof. Cosimo Schenk und Ihre Adresse liegt in Weimar. Wir rufen Sie zurück unter +49 727 8621671. Die hinterlegte Karte ist 4192-4911-4786-7577. Eine Kopie wurde gesendet an fkallert@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Cosimo Schenk"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Weimar"
+   },
+   {
+    "start": 143,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 727 8621671"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4192-4911-4786-7577"
+   },
+   {
+    "start": 236,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fkallert@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0063",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dr. Janus Börner. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Herford sein. Sie erreichen mich unter 0602 9897390 oder per E-Mail an andre48@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Dr. Janus Börner"
+   },
+   {
+    "start": 111,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Herford"
+   },
+   {
+    "start": 150,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0602 9897390"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andre48@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0064",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Mohammad Kostolzin und Zdravko Rosemann B.Eng.. Das nächste Treffen findet in Kleve statt. Aufgabe: Unterlagen senden an vincentschenk@example.org. Durchwahl: +49 845 4003042.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Mohammad Kostolzin"
+   },
+   {
+    "start": 47,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Zdravko Rosemann B.Eng."
+   },
+   {
+    "start": 102,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Kleve"
+   },
+   {
+    "start": 145,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vincentschenk@example.org"
+   },
+   {
+    "start": 183,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 845 4003042"
+   }
+  ]
+ },
+ {
+  "id": "de-0065",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Marta Koch und Ihre Adresse liegt in Günzburg. Wir rufen Sie zurück unter 0159 7898274. Die hinterlegte Karte ist 4222-5733-4991-6817. Eine Kopie wurde gesendet an andy21@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Marta Koch"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Günzburg"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0159 7898274"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4222-5733-4991-6817"
+   },
+   {
+    "start": 221,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andy21@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0066",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Rolf Mälzer MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Höxter sein. Sie erreichen mich unter +49 639 6402318 oder per E-Mail an bauerniels@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Rolf Mälzer MBA."
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Höxter"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 639 6402318"
+   },
+   {
+    "start": 184,
+    "end": 206,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bauerniels@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0067",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Mia Käster und Nils Mentzel. Das nächste Treffen findet in Lörrach statt. Aufgabe: Unterlagen senden an bruniwulf@example.net. Durchwahl: 0276 4249836.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Mia Käster"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Nils Mentzel"
+   },
+   {
+    "start": 83,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Lörrach"
+   },
+   {
+    "start": 128,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bruniwulf@example.net"
+   },
+   {
+    "start": 162,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0276 4249836"
+   }
+  ]
+ },
+ {
+  "id": "de-0068",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Siegrid Wagner und Ihre Adresse liegt in Bremen. Wir rufen Sie zurück unter 0155 2878454. Die hinterlegte Karte ist 4120-5151-7759-3864. Eine Kopie wurde gesendet an luziegumprich@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Siegrid Wagner"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Bremen"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0155 2878454"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4120-5151-7759-3864"
+   },
+   {
+    "start": 223,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luziegumprich@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0069",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Rahel Schleich. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Eisenberg sein. Sie erreichen mich unter +49 218 3793944 oder per E-Mail an ditmardobes@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Rahel Schleich"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Eisenberg"
+   },
+   {
+    "start": 150,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 218 3793944"
+   },
+   {
+    "start": 185,
+    "end": 208,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ditmardobes@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0070",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Roselinde Austermühle und Ernst-Dieter Löwer. Das nächste Treffen findet in Weißwasser statt. Aufgabe: Unterlagen senden an stiebitzhelge@example.org. Durchwahl: +49 647 9390077.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Roselinde Austermühle"
+   },
+   {
+    "start": 50,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Ernst-Dieter Löwer"
+   },
+   {
+    "start": 100,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Weißwasser"
+   },
+   {
+    "start": 148,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "stiebitzhelge@example.org"
+   },
+   {
+    "start": 186,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 647 9390077"
+   }
+  ]
+ },
+ {
+  "id": "de-0071",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ingetraut Ullrich und Ihre Adresse liegt in Bayreuth. Wir rufen Sie zurück unter 0178 3950586. Die hinterlegte Karte ist 4705-0504-1529-3039. Eine Kopie wurde gesendet an ifiebig@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Ingetraut Ullrich"
+   },
+   {
+    "start": 101,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Bayreuth"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0178 3950586"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4705-0504-1529-3039"
+   },
+   {
+    "start": 228,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ifiebig@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0072",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Herr Gerald Höfig. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Bergzabern sein. Sie erreichen mich unter +49 393 9608369 oder per E-Mail an helena37@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Herr Gerald Höfig"
+   },
+   {
+    "start": 112,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Bergzabern"
+   },
+   {
+    "start": 154,
+    "end": 169,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 393 9608369"
+   },
+   {
+    "start": 189,
+    "end": 209,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "helena37@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0073",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Prof. Heinz Dieter Roht und Dr. Fatma Heintze B.Eng.. Das nächste Treffen findet in Ebern statt. Aufgabe: Unterlagen senden an ruppertkaspar@example.org. Durchwahl: 0919 5064609.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Prof. Heinz Dieter Roht"
+   },
+   {
+    "start": 52,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Dr. Fatma Heintze B.Eng."
+   },
+   {
+    "start": 108,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Ebern"
+   },
+   {
+    "start": 151,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ruppertkaspar@example.org"
+   },
+   {
+    "start": 189,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0919 5064609"
+   }
+  ]
+ },
+ {
+  "id": "de-0074",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Hansjoachim Junken und Ihre Adresse liegt in Eichstätt. Wir rufen Sie zurück unter 0164 8006398. Die hinterlegte Karte ist 4518263893003823. Eine Kopie wurde gesendet an lilli90@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Hansjoachim Junken"
+   },
+   {
+    "start": 102,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Eichstätt"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0164 8006398"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4518263893003823"
+   },
+   {
+    "start": 227,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lilli90@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0075",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Swen Wulff. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Celle sein. Sie erreichen mich unter +49 904 3214478 oder per E-Mail an louis44@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Swen Wulff"
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Celle"
+   },
+   {
+    "start": 142,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 904 3214478"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "louis44@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0076",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Peer Graf und Frau Dorota Sorgatz. Das nächste Treffen findet in Großenhain statt. Aufgabe: Unterlagen senden an utlustek@example.net. Durchwahl: +49 717 7161944.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Peer Graf"
+   },
+   {
+    "start": 38,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Frau Dorota Sorgatz"
+   },
+   {
+    "start": 89,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Großenhain"
+   },
+   {
+    "start": 137,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "utlustek@example.net"
+   },
+   {
+    "start": 170,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 717 7161944"
+   }
+  ]
+ },
+ {
+  "id": "de-0077",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Benedikt Junken und Ihre Adresse liegt in Lichtenfels. Wir rufen Sie zurück unter +49 403 6560218. Die hinterlegte Karte ist 4363928448402730. Eine Kopie wurde gesendet an xgude@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Benedikt Junken"
+   },
+   {
+    "start": 99,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Lichtenfels"
+   },
+   {
+    "start": 139,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 403 6560218"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4363928448402730"
+   },
+   {
+    "start": 229,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xgude@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0078",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dipl.-Ing. Natalja Weller. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Roding sein. Sie erreichen mich unter 0189 5798513 oder per E-Mail an jriehl@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Natalja Weller"
+   },
+   {
+    "start": 120,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Roding"
+   },
+   {
+    "start": 158,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0189 5798513"
+   },
+   {
+    "start": 190,
+    "end": 208,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jriehl@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0079",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Christopher Klemt-Köhler und Univ.Prof. Nina Röhricht B.Sc.. Das nächste Treffen findet in Burgdorf statt. Aufgabe: Unterlagen senden an augustahartmann@example.org. Durchwahl: 0165 2682057.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Christopher Klemt-Köhler"
+   },
+   {
+    "start": 53,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Nina Röhricht B.Sc."
+   },
+   {
+    "start": 115,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Burgdorf"
+   },
+   {
+    "start": 161,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "augustahartmann@example.org"
+   },
+   {
+    "start": 201,
+    "end": 213,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0165 2682057"
+   }
+  ]
+ },
+ {
+  "id": "de-0080",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Steffen Kensy-Franke und Ihre Adresse liegt in Saulgau. Wir rufen Sie zurück unter 0944 3751303. Die hinterlegte Karte ist 4481-2405-7832-1582. Eine Kopie wurde gesendet an loosemma@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Steffen Kensy-Franke"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Saulgau"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0944 3751303"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4481-2405-7832-1582"
+   },
+   {
+    "start": 230,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "loosemma@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0081",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Heinz-Josef Rudolph-Gotthard. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Bersenbrück sein. Sie erreichen mich unter 0173 4009258 oder per E-Mail an siglindeconradi@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Heinz-Josef Rudolph-Gotthard"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "LOCATION",
+    "value": "Bersenbrück"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0173 4009258"
+   },
+   {
+    "start": 198,
+    "end": 225,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "siglindeconradi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0082",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Annelene Juncken B.Sc. und Dr. Desiree Schleich. Das nächste Treffen findet in Bergzabern statt. Aufgabe: Unterlagen senden an oskarbenthin@example.org. Durchwahl: +49 934 3020064.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Annelene Juncken B.Sc."
+   },
+   {
+    "start": 51,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Dr. Desiree Schleich"
+   },
+   {
+    "start": 103,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Bergzabern"
+   },
+   {
+    "start": 151,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oskarbenthin@example.org"
+   },
+   {
+    "start": 188,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 934 3020064"
+   }
+  ]
+ },
+ {
+  "id": "de-0083",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Grit Davids und Ihre Adresse liegt in Auerbach. Wir rufen Sie zurück unter 0154 3847514. Die hinterlegte Karte ist 4604-1559-9515-1507. Eine Kopie wurde gesendet an guenther98@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Grit Davids"
+   },
+   {
+    "start": 95,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Auerbach"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0154 3847514"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4604-1559-9515-1507"
+   },
+   {
+    "start": 222,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guenther98@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0084",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Knut Kostolzin MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Naila sein. Sie erreichen mich unter 0166 5850938 oder per E-Mail an gerfriedmueller@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Knut Kostolzin MBA."
+   },
+   {
+    "start": 114,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Naila"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0166 5850938"
+   },
+   {
+    "start": 183,
+    "end": 210,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gerfriedmueller@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0085",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dorina Schomber MBA. und Herr Hanspeter Segebahn. Das nächste Treffen findet in Meiningen statt. Aufgabe: Unterlagen senden an kobeltromuald@example.net. Durchwahl: 0125 1753273.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Dorina Schomber MBA."
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Herr Hanspeter Segebahn"
+   },
+   {
+    "start": 104,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Meiningen"
+   },
+   {
+    "start": 151,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kobeltromuald@example.net"
+   },
+   {
+    "start": 189,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0125 1753273"
+   }
+  ]
+ },
+ {
+  "id": "de-0086",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Harold Jungfer und Ihre Adresse liegt in Plauen. Wir rufen Sie zurück unter 0155 2667148. Die hinterlegte Karte ist 4343276493769743. Eine Kopie wurde gesendet an sschoenland@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Harold Jungfer"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Plauen"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0155 2667148"
+   },
+   {
+    "start": 173,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4343276493769743"
+   },
+   {
+    "start": 220,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sschoenland@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0087",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Univ.Prof. Christina Dietz B.Eng.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Saarlouis sein. Sie erreichen mich unter 0340 593006 oder per E-Mail an nataljaweinhage@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Christina Dietz B.Eng."
+   },
+   {
+    "start": 128,
+    "end": 137,
+    "entity_type": "LOCATION",
+    "value": "Saarlouis"
+   },
+   {
+    "start": 169,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0340 593006"
+   },
+   {
+    "start": 200,
+    "end": 227,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nataljaweinhage@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0088",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Frau Samira Barkholz MBA. und Heiderose Beier. Das nächste Treffen findet in Delitzsch statt. Aufgabe: Unterlagen senden an hilmar92@example.org. Durchwahl: +49 859 8106015.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Frau Samira Barkholz MBA."
+   },
+   {
+    "start": 54,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Heiderose Beier"
+   },
+   {
+    "start": 101,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Delitzsch"
+   },
+   {
+    "start": 148,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hilmar92@example.org"
+   },
+   {
+    "start": 181,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 859 8106015"
+   }
+  ]
+ },
+ {
+  "id": "de-0089",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Maria Ortmann-Mühle und Ihre Adresse liegt in Dachau. Wir rufen Sie zurück unter 0156 2333921. Die hinterlegte Karte ist 4947-0082-5582-0665. Eine Kopie wurde gesendet an fechnerwendelin@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Maria Ortmann-Mühle"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Dachau"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0156 2333921"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4947-0082-5582-0665"
+   },
+   {
+    "start": 228,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fechnerwendelin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0090",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dr. Ryszard Thanel B.Sc.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Ahaus sein. Sie erreichen mich unter +49 336 7602338 oder per E-Mail an ismail73@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Dr. Ryszard Thanel B.Sc."
+   },
+   {
+    "start": 119,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Ahaus"
+   },
+   {
+    "start": 156,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 336 7602338"
+   },
+   {
+    "start": 191,
+    "end": 211,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ismail73@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0091",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Ferdinand Misicher und Eggert Graf. Das nächste Treffen findet in Heiligenstadt statt. Aufgabe: Unterlagen senden an weimerfrank@example.org. Durchwahl: 0160 2166422.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Ferdinand Misicher"
+   },
+   {
+    "start": 47,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Eggert Graf"
+   },
+   {
+    "start": 90,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Heiligenstadt"
+   },
+   {
+    "start": 141,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weimerfrank@example.org"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0160 2166422"
+   }
+  ]
+ },
+ {
+  "id": "de-0092",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Univ.Prof. Ioannis Jüttner und Ihre Adresse liegt in Husum. Wir rufen Sie zurück unter 0115 7838749. Die hinterlegte Karte ist 4918-8794-3934-9887. Eine Kopie wurde gesendet an geraldkrein@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Ioannis Jüttner"
+   },
+   {
+    "start": 110,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Husum"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0115 7838749"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4918-8794-3934-9887"
+   },
+   {
+    "start": 234,
+    "end": 257,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "geraldkrein@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0093",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dipl.-Ing. Roderich Möchlichen. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Dinslaken sein. Sie erreichen mich unter 0168 6981357 oder per E-Mail an raedellene@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Roderich Möchlichen"
+   },
+   {
+    "start": 125,
+    "end": 134,
+    "entity_type": "LOCATION",
+    "value": "Dinslaken"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0168 6981357"
+   },
+   {
+    "start": 198,
+    "end": 220,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "raedellene@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0094",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Karsten Hölzenbecher-Mohaupt und Ing. Rosalinde Hiller B.A.. Das nächste Treffen findet in Bad Langensalza statt. Aufgabe: Unterlagen senden an marzena97@example.com. Durchwahl: 0164 9991421.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Karsten Hölzenbecher-Mohaupt"
+   },
+   {
+    "start": 57,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Ing. Rosalinde Hiller B.A."
+   },
+   {
+    "start": 115,
+    "end": 130,
+    "entity_type": "LOCATION",
+    "value": "Bad Langensalza"
+   },
+   {
+    "start": 168,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marzena97@example.com"
+   },
+   {
+    "start": 202,
+    "end": 214,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0164 9991421"
+   }
+  ]
+ },
+ {
+  "id": "de-0095",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Alessandro Liebelt und Ihre Adresse liegt in Büsingen am Hochrhein. Wir rufen Sie zurück unter +49 209 5415245. Die hinterlegte Karte ist 4248275436214128. Eine Kopie wurde gesendet an selimgute@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Alessandro Liebelt"
+   },
+   {
+    "start": 102,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Büsingen am Hochrhein"
+   },
+   {
+    "start": 152,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 209 5415245"
+   },
+   {
+    "start": 195,
+    "end": 211,
+    "entity_type": "CREDIT_CARD",
+    "value": "4248275436214128"
+   },
+   {
+    "start": 242,
+    "end": 263,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "selimgute@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0096",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ing. Johannes Mosemann B.Sc.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Staffelstein sein. Sie erreichen mich unter 0152 1628826 oder per E-Mail an mjuncken@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Ing. Johannes Mosemann B.Sc."
+   },
+   {
+    "start": 123,
+    "end": 135,
+    "entity_type": "LOCATION",
+    "value": "Staffelstein"
+   },
+   {
+    "start": 167,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0152 1628826"
+   },
+   {
+    "start": 199,
+    "end": 219,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mjuncken@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0097",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Gordana Ernst und Armin Albers. Das nächste Treffen findet in Bayreuth statt. Aufgabe: Unterlagen senden an hscholtz@example.org. Durchwahl: 0156 3783122.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Gordana Ernst"
+   },
+   {
+    "start": 42,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Armin Albers"
+   },
+   {
+    "start": 86,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Bayreuth"
+   },
+   {
+    "start": 132,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hscholtz@example.org"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0156 3783122"
+   }
+  ]
+ },
+ {
+  "id": "de-0098",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Muzaffer Krein B.Eng. und Ihre Adresse liegt in Waren. Wir rufen Sie zurück unter 0220 1328522. Die hinterlegte Karte ist 4237-8057-2180-2303. Eine Kopie wurde gesendet an tkusch@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Muzaffer Krein B.Eng."
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Waren"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0220 1328522"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4237-8057-2180-2303"
+   },
+   {
+    "start": 229,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tkusch@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0099",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Betty Putz B.A.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Neuruppin sein. Sie erreichen mich unter 0688 5327681 oder per E-Mail an mohauptgertraut@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Betty Putz B.A."
+   },
+   {
+    "start": 110,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Neuruppin"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0688 5327681"
+   },
+   {
+    "start": 183,
+    "end": 210,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mohauptgertraut@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0100",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dr. Hans-Werner Scholtz und Nikola Bolzmann. Das nächste Treffen findet in Gießen statt. Aufgabe: Unterlagen senden an dragankaester@example.net. Durchwahl: 0169 9023188.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Dr. Hans-Werner Scholtz"
+   },
+   {
+    "start": 52,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Nikola Bolzmann"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Gießen"
+   },
+   {
+    "start": 143,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dragankaester@example.net"
+   },
+   {
+    "start": 181,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0169 9023188"
+   }
+  ]
+ },
+ {
+  "id": "de-0101",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Maja Klemm und Ihre Adresse liegt in Gelnhausen. Wir rufen Sie zurück unter +49 212 3853030. Die hinterlegte Karte ist 4614-5655-8628-6983. Eine Kopie wurde gesendet an lehmannsergej@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Maja Klemm"
+   },
+   {
+    "start": 94,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Gelnhausen"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 212 3853030"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4614-5655-8628-6983"
+   },
+   {
+    "start": 226,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lehmannsergej@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0102",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Leonardo Wirth. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Kassel sein. Sie erreichen mich unter 0170 5726282 oder per E-Mail an rose-marie11@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Leonardo Wirth"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Kassel"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0170 5726282"
+   },
+   {
+    "start": 179,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rose-marie11@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0103",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Rose-Marie Lachmann-Heintze und Dr. Greta Eigenwillig B.Sc.. Das nächste Treffen findet in Hainichen statt. Aufgabe: Unterlagen senden an gesahuebel@example.com. Durchwahl: +49 67 4135349.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Rose-Marie Lachmann-Heintze"
+   },
+   {
+    "start": 56,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Dr. Greta Eigenwillig B.Sc."
+   },
+   {
+    "start": 115,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Hainichen"
+   },
+   {
+    "start": 162,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gesahuebel@example.com"
+   },
+   {
+    "start": 197,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 67 4135349"
+   }
+  ]
+ },
+ {
+  "id": "de-0104",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Erdogan Baum und Ihre Adresse liegt in Sömmerda. Wir rufen Sie zurück unter +49 794 3005624. Die hinterlegte Karte ist 4021998604304578. Eine Kopie wurde gesendet an plinke@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Erdogan Baum"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Sömmerda"
+   },
+   {
+    "start": 133,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 794 3005624"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4021998604304578"
+   },
+   {
+    "start": 223,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "plinke@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0105",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Norbert Rohleder B.A.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Beeskow sein. Sie erreichen mich unter 0175 2186728 oder per E-Mail an wilmsenarnulf@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Norbert Rohleder B.A."
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Beeskow"
+   },
+   {
+    "start": 155,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0175 2186728"
+   },
+   {
+    "start": 187,
+    "end": 212,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wilmsenarnulf@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0106",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Frau Malgorzata Ullmann B.A. und Rudi Schwital B.Eng.. Das nächste Treffen findet in Forst statt. Aufgabe: Unterlagen senden an ernst-dieterstiebitz@example.com. Durchwahl: +49 183 8483785.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Frau Malgorzata Ullmann B.A."
+   },
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Rudi Schwital B.Eng."
+   },
+   {
+    "start": 109,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Forst"
+   },
+   {
+    "start": 152,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ernst-dieterstiebitz@example.com"
+   },
+   {
+    "start": 197,
+    "end": 212,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 183 8483785"
+   }
+  ]
+ },
+ {
+  "id": "de-0107",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Bela Scheibe und Ihre Adresse liegt in Pegnitz. Wir rufen Sie zurück unter 0975 3350150. Die hinterlegte Karte ist 4488439254710042. Eine Kopie wurde gesendet an jasmina06@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Bela Scheibe"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Pegnitz"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0975 3350150"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4488439254710042"
+   },
+   {
+    "start": 219,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jasmina06@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0108",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Mariele Kreusel B.A.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Sondershausen sein. Sie erreichen mich unter +49 301 5207711 oder per E-Mail an caeciliekoehler@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Mariele Kreusel B.A."
+   },
+   {
+    "start": 115,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Sondershausen"
+   },
+   {
+    "start": 160,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 301 5207711"
+   },
+   {
+    "start": 195,
+    "end": 222,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caeciliekoehler@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0109",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dr. Nils Wesack und Klaus-Ulrich Wilmsen. Das nächste Treffen findet in Gerolzhofen statt. Aufgabe: Unterlagen senden an felixjunck@example.com. Durchwahl: +49 487 7551533.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Dr. Nils Wesack"
+   },
+   {
+    "start": 44,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Klaus-Ulrich Wilmsen"
+   },
+   {
+    "start": 96,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Gerolzhofen"
+   },
+   {
+    "start": 145,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "felixjunck@example.com"
+   },
+   {
+    "start": 180,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 487 7551533"
+   }
+  ]
+ },
+ {
+  "id": "de-0110",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Lissy Gutknecht B.Eng. und Ihre Adresse liegt in Schwäbisch Hall. Wir rufen Sie zurück unter +49 974 6374132. Die hinterlegte Karte ist 4503271922528113. Eine Kopie wurde gesendet an rbolander@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Lissy Gutknecht B.Eng."
+   },
+   {
+    "start": 106,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Schwäbisch Hall"
+   },
+   {
+    "start": 150,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 974 6374132"
+   },
+   {
+    "start": 193,
+    "end": 209,
+    "entity_type": "CREDIT_CARD",
+    "value": "4503271922528113"
+   },
+   {
+    "start": 240,
+    "end": 261,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rbolander@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0111",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Aleksander Wulf. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Bautzen sein. Sie erreichen mich unter 0961 4141864 oder per E-Mail an polinapieper@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Aleksander Wulf"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Bautzen"
+   },
+   {
+    "start": 149,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0961 4141864"
+   },
+   {
+    "start": 181,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "polinapieper@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0112",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Annelie Pohl und Juliane Bloch B.Sc.. Das nächste Treffen findet in Lippstadt statt. Aufgabe: Unterlagen senden an reinhildemohaupt@example.net. Durchwahl: 0953 6749064.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Annelie Pohl"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Juliane Bloch B.Sc."
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Lippstadt"
+   },
+   {
+    "start": 139,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reinhildemohaupt@example.net"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0953 6749064"
+   }
+  ]
+ },
+ {
+  "id": "de-0113",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dipl.-Ing. Marijan Weller B.Sc. und Ihre Adresse liegt in Greifswald. Wir rufen Sie zurück unter 0155 5823525. Die hinterlegte Karte ist 4728517842295772. Eine Kopie wurde gesendet an dietlindbloch@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 88,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Marijan Weller B.Sc."
+   },
+   {
+    "start": 115,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Greifswald"
+   },
+   {
+    "start": 154,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0155 5823525"
+   },
+   {
+    "start": 194,
+    "end": 210,
+    "entity_type": "CREDIT_CARD",
+    "value": "4728517842295772"
+   },
+   {
+    "start": 241,
+    "end": 266,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dietlindbloch@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0114",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Samir Rörricht B.Sc.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Badalzungen sein. Sie erreichen mich unter 052 4671737 oder per E-Mail an hans-dietrichseidel@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Samir Rörricht B.Sc."
+   },
+   {
+    "start": 115,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Badalzungen"
+   },
+   {
+    "start": 158,
+    "end": 169,
+    "entity_type": "PHONE_NUMBER",
+    "value": "052 4671737"
+   },
+   {
+    "start": 189,
+    "end": 220,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hans-dietrichseidel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0115",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Christa Hofmann-Anders und Dipl.-Ing. Veronika Kruschwitz B.Sc.. Das nächste Treffen findet in Teterow statt. Aufgabe: Unterlagen senden an alexandrethanel@example.net. Durchwahl: 0476 1831938.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Christa Hofmann-Anders"
+   },
+   {
+    "start": 51,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Veronika Kruschwitz B.Sc."
+   },
+   {
+    "start": 119,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Teterow"
+   },
+   {
+    "start": 164,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alexandrethanel@example.net"
+   },
+   {
+    "start": 204,
+    "end": 216,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0476 1831938"
+   }
+  ]
+ },
+ {
+  "id": "de-0116",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Prof. Anna-Luise Mangold und Ihre Adresse liegt in Hünfeld. Wir rufen Sie zurück unter 0158 1206640. Die hinterlegte Karte ist 4029-1403-4822-4620. Eine Kopie wurde gesendet an sniemeier@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Prof. Anna-Luise Mangold"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Hünfeld"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0158 1206640"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4029-1403-4822-4620"
+   },
+   {
+    "start": 234,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sniemeier@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0117",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Roman Walter. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Mettmann sein. Sie erreichen mich unter 0666 8290378 oder per E-Mail an stolzehugo@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Roman Walter"
+   },
+   {
+    "start": 107,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Mettmann"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0666 8290378"
+   },
+   {
+    "start": 179,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "stolzehugo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0118",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Elfie Martin-Lehmann und Necati Hellwig-Tlustek. Das nächste Treffen findet in Pasewalk statt. Aufgabe: Unterlagen senden an ydobes@example.org. Durchwahl: +49 543 5015676.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Elfie Martin-Lehmann"
+   },
+   {
+    "start": 49,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Necati Hellwig-Tlustek"
+   },
+   {
+    "start": 103,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Pasewalk"
+   },
+   {
+    "start": 149,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ydobes@example.org"
+   },
+   {
+    "start": 180,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 543 5015676"
+   }
+  ]
+ },
+ {
+  "id": "de-0119",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Katja Mentzel und Ihre Adresse liegt in Scheinfeld. Wir rufen Sie zurück unter 0161 9534909. Die hinterlegte Karte ist 4239228021113867. Eine Kopie wurde gesendet an pohllarissa@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Katja Mentzel"
+   },
+   {
+    "start": 97,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Scheinfeld"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0161 9534909"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4239228021113867"
+   },
+   {
+    "start": 223,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pohllarissa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0120",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dipl.-Ing. Hans-Michael Albers B.Eng.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Seelow sein. Sie erreichen mich unter 0157 4827939 oder per E-Mail an kjockel@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Hans-Michael Albers B.Eng."
+   },
+   {
+    "start": 132,
+    "end": 138,
+    "entity_type": "LOCATION",
+    "value": "Seelow"
+   },
+   {
+    "start": 170,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0157 4827939"
+   },
+   {
+    "start": 202,
+    "end": 221,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kjockel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0121",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Miroslaw Bolzmann-Schinke und Galina Mude. Das nächste Treffen findet in Grevesmühlen statt. Aufgabe: Unterlagen senden an emilreuter@example.org. Durchwahl: 0182 9061063.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Miroslaw Bolzmann-Schinke"
+   },
+   {
+    "start": 54,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Galina Mude"
+   },
+   {
+    "start": 97,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Grevesmühlen"
+   },
+   {
+    "start": 147,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emilreuter@example.org"
+   },
+   {
+    "start": 182,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0182 9061063"
+   }
+  ]
+ },
+ {
+  "id": "de-0122",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dr. Götz Wulf B.A. und Ihre Adresse liegt in Ebermannstadt. Wir rufen Sie zurück unter 0306 4171041. Die hinterlegte Karte ist 4916-4985-1645-3017. Eine Kopie wurde gesendet an sybillarogner@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Dr. Götz Wulf B.A."
+   },
+   {
+    "start": 102,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Ebermannstadt"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0306 4171041"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4916-4985-1645-3017"
+   },
+   {
+    "start": 234,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sybillarogner@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0123",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Jolanta Thanel. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Staffelstein sein. Sie erreichen mich unter 0514 6933565 oder per E-Mail an cathleenmetz@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Jolanta Thanel"
+   },
+   {
+    "start": 109,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Staffelstein"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0514 6933565"
+   },
+   {
+    "start": 185,
+    "end": 209,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cathleenmetz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0124",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dr. Wolf Rust und Birgit Loos. Das nächste Treffen findet in Heiligenstadt statt. Aufgabe: Unterlagen senden an rloechel@example.org. Durchwahl: 0162 4034103.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Dr. Wolf Rust"
+   },
+   {
+    "start": 42,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Birgit Loos"
+   },
+   {
+    "start": 85,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Heiligenstadt"
+   },
+   {
+    "start": 136,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rloechel@example.org"
+   },
+   {
+    "start": 169,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0162 4034103"
+   }
+  ]
+ },
+ {
+  "id": "de-0125",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Univ.Prof. Ralf-Peter Jockel und Ihre Adresse liegt in Naila. Wir rufen Sie zurück unter 0177 1326470. Die hinterlegte Karte ist 4640295025857644. Eine Kopie wurde gesendet an auguste42@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Ralf-Peter Jockel"
+   },
+   {
+    "start": 112,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Naila"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0177 1326470"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4640295025857644"
+   },
+   {
+    "start": 233,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "auguste42@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0126",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Friedbert Hethur-Reichmann. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Auerbach sein. Sie erreichen mich unter +49 792 3079041 oder per E-Mail an aumannsoenke@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Friedbert Hethur-Reichmann"
+   },
+   {
+    "start": 121,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Auerbach"
+   },
+   {
+    "start": 161,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 792 3079041"
+   },
+   {
+    "start": 196,
+    "end": 220,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aumannsoenke@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0127",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Prof. Tilly Tlustek und Danny Heuser-Heidrich. Das nächste Treffen findet in Aachen statt. Aufgabe: Unterlagen senden an radischellinor@example.org. Durchwahl: +49 206 8919637.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Prof. Tilly Tlustek"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Danny Heuser-Heidrich"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Aachen"
+   },
+   {
+    "start": 145,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "radischellinor@example.org"
+   },
+   {
+    "start": 184,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 206 8919637"
+   }
+  ]
+ },
+ {
+  "id": "de-0128",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Elly Schuster B.Eng. und Ihre Adresse liegt in Stendal. Wir rufen Sie zurück unter 0759 3626850. Die hinterlegte Karte ist 4192-2868-1397-4727. Eine Kopie wurde gesendet an rbaehr@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Elly Schuster B.Eng."
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Stendal"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0759 3626850"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4192-2868-1397-4727"
+   },
+   {
+    "start": 230,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rbaehr@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0129",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dipl.-Ing. Karl-Werner Hölzenbecher. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Dinkelsbühl sein. Sie erreichen mich unter 0158 2548455 oder per E-Mail an georgiosjessel@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Karl-Werner Hölzenbecher"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "LOCATION",
+    "value": "Dinkelsbühl"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0158 2548455"
+   },
+   {
+    "start": 205,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "georgiosjessel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0130",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Herr Yusuf Sager und Univ.Prof. Erna Dobes. Das nächste Treffen findet in Groß-Gerau statt. Aufgabe: Unterlagen senden an franz-josef58@example.org. Durchwahl: +49 860 9603989.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Herr Yusuf Sager"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Erna Dobes"
+   },
+   {
+    "start": 98,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Groß-Gerau"
+   },
+   {
+    "start": 146,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "franz-josef58@example.org"
+   },
+   {
+    "start": 184,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 860 9603989"
+   }
+  ]
+ },
+ {
+  "id": "de-0131",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Sebastian Weinhage B.A. und Ihre Adresse liegt in Eichstätt. Wir rufen Sie zurück unter 0452 6304940. Die hinterlegte Karte ist 4261222917168144. Eine Kopie wurde gesendet an budiglili@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Sebastian Weinhage B.A."
+   },
+   {
+    "start": 107,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Eichstätt"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0452 6304940"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4261222917168144"
+   },
+   {
+    "start": 232,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "budiglili@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0132",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Sönke Textor. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Warendorf sein. Sie erreichen mich unter +49 801 3625928 oder per E-Mail an kkraushaar@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Sönke Textor"
+   },
+   {
+    "start": 107,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Warendorf"
+   },
+   {
+    "start": 148,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 801 3625928"
+   },
+   {
+    "start": 183,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kkraushaar@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0133",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Giorgio Schaaf und Rose Freudenberger. Das nächste Treffen findet in Hildburghausen statt. Aufgabe: Unterlagen senden an heinz-guenter13@example.net. Durchwahl: 0169 5610981.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Giorgio Schaaf"
+   },
+   {
+    "start": 43,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Rose Freudenberger"
+   },
+   {
+    "start": 93,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Hildburghausen"
+   },
+   {
+    "start": 145,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "heinz-guenter13@example.net"
+   },
+   {
+    "start": 185,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0169 5610981"
+   }
+  ]
+ },
+ {
+  "id": "de-0134",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Brigitte Roskoth und Ihre Adresse liegt in Ochsenfurt. Wir rufen Sie zurück unter +49 254 1400896. Die hinterlegte Karte ist 4759733765017919. Eine Kopie wurde gesendet an antje66@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Brigitte Roskoth"
+   },
+   {
+    "start": 100,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Ochsenfurt"
+   },
+   {
+    "start": 139,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 254 1400896"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4759733765017919"
+   },
+   {
+    "start": 229,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antje66@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0135",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Martina Stahr. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Hohenmölsen sein. Sie erreichen mich unter 0160 4958212 oder per E-Mail an nikola89@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Martina Stahr"
+   },
+   {
+    "start": 108,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Hohenmölsen"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0160 4958212"
+   },
+   {
+    "start": 183,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nikola89@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0136",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Univ.Prof. Leonie Schleich B.Sc. und Lea Freudenberger. Das nächste Treffen findet in Gießen statt. Aufgabe: Unterlagen senden an wnaser@example.net. Durchwahl: +49 373 1975995.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Leonie Schleich B.Sc."
+   },
+   {
+    "start": 61,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Lea Freudenberger"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Gießen"
+   },
+   {
+    "start": 154,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wnaser@example.net"
+   },
+   {
+    "start": 185,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 373 1975995"
+   }
+  ]
+ },
+ {
+  "id": "de-0137",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Sylvio Barkholz und Ihre Adresse liegt in Görlitz. Wir rufen Sie zurück unter 0163 2060029. Die hinterlegte Karte ist 4338-1276-7824-9273. Eine Kopie wurde gesendet an scholtzkarin@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Sylvio Barkholz"
+   },
+   {
+    "start": 99,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Görlitz"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0163 2060029"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4338-1276-7824-9273"
+   },
+   {
+    "start": 225,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "scholtzkarin@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0138",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Francesco Caspar. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Bremen sein. Sie erreichen mich unter 0165 9123558 oder per E-Mail an zraedel@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Francesco Caspar"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Bremen"
+   },
+   {
+    "start": 149,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0165 9123558"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zraedel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0139",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dr. Thomas Hövel und Ludmila Mies. Das nächste Treffen findet in Döbeln statt. Aufgabe: Unterlagen senden an britditschlerin@example.com. Durchwahl: +49 538 6456268.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Dr. Thomas Hövel"
+   },
+   {
+    "start": 45,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Ludmila Mies"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Döbeln"
+   },
+   {
+    "start": 133,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "britditschlerin@example.com"
+   },
+   {
+    "start": 173,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 538 6456268"
+   }
+  ]
+ },
+ {
+  "id": "de-0140",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Steffi Lindau und Ihre Adresse liegt in Senftenberg. Wir rufen Sie zurück unter 054 7708017. Die hinterlegte Karte ist 4483768236976023. Eine Kopie wurde gesendet an ebertcornelius@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Steffi Lindau"
+   },
+   {
+    "start": 97,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Senftenberg"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "054 7708017"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4483768236976023"
+   },
+   {
+    "start": 223,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ebertcornelius@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0141",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Conrad Heser B.Eng.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Suhl sein. Sie erreichen mich unter 0165 6478916 oder per E-Mail an vbruder@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Conrad Heser B.Eng."
+   },
+   {
+    "start": 114,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Suhl"
+   },
+   {
+    "start": 150,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0165 6478916"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vbruder@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0142",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Oliver Kraus und Ing. Angelo Lindner MBA.. Das nächste Treffen findet in Forst statt. Aufgabe: Unterlagen senden an christopher11@example.com. Durchwahl: +49 676 8840093.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Oliver Kraus"
+   },
+   {
+    "start": 41,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Ing. Angelo Lindner MBA."
+   },
+   {
+    "start": 97,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Forst"
+   },
+   {
+    "start": 140,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christopher11@example.com"
+   },
+   {
+    "start": 178,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 676 8840093"
+   }
+  ]
+ },
+ {
+  "id": "de-0143",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Gislinde Renner und Ihre Adresse liegt in Roding. Wir rufen Sie zurück unter 0579 9919481. Die hinterlegte Karte ist 4064-9355-0342-9880. Eine Kopie wurde gesendet an herlinde50@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Gislinde Renner"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Roding"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0579 9919481"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4064-9355-0342-9880"
+   },
+   {
+    "start": 224,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "herlinde50@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0144",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ing. Aynur Radisch B.Sc.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Regen sein. Sie erreichen mich unter 0178 5997598 oder per E-Mail an diana66@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Ing. Aynur Radisch B.Sc."
+   },
+   {
+    "start": 119,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Regen"
+   },
+   {
+    "start": 156,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0178 5997598"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "diana66@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0145",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Univ.Prof. Hans-Adolf Binner und Rose Heuser. Das nächste Treffen findet in Königs Wusterhausen statt. Aufgabe: Unterlagen senden an ulla07@example.org. Durchwahl: +49 226 4515135.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Hans-Adolf Binner"
+   },
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Rose Heuser"
+   },
+   {
+    "start": 100,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Königs Wusterhausen"
+   },
+   {
+    "start": 157,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ulla07@example.org"
+   },
+   {
+    "start": 188,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 226 4515135"
+   }
+  ]
+ },
+ {
+  "id": "de-0146",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Natalie Striebitz-Dörschner und Ihre Adresse liegt in Strasburg. Wir rufen Sie zurück unter +49 920 8303946. Die hinterlegte Karte ist 4808408589907147. Eine Kopie wurde gesendet an foersterpetros@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Natalie Striebitz-Dörschner"
+   },
+   {
+    "start": 111,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Strasburg"
+   },
+   {
+    "start": 149,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 920 8303946"
+   },
+   {
+    "start": 192,
+    "end": 208,
+    "entity_type": "CREDIT_CARD",
+    "value": "4808408589907147"
+   },
+   {
+    "start": 239,
+    "end": 265,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "foersterpetros@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0147",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dr. Jann Binner. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Klötze sein. Sie erreichen mich unter 0159 9434740 oder per E-Mail an ojacobi-jaeckel@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Dr. Jann Binner"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Klötze"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0159 9434740"
+   },
+   {
+    "start": 180,
+    "end": 207,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ojacobi-jaeckel@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0148",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Malte Ring B.A. und Ernst-Dieter Kambs. Das nächste Treffen findet in Crailsheim statt. Aufgabe: Unterlagen senden an hanna58@example.com. Durchwahl: 0369 1745578.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Malte Ring B.A."
+   },
+   {
+    "start": 44,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Ernst-Dieter Kambs"
+   },
+   {
+    "start": 94,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Crailsheim"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanna58@example.com"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0369 1745578"
+   }
+  ]
+ },
+ {
+  "id": "de-0149",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Aldo Zahn-Lehmann und Ihre Adresse liegt in Mühlhausen. Wir rufen Sie zurück unter 0164 1268306. Die hinterlegte Karte ist 4483674212034979. Eine Kopie wurde gesendet an ezobel@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Aldo Zahn-Lehmann"
+   },
+   {
+    "start": 101,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Mühlhausen"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0164 1268306"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4483674212034979"
+   },
+   {
+    "start": 227,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ezobel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0150",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Univ.Prof. Zeljko Wilms B.Sc.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Paderborn sein. Sie erreichen mich unter +49 569 4088759 oder per E-Mail an meikzimmer@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Univ.Prof. Zeljko Wilms B.Sc."
+   },
+   {
+    "start": 124,
+    "end": 133,
+    "entity_type": "LOCATION",
+    "value": "Paderborn"
+   },
+   {
+    "start": 165,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 569 4088759"
+   },
+   {
+    "start": 200,
+    "end": 222,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "meikzimmer@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0151",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Sina Heydrich B.Sc. und Ewa Naser. Das nächste Treffen findet in Parchim statt. Aufgabe: Unterlagen senden an dloechel@example.org. Durchwahl: +49 571 9964819.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Sina Heydrich B.Sc."
+   },
+   {
+    "start": 48,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Ewa Naser"
+   },
+   {
+    "start": 89,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Parchim"
+   },
+   {
+    "start": 134,
+    "end": 154,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dloechel@example.org"
+   },
+   {
+    "start": 167,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 571 9964819"
+   }
+  ]
+ },
+ {
+  "id": "de-0152",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Hendrik Hande-Jacobi Jäckel und Ihre Adresse liegt in Greiz. Wir rufen Sie zurück unter +49 563 5846218. Die hinterlegte Karte ist 4459322123498749. Eine Kopie wurde gesendet an vetzler@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Hendrik Hande-Jacobi Jäckel"
+   },
+   {
+    "start": 111,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Greiz"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 563 5846218"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4459322123498749"
+   },
+   {
+    "start": 235,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vetzler@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0153",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Kunigunde Jacob. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Dinslaken sein. Sie erreichen mich unter 0761 2752032 oder per E-Mail an auch-schlauchinkatarina@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Kunigunde Jacob"
+   },
+   {
+    "start": 110,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Dinslaken"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0761 2752032"
+   },
+   {
+    "start": 183,
+    "end": 218,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "auch-schlauchinkatarina@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0154",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Türkan Hauffer-Pruschke und Jacek Budig. Das nächste Treffen findet in Wunsiedel statt. Aufgabe: Unterlagen senden an christian37@example.com. Durchwahl: 0366 1128513.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Türkan Hauffer-Pruschke"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Jacek Budig"
+   },
+   {
+    "start": 95,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Wunsiedel"
+   },
+   {
+    "start": 142,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christian37@example.com"
+   },
+   {
+    "start": 178,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0366 1128513"
+   }
+  ]
+ },
+ {
+  "id": "de-0155",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Raik Rohleder und Ihre Adresse liegt in Altötting. Wir rufen Sie zurück unter 0105 2800665. Die hinterlegte Karte ist 4278854294233041. Eine Kopie wurde gesendet an christelbriemer@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Raik Rohleder"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Altötting"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0105 2800665"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4278854294233041"
+   },
+   {
+    "start": 222,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christelbriemer@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0156",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Burkhard Wohlgemut. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Northeim sein. Sie erreichen mich unter 0168 4435597 oder per E-Mail an jaentschgretel@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Burkhard Wohlgemut"
+   },
+   {
+    "start": 113,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Northeim"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0168 4435597"
+   },
+   {
+    "start": 185,
+    "end": 211,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jaentschgretel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0157",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dipl.-Ing. Louise Albers MBA. und Dr. Heiko Rose. Das nächste Treffen findet in Döbeln statt. Aufgabe: Unterlagen senden an micha68@example.com. Durchwahl: 0989 1296111.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Louise Albers MBA."
+   },
+   {
+    "start": 58,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Dr. Heiko Rose"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Döbeln"
+   },
+   {
+    "start": 148,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "micha68@example.com"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0989 1296111"
+   }
+  ]
+ },
+ {
+  "id": "de-0158",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Alice Kranz und Ihre Adresse liegt in Berchtesgaden. Wir rufen Sie zurück unter 0591 8910776. Die hinterlegte Karte ist 4658-6820-3238-2824. Eine Kopie wurde gesendet an erwingierschner@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Alice Kranz"
+   },
+   {
+    "start": 95,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Berchtesgaden"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0591 8910776"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4658-6820-3238-2824"
+   },
+   {
+    "start": 227,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "erwingierschner@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0159",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Helma Pergande. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Eilenburg sein. Sie erreichen mich unter +49 197 6017690 oder per E-Mail an kbarth@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Helma Pergande"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Eilenburg"
+   },
+   {
+    "start": 150,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 197 6017690"
+   },
+   {
+    "start": 185,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kbarth@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0160",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Franziska Henck-Weitzel und Michael Sontag. Das nächste Treffen findet in Erfurt statt. Aufgabe: Unterlagen senden an apostolostaesche@example.com. Durchwahl: +49 235 5910974.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Franziska Henck-Weitzel"
+   },
+   {
+    "start": 52,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Michael Sontag"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Erfurt"
+   },
+   {
+    "start": 142,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "apostolostaesche@example.com"
+   },
+   {
+    "start": 183,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 235 5910974"
+   }
+  ]
+ },
+ {
+  "id": "de-0161",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Elise Ehlert und Ihre Adresse liegt in Güstrow. Wir rufen Sie zurück unter 0153 1714957. Die hinterlegte Karte ist 4714554558933474. Eine Kopie wurde gesendet an fgunpf@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Elise Ehlert"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Güstrow"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0153 1714957"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4714554558933474"
+   },
+   {
+    "start": 219,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fgunpf@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0162",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ira Segebahn-Buchholz. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Ansbach sein. Sie erreichen mich unter 0169 2911431 oder per E-Mail an stolzegisa@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Ira Segebahn-Buchholz"
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Ansbach"
+   },
+   {
+    "start": 155,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0169 2911431"
+   },
+   {
+    "start": 187,
+    "end": 209,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "stolzegisa@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0163",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Kamil Kaul und Eckhardt Stumpf. Das nächste Treffen findet in Pinneberg statt. Aufgabe: Unterlagen senden an zenta58@example.org. Durchwahl: 0656 5577669.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Kamil Kaul"
+   },
+   {
+    "start": 39,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Eckhardt Stumpf"
+   },
+   {
+    "start": 86,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Pinneberg"
+   },
+   {
+    "start": 133,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zenta58@example.org"
+   },
+   {
+    "start": 165,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0656 5577669"
+   }
+  ]
+ },
+ {
+  "id": "de-0164",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Korbinian Austermühle und Ihre Adresse liegt in Kaiserslautern. Wir rufen Sie zurück unter 0158 4708470. Die hinterlegte Karte ist 4779-6574-0411-2185. Eine Kopie wurde gesendet an haeringheinrich@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Korbinian Austermühle"
+   },
+   {
+    "start": 105,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Kaiserslautern"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0158 4708470"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4779-6574-0411-2185"
+   },
+   {
+    "start": 238,
+    "end": 265,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haeringheinrich@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0165",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dunja Tschentscher. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Hildburghausen sein. Sie erreichen mich unter 0118 1934116 oder per E-Mail an goetzkobelt@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Dunja Tschentscher"
+   },
+   {
+    "start": 113,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Hildburghausen"
+   },
+   {
+    "start": 159,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0118 1934116"
+   },
+   {
+    "start": 191,
+    "end": 214,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "goetzkobelt@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0166",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Bozena Junken und Arthur Lange. Das nächste Treffen findet in Gifhorn statt. Aufgabe: Unterlagen senden an bohnbachreinhard@example.net. Durchwahl: 0179 8946094.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Bozena Junken"
+   },
+   {
+    "start": 42,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Arthur Lange"
+   },
+   {
+    "start": 86,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Gifhorn"
+   },
+   {
+    "start": 131,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bohnbachreinhard@example.net"
+   },
+   {
+    "start": 172,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0179 8946094"
+   }
+  ]
+ },
+ {
+  "id": "de-0167",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ladislaus Anders und Ihre Adresse liegt in Forchheim. Wir rufen Sie zurück unter 0174 4857356. Die hinterlegte Karte ist 4445-6444-5501-3573. Eine Kopie wurde gesendet an yschenk@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Ladislaus Anders"
+   },
+   {
+    "start": 100,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Forchheim"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0174 4857356"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4445-6444-5501-3573"
+   },
+   {
+    "start": 228,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yschenk@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0168",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Vesna Ortmann. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Rockenhausen sein. Sie erreichen mich unter 0176 2187654 oder per E-Mail an fgeissler@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Vesna Ortmann"
+   },
+   {
+    "start": 108,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Rockenhausen"
+   },
+   {
+    "start": 152,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0176 2187654"
+   },
+   {
+    "start": 184,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fgeissler@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0169",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Herma Gieß und Helfried Reichmann. Das nächste Treffen findet in Gießen statt. Aufgabe: Unterlagen senden an fzobel@example.net. Durchwahl: 0474 2231190.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Herma Gieß"
+   },
+   {
+    "start": 39,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Helfried Reichmann"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Gießen"
+   },
+   {
+    "start": 133,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fzobel@example.net"
+   },
+   {
+    "start": 164,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0474 2231190"
+   }
+  ]
+ },
+ {
+  "id": "de-0170",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dolores Stoll und Ihre Adresse liegt in Finsterwalde. Wir rufen Sie zurück unter 0171 6737619. Die hinterlegte Karte ist 4945-5408-3977-9407. Eine Kopie wurde gesendet an ali39@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Dolores Stoll"
+   },
+   {
+    "start": 97,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Finsterwalde"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0171 6737619"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4945-5408-3977-9407"
+   },
+   {
+    "start": 228,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ali39@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0171",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Hardy Hänel. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Ebersberg sein. Sie erreichen mich unter 0170 9022730 oder per E-Mail an klaas63@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Hardy Hänel"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Ebersberg"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0170 9022730"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "klaas63@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0172",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Frau Ann-Kathrin Schulz und Andree Klingelhöfer. Das nächste Treffen findet in Göppingen statt. Aufgabe: Unterlagen senden an soenkewagner@example.com. Durchwahl: 0528 1939066.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Frau Ann-Kathrin Schulz"
+   },
+   {
+    "start": 52,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Andree Klingelhöfer"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Göppingen"
+   },
+   {
+    "start": 150,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "soenkewagner@example.com"
+   },
+   {
+    "start": 187,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0528 1939066"
+   }
+  ]
+ },
+ {
+  "id": "de-0173",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Ing. Enrico Heydrich B.Sc. und Ihre Adresse liegt in Lichtenfels. Wir rufen Sie zurück unter +49 43 9871886. Die hinterlegte Karte ist 4085715394796810. Eine Kopie wurde gesendet an roselschottin@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Ing. Enrico Heydrich B.Sc."
+   },
+   {
+    "start": 110,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Lichtenfels"
+   },
+   {
+    "start": 150,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 43 9871886"
+   },
+   {
+    "start": 192,
+    "end": 208,
+    "entity_type": "CREDIT_CARD",
+    "value": "4085715394796810"
+   },
+   {
+    "start": 239,
+    "end": 264,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "roselschottin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0174",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Sarina Holt. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Badoberan sein. Sie erreichen mich unter 0296 1417542 oder per E-Mail an qbriemer@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Sarina Holt"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Badoberan"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0296 1417542"
+   },
+   {
+    "start": 179,
+    "end": 199,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qbriemer@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0175",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Dr. Vassilios Kade B.Sc. und Leon Gumprich-Birnbaum. Das nächste Treffen findet in Ansbach statt. Aufgabe: Unterlagen senden an koch-iiagnieszka@example.net. Durchwahl: 0594 4262724.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Dr. Vassilios Kade B.Sc."
+   },
+   {
+    "start": 53,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Leon Gumprich-Birnbaum"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Ansbach"
+   },
+   {
+    "start": 152,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "koch-iiagnieszka@example.net"
+   },
+   {
+    "start": 193,
+    "end": 205,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0594 4262724"
+   }
+  ]
+ },
+ {
+  "id": "de-0176",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dipl.-Ing. Willy Rogge und Ihre Adresse liegt in Gütersloh. Wir rufen Sie zurück unter +49 453 728004. Die hinterlegte Karte ist 4250133594995712. Eine Kopie wurde gesendet an seidelvolkhard@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Willy Rogge"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Gütersloh"
+   },
+   {
+    "start": 144,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 453 728004"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4250133594995712"
+   },
+   {
+    "start": 233,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seidelvolkhard@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0177",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Maike Junken. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Magdeburg sein. Sie erreichen mich unter 0931 1590407 oder per E-Mail an wendeellinor@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Maike Junken"
+   },
+   {
+    "start": 107,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Magdeburg"
+   },
+   {
+    "start": 148,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0931 1590407"
+   },
+   {
+    "start": 180,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wendeellinor@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0178",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Käthe Bolzmann-Käster und Luisa Mielcarek. Das nächste Treffen findet in Soest statt. Aufgabe: Unterlagen senden an reni49@example.org. Durchwahl: 0394 8035367.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Käthe Bolzmann-Käster"
+   },
+   {
+    "start": 50,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Luisa Mielcarek"
+   },
+   {
+    "start": 97,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Soest"
+   },
+   {
+    "start": 140,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reni49@example.org"
+   },
+   {
+    "start": 171,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0394 8035367"
+   }
+  ]
+ },
+ {
+  "id": "de-0179",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Hulda Oderwald und Ihre Adresse liegt in Grimma. Wir rufen Sie zurück unter 0391 6854737. Die hinterlegte Karte ist 4815910088210445. Eine Kopie wurde gesendet an killermadeleine@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Hulda Oderwald"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Grimma"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0391 6854737"
+   },
+   {
+    "start": 173,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4815910088210445"
+   },
+   {
+    "start": 220,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "killermadeleine@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0180",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Claudio Pergande. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Neuruppin sein. Sie erreichen mich unter 0300 2802429 oder per E-Mail an walburgavan-der-dussen@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Claudio Pergande"
+   },
+   {
+    "start": 111,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Neuruppin"
+   },
+   {
+    "start": 152,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0300 2802429"
+   },
+   {
+    "start": 184,
+    "end": 218,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "walburgavan-der-dussen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0181",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: German Heintze und Astrid Wesack. Das nächste Treffen findet in Gifhorn statt. Aufgabe: Unterlagen senden an anaritter@example.net. Durchwahl: +49 932 7216226.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "German Heintze"
+   },
+   {
+    "start": 43,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Astrid Wesack"
+   },
+   {
+    "start": 88,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Gifhorn"
+   },
+   {
+    "start": 133,
+    "end": 154,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anaritter@example.net"
+   },
+   {
+    "start": 167,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 932 7216226"
+   }
+  ]
+ },
+ {
+  "id": "de-0182",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Sylvio Thies und Ihre Adresse liegt in Gera. Wir rufen Sie zurück unter 0167 4499597. Die hinterlegte Karte ist 4064-6354-8621-6409. Eine Kopie wurde gesendet an nicolailachmann@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Sylvio Thies"
+   },
+   {
+    "start": 96,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Gera"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0167 4499597"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4064-6354-8621-6409"
+   },
+   {
+    "start": 219,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nicolailachmann@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0183",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Zenon Bruder. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Erding sein. Sie erreichen mich unter +49 300 8556816 oder per E-Mail an ybauer@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Zenon Bruder"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Erding"
+   },
+   {
+    "start": 145,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 300 8556816"
+   },
+   {
+    "start": 180,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ybauer@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0184",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Alice Staude und Hardy Vollbrecht B.A.. Das nächste Treffen findet in Prenzlau statt. Aufgabe: Unterlagen senden an undine87@example.com. Durchwahl: 0661 8802327.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Alice Staude"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Hardy Vollbrecht B.A."
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Prenzlau"
+   },
+   {
+    "start": 140,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "undine87@example.com"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0661 8802327"
+   }
+  ]
+ },
+ {
+  "id": "de-0185",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Fabienne Schweitzer und Ihre Adresse liegt in Wertingen. Wir rufen Sie zurück unter 0156 2156255. Die hinterlegte Karte ist 4424-4022-9793-4703. Eine Kopie wurde gesendet an scholzildiko@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Fabienne Schweitzer"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Wertingen"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0156 2156255"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4424-4022-9793-4703"
+   },
+   {
+    "start": 231,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "scholzildiko@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0186",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Annegrete Pechel. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Mittweida sein. Sie erreichen mich unter +49 393 2218550 oder per E-Mail an pberger@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Annegrete Pechel"
+   },
+   {
+    "start": 111,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Mittweida"
+   },
+   {
+    "start": 152,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 393 2218550"
+   },
+   {
+    "start": 187,
+    "end": 206,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pberger@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0187",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Prof. Markus Martin MBA. und Wieland Mälzer. Das nächste Treffen findet in Nordhausen statt. Aufgabe: Unterlagen senden an witoldrohleder@example.org. Durchwahl: 0239 7755160.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Prof. Markus Martin MBA."
+   },
+   {
+    "start": 53,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Wieland Mälzer"
+   },
+   {
+    "start": 99,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Nordhausen"
+   },
+   {
+    "start": 147,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "witoldrohleder@example.org"
+   },
+   {
+    "start": 186,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0239 7755160"
+   }
+  ]
+ },
+ {
+  "id": "de-0188",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Niels Wende und Ihre Adresse liegt in Eggenfelden. Wir rufen Sie zurück unter +49 201 6049440. Die hinterlegte Karte ist 4194-3954-3650-0054. Eine Kopie wurde gesendet an jheinrich@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Niels Wende"
+   },
+   {
+    "start": 95,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Eggenfelden"
+   },
+   {
+    "start": 135,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 201 6049440"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4194-3954-3650-0054"
+   },
+   {
+    "start": 228,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jheinrich@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0189",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Dr. Gotthard Seidel. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Burg sein. Sie erreichen mich unter +49 66 3837842 oder per E-Mail an eleonora63@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Dr. Gotthard Seidel"
+   },
+   {
+    "start": 114,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Burg"
+   },
+   {
+    "start": 150,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 66 3837842"
+   },
+   {
+    "start": 184,
+    "end": 206,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eleonora63@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0190",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Regina Hahn B.Sc. und Raymund Bachmann B.Sc.. Das nächste Treffen findet in Freital statt. Aufgabe: Unterlagen senden an canan51@example.net. Durchwahl: +49 59 6756604.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Regina Hahn B.Sc."
+   },
+   {
+    "start": 46,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Raymund Bachmann B.Sc."
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Freital"
+   },
+   {
+    "start": 145,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "canan51@example.net"
+   },
+   {
+    "start": 177,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 59 6756604"
+   }
+  ]
+ },
+ {
+  "id": "de-0191",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Dipl.-Ing. Gregor Wiek MBA. und Ihre Adresse liegt in Berchtesgaden. Wir rufen Sie zurück unter +49 491 6576308. Die hinterlegte Karte ist 4708-6024-8931-1092. Eine Kopie wurde gesendet an dorina94@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Gregor Wiek MBA."
+   },
+   {
+    "start": 111,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Berchtesgaden"
+   },
+   {
+    "start": 153,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+49 491 6576308"
+   },
+   {
+    "start": 196,
+    "end": 215,
+    "entity_type": "CREDIT_CARD",
+    "value": "4708-6024-8931-1092"
+   },
+   {
+    "start": 246,
+    "end": 266,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dorina94@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0192",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ing. Stefani Schwital MBA.. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Soest sein. Sie erreichen mich unter 0691 7773963 oder per E-Mail an mariuszkoester@example.org. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Ing. Stefani Schwital MBA."
+   },
+   {
+    "start": 121,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Soest"
+   },
+   {
+    "start": 158,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0691 7773963"
+   },
+   {
+    "start": 190,
+    "end": 216,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariuszkoester@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0193",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Wojciech Bruder und Alina Becker MBA.. Das nächste Treffen findet in Erkelenz statt. Aufgabe: Unterlagen senden an aurelia34@example.org. Durchwahl: 0264 9989087.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Wojciech Bruder"
+   },
+   {
+    "start": 44,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Alina Becker MBA."
+   },
+   {
+    "start": 93,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Erkelenz"
+   },
+   {
+    "start": 139,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aurelia34@example.org"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0264 9989087"
+   }
+  ]
+ },
+ {
+  "id": "de-0194",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Petros Binner und Ihre Adresse liegt in Lübz. Wir rufen Sie zurück unter 0174 1649441. Die hinterlegte Karte ist 4678-7240-3175-8848. Eine Kopie wurde gesendet an linkearnulf@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Petros Binner"
+   },
+   {
+    "start": 97,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Lübz"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0174 1649441"
+   },
+   {
+    "start": 170,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4678-7240-3175-8848"
+   },
+   {
+    "start": 220,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "linkearnulf@example.org"
+   }
+  ]
+ },
+ {
+  "id": "de-0195",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Ahmed Vollbrecht. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Wittenberg sein. Sie erreichen mich unter 0787 2993071 oder per E-Mail an thiesbernfried@example.net. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Ahmed Vollbrecht"
+   },
+   {
+    "start": 111,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Wittenberg"
+   },
+   {
+    "start": 153,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0787 2993071"
+   },
+   {
+    "start": 185,
+    "end": 211,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "thiesbernfried@example.net"
+   }
+  ]
+ },
+ {
+  "id": "de-0196",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Abbas Henck und Dipl.-Ing. Petra Röhrdanz. Das nächste Treffen findet in Magdeburg statt. Aufgabe: Unterlagen senden an renata32@example.org. Durchwahl: 0143 9646948.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Abbas Henck"
+   },
+   {
+    "start": 40,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Dipl.-Ing. Petra Röhrdanz"
+   },
+   {
+    "start": 97,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Magdeburg"
+   },
+   {
+    "start": 144,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renata32@example.org"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0143 9646948"
+   }
+  ]
+ },
+ {
+  "id": "de-0197",
+  "language": "de",
+  "genre": "inquiry",
+  "text": "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist Reinhilde Biggen und Ihre Adresse liegt in Erfurt. Wir rufen Sie zurück unter 0150 7510096. Die hinterlegte Karte ist 4884010825779996. Eine Kopie wurde gesendet an alf97@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Reinhilde Biggen"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Erfurt"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0150 7510096"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4884010825779996"
+   },
+   {
+    "start": 222,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alf97@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0198",
+  "language": "de",
+  "genre": "request",
+  "text": "Guten Tag, mein Name ist Elzbieta Gute. Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird Luckenwalde sein. Sie erreichen mich unter 0549 5639674 oder per E-Mail an hans-josefortmann@example.com. Vielen Dank!",
+  "spans": [
+   {
+    "start": 25,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Elzbieta Gute"
+   },
+   {
+    "start": 108,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Luckenwalde"
+   },
+   {
+    "start": 151,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "0549 5639674"
+   },
+   {
+    "start": 183,
+    "end": 212,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hans-josefortmann@example.com"
+   }
+  ]
+ },
+ {
+  "id": "de-0199",
+  "language": "de",
+  "genre": "minutes",
+  "text": "[Protokoll] Teilnehmer: Ing. Leopoldine Weinhold und Louis Sauer. Das nächste Treffen findet in Eisenach statt. Aufgabe: Unterlagen senden an betzold@example.com. Durchwahl: 084 5951872.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Ing. Leopoldine Weinhold"
+   },
+   {
+    "start": 53,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Louis Sauer"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Eisenach"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "betzold@example.com"
+   },
+   {
+    "start": 174,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "084 5951872"
+   }
+  ]
+ }
+]

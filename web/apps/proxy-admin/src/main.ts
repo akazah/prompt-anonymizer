@@ -1,10 +1,14 @@
 import {
+  LANGUAGES,
+  LANGUAGE_NAMES,
   getConfig,
   getEventMapping,
   getEvents,
   getStatus,
+  isLanguage,
   postPreview,
   putConfig,
+  type Language,
   type ProxyConfig,
   type ProxyStatus,
   type RedactionEvent,
@@ -12,10 +16,21 @@ import {
 import "@prompt-anonymizer/theme/fonts.css";
 import "./style.css";
 
-const SAMPLES = {
+const SAMPLES: Record<Language, string> = {
   ja: "山田太郎は、来月、誕生日を迎えます。同僚の佐藤花子は、サプライズパーティーを計画しています。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。佐藤花子への連絡は hanako.sato@example.com までお願いします。",
   en: "John Smith will have a birthday next month. His colleague Emily Johnson is planning a surprise party. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333. You can reach Emily Johnson at emily.johnson@example.com.",
-} as const;
+  es: "María García vive en Madrid. Su correo electrónico es maria.garcia@example.com y su teléfono es +34 612 345 678.",
+  vi: "Nguyễn Văn An sống ở Hà Nội. Email của anh ấy là an.nguyen@example.com và số điện thoại là 0912 345 678.",
+  zh: "王小明住在北京。他的邮箱是 xiaoming.wang@example.com，电话号码是 138-1234-5678。",
+  ko: "김민준은 서울에 살고 있습니다. 이메일은 minjun.kim@example.com이고 전화번호는 010-1234-5678입니다.",
+  fr: "Jean Dupont habite à Paris. Son adresse e-mail est jean.dupont@example.com et son numéro de téléphone est le 06 12 34 56 78.",
+  de: "Max Mustermann wohnt in Berlin. Seine E-Mail-Adresse ist max.mustermann@example.com und seine Telefonnummer ist 0151 23456789.",
+  pt: "João Silva mora em São Paulo. O e-mail dele é joao.silva@example.com e o telefone é (11) 91234-5678.",
+  it: "Marco Rossi vive a Milano. La sua email è marco.rossi@example.com e il suo telefono è 333 123 4567.",
+};
+
+const LANGUAGE_OPTIONS = `<option value="auto">Auto / 自動判定</option>
+            ${LANGUAGES.map((lang) => `<option value="${lang}">${LANGUAGE_NAMES[lang]}</option>`).join("\n            ")}`;
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
@@ -70,11 +85,7 @@ app.innerHTML = `
         <label class="field-label" for="cfg-language">Language</label>
         <div class="field-control">
           <select id="cfg-language">
-            <option value="auto">Auto / 自動判定</option>
-            <option value="ja">日本語</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="vi">Tiếng Việt</option>
+            ${LANGUAGE_OPTIONS}
           </select>
         </div>
       </div>
@@ -121,11 +132,7 @@ app.innerHTML = `
       <div class="toolbar">
         <label>Language
           <select id="preview-language">
-            <option value="auto">Auto / 自動判定</option>
-            <option value="ja">日本語</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="vi">Tiếng Việt</option>
+            ${LANGUAGE_OPTIONS}
           </select>
         </label>
         <button id="load-sample">Load sample</button>
@@ -211,9 +218,7 @@ function linesToText(lines: string[]): string {
 
 function languageLabel(lang: string): string {
   if (lang === "auto") return "Auto / 自動判定";
-  if (lang === "ja") return "日本語";
-  if (lang === "en") return "English";
-  return lang;
+  return isLanguage(lang) ? LANGUAGE_NAMES[lang] : lang;
 }
 
 function setProxyOnline(online: boolean): void {
@@ -237,7 +242,7 @@ function readConfigForm(): Partial<ProxyConfig> {
   return {
     upstreamUrl: $<HTMLInputElement>("#cfg-upstream").value.trim(),
     ner: $<HTMLInputElement>("#cfg-ner").checked,
-    language: language === "auto" || language === "ja" || language === "en" ? language : "auto",
+    language: language === "auto" || isLanguage(language) ? language : "auto",
     denyList: parseLines($<HTMLTextAreaElement>("#cfg-deny").value),
     allowList: parseLines($<HTMLTextAreaElement>("#cfg-allow").value),
     recordMappings: $<HTMLInputElement>("#cfg-record-mappings").checked,
@@ -428,7 +433,7 @@ $("#preview-btn").addEventListener("click", () => {
     previewBtn.disabled = true;
     previewBtn.textContent = "Working…";
     try {
-      const language = lang === "auto" || lang === "ja" || lang === "en" ? lang : "auto";
+      const language = lang === "auto" || isLanguage(lang) ? lang : "auto";
       const result = await postPreview({ text, language });
       previewOutput.innerHTML = renderWithHighlights(
         result.anonymized,
@@ -455,10 +460,14 @@ $("#preview-btn").addEventListener("click", () => {
 
 $("#load-sample").addEventListener("click", () => {
   const value = $<HTMLSelectElement>("#preview-language").value;
-  const language =
-    value === "auto" ? (navigator.language?.startsWith("ja") ? "ja" : "en") : value;
-  $<HTMLTextAreaElement>("#preview-input").value =
-    language === "ja" ? SAMPLES.ja : SAMPLES.en;
+  // "auto" falls back to the navigator's base tag when supported, else English.
+  const navBase = (navigator.language?.toLowerCase() ?? "en").split("-")[0];
+  const language: Language = isLanguage(value)
+    ? value
+    : isLanguage(navBase)
+      ? navBase
+      : "en";
+  $<HTMLTextAreaElement>("#preview-input").value = SAMPLES[language];
 });
 
 // --- Startup ---

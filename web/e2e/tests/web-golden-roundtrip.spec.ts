@@ -12,7 +12,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
-import { anonymizeRegexOnly, expect, restore, test } from "./fixtures";
+import { E2E_LANGUAGES, type E2eLanguage, anonymizeRegexOnly, expect, restore, test } from "./fixtures";
 
 interface GoldenSpan {
   entity_type: string;
@@ -21,14 +21,14 @@ interface GoldenSpan {
 
 interface GoldenCase {
   id: string;
-  language: "ja" | "en" | "es" | "vi";
+  language: E2eLanguage;
   text: string;
   spans: GoldenSpan[];
 }
 
 const CASES_PER_LANGUAGE = 5;
 
-function goldenSlice(language: "ja" | "en" | "es" | "vi"): GoldenCase[] {
+function goldenSlice(language: E2eLanguage): GoldenCase[] {
   const path = fileURLToPath(
     new URL(`../../../tests/golden/golden_${language}.json`, import.meta.url),
   );
@@ -36,7 +36,7 @@ function goldenSlice(language: "ja" | "en" | "es" | "vi"): GoldenCase[] {
   return cases.slice(0, CASES_PER_LANGUAGE);
 }
 
-for (const language of ["ja", "en", "es", "vi"] as const) {
+for (const language of E2E_LANGUAGES) {
   test(`golden ${language}: UI round trip restores the original text`, async ({ page }) => {
     for (const goldenCase of goldenSlice(language)) {
       // Fresh page per case so "output is non-empty" waits cannot race with

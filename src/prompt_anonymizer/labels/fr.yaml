@@ -1,0 +1,10 @@
+PERSON: Nom
+EMAIL_ADDRESS: Email
+LOCATION: Adresse
+PHONE_NUMBER: Téléphone
+JP_POSTAL_CODE: CodePostal
+JP_MY_NUMBER: MyNumber
+CREDIT_CARD: CarteBancaire
+US_SSN: SSN
+IBAN_CODE: IBAN
+CUSTOM: Personnalisé

@@ -17,8 +17,10 @@ import { readFile, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 import {
   Anonymizer,
+  LANGUAGES,
   TransformersNerBackend,
   detectLanguage,
+  isLanguage,
   type AnonymizeResult,
   type Language,
   type NerProgress,
@@ -56,6 +58,10 @@ const SCAN_NER_OFF_NOTICE =
   "Note: NER is off - names and locations are NOT scanned " +
   "(pass --ner to enable; downloads the NER model on first run).";
 
+// e.g. "en, ja, es, vi, zh, ko, fr, de, pt, it or auto" - derived from the
+// core registry so new languages need no edits here.
+const LANGUAGE_CHOICES = `${LANGUAGES.join(", ")} or auto`;
+
 const USAGE = `prompt-anonymizer - Anonymize PII before it reaches an LLM.
 
 Usage:
@@ -67,7 +73,7 @@ Usage:
 anonymize options:
   -t, --text TEXT          Text to anonymize.
   -f, --file FILE          Read text from a file.
-  -l, --language LANG      en, ja, es, vi or auto (default: auto).
+  -l, --language LANG      ${LANGUAGE_CHOICES} (default: auto).
       --no-ner             Disable the NER model (names/locations NOT masked).
       --entities LIST      Comma-separated entity types (default: built-in set).
       --json               Output JSON with text, mapping and entities.
@@ -82,7 +88,7 @@ deanonymize options:
 scan options (commit-time / CI gate; exits 0 = clean, 1 = PII found, 2 = error):
   FILES...                 Files to scan (e.g. staged files from a git hook).
   -t, --text TEXT          Text to scan.
-  -l, --language LANG      en, ja, es, vi or auto (default: auto).
+  -l, --language LANG      ${LANGUAGE_CHOICES} (default: auto).
       --ner                Also scan names/locations with the NER model
                            (off by default: scan is offline and model-free).
       --deny TERM          Term that must never appear (repeatable).
@@ -105,11 +111,9 @@ async function readInput(
 }
 
 function resolveLanguage(value: string, text: string): Promise<Language> {
-  if (value === "en" || value === "ja" || value === "es" || value === "vi") {
-    return Promise.resolve(value);
-  }
+  if (isLanguage(value)) return Promise.resolve(value);
   if (value === "auto") return detectLanguage(text);
-  throw new CliError(`Unsupported language: ${value} (use en, ja, es, vi or auto).`);
+  throw new CliError(`Unsupported language: ${value} (use ${LANGUAGE_CHOICES}).`);
 }
 
 /** Same JSON shape as the Python CLI's `--json` (`AnonymizeResult.to_dict()`). */

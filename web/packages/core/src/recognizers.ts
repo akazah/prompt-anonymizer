@@ -156,6 +156,97 @@ const RULES: RegexRule[] = [
     score: 0.6,
     languages: ["vi"],
   },
+  // CN mobile, 11 digits grouped 3-4-4: 138 0013 8000 / +86 138-0013-8000
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)(?:\+86[ .-]?)?1[3-9]\d[ .-]?\d{4}[ .-]?\d{4}(?!\d)/g,
+    score: 0.6,
+    languages: ["zh"],
+  },
+  // CN landline, 0-prefixed 3/4-digit area code + 7-8 digits: 010-12345678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)(?:\+86[ .-]?)?0\d{2,3}[ .-]\d{7,8}(?!\d)/g,
+    score: 0.5,
+    languages: ["zh"],
+  },
+  // KR mobile: 010-1234-5678 / 01012345678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)01[016789][ .-]?\d{3,4}[ .-]?\d{4}(?!\d)/g,
+    score: 0.6,
+    languages: ["ko"],
+  },
+  // KR with +82 prefix (leading 0 dropped): +82 10-1234-5678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)\+82[ .-]?1[016789][ .-]?\d{3,4}[ .-]?\d{4}(?!\d)/g,
+    score: 0.6,
+    languages: ["ko"],
+  },
+  // KR landline: 02-123-4567 / 031-1234-5678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)0(?:2|[3-6]\d)[ .-]\d{3,4}[ .-]\d{4}(?!\d)/g,
+    score: 0.5,
+    languages: ["ko"],
+  },
+  // FR, ten digits as five pairs: 06 12 34 56 78 / +33 6 12 34 56 78
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)(?:\+33[ .-]?[1-9]|0[1-9])(?:[ .-]?\d{2}){4}(?!\d)/g,
+    score: 0.6,
+    languages: ["fr"],
+  },
+  // DE with +49 prefix: +49 30 901820 / +49 171 2345678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)\+49[ .-]?\d{2,4}[ /.-]?\d{4,8}(?!\d)/g,
+    score: 0.6,
+    languages: ["de"],
+  },
+  // DE domestic, separator required: 030 901820 / 0171 2345678 / 0711/123456
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)0\d{2,4}[ /.-]\d{4,8}(?!\d)/g,
+    score: 0.5,
+    languages: ["de"],
+  },
+  // PT with +351 prefix (separators optional): +351 912 345 678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)\+351[ .-]?(?:9[1236]\d|2\d{2})[ .-]?\d{3}[ .-]?\d{3}(?!\d)/g,
+    score: 0.6,
+    languages: ["pt"],
+  },
+  // PT 3-3-3 grouping, separators required without prefix: 912 345 678
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)(?:9[1236]\d|2\d{2})[ .-]\d{3}[ .-]\d{3}(?!\d)/g,
+    score: 0.6,
+    languages: ["pt"],
+  },
+  // IT mobile, separators required without prefix: 333 123 4567
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)(?:\+39[ .-]?)?3\d{2}[ .-]\d{3}[ .-]\d{3,4}(?!\d)/g,
+    score: 0.6,
+    languages: ["it"],
+  },
+  // IT mobile with +39 prefix (separators optional): +39 3331234567
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)\+39[ .-]?3\d{2}[ .-]?\d{6,7}(?!\d)/g,
+    score: 0.6,
+    languages: ["it"],
+  },
+  // IT landline, separator required: 06 6982 1234 -> area code + body
+  {
+    entityType: "PHONE_NUMBER",
+    regex: /(?<!\d)0\d{1,3}[ .-]\d{5,8}(?!\d)/g,
+    score: 0.5,
+    languages: ["it"],
+  },
   // JP postal code with 〒 mark (strong signal).
   {
     entityType: "JP_POSTAL_CODE",

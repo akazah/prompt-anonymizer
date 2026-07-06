@@ -69,7 +69,7 @@ describe("admin API", () => {
     const badLang = await json(`${proxy.url}/admin/api/config`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ language: "fr" }),
+      body: JSON.stringify({ language: "xx" }),
     });
     expect(badLang.status).toBe(400);
 

@@ -131,6 +131,70 @@ def _vn_phone(rng: random.Random) -> str:
     return f"+84 {mobile}"
 
 
+def _zh_phone(rng: random.Random) -> str:
+    kind = rng.choice(["mobile", "mobile_grouped", "mobile_prefixed"])
+    mobile = f"1{rng.choice('3456789')}{rng.randint(0, 9)}"
+    body = f"{rng.randint(0, 9999):04d}"
+    tail = f"{rng.randint(0, 9999):04d}"
+    if kind == "mobile":
+        return f"{mobile}{body}{tail}"
+    if kind == "mobile_grouped":
+        return f"{mobile} {body} {tail}"
+    return f"+86 {mobile}-{body}-{tail}"
+
+
+def _ko_phone(rng: random.Random) -> str:
+    kind = rng.choice(["mobile", "mobile_bare", "mobile_prefixed"])
+    body = f"{rng.randint(1000, 9999)}-{rng.randint(1000, 9999)}"
+    if kind == "mobile":
+        return f"010-{body}"
+    if kind == "mobile_bare":
+        return f"010{body.replace('-', '')}"
+    return f"+82 10-{body}"
+
+
+def _fr_phone(rng: random.Random) -> str:
+    pairs = " ".join(f"{rng.randint(0, 99):02d}" for _ in range(4))
+    head = rng.choice("167")
+    if rng.random() < 0.5:
+        return f"0{head} {pairs}"
+    return f"+33 {head} {pairs}"
+
+
+def _de_phone(rng: random.Random) -> str:
+    # Bodies stay <= 7 digits so a 4-digit area code can never form a
+    # 12-digit run: those occasionally pass the My Number check digit and
+    # would be (correctly, but confusingly) masked as JP_MY_NUMBER.
+    kind = rng.choice(["mobile", "landline", "prefixed"])
+    if kind == "mobile":
+        return f"01{rng.choice('567')}{rng.randint(0, 9)} {rng.randint(1000000, 9999999)}"
+    if kind == "landline":
+        return f"0{rng.randint(30, 999)} {rng.randint(100000, 9999999)}"
+    return f"+49 {rng.randint(30, 999)} {rng.randint(100000, 9999999)}"
+
+
+def _pt_phone(rng: random.Random) -> str:
+    kind = rng.choice(["mobile", "mobile_prefixed", "landline"])
+    mobile = (
+        f"9{rng.choice('1236')}{rng.randint(0, 9)} {rng.randint(100, 999)} {rng.randint(100, 999)}"
+    )
+    if kind == "mobile":
+        return mobile
+    if kind == "mobile_prefixed":
+        return f"+351 {mobile}"
+    return f"2{rng.randint(10, 99)} {rng.randint(100, 999)} {rng.randint(100, 999)}"
+
+
+def _it_phone(rng: random.Random) -> str:
+    kind = rng.choice(["mobile", "mobile_prefixed", "landline"])
+    mobile = f"3{rng.randint(10, 99)} {rng.randint(100, 999)} {rng.randint(1000, 9999)}"
+    if kind == "mobile":
+        return mobile
+    if kind == "mobile_prefixed":
+        return f"+39 {mobile}"
+    return f"0{rng.randint(2, 99)} {rng.randint(10000, 99999999)}"
+
+
 # Faker's vi_VN city/address providers emit malformed values ("JaneThị xã"),
 # so LOCATION slots draw from a curated list of real Vietnamese cities.
 _VN_CITIES = (
@@ -147,9 +211,33 @@ _VN_CITIES = (
 )
 
 
+# Faker's it_IT city provider is not deterministic across processes (its
+# output depends on hash randomization), which would break the seeded golden
+# set; LOCATION slots draw from a curated list of real Italian cities.
+_IT_CITIES = (
+    "Roma",
+    "Milano",
+    "Napoli",
+    "Torino",
+    "Palermo",
+    "Genova",
+    "Bologna",
+    "Firenze",
+    "Venezia",
+    "Verona",
+)
+
+
 def _credit_card(fake: Faker, rng: random.Random) -> str:
     """A Luhn-valid 16-digit Visa number, bare or hyphenated 4-4-4-4."""
-    number = fake.credit_card_number(card_type="visa16")
+    try:
+        number = fake.credit_card_number(card_type="visa16")
+    except KeyError:
+        # Some locale providers (zh_CN, pt_PT) replace the standard card
+        # table; their "visa" type also yields 16-digit Luhn-valid numbers.
+        number = fake.credit_card_number(card_type="visa")
+        while len(number) != 16:  # pragma: no cover - locale-dependent
+            number = fake.credit_card_number(card_type="visa")
     if rng.random() < 0.5:
         return "-".join(number[i : i + 4] for i in range(0, 16, 4))
     return number
@@ -262,84 +350,303 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     return GoldenCase(id=case_id, language="en", genre=genre, text=b.text, spans=b.spans)
 
 
-def _build_es(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
+@dataclass(frozen=True)
+class _GenericSpec:
+    """Phrase table for the template-driven builder.
+
+    ja / en keep bespoke builders (they exercise extra entity types:
+    JP postal / My Number, US SSN, IBAN); every other language is three
+    genre templates instantiated from this table, so adding golden-set
+    support for a new language is one spec plus a phone generator.
+    """
+
+    phone: Any  # Callable[[random.Random], str]
+    # (intro, after_name, after_city, after_phone, closing) for "request"
+    request: tuple[str, str, str, str, str]
+    # (header, between_names, venue, send_to, direct_line, tail) for "minutes"
+    minutes: tuple[str, str, str, str, str, str]
+    # (intro, address, callback, card, copy, tail) for "inquiry"
+    inquiry: tuple[str, str, str, str, str, str]
+    # Some Faker locales have unusable city providers; draw from a curated
+    # list instead when set.
+    cities: tuple[str, ...] | None = None
+
+
+_GENERIC_SPECS: dict[str, _GenericSpec] = {
+    "es": _GenericSpec(
+        phone=_es_phone,
+        request=(
+            "Buenos días, me llamo ",
+            ". Me gustaría programar una reunión el próximo mes. El lugar será ",
+            ". Puede llamarme al ",
+            " o escribirme a ",
+            ". ¡Gracias!",
+        ),
+        minutes=(
+            "[Acta] Asistentes: ",
+            " y ",
+            ". La próxima reunión será en ",
+            ". Tarea pendiente: enviar la presentación a ",
+            ". Línea directa: ",
+            ".",
+        ),
+        inquiry=(
+            "Gracias por contactar con soporte. Su nombre registrado es ",
+            " y su dirección está en ",
+            ". Le devolveremos la llamada al ",
+            ". La tarjeta registrada es ",
+            ". Se envió una copia a ",
+            ".",
+        ),
+    ),
+    "vi": _GenericSpec(
+        phone=_vn_phone,
+        request=(
+            "Xin chào, tôi tên là ",
+            ". Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại ",
+            ". Vui lòng liên hệ với tôi qua số ",
+            " hoặc email ",
+            ". Xin cảm ơn!",
+        ),
+        minutes=(
+            "[Biên bản] Người tham dự: ",
+            " và ",
+            ". Cuộc họp tiếp theo sẽ diễn ra tại ",
+            ". Việc cần làm: gửi tài liệu tới ",
+            ". Số máy trực tiếp: ",
+            ".",
+        ),
+        inquiry=(
+            "Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là ",
+            ", địa chỉ tại ",
+            ". Chúng tôi sẽ gọi lại cho bạn qua số ",
+            ". Thẻ thanh toán đã đăng ký là ",
+            ". Bản sao đã được gửi tới ",
+            ".",
+        ),
+        cities=_VN_CITIES,
+    ),
+    "zh": _GenericSpec(
+        phone=_zh_phone,
+        request=(
+            "您好，我叫",
+            "。我想安排下个月的会议，地点定在",
+            "。请拨打 ",
+            " 联系我，或发邮件至 ",
+            "。谢谢！",
+        ),
+        minutes=(
+            "【会议纪要】出席者：",
+            "、",
+            "。下次会议将在",
+            "举行。待办事项：请将资料发送至 ",
+            "。直线电话：",
+            "。",
+        ),
+        inquiry=(
+            "感谢您联系客服。您登记的姓名是",
+            "，地址位于",
+            "。我们将回拨 ",
+            "。登记的银行卡号为 ",
+            "。副本已发送至 ",
+            "。",
+        ),
+    ),
+    "ko": _GenericSpec(
+        phone=_ko_phone,
+        request=(
+            "안녕하세요, 제 이름은 ",
+            "입니다. 다음 달 회의를 잡고 싶습니다. 장소는 ",
+            "입니다. 연락처는 ",
+            " 이고, 이메일은 ",
+            " 입니다. 감사합니다!",
+        ),
+        minutes=(
+            "[회의록] 참석자: ",
+            ", ",
+            ". 다음 회의 장소는 ",
+            ". 할 일: 자료를 ",
+            " 로 보낼 것. 직통 전화: ",
+            ".",
+        ),
+        inquiry=(
+            "문의해 주셔서 감사합니다. 등록된 성함은 ",
+            " 님이고, 주소는 ",
+            " 입니다. 회신 전화는 ",
+            " 로 드리겠습니다. 등록된 카드 번호는 ",
+            " 입니다. 사본은 ",
+            " 로 발송되었습니다.",
+        ),
+    ),
+    "fr": _GenericSpec(
+        phone=_fr_phone,
+        request=(
+            "Bonjour, je m'appelle ",
+            ". Je souhaite organiser une réunion le mois prochain. Le lieu sera ",
+            ". Vous pouvez me joindre au ",
+            " ou m'écrire à ",
+            ". Merci !",
+        ),
+        minutes=(
+            "[Compte rendu] Participants : ",
+            " et ",
+            ". La prochaine réunion aura lieu à ",
+            ". À faire : envoyer la présentation à ",
+            ". Ligne directe : ",
+            ".",
+        ),
+        inquiry=(
+            "Merci d'avoir contacté le support. Votre nom enregistré est ",
+            " et votre adresse se trouve à ",
+            ". Nous vous rappellerons au ",
+            ". La carte enregistrée est ",
+            ". Une copie a été envoyée à ",
+            ".",
+        ),
+    ),
+    "de": _GenericSpec(
+        phone=_de_phone,
+        request=(
+            "Guten Tag, mein Name ist ",
+            ". Ich möchte für nächsten Monat ein Treffen vereinbaren. Der Ort wird ",
+            " sein. Sie erreichen mich unter ",
+            " oder per E-Mail an ",
+            ". Vielen Dank!",
+        ),
+        minutes=(
+            "[Protokoll] Teilnehmer: ",
+            " und ",
+            ". Das nächste Treffen findet in ",
+            " statt. Aufgabe: Unterlagen senden an ",
+            ". Durchwahl: ",
+            ".",
+        ),
+        inquiry=(
+            "Vielen Dank für Ihre Anfrage. Ihr registrierter Name ist ",
+            " und Ihre Adresse liegt in ",
+            ". Wir rufen Sie zurück unter ",
+            ". Die hinterlegte Karte ist ",
+            ". Eine Kopie wurde gesendet an ",
+            ".",
+        ),
+    ),
+    "pt": _GenericSpec(
+        phone=_pt_phone,
+        request=(
+            "Bom dia, chamo-me ",
+            ". Gostaria de agendar uma reunião no próximo mês. O local será ",
+            ". Pode ligar-me para o ",
+            " ou escrever para ",
+            ". Obrigado!",
+        ),
+        minutes=(
+            "[Ata] Participantes: ",
+            " e ",
+            ". A próxima reunião será em ",
+            ". Tarefa: enviar a apresentação para ",
+            ". Linha direta: ",
+            ".",
+        ),
+        inquiry=(
+            "Obrigado por contactar o suporte. O seu nome registado é ",
+            " e a sua morada fica em ",
+            ". Vamos ligar de volta para o ",
+            ". O cartão registado é ",
+            ". Foi enviada uma cópia para ",
+            ".",
+        ),
+    ),
+    "it": _GenericSpec(
+        phone=_it_phone,
+        cities=_IT_CITIES,
+        request=(
+            "Buongiorno, mi chiamo ",
+            ". Vorrei fissare una riunione il mese prossimo. Il luogo sarà ",
+            ". Può chiamarmi al ",
+            " o scrivermi a ",
+            ". Grazie!",
+        ),
+        minutes=(
+            "[Verbale] Partecipanti: ",
+            " e ",
+            ". La prossima riunione si terrà a ",
+            ". Da fare: inviare la presentazione a ",
+            ". Linea diretta: ",
+            ".",
+        ),
+        inquiry=(
+            "Grazie per aver contattato l'assistenza. Il nome registrato è ",
+            " e il suo indirizzo si trova a ",
+            ". La richiameremo al ",
+            ". La carta registrata è ",
+            ". Una copia è stata inviata a ",
+            ".",
+        ),
+    ),
+}
+
+
+def _build_generic(
+    language: str, genre: str, fake: Faker, rng: random.Random, case_id: str
+) -> GoldenCase:
+    spec = _GENERIC_SPECS[language]
     b = _Builder()
     name = fake.name()
     name2 = fake.name()
     email = fake.ascii_safe_email()
-    phone = _es_phone(rng)
-    city = fake.city()
+    phone = spec.phone(rng)
+    city = rng.choice(spec.cities) if spec.cities is not None else fake.city()
 
     if genre == "request":
-        b.lit("Buenos días, me llamo ").pii(name, "PERSON").lit(
-            ". Me gustaría programar una reunión el próximo mes. El lugar será "
-        ).pii(city, "LOCATION").lit(". Puede llamarme al ").pii(phone, "PHONE_NUMBER").lit(
-            " o escribirme a "
-        ).pii(email, "EMAIL_ADDRESS").lit(". ¡Gracias!")
-    elif genre == "minutes":
-        b.lit("[Acta] Asistentes: ").pii(name, "PERSON").lit(" y ").pii(name2, "PERSON").lit(
-            ". La próxima reunión será en "
-        ).pii(city, "LOCATION").lit(". Tarea pendiente: enviar la presentación a ").pii(
-            email, "EMAIL_ADDRESS"
-        ).lit(". Línea directa: ").pii(phone, "PHONE_NUMBER").lit(".")
-    else:
-        card = _credit_card(fake, rng)
-        b.lit("Gracias por contactar con soporte. Su nombre registrado es ").pii(
-            name, "PERSON"
-        ).lit(" y su dirección está en ").pii(city, "LOCATION").lit(
-            ". Le devolveremos la llamada al "
-        ).pii(phone, "PHONE_NUMBER").lit(". La tarjeta registrada es ").pii(
-            card, "CREDIT_CARD"
-        ).lit(". Se envió una copia a ").pii(email, "EMAIL_ADDRESS").lit(".")
-
-    return GoldenCase(id=case_id, language="es", genre=genre, text=b.text, spans=b.spans)
-
-
-def _build_vi(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
-    b = _Builder()
-    name = fake.name()
-    name2 = fake.name()
-    email = fake.ascii_safe_email()
-    phone = _vn_phone(rng)
-    city = rng.choice(_VN_CITIES)
-
-    if genre == "request":
-        b.lit("Xin chào, tôi tên là ").pii(name, "PERSON").lit(
-            ". Tôi muốn đặt lịch họp vào tháng tới. Địa điểm dự kiến tại "
-        ).pii(city, "LOCATION").lit(". Vui lòng liên hệ với tôi qua số ").pii(
+        intro, after_name, after_city, after_phone, closing = spec.request
+        b.lit(intro).pii(name, "PERSON").lit(after_name).pii(city, "LOCATION").lit(after_city).pii(
             phone, "PHONE_NUMBER"
-        ).lit(" hoặc email ").pii(email, "EMAIL_ADDRESS").lit(". Xin cảm ơn!")
+        ).lit(after_phone).pii(email, "EMAIL_ADDRESS").lit(closing)
     elif genre == "minutes":
-        b.lit("[Biên bản] Người tham dự: ").pii(name, "PERSON").lit(" và ").pii(
-            name2, "PERSON"
-        ).lit(". Cuộc họp tiếp theo sẽ diễn ra tại ").pii(city, "LOCATION").lit(
-            ". Việc cần làm: gửi tài liệu tới "
-        ).pii(email, "EMAIL_ADDRESS").lit(". Số máy trực tiếp: ").pii(phone, "PHONE_NUMBER").lit(
-            "."
-        )
+        header, between, venue, send_to, direct, tail = spec.minutes
+        b.lit(header).pii(name, "PERSON").lit(between).pii(name2, "PERSON").lit(venue).pii(
+            city, "LOCATION"
+        ).lit(send_to).pii(email, "EMAIL_ADDRESS").lit(direct).pii(phone, "PHONE_NUMBER").lit(tail)
     else:
         card = _credit_card(fake, rng)
-        b.lit("Cảm ơn bạn đã liên hệ bộ phận hỗ trợ. Tên đăng ký của bạn là ").pii(
-            name, "PERSON"
-        ).lit(", địa chỉ tại ").pii(city, "LOCATION").lit(
-            ". Chúng tôi sẽ gọi lại cho bạn qua số "
-        ).pii(phone, "PHONE_NUMBER").lit(". Thẻ thanh toán đã đăng ký là ").pii(
-            card, "CREDIT_CARD"
-        ).lit(". Bản sao đã được gửi tới ").pii(email, "EMAIL_ADDRESS").lit(".")
+        intro, address, callback, card_phrase, copy_phrase, tail = spec.inquiry
+        b.lit(intro).pii(name, "PERSON").lit(address).pii(city, "LOCATION").lit(callback).pii(
+            phone, "PHONE_NUMBER"
+        ).lit(card_phrase).pii(card, "CREDIT_CARD").lit(copy_phrase).pii(
+            email, "EMAIL_ADDRESS"
+        ).lit(tail)
 
-    return GoldenCase(id=case_id, language="vi", genre=genre, text=b.text, spans=b.spans)
+    return GoldenCase(id=case_id, language=language, genre=genre, text=b.text, spans=b.spans)
 
 
-_LOCALES = {"ja": "ja_JP", "en": "en_US", "es": "es_ES", "vi": "vi_VN"}
-_BUILDERS = {"ja": _build_ja, "en": _build_en, "es": _build_es, "vi": _build_vi}
+_LOCALES = {
+    "ja": "ja_JP",
+    "en": "en_US",
+    "es": "es_ES",
+    "vi": "vi_VN",
+    "zh": "zh_CN",
+    "ko": "ko_KR",
+    "fr": "fr_FR",
+    "de": "de_DE",
+    "pt": "pt_PT",
+    "it": "it_IT",
+}
+_BESPOKE_BUILDERS = {"ja": _build_ja, "en": _build_en}
 
 
 def generate_cases(language: str, count: int = 200, seed: int = 20260705) -> list[GoldenCase]:
     """Generate ``count`` seeded synthetic cases for ``language``."""
-    if language not in _BUILDERS:
+    if language not in _LOCALES:
         raise ValueError(f"no golden builder for language '{language}'")
     fake = Faker(_LOCALES[language])
     fake.seed_instance(seed)
     rng = random.Random(seed)
-    build = _BUILDERS[language]
-    return [build(GENRES[i % len(GENRES)], fake, rng, f"{language}-{i:04d}") for i in range(count)]
+    bespoke = _BESPOKE_BUILDERS.get(language)
+    if bespoke is not None:
+        return [
+            bespoke(GENRES[i % len(GENRES)], fake, rng, f"{language}-{i:04d}") for i in range(count)
+        ]
+    return [
+        _build_generic(language, GENRES[i % len(GENRES)], fake, rng, f"{language}-{i:04d}")
+        for i in range(count)
+    ]

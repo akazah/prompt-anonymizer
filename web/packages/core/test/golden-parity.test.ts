@@ -12,7 +12,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { detectWithRegex } from "../src/recognizers.js";
-import type { Language } from "../src/types.js";
+import { LANGUAGES, type Language } from "../src/types.js";
 
 interface GoldenSpan {
   start: number;
@@ -50,7 +50,7 @@ function overlaps(aStart: number, aEnd: number, bStart: number, bEnd: number): b
   return aStart < bEnd && bStart < aEnd;
 }
 
-describe.each(["ja", "en", "es", "vi"] as const)("golden set parity (%s)", (language) => {
+describe.each([...LANGUAGES] as const)("golden set parity (%s)", (language) => {
   it(`regex recall >= ${MIN_RECALL} per structured entity`, () => {
     const cases = loadGolden(language);
     expect(cases.length).toBeGreaterThan(0);

@@ -9,15 +9,24 @@
 import { pipeline } from "@huggingface/transformers";
 import type { EntitySpan, Language, NerBackend } from "./types.js";
 
+// Multilingual NER fine-tuned on ten high-resource languages (de, es, fr,
+// it, nl, pt, zh, en, ar, lv). It also transfers usably to languages outside
+// that set (vi verified empirically; ko relies on the same mBERT transfer -
+// no ONNX export of a dedicated model exists for either). The Python core's
+// hf backend uses NlpHUST/ner-vietnamese-electra-base for vi instead.
+const HRL = "Xenova/bert-base-multilingual-cased-ner-hrl";
+
 export const DEFAULT_NER_MODELS: Record<Language, string> = {
   ja: "jiting/xlm-roberta-ner-japanese_onnx",
   en: "Xenova/bert-base-NER",
-  // The multilingual HRL model covers Spanish natively and transfers well to
-  // Vietnamese (verified empirically); no ONNX export of a dedicated
-  // Vietnamese NER model exists, so the Python core's hf backend uses
-  // NlpHUST/ner-vietnamese-electra-base for vi instead.
-  es: "Xenova/bert-base-multilingual-cased-ner-hrl",
-  vi: "Xenova/bert-base-multilingual-cased-ner-hrl",
+  es: HRL,
+  vi: HRL,
+  zh: HRL,
+  ko: HRL,
+  fr: HRL,
+  de: HRL,
+  pt: HRL,
+  it: HRL,
 };
 
 /** Model tag -> prompt-anonymizer entity type. Unlisted tags are ignored. */

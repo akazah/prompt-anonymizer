@@ -1,5 +1,7 @@
 import {
   Anonymizer,
+  LANGUAGES,
+  LANGUAGE_NAMES,
   RestoreSession,
   TransformersNerBackend,
   detectLanguage,
@@ -52,10 +54,7 @@ panel.innerHTML = `
       <div class="row mt-2">
         <select id="language">
           <option value="auto">Auto / 自動判定</option>
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="vi">Tiếng Việt</option>
+          ${LANGUAGES.map((lang) => `<option value="${lang}">${LANGUAGE_NAMES[lang]}</option>`).join("\n          ")}
         </select>
         <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER</label>
         <button id="anonymize" class="btn primary">Anonymize</button>

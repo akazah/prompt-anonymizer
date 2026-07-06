@@ -12,6 +12,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mergeSpans } from "../dist/labeling.js";
+import { LANGUAGES } from "../dist/types.js";
 import { detectWithRegex } from "../dist/recognizers.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -31,7 +32,7 @@ const overlaps = (aS, aE, bS, bE) => aS < bE && bS < aE;
 console.log("| Language | Entity | Precision | Recall | F1 | Support |");
 console.log("|---|---|---|---|---|---|");
 
-for (const language of ["ja", "en", "es", "vi"]) {
+for (const language of LANGUAGES) {
   const cases = JSON.parse(readFileSync(join(GOLDEN_DIR, `golden_${language}.json`), "utf-8"));
   const metrics = new Map();
   const m = (entity) => {

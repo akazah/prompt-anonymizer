@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "pt-0000",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Irina-Nair Freitas. Gostaria de agendar uma reunião no próximo mês. O local será Freamunde. Pode ligar-me para o 250 554 176 ou escrever para fariafilipe@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Irina-Nair Freitas"
+   },
+   {
+    "start": 99,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Freamunde"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "250 554 176"
+   },
+   {
+    "start": 160,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fariafilipe@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0001",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Sérgio Baptista e Alexandra da Castro. A próxima reunião será em Santa Maria da Feira. Tarefa: enviar a apresentação para lourencoalice@example.net. Linha direta: 912 651 514.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Sérgio Baptista"
+   },
+   {
+    "start": 39,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Alexandra da Castro"
+   },
+   {
+    "start": 86,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Santa Maria da Feira"
+   },
+   {
+    "start": 143,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lourencoalice@example.net"
+   },
+   {
+    "start": 184,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "912 651 514"
+   }
+  ]
+ },
+ {
+  "id": "pt-0002",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Anita Sá e a sua morada fica em Silves. Vamos ligar de volta para o 290 643 112. O cartão registado é 4426-6486-0891-1404. Foi enviada uma cópia para umoura@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Anita Sá"
+   },
+   {
+    "start": 89,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Silves"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "290 643 112"
+   },
+   {
+    "start": 159,
+    "end": 178,
+    "entity_type": "CREDIT_CARD",
+    "value": "4426-6486-0891-1404"
+   },
+   {
+    "start": 207,
+    "end": 225,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "umoura@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0003",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Sara-Pilar Esteves. Gostaria de agendar uma reunião no próximo mês. O local será Albufeira. Pode ligar-me para o 916 509 988 ou escrever para margaridacruz@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Sara-Pilar Esteves"
+   },
+   {
+    "start": 99,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Albufeira"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 509 988"
+   },
+   {
+    "start": 160,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "margaridacruz@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0004",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Isabel Esteves e Renata Moreira-Lima. A próxima reunião será em Felgueiras. Tarefa: enviar a apresentação para camila17@example.org. Linha direta: 298 198 487.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Isabel Esteves"
+   },
+   {
+    "start": 38,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Renata Moreira-Lima"
+   },
+   {
+    "start": 85,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Felgueiras"
+   },
+   {
+    "start": 132,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "camila17@example.org"
+   },
+   {
+    "start": 168,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "298 198 487"
+   }
+  ]
+ },
+ {
+  "id": "pt-0005",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Eduardo Gaspar e a sua morada fica em Cantanhede. Vamos ligar de volta para o 215 574 997. O cartão registado é 4263-7014-0262-7332. Foi enviada uma cópia para alice00@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Eduardo Gaspar"
+   },
+   {
+    "start": 95,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Cantanhede"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "215 574 997"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4263-7014-0262-7332"
+   },
+   {
+    "start": 217,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alice00@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0006",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Carlota Coelho. Gostaria de agendar uma reunião no próximo mês. O local será Caniço. Pode ligar-me para o 287 917 769 ou escrever para almeidapilar@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Carlota Coelho"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Caniço"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "287 917 769"
+   },
+   {
+    "start": 153,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "almeidapilar@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0007",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Camila Pinho e Xavier Machado. A próxima reunião será em Tomar. Tarefa: enviar a apresentação para manuelcarneiro@example.net. Linha direta: 914 121 681.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Camila Pinho"
+   },
+   {
+    "start": 36,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Xavier Machado"
+   },
+   {
+    "start": 78,
+    "end": 83,
+    "entity_type": "LOCATION",
+    "value": "Tomar"
+   },
+   {
+    "start": 120,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "manuelcarneiro@example.net"
+   },
+   {
+    "start": 162,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "914 121 681"
+   }
+  ]
+ },
+ {
+  "id": "pt-0008",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gonçalo Alves e a sua morada fica em Aveiro. Vamos ligar de volta para o 239 768 308. O cartão registado é 4934809176267745. Foi enviada uma cópia para vasco13@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Gonçalo Alves"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Aveiro"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "239 768 308"
+   },
+   {
+    "start": 164,
+    "end": 180,
+    "entity_type": "CREDIT_CARD",
+    "value": "4934809176267745"
+   },
+   {
+    "start": 209,
+    "end": 228,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vasco13@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0009",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Kevin Loureiro. Gostaria de agendar uma reunião no próximo mês. O local será Vale de Cambra. Pode ligar-me para o 915 459 339 ou escrever para figueiredoluciana@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Kevin Loureiro"
+   },
+   {
+    "start": 95,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Vale de Cambra"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "915 459 339"
+   },
+   {
+    "start": 161,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "figueiredoluciana@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0010",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Tomé Fernandes e Beatriz Araújo. A próxima reunião será em Maia. Tarefa: enviar a apresentação para nascimentoana@example.com. Linha direta: 268 215 564.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Tomé Fernandes"
+   },
+   {
+    "start": 38,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Beatriz Araújo"
+   },
+   {
+    "start": 80,
+    "end": 84,
+    "entity_type": "LOCATION",
+    "value": "Maia"
+   },
+   {
+    "start": 121,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nascimentoana@example.com"
+   },
+   {
+    "start": 162,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "268 215 564"
+   }
+  ]
+ },
+ {
+  "id": "pt-0011",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Tiago Ramos e a sua morada fica em Fafe. Vamos ligar de volta para o 932 111 292. O cartão registado é 4779-2221-5480-4745. Foi enviada uma cópia para ycorreia@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Tiago Ramos"
+   },
+   {
+    "start": 92,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Fafe"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "932 111 292"
+   },
+   {
+    "start": 160,
+    "end": 179,
+    "entity_type": "CREDIT_CARD",
+    "value": "4779-2221-5480-4745"
+   },
+   {
+    "start": 208,
+    "end": 228,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ycorreia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0012",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Vítor Barbosa. Gostaria de agendar uma reunião no próximo mês. O local será Penafiel. Pode ligar-me para o 935 509 125 ou escrever para lmagalhaes@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Vítor Barbosa"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Penafiel"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "935 509 125"
+   },
+   {
+    "start": 154,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lmagalhaes@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0013",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Pilar Freitas e Vasco Sousa. A próxima reunião será em Alcobaça. Tarefa: enviar a apresentação para elima@example.net. Linha direta: 929 765 863.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Pilar Freitas"
+   },
+   {
+    "start": 37,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Vasco Sousa"
+   },
+   {
+    "start": 76,
+    "end": 84,
+    "entity_type": "LOCATION",
+    "value": "Alcobaça"
+   },
+   {
+    "start": 121,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elima@example.net"
+   },
+   {
+    "start": 154,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "929 765 863"
+   }
+  ]
+ },
+ {
+  "id": "pt-0014",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gabriel Macedo e a sua morada fica em Ílhavo. Vamos ligar de volta para o 931 810 405. O cartão registado é 4797-3648-1589-9314. Foi enviada uma cópia para brunapinto@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Gabriel Macedo"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Ílhavo"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "931 810 405"
+   },
+   {
+    "start": 165,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4797-3648-1589-9314"
+   },
+   {
+    "start": 213,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "brunapinto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0015",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Paulo Santos. Gostaria de agendar uma reunião no próximo mês. O local será Chaves. Pode ligar-me para o 962 564 305 ou escrever para pmartins@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Paulo Santos"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Chaves"
+   },
+   {
+    "start": 122,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "962 564 305"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pmartins@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0016",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Ivan Batista e Noa Coelho. A próxima reunião será em Valbom. Tarefa: enviar a apresentação para larissapires@example.net. Linha direta: 962 291 428.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Ivan Batista"
+   },
+   {
+    "start": 36,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Noa Coelho"
+   },
+   {
+    "start": 74,
+    "end": 80,
+    "entity_type": "LOCATION",
+    "value": "Valbom"
+   },
+   {
+    "start": 117,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "larissapires@example.net"
+   },
+   {
+    "start": 157,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "962 291 428"
+   }
+  ]
+ },
+ {
+  "id": "pt-0017",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gabriel Guerreiro e a sua morada fica em Vizela. Vamos ligar de volta para o +351 920 115 833. O cartão registado é 4915472868566255. Foi enviada uma cópia para joao64@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Gabriel Guerreiro"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Vizela"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 920 115 833"
+   },
+   {
+    "start": 173,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4915472868566255"
+   },
+   {
+    "start": 218,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joao64@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0018",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Marcos Henriques. Gostaria de agendar uma reunião no próximo mês. O local será Fátima. Pode ligar-me para o 285 296 892 ou escrever para nogueiradiogo@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Marcos Henriques"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Fátima"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "285 296 892"
+   },
+   {
+    "start": 155,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nogueiradiogo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0019",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Afonso Batista e Valentim Carvalho-Freitas. A próxima reunião será em Mêda. Tarefa: enviar a apresentação para magalhaesteresa@example.net. Linha direta: +351 923 266 778.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Afonso Batista"
+   },
+   {
+    "start": 38,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Valentim Carvalho-Freitas"
+   },
+   {
+    "start": 91,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Mêda"
+   },
+   {
+    "start": 132,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "magalhaesteresa@example.net"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 923 266 778"
+   }
+  ]
+ },
+ {
+  "id": "pt-0020",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Benedita Valente e a sua morada fica em São Mamede de Infesta. Vamos ligar de volta para o 961 380 123. O cartão registado é 4030050611947061. Foi enviada uma cópia para emanuel84@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Benedita Valente"
+   },
+   {
+    "start": 97,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "São Mamede de Infesta"
+   },
+   {
+    "start": 148,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "961 380 123"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4030050611947061"
+   },
+   {
+    "start": 227,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emanuel84@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0021",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bernardo Henriques. Gostaria de agendar uma reunião no próximo mês. O local será Ovar. Pode ligar-me para o 965 477 212 ou escrever para diananeto@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Bernardo Henriques"
+   },
+   {
+    "start": 99,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Ovar"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "965 477 212"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "diananeto@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0022",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Maria Neves e Valentim Guerreiro. A próxima reunião será em Barreiro. Tarefa: enviar a apresentação para carneirolucia@example.org. Linha direta: 910 933 871.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Maria Neves"
+   },
+   {
+    "start": 35,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Valentim Guerreiro"
+   },
+   {
+    "start": 81,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Barreiro"
+   },
+   {
+    "start": 126,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carneirolucia@example.org"
+   },
+   {
+    "start": 167,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "910 933 871"
+   }
+  ]
+ },
+ {
+  "id": "pt-0023",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Lisandro Vaz e a sua morada fica em Guarda. Vamos ligar de volta para o 264 550 562. O cartão registado é 4459-6197-9231-2196. Foi enviada uma cópia para correiatiago@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Lisandro Vaz"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Guarda"
+   },
+   {
+    "start": 129,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "264 550 562"
+   },
+   {
+    "start": 163,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4459-6197-9231-2196"
+   },
+   {
+    "start": 211,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "correiatiago@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0024",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Salvador Garcia. Gostaria de agendar uma reunião no próximo mês. O local será Bragança. Pode ligar-me para o 965 937 305 ou escrever para marcioantunes@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Salvador Garcia"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Bragança"
+   },
+   {
+    "start": 127,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "965 937 305"
+   },
+   {
+    "start": 156,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcioantunes@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0025",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Martim Ferreira e Xavier Pires. A próxima reunião será em Praia da Vitória. Tarefa: enviar a apresentação para rafael97@example.com. Linha direta: 294 707 972.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Martim Ferreira"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Xavier Pires"
+   },
+   {
+    "start": 79,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Praia da Vitória"
+   },
+   {
+    "start": 132,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rafael97@example.com"
+   },
+   {
+    "start": 168,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "294 707 972"
+   }
+  ]
+ },
+ {
+  "id": "pt-0026",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Hugo da Cunha e a sua morada fica em Santarém. Vamos ligar de volta para o +351 913 427 187. O cartão registado é 4760661118011692. Foi enviada uma cópia para bmoreira@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Hugo da Cunha"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Santarém"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 913 427 187"
+   },
+   {
+    "start": 171,
+    "end": 187,
+    "entity_type": "CREDIT_CARD",
+    "value": "4760661118011692"
+   },
+   {
+    "start": 216,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bmoreira@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0027",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Mia Moura. Gostaria de agendar uma reunião no próximo mês. O local será Anadia. Pode ligar-me para o 967 249 353 ou escrever para pintoerica@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Mia Moura"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Anadia"
+   },
+   {
+    "start": 119,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "967 249 353"
+   },
+   {
+    "start": 148,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pintoerica@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0028",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Emília Guerreiro e Miguel Gaspar. A próxima reunião será em Rio Tinto. Tarefa: enviar a apresentação para marcos16@example.com. Linha direta: 962 703 527.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Emília Guerreiro"
+   },
+   {
+    "start": 40,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Miguel Gaspar"
+   },
+   {
+    "start": 81,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Rio Tinto"
+   },
+   {
+    "start": 127,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcos16@example.com"
+   },
+   {
+    "start": 163,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "962 703 527"
+   }
+  ]
+ },
+ {
+  "id": "pt-0029",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Joaquim Cardoso e a sua morada fica em Fundão. Vamos ligar de volta para o 961 384 251. O cartão registado é 4779478530401891. Foi enviada uma cópia para qalves@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Joaquim Cardoso"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Fundão"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "961 384 251"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4779478530401891"
+   },
+   {
+    "start": 211,
+    "end": 229,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qalves@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0030",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Sebastião Paiva. Gostaria de agendar uma reunião no próximo mês. O local será Mirandela. Pode ligar-me para o 915 394 863 ou escrever para raquelcruz@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Sebastião Paiva"
+   },
+   {
+    "start": 96,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Mirandela"
+   },
+   {
+    "start": 128,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "915 394 863"
+   },
+   {
+    "start": 157,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "raquelcruz@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0031",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Emma de Castro e António Nogueira-Faria. A próxima reunião será em Póvoa de Varzim. Tarefa: enviar a apresentação para filipe36@example.org. Linha direta: 222 871 196.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Emma de Castro"
+   },
+   {
+    "start": 38,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "António Nogueira-Faria"
+   },
+   {
+    "start": 88,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Póvoa de Varzim"
+   },
+   {
+    "start": 140,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "filipe36@example.org"
+   },
+   {
+    "start": 176,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "222 871 196"
+   }
+  ]
+ },
+ {
+  "id": "pt-0032",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Martim Henriques e a sua morada fica em Aveiro. Vamos ligar de volta para o +351 964 956 945. O cartão registado é 4333-9155-9868-9114. Foi enviada uma cópia para bmonteiro@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Martim Henriques"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Aveiro"
+   },
+   {
+    "start": 133,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 964 956 945"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4333-9155-9868-9114"
+   },
+   {
+    "start": 220,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bmonteiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0033",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Sérgio do Gomes. Gostaria de agendar uma reunião no próximo mês. O local será Penafiel. Pode ligar-me para o +351 916 438 609 ou escrever para hguerreiro@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Sérgio do Gomes"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Penafiel"
+   },
+   {
+    "start": 127,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 916 438 609"
+   },
+   {
+    "start": 161,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hguerreiro@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0034",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: David Fonseca e Sérgio Alves-Neves. A próxima reunião será em Reguengos de Monsaraz. Tarefa: enviar a apresentação para maraneves@example.net. Linha direta: 268 918 467.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "David Fonseca"
+   },
+   {
+    "start": 37,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Sérgio Alves-Neves"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Reguengos de Monsaraz"
+   },
+   {
+    "start": 141,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maraneves@example.net"
+   },
+   {
+    "start": 178,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "268 918 467"
+   }
+  ]
+ },
+ {
+  "id": "pt-0035",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gaspar Jesus e a sua morada fica em Vila Nova de Gaia. Vamos ligar de volta para o 910 303 356. O cartão registado é 4938303614880257. Foi enviada uma cópia para pilarcorreia@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Gaspar Jesus"
+   },
+   {
+    "start": 93,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Vila Nova de Gaia"
+   },
+   {
+    "start": 140,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "910 303 356"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4938303614880257"
+   },
+   {
+    "start": 219,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pilarcorreia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0036",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Ivo Borges. Gostaria de agendar uma reunião no próximo mês. O local será Rebordosa. Pode ligar-me para o 295 671 288 ou escrever para borgesdiana@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Ivo Borges"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Rebordosa"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "295 671 288"
+   },
+   {
+    "start": 152,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "borgesdiana@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0037",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Vitória Borges e Nelson Domingues. A próxima reunião será em Espinho. Tarefa: enviar a apresentação para goncalvesnuno@example.org. Linha direta: +351 939 698 792.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Vitória Borges"
+   },
+   {
+    "start": 38,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Nelson Domingues"
+   },
+   {
+    "start": 82,
+    "end": 89,
+    "entity_type": "LOCATION",
+    "value": "Espinho"
+   },
+   {
+    "start": 126,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "goncalvesnuno@example.org"
+   },
+   {
+    "start": 167,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 939 698 792"
+   }
+  ]
+ },
+ {
+  "id": "pt-0038",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Mia da Abreu e a sua morada fica em Pinhel. Vamos ligar de volta para o +351 915 672 697. O cartão registado é 4335132181569103. Foi enviada uma cópia para davidpacheco@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Mia da Abreu"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Pinhel"
+   },
+   {
+    "start": 129,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 915 672 697"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335132181569103"
+   },
+   {
+    "start": 213,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "davidpacheco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0039",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Iara Moreira. Gostaria de agendar uma reunião no próximo mês. O local será Sabugal. Pode ligar-me para o 293 521 479 ou escrever para debora41@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Iara Moreira"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Sabugal"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "293 521 479"
+   },
+   {
+    "start": 152,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "debora41@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0040",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Ricardo Lourenço e Benedita Monteiro. A próxima reunião será em Loulé. Tarefa: enviar a apresentação para margarida76@example.com. Linha direta: +351 966 346 836.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ricardo Lourenço"
+   },
+   {
+    "start": 40,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Benedita Monteiro"
+   },
+   {
+    "start": 85,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Loulé"
+   },
+   {
+    "start": 127,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "margarida76@example.com"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 966 346 836"
+   }
+  ]
+ },
+ {
+  "id": "pt-0041",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Eva Carneiro e a sua morada fica em Pinhel. Vamos ligar de volta para o 910 905 444. O cartão registado é 4126-5794-8698-2063. Foi enviada uma cópia para lpires@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Eva Carneiro"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Pinhel"
+   },
+   {
+    "start": 129,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "910 905 444"
+   },
+   {
+    "start": 163,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4126-5794-8698-2063"
+   },
+   {
+    "start": 211,
+    "end": 229,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lpires@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0042",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bryan Leite. Gostaria de agendar uma reunião no próximo mês. O local será Ponte de Sor. Pode ligar-me para o 280 894 329 ou escrever para anitacruz@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Bryan Leite"
+   },
+   {
+    "start": 92,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Ponte de Sor"
+   },
+   {
+    "start": 127,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "280 894 329"
+   },
+   {
+    "start": 156,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anitacruz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0043",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Francisca Nogueira e Salvador Domingues. A próxima reunião será em Póvoa de Santa Iria. Tarefa: enviar a apresentação para machadolara@example.com. Linha direta: 255 680 450.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Francisca Nogueira"
+   },
+   {
+    "start": 42,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Salvador Domingues"
+   },
+   {
+    "start": 88,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Póvoa de Santa Iria"
+   },
+   {
+    "start": 144,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "machadolara@example.com"
+   },
+   {
+    "start": 183,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "255 680 450"
+   }
+  ]
+ },
+ {
+  "id": "pt-0044",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ivo Rodrigues e a sua morada fica em Ribeira Grande. Vamos ligar de volta para o +351 926 417 840. O cartão registado é 4916132619330620. Foi enviada uma cópia para nadiaferreira@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Ivo Rodrigues"
+   },
+   {
+    "start": 94,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Ribeira Grande"
+   },
+   {
+    "start": 138,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 926 417 840"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4916132619330620"
+   },
+   {
+    "start": 222,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nadiaferreira@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0045",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Madalena Jesus. Gostaria de agendar uma reunião no próximo mês. O local será Coimbra. Pode ligar-me para o 278 473 494 ou escrever para kyara25@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Madalena Jesus"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Coimbra"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "278 473 494"
+   },
+   {
+    "start": 154,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kyara25@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0046",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Álvaro Moura e Jéssica Ferreira. A próxima reunião será em Porto Santo. Tarefa: enviar a apresentação para simoesluca@example.com. Linha direta: 272 430 202.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Álvaro Moura"
+   },
+   {
+    "start": 36,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Jéssica Ferreira"
+   },
+   {
+    "start": 80,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Porto Santo"
+   },
+   {
+    "start": 128,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "simoesluca@example.com"
+   },
+   {
+    "start": 166,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "272 430 202"
+   }
+  ]
+ },
+ {
+  "id": "pt-0047",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Salvador Campos e a sua morada fica em Agualva-Cacém. Vamos ligar de volta para o +351 921 651 186. O cartão registado é 4281391901698436. Foi enviada uma cópia para obranco@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Salvador Campos"
+   },
+   {
+    "start": 96,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Agualva-Cacém"
+   },
+   {
+    "start": 139,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 921 651 186"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4281391901698436"
+   },
+   {
+    "start": 223,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "obranco@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0048",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Ricardo Barbosa. Gostaria de agendar uma reunião no próximo mês. O local será Horta. Pode ligar-me para o 920 216 368 ou escrever para fsa@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Ricardo Barbosa"
+   },
+   {
+    "start": 96,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Horta"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "920 216 368"
+   },
+   {
+    "start": 153,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fsa@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0049",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Filipa Amorim e Rafael Carneiro. A próxima reunião será em Figueira da Foz. Tarefa: enviar a apresentação para inesdomingues@example.com. Linha direta: 261 874 902.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Filipa Amorim"
+   },
+   {
+    "start": 37,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Rafael Carneiro"
+   },
+   {
+    "start": 80,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Figueira da Foz"
+   },
+   {
+    "start": 132,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "inesdomingues@example.com"
+   },
+   {
+    "start": 173,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "261 874 902"
+   }
+  ]
+ },
+ {
+  "id": "pt-0050",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Sofia Esteves e a sua morada fica em Peniche. Vamos ligar de volta para o 222 340 108. O cartão registado é 4763-2906-7547-7117. Foi enviada uma cópia para renatacoelho@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Sofia Esteves"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Peniche"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "222 340 108"
+   },
+   {
+    "start": 165,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4763-2906-7547-7117"
+   },
+   {
+    "start": 213,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renatacoelho@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0051",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bruna do Amaral. Gostaria de agendar uma reunião no próximo mês. O local será Ermesinde. Pode ligar-me para o 292 846 886 ou escrever para eduardapereira@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Bruna do Amaral"
+   },
+   {
+    "start": 96,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Ermesinde"
+   },
+   {
+    "start": 128,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "292 846 886"
+   },
+   {
+    "start": 157,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eduardapereira@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0052",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Luís Moura e Isabela Gonçalves. A próxima reunião será em Miranda do Douro. Tarefa: enviar a apresentação para zpereira@example.org. Linha direta: +351 910 852 495.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Luís Moura"
+   },
+   {
+    "start": 34,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Isabela Gonçalves"
+   },
+   {
+    "start": 79,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Miranda do Douro"
+   },
+   {
+    "start": 132,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zpereira@example.org"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 910 852 495"
+   }
+  ]
+ },
+ {
+  "id": "pt-0053",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Mafalda Coelho-Neves e a sua morada fica em Ovar. Vamos ligar de volta para o 919 818 406. O cartão registado é 4406370133421767. Foi enviada uma cópia para smatos@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Mafalda Coelho-Neves"
+   },
+   {
+    "start": 101,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Ovar"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "919 818 406"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4406370133421767"
+   },
+   {
+    "start": 214,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "smatos@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0054",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me André Vaz. Gostaria de agendar uma reunião no próximo mês. O local será Sabugal. Pode ligar-me para o 960 171 433 ou escrever para xanjos@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "André Vaz"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Sabugal"
+   },
+   {
+    "start": 120,
+    "end": 131,
+    "entity_type": "PHONE_NUMBER",
+    "value": "960 171 433"
+   },
+   {
+    "start": 149,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xanjos@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0055",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Noah Figueiredo e Frederico Almeida. A próxima reunião será em Mangualde. Tarefa: enviar a apresentação para barbosaangela@example.net. Linha direta: 965 914 301.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Noah Figueiredo"
+   },
+   {
+    "start": 39,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Frederico Almeida"
+   },
+   {
+    "start": 84,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Mangualde"
+   },
+   {
+    "start": 130,
+    "end": 155,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "barbosaangela@example.net"
+   },
+   {
+    "start": 171,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "965 914 301"
+   }
+  ]
+ },
+ {
+  "id": "pt-0056",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Lara Sousa e a sua morada fica em Barreiro. Vamos ligar de volta para o +351 933 424 408. O cartão registado é 4061705760675514. Foi enviada uma cópia para abreusara@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Lara Sousa"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Barreiro"
+   },
+   {
+    "start": 129,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 933 424 408"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4061705760675514"
+   },
+   {
+    "start": 213,
+    "end": 234,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "abreusara@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0057",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Beatriz da Andrade. Gostaria de agendar uma reunião no próximo mês. O local será Barcelos. Pode ligar-me para o 291 236 138 ou escrever para tmatias@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Beatriz da Andrade"
+   },
+   {
+    "start": 99,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Barcelos"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "291 236 138"
+   },
+   {
+    "start": 159,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tmatias@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0058",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Wilson Batista e Mário de Lourenço. A próxima reunião será em Porto Santo. Tarefa: enviar a apresentação para yteixeira@example.org. Linha direta: 916 844 915.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Wilson Batista"
+   },
+   {
+    "start": 38,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Mário de Lourenço"
+   },
+   {
+    "start": 83,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Porto Santo"
+   },
+   {
+    "start": 131,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yteixeira@example.org"
+   },
+   {
+    "start": 168,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 844 915"
+   }
+  ]
+ },
+ {
+  "id": "pt-0059",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Constança Marques-Sousa e a sua morada fica em Câmara de Lobos. Vamos ligar de volta para o 962 779 174. O cartão registado é 4988-0070-6362-8906. Foi enviada uma cópia para kneto@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Constança Marques-Sousa"
+   },
+   {
+    "start": 104,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Câmara de Lobos"
+   },
+   {
+    "start": 149,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "962 779 174"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4988-0070-6362-8906"
+   },
+   {
+    "start": 231,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kneto@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0060",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Camila Costa. Gostaria de agendar uma reunião no próximo mês. O local será Vila Nova de Gaia. Pode ligar-me para o +351 933 609 734 ou escrever para motajoel@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Camila Costa"
+   },
+   {
+    "start": 93,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Vila Nova de Gaia"
+   },
+   {
+    "start": 133,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 933 609 734"
+   },
+   {
+    "start": 167,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "motajoel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0061",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Wilson da Vaz e Naiara Torres. A próxima reunião será em Faro. Tarefa: enviar a apresentação para aborges@example.net. Linha direta: +351 923 214 249.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Wilson da Vaz"
+   },
+   {
+    "start": 37,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Naiara Torres"
+   },
+   {
+    "start": 78,
+    "end": 82,
+    "entity_type": "LOCATION",
+    "value": "Faro"
+   },
+   {
+    "start": 119,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aborges@example.net"
+   },
+   {
+    "start": 154,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 923 214 249"
+   }
+  ]
+ },
+ {
+  "id": "pt-0062",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Nelson Jesus e a sua morada fica em Lourosa. Vamos ligar de volta para o 914 709 137. O cartão registado é 4760711727217253. Foi enviada uma cópia para dbaptista@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Nelson Jesus"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Lourosa"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "914 709 137"
+   },
+   {
+    "start": 164,
+    "end": 180,
+    "entity_type": "CREDIT_CARD",
+    "value": "4760711727217253"
+   },
+   {
+    "start": 209,
+    "end": 230,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dbaptista@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0063",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Caetana Gaspar. Gostaria de agendar uma reunião no próximo mês. O local será São Mamede de Infesta. Pode ligar-me para o 256 812 172 ou escrever para eduarda52@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Caetana Gaspar"
+   },
+   {
+    "start": 95,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "São Mamede de Infesta"
+   },
+   {
+    "start": 139,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "256 812 172"
+   },
+   {
+    "start": 168,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eduarda52@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0064",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Francisca Leal e Nuno Loureiro. A próxima reunião será em Santarém. Tarefa: enviar a apresentação para mauromelo@example.org. Linha direta: 234 896 721.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Francisca Leal"
+   },
+   {
+    "start": 38,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Nuno Loureiro"
+   },
+   {
+    "start": 79,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Santarém"
+   },
+   {
+    "start": 124,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mauromelo@example.org"
+   },
+   {
+    "start": 161,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "234 896 721"
+   }
+  ]
+ },
+ {
+  "id": "pt-0065",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Nádia Pinto e a sua morada fica em Cartaxo. Vamos ligar de volta para o +351 939 557 554. O cartão registado é 4580599685898331. Foi enviada uma cópia para almeidavictoria@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Nádia Pinto"
+   },
+   {
+    "start": 92,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Cartaxo"
+   },
+   {
+    "start": 129,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 939 557 554"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4580599685898331"
+   },
+   {
+    "start": 213,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "almeidavictoria@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0066",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Iara da Mota. Gostaria de agendar uma reunião no próximo mês. O local será Caldas da Rainha. Pode ligar-me para o +351 933 414 505 ou escrever para joaomorais@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Iara da Mota"
+   },
+   {
+    "start": 93,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Caldas da Rainha"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 933 414 505"
+   },
+   {
+    "start": 166,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joaomorais@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0067",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Wilson Santos e Daniel Pires. A próxima reunião será em Ovar. Tarefa: enviar a apresentação para nadia22@example.net. Linha direta: 925 394 997.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Wilson Santos"
+   },
+   {
+    "start": 37,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Daniel Pires"
+   },
+   {
+    "start": 77,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "Ovar"
+   },
+   {
+    "start": 118,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nadia22@example.net"
+   },
+   {
+    "start": 153,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "925 394 997"
+   }
+  ]
+ },
+ {
+  "id": "pt-0068",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ema Campos e a sua morada fica em Sacavém. Vamos ligar de volta para o +351 960 379 610. O cartão registado é 4999-6835-1157-7957. Foi enviada uma cópia para ana50@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Ema Campos"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Sacavém"
+   },
+   {
+    "start": 128,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 960 379 610"
+   },
+   {
+    "start": 167,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4999-6835-1157-7957"
+   },
+   {
+    "start": 215,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ana50@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0069",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Renata-Ana Fonseca. Gostaria de agendar uma reunião no próximo mês. O local será Vila Nova de Foz Côa. Pode ligar-me para o 218 629 112 ou escrever para mara49@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Renata-Ana Fonseca"
+   },
+   {
+    "start": 99,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Vila Nova de Foz Côa"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "218 629 112"
+   },
+   {
+    "start": 171,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mara49@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0070",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Gustavo Moreira e Márcio Jesus. A próxima reunião será em Figueira da Foz. Tarefa: enviar a apresentação para jesusema@example.com. Linha direta: 916 736 599.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Gustavo Moreira"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Márcio Jesus"
+   },
+   {
+    "start": 79,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Figueira da Foz"
+   },
+   {
+    "start": 131,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jesusema@example.com"
+   },
+   {
+    "start": 167,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 736 599"
+   }
+  ]
+ },
+ {
+  "id": "pt-0071",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Júlia Miranda e a sua morada fica em Marinha Grande. Vamos ligar de volta para o 286 620 994. O cartão registado é 4272564397578236. Foi enviada uma cópia para lunacardoso@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Júlia Miranda"
+   },
+   {
+    "start": 94,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Marinha Grande"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "286 620 994"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4272564397578236"
+   },
+   {
+    "start": 217,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lunacardoso@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0072",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Rui Pinho. Gostaria de agendar uma reunião no próximo mês. O local será Vendas Novas. Pode ligar-me para o 963 423 252 ou escrever para azevedopetra@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Rui Pinho"
+   },
+   {
+    "start": 90,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Vendas Novas"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "963 423 252"
+   },
+   {
+    "start": 154,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "azevedopetra@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0073",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Lúcia Leal e Mafalda Carvalho. A próxima reunião será em Estremoz. Tarefa: enviar a apresentação para emiliaaraujo@example.org. Linha direta: 259 961 573.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Lúcia Leal"
+   },
+   {
+    "start": 34,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Mafalda Carvalho"
+   },
+   {
+    "start": 78,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "Estremoz"
+   },
+   {
+    "start": 123,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emiliaaraujo@example.org"
+   },
+   {
+    "start": 163,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "259 961 573"
+   }
+  ]
+ },
+ {
+  "id": "pt-0074",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Renata do Leal e a sua morada fica em Póvoa de Santa Iria. Vamos ligar de volta para o +351 961 472 254. O cartão registado é 4152-3894-2792-4548. Foi enviada uma cópia para marioguerreiro@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Renata do Leal"
+   },
+   {
+    "start": 95,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Póvoa de Santa Iria"
+   },
+   {
+    "start": 144,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 961 472 254"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4152-3894-2792-4548"
+   },
+   {
+    "start": 231,
+    "end": 257,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marioguerreiro@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0075",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Maria Branco. Gostaria de agendar uma reunião no próximo mês. O local será Mirandela. Pode ligar-me para o 960 775 139 ou escrever para enzobarros@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Maria Branco"
+   },
+   {
+    "start": 93,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Mirandela"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "960 775 139"
+   },
+   {
+    "start": 154,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "enzobarros@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0076",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Daniel Cardoso e Luciana Cunha. A próxima reunião será em Rio Tinto. Tarefa: enviar a apresentação para rafaelpereira@example.net. Linha direta: 256 829 863.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Daniel Cardoso"
+   },
+   {
+    "start": 38,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Luciana Cunha"
+   },
+   {
+    "start": 79,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Rio Tinto"
+   },
+   {
+    "start": 125,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rafaelpereira@example.net"
+   },
+   {
+    "start": 166,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "256 829 863"
+   }
+  ]
+ },
+ {
+  "id": "pt-0077",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Bianca do Costa e a sua morada fica em Almeirim. Vamos ligar de volta para o 914 153 173. O cartão registado é 4259068654598074. Foi enviada uma cópia para lcoelho@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Bianca do Costa"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Almeirim"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "914 153 173"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4259068654598074"
+   },
+   {
+    "start": 213,
+    "end": 232,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lcoelho@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0078",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Nelson Neves. Gostaria de agendar uma reunião no próximo mês. O local será Guarda. Pode ligar-me para o 257 728 253 ou escrever para micaellourenco@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Nelson Neves"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Guarda"
+   },
+   {
+    "start": 122,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "257 728 253"
+   },
+   {
+    "start": 151,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "micaellourenco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0079",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Benedita Mendes e David Alves. A próxima reunião será em Ourém. Tarefa: enviar a apresentação para diogo51@example.com. Linha direta: 245 639 324.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Benedita Mendes"
+   },
+   {
+    "start": 39,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "David Alves"
+   },
+   {
+    "start": 78,
+    "end": 83,
+    "entity_type": "LOCATION",
+    "value": "Ourém"
+   },
+   {
+    "start": 120,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "diogo51@example.com"
+   },
+   {
+    "start": 155,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "245 639 324"
+   }
+  ]
+ },
+ {
+  "id": "pt-0080",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Eduarda-Maria Machado e a sua morada fica em Elvas. Vamos ligar de volta para o 924 147 650. O cartão registado é 4339-6625-0036-9039. Foi enviada uma cópia para antonio53@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Eduarda-Maria Machado"
+   },
+   {
+    "start": 102,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Elvas"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "924 147 650"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4339-6625-0036-9039"
+   },
+   {
+    "start": 219,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antonio53@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0081",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Mauro Mota. Gostaria de agendar uma reunião no próximo mês. O local será Entroncamento. Pode ligar-me para o 236 978 164 ou escrever para nuria36@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Mauro Mota"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Entroncamento"
+   },
+   {
+    "start": 127,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "236 978 164"
+   },
+   {
+    "start": 156,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nuria36@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0082",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Ângela Torres e Yara Morais. A próxima reunião será em Montemor-o-Novo. Tarefa: enviar a apresentação para leitebryan@example.com. Linha direta: +351 917 432 595.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Ângela Torres"
+   },
+   {
+    "start": 37,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Yara Morais"
+   },
+   {
+    "start": 76,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Montemor-o-Novo"
+   },
+   {
+    "start": 128,
+    "end": 150,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leitebryan@example.com"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 917 432 595"
+   }
+  ]
+ },
+ {
+  "id": "pt-0083",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ivan Campos e a sua morada fica em Vila Franca de Xira. Vamos ligar de volta para o 268 431 154. O cartão registado é 4659-6465-4370-4122. Foi enviada uma cópia para joelaraujo@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Ivan Campos"
+   },
+   {
+    "start": 92,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Vila Franca de Xira"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "268 431 154"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4659-6465-4370-4122"
+   },
+   {
+    "start": 223,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joelaraujo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0084",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Laura Pacheco-Mota. Gostaria de agendar uma reunião no próximo mês. O local será Paços de Ferreira. Pode ligar-me para o 261 649 699 ou escrever para renata09@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Laura Pacheco-Mota"
+   },
+   {
+    "start": 99,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Paços de Ferreira"
+   },
+   {
+    "start": 139,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "261 649 699"
+   },
+   {
+    "start": 168,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renata09@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0085",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Sérgio Borges e Inês Teixeira. A próxima reunião será em Alverca do Ribatejo. Tarefa: enviar a apresentação para jpires@example.com. Linha direta: 913 812 932.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Sérgio Borges"
+   },
+   {
+    "start": 37,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Inês Teixeira"
+   },
+   {
+    "start": 78,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Alverca do Ribatejo"
+   },
+   {
+    "start": 134,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jpires@example.com"
+   },
+   {
+    "start": 168,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "913 812 932"
+   }
+  ]
+ },
+ {
+  "id": "pt-0086",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Mauro Teixeira-Loureiro e a sua morada fica em Trancoso. Vamos ligar de volta para o 279 990 600. O cartão registado é 4580593003821158. Foi enviada uma cópia para nascimentogaspar@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Mauro Teixeira-Loureiro"
+   },
+   {
+    "start": 104,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Trancoso"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "279 990 600"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4580593003821158"
+   },
+   {
+    "start": 221,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nascimentogaspar@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0087",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Helena Gomes. Gostaria de agendar uma reunião no próximo mês. O local será Lisboa. Pode ligar-me para o 919 614 604 ou escrever para vieirajorge@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Helena Gomes"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Lisboa"
+   },
+   {
+    "start": 122,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "919 614 604"
+   },
+   {
+    "start": 151,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vieirajorge@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0088",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Sofia Vaz e Lia-Fabiana Neto. A próxima reunião será em Reguengos de Monsaraz. Tarefa: enviar a apresentação para barbosasalvador@example.org. Linha direta: +351 912 378 374.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Sofia Vaz"
+   },
+   {
+    "start": 33,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Lia-Fabiana Neto"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Reguengos de Monsaraz"
+   },
+   {
+    "start": 135,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "barbosasalvador@example.org"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 912 378 374"
+   }
+  ]
+ },
+ {
+  "id": "pt-0089",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Diana Loureiro e a sua morada fica em Valpaços. Vamos ligar de volta para o 277 991 343. O cartão registado é 4934024484027365. Foi enviada uma cópia para melaniematias@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Diana Loureiro"
+   },
+   {
+    "start": 95,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Valpaços"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "277 991 343"
+   },
+   {
+    "start": 167,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4934024484027365"
+   },
+   {
+    "start": 212,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "melaniematias@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0090",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Vera Melo. Gostaria de agendar uma reunião no próximo mês. O local será Vizela. Pode ligar-me para o 243 436 162 ou escrever para jnunes@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 27,
+    "entity_type": "PERSON",
+    "value": "Vera Melo"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Vizela"
+   },
+   {
+    "start": 119,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "243 436 162"
+   },
+   {
+    "start": 148,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jnunes@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0091",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Denis Lima e Marta Neves. A próxima reunião será em Fiães. Tarefa: enviar a apresentação para wsimoes@example.net. Linha direta: +351 912 835 296.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Denis Lima"
+   },
+   {
+    "start": 34,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Marta Neves"
+   },
+   {
+    "start": 73,
+    "end": 78,
+    "entity_type": "LOCATION",
+    "value": "Fiães"
+   },
+   {
+    "start": 115,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wsimoes@example.net"
+   },
+   {
+    "start": 150,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 912 835 296"
+   }
+  ]
+ },
+ {
+  "id": "pt-0092",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Emma Batista-Vieira e a sua morada fica em Barcelos. Vamos ligar de volta para o 968 883 818. O cartão registado é 4603-4188-0698-0915. Foi enviada uma cópia para simaocarneiro@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Emma Batista-Vieira"
+   },
+   {
+    "start": 100,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Barcelos"
+   },
+   {
+    "start": 138,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "968 883 818"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4603-4188-0698-0915"
+   },
+   {
+    "start": 220,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "simaocarneiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0093",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Margarida Rodrigues. Gostaria de agendar uma reunião no próximo mês. O local será Fafe. Pode ligar-me para o 938 637 118 ou escrever para loureirodebora@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Margarida Rodrigues"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Fafe"
+   },
+   {
+    "start": 127,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "938 637 118"
+   },
+   {
+    "start": 156,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "loureirodebora@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0094",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Ivo Neto e Pilar Cardoso-Matias. A próxima reunião será em Castelo Branco. Tarefa: enviar a apresentação para fredericomatias@example.org. Linha direta: 254 220 157.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Ivo Neto"
+   },
+   {
+    "start": 32,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Pilar Cardoso-Matias"
+   },
+   {
+    "start": 80,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Castelo Branco"
+   },
+   {
+    "start": 131,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fredericomatias@example.org"
+   },
+   {
+    "start": 174,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "254 220 157"
+   }
+  ]
+ },
+ {
+  "id": "pt-0095",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Isabela-Vitória Assunção e a sua morada fica em Macedo de Cavaleiros. Vamos ligar de volta para o 911 598 682. O cartão registado é 4263-7002-0185-5169. Foi enviada uma cópia para maiavioleta@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Isabela-Vitória Assunção"
+   },
+   {
+    "start": 105,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Macedo de Cavaleiros"
+   },
+   {
+    "start": 155,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "911 598 682"
+   },
+   {
+    "start": 189,
+    "end": 208,
+    "entity_type": "CREDIT_CARD",
+    "value": "4263-7002-0185-5169"
+   },
+   {
+    "start": 237,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maiavioleta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0096",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Eva-Bárbara Moura. Gostaria de agendar uma reunião no próximo mês. O local será Amadora. Pode ligar-me para o 238 223 412 ou escrever para luciana10@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Eva-Bárbara Moura"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Amadora"
+   },
+   {
+    "start": 128,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "238 223 412"
+   },
+   {
+    "start": 157,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luciana10@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0097",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Pilar Soares e Jaime Lopes. A próxima reunião será em Guarda. Tarefa: enviar a apresentação para fernando51@example.com. Linha direta: +351 911 232 624.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Pilar Soares"
+   },
+   {
+    "start": 36,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Jaime Lopes"
+   },
+   {
+    "start": 75,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "Guarda"
+   },
+   {
+    "start": 118,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fernando51@example.com"
+   },
+   {
+    "start": 156,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 911 232 624"
+   }
+  ]
+ },
+ {
+  "id": "pt-0098",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Jéssica-Laura Batista e a sua morada fica em São João da Madeira. Vamos ligar de volta para o 239 219 250. O cartão registado é 4335993620691562. Foi enviada uma cópia para constancacruz@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Jéssica-Laura Batista"
+   },
+   {
+    "start": 102,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "São João da Madeira"
+   },
+   {
+    "start": 151,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "239 219 250"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335993620691562"
+   },
+   {
+    "start": 230,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "constancacruz@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0099",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Letícia Assunção. Gostaria de agendar uma reunião no próximo mês. O local será Torres Novas. Pode ligar-me para o 219 449 544 ou escrever para jlourenco@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Letícia Assunção"
+   },
+   {
+    "start": 97,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Torres Novas"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "219 449 544"
+   },
+   {
+    "start": 161,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jlourenco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0100",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Márcio Guerreiro e Guilherme Cunha. A próxima reunião será em Matosinhos. Tarefa: enviar a apresentação para lunamendes@example.net. Linha direta: 918 815 217.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Márcio Guerreiro"
+   },
+   {
+    "start": 40,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Guilherme Cunha"
+   },
+   {
+    "start": 83,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Matosinhos"
+   },
+   {
+    "start": 130,
+    "end": 152,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lunamendes@example.net"
+   },
+   {
+    "start": 168,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "918 815 217"
+   }
+  ]
+ },
+ {
+  "id": "pt-0101",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Emília-Letícia Machado e a sua morada fica em Cantanhede. Vamos ligar de volta para o 217 896 861. O cartão registado é 4439-7892-4929-7004. Foi enviada uma cópia para eduardovalente@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Emília-Letícia Machado"
+   },
+   {
+    "start": 103,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Cantanhede"
+   },
+   {
+    "start": 143,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "217 896 861"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4439-7892-4929-7004"
+   },
+   {
+    "start": 225,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eduardovalente@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0102",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Leonor da Magalhães. Gostaria de agendar uma reunião no próximo mês. O local será Tondela. Pode ligar-me para o +351 961 845 113 ou escrever para joaofreitas@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Leonor da Magalhães"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Tondela"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 961 845 113"
+   },
+   {
+    "start": 164,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joaofreitas@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0103",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Flor Esteves e Tomás Oliveira. A próxima reunião será em Esmoriz. Tarefa: enviar a apresentação para camposmiguel@example.net. Linha direta: 247 664 964.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Flor Esteves"
+   },
+   {
+    "start": 36,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Tomás Oliveira"
+   },
+   {
+    "start": 78,
+    "end": 85,
+    "entity_type": "LOCATION",
+    "value": "Esmoriz"
+   },
+   {
+    "start": 122,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "camposmiguel@example.net"
+   },
+   {
+    "start": 162,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "247 664 964"
+   }
+  ]
+ },
+ {
+  "id": "pt-0104",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Emília do Freitas e a sua morada fica em Alverca do Ribatejo. Vamos ligar de volta para o 960 738 485. O cartão registado é 4938016632176033. Foi enviada uma cópia para sandrohenriques@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Emília do Freitas"
+   },
+   {
+    "start": 98,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Alverca do Ribatejo"
+   },
+   {
+    "start": 147,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "960 738 485"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4938016632176033"
+   },
+   {
+    "start": 226,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sandrohenriques@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0105",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Fábio Miranda-Domingues. Gostaria de agendar uma reunião no próximo mês. O local será Lagoa. Pode ligar-me para o 965 768 584 ou escrever para ferreiracarminho@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Fábio Miranda-Domingues"
+   },
+   {
+    "start": 104,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Lagoa"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "965 768 584"
+   },
+   {
+    "start": 161,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ferreiracarminho@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0106",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Sandro Azevedo e Daniel Teixeira. A próxima reunião será em Amora. Tarefa: enviar a apresentação para ricardo27@example.com. Linha direta: +351 936 740 338.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Sandro Azevedo"
+   },
+   {
+    "start": 38,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Daniel Teixeira"
+   },
+   {
+    "start": 81,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "Amora"
+   },
+   {
+    "start": 123,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ricardo27@example.com"
+   },
+   {
+    "start": 160,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 936 740 338"
+   }
+  ]
+ },
+ {
+  "id": "pt-0107",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Catarina Cardoso e a sua morada fica em Vila do Conde. Vamos ligar de volta para o +351 932 710 534. O cartão registado é 4196-8339-3498-8262. Foi enviada uma cópia para mariana69@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Catarina Cardoso"
+   },
+   {
+    "start": 97,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Vila do Conde"
+   },
+   {
+    "start": 140,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 932 710 534"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4196-8339-3498-8262"
+   },
+   {
+    "start": 227,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariana69@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0108",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Isabel Loureiro. Gostaria de agendar uma reunião no próximo mês. O local será Sines. Pode ligar-me para o +351 925 243 688 ou escrever para jcampos@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Isabel Loureiro"
+   },
+   {
+    "start": 96,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Sines"
+   },
+   {
+    "start": 124,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 925 243 688"
+   },
+   {
+    "start": 158,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jcampos@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0109",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Eva Fonseca e Vasco da Pinho. A próxima reunião será em Almeirim. Tarefa: enviar a apresentação para xmelo@example.org. Linha direta: +351 969 631 260.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Eva Fonseca"
+   },
+   {
+    "start": 35,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Vasco da Pinho"
+   },
+   {
+    "start": 77,
+    "end": 85,
+    "entity_type": "LOCATION",
+    "value": "Almeirim"
+   },
+   {
+    "start": 122,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xmelo@example.org"
+   },
+   {
+    "start": 155,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 969 631 260"
+   }
+  ]
+ },
+ {
+  "id": "pt-0110",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Vitória Gonçalves e a sua morada fica em Covilhã. Vamos ligar de volta para o 961 195 455. O cartão registado é 4045302482754362. Foi enviada uma cópia para andreiacosta@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Vitória Gonçalves"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Covilhã"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "961 195 455"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4045302482754362"
+   },
+   {
+    "start": 214,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andreiacosta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0111",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bryan Freitas. Gostaria de agendar uma reunião no próximo mês. O local será Bragança. Pode ligar-me para o 280 271 463 ou escrever para eva70@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Bryan Freitas"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Bragança"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "280 271 463"
+   },
+   {
+    "start": 154,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eva70@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0112",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Fernando Fonseca e Patrícia-Teresa Reis. A próxima reunião será em Mangualde. Tarefa: enviar a apresentação para mguerreiro@example.com. Linha direta: +351 938 136 764.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Fernando Fonseca"
+   },
+   {
+    "start": 40,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Patrícia-Teresa Reis"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Mangualde"
+   },
+   {
+    "start": 134,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mguerreiro@example.com"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 938 136 764"
+   }
+  ]
+ },
+ {
+  "id": "pt-0113",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Carlota Pinto e a sua morada fica em Barcelos. Vamos ligar de volta para o 916 708 561. O cartão registado é 4152726560966465. Foi enviada uma cópia para hreis@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Carlota Pinto"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Barcelos"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 708 561"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4152726560966465"
+   },
+   {
+    "start": 211,
+    "end": 228,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hreis@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0114",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Tomás Cruz-Carvalho. Gostaria de agendar uma reunião no próximo mês. O local será Esposende. Pode ligar-me para o +351 961 453 761 ou escrever para carolina21@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Tomás Cruz-Carvalho"
+   },
+   {
+    "start": 100,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Esposende"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 961 453 761"
+   },
+   {
+    "start": 166,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carolina21@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0115",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: André do Moura e Caetana Neves. A próxima reunião será em Chaves. Tarefa: enviar a apresentação para julianacosta@example.org. Linha direta: +351 933 703 249.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "André do Moura"
+   },
+   {
+    "start": 38,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Caetana Neves"
+   },
+   {
+    "start": 79,
+    "end": 85,
+    "entity_type": "LOCATION",
+    "value": "Chaves"
+   },
+   {
+    "start": 122,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "julianacosta@example.org"
+   },
+   {
+    "start": 162,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 933 703 249"
+   }
+  ]
+ },
+ {
+  "id": "pt-0116",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Rafaela Henriques e a sua morada fica em Guimarães. Vamos ligar de volta para o 261 857 276. O cartão registado é 4103-4459-2345-3059. Foi enviada uma cópia para alicereis@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Rafaela Henriques"
+   },
+   {
+    "start": 98,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Guimarães"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "261 857 276"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4103-4459-2345-3059"
+   },
+   {
+    "start": 219,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alicereis@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0117",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Rodrigo Alves-Maia. Gostaria de agendar uma reunião no próximo mês. O local será Porto Santo. Pode ligar-me para o 298 497 910 ou escrever para martimmagalhaes@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Rodrigo Alves-Maia"
+   },
+   {
+    "start": 99,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Porto Santo"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "298 497 910"
+   },
+   {
+    "start": 162,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "martimmagalhaes@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0118",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Íris Lopes e Leonor de Simões. A próxima reunião será em Pombal. Tarefa: enviar a apresentação para ypinheiro@example.net. Linha direta: 938 438 575.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Íris Lopes"
+   },
+   {
+    "start": 34,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Leonor de Simões"
+   },
+   {
+    "start": 78,
+    "end": 84,
+    "entity_type": "LOCATION",
+    "value": "Pombal"
+   },
+   {
+    "start": 121,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ypinheiro@example.net"
+   },
+   {
+    "start": 158,
+    "end": 169,
+    "entity_type": "PHONE_NUMBER",
+    "value": "938 438 575"
+   }
+  ]
+ },
+ {
+  "id": "pt-0119",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Lorena Leite e a sua morada fica em Rio Maior. Vamos ligar de volta para o 935 705 264. O cartão registado é 4159617352193447. Foi enviada uma cópia para lopesmatilde@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Lorena Leite"
+   },
+   {
+    "start": 93,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Rio Maior"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "935 705 264"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4159617352193447"
+   },
+   {
+    "start": 211,
+    "end": 235,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lopesmatilde@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0120",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Francisca Pires. Gostaria de agendar uma reunião no próximo mês. O local será Santa Comba Dão. Pode ligar-me para o +351 931 251 118 ou escrever para leitegustavo@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Francisca Pires"
+   },
+   {
+    "start": 96,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Santa Comba Dão"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 931 251 118"
+   },
+   {
+    "start": 168,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leitegustavo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0121",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Lucas Soares e Álvaro Branco. A próxima reunião será em Almeirim. Tarefa: enviar a apresentação para reislia@example.net. Linha direta: 214 787 328.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Lucas Soares"
+   },
+   {
+    "start": 36,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Álvaro Branco"
+   },
+   {
+    "start": 77,
+    "end": 85,
+    "entity_type": "LOCATION",
+    "value": "Almeirim"
+   },
+   {
+    "start": 122,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reislia@example.net"
+   },
+   {
+    "start": 157,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "214 787 328"
+   }
+  ]
+ },
+ {
+  "id": "pt-0122",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ema Amorim e a sua morada fica em Gouveia. Vamos ligar de volta para o +351 935 239 771. O cartão registado é 4459621086070332. Foi enviada uma cópia para patriciaoliveira@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Ema Amorim"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Gouveia"
+   },
+   {
+    "start": 128,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 935 239 771"
+   },
+   {
+    "start": 167,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4459621086070332"
+   },
+   {
+    "start": 212,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patriciaoliveira@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0123",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Íris Nascimento-Tavares. Gostaria de agendar uma reunião no próximo mês. O local será Vale de Cambra. Pode ligar-me para o 934 128 785 ou escrever para kevimbatista@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Íris Nascimento-Tavares"
+   },
+   {
+    "start": 104,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Vale de Cambra"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "934 128 785"
+   },
+   {
+    "start": 170,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kevimbatista@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0124",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Teresa Tavares e José Matos. A próxima reunião será em Vila Real. Tarefa: enviar a apresentação para qneves@example.net. Linha direta: +351 923 312 618.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Teresa Tavares"
+   },
+   {
+    "start": 38,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "José Matos"
+   },
+   {
+    "start": 76,
+    "end": 85,
+    "entity_type": "LOCATION",
+    "value": "Vila Real"
+   },
+   {
+    "start": 122,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qneves@example.net"
+   },
+   {
+    "start": 156,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 923 312 618"
+   }
+  ]
+ },
+ {
+  "id": "pt-0125",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Fabiana de Pires e a sua morada fica em Montemor-o-Novo. Vamos ligar de volta para o +351 916 990 212. O cartão registado é 4335996931829565. Foi enviada uma cópia para abaptista@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Fabiana de Pires"
+   },
+   {
+    "start": 97,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Montemor-o-Novo"
+   },
+   {
+    "start": 142,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 916 990 212"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335996931829565"
+   },
+   {
+    "start": 226,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "abaptista@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0126",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Petra Carneiro. Gostaria de agendar uma reunião no próximo mês. O local será Lourosa. Pode ligar-me para o 969 641 846 ou escrever para gabrielguerreiro@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Petra Carneiro"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Lourosa"
+   },
+   {
+    "start": 125,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "969 641 846"
+   },
+   {
+    "start": 154,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gabrielguerreiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0127",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Nair Costa e Diana Leite. A próxima reunião será em Gafanha da Nazaré. Tarefa: enviar a apresentação para vazana@example.org. Linha direta: 222 704 255.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Nair Costa"
+   },
+   {
+    "start": 34,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Diana Leite"
+   },
+   {
+    "start": 73,
+    "end": 90,
+    "entity_type": "LOCATION",
+    "value": "Gafanha da Nazaré"
+   },
+   {
+    "start": 127,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vazana@example.org"
+   },
+   {
+    "start": 161,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "222 704 255"
+   }
+  ]
+ },
+ {
+  "id": "pt-0128",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Samuel Guerreiro-Abreu e a sua morada fica em Gafanha da Nazaré. Vamos ligar de volta para o +351 966 811 182. O cartão registado é 4908318110056638. Foi enviada uma cópia para piresgabriel@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Samuel Guerreiro-Abreu"
+   },
+   {
+    "start": 103,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Gafanha da Nazaré"
+   },
+   {
+    "start": 150,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 966 811 182"
+   },
+   {
+    "start": 189,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4908318110056638"
+   },
+   {
+    "start": 234,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "piresgabriel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0129",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bruna do Amaral. Gostaria de agendar uma reunião no próximo mês. O local será Sines. Pode ligar-me para o 925 386 962 ou escrever para dnascimento@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Bruna do Amaral"
+   },
+   {
+    "start": 96,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Sines"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "925 386 962"
+   },
+   {
+    "start": 153,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dnascimento@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0130",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Kevin Ribeiro e Martim do Abreu. A próxima reunião será em Aveiro. Tarefa: enviar a apresentação para tatianamatos@example.com. Linha direta: 919 265 675.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Kevin Ribeiro"
+   },
+   {
+    "start": 37,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Martim do Abreu"
+   },
+   {
+    "start": 80,
+    "end": 86,
+    "entity_type": "LOCATION",
+    "value": "Aveiro"
+   },
+   {
+    "start": 123,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tatianamatos@example.com"
+   },
+   {
+    "start": 163,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "919 265 675"
+   }
+  ]
+ },
+ {
+  "id": "pt-0131",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Artur Ferreira e a sua morada fica em Sintra. Vamos ligar de volta para o 284 293 260. O cartão registado é 4552-9242-2957-7387. Foi enviada uma cópia para emmasa@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Artur Ferreira"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Sintra"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "284 293 260"
+   },
+   {
+    "start": 165,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4552-9242-2957-7387"
+   },
+   {
+    "start": 213,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emmasa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0132",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Vasco Teixeira. Gostaria de agendar uma reunião no próximo mês. O local será Angra do Heroísmo. Pode ligar-me para o 936 338 767 ou escrever para joaquimrodrigues@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Vasco Teixeira"
+   },
+   {
+    "start": 95,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Angra do Heroísmo"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "936 338 767"
+   },
+   {
+    "start": 164,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joaquimrodrigues@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0133",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Clara Freitas e Ricardo Moreira. A próxima reunião será em Vale de Cambra. Tarefa: enviar a apresentação para cmachado@example.org. Linha direta: 252 757 105.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Clara Freitas"
+   },
+   {
+    "start": 37,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Ricardo Moreira"
+   },
+   {
+    "start": 80,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Vale de Cambra"
+   },
+   {
+    "start": 131,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cmachado@example.org"
+   },
+   {
+    "start": 167,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "252 757 105"
+   }
+  ]
+ },
+ {
+  "id": "pt-0134",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Yara Sousa e a sua morada fica em Moura. Vamos ligar de volta para o +351 965 379 590. O cartão registado é 4915463670650023. Foi enviada uma cópia para matosema@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Yara Sousa"
+   },
+   {
+    "start": 91,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Moura"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 965 379 590"
+   },
+   {
+    "start": 165,
+    "end": 181,
+    "entity_type": "CREDIT_CARD",
+    "value": "4915463670650023"
+   },
+   {
+    "start": 210,
+    "end": 230,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "matosema@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0135",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Gil Antunes. Gostaria de agendar uma reunião no próximo mês. O local será Ermesinde. Pode ligar-me para o 918 209 644 ou escrever para joelfonseca@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Gil Antunes"
+   },
+   {
+    "start": 92,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Ermesinde"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "918 209 644"
+   },
+   {
+    "start": 153,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "joelfonseca@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0136",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Adriana Neves e Sebastião Faria. A próxima reunião será em Maia. Tarefa: enviar a apresentação para kpacheco@example.com. Linha direta: 968 133 876.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Adriana Neves"
+   },
+   {
+    "start": 37,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Sebastião Faria"
+   },
+   {
+    "start": 80,
+    "end": 84,
+    "entity_type": "LOCATION",
+    "value": "Maia"
+   },
+   {
+    "start": 121,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kpacheco@example.com"
+   },
+   {
+    "start": 157,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "968 133 876"
+   }
+  ]
+ },
+ {
+  "id": "pt-0137",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Lara Branco e a sua morada fica em Vila Franca de Xira. Vamos ligar de volta para o 969 823 217. O cartão registado é 4339-6616-0868-6906. Foi enviada uma cópia para ibarros@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Lara Branco"
+   },
+   {
+    "start": 92,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Vila Franca de Xira"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "969 823 217"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4339-6616-0868-6906"
+   },
+   {
+    "start": 223,
+    "end": 242,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ibarros@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0138",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Fernando Pinto. Gostaria de agendar uma reunião no próximo mês. O local será Caniço. Pode ligar-me para o +351 965 414 496 ou escrever para carneiromadalena@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Fernando Pinto"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Caniço"
+   },
+   {
+    "start": 124,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 965 414 496"
+   },
+   {
+    "start": 158,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carneiromadalena@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0139",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Mauro da Nascimento e Kévim da Abreu. A próxima reunião será em Ílhavo. Tarefa: enviar a apresentação para luna92@example.com. Linha direta: 244 965 647.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Mauro da Nascimento"
+   },
+   {
+    "start": 43,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Kévim da Abreu"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Ílhavo"
+   },
+   {
+    "start": 128,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luna92@example.com"
+   },
+   {
+    "start": 162,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "244 965 647"
+   }
+  ]
+ },
+ {
+  "id": "pt-0140",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Helena Carvalho e a sua morada fica em Penafiel. Vamos ligar de volta para o 216 263 986. O cartão registado é 4406-4483-1837-4330. Foi enviada uma cópia para melaniearaujo@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Helena Carvalho"
+   },
+   {
+    "start": 96,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Penafiel"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "216 263 986"
+   },
+   {
+    "start": 168,
+    "end": 187,
+    "entity_type": "CREDIT_CARD",
+    "value": "4406-4483-1837-4330"
+   },
+   {
+    "start": 216,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "melaniearaujo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0141",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Yara Carvalho. Gostaria de agendar uma reunião no próximo mês. O local será Barreiro. Pode ligar-me para o +351 929 427 578 ou escrever para iarafonseca@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Yara Carvalho"
+   },
+   {
+    "start": 94,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Barreiro"
+   },
+   {
+    "start": 125,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 929 427 578"
+   },
+   {
+    "start": 159,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "iarafonseca@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0142",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Lisandro Garcia e Juliana Baptista-Macedo. A próxima reunião será em Torres Vedras. Tarefa: enviar a apresentação para ruben30@example.org. Linha direta: 913 846 800.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Lisandro Garcia"
+   },
+   {
+    "start": 39,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Juliana Baptista-Macedo"
+   },
+   {
+    "start": 90,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Torres Vedras"
+   },
+   {
+    "start": 140,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ruben30@example.org"
+   },
+   {
+    "start": 175,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "913 846 800"
+   }
+  ]
+ },
+ {
+  "id": "pt-0143",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Álvaro Ribeiro e a sua morada fica em Esmoriz. Vamos ligar de volta para o 932 193 744. O cartão registado é 4335117600424279. Foi enviada uma cópia para luca23@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Álvaro Ribeiro"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Esmoriz"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "932 193 744"
+   },
+   {
+    "start": 166,
+    "end": 182,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335117600424279"
+   },
+   {
+    "start": 211,
+    "end": 229,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luca23@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0144",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Mariana Gomes. Gostaria de agendar uma reunião no próximo mês. O local será Funchal. Pode ligar-me para o 213 850 139 ou escrever para clara06@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Mariana Gomes"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Funchal"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "213 850 139"
+   },
+   {
+    "start": 153,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "clara06@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0145",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Petra Abreu e Santiago Soares. A próxima reunião será em Felgueiras. Tarefa: enviar a apresentação para eva57@example.com. Linha direta: +351 916 980 153.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Petra Abreu"
+   },
+   {
+    "start": 35,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Santiago Soares"
+   },
+   {
+    "start": 78,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Felgueiras"
+   },
+   {
+    "start": 125,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eva57@example.com"
+   },
+   {
+    "start": 158,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 916 980 153"
+   }
+  ]
+ },
+ {
+  "id": "pt-0146",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Fabiana Nogueira e a sua morada fica em Almeirim. Vamos ligar de volta para o 243 178 341. O cartão registado é 4335138224308938. Foi enviada uma cópia para almeidabenedita@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Fabiana Nogueira"
+   },
+   {
+    "start": 97,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Almeirim"
+   },
+   {
+    "start": 135,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "243 178 341"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335138224308938"
+   },
+   {
+    "start": 214,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "almeidabenedita@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0147",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Afonso Pinho. Gostaria de agendar uma reunião no próximo mês. O local será Alcácer do Sal. Pode ligar-me para o 916 719 612 ou escrever para luciana13@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Afonso Pinho"
+   },
+   {
+    "start": 93,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Alcácer do Sal"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 719 612"
+   },
+   {
+    "start": 159,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luciana13@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0148",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Lucas Silva-Loureiro e Bernardo Pinto. A próxima reunião será em Torres Novas. Tarefa: enviar a apresentação para vitoriabrito@example.net. Linha direta: 297 760 812.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Lucas Silva-Loureiro"
+   },
+   {
+    "start": 44,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Bernardo Pinto"
+   },
+   {
+    "start": 86,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Torres Novas"
+   },
+   {
+    "start": 135,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vitoriabrito@example.net"
+   },
+   {
+    "start": 175,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "297 760 812"
+   }
+  ]
+ },
+ {
+  "id": "pt-0149",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Enzo Pires e a sua morada fica em Mangualde. Vamos ligar de volta para o 219 103 856. O cartão registado é 4644-0622-4942-2092. Foi enviada uma cópia para kcarneiro@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Enzo Pires"
+   },
+   {
+    "start": 91,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Mangualde"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "219 103 856"
+   },
+   {
+    "start": 164,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4644-0622-4942-2092"
+   },
+   {
+    "start": 212,
+    "end": 233,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kcarneiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0150",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Raquel Freitas. Gostaria de agendar uma reunião no próximo mês. O local será Lagos. Pode ligar-me para o 915 557 776 ou escrever para ines36@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Raquel Freitas"
+   },
+   {
+    "start": 95,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Lagos"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "915 557 776"
+   },
+   {
+    "start": 152,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ines36@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0151",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Edgar Teixeira e Bruno Pinho. A próxima reunião será em Gandra. Tarefa: enviar a apresentação para ivanpinto@example.net. Linha direta: +351 916 889 566.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Edgar Teixeira"
+   },
+   {
+    "start": 38,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Bruno Pinho"
+   },
+   {
+    "start": 77,
+    "end": 83,
+    "entity_type": "LOCATION",
+    "value": "Gandra"
+   },
+   {
+    "start": 120,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ivanpinto@example.net"
+   },
+   {
+    "start": 157,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 916 889 566"
+   }
+  ]
+ },
+ {
+  "id": "pt-0152",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Bianca Campos e a sua morada fica em Oliveira do Hospital. Vamos ligar de volta para o +351 931 992 987. O cartão registado é 4030070799762645. Foi enviada uma cópia para meloeduardo@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Bianca Campos"
+   },
+   {
+    "start": 94,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Oliveira do Hospital"
+   },
+   {
+    "start": 144,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 931 992 987"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4030070799762645"
+   },
+   {
+    "start": 228,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "meloeduardo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0153",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Igor Pinho. Gostaria de agendar uma reunião no próximo mês. O local será Paredes. Pode ligar-me para o +351 915 309 919 ou escrever para lisandro13@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Igor Pinho"
+   },
+   {
+    "start": 91,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Paredes"
+   },
+   {
+    "start": 121,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 915 309 919"
+   },
+   {
+    "start": 155,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lisandro13@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0154",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Carlota Paiva e Noa da Barbosa. A próxima reunião será em Torres Vedras. Tarefa: enviar a apresentação para flor66@example.com. Linha direta: 966 835 604.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Carlota Paiva"
+   },
+   {
+    "start": 37,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Noa da Barbosa"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "LOCATION",
+    "value": "Torres Vedras"
+   },
+   {
+    "start": 129,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flor66@example.com"
+   },
+   {
+    "start": 163,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "966 835 604"
+   }
+  ]
+ },
+ {
+  "id": "pt-0155",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Lorena Henriques e a sua morada fica em Chaves. Vamos ligar de volta para o 913 885 217. O cartão registado é 4797-0279-1434-1823. Foi enviada uma cópia para qmagalhaes@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Lorena Henriques"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Chaves"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "913 885 217"
+   },
+   {
+    "start": 167,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4797-0279-1434-1823"
+   },
+   {
+    "start": 215,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qmagalhaes@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0156",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Isabel Neto. Gostaria de agendar uma reunião no próximo mês. O local será Praia da Vitória. Pode ligar-me para o 968 958 554 ou escrever para kvalente@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Isabel Neto"
+   },
+   {
+    "start": 92,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Praia da Vitória"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "968 958 554"
+   },
+   {
+    "start": 160,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kvalente@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0157",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Catarina-Lorena Morais e Bianca-Erica Ribeiro. A próxima reunião será em Freamunde. Tarefa: enviar a apresentação para alvesbeatriz@example.net. Linha direta: 232 531 797.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Catarina-Lorena Morais"
+   },
+   {
+    "start": 46,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Bianca-Erica Ribeiro"
+   },
+   {
+    "start": 94,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Freamunde"
+   },
+   {
+    "start": 140,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alvesbeatriz@example.net"
+   },
+   {
+    "start": 180,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "232 531 797"
+   }
+  ]
+ },
+ {
+  "id": "pt-0158",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ricardo Vieira e a sua morada fica em Gandra. Vamos ligar de volta para o +351 910 509 957. O cartão registado é 4426646782492712. Foi enviada uma cópia para lucarocha@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Ricardo Vieira"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Gandra"
+   },
+   {
+    "start": 131,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 910 509 957"
+   },
+   {
+    "start": 170,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4426646782492712"
+   },
+   {
+    "start": 215,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucarocha@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0159",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Bruno Magalhães-Ramos. Gostaria de agendar uma reunião no próximo mês. O local será Odivelas. Pode ligar-me para o 224 884 577 ou escrever para kbaptista@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Bruno Magalhães-Ramos"
+   },
+   {
+    "start": 102,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Odivelas"
+   },
+   {
+    "start": 133,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "224 884 577"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kbaptista@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0160",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Eduarda Pacheco e Luca Oliveira. A próxima reunião será em Amadora. Tarefa: enviar a apresentação para rcardoso@example.com. Linha direta: 963 916 510.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Eduarda Pacheco"
+   },
+   {
+    "start": 39,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Luca Oliveira"
+   },
+   {
+    "start": 80,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Amadora"
+   },
+   {
+    "start": 124,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rcardoso@example.com"
+   },
+   {
+    "start": 160,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "963 916 510"
+   }
+  ]
+ },
+ {
+  "id": "pt-0161",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é César Assunção e a sua morada fica em Guarda. Vamos ligar de volta para o 916 229 303. O cartão registado é 4277-7097-6023-2458. Foi enviada uma cópia para francisca37@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "César Assunção"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Guarda"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "916 229 303"
+   },
+   {
+    "start": 165,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4277-7097-6023-2458"
+   },
+   {
+    "start": 213,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "francisca37@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0162",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Wilson de Guerreiro. Gostaria de agendar uma reunião no próximo mês. O local será Quarteira. Pode ligar-me para o 917 288 277 ou escrever para vicentemia@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Wilson de Guerreiro"
+   },
+   {
+    "start": 100,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Quarteira"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "917 288 277"
+   },
+   {
+    "start": 161,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vicentemia@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0163",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Gonçalo de Marques e Kelly Gomes-Assunção. A próxima reunião será em Horta. Tarefa: enviar a apresentação para araujobeatriz@example.net. Linha direta: 273 850 918.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Gonçalo de Marques"
+   },
+   {
+    "start": 42,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Kelly Gomes-Assunção"
+   },
+   {
+    "start": 90,
+    "end": 95,
+    "entity_type": "LOCATION",
+    "value": "Horta"
+   },
+   {
+    "start": 132,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "araujobeatriz@example.net"
+   },
+   {
+    "start": 173,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "273 850 918"
+   }
+  ]
+ },
+ {
+  "id": "pt-0164",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Jaime Nogueira-Vicente e a sua morada fica em Vizela. Vamos ligar de volta para o +351 961 106 970. O cartão registado é 4151750649355038. Foi enviada uma cópia para nicole50@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Jaime Nogueira-Vicente"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Vizela"
+   },
+   {
+    "start": 139,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 961 106 970"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4151750649355038"
+   },
+   {
+    "start": 223,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nicole50@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0165",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Catarina Vaz. Gostaria de agendar uma reunião no próximo mês. O local será Felgueiras. Pode ligar-me para o 252 614 228 ou escrever para nevesteresa@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Catarina Vaz"
+   },
+   {
+    "start": 93,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Felgueiras"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "252 614 228"
+   },
+   {
+    "start": 155,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nevesteresa@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0166",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Naiara Magalhães e Salomé Lourenço. A próxima reunião será em Mealhada. Tarefa: enviar a apresentação para lunalopes@example.org. Linha direta: +351 937 192 571.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Naiara Magalhães"
+   },
+   {
+    "start": 40,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Salomé Lourenço"
+   },
+   {
+    "start": 83,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Mealhada"
+   },
+   {
+    "start": 128,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lunalopes@example.org"
+   },
+   {
+    "start": 165,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 937 192 571"
+   }
+  ]
+ },
+ {
+  "id": "pt-0167",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ana Monteiro e a sua morada fica em Moura. Vamos ligar de volta para o 933 752 224. O cartão registado é 4137-9312-5219-1808. Foi enviada uma cópia para ymacedo@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Ana Monteiro"
+   },
+   {
+    "start": 93,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Moura"
+   },
+   {
+    "start": 128,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "933 752 224"
+   },
+   {
+    "start": 162,
+    "end": 181,
+    "entity_type": "CREDIT_CARD",
+    "value": "4137-9312-5219-1808"
+   },
+   {
+    "start": 210,
+    "end": 229,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ymacedo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0168",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Filipa Rodrigues-Anjos. Gostaria de agendar uma reunião no próximo mês. O local será Macedo de Cavaleiros. Pode ligar-me para o 962 211 595 ou escrever para moraisdinis@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Filipa Rodrigues-Anjos"
+   },
+   {
+    "start": 103,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Macedo de Cavaleiros"
+   },
+   {
+    "start": 146,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "962 211 595"
+   },
+   {
+    "start": 175,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "moraisdinis@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0169",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Andreia da Barros e Gabriela Esteves. A próxima reunião será em Almada. Tarefa: enviar a apresentação para ymaia@example.org. Linha direta: 935 226 398.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Andreia da Barros"
+   },
+   {
+    "start": 41,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Gabriela Esteves"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Almada"
+   },
+   {
+    "start": 128,
+    "end": 145,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ymaia@example.org"
+   },
+   {
+    "start": 161,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "935 226 398"
+   }
+  ]
+ },
+ {
+  "id": "pt-0170",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Ivan do Leal e a sua morada fica em Cartaxo. Vamos ligar de volta para o 934 607 442. O cartão registado é 4547-5547-1027-0487. Foi enviada uma cópia para fabio82@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Ivan do Leal"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Cartaxo"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "934 607 442"
+   },
+   {
+    "start": 164,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4547-5547-1027-0487"
+   },
+   {
+    "start": 212,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fabio82@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0171",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Kevin Miranda. Gostaria de agendar uma reunião no próximo mês. O local será Leiria. Pode ligar-me para o +351 966 398 450 ou escrever para alvarocruz@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Kevin Miranda"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Leiria"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 966 398 450"
+   },
+   {
+    "start": 157,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alvarocruz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0172",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: António Pacheco e Filipe Jesus. A próxima reunião será em Vila Franca de Xira. Tarefa: enviar a apresentação para luca87@example.com. Linha direta: 939 247 364.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "António Pacheco"
+   },
+   {
+    "start": 39,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Filipe Jesus"
+   },
+   {
+    "start": 79,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Vila Franca de Xira"
+   },
+   {
+    "start": 135,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luca87@example.com"
+   },
+   {
+    "start": 169,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "939 247 364"
+   }
+  ]
+ },
+ {
+  "id": "pt-0173",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gustavo Morais-Matos e a sua morada fica em Seixal. Vamos ligar de volta para o +351 927 544 551. O cartão registado é 4154404819872581. Foi enviada uma cópia para evasa@example.net.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Gustavo Morais-Matos"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Seixal"
+   },
+   {
+    "start": 137,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 927 544 551"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4154404819872581"
+   },
+   {
+    "start": 221,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "evasa@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0174",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Erika Barros. Gostaria de agendar uma reunião no próximo mês. O local será Figueira da Foz. Pode ligar-me para o 280 568 110 ou escrever para guilhermecarneiro@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Erika Barros"
+   },
+   {
+    "start": 93,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Figueira da Foz"
+   },
+   {
+    "start": 131,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "280 568 110"
+   },
+   {
+    "start": 160,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guilhermecarneiro@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0175",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Gaspar Pires e Lorena Figueiredo-Gonçalves. A próxima reunião será em Porto Santo. Tarefa: enviar a apresentação para melissa13@example.net. Linha direta: 933 190 677.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Gaspar Pires"
+   },
+   {
+    "start": 36,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Lorena Figueiredo-Gonçalves"
+   },
+   {
+    "start": 91,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Porto Santo"
+   },
+   {
+    "start": 139,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "melissa13@example.net"
+   },
+   {
+    "start": 176,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "933 190 677"
+   }
+  ]
+ },
+ {
+  "id": "pt-0176",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Denis Ramos e a sua morada fica em Lagoa. Vamos ligar de volta para o 289 621 330. O cartão registado é 4797027558088201. Foi enviada uma cópia para motadinis@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Denis Ramos"
+   },
+   {
+    "start": 92,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Lagoa"
+   },
+   {
+    "start": 127,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "289 621 330"
+   },
+   {
+    "start": 161,
+    "end": 177,
+    "entity_type": "CREDIT_CARD",
+    "value": "4797027558088201"
+   },
+   {
+    "start": 206,
+    "end": 227,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "motadinis@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0177",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Enzo Pereira. Gostaria de agendar uma reunião no próximo mês. O local será Montijo. Pode ligar-me para o 287 642 628 ou escrever para marquesgaspar@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Enzo Pereira"
+   },
+   {
+    "start": 93,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Montijo"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "287 642 628"
+   },
+   {
+    "start": 152,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marquesgaspar@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0178",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Pedro Figueiredo e Eduardo Correia. A próxima reunião será em Amora. Tarefa: enviar a apresentação para torresmauro@example.org. Linha direta: 245 879 564.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Pedro Figueiredo"
+   },
+   {
+    "start": 40,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Eduardo Correia"
+   },
+   {
+    "start": 83,
+    "end": 88,
+    "entity_type": "LOCATION",
+    "value": "Amora"
+   },
+   {
+    "start": 125,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "torresmauro@example.org"
+   },
+   {
+    "start": 164,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "245 879 564"
+   }
+  ]
+ },
+ {
+  "id": "pt-0179",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Luísa Anjos e a sua morada fica em Seia. Vamos ligar de volta para o 921 231 722. O cartão registado é 4151-9426-9456-8777. Foi enviada uma cópia para emamonteiro@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Luísa Anjos"
+   },
+   {
+    "start": 92,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Seia"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "921 231 722"
+   },
+   {
+    "start": 160,
+    "end": 179,
+    "entity_type": "CREDIT_CARD",
+    "value": "4151-9426-9456-8777"
+   },
+   {
+    "start": 208,
+    "end": 231,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emamonteiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0180",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Isaac Alves. Gostaria de agendar uma reunião no próximo mês. O local será Santo Tirso. Pode ligar-me para o 929 497 424 ou escrever para fabiocruz@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 29,
+    "entity_type": "PERSON",
+    "value": "Isaac Alves"
+   },
+   {
+    "start": 92,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Santo Tirso"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "929 497 424"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fabiocruz@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0181",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Vitória Araújo e Rui Maia. A próxima reunião será em Aveiro. Tarefa: enviar a apresentação para yara86@example.net. Linha direta: +351 922 310 890.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Vitória Araújo"
+   },
+   {
+    "start": 38,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Rui Maia"
+   },
+   {
+    "start": 74,
+    "end": 80,
+    "entity_type": "LOCATION",
+    "value": "Aveiro"
+   },
+   {
+    "start": 117,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yara86@example.net"
+   },
+   {
+    "start": 151,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 922 310 890"
+   }
+  ]
+ },
+ {
+  "id": "pt-0182",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é David Correia e a sua morada fica em Silves. Vamos ligar de volta para o +351 936 443 101. O cartão registado é 4442270281264397. Foi enviada uma cópia para amelia86@example.org.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "David Correia"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Silves"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 936 443 101"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4442270281264397"
+   },
+   {
+    "start": 214,
+    "end": 234,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amelia86@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0183",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Santiago Silva. Gostaria de agendar uma reunião no próximo mês. O local será Póvoa de Santa Iria. Pode ligar-me para o 963 860 778 ou escrever para marcos35@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Santiago Silva"
+   },
+   {
+    "start": 95,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Póvoa de Santa Iria"
+   },
+   {
+    "start": 137,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "963 860 778"
+   },
+   {
+    "start": 166,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcos35@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0184",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Lúcia Costa e Carlos Gaspar. A próxima reunião será em Penafiel. Tarefa: enviar a apresentação para goncalo71@example.com. Linha direta: +351 911 757 782.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Lúcia Costa"
+   },
+   {
+    "start": 35,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Carlos Gaspar"
+   },
+   {
+    "start": 76,
+    "end": 84,
+    "entity_type": "LOCATION",
+    "value": "Penafiel"
+   },
+   {
+    "start": 121,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "goncalo71@example.com"
+   },
+   {
+    "start": 158,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 911 757 782"
+   }
+  ]
+ },
+ {
+  "id": "pt-0185",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Irina Guerreiro e a sua morada fica em Caldas da Rainha. Vamos ligar de volta para o +351 967 678 472. O cartão registado é 4246618119101850. Foi enviada uma cópia para mariomendes@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Irina Guerreiro"
+   },
+   {
+    "start": 96,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Caldas da Rainha"
+   },
+   {
+    "start": 142,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 967 678 472"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4246618119101850"
+   },
+   {
+    "start": 226,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariomendes@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0186",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Emanuel Sá. Gostaria de agendar uma reunião no próximo mês. O local será Alcobaça. Pode ligar-me para o 933 924 745 ou escrever para costafrancisca@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Emanuel Sá"
+   },
+   {
+    "start": 91,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Alcobaça"
+   },
+   {
+    "start": 122,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "933 924 745"
+   },
+   {
+    "start": 151,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "costafrancisca@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0187",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Filipa Barbosa e Enzo Cunha. A próxima reunião será em Sines. Tarefa: enviar a apresentação para jorge58@example.com. Linha direta: 934 719 654.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Filipa Barbosa"
+   },
+   {
+    "start": 38,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Enzo Cunha"
+   },
+   {
+    "start": 76,
+    "end": 81,
+    "entity_type": "LOCATION",
+    "value": "Sines"
+   },
+   {
+    "start": 118,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jorge58@example.com"
+   },
+   {
+    "start": 153,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "934 719 654"
+   }
+  ]
+ },
+ {
+  "id": "pt-0188",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Laura-Vera Lopes e a sua morada fica em Caldas da Rainha. Vamos ligar de volta para o +351 924 602 965. O cartão registado é 4151-7118-4352-9927. Foi enviada uma cópia para valenterafaela@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Laura-Vera Lopes"
+   },
+   {
+    "start": 97,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Caldas da Rainha"
+   },
+   {
+    "start": 143,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 924 602 965"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4151-7118-4352-9927"
+   },
+   {
+    "start": 230,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "valenterafaela@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0189",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Joaquim Melo. Gostaria de agendar uma reunião no próximo mês. O local será Ermesinde. Pode ligar-me para o +351 915 608 567 ou escrever para gil50@example.org. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 30,
+    "entity_type": "PERSON",
+    "value": "Joaquim Melo"
+   },
+   {
+    "start": 93,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Ermesinde"
+   },
+   {
+    "start": 125,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 915 608 567"
+   },
+   {
+    "start": 159,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gil50@example.org"
+   }
+  ]
+ },
+ {
+  "id": "pt-0190",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: José Pinheiro e Valentina-Ana Fernandes. A próxima reunião será em Rio Tinto. Tarefa: enviar a apresentação para piresalvaro@example.org. Linha direta: 264 499 579.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "José Pinheiro"
+   },
+   {
+    "start": 37,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Valentina-Ana Fernandes"
+   },
+   {
+    "start": 88,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Rio Tinto"
+   },
+   {
+    "start": 134,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "piresalvaro@example.org"
+   },
+   {
+    "start": 173,
+    "end": 184,
+    "entity_type": "PHONE_NUMBER",
+    "value": "264 499 579"
+   }
+  ]
+ },
+ {
+  "id": "pt-0191",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Sofia Assunção e a sua morada fica em Oliveira de Azeméis. Vamos ligar de volta para o +351 911 291 747. O cartão registado é 4228-6950-1357-4731. Foi enviada uma cópia para nuno56@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Sofia Assunção"
+   },
+   {
+    "start": 95,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Oliveira de Azeméis"
+   },
+   {
+    "start": 144,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 911 291 747"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4228-6950-1357-4731"
+   },
+   {
+    "start": 231,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nuno56@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0192",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Melissa Alves. Gostaria de agendar uma reunião no próximo mês. O local será Sacavém. Pode ligar-me para o 935 415 317 ou escrever para fernando99@example.net. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 31,
+    "entity_type": "PERSON",
+    "value": "Melissa Alves"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Sacavém"
+   },
+   {
+    "start": 124,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "935 415 317"
+   },
+   {
+    "start": 153,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fernando99@example.net"
+   }
+  ]
+ },
+ {
+  "id": "pt-0193",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Cláudio Matos e Núria Magalhães-Moreira. A próxima reunião será em Torres Vedras. Tarefa: enviar a apresentação para marcoferreira@example.org. Linha direta: 230 832 324.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Cláudio Matos"
+   },
+   {
+    "start": 37,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Núria Magalhães-Moreira"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Torres Vedras"
+   },
+   {
+    "start": 138,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcoferreira@example.org"
+   },
+   {
+    "start": 179,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "230 832 324"
+   }
+  ]
+ },
+ {
+  "id": "pt-0194",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Gabriel Alves-Costa e a sua morada fica em Mêda. Vamos ligar de volta para o 286 958 167. O cartão registado é 4864490839779402. Foi enviada uma cópia para rpinheiro@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Gabriel Alves-Costa"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Mêda"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "286 958 167"
+   },
+   {
+    "start": 168,
+    "end": 184,
+    "entity_type": "CREDIT_CARD",
+    "value": "4864490839779402"
+   },
+   {
+    "start": 213,
+    "end": 234,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rpinheiro@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0195",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Kévim Cruz. Gostaria de agendar uma reunião no próximo mês. O local será Fiães. Pode ligar-me para o 278 533 611 ou escrever para nuno63@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 28,
+    "entity_type": "PERSON",
+    "value": "Kévim Cruz"
+   },
+   {
+    "start": 91,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Fiães"
+   },
+   {
+    "start": 119,
+    "end": 130,
+    "entity_type": "PHONE_NUMBER",
+    "value": "278 533 611"
+   },
+   {
+    "start": 148,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nuno63@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0196",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Adriana Antunes e Artur Lopes. A próxima reunião será em Mirandela. Tarefa: enviar a apresentação para beneditavaz@example.com. Linha direta: +351 968 272 988.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Adriana Antunes"
+   },
+   {
+    "start": 39,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Artur Lopes"
+   },
+   {
+    "start": 78,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Mirandela"
+   },
+   {
+    "start": 124,
+    "end": 147,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "beneditavaz@example.com"
+   },
+   {
+    "start": 163,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 968 272 988"
+   }
+  ]
+ },
+ {
+  "id": "pt-0197",
+  "language": "pt",
+  "genre": "inquiry",
+  "text": "Obrigado por contactar o suporte. O seu nome registado é Erica Ferreira-Domingues e a sua morada fica em Aveiro. Vamos ligar de volta para o 912 399 245. O cartão registado é 4008178571539475. Foi enviada uma cópia para mateus23@example.com.",
+  "spans": [
+   {
+    "start": 57,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Erica Ferreira-Domingues"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Aveiro"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "912 399 245"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4008178571539475"
+   },
+   {
+    "start": 220,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mateus23@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0198",
+  "language": "pt",
+  "genre": "request",
+  "text": "Bom dia, chamo-me Jéssica-Madalena Borges. Gostaria de agendar uma reunião no próximo mês. O local será Cartaxo. Pode ligar-me para o 278 277 382 ou escrever para qoliveira@example.com. Obrigado!",
+  "spans": [
+   {
+    "start": 18,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Jéssica-Madalena Borges"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Cartaxo"
+   },
+   {
+    "start": 134,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "278 277 382"
+   },
+   {
+    "start": 163,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qoliveira@example.com"
+   }
+  ]
+ },
+ {
+  "id": "pt-0199",
+  "language": "pt",
+  "genre": "minutes",
+  "text": "[Ata] Participantes: Artur Faria e Ismael Amaral. A próxima reunião será em Porto Santo. Tarefa: enviar a apresentação para leticiacosta@example.org. Linha direta: +351 916 949 296.",
+  "spans": [
+   {
+    "start": 21,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Artur Faria"
+   },
+   {
+    "start": 35,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Ismael Amaral"
+   },
+   {
+    "start": 76,
+    "end": 87,
+    "entity_type": "LOCATION",
+    "value": "Porto Santo"
+   },
+   {
+    "start": 124,
+    "end": 148,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leticiacosta@example.org"
+   },
+   {
+    "start": 164,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+351 916 949 296"
+   }
+  ]
+ }
+]

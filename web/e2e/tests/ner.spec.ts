@@ -48,7 +48,7 @@ test.afterAll(async () => {
   await context?.close();
 });
 
-async function anonymizeSample(language: "ja" | "en" | "es" | "vi"): Promise<string> {
+async function anonymizeSample(language: "ja" | "en" | "es" | "vi" | "zh" | "ko" | "fr" | "de" | "pt" | "it"): Promise<string> {
   await page.goto(BASE_URL);
   await page.locator("#language").selectOption(language);
   await expect(page.locator("#use-ner")).toBeChecked();

@@ -9,8 +9,11 @@
 
 import {
   Anonymizer,
+  LANGUAGES,
+  LANGUAGE_NAMES,
   RestoreSession,
   detectLanguage,
+  isLanguage,
   type AnonymizeResult,
   type Language,
   type MappingStore,
@@ -33,10 +36,7 @@ function createPanelMarkup(): string {
         <label>Language
           <select class="language">
             <option value="auto">Auto / 自動判定</option>
-            <option value="ja">日本語</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="vi">Tiếng Việt</option>
+            ${LANGUAGES.map((lang) => `<option value="${lang}">${LANGUAGE_NAMES[lang]}</option>`).join("\n            ")}
           </select>
         </label>
       </div>
@@ -142,13 +142,12 @@ export class PromptAnonymizerElement extends HTMLElement {
 
   get language(): "auto" | Language {
     const attr = this.getAttribute("language");
-    if (attr === "en" || attr === "ja" || attr === "es" || attr === "vi") return attr;
+    if (isLanguage(attr)) return attr;
     return "auto";
   }
 
   set language(value: "auto" | Language) {
-    const next =
-      value === "en" || value === "ja" || value === "es" || value === "vi" ? value : "auto";
+    const next = isLanguage(value) ? value : "auto";
     if (this.getAttribute("language") !== next) {
       this.setAttribute("language", next);
     }

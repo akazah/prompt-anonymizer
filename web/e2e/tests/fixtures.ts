@@ -31,8 +31,13 @@ export const test = base.extend<{ blockedExternalRequests: string[] }>({
 
 export { expect };
 
+// Mirror of the core registry (web/packages/core/src/types.ts LANGUAGES);
+// e2e runs against the built app, so the list is duplicated here.
+export const E2E_LANGUAGES = ["en", "ja", "es", "vi", "zh", "ko", "fr", "de", "pt", "it"] as const;
+export type E2eLanguage = (typeof E2E_LANGUAGES)[number];
+
 export interface AnonymizeOptions {
-  language: "ja" | "en" | "es" | "vi";
+  language: E2eLanguage;
   /** Explicit input text; omit to use the app's built-in sample. */
   text?: string;
 }

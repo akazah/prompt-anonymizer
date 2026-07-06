@@ -1,5 +1,6 @@
 /**
- * On-device language detection for choosing between "en", "ja", "es", and "vi".
+ * On-device language detection across the supported languages (LANGUAGES in
+ * types.ts).
  *
  * Prefers the browser's built-in LanguageDetector API (Chrome 138+,
  * https://developer.mozilla.org/docs/Web/API/LanguageDetector) — an
@@ -9,23 +10,39 @@
  * downloaded: `detectLanguage` never triggers a model download itself.
  */
 
-import type { Language } from "./types.js";
-
-const VIETNAMESE_MARKERS = /[ăâđơưĂÂĐƠƯ\u01A0\u01A1\u01AF\u01B0\u1EA0-\u1EF9]/;
-const SPANISH_MARKERS = /[¿¡ñÑáéíóúüÁÉÍÓÚÜ]/;
+import { LANGUAGES, type Language } from "./types.js";
 
 /**
- * Heuristic fallback when the built-in LanguageDetector is unavailable.
- *
- * Ordering: (a) kana/kanji → "ja"; (b) Vietnamese-specific letters → "vi";
- * (c) Spanish markers → "es"; (d) otherwise "en". Step (c) runs after (b)
- * because Vietnamese also uses acute/grave vowels; other Romance languages
- * may map to "es" — acceptable for a 4-way heuristic.
+ * Ordered heuristic rules, evaluated top to bottom; no match means "en".
+ * Script-scoped rules (kana, hangul, han) are reliable; the Latin-diacritic
+ * rules are best-effort — languages sharing diacritics (fr/it/es/pt accents)
+ * can be confused, which is acceptable for a fallback heuristic. Mirrors
+ * DETECTION_RULES in the Python core (`src/prompt_anonymizer/languages.py`).
  */
+const DETECTION_RULES: ReadonlyArray<readonly [Language, RegExp]> = [
+  // Kana is uniquely Japanese; han without kana (checked next) counts as
+  // Chinese — kanji-only Japanese fragments are the known blind spot.
+  ["ja", /[\u3040-\u30ff]/],
+  ["ko", /[\uac00-\ud7a3\u1100-\u11ff]/],
+  ["zh", /[\u4e00-\u9fff]/],
+  // Vietnamese-specific letters (also claims ă/â/ơ/ư before the Latin
+  // rules below can).
+  ["vi", /[ăâđơưĂÂĐƠƯ\u1ea0-\u1ef9]/],
+  ["de", /[ßäöÄÖẞ]/],
+  ["pt", /[ãõÃÕ]/],
+  ["es", /[¿¡ñÑ]/],
+  ["fr", /[œŒêîûëïçÇÊÎÛËÏ]/],
+  ["it", /[èòìàùÈÒÌÀÙ]/],
+  // Broad accented-vowel fallback: shared across Romance languages, mapped
+  // to es (the most common case historically; fr/it usually match above).
+  ["es", /[áéíóúüÁÉÍÓÚÜ]/],
+];
+
+/** Heuristic fallback when the built-in LanguageDetector is unavailable. */
 export function guessLanguage(text: string): Language {
-  if (/[\u3040-\u30ff\u4e00-\u9fff]/.test(text)) return "ja";
-  if (VIETNAMESE_MARKERS.test(text)) return "vi";
-  if (SPANISH_MARKERS.test(text)) return "es";
+  for (const [language, markers] of DETECTION_RULES) {
+    if (markers.test(text)) return language;
+  }
   return "en";
 }
 
@@ -43,8 +60,8 @@ interface LanguageDetectorStatic {
   create(options?: { expectedInputLanguages?: string[] }): Promise<BuiltinLanguageDetector>;
 }
 
-const EXPECTED = { expectedInputLanguages: ["en", "ja", "es", "vi"] };
-const SUPPORTED_BASE_TAGS = new Set<Language>(["ja", "en", "es", "vi"]);
+const EXPECTED = { expectedInputLanguages: [...LANGUAGES] };
+const SUPPORTED_BASE_TAGS = new Set<Language>(LANGUAGES);
 
 let cachedDetector: Promise<BuiltinLanguageDetector | null> | null = null;
 
@@ -72,9 +89,9 @@ export function resetLanguageDetector(): void {
 }
 
 /**
- * Detect whether `text` is Japanese, English, Spanish, or Vietnamese, fully
- * on-device. Uses Chrome's built-in LanguageDetector when available and
- * already downloaded; otherwise (or on any error) uses {@link guessLanguage}.
+ * Detect which supported language `text` is written in, fully on-device.
+ * Uses Chrome's built-in LanguageDetector when available and already
+ * downloaded; otherwise (or on any error) uses {@link guessLanguage}.
  */
 export async function detectLanguage(text: string): Promise<Language> {
   const fallback = guessLanguage(text);
