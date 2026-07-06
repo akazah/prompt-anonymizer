@@ -19,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   freshness vs `evals/generate.py`, and a `eval-golden.mjs --check` CI
   step that fails when the TS table in `docs/EVAL.md` drifts. Adding a
   language is documented in `docs/ADDING_A_LANGUAGE.md`.
-
 - Spanish (`es`) and Vietnamese (`vi`) support in both cores (non-breaking,
   additive): locale-specific labels (`Nombre`, `Teléfono`, `Tên`,
   `SốĐiệnThoại`, …), Spain and Vietnam phone recognizers, spaCy / HF /
