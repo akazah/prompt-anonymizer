@@ -6,6 +6,7 @@
 > Ẩn danh có thể hoàn nguyên, trên thiết bị — không phải đánh đổi trí tuệ lấy quyền riêng tư.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -35,6 +36,25 @@ transformers cục bộ trong Python). Đừng chỉ tin lời chúng tôi: mở
 tab mạng, hoặc đọc mã nguồn. Giấy phép MIT và đủ nhỏ để rà soát trong một lần
 ngồi.
 
+<details>
+<summary><b>Mục lục</b></summary>
+
+- [Demo](#demo)
+- [Dùng thử](#dùng-thử)
+- [Bắt đầu nhanh (Python)](#bắt-đầu-nhanh-python)
+- [Bắt đầu nhanh (JavaScript / TypeScript)](#bắt-đầu-nhanh-javascript--typescript)
+- [Bắt đầu nhanh (proxy cục bộ)](#bắt-đầu-nhanh-proxy-cục-bộ)
+- [Cổng lúc commit / CI (`scan`)](#cổng-lúc-commit--ci-scan)
+- [Tại sao không …?](#tại-sao-không-)
+- [Cách hoạt động](#cách-hoạt-động)
+- [Thực thể được hỗ trợ](#thực-thể-được-hỗ-trợ)
+- [Độ chính xác](#độ-chính-xác)
+- [Hạn chế](#hạn-chế)
+- [Lộ trình](#lộ-trình)
+- [Contributing / Security / License](#contributing--security--license)
+
+</details>
+
 ## Demo
 
 Ẩn danh → bảng ánh xạ giữ tại local → phản hồi LLM giữ nhãn → khôi phục:
@@ -58,7 +78,7 @@ ngồi.
 | Mục tiêu | Cách | Ghi chú |
 |---|---|---|
 | **Trình duyệt (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100% trên thiết bị: NER chạy trong trình duyệt qua WebGPU (dự phòng WASM). Văn bản của bạn không bao giờ gửi lên máy chủ — kiểm chứng trong tab mạng. |
-| **Ứng dụng desktop** | Tải từ [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.AppImage` / `.deb`) | Tauri 2. Hiện chưa ký — hệ điều hành sẽ cảnh báo khi chạy lần đầu. |
+| **Ứng dụng desktop** | Tải từ [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Hiện chưa ký — hệ điều hành sẽ cảnh báo khi chạy lần đầu. |
 | **Tiện ích Chrome** | `prompt-anonymizer-extension-*.zip` từ [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Giải nén → `chrome://extensions` → bật Chế độ nhà phát triển → "Tải tiện ích đã giải nén". Chọn văn bản → nhấp chuột phải → *Anonymize selection*. |
 | **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (chưa có trên PyPI) | Presidio + spaCy. Xem Bắt đầu nhanh bên dưới. |
 | **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (chưa có trên npm — build từ `web/packages/cli`) | Cùng lệnh và cờ với CLI Python; transformers.js NER, hoàn toàn trên thiết bị. |
@@ -71,7 +91,7 @@ ngồi.
 
 ```bash
 # Chưa công bố lên PyPI — cài từ GitHub (theo tag, hoặc main để lấy bản mới nhất):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: không có pipeline spaCy chính thức — WikiNER
 ```
@@ -203,7 +223,7 @@ Với framework [pre-commit](https://pre-commit.com)
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: main  # ghim vào một tag khi có tag kèm hook này
+    rev: v0.2.2  # tag đầu tiên kèm hook này
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]

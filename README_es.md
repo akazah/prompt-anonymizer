@@ -7,6 +7,7 @@
 > privacidad.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -38,6 +39,25 @@ spaCy o transformers locales en Python). No te fíes de nuestra palabra:
 abre las DevTools, mira la pestaña de red o lee el código fuente. Tiene
 licencia MIT y es lo bastante pequeño para auditarlo de una sentada.
 
+<details>
+<summary><b>Índice</b></summary>
+
+- [Demo](#demo)
+- [Pruébalo](#pruébalo)
+- [Inicio rápido (Python)](#inicio-rápido-python)
+- [Inicio rápido (JavaScript / TypeScript)](#inicio-rápido-javascript--typescript)
+- [Inicio rápido (proxy local)](#inicio-rápido-proxy-local)
+- [Puerta en el commit / CI (`scan`)](#puerta-en-el-commit--ci-scan)
+- [¿Por qué no…?](#por-qué-no)
+- [Cómo funciona](#cómo-funciona)
+- [Entidades admitidas](#entidades-admitidas)
+- [Precisión](#precisión)
+- [Limitaciones](#limitaciones)
+- [Hoja de ruta](#hoja-de-ruta)
+- [Contributing / Security / License](#contributing--security--license)
+
+</details>
+
 ## Demo
 
 Anonimizar → el mapeo permanece local → la respuesta del LLM conserva las
@@ -62,7 +82,7 @@ etiquetas → restaurar:
 | Destino | Cómo | Notas |
 |---|---|---|
 | **Navegador (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100 % en el dispositivo: el NER se ejecuta en tu navegador vía WebGPU (con respaldo WASM). Tu texto nunca se envía a un servidor — compruébalo en la pestaña de red. |
-| **App de escritorio** | Descarga desde [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.AppImage` / `.deb`) | Tauri 2. Sin firmar por ahora — tu SO avisará en el primer arranque. |
+| **App de escritorio** | Descarga desde [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Sin firmar por ahora — tu SO avisará en el primer arranque. |
 | **Extensión de Chrome** | `prompt-anonymizer-extension-*.zip` desde [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Descomprime → `chrome://extensions` → activa el modo de desarrollador → «Cargar descomprimida». Selecciona texto → clic derecho → *Anonymize selection*. |
 | **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (aún no en PyPI) | Presidio + spaCy. Consulta el inicio rápido más abajo. |
 | **CLI de Node (npx)** | `npx @prompt-anonymizer/cli` (aún no en npm — compilar desde `web/packages/cli`) | Mismos comandos y flags que la CLI de Python; NER con transformers.js, totalmente en el dispositivo. |
@@ -75,7 +95,7 @@ etiquetas → restaurar:
 
 ```bash
 # Aún no publicado en PyPI: instalar desde GitHub (una etiqueta o main para lo último):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: sin pipeline oficial de spaCy — WikiNER
 ```
@@ -210,7 +230,7 @@ Con el framework [pre-commit](https://pre-commit.com)
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: main  # fija una etiqueta cuando se publique una con este hook
+    rev: v0.2.2  # primera etiqueta que incluye este hook
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]

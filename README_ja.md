@@ -6,6 +6,7 @@
 > 復元可能・オンデバイスの匿名化 — 知能とプライバシーを天秤にかけない。
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -36,6 +37,25 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 ありません。DevToolsを開いてネットワークタブを監視するか、ソースを読んで
 ください。MITライセンスで、一度に読み切れる規模のコードベースです。
 
+<details>
+<summary><b>目次</b></summary>
+
+- [デモ](#デモ)
+- [使ってみる](#使ってみる)
+- [Quickstart（Python）](#quickstartpython)
+- [Quickstart（JavaScript / TypeScript）](#quickstartjavascript--typescript)
+- [Quickstart（ローカルプロキシ）](#quickstartローカルプロキシ)
+- [コミット時 / CIゲート（`scan`）](#コミット時--ciゲートscan)
+- [なぜ〇〇ではないのか？](#なぜ〇〇ではないのか)
+- [仕組み](#仕組み)
+- [対応エンティティ](#対応エンティティ)
+- [精度](#精度)
+- [制限事項](#制限事項)
+- [ロードマップ](#ロードマップ)
+- [Contributing / Security / License](#contributing--security--license)
+
+</details>
+
 ## デモ
 
 匿名化 → 対応表はローカルに残る → LLM応答にはラベルが残る → 復元:
@@ -59,7 +79,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 | ターゲット | 入手方法 | 補足 |
 |---|---|---|
 | **ブラウザ版（WebGPU）** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 完全オンデバイス。NERはWebGPU（非対応環境はWASM）でブラウザ内実行され、テキストはサーバーへ一切送信されません — ネットワークタブで確認できます。 |
-| **デスクトップアプリ** | [Releases](https://github.com/akazah/prompt-anonymizer/releases) から `.dmg` / `.msi` / `.AppImage` / `.deb` | Tauri 2製。現状は未署名のため初回起動時にOSの警告が出ます。 |
+| **デスクトップアプリ** | [Releases](https://github.com/akazah/prompt-anonymizer/releases) から `.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm` | Tauri 2製。現状は未署名のため初回起動時にOSの警告が出ます。 |
 | **Chrome拡張** | [Releases](https://github.com/akazah/prompt-anonymizer/releases) の `prompt-anonymizer-extension-*.zip` | 展開 → `chrome://extensions` → デベロッパーモード → 「パッケージ化されていない拡張機能を読み込む」。テキスト選択 → 右クリック → *Anonymize selection*。 |
 | **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer`（PyPI未公開） | Presidio + spaCy。下のQuickstart参照。 |
 | **Node CLI（npx）** | `npx @prompt-anonymizer/cli`（npm未公開 — `web/packages/cli` からビルド） | Python CLIと同じコマンド・フラグ。transformers.js NERで完全オンデバイス。 |
@@ -72,7 +92,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 
 ```bash
 # PyPI未公開のためGitHubからインストール（タグ指定、またはmainで最新）:
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: 公式spaCyパイプラインなし — WikiNER
 ```
@@ -204,7 +224,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: main  # このフックを含むタグが出たらタグ固定を推奨
+    rev: v0.2.2  # このフックを含む最初のタグ
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
