@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && node scripts/postbuild.mjs",
+    "test": "vitest run",
     "lint": "tsc --noEmit",
     "package": "npm run build && cd dist && zip -rq ../prompt-anonymizer-extension.zip ."
   },
@@ -13,7 +14,9 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.2.2",
+    "jsdom": "^28.0.0",
     "typescript": "^6.0.3",
-    "vite": "^8.1.3"
+    "vite": "^8.1.3",
+    "vitest": "^4.1.9"
   }
 }
