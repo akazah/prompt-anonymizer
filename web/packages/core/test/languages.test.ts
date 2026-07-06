@@ -7,10 +7,13 @@
 import { describe, expect, it } from "vitest";
 import { LABELS } from "../src/labeling.js";
 import {
+  AUTO_DISPLAY_NAME,
   LANGUAGE_DISPLAY_NAMES,
   SUPPORTED_LANGUAGES,
   isLanguage,
   isLanguageOption,
+  languageFromBcp47,
+  languagePickerEntries,
 } from "../src/languages.js";
 import { DEFAULT_NER_MODELS } from "../src/ner.js";
 
@@ -37,5 +40,19 @@ describe("language registry", () => {
 
   it("isLanguageOption accepts the auto sentinel", () => {
     expect(isLanguageOption("auto")).toBe(true);
+  });
+
+  it("languageFromBcp47 maps regional tags and rejects unsupported ones", () => {
+    expect(languageFromBcp47("es-MX")).toBe("es");
+    expect(languageFromBcp47("JA")).toBe("ja");
+    expect(languageFromBcp47("fr-FR")).toBeNull();
+    expect(languageFromBcp47("")).toBeNull();
+  });
+
+  it("languagePickerEntries follows display order, auto first when requested", () => {
+    expect(languagePickerEntries().map((e) => e.value)).toEqual([...SUPPORTED_LANGUAGES]);
+    const withAuto = languagePickerEntries({ auto: true });
+    expect(withAuto[0]).toEqual({ value: "auto", label: AUTO_DISPLAY_NAME });
+    expect(withAuto.map((e) => e.value)).toEqual(["auto", ...SUPPORTED_LANGUAGES]);
   });
 });
