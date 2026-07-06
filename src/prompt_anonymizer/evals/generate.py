@@ -99,8 +99,7 @@ def _es_phone(rng: random.Random) -> str:
             f"{rng.randint(10, 99)} {rng.randint(10, 99)}"
         )
     mobile = (
-        f"{rng.choice('67')}{rng.randint(10, 99)} "
-        f"{rng.randint(100, 999)} {rng.randint(100, 999)}"
+        f"{rng.choice('67')}{rng.randint(10, 99)} {rng.randint(100, 999)} {rng.randint(100, 999)}"
     )
     return mobile if kind == "mobile" else f"+34 {mobile}"
 

@@ -128,9 +128,7 @@ def test_es_prefixed_phone_detected(pa_es) -> None:
 
 
 def test_vi_phone_and_email_detected(pa_vi) -> None:
-    result = pa_vi.anonymize(
-        "Vui lòng gọi 0912 345 678 hoặc email an@example.com.", language="vi"
-    )
+    result = pa_vi.anonymize("Vui lòng gọi 0912 345 678 hoặc email an@example.com.", language="vi")
     assert "0912 345 678" not in result.text
     assert "<SốĐiệnThoại_1>" in result.text
     assert "an@example.com" not in result.text
