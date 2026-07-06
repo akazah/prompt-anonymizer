@@ -23,7 +23,13 @@ const TAG_MAP: Record<string, string> = {
   GPE: "LOCATION",
 };
 
-export type NerDevice = "webgpu" | "wasm";
+/**
+ * Inference device. "webgpu" / "wasm" are the browser devices ("auto" picks
+ * between them); "cpu" is the native onnxruntime-node binding and must be
+ * requested explicitly by Node consumers (e.g. the CLI) — transformers.js
+ * rejects "wasm" in Node.
+ */
+export type NerDevice = "webgpu" | "wasm" | "cpu";
 
 export interface NerProgress {
   status: string;

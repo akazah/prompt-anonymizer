@@ -1,7 +1,7 @@
 {
-  "name": "@prompt-anonymizer/core",
+  "name": "@prompt-anonymizer/react",
   "version": "0.2.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Browser-first core (regex recognizers + transformers.js NER).",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. React hooks for @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -19,15 +19,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akazah/prompt-anonymizer.git",
-    "directory": "web/packages/core"
+    "directory": "web/packages/react"
   },
   "keywords": [
     "pii",
     "anonymization",
     "privacy",
     "llm",
-    "presidio",
-    "ner"
+    "react",
+    "hooks"
   ],
   "publishConfig": {
     "access": "public"
@@ -38,9 +38,17 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@huggingface/transformers": "^4.2.0"
+    "@prompt-anonymizer/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18"
   },
   "devDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@types/react": "^19.2.0",
+    "@testing-library/react": "^16.3.0",
+    "jsdom": "^28.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   }

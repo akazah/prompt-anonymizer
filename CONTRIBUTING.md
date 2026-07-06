@@ -27,11 +27,12 @@ uv run python -m prompt_anonymizer.evals   # regenerate docs/EVAL.md + tests/gol
 ```bash
 cd web
 pnpm install
-pnpm test        # vitest (core)
+pnpm test        # vitest (core + cli + react + vue)
 pnpm lint        # tsc across packages
-pnpm build       # core + web + extension
+pnpm build       # all packages + apps
 pnpm --filter @prompt-anonymizer/web dev        # local dev server
 pnpm --filter @prompt-anonymizer/desktop dev    # Tauri (needs Rust + system deps)
+node packages/cli/dist/cli.js anonymize -t "…" # Node CLI (after build)
 ```
 
 The TypeScript core must stay in behavioural parity with the Python core

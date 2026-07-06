@@ -1,0 +1,55 @@
+name: Release (npm)
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish-npm:
+    # Deferred: npm publishing is opt-in until Trusted Publishing is set up
+    # on npmjs.com for the @prompt-anonymizer scope (see docs/RELEASING.md).
+    # Enable by adding a repository variable NPM_PUBLISH=true
+    # (Settings -> Secrets and variables -> Actions -> Variables).
+    if: vars.NPM_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      # npm Trusted Publishing (OIDC) - no long-lived token needed.
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted publishing needs npm >= 11.5.1 (pnpm publish shells out to
+      # npm publish, which handles the OIDC exchange).
+      - name: Update npm for OIDC support
+        run: npm install -g npm@latest
+
+      - name: Install
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build publishable packages
+        working-directory: web
+        run: pnpm --filter "./packages/*" build
+
+      - name: Test
+        working-directory: web
+        run: pnpm --filter "./packages/*" test
+
+      - name: Publish to npm (with provenance)
+        working-directory: web
+        # pnpm rewrites workspace:* dependency ranges to the real versions
+        # at pack time; npm publish would leak the workspace protocol.
+        run: pnpm --filter "./packages/*" publish --access public --no-git-checks
