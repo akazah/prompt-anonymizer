@@ -59,6 +59,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Web Component** | `@prompt-anonymizer/element` (not on npm yet) | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (not on npm yet) | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
 | **Local proxy + admin GUI** | `@prompt-anonymizer/proxy` (not on npm yet — build from `web/packages/proxy`) | OpenAI-compatible reverse proxy: point `OPENAI_BASE_URL` at it and PII is masked before leaving your machine, labels restored in responses (incl. streaming). Admin GUI on `http://127.0.0.1:8787/admin/`. See Quickstart below. |
+| **Commit hook / CI gate** | `prompt-anonymizer scan` (both CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-code PII gate for commit-time and CI checks: reports `file:line:col` and entity type, never the matched text. Offline and model-free by default. See below. |
 
 ## Quickstart (Python)
 
@@ -159,6 +160,45 @@ redaction events (labels and counts only), edits the proxy config
 (upstream, NER, deny/allow lists) and offers a local-only anonymization
 playground. The proxy binds to `127.0.0.1` by default; original values are
 only revealable in the GUI when you explicitly enable `--record-mappings`.
+
+## Commit-time / CI gate (`scan`)
+
+Both CLIs ship a `scan` subcommand designed for git hooks and CI: it exits
+`0` when the inputs are clean, `1` when PII is found and `2` on errors. It
+reports `file:line:col` and the entity type only — **the matched text is
+never printed**, so hook output and CI logs stay PII-free. By default it is
+offline, deterministic and model-free (structured PII: emails, phone
+numbers, JP postal codes, My Number, credit cards — plus `--deny` terms);
+`--ner` opts into name/location detection where models are available.
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # files (e.g. staged)
+git diff --cached -U0 | prompt-anonymizer scan       # or pipe a diff
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+With the [pre-commit](https://pre-commit.com) framework
+(hook definition: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: main  # pin to a tag once one ships with this hook
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Node projects can wire the same gate through husky + lint-staged
+(`npx @prompt-anonymizer/cli` once published; until then, build from
+`web/packages/cli`):
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+Like everything else here, detection is best-effort: treat `scan` as a
+safety net for obvious leaks, not a guarantee.
 
 ## Why not …?
 

@@ -7,6 +7,7 @@ isolation and kept in behavioural parity with the TypeScript core in
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from importlib import resources
 from typing import Any
@@ -58,6 +59,26 @@ def load_labels(language: str) -> dict[str, str]:
     if not isinstance(data, dict):  # pragma: no cover - corrupt package data
         raise ValueError(f"Invalid label file for language '{language}'")
     return {str(k): str(v) for k, v in data.items()}
+
+
+def deny_list_spans(text: str, deny_list: Sequence[str]) -> list[EntitySpan]:
+    """Substring search for deny-listed terms (labelled ``CUSTOM``).
+
+    Presidio's deny_list uses ``\\b`` word boundaries, which never match
+    between Japanese characters, so we match plain substrings instead.
+    Mirrors ``detectDenyList`` in the TypeScript core.
+    """
+    spans: list[EntitySpan] = []
+    for needle in deny_list:
+        if not needle:
+            continue
+        start = text.find(needle)
+        while start != -1:
+            spans.append(
+                EntitySpan(start=start, end=start + len(needle), entity_type="CUSTOM", score=1.0)
+            )
+            start = text.find(needle, start + len(needle))
+    return spans
 
 
 # Whitespace trimmed from the edges of remainder segments. An explicit set

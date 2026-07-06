@@ -2,9 +2,10 @@
  * Node CLI (`npx @prompt-anonymizer/cli`) built on `@prompt-anonymizer/core`.
  *
  * Mirrors the Python CLI (`src/prompt_anonymizer/cli.py`): the same
- * `anonymize` / `deanonymize` / `version` commands, the same exit codes
- * (1 = error, 2 = aborted in interactive review) and the same `--json`
- * shape (`entity_type` keys, matching `AnonymizeResult.to_dict()`).
+ * `anonymize` / `deanonymize` / `scan` / `version` commands, the same exit
+ * codes (1 = error, 2 = aborted in interactive review; for `scan`:
+ * 0 = clean, 1 = PII found, 2 = error) and the same `--json` shape
+ * (`entity_type` keys, matching `AnonymizeResult.to_dict()`).
  *
  * Everything runs on-device: NER is transformers.js on the native CPU
  * backend (the model download from Hugging Face is the only network access,
@@ -35,11 +36,14 @@ export interface CliIo {
 }
 
 /** Injectable for tests; the default engine is the real `Anonymizer`. */
-export type EngineFactory = (options: {
+export interface EngineOptions {
   ner: boolean;
-  entities?: string[];
   io: CliIo;
-}) => {
+  entities?: string[];
+  denyList?: string[];
+  allowList?: string[];
+}
+export type EngineFactory = (options: EngineOptions) => {
   anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
 };
 
@@ -47,11 +51,17 @@ const NER_OFF_WARNING =
   "Warning: NER is off - names and locations will NOT be masked " +
   "(only emails, phone numbers, etc.).";
 
+// Same first half as the Python CLI's notice (models differ per core).
+const SCAN_NER_OFF_NOTICE =
+  "Note: NER is off - names and locations are NOT scanned " +
+  "(pass --ner to enable; downloads the NER model on first run).";
+
 const USAGE = `prompt-anonymizer - Anonymize PII before it reaches an LLM.
 
 Usage:
   prompt-anonymizer anonymize [-t TEXT | -f FILE | (stdin)] [options]
   prompt-anonymizer deanonymize --mapping-file FILE [-t TEXT | -f FILE | (stdin)]
+  prompt-anonymizer scan [FILES...] [-t TEXT | (stdin)] [options]
   prompt-anonymizer version
 
 anonymize options:
@@ -68,6 +78,16 @@ deanonymize options:
   -t, --text TEXT          Text to restore.
   -f, --file FILE          Read text from a file.
       --mapping-file FILE  JSON file with the label mapping (required).
+
+scan options (commit-time / CI gate; exits 0 = clean, 1 = PII found, 2 = error):
+  FILES...                 Files to scan (e.g. staged files from a git hook).
+  -t, --text TEXT          Text to scan.
+  -l, --language LANG      en, ja or auto (default: auto).
+      --ner                Also scan names/locations with the NER model
+                           (off by default: scan is offline and model-free).
+      --deny TERM          Term that must never appear (repeatable).
+      --allow TERM         Term to ignore when detected (repeatable).
+      --json               Output findings as JSON (locations and types only).
 `;
 
 class CliError extends Error {}
@@ -104,19 +124,11 @@ export function resultToDict(result: AnonymizeResult): Record<string, unknown> {
   };
 }
 
-function defaultEngineFactory({
-  ner,
-  entities,
-  io,
-}: {
-  ner: boolean;
-  entities?: string[];
-  io: CliIo;
-}): {
+function defaultEngineFactory({ ner, io, entities, denyList, allowList }: EngineOptions): {
   anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
 } {
   const anonymizerOptions = entities !== undefined ? { entities } : {};
-  if (!ner) return new Anonymizer(anonymizerOptions);
+  if (!ner) return new Anonymizer({ ...anonymizerOptions, denyList, allowList });
   const lastPrinted = new Map<string, number>();
   const onProgress = (p: NerProgress): void => {
     // Download progress goes to stderr so stdout stays pipeable.
@@ -132,6 +144,8 @@ function defaultEngineFactory({
   return new Anonymizer({
     ...anonymizerOptions,
     ner: new TransformersNerBackend({ device: "cpu", onProgress }),
+    denyList,
+    allowList,
   });
 }
 
@@ -186,6 +200,106 @@ async function runAnonymize(
   return 0;
 }
 
+/** 1-based line and column of a character offset (parity with the Python CLI). */
+function lineCol(text: string, offset: number): { line: number; column: number } {
+  let line = 1;
+  for (let i = 0; i < offset; i++) if (text[i] === "\n") line++;
+  return { line, column: offset - text.lastIndexOf("\n", offset - 1) };
+}
+
+interface ScanFinding {
+  file: string;
+  line: number;
+  column: number;
+  start: number;
+  end: number;
+  entity_type: string;
+  score: number;
+}
+
+async function runScan(
+  argv: string[],
+  io: CliIo,
+  engineFactory: EngineFactory,
+): Promise<number> {
+  const { values, positionals } = parseArgs({
+    args: argv,
+    allowPositionals: true,
+    options: {
+      text: { type: "string", short: "t" },
+      language: { type: "string", short: "l", default: "auto" },
+      ner: { type: "boolean", default: false },
+      deny: { type: "string", multiple: true, default: [] },
+      allow: { type: "string", multiple: true, default: [] },
+      json: { type: "boolean", default: false },
+    },
+  });
+
+  const inputs: Array<{ name: string; content: string }> = [];
+  if (positionals.length > 0) {
+    if (values.text !== undefined) throw new CliError("Provide FILES or --text, not both.");
+    for (const file of positionals) {
+      try {
+        inputs.push({ name: file, content: await readFile(file, "utf-8") });
+      } catch (error) {
+        throw new CliError(
+          `cannot read ${file}: ${error instanceof Error ? error.message : String(error)}`,
+        );
+      }
+    }
+  } else {
+    const content = await readInput(io, values.text, undefined);
+    inputs.push({ name: values.text !== undefined ? "<text>" : "<stdin>", content });
+  }
+  if (!values.ner) io.err(SCAN_NER_OFF_NOTICE);
+
+  // The engine's anonymize() already applies deny/allow lists, the score
+  // threshold and span merging; scan only reads back result.entities and
+  // never prints the matched text or the mapping.
+  const engine = engineFactory({
+    ner: values.ner,
+    io,
+    denyList: values.deny,
+    allowList: values.allow,
+  });
+
+  const findings: ScanFinding[] = [];
+  for (const { name, content } of inputs) {
+    const language = await resolveLanguage(values.language, content);
+    const result = await engine.anonymize(content, { language });
+    for (const span of result.entities) {
+      const { line, column } = lineCol(content, span.start);
+      findings.push({
+        file: name,
+        line,
+        column,
+        start: span.start,
+        end: span.end,
+        entity_type: span.entityType,
+        score: span.score,
+      });
+    }
+  }
+
+  if (values.json) {
+    io.out(JSON.stringify({ findings, inputs: inputs.length }));
+  } else {
+    for (const f of findings) {
+      io.out(`${f.file}:${f.line}:${f.column}: ${f.entity_type} (score ${f.score.toFixed(2)})`);
+    }
+  }
+
+  if (findings.length > 0) {
+    const files = new Set(findings.map((f) => f.file)).size;
+    io.err(
+      `PII found: ${findings.length} finding(s) in ${files} of ${inputs.length} input(s).`,
+    );
+    return 1;
+  }
+  io.err(`No PII found in ${inputs.length} input(s).`);
+  return 0;
+}
+
 async function runDeanonymize(argv: string[], io: CliIo): Promise<number> {
   const { values } = parseArgs({
     args: argv,
@@ -223,6 +337,18 @@ export async function run(
     switch (command) {
       case "anonymize":
         return await runAnonymize(rest, io, engineFactory);
+      case "scan":
+        // Scan is a gate: exit 1 is reserved for "PII found", so its
+        // usage/runtime errors report 2 (matching the Python CLI).
+        try {
+          return await runScan(rest, io, engineFactory);
+        } catch (error) {
+          if (error instanceof CliError) {
+            io.err(error.message);
+            return 2;
+          }
+          throw error;
+        }
       case "deanonymize":
         return await runDeanonymize(rest, io);
       case "version":

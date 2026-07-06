@@ -8,6 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Commit-time / CI gate: new `scan` subcommand in BOTH CLIs (Python and
+  Node) that exits `0` when the inputs are clean, `1` when PII is found
+  and `2` on errors. It reports `file:line:col` and the entity type only —
+  the matched text is never printed, keeping hook output and CI logs
+  PII-free. Accepts file arguments (as passed by pre-commit / lint-staged),
+  `--text` or stdin, plus repeatable `--deny` / `--allow` terms and
+  `--json`. By default it is offline, deterministic and model-free
+  (structured PII only: emails, phone numbers, JP postal codes, My Number,
+  credit cards); `--ner` opts into name/location detection. Ships with a
+  `.pre-commit-hooks.yaml` hook definition (`prompt-anonymizer-scan`) so
+  other repositories can consume it via the pre-commit framework.
+- Python: engine-free scan API (`prompt_anonymizer.scan`): `scan_text()` /
+  `detect_structured()` run the pattern recognizers directly without
+  Presidio's spaCy NLP engine (no models needed), `guess_language()`
+  mirrors the TS core's script-range heuristic, and
+  `STRUCTURED_ENTITIES` lists what the engine-free path covers.
+  `labeling.deny_list_spans()` is now a shared public helper (parity with
+  the TS core's `detectDenyList`), used by both `PromptAnonymizer` and the
+  scan path.
 - Opt-in structured-PII entities `US_SSN` and `IBAN_CODE` in both cores.
   They are not in the default entity set; request them via
   `PromptAnonymizer(entities=[...])` / `new Anonymizer({ entities })` or the
