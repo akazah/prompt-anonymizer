@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Opt-in structured-PII entities `US_SSN` and `IBAN_CODE` in both cores.
+  They are not in the default entity set; request them via
+  `PromptAnonymizer(entities=[...])` / `new Anonymizer({ entities })` or the
+  new `--entities` CLI flag (Python and Node CLIs). US SSNs are detected
+  with CJK-safe boundaries and Presidio's invalidation rules in both cores;
+  IBANs are mod-97 checksum-validated (Presidio's built-in recognizer on
+  Python, `ibantools` (MIT) in the TS core). New labels (additive only —
+  existing mappings stay valid): `SSN` / `社会保障番号` and `IBAN` / `IBAN`.
+- A licensing policy for new dependencies and default NER models in
+  `CONTRIBUTING.md`.
 - New JS-ecosystem targets built on the shared TS core (label format and
   mapping semantics unchanged):
   - `@prompt-anonymizer/cli` — Node CLI (`npx @prompt-anonymizer/cli`)

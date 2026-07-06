@@ -50,6 +50,26 @@ The TypeScript core must stay in behavioural parity with the Python core
 `tests/golden/` is the contract — regenerate it with the evals module when
 you change generation logic, and keep `web/packages/core` passing.
 
+## Licensing policy (dependencies and NER models)
+
+The project is MIT. New code dependencies and default NER models must
+satisfy the following before they are added:
+
+- **Code dependencies**: MIT / Apache-2.0 / BSD-style licenses are
+  acceptable. LGPL libraries (e.g. python-stdnum) may be used as
+  import-only dependencies — never vendor (copy) their code into this
+  repository. GPL and custom two-tier ("free for small users, paid for
+  companies") licenses are not acceptable.
+- **Default NER models** (downloaded at runtime, but this tool targets
+  business use, so defaults must be commercially safe): the model must
+  (1) permit commercial use, (2) permit derivative works — ONNX conversion
+  and quantization are derivatives — and (3) not be fine-tuned on datasets
+  whose license taints the weights (e.g. the two-tier-licensed ai4privacy
+  pii-masking-200k/400k sets). Record the license, revision and training
+  data of any adopted model in `docs/PLAN_INTL_PII.md`'s audit table, and
+  re-audit when bumping the revision: model-card licenses do change
+  (Piiranha was announced as MIT and later relicensed CC-BY-NC-ND-4.0).
+
 ## Versioning
 
 SemVer. Breaking API changes bump the minor version while we are pre-1.0.
