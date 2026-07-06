@@ -18,16 +18,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `--no-ner` prints the same "names and locations will NOT be masked"
     warning as the browser targets. Language defaults to on-device
     auto-detection (`-l en|ja` to force).
-  - `@prompt-anonymizer/react` — `useAnonymizer()` hook wrapping
-    `RestoreSession` (anonymize → LLM → restore with busy/error state and
-    a mapping view; the mapping stays in-memory unless a custom
+  - `@prompt-anonymizer/element` — framework-agnostic `<prompt-anonymizer>`
+    web component embedding the full anonymize → restore panel (shadow
+    DOM UI mirroring the browser app, `pa-anonymize` / `pa-restore` /
+    `pa-error` events, `ner` / `store` / `denyList` / `allowList` /
+    `scoreThreshold` properties, `language` / `show-restore` attributes)
+    for plain HTML, Svelte, Angular and any other frontend.
+  - `@prompt-anonymizer/react` — drop-in `<AnonymizerPanel />` component
+    (typed wrapper around the element) plus a `useAnonymizer()` hook
+    wrapping `RestoreSession` (anonymize → LLM → restore with busy/error
+    state and a mapping view; the mapping stays in-memory unless a custom
     `MappingStore` is injected).
-  - `@prompt-anonymizer/vue` — the same `useAnonymizer()` as a Vue 3
-    composable (callable outside component setup, e.g. in Pinia stores).
+  - `@prompt-anonymizer/vue` — the same `<AnonymizerPanel />` component
+    and `useAnonymizer()` as a Vue 3 composable (callable outside
+    component setup, e.g. in Pinia stores).
 - TS core: `NerDevice` gained `"cpu"` (the native onnxruntime-node
   binding) so Node consumers can run NER; `"auto"` still only picks
   between the browser devices (webgpu/wasm).
-- npm publishing workflow (`release-npm.yml`) for the four
+- npm publishing workflow (`release-npm.yml`) for the
   `@prompt-anonymizer/*` packages via npm Trusted Publishing, gated
   behind the `NPM_PUBLISH` repository variable (mirrors the deferred
   PyPI setup). Package manifests gained `repository` / `keywords` /

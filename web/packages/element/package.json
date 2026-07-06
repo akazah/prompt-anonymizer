@@ -1,7 +1,7 @@
 {
-  "name": "@prompt-anonymizer/vue",
+  "name": "@prompt-anonymizer/element",
   "version": "0.2.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Vue 3 composables for @prompt-anonymizer/core.",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Framework-agnostic <prompt-anonymizer> web component built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -19,15 +19,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akazah/prompt-anonymizer.git",
-    "directory": "web/packages/vue"
+    "directory": "web/packages/element"
   },
   "keywords": [
     "pii",
     "anonymization",
     "privacy",
     "llm",
-    "vue",
-    "composables"
+    "web-component",
+    "custom-element"
   ],
   "publishConfig": {
     "access": "public"
@@ -38,15 +38,10 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@prompt-anonymizer/core": "workspace:*",
-    "@prompt-anonymizer/element": "workspace:*"
-  },
-  "peerDependencies": {
-    "vue": "^3.4.0"
+    "@prompt-anonymizer/core": "workspace:*"
   },
   "devDependencies": {
     "jsdom": "^28.0.0",
-    "vue": "^3.5.39",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   }

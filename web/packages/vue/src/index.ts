@@ -102,3 +102,6 @@ export function useAnonymizer(options: UseAnonymizerOptions = {}): UseAnonymizer
     error: readonly(error),
   };
 }
+
+export { AnonymizerPanel } from "./panel.js";
+export type { AnonymizerPanelProps } from "./panel.js";

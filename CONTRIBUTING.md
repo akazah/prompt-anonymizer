@@ -27,7 +27,7 @@ uv run python -m prompt_anonymizer.evals   # regenerate docs/EVAL.md + tests/gol
 ```bash
 cd web
 pnpm install
-pnpm test        # vitest (core + cli + react + vue)
+pnpm test        # vitest (core + cli + element + react + vue)
 pnpm lint        # tsc across packages
 pnpm build       # all packages + apps
 pnpm --filter @prompt-anonymizer/web dev        # local dev server

@@ -126,3 +126,5 @@ export function useAnonymizer(options?: UseAnonymizerOptions): UseAnonymizerResu
 
   return { anonymize, restore, clear, mapping, busy, error };
 }
+
+export { AnonymizerPanel, type AnonymizerPanelProps } from "./panel.js";

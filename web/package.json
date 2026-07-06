@@ -4,8 +4,8 @@
   "version": "0.2.0",
   "scripts": {
     "build": "pnpm -r build",
-    "test": "pnpm --filter @prompt-anonymizer/core build && pnpm -r test",
-    "lint": "pnpm --filter @prompt-anonymizer/core build && pnpm -r lint"
+    "test": "pnpm --filter \"./packages/*\" build && pnpm -r test",
+    "lint": "pnpm --filter \"./packages/*\" build && pnpm -r lint"
   },
   "devDependencies": {
     "playwright": "^1.61.1",
