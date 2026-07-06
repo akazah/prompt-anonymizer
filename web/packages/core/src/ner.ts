@@ -37,11 +37,40 @@ export interface TransformersNerOptions {
   onProgress?: (progress: NerProgress) => void;
 }
 
+/**
+ * Mirror of transformers.js's Safari detection (`env.js` `isSafari()`).
+ *
+ * On Safari/WebKit, transformers.js <= 4.2 loads ONNX Runtime's non-JSEP
+ * WASM build (a workaround for a WebKit asyncify memory bug). That build has
+ * no `webgpuInit` export, so requesting `device: "webgpu"` always fails with
+ * "no available backend found. ERR: [webgpu] TypeError: … webgpuInit is not
+ * a function" — and the failed session creation permanently poisons
+ * transformers.js's internal init chain, so even a retry on WASM rethrows
+ * the same error until the page is reloaded.
+ */
+function isSafariWebKit(): boolean {
+  const nav = globalThis.navigator as Navigator | undefined;
+  if (!nav) return false;
+  const userAgent = nav.userAgent ?? "";
+  const vendor = nav.vendor ?? "";
+  return (
+    vendor.includes("Apple") &&
+    !/CriOS|FxiOS|EdgiOS|OPiOS|mercury|brave/i.test(userAgent) &&
+    !userAgent.includes("Chrome") &&
+    !userAgent.includes("Android")
+  );
+}
+
+/**
+ * Whether WebGPU inference is available. Deliberately reports false on
+ * Safari/WebKit even when `navigator.gpu` exists (e.g. iOS/macOS Safari 26,
+ * Tauri's WKWebView): see {@link isSafariWebKit}.
+ */
 export async function detectWebGpu(): Promise<boolean> {
   try {
     const gpu = (globalThis.navigator as Navigator & { gpu?: { requestAdapter(): Promise<unknown> } })
       ?.gpu;
-    if (!gpu) return false;
+    if (!gpu || isSafariWebKit()) return false;
     return (await gpu.requestAdapter()) != null;
   } catch {
     return false;
@@ -164,9 +193,11 @@ export class TransformersNerBackend implements NerBackend {
       return pipe;
     } catch (error) {
       // A WebGPU adapter can exist while ONNX Runtime's WebGPU init still
-      // fails (e.g. WebKit exposes navigator.gpu but webgpuInit is missing:
-      // "no available backend found"). Fall back to WASM unless the caller
-      // explicitly opted into WebGPU.
+      // fails. Fall back to WASM unless the caller explicitly opted into
+      // WebGPU. Note: with transformers.js <= 4.2 a failed session creation
+      // poisons its module-level init chain, so this in-page retry cannot
+      // succeed there — which is why detectWebGpu() must rule out known-bad
+      // environments (Safari/WebKit) up front instead of relying on this.
       if (device !== "webgpu" || this.requestedDevice === "webgpu") throw error;
       this.webGpuFailed = true;
       const pipe = await this.createPipeOn(language, "wasm");
