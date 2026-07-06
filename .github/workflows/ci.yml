@@ -71,6 +71,12 @@ jobs:
         working-directory: web
         run: pnpm install --frozen-lockfile
 
+      # Validates every *.md in the repo: relative file links exist and
+      # #anchors resolve via github-slugger (GitHub's slug algorithm).
+      - name: Docs link check
+        working-directory: web
+        run: pnpm docs:links
+
       - name: Lint (tsc)
         working-directory: web
         run: pnpm lint

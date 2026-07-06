@@ -6,6 +6,7 @@ English | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt
 > Reversible, on-device anonymization — don't trade intelligence for privacy.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -36,6 +37,25 @@ transformers in Python). Don't take our word for it: open DevTools, watch
 the network tab, or read the source. It's MIT-licensed and small enough
 to audit in one sitting.
 
+<details>
+<summary><b>Table of contents</b></summary>
+
+- [Demo](#demo)
+- [Try it](#try-it)
+- [Quickstart (Python)](#quickstart-python)
+- [Quickstart (JavaScript / TypeScript)](#quickstart-javascript--typescript)
+- [Quickstart (local proxy)](#quickstart-local-proxy)
+- [Commit-time / CI gate (`scan`)](#commit-time--ci-gate-scan)
+- [Why not …?](#why-not-)
+- [How it works](#how-it-works)
+- [Supported entities](#supported-entities)
+- [Accuracy](#accuracy)
+- [Limitations](#limitations)
+- [Roadmap](#roadmap)
+- [Contributing / Security / License](#contributing--security--license)
+
+</details>
+
 ## Demo
 
 Anonymize → the mapping stays local → the LLM reply keeps the labels → restore:
@@ -59,7 +79,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | Target | How | Notes |
 |---|---|---|
 | **Browser (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100% on-device: NER runs in your browser via WebGPU (WASM fallback). Your text is never sent to a server — verify it in the network tab. |
-| **Desktop app** | Download from [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.AppImage` / `.deb`) | Tauri 2. Unsigned for now — your OS will warn on first launch. |
+| **Desktop app** | Download from [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Unsigned for now — your OS will warn on first launch. |
 | **Chrome extension** | `prompt-anonymizer-extension-*.zip` from [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Unzip → `chrome://extensions` → enable Developer mode → "Load unpacked". Select text → right-click → *Anonymize selection*. |
 | **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (not on PyPI yet) | Presidio + spaCy. See Quickstart below. |
 | **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (not on npm yet — build from `web/packages/cli`) | Same commands and flags as the Python CLI; transformers.js NER, fully on-device. |
@@ -72,7 +92,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 
 ```bash
 # Not published to PyPI yet - install from GitHub (a tag, or main for latest):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: no official spaCy pipeline — WikiNER
 ```
@@ -203,7 +223,7 @@ With the [pre-commit](https://pre-commit.com) framework
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: main  # pin to a tag once one ships with this hook
+    rev: v0.2.2  # first tag that ships this hook
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]

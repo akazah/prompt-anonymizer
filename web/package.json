@@ -7,9 +7,11 @@
     "test": "pnpm --filter \"./packages/*\" build && pnpm -r test",
     "e2e": "pnpm --filter @prompt-anonymizer/e2e e2e",
     "e2e:ner": "pnpm --filter @prompt-anonymizer/e2e e2e:ner",
+    "docs:links": "node scripts/check-docs-links.mjs",
     "lint": "pnpm --filter \"./packages/*\" build && pnpm -r lint"
   },
   "devDependencies": {
+    "github-slugger": "^2.0.0",
     "playwright": "^1.61.1",
     "typescript": "^6.0.3"
   },
