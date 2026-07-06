@@ -49,9 +49,9 @@ export interface UseAnonymizerResult {
 export function useAnonymizer(options?: UseAnonymizerOptions): UseAnonymizerResult {
   const [session] = useState(() => {
     const opts = options ?? {};
-    const { engine, store, ner, denyList, allowList, scoreThreshold } = opts;
+    const { engine, store, ner, denyList, allowList, scoreThreshold, entities } = opts;
     return new RestoreSession({
-      engine: engine ?? new Anonymizer({ ner, denyList, allowList, scoreThreshold }),
+      engine: engine ?? new Anonymizer({ ner, denyList, allowList, scoreThreshold, entities }),
       store,
     });
   });

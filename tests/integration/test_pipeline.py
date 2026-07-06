@@ -19,6 +19,20 @@ def pa_en():
     return PromptAnonymizer(languages=["en"], model_size="sm")
 
 
+@pytest.fixture(scope="module")
+def pa_es():
+    from prompt_anonymizer import PromptAnonymizer
+
+    return PromptAnonymizer(languages=["es"], model_size="sm")
+
+
+@pytest.fixture(scope="module")
+def pa_vi():
+    from prompt_anonymizer import PromptAnonymizer
+
+    return PromptAnonymizer(languages=["vi"], model_size="sm")
+
+
 def test_ja_phone_number_detected(pa_ja) -> None:
     result = pa_ja.anonymize("彼の電話番号は 090-1234-5678 です。", language="ja")
     assert "090-1234-5678" not in result.text
@@ -97,6 +111,48 @@ def test_en_email_and_consistent_person(pa_en) -> None:
     assert result.text.count("<Name_1>") == 2
 
 
+def test_es_phone_and_email_detected(pa_es) -> None:
+    result = pa_es.anonymize(
+        "Puede llamarme al 612 345 678 o escribir a maria@example.com.", language="es"
+    )
+    assert "612 345 678" not in result.text
+    assert "<Teléfono_1>" in result.text
+    assert "maria@example.com" not in result.text
+    assert "<Correo_1>" in result.text
+
+
+def test_es_prefixed_phone_detected(pa_es) -> None:
+    result = pa_es.anonymize("Mi móvil es +34 612 345 678.", language="es")
+    assert "+34 612 345 678" not in result.text
+    assert "<Teléfono_1>" in result.text
+
+
+def test_vi_phone_and_email_detected(pa_vi) -> None:
+    result = pa_vi.anonymize("Vui lòng gọi 0912 345 678 hoặc email an@example.com.", language="vi")
+    assert "0912 345 678" not in result.text
+    assert "<SốĐiệnThoại_1>" in result.text
+    assert "an@example.com" not in result.text
+    assert "<Email_1>" in result.text
+
+
+def test_vi_credit_card_detected(pa_vi) -> None:
+    result = pa_vi.anonymize("Thẻ thanh toán là 4111-1111-1111-1111.", language="vi")
+    assert "4111-1111-1111-1111" not in result.text
+    assert "<ThẻTínDụng_1>" in result.text
+
+
+def test_es_roundtrip_identity(pa_es) -> None:
+    text = "María García (612 345 678, maria@example.com) vive en Madrid."
+    result = pa_es.anonymize(text, language="es")
+    assert pa_es.deanonymize(result.text, result.mapping) == text
+
+
+def test_vi_roundtrip_identity(pa_vi) -> None:
+    text = "Nguyễn Văn An (0912 345 678, an@example.com) sống tại Hà Nội."
+    result = pa_vi.anonymize(text, language="vi")
+    assert pa_vi.deanonymize(result.text, result.mapping) == text
+
+
 def test_roundtrip_identity(pa_ja) -> None:
     text = "山田太郎（〒150-0002、090-1111-2222、taro@example.com）に連絡してください。"
     result = pa_ja.anonymize(text, language="ja")
@@ -135,11 +191,62 @@ def test_missing_model_error_message(monkeypatch) -> None:
         pa.anonymize("テスト", language="ja")
 
 
-def test_faker_roundtrip_50_cases(pa_ja, pa_en) -> None:
-    """P2 gate: anonymize -> deanonymize must be identity on 50 seeded cases."""
+def test_faker_roundtrip_100_cases(pa_ja, pa_en, pa_es, pa_vi) -> None:
+    """P2 gate: anonymize -> deanonymize must be identity on seeded cases."""
     from prompt_anonymizer.evals.generate import generate_cases
 
-    for language, pa in (("ja", pa_ja), ("en", pa_en)):
+    for language, pa in (("ja", pa_ja), ("en", pa_en), ("es", pa_es), ("vi", pa_vi)):
         for case in generate_cases(language, count=25):
             result = pa.anonymize(case.text, language=language)
             assert pa.deanonymize(result.text, result.mapping) == case.text
+
+
+@pytest.fixture(scope="module")
+def pa_en_opt_in():
+    from prompt_anonymizer.core import DEFAULT_ENTITIES, PromptAnonymizer
+
+    return PromptAnonymizer(
+        languages=["en"],
+        model_size="sm",
+        entities=[*DEFAULT_ENTITIES, "US_SSN", "IBAN_CODE"],
+    )
+
+
+@pytest.fixture(scope="module")
+def pa_ja_opt_in():
+    from prompt_anonymizer.core import DEFAULT_ENTITIES, PromptAnonymizer
+
+    return PromptAnonymizer(
+        languages=["ja"],
+        model_size="sm",
+        entities=[*DEFAULT_ENTITIES, "US_SSN", "IBAN_CODE"],
+    )
+
+
+def test_en_ssn_and_iban_opt_in(pa_en_opt_in) -> None:
+    text = "Payroll SSN 856-45-6780, reimbursement IBAN DE89 3704 0044 0532 0130 00."
+    result = pa_en_opt_in.anonymize(text, language="en")
+    assert "856-45-6780" not in result.text
+    assert "DE89 3704 0044 0532 0130 00" not in result.text
+    assert "<SSN_1>" in result.text
+    assert "<IBAN_1>" in result.text
+    assert pa_en_opt_in.deanonymize(result.text, result.mapping) == text
+
+
+def test_ja_iban_and_ssn_adjacent_to_cjk_opt_in(pa_ja_opt_in) -> None:
+    text = "社会保障番号は856-45-6780、振込先はDE89370400440532013000です"
+    result = pa_ja_opt_in.anonymize(text, language="ja")
+    assert "856-45-6780" not in result.text
+    assert "DE89370400440532013000" not in result.text
+    assert "<社会保障番号_1>" in result.text
+    assert "<IBAN_1>" in result.text
+    assert pa_ja_opt_in.deanonymize(result.text, result.mapping) == text
+
+
+def test_ssn_and_iban_not_masked_by_default(pa_en) -> None:
+    text = "Payroll SSN 856-45-6780, reimbursement IBAN DE89370400440532013000."
+    result = pa_en.anonymize(text, language="en")
+    assert "856-45-6780" in result.text
+    assert "DE89370400440532013000" in result.text
+    assert "<SSN_1>" not in result.text
+    assert "<IBAN_1>" not in result.text

@@ -1,4 +1,4 @@
-[English](README.md) | 日本語
+[English](README.md) | 日本語 | [Español](README_es.md) | [Tiếng Việt](README_vi.md)
 
 # Prompt Anonymizer
 
@@ -20,10 +20,16 @@
 | フロンティアモデル（そのまま） | ✓ | ✗ | ベンダーと、自分自身の注意力 |
 | **フロンティアモデル + Prompt Anonymizer** | **✓** | **✓** | **読めるコード + 送信前の最終確認** |
 
-テキストが手元を離れる**前に**、PIIを一貫したラベル（`<人名_1>`、`<Name_1>`
-など）へ置き換えます。同じ値には常に同じラベルが割り当てられるため、LLMの
-回答は文脈を保ったまま。返ってきた応答は、手元から一度も出ていない対応表
-（mapping）で元の値に復元できます。
+テキストが手元を離れる**前に**、PIIを一貫したラベル（`<人名_1>`、`<Name_1>`、
+`<Nombre_1>`、`<Tên_1>` など）へ置き換えます。同じ値には常に同じラベルが
+割り当てられるため、LLMの回答は文脈を保ったまま。返ってきた応答は、手元から
+一度も出ていない対応表（mapping）で元の値に復元できます。
+
+対応言語は日本語（`ja`）、英語（`en`）、スペイン語（`es`）、ベトナム語（`vi`）
+です。デフォルトの `PromptAnonymizer(languages=…)` は引き続き `("en", "ja")`
+のままです。`languages=["es"]` や `languages=["vi"]`（または複数言語のリストに
+含める）でオプトインできます。ブラウザUIの言語ピッカーに Español / Tiếng Việt
+が追加され、自動検出は4言語を区別します。
 
 検出はオンデバイスで実行されます（ブラウザではWebGPU / WASM、Pythonでは
 spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みにする必要は
@@ -37,7 +43,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 <img alt="ブラウザ版デモ: 匿名化・対応表・復元のラウンドトリップ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
 
 <details>
-<summary>CLIデモ（日本語 / 英語）</summary>
+<summary>CLIデモ（日本語 / 英語 — スペイン語・ベトナム語にも対応）</summary>
 
 <img alt="CLIデモ（日本語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLIデモ（英語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
 </details>
@@ -60,13 +66,15 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 | **Web Component** | `@prompt-anonymizer/element`（npm未公開） | フレームワーク非依存の `<prompt-anonymizer>` 要素。匿名化→復元パネルを任意のサイトへ埋め込み可能（素のHTML・Svelte・Angular等）。 |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue`（npm未公開） | 組み込み用 `<AnonymizerPanel />` コンポーネント + カスタムUI向け `useAnonymizer()` フック / コンポーザブル。下のQuickstart参照。 |
 | **ローカルプロキシ + 管理GUI** | `@prompt-anonymizer/proxy`（npm未公開 — `web/packages/proxy` からビルド） | OpenAI互換のリバースプロキシ。`OPENAI_BASE_URL` を向けるだけでPIIをマスクして送信し、応答内のラベルを復元（ストリーミング対応）。管理GUIは `http://127.0.0.1:8787/admin/`。下のQuickstart参照。 |
+| **コミットフック / CIゲート** | `prompt-anonymizer scan`（両CLI） + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | 終了コードで判定するPIIゲート。`file:line:col` とエンティティ種別のみを報告し、検出したテキスト自体は出力しません。デフォルトはオフライン・モデル不要。下の解説参照。 |
 
 ## Quickstart（Python）
 
 ```bash
 # PyPI未公開のためGitHubからインストール（タグ指定、またはmainで最新）:
 pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.0
-python -m spacy download ja_core_news_sm   # 英語も使う場合は en_core_web_sm も
+python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
+python -m spacy download xx_ent_wiki_sm    # vi: 公式spaCyパイプラインなし — WikiNER
 ```
 
 ```python
@@ -78,15 +86,27 @@ result = pa.anonymize("山田太郎の電話は090-1234-5678", language="ja")
 result.text     # '<人名_1>の電話は<電話番号_1>'
 result.mapping  # {'<人名_1>': '山田太郎', '<電話番号_1>': '090-1234-5678'}
 
+pa_es = PromptAnonymizer(languages=["es"])
+pa_es.anonymize(
+    "El cliente es Javier Moreno, teléfono 612 345 678", language="es"
+).text  # 'El cliente es <Nombre_1>, teléfono <Teléfono_1>'
+
+# vi の人名検出には transformer バックエンドを推奨（後述の「オプションのTransformer NERバックエンド」参照）
+pa_vi = PromptAnonymizer(languages=["vi"], ner_backend="hf")
+pa_vi.anonymize(
+    "Tôi tên là Nguyễn Văn An, số điện thoại 0912 345 678", language="vi"
+).text  # 'Tôi tên là <Tên_1>, số điện thoại <SốĐiệnThoại_1>'
+
 llm_output = call_your_llm(result.text)      # ラベルはLLM応答にそのまま残る
 pa.deanonymize(llm_output, result.mapping)   # ローカルで元の値に復元
 ```
 
-CLI:
+CLI（`-l ja|en|es|vi`）:
 
 ```bash
 prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
   -t "山田太郎の電話は090-1234-5678"
+prompt-anonymizer anonymize -l es -t "El cliente es Javier Moreno, teléfono 612 345 678"
 prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 ```
 
@@ -162,6 +182,45 @@ export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
 プロキシはデフォルトで `127.0.0.1` にバインドされ、元の値のGUI表示は
 `--record-mappings` を明示的に有効化した場合のみ可能です。
 
+## コミット時 / CIゲート（`scan`）
+
+両CLIには、gitフックやCI向けに設計された `scan` サブコマンドがあります。
+入力がクリーンなら終了コード `0`、PIIが見つかれば `1`、エラーは `2` です。
+報告するのは `file:line:col` とエンティティ種別のみで、**検出したテキスト
+自体は決して出力しません** — フックの出力やCIログにPIIが残らない設計です。
+デフォルトはオフライン・決定的・モデル不要（構造化PII: メール・電話番号・
+郵便番号・マイナンバー・クレジットカード + `--deny` 指定語）。`--ner` を
+付けるとモデルのある環境で人名・住所も検査できます。
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # ファイル（ステージ済みなど）
+git diff --cached -U0 | prompt-anonymizer scan       # diffをパイプしてもOK
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+[pre-commit](https://pre-commit.com) フレームワークから使う場合
+（フック定義: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)）:
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: main  # このフックを含むタグが出たらタグ固定を推奨
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Nodeプロジェクトなら husky + lint-staged で同じゲートを組めます
+（npm公開後は `npx @prompt-anonymizer/cli`。それまでは
+`web/packages/cli` からビルド）:
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+他の機能と同じく検出はベストエフォートです。`scan` は明白な漏れを止める
+セーフティネットであり、保証ではありません。
+
 ## なぜ〇〇ではないのか？
 
 **Presidioをそのまま使えばいいのでは？** 汎用のPII検出・匿名化フレーム
@@ -188,8 +247,11 @@ Presidioを使いつつ、その上にLLMラウンドトリップのワークフ
 ## 仕組み
 
 1. 検出 — Presidio + spaCy NER（Python）／transformers.js NER + 正規表現認識器
-   （ブラウザ・デスクトップ・拡張）。日本の電話番号・〒付き郵便番号・
-   マイナンバー（検査用数字の検証つき）などの日本語向けカスタム認識器を追加。
+   （ブラウザ・デスクトップ・拡張）。地域別の電話番号パターン（JP、US/NANP、
+   スペイン +34 / グループ化された携帯・固定、ベトナムの携帯・固定）と、
+   〒付き郵便番号・マイナンバー（検査用数字の検証つき）などの日本向け
+   カスタム認識器を追加。メール・クレジットカードは言語非依存;
+   JP_POSTAL_CODE と JP_MY_NUMBER は全言語モードで検出されます。
 2. 一貫ラベリング — スパンをスコア優先でマージし、末尾側からオフセットベースで
    置換。同じ値には同じラベル。
 3. 復元 — `deanonymize(text, mapping)` がラベル長の降順で元の値に戻します。
@@ -198,24 +260,48 @@ Presidioを使いつつ、その上にLLMラウンドトリップのワークフ
 
 ## 対応エンティティ
 
-| エンティティ | jaラベル | enラベル | エンジン |
-|---|---|---|---|
-| PERSON | 人名 | Name | NER |
-| LOCATION | 住所 | Location | NER |
-| EMAIL_ADDRESS | メールアドレス | Email | パターン |
-| PHONE_NUMBER | 電話番号 | Phone | パターン（JP/US表記ゆれ）+ libphonenumber（Python） |
-| JP_POSTAL_CODE | 郵便番号 | PostalCode | パターン（カスタム） |
-| JP_MY_NUMBER | マイナンバー | MyNumber | パターン + 検査用数字（カスタム） |
-| CREDIT_CARD | クレジットカード | CreditCard | パターン + Luhn検査（両コア, ja/en） |
-| CUSTOM（deny list） | 秘匿情報 | Custom | 完全一致 |
+| エンティティ | jaラベル | enラベル | esラベル | viラベル | エンジン |
+|---|---|---|---|---|---|
+| PERSON | 人名 | Name | Nombre | Tên | NER |
+| LOCATION | 住所 | Location | Dirección | ĐịaChỉ | NER |
+| EMAIL_ADDRESS | メールアドレス | Email | Correo | Email | パターン |
+| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | パターン（JP/US/ES/VI）+ libphonenumber（Python） |
+| JP_POSTAL_CODE | 郵便番号 | PostalCode | CódigoPostal | MãBưuĐiện | パターン（カスタム） |
+| JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | パターン + 検査用数字（カスタム） |
+| CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | パターン + Luhn検査（両コア、全言語） |
+| CUSTOM（deny list） | 秘匿情報 | Custom | Personalizado | TùyChỉnh | 完全一致 |
+| US_SSN（opt-in） | 社会保障番号 | SSN | SSN | SSN | パターン + 無効値ルール（両コア、全言語） |
+| IBAN_CODE（opt-in） | IBAN | IBAN | IBAN | IBAN | パターン + mod-97検査（両コア、全言語） |
 
 `deny_list` で特定の語を強制マスク、`allow_list` で除外できます。
+opt-inエンティティはデフォルトでは検出されません。
+`PromptAnonymizer(entities=[...])`、`new Anonymizer({ entities })`、または
+CLIの `--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` で明示指定してください。
 
 ### オプションのTransformer NERバックエンド（Python）
 
-デフォルトのNERはspaCyです。日本語の人名・住所の再現率を大きく上げたい
-場合は `hf` extra を入れてバックエンドを切り替えられます。ブラウザ版が
-transformers.jsで使うのと同系統のモデルを、完全にローカルで実行します:
+デフォルトのNERはspaCyです（`ja` → `ja_core_news_sm` / `ja_core_news_lg`、
+`en` → `en_core_web_sm` / `en_core_web_lg`、`es` → `es_core_news_sm` /
+`es_core_news_lg`）。ベトナム語には公式のspaCyパイプラインがなく、両サイズとも
+多言語WikiNERモデル `xx_ent_wiki_sm` でトークン化とベースラインのPER/LOC NERを
+行います。ベトナム語の人名・住所の再現率を上げるには、下記のtransformer
+バックエンドの利用を推奨します。
+
+人名・住所の再現率を大きく上げたい場合（特に `ja` と `vi`）は `hf` extra を
+入れてバックエンドを切り替えられます。言語ごとのHugging Faceモデルを完全に
+ローカルで実行します:
+
+| 言語 | spaCy（`sm` / `lg`） | HF NER（`ner_backend="hf"`） |
+|---|---|---|
+| `ja` | `ja_core_news_sm` / `ja_core_news_lg` | `tsmatz/xlm-roberta-ner-japanese` |
+| `en` | `en_core_web_sm` / `en_core_web_lg` | `dslim/bert-base-NER` |
+| `es` | `es_core_news_sm` / `es_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `vi` | `xx_ent_wiki_sm`（両サイズ） | `NlpHUST/ner-vietnamese-electra-base` |
+
+TypeScriptコア（ブラウザ・拡張・デスクトップ・Node CLI）はtransformers.jsの
+ONNXモデルを使用します。`ja` と `en` は上記と同系統、`es` と `vi` はいずれも
+`Xenova/bert-base-multilingual-cased-ner-hrl`（専用ベトナム語NERのONNXエクスポートは
+存在しないが、多言語モデルはベトナム語にもよく転移する）。
 
 ```bash
 pip install "prompt-anonymizer[hf]"
@@ -223,6 +309,7 @@ pip install "prompt-anonymizer[hf]"
 
 ```python
 pa = PromptAnonymizer(languages=["ja"], ner_backend="hf")  # CLI: --ner-backend hf
+pa_vi = PromptAnonymizer(languages=["vi"], ner_backend="hf")  # vi の人名向けに推奨
 ```
 
 複数テキストは `anonymize_batch(texts, language="ja", batch_size=16)` で
@@ -230,11 +317,13 @@ pa = PromptAnonymizer(languages=["ja"], ner_backend="hf")  # CLI: --ner-backend 
 
 ## 精度
 
-シード固定の合成ゴールデンセット（各言語200文書）でスパン単位計測。全表は
-[docs/EVAL.md](docs/EVAL.md)、再現は `python -m prompt_anonymizer.evals`。
-概要（Pythonコア・`sm`モデル）: ja の PHONE_NUMBER / EMAIL_ADDRESS /
-JP_POSTAL_CODE / CREDIT_CARD は recall 1.00、ja PERSON は spaCy で
-recall 0.82、`ner_backend="hf"` で 1.00。
+シード固定の合成ゴールデンセット（`ja` / `en` / `es` / `vi` 各200文書、
+`tests/golden/golden_{ja,en,es,vi}.json`）でスパン単位計測。全表は
+[docs/EVAL.md](docs/EVAL.md)、再現は `uv run python -m prompt_anonymizer.evals`
+（デフォルトで4言語）。概要（Pythonコア・`sm`モデル）: ja の PHONE_NUMBER /
+EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD は recall 1.00、ja PERSON は
+spaCy で recall 0.82、`ner_backend="hf"` で 1.00。es/vi の PHONE_NUMBER も
+recall 1.00; vi の PERSON/LOCATION は `ner_backend="hf"` で大きく改善します。
 
 この数値はリグレッション検知のためのものであり、実世界のテキストに対する
 再現率を約束するものではありません。

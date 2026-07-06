@@ -27,7 +27,8 @@ function makeIo(options: { stdin?: string; confirm?: boolean } = {}): Captured {
 }
 
 /** Real regex-only engine: no model download, deterministic. */
-const regexOnly: EngineFactory = () => new Anonymizer();
+const regexOnly: EngineFactory = ({ denyList, allowList }) =>
+  new Anonymizer({ denyList, allowList });
 
 let dir: string;
 beforeAll(async () => {
@@ -56,6 +57,28 @@ describe("anonymize", () => {
     expect(stdout.at(-1)).toBe("Mail <Email_1> please");
   });
 
+  it("uses Spanish labels with -l es", async () => {
+    const { io, stdout } = makeIo();
+    const code = await run(
+      ["anonymize", "--no-ner", "-l", "es", "-t", "Correo maria.garcia@example.com o +34 612 345 678"],
+      io,
+      regexOnly,
+    );
+    expect(code).toBe(0);
+    expect(stdout.at(-1)).toBe("Correo <Correo_1> o <Teléfono_1>");
+  });
+
+  it("uses Vietnamese labels with -l vi", async () => {
+    const { io, stdout } = makeIo();
+    const code = await run(
+      ["anonymize", "--no-ner", "-l", "vi", "-t", "Email an.nguyen@example.com hoặc 0912 345 678"],
+      io,
+      regexOnly,
+    );
+    expect(code).toBe(0);
+    expect(stdout.at(-1)).toBe("Email <Email_1> hoặc <SốĐiệnThoại_1>");
+  });
+
   it("outputs the Python CLI's --json shape (snake_case entity_type)", async () => {
     const { io, stdout } = makeIo();
     const code = await run(
@@ -80,6 +103,31 @@ describe("anonymize", () => {
     expect(stderr.join("\n")).toContain("names and locations will NOT be masked");
   });
 
+  it("passes --entities through to the engine factory", async () => {
+    let receivedEntities: string[] | undefined;
+    const factory: EngineFactory = ({ entities }) => {
+      receivedEntities = entities;
+      return new Anonymizer({ entities });
+    };
+    const { io } = makeIo();
+    const code = await run(
+      [
+        "anonymize",
+        "--no-ner",
+        "-l",
+        "en",
+        "-t",
+        "SSN 856-45-6780",
+        "--entities",
+        "US_SSN,EMAIL_ADDRESS",
+      ],
+      io,
+      factory,
+    );
+    expect(code).toBe(0);
+    expect(receivedEntities).toEqual(["US_SSN", "EMAIL_ADDRESS"]);
+  });
+
   it("exits 2 when the interactive review is rejected", async () => {
     const { io, stderr } = makeIo({ confirm: false });
     const code = await run(
@@ -102,6 +150,104 @@ describe("anonymize", () => {
     const { io, stderr } = makeIo();
     const code = await run(["anonymize", "--no-ner", "-l", "fr", "-t", "x"], io, regexOnly);
     expect(code).toBe(1);
+    expect(stderr.join("\n")).toContain("Unsupported language: fr");
+  });
+});
+
+describe("scan (commit-time / CI gate)", () => {
+  it("exits 0 on a clean file", async () => {
+    const clean = join(dir, "clean.txt");
+    await writeFile(clean, "nothing sensitive here\n", "utf-8");
+    const { io, stderr } = makeIo();
+    expect(await run(["scan", clean], io, regexOnly)).toBe(0);
+    expect(stderr.join("\n")).toContain("No PII found in 1 input(s).");
+  });
+
+  it("exits 1 with file:line:col findings and never prints the matched PII", async () => {
+    const dirty = join(dir, "dirty.txt");
+    await writeFile(dirty, "line one\ncall 090-1234-5678 or john@example.com\n", "utf-8");
+    const { io, stdout, stderr } = makeIo();
+    expect(await run(["scan", dirty], io, regexOnly)).toBe(1);
+    const out = stdout.join("\n");
+    expect(out).toContain(`${dirty}:2:6: PHONE_NUMBER`);
+    expect(out).toContain(`${dirty}:2:23: EMAIL_ADDRESS`);
+    // P0: the gate must never echo the matched PII itself.
+    expect(out).not.toContain("090-1234-5678");
+    expect(out).not.toContain("john@example.com");
+    expect(stderr.join("\n")).toContain("PII found: 2 finding(s) in 1 of 1 input(s).");
+  });
+
+  it("outputs the Python CLI's scan --json shape (locations and types only)", async () => {
+    const dirty = join(dir, "dirty.json.txt");
+    await writeFile(dirty, "mail: a@b.co", "utf-8");
+    const { io, stdout } = makeIo();
+    expect(await run(["scan", "--json", dirty], io, regexOnly)).toBe(1);
+    const parsed = JSON.parse(stdout.at(-1)!) as {
+      findings: Array<Record<string, unknown>>;
+      inputs: number;
+    };
+    expect(parsed.inputs).toBe(1);
+    expect(parsed.findings).toHaveLength(1);
+    expect(parsed.findings[0]).toMatchObject({
+      file: dirty,
+      line: 1,
+      column: 7,
+      start: 6,
+      end: 12,
+      entity_type: "EMAIL_ADDRESS",
+    });
+    expect(stdout.join("\n")).not.toContain("a@b.co");
+  });
+
+  it("scans --text and stdin", async () => {
+    const text = makeIo();
+    expect(await run(["scan", "-t", "call 090-1234-5678"], text.io, regexOnly)).toBe(1);
+    expect(text.stdout.join("\n")).toContain("<text>:1:6: PHONE_NUMBER");
+
+    const stdin = makeIo({ stdin: "john@example.com\n" });
+    expect(await run(["scan"], stdin.io, regexOnly)).toBe(1);
+    expect(stdin.stdout.join("\n")).toContain("<stdin>:1:1: EMAIL_ADDRESS");
+  });
+
+  it("applies --deny and --allow lists", async () => {
+    const deny = makeIo();
+    expect(await run(["scan", "-t", "ProjectXの件", "--deny", "ProjectX"], deny.io, regexOnly)).toBe(
+      1,
+    );
+    expect(deny.stdout.join("\n")).toContain("CUSTOM");
+
+    const allow = makeIo();
+    expect(
+      await run(
+        ["scan", "-t", "mail support@example.com", "--allow", "support@example.com"],
+        allow.io,
+        regexOnly,
+      ),
+    ).toBe(0);
+  });
+
+  it("prints a notice when NER is off", async () => {
+    const { io, stderr } = makeIo();
+    await run(["scan", "-t", "hello"], io, regexOnly);
+    expect(stderr.join("\n")).toContain("names and locations are NOT scanned");
+  });
+
+  it("exits 2 on unreadable files", async () => {
+    const { io, stderr } = makeIo();
+    expect(await run(["scan", join(dir, "missing.txt")], io, regexOnly)).toBe(2);
+    expect(stderr.join("\n")).toContain("cannot read");
+  });
+
+  it("exits 2 when FILES and --text are combined", async () => {
+    const clean = join(dir, "clean2.txt");
+    await writeFile(clean, "x", "utf-8");
+    const { io } = makeIo();
+    expect(await run(["scan", clean, "-t", "y"], io, regexOnly)).toBe(2);
+  });
+
+  it("exits 2 on unsupported languages", async () => {
+    const { io, stderr } = makeIo();
+    expect(await run(["scan", "-l", "fr", "-t", "x"], io, regexOnly)).toBe(2);
     expect(stderr.join("\n")).toContain("Unsupported language: fr");
   });
 });

@@ -3,7 +3,9 @@ import {
   detectDenyList,
   detectWithRegex,
   isValidCreditCard,
+  isValidIban,
   isValidMyNumber,
+  isValidUsSsn,
   myNumberCheckDigit,
 } from "../src/recognizers.js";
 
@@ -55,6 +57,12 @@ describe("detectWithRegex", () => {
     expect(spans.some((s) => s.entityType === "JP_POSTAL_CODE")).toBe(false);
   });
 
+  it("does not flag 9-digit SSN-shaped strings as JP landlines", () => {
+    const spans = detectWithRegex("Payroll: SSN 021-14-3596, thanks", "en");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+    expect(spans.some((s) => s.entityType === "US_SSN")).toBe(true);
+  });
+
   it("detects Luhn-valid credit cards next to CJK text", () => {
     const spans = detectWithRegex("カード番号は4111111111111111です", "ja");
     const card = spans.find((s) => s.entityType === "CREDIT_CARD");
@@ -95,6 +103,88 @@ describe("detectWithRegex", () => {
       detectWithRegex(`番号は ${bad} です`, "ja").some((s) => s.entityType === "JP_MY_NUMBER"),
     ).toBe(false);
   });
+
+  it("detects Spanish phone formats", () => {
+    for (const sample of [
+      "+34 612 345 678",
+      "612 345 678",
+      "612-345-678",
+      "91 234 56 78",
+    ]) {
+      const spans = detectWithRegex(`Llámame al ${sample}`, "es");
+      expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(true);
+    }
+  });
+
+  it("rejects bare 9-digit Spanish numbers without separators or prefix", () => {
+    const spans = detectWithRegex("612345678", "es");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
+  it("detects Vietnamese phone formats", () => {
+    for (const sample of [
+      "0912 345 678",
+      "091 234 5678",
+      "0912345678",
+      "+84 912 345 678",
+      "024 3826 8888",
+    ]) {
+      const spans = detectWithRegex(`Gọi ${sample}`, "vi");
+      expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(true);
+    }
+  });
+
+  it("does not detect Vietnamese phones when language is en", () => {
+    const spans = detectWithRegex("Call 0912 345 678", "en");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
+  it("does not match phone digits embedded in longer runs", () => {
+    const spans = detectWithRegex("id10912345678end", "vi");
+    expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
+  });
+
+  it("detects US SSN in English prose", () => {
+    const spans = detectWithRegex("SSN on file: 856-45-6780", "en");
+    expect(spans.some((s) => s.entityType === "US_SSN")).toBe(true);
+  });
+
+  it("detects US SSN adjacent to CJK text", () => {
+    const spans = detectWithRegex("社会保障番号は856-45-6780です", "ja");
+    expect(spans.some((s) => s.entityType === "US_SSN")).toBe(true);
+  });
+
+  it("does not match US SSN inside longer digit runs", () => {
+    const spans = detectWithRegex("id 1856-45-67801 trailing", "en");
+    expect(spans.some((s) => s.entityType === "US_SSN")).toBe(false);
+  });
+
+  it("detects spaced IBANs", () => {
+    const spans = detectWithRegex("Transfer to DE89 3704 0044 0532 0130 00 please", "en");
+    const iban = spans.find((s) => s.entityType === "IBAN_CODE");
+    expect(iban).toBeDefined();
+    expect(iban!.score).toBe(1.0);
+  });
+
+  it("detects compact IBANs", () => {
+    const spans = detectWithRegex("IBAN DE89370400440532013000", "en");
+    expect(spans.some((s) => s.entityType === "IBAN_CODE")).toBe(true);
+  });
+
+  it("detects IBAN adjacent to CJK text", () => {
+    const spans = detectWithRegex("振込先はDE89370400440532013000です", "ja");
+    expect(spans.some((s) => s.entityType === "IBAN_CODE")).toBe(true);
+  });
+
+  it("rejects checksum-invalid IBANs", () => {
+    const spans = detectWithRegex("振込先はDE89370400440532013001です", "ja");
+    expect(spans.some((s) => s.entityType === "IBAN_CODE")).toBe(false);
+  });
+
+  it("does not match IBAN inside a longer alphanumeric run", () => {
+    const spans = detectWithRegex("ref XDE89370400440532013000Y end", "en");
+    expect(spans.some((s) => s.entityType === "IBAN_CODE")).toBe(false);
+  });
 });
 
 describe("isValidCreditCard", () => {
@@ -104,6 +194,25 @@ describe("isValidCreditCard", () => {
     expect(isValidCreditCard("4111 1111 1111 1111")).toBe(true);
     expect(isValidCreditCard("4111111111111112")).toBe(false);
     expect(isValidCreditCard("not-a-number")).toBe(false);
+  });
+});
+
+describe("isValidUsSsn", () => {
+  it("accepts a valid SSN and rejects known-invalid forms", () => {
+    expect(isValidUsSsn("856-45-6780")).toBe(true);
+    expect(isValidUsSsn("000-12-3456")).toBe(false);
+    expect(isValidUsSsn("123-45-6789")).toBe(false);
+    expect(isValidUsSsn("123.45-6789")).toBe(false);
+    expect(isValidUsSsn("111-11-1111")).toBe(false);
+    expect(isValidUsSsn("856-00-6780")).toBe(false);
+  });
+});
+
+describe("isValidIban", () => {
+  it("validates checksums after stripping separators", () => {
+    expect(isValidIban("DE89 3704 0044 0532 0130 00")).toBe(true);
+    expect(isValidIban("DE89370400440532013000")).toBe(true);
+    expect(isValidIban("DE89370400440532013001")).toBe(false);
   });
 });
 

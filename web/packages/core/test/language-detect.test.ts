@@ -14,6 +14,15 @@ describe("guessLanguage", () => {
     expect(guessLanguage("カタカナのみ")).toBe("ja");
   });
 
+  it("detects Vietnamese by diacritics", () => {
+    expect(guessLanguage("Tôi tên là Nguyễn Văn An")).toBe("vi");
+  });
+
+  it("detects Spanish by markers", () => {
+    expect(guessLanguage("Hola, ¿cómo estás?")).toBe("es");
+    expect(guessLanguage("me llamo María")).toBe("es");
+  });
+
   it("defaults to English otherwise", () => {
     expect(guessLanguage("Hello John Smith")).toBe("en");
     expect(guessLanguage("12345")).toBe("en");

@@ -4,6 +4,7 @@ from prompt_anonymizer.labeling import (
     EntitySpan,
     apply_labels,
     deanonymize,
+    deny_list_spans,
     load_labels,
     merge_spans,
 )
@@ -134,9 +135,54 @@ def test_deanonymize_longest_label_first() -> None:
     assert deanonymize("<Name_11> and <Name_1>", mapping) == "Jane and John"
 
 
+def test_deny_list_spans_finds_all_occurrences_between_cjk() -> None:
+    # Plain substring search: \b-based matching would miss both hits here.
+    spans = deny_list_spans("X計画のことをX計画と呼ぶ", ["X計画"])
+    assert spans == [
+        EntitySpan(0, 3, "CUSTOM", 1.0),
+        EntitySpan(7, 10, "CUSTOM", 1.0),
+    ]
+
+
+def test_deny_list_spans_ignores_empty_needles() -> None:
+    assert deny_list_spans("anything", [""]) == []
+
+
 def test_load_labels_packaged() -> None:
     ja = load_labels("ja")
     en = load_labels("en")
     assert ja["PERSON"] == "人名"
     assert en["PERSON"] == "Name"
     assert set(ja) == set(en)
+
+
+def test_load_labels_es_vi_packaged() -> None:
+    en = load_labels("en")
+    es = load_labels("es")
+    vi = load_labels("vi")
+    assert es["PERSON"] == "Nombre"
+    assert es["PHONE_NUMBER"] == "Teléfono"
+    assert vi["PERSON"] == "Tên"
+    assert vi["PHONE_NUMBER"] == "SốĐiệnThoại"
+    assert set(es) == set(en)
+    assert set(vi) == set(en)
+
+
+def test_apply_labels_roundtrip_es_vi() -> None:
+    es_text = "Me llamo María García y mi teléfono es 612 345 678."
+    es_spans = [
+        EntitySpan(9, 21, "PERSON", 0.9),
+        EntitySpan(39, 50, "PHONE_NUMBER", 0.6),
+    ]
+    anonymized, mapping = apply_labels(es_text, es_spans, load_labels("es"))
+    assert anonymized == "Me llamo <Nombre_1> y mi teléfono es <Teléfono_1>."
+    assert deanonymize(anonymized, mapping) == es_text
+
+    vi_text = "Tôi tên là Nguyễn Văn An, số điện thoại 0912 345 678."
+    vi_spans = [
+        EntitySpan(11, 24, "PERSON", 0.9),
+        EntitySpan(40, 52, "PHONE_NUMBER", 0.6),
+    ]
+    anonymized, mapping = apply_labels(vi_text, vi_spans, load_labels("vi"))
+    assert anonymized == "Tôi tên là <Tên_1>, số điện thoại <SốĐiệnThoại_1>."
+    assert deanonymize(anonymized, mapping) == vi_text

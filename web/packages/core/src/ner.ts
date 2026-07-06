@@ -12,6 +12,12 @@ import type { EntitySpan, Language, NerBackend } from "./types.js";
 export const DEFAULT_NER_MODELS: Record<Language, string> = {
   ja: "jiting/xlm-roberta-ner-japanese_onnx",
   en: "Xenova/bert-base-NER",
+  // The multilingual HRL model covers Spanish natively and transfers well to
+  // Vietnamese (verified empirically); no ONNX export of a dedicated
+  // Vietnamese NER model exists, so the Python core's hf backend uses
+  // NlpHUST/ner-vietnamese-electra-base for vi instead.
+  es: "Xenova/bert-base-multilingual-cased-ner-hrl",
+  vi: "Xenova/bert-base-multilingual-cased-ner-hrl",
 };
 
 /** Model tag -> prompt-anonymizer entity type. Unlisted tags are ignored. */

@@ -26,7 +26,9 @@ export type {
 export {
   detectWithRegex,
   isValidCreditCard,
+  isValidIban,
   isValidMyNumber,
+  isValidUsSsn,
   myNumberCheckDigit,
 } from "./recognizers.js";
 export {
@@ -40,14 +42,28 @@ export { detectLanguage, guessLanguage, resetLanguageDetector } from "./language
 
 const DEFAULT_SCORE_THRESHOLD = 0.4;
 
+// Mirror of src/prompt_anonymizer/core.py DEFAULT_ENTITIES / OPTIONAL_ENTITIES.
+export const DEFAULT_ENTITIES: string[] = [
+  "PERSON",
+  "EMAIL_ADDRESS",
+  "LOCATION",
+  "PHONE_NUMBER",
+  "JP_POSTAL_CODE",
+  "JP_MY_NUMBER",
+  "CREDIT_CARD",
+];
+export const OPTIONAL_ENTITIES: string[] = ["US_SSN", "IBAN_CODE"];
+
 export class Anonymizer {
   private readonly ner?: NerBackend;
+  private readonly entities: Set<string>;
   private readonly denyList: string[];
   private readonly allowList: string[];
   private readonly scoreThreshold: number;
 
   constructor(options: AnonymizerOptions = {}) {
     this.ner = options.ner;
+    this.entities = new Set(options.entities ?? DEFAULT_ENTITIES);
     this.denyList = options.denyList ?? [];
     this.allowList = options.allowList ?? [];
     this.scoreThreshold = options.scoreThreshold ?? DEFAULT_SCORE_THRESHOLD;
@@ -55,19 +71,20 @@ export class Anonymizer {
 
   async anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult> {
     const { language } = options;
-    const structured: EntitySpan[] = [
-      ...detectWithRegex(text, language),
-      ...detectDenyList(text, this.denyList),
-    ];
+    const regexSpans = detectWithRegex(text, language).filter((s) =>
+      this.entities.has(s.entityType),
+    );
+    const denySpans = detectDenyList(text, this.denyList);
+    const structured: EntitySpan[] = [...regexSpans, ...denySpans];
     let spans = [...structured];
     if (this.ner) {
       // Structured recognizers (regex, deny list) win over NER on overlap:
       // e.g. NER may claim the local part of an email address as PERSON.
       const nerSpans = await this.ner.detect(text, language);
       spans.push(
-        ...nerSpans.filter(
-          (n) => !structured.some((s) => n.start < s.end && s.start < n.end),
-        ),
+        ...nerSpans
+          .filter((n) => this.entities.has(n.entityType))
+          .filter((n) => !structured.some((s) => n.start < s.end && s.start < n.end)),
       );
     }
     spans = spans.filter(

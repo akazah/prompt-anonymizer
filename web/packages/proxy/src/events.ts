@@ -14,7 +14,7 @@ export interface StoredEvent {
   method: string;
   path: string;
   model?: string;
-  language: "en" | "ja";
+  language: "en" | "ja" | "es" | "vi";
   stream: boolean;
   entityCounts: Record<string, number>;
   labels: string[];

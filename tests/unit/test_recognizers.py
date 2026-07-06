@@ -50,6 +50,17 @@ def test_ja_phone_regex_patterns() -> None:
     assert not patterns["jp_mobile"].search("1090-1234-5678の一部")
 
 
+def test_ja_phone_rejects_ssn_shaped_digit_counts() -> None:
+    from prompt_anonymizer.recognizers.ja_phone import JaPhoneRegexRecognizer
+
+    recognizer = JaPhoneRegexRecognizer()
+    # 9 digits (US-SSN-shaped, e.g. 021-14-3596) is not a JP number.
+    assert recognizer.validate_result("021-14-3596") is False
+    # Valid 10-digit landlines keep their pattern score (None = unchanged).
+    assert recognizer.validate_result("03-1234-5678") is None
+    assert recognizer.validate_result("0123-45-6789") is None
+
+
 def test_ja_postal_regex_patterns() -> None:
     import re
 
@@ -60,6 +71,39 @@ def test_ja_postal_regex_patterns() -> None:
     assert patterns["jp_postal_bare"].search("100-0001")
     # Must not match inside a phone number.
     assert not patterns["jp_postal_bare"].search("090-1234-5678")
+
+
+def test_es_phone_regex_patterns() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.es_phone import EsPhoneRegexRecognizer
+
+    patterns = {p.name: re.compile(p.regex) for p in EsPhoneRegexRecognizer.PATTERNS}
+    assert patterns["es_phone_prefixed"].search("Llámame al +34 612 345 678.")
+    assert patterns["es_phone_prefixed"].search("+34612345678")
+    assert patterns["es_phone_grouped"].search("mi móvil es 612 345 678")
+    assert patterns["es_phone_grouped"].search("612-345-678")
+    assert patterns["es_phone_landline"].search("el fijo es 91 234 56 78")
+    # Bare 9-digit runs without separators or prefix are too ambiguous.
+    assert not patterns["es_phone_grouped"].search("612345678")
+    # Not inside longer digit runs.
+    assert not patterns["es_phone_grouped"].search("9612 345 678987")
+
+
+def test_vn_phone_regex_patterns() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.vn_phone import VnPhoneRegexRecognizer
+
+    patterns = {p.name: re.compile(p.regex) for p in VnPhoneRegexRecognizer.PATTERNS}
+    assert patterns["vn_phone_domestic"].search("gọi 0912 345 678 nhé")
+    assert patterns["vn_phone_domestic"].search("091 234 5678")
+    assert patterns["vn_phone_domestic"].search("0912345678")
+    assert patterns["vn_phone_domestic"].search("024 3826 8888")
+    assert patterns["vn_phone_prefixed"].search("+84 912 345 678")
+    assert patterns["vn_phone_prefixed"].search("+84912345678")
+    # Not inside longer digit runs.
+    assert not patterns["vn_phone_domestic"].search("10912345678")
 
 
 def test_credit_card_regex_matches_next_to_cjk() -> None:
@@ -161,34 +205,30 @@ def test_us_phone_regex_patterns() -> None:
 
 
 def test_deny_list_spans_multiple_occurrences() -> None:
-    from prompt_anonymizer import PromptAnonymizer
+    from prompt_anonymizer.labeling import deny_list_spans
 
-    pa = PromptAnonymizer(languages=["ja"], deny_list=["プロジェクトX", "極秘"])
-    spans = pa._deny_list_spans("プロジェクトXと極秘とプロジェクトX")
+    text = "プロジェクトXと極秘とプロジェクトX"
+    spans = deny_list_spans(text, ["プロジェクトX", "極秘"])
     # Two occurrences of プロジェクトX and one of 極秘
     assert len(spans) == 3
     # All should be entity_type="CUSTOM"
     assert all(s.entity_type == "CUSTOM" for s in spans)
     # Verify correct offsets
-    text = "プロジェクトXと極秘とプロジェクトX"
     for span in spans:
         assert text[span.start : span.end] in ["プロジェクトX", "極秘"]
 
 
 def test_deny_list_spans_empty_entry() -> None:
-    from prompt_anonymizer import PromptAnonymizer
+    from prompt_anonymizer.labeling import deny_list_spans
 
-    pa = PromptAnonymizer(languages=["ja"], deny_list=[""])
-    spans = pa._deny_list_spans("テキスト")
-    # Empty string should produce no spans (skipped in _deny_list_spans)
-    assert len(spans) == 0
+    # Empty string should produce no spans (skipped in deny_list_spans)
+    assert deny_list_spans("テキスト", [""]) == []
 
 
 def test_deny_list_spans_entity_type() -> None:
-    from prompt_anonymizer import PromptAnonymizer
+    from prompt_anonymizer.labeling import deny_list_spans
 
-    pa = PromptAnonymizer(languages=["ja"], deny_list=["機密"])
-    spans = pa._deny_list_spans("これは機密です")
+    spans = deny_list_spans("これは機密です", ["機密"])
     assert len(spans) == 1
     assert spans[0].entity_type == "CUSTOM"
     assert spans[0].score == 1.0
@@ -233,3 +273,25 @@ def test_recognizer_score_parity() -> None:
     # Credit Card initial score (validate_result lifts Luhn-valid to 1.0)
     cc_patterns = {p.name: p.score for p in CreditCardLookaroundRecognizer.PATTERNS}
     assert cc_patterns["all_credit_cards_lookaround"] == 0.3
+
+
+def test_us_ssn_regex_matches_next_to_cjk() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.us_ssn import UsSsnLookaroundRecognizer
+
+    pattern = re.compile(UsSsnLookaroundRecognizer.PATTERNS[4].regex)
+    assert pattern.search("社会保障番号は123-45-6780です")
+    assert pattern.search("Payroll SSN 856-45-6780 for reimbursement")
+    # Not inside longer digit runs.
+    assert not pattern.search("9123-45-67809")
+
+
+def test_us_ssn_inherited_invalidation() -> None:
+    from prompt_anonymizer.recognizers.us_ssn import UsSsnLookaroundRecognizer
+
+    recognizer = UsSsnLookaroundRecognizer(supported_language="en")
+    assert recognizer.invalidate_result("000-12-3456") is True
+    assert recognizer.invalidate_result("123-45-6789") is True
+    assert recognizer.invalidate_result("123.45-6789") is True
+    assert recognizer.invalidate_result("856-45-6780") is False

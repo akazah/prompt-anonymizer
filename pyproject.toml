@@ -1,12 +1,12 @@
 [project]
 name = "prompt-anonymizer"
 version = "0.2.0"
-description = "Anonymize PII before it reaches an LLM - with consistent, reversible labels. JA/EN."
+description = "Anonymize PII before it reaches an LLM - with consistent, reversible labels. JA/EN/ES/VI."
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "akazah", email = "679040+akazah@users.noreply.github.com" }]
 requires-python = ">=3.12,<3.15"
-keywords = ["pii", "anonymization", "privacy", "llm", "presidio", "japanese"]
+keywords = ["pii", "anonymization", "privacy", "llm", "presidio", "japanese", "spanish", "vietnamese"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -53,10 +53,15 @@ dev = [
 models = [
     "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
     "ja-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.8.0/ja_core_news_sm-3.8.0-py3-none-any.whl",
+    "es-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-3.8.0/es_core_news_sm-3.8.0-py3-none-any.whl",
+    # Vietnamese has no official spaCy pipeline; the multi-language WikiNER
+    # model provides tokenization + baseline PER/LOC NER for `vi`.
+    "xx-ent-wiki-sm @ https://github.com/explosion/spacy-models/releases/download/xx_ent_wiki_sm-3.8.0/xx_ent_wiki_sm-3.8.0-py3-none-any.whl",
 ]
 models-lg = [
     "en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl",
     "ja-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_lg-3.8.0/ja_core_news_lg-3.8.0-py3-none-any.whl",
+    "es-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/es_core_news_lg-3.8.0/es_core_news_lg-3.8.0-py3-none-any.whl",
 ]
 
 [build-system]

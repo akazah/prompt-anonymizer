@@ -8,6 +8,7 @@ import {
   type MappingStore,
   type NerProgress,
 } from "@prompt-anonymizer/core";
+import "@prompt-anonymizer/theme/fonts.css";
 import "./sidepanel.css";
 
 /**
@@ -33,10 +34,12 @@ class ChromeSessionMappingStore implements MappingStore {
   }
 }
 
+const ICON_SHIELD = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 const panel = document.querySelector<HTMLDivElement>("#panel")!;
 panel.innerHTML = `
   <div class="wrap">
-    <h1>Prompt Anonymizer</h1>
+    <h1><span class="logo-mark">${ICON_SHIELD}</span>Prompt Anonymizer</h1>
     <p class="privacy"><strong>On-device.</strong> Your text never leaves this browser. / テキストは外部へ送信されません。</p>
 
     <div class="tabs">
@@ -46,23 +49,25 @@ panel.innerHTML = `
 
     <div id="view-anon">
       <textarea id="input" placeholder="Select text on a page → right-click → 'Anonymize selection', or paste here."></textarea>
-      <div class="row" style="margin-top:8px">
+      <div class="row mt-2">
         <select id="language">
           <option value="auto">Auto / 自動判定</option>
           <option value="ja">日本語</option>
           <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="vi">Tiếng Việt</option>
         </select>
-        <label style="font-size:12px;color:var(--text-dim)"><input type="checkbox" id="use-ner" checked /> NER</label>
+        <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER</label>
         <button id="anonymize" class="btn primary">Anonymize</button>
       </div>
       <p id="ner-off-warning" class="warning" hidden>NER off: names & locations will NOT be masked. / 人名・住所はマスクされません。</p>
       <div id="progress" class="progress"></div>
-      <div id="output" class="output" style="margin-top:8px"></div>
-      <div class="row" style="margin-top:6px">
+      <div id="output" class="output mt-2"></div>
+      <div class="row mt-1">
         <button id="copy" class="btn">Copy</button>
         <span id="copy-flash" class="flash"></span>
       </div>
-      <table id="mapping-table" class="hidden" style="margin-top:8px">
+      <table id="mapping-table" class="mapping hidden mt-2">
         <thead><tr><th>Label</th><th>Original</th></tr></thead>
         <tbody></tbody>
       </table>
@@ -70,12 +75,12 @@ panel.innerHTML = `
 
     <div id="view-restore" class="hidden">
       <textarea id="restore-input" placeholder="Paste the LLM reply containing labels…"></textarea>
-      <div class="row" style="margin-top:8px">
+      <div class="row mt-2">
         <button id="restore" class="btn primary">Deanonymize</button>
         <button id="copy-restored" class="btn">Copy</button>
         <span id="restore-flash" class="flash"></span>
       </div>
-      <div id="restore-output" class="output" style="margin-top:8px"></div>
+      <div id="restore-output" class="output mt-2"></div>
       <p id="restore-warning" class="warning" hidden></p>
     </div>
   </div>

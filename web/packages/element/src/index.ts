@@ -35,6 +35,8 @@ function createPanelMarkup(): string {
             <option value="auto">Auto / 自動判定</option>
             <option value="ja">日本語</option>
             <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="vi">Tiếng Việt</option>
           </select>
         </label>
       </div>
@@ -84,6 +86,7 @@ export class PromptAnonymizerElement extends HTMLElement {
   private _denyList?: string[];
   private _allowList?: string[];
   private _scoreThreshold?: number;
+  private _entities?: string[];
 
   private readonly nerWarning: HTMLParagraphElement;
   private readonly languageSelect: HTMLSelectElement;
@@ -137,14 +140,15 @@ export class PromptAnonymizerElement extends HTMLElement {
     }
   }
 
-  get language(): "auto" | "en" | "ja" {
+  get language(): "auto" | Language {
     const attr = this.getAttribute("language");
-    if (attr === "en" || attr === "ja") return attr;
+    if (attr === "en" || attr === "ja" || attr === "es" || attr === "vi") return attr;
     return "auto";
   }
 
-  set language(value: "auto" | "en" | "ja") {
-    const next = value === "en" || value === "ja" ? value : "auto";
+  set language(value: "auto" | Language) {
+    const next =
+      value === "en" || value === "ja" || value === "es" || value === "vi" ? value : "auto";
     if (this.getAttribute("language") !== next) {
       this.setAttribute("language", next);
     }
@@ -206,13 +210,21 @@ export class PromptAnonymizerElement extends HTMLElement {
     this._scoreThreshold = value;
   }
 
+  get entities(): string[] | undefined {
+    return this._entities;
+  }
+
+  set entities(value: string[] | undefined) {
+    this._entities = value;
+  }
+
   get result(): AnonymizeResult | null {
     return this._result;
   }
 
   private wireEvents(): void {
     this.languageSelect.addEventListener("change", () => {
-      this.language = this.languageSelect.value as "auto" | "en" | "ja";
+      this.language = this.languageSelect.value as "auto" | Language;
     });
     this.anonymizeBtn.addEventListener("click", () => void this.runAnonymize());
     this.restoreBtn.addEventListener("click", () => void this.runRestore());
@@ -229,6 +241,7 @@ export class PromptAnonymizerElement extends HTMLElement {
               denyList: this._denyList,
               allowList: this._allowList,
               scoreThreshold: this._scoreThreshold,
+              entities: this._entities,
             }).anonymize(text, options),
         },
         store: this._store ?? undefined,

@@ -11,7 +11,7 @@ import argparse
 import json
 from pathlib import Path
 
-from prompt_anonymizer.core import PromptAnonymizer
+from prompt_anonymizer.core import DEFAULT_ENTITIES, OPTIONAL_ENTITIES, PromptAnonymizer
 from prompt_anonymizer.evals.generate import generate_cases
 from prompt_anonymizer.evals.metrics import EvalReport, evaluate_cases
 
@@ -58,7 +58,7 @@ TABLE_HEADER = (
 def main() -> None:
     parser = argparse.ArgumentParser(description="prompt-anonymizer evaluation harness")
     parser.add_argument("--cases", type=int, default=200, help="cases per language")
-    parser.add_argument("--languages", nargs="+", default=["ja", "en"])
+    parser.add_argument("--languages", nargs="+", default=["ja", "en", "es", "vi"])
     parser.add_argument("--model-size", default="sm", choices=["sm", "lg"])
     parser.add_argument(
         "--ner-backend",
@@ -84,7 +84,10 @@ def main() -> None:
         print(f"[{language}] exported {len(cases)} cases -> {golden_path}")
 
         pa = PromptAnonymizer(
-            languages=[language], model_size=args.model_size, ner_backend=args.ner_backend
+            languages=[language],
+            model_size=args.model_size,
+            ner_backend=args.ner_backend,
+            entities=[*DEFAULT_ENTITIES, *OPTIONAL_ENTITIES],
         )
         results = pa.anonymize_batch(
             [case.text for case in cases], language=language, batch_size=args.batch_size

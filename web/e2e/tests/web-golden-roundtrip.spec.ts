@@ -21,14 +21,14 @@ interface GoldenSpan {
 
 interface GoldenCase {
   id: string;
-  language: "ja" | "en";
+  language: "ja" | "en" | "es" | "vi";
   text: string;
   spans: GoldenSpan[];
 }
 
 const CASES_PER_LANGUAGE = 5;
 
-function goldenSlice(language: "ja" | "en"): GoldenCase[] {
+function goldenSlice(language: "ja" | "en" | "es" | "vi"): GoldenCase[] {
   const path = fileURLToPath(
     new URL(`../../../tests/golden/golden_${language}.json`, import.meta.url),
   );
@@ -36,7 +36,7 @@ function goldenSlice(language: "ja" | "en"): GoldenCase[] {
   return cases.slice(0, CASES_PER_LANGUAGE);
 }
 
-for (const language of ["ja", "en"] as const) {
+for (const language of ["ja", "en", "es", "vi"] as const) {
   test(`golden ${language}: UI round trip restores the original text`, async ({ page }) => {
     for (const goldenCase of goldenSlice(language)) {
       // Fresh page per case so "output is non-empty" waits cannot race with

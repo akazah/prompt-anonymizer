@@ -1,4 +1,4 @@
-export type Language = "en" | "ja";
+export type Language = "en" | "ja" | "es" | "vi";
 
 export interface EntitySpan {
   start: number;
@@ -21,6 +21,12 @@ export interface NerBackend {
 
 export interface AnonymizerOptions {
   ner?: NerBackend;
+  /**
+   * Entity types to detect. Defaults to DEFAULT_ENTITIES (parity with the
+   * Python core). Optional entities (US_SSN, IBAN_CODE) must be requested
+   * explicitly. Deny-list matches (CUSTOM) are always kept.
+   */
+  entities?: string[];
   /** Strings to always mask (labelled CUSTOM). */
   denyList?: string[];
   /** Strings to never mask even when detected. */

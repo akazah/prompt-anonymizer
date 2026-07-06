@@ -37,6 +37,8 @@ const REGEX_ENTITIES = new Set([
   "JP_POSTAL_CODE",
   "JP_MY_NUMBER",
   "CREDIT_CARD",
+  "US_SSN",
+  "IBAN_CODE",
 ]);
 const MIN_RECALL = 0.95;
 
@@ -48,7 +50,7 @@ function overlaps(aStart: number, aEnd: number, bStart: number, bEnd: number): b
   return aStart < bEnd && bStart < aEnd;
 }
 
-describe.each(["ja", "en"] as const)("golden set parity (%s)", (language) => {
+describe.each(["ja", "en", "es", "vi"] as const)("golden set parity (%s)", (language) => {
   it(`regex recall >= ${MIN_RECALL} per structured entity`, () => {
     const cases = loadGolden(language);
     expect(cases.length).toBeGreaterThan(0);

@@ -25,13 +25,23 @@ DEFAULT_TEXTS = {
         "John loves nice cuisine. John lives in New York. His email is john@example.com. "
         "His mobile is (333) 333-3333."
     ),
+    "es": (
+        "María García cumple años el mes que viene. ¿Qué regalo sería apropiado? "
+        "María García vive en Madrid. Su correo es maria.garcia@example.com. "
+        "Su teléfono es 612 345 678."
+    ),
+    "vi": (
+        "Nguyễn Văn An sẽ có sinh nhật vào tháng tới. Nên tặng quà gì? "
+        "Nguyễn Văn An sống tại Hà Nội. Email là nguyen.an@example.com. "
+        "Số điện thoại là 0912 345 678."
+    ),
 }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--text", default=None)
-    parser.add_argument("--language", default="en", choices=["en", "ja"])
+    parser.add_argument("--language", default="en", choices=["en", "ja", "es", "vi"])
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model name")
     args = parser.parse_args()
 

@@ -41,7 +41,7 @@ declare global {
 }
 
 export interface AnonymizerPanelProps {
-  /** en, ja, or on-device auto-detection (default). */
+  /** en, ja, es, vi, or on-device auto-detection (default). */
   language?: "auto" | Language;
   /** Hide the restore section (default: shown). */
   showRestore?: boolean;

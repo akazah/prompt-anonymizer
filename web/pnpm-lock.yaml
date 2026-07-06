@@ -29,6 +29,9 @@ importers:
       '@prompt-anonymizer/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       '@types/chrome':
         specifier: ^0.2.2
@@ -47,6 +50,10 @@ importers:
         version: 4.1.9(@types/node@26.1.0)(jsdom@28.1.0)(vite@8.1.3(@types/node@26.1.0))
 
   apps/proxy-admin:
+    dependencies:
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       jsdom:
         specifier: ^28.0.0
@@ -66,6 +73,9 @@ importers:
       '@prompt-anonymizer/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       jsdom:
         specifier: ^28.0.0
@@ -113,6 +123,9 @@ importers:
       '@huggingface/transformers':
         specifier: ^4.2.0
         version: 4.2.0
+      ibantools:
+        specifier: ^4.5.4
+        version: 4.5.4
     devDependencies:
       typescript:
         specifier: ^6.0.3
@@ -186,6 +199,12 @@ importers:
       vitest:
         specifier: ^4.1.9
         version: 4.1.9(@types/node@26.1.0)(jsdom@28.1.0)(vite@8.1.3(@types/node@26.1.0))
+
+  packages/theme:
+    dependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
 
   packages/vue:
     dependencies:
@@ -313,6 +332,9 @@ packages:
     peerDependenciesMeta:
       '@noble/hashes':
         optional: true
+
+  '@fontsource-variable/inter@5.2.8':
+    resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
 
   '@huggingface/jinja@0.5.9':
     resolution: {integrity: sha512-uWTG+l3VJRsl7EXxYizuL3P+cCPoc3cRqbWWRcQN0FhejRfbdq0RNhCmbY/YDtnTcz9icdLYuLDjsnz4d8JMuw==}
@@ -980,6 +1002,9 @@ packages:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
 
+  ibantools@4.5.4:
+    resolution: {integrity: sha512-6jX1gh4aH6XH+o0ey+wtkMTzkcvsEta7DakIOZSng9voZYpMw3U+gK1+tZChk3aRcPcloEt0NOzksjaRZiqXbw==}
+
   is-potential-custom-element-name@1.0.1:
     resolution: {integrity: sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==}
 
@@ -1498,6 +1523,8 @@ snapshots:
     optional: true
 
   '@exodus/bytes@1.15.1': {}
+
+  '@fontsource-variable/inter@5.2.8': {}
 
   '@huggingface/jinja@0.5.9': {}
 
@@ -2049,6 +2076,8 @@ snapshots:
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
+
+  ibantools@4.5.4: {}
 
   is-potential-custom-element-name@1.0.1: {}
 

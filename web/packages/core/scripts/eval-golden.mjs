@@ -22,6 +22,8 @@ const REGEX_ENTITIES = new Set([
   "JP_POSTAL_CODE",
   "JP_MY_NUMBER",
   "CREDIT_CARD",
+  "US_SSN",
+  "IBAN_CODE",
 ]);
 
 const overlaps = (aS, aE, bS, bE) => aS < bE && bS < aE;
@@ -29,7 +31,7 @@ const overlaps = (aS, aE, bS, bE) => aS < bE && bS < aE;
 console.log("| Language | Entity | Precision | Recall | F1 | Support |");
 console.log("|---|---|---|---|---|---|");
 
-for (const language of ["ja", "en"]) {
+for (const language of ["ja", "en", "es", "vi"]) {
   const cases = JSON.parse(readFileSync(join(GOLDEN_DIR, `golden_${language}.json`), "utf-8"));
   const metrics = new Map();
   const m = (entity) => {
