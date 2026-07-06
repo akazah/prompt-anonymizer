@@ -19,13 +19,15 @@ classifiers = [
 ]
 dependencies = [
     "presidio-analyzer>=2.2.363",
-    "presidio-anonymizer>=2.2.363",
     "pyyaml>=6.0",
     "typer>=0.12",
 ]
 
 [project.optional-dependencies]
 demo = ["openai>=2", "rich>=13"]
+# Transformer NER backend (ner_backend="hf"): same model family as the
+# TypeScript core, better ja PERSON/LOCATION recall than spaCy `sm`.
+hf = ["transformers>=4.48", "torch>=2.6"]
 
 [project.scripts]
 prompt-anonymizer = "prompt_anonymizer.cli:app"
@@ -82,7 +84,7 @@ strict = true
 files = ["src"]
 
 [[tool.mypy.overrides]]
-module = ["presidio_analyzer.*", "presidio_anonymizer.*"]
+module = ["presidio_analyzer.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

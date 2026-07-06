@@ -37,3 +37,30 @@ avoid style nits (ruff/tsc enforce style mechanically).
 - Web e2e (after build): `cd web && pnpm e2e` (offline, PR CI); `pnpm e2e:ner`
  runs the full NER pipeline (model download, weekly CI)
 - Demo assets are script-generated only: `demo/README.md`
+
+## Cursor Cloud specific instructions
+
+Dependencies are refreshed automatically on startup (Python via `uv sync
+--all-extras --group models`, web via `pnpm -C web install --frozen-lockfile`).
+Standard lint/test/build/run commands live in `## Commands` above and
+`CONTRIBUTING.md`. Non-obvious notes:
+
+- `uv` installs to `~/.local/bin`; it is sourced for login shells via
+  `~/.bashrc`. `uv` auto-creates a Python 3.13 venv from `.python-version`,
+  so `pytest` runs on 3.13 even though the base image ships 3.12.
+- The web workspace uses pnpm `11.10.0` (pinned via corepack + the
+  `packageManager` field); the base image's global pnpm is older, so run
+  pnpm from inside `web/` (or via `pnpm -C web`) to get the pinned version.
+- Before running the web app / extension / desktop, the shared core must be
+  built (`pnpm --filter @prompt-anonymizer/core build`) because its `main`
+  points at `dist/index.js`; `dist/` is not committed. `pnpm lint` and the
+  full `pnpm build` already build core first.
+- Browser dev server: `pnpm --filter @prompt-anonymizer/web dev` on port
+  `5173`. The first "Anonymize" click downloads a transformers.js NER model
+  from the Hugging Face CDN (needs network); untick the "NER model" checkbox
+  for a fully offline regex-only run (masks emails/phones but not names).
+- Chrome is preinstalled at `google-chrome`; there is no extension dev
+  server — build it and load unpacked from `web/apps/extension/dist/`.
+- Desktop (`pnpm --filter @prompt-anonymizer/desktop dev`) additionally needs
+  the Rust/Tauri system libraries (see `.github/workflows/release-apps.yml`)
+  which are not installed by default.

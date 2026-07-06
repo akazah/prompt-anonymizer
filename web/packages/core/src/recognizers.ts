@@ -33,6 +33,22 @@ export function isValidMyNumber(candidate: string): boolean {
   return myNumberCheckDigit(normalized.slice(0, 11)) === Number(normalized[11]);
 }
 
+/** Luhn checksum used by credit card numbers (parity with the Python core). */
+export function isValidCreditCard(candidate: string): boolean {
+  const digits = candidate.replace(/[- ]/g, "");
+  if (!/^\d{12,19}$/.test(digits)) return false;
+  let sum = 0;
+  for (let i = 0; i < digits.length; i++) {
+    let d = Number(digits[digits.length - 1 - i]);
+    if (i % 2 === 1) {
+      d *= 2;
+      if (d > 9) d -= 9;
+    }
+    sum += d;
+  }
+  return sum % 10 === 0;
+}
+
 const RULES: RegexRule[] = [
   {
     entityType: "EMAIL_ADDRESS",
@@ -88,6 +104,17 @@ const RULES: RegexRule[] = [
     score: 0.7,
     languages: "all",
     validate: isValidMyNumber,
+  },
+  // Credit cards: Presidio's pattern with lookarounds instead of \b (which
+  // never matches next to CJK text). Luhn-validated, hence the max score -
+  // mirroring the Python core, where a passed checksum lifts the score to 1.0.
+  {
+    entityType: "CREDIT_CARD",
+    regex:
+      /(?<![\d-])(?!1\d{12}(?!\d))(?:4\d{3}|5[0-5]\d{2}|6\d{3}|1\d{3}|3\d{3})[- ]?\d{3,4}[- ]?\d{3,4}[- ]?\d{3,5}(?![\d-])/g,
+    score: 1.0,
+    languages: "all",
+    validate: isValidCreditCard,
   },
 ];
 

@@ -49,6 +49,12 @@ def anonymize(
     ] = None,
     language: Annotated[str, typer.Option("--language", "-l", help="Language (en/ja).")] = "en",
     model_size: Annotated[str, typer.Option(help="spaCy model size: sm or lg.")] = "sm",
+    ner_backend: Annotated[
+        str,
+        typer.Option(
+            help="NER backend: spacy (default) or hf (transformer; requires the hf extra)."
+        ),
+    ] = "spacy",
     as_json: Annotated[
         bool, typer.Option("--json", help="Output JSON with text, mapping and entities.")
     ] = False,
@@ -64,7 +70,7 @@ def anonymize(
 
     raw = _read_input(text, file)
     try:
-        pa = PromptAnonymizer(languages=[language], model_size=model_size)
+        pa = PromptAnonymizer(languages=[language], model_size=model_size, ner_backend=ner_backend)
         result = pa.anonymize(raw, language=language)
     except PromptAnonymizerError as exc:
         typer.secho(str(exc), fg=typer.colors.RED, err=True)

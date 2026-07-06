@@ -56,7 +56,16 @@ def test_merge_spans_prefers_higher_score() -> None:
         EntitySpan(5, 15, "LOCATION", 0.9),
     ]
     merged = merge_spans(spans)
-    assert merged == [EntitySpan(5, 15, "LOCATION", 0.9)]
+    # The loser is not dropped outright: its non-overlapping part survives.
+    assert merged == [EntitySpan(0, 5, "PERSON", 0.5), EntitySpan(5, 15, "LOCATION", 0.9)]
+
+
+def test_merge_spans_drops_fully_covered_span() -> None:
+    spans = [
+        EntitySpan(0, 10, "LOCATION", 0.9),
+        EntitySpan(2, 8, "PERSON", 0.5),
+    ]
+    assert merge_spans(spans) == [EntitySpan(0, 10, "LOCATION", 0.9)]
 
 
 def test_merge_spans_keeps_non_overlapping() -> None:
@@ -65,6 +74,48 @@ def test_merge_spans_keeps_non_overlapping() -> None:
         EntitySpan(10, 14, "PERSON", 0.9),
     ]
     assert len(merge_spans(spans)) == 2
+
+
+def test_merge_spans_splits_around_kept_span() -> None:
+    """A low-score span overlapping the middle of a kept span survives on both sides."""
+    spans = [
+        EntitySpan(0, 20, "LOCATION", 0.5),
+        EntitySpan(8, 12, "JP_POSTAL_CODE", 1.0),
+    ]
+    merged = merge_spans(spans)
+    assert merged == [
+        EntitySpan(0, 8, "LOCATION", 0.5),
+        EntitySpan(8, 12, "JP_POSTAL_CODE", 1.0),
+        EntitySpan(12, 20, "LOCATION", 0.5),
+    ]
+
+
+def test_merge_spans_trims_remainder_whitespace() -> None:
+    # "〒539-6608 福井県..." - NER span covers postal code + address, the
+    # postal recognizer wins the overlap, and the address remainder must
+    # not keep the separating space.
+    text = "〒539-6608 福井県鴨川市"
+    spans = [
+        EntitySpan(0, 15, "LOCATION", 0.85),
+        EntitySpan(0, 9, "JP_POSTAL_CODE", 1.0),
+    ]
+    merged = merge_spans(spans, text)
+    assert merged == [
+        EntitySpan(0, 9, "JP_POSTAL_CODE", 1.0),
+        EntitySpan(10, 15, "LOCATION", 0.85),
+    ]
+
+
+def test_apply_labels_roundtrip_with_overlap_remainders() -> None:
+    text = "〒539-6608 福井県鴨川市鍛冶ケ沢1丁目15番12号に送付。"
+    spans = [
+        EntitySpan(0, 26, "LOCATION", 0.85),
+        EntitySpan(0, 9, "JP_POSTAL_CODE", 1.0),
+    ]
+    labels = {"LOCATION": "住所", "JP_POSTAL_CODE": "郵便番号"}
+    anonymized, mapping = apply_labels(text, spans, labels)
+    assert "福井県" not in anonymized
+    assert deanonymize(anonymized, mapping) == text
 
 
 def test_deanonymize_roundtrip() -> None:

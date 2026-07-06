@@ -52,6 +52,44 @@ def test_ja_invalid_my_number_not_masked(pa_ja) -> None:
     assert "<マイナンバー_1>" not in result.text
 
 
+def test_ja_credit_card_detected(pa_ja) -> None:
+    result = pa_ja.anonymize("お支払いのカード番号は4111111111111111です。", language="ja")
+    assert "4111111111111111" not in result.text
+    assert "<クレジットカード_1>" in result.text
+
+
+def test_ja_luhn_invalid_card_not_masked(pa_ja) -> None:
+    result = pa_ja.anonymize("注文コードは4111111111111112です。", language="ja")
+    assert "<クレジットカード_1>" not in result.text
+
+
+def test_en_credit_card_detected(pa_en) -> None:
+    result = pa_en.anonymize("The card on file is 4111-1111-1111-1111.", language="en")
+    assert "4111-1111-1111-1111" not in result.text
+    assert "<CreditCard_1>" in result.text
+
+
+def test_anonymize_batch_matches_sequential(pa_ja) -> None:
+    texts = [
+        "山田太郎の電話は090-1234-5678です。",
+        "送付先は〒100-0001、控えは taro@example.com へ。",
+        "カード番号は 4111111111111111 です。",
+    ]
+    sequential = [pa_ja.anonymize(t, language="ja") for t in texts]
+    batched = pa_ja.anonymize_batch(texts, language="ja", batch_size=2)
+    assert [r.text for r in batched] == [r.text for r in sequential]
+    assert [r.mapping for r in batched] == [r.mapping for r in sequential]
+    for text, result in zip(texts, batched, strict=True):
+        assert pa_ja.deanonymize(result.text, result.mapping) == text
+
+
+def test_anonymize_batch_unsupported_language(pa_ja) -> None:
+    from prompt_anonymizer import UnsupportedLanguageError
+
+    with pytest.raises(UnsupportedLanguageError):
+        pa_ja.anonymize_batch(["hello"], language="fr")
+
+
 def test_en_email_and_consistent_person(pa_en) -> None:
     text = "John lives in New York. Contact John at john@example.com."
     result = pa_en.anonymize(text, language="en")

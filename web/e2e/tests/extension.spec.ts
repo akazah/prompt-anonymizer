@@ -94,7 +94,9 @@ test("context-menu hand-off: pendingText auto-anonymizes in the side panel", asy
   );
 
   await expect(page.locator("#input")).toHaveValue(SELECTION);
-  await expect(page.locator("#language")).toHaveValue("ja"); // auto-detected
+  // Context-menu imports keep the "Auto" selection; the Japanese labels
+  // asserted below prove on-device detection resolved the text to ja.
+  await expect(page.locator("#language")).toHaveValue("auto");
   const output = page.locator("#output");
   await expect(output).toContainText("<郵便番号_1>");
   await expect(output).toContainText("<電話番号_1>");

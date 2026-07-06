@@ -16,7 +16,13 @@ import { detectWithRegex } from "../dist/recognizers.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const GOLDEN_DIR = join(HERE, "../../../../tests/golden");
-const REGEX_ENTITIES = new Set(["EMAIL_ADDRESS", "PHONE_NUMBER", "JP_POSTAL_CODE", "JP_MY_NUMBER"]);
+const REGEX_ENTITIES = new Set([
+  "EMAIL_ADDRESS",
+  "PHONE_NUMBER",
+  "JP_POSTAL_CODE",
+  "JP_MY_NUMBER",
+  "CREDIT_CARD",
+]);
 
 const overlaps = (aS, aE, bS, bE) => aS < bE && bS < aE;
 
