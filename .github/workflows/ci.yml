@@ -82,3 +82,29 @@ jobs:
       - name: Build web + extension (incl. core dependency)
         working-directory: web
         run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
+
+      # E2E reuses the dist/ built above (no rebuild). The default suite is
+      # regex-only and fully offline; the NER suite runs in weekly-eval.
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('web/pnpm-lock.yaml') }}
+
+      - name: Install Playwright Chromium
+        working-directory: web
+        run: pnpm --filter @prompt-anonymizer/e2e exec playwright install --with-deps chromium
+
+      - name: E2E tests (Playwright, offline)
+        working-directory: web
+        run: pnpm e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: |
+            web/e2e/playwright-report/
+            web/e2e/test-results/
+          retention-days: 7

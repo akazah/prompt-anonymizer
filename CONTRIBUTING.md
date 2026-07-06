@@ -35,6 +35,16 @@ pnpm --filter @prompt-anonymizer/desktop dev    # Tauri (needs Rust + system dep
 node packages/cli/dist/cli.js anonymize -t "…" # Node CLI (after build)
 ```
 
+End-to-end tests (Playwright, in `web/e2e/`; run `pnpm build` first — they
+serve the built `dist/`):
+
+```bash
+pnpm --filter @prompt-anonymizer/e2e exec playwright install chromium   # once
+pnpm e2e         # web app + Chrome extension, regex-only: offline & fast (PR CI)
+pnpm e2e:ner     # full NER pipeline; downloads the models on first run and
+                 # caches them in web/e2e/.cache (weekly CI)
+```
+
 The TypeScript core must stay in behavioural parity with the Python core
 (label format, mapping semantics, merge rules). The shared golden set in
 `tests/golden/` is the contract — regenerate it with the evals module when
