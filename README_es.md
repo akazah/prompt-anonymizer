@@ -89,6 +89,7 @@ etiquetas → restaurar:
 | **Web Component** | `@prompt-anonymizer/element` (aún no en npm) | Elemento `<prompt-anonymizer>` independiente del framework: inserta el panel completo de anonimizar → restaurar en cualquier sitio (HTML plano, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (aún no en npm) | Componente `<AnonymizerPanel />` listo para usar más un hook `useAnonymizer()` / composable para interfaces personalizadas. Consulta el inicio rápido más abajo. |
 | **Proxy local + GUI de administración** | `@prompt-anonymizer/proxy` (aún no en npm — compilar desde `web/packages/proxy`) | Proxy inverso compatible con OpenAI: apunta `OPENAI_BASE_URL` hacia él y los PII se enmascaran antes de salir de tu máquina, con las etiquetas restauradas en las respuestas (incl. streaming). GUI de administración en `http://127.0.0.1:8787/admin/`. Consulta el inicio rápido más abajo. |
+| **Servidor MCP** | `@prompt-anonymizer/mcp` (aún no en npm — compilar desde `web/packages/mcp`) | Herramientas `anonymize` / `deanonymize` / `scan` para cualquier cliente MCP (Claude Desktop, Claude Code, Cursor, …). El mapeo de etiquetas permanece en la memoria del servidor (`mapping_id`) y nunca se muestra al modelo salvo petición explícita. |
 | **Hook de commit / puerta de CI** | `prompt-anonymizer scan` (ambas CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Puerta de PII por código de salida para comprobaciones en el commit y en CI: informa `file:line:col` y el tipo de entidad, nunca el texto coincidente. Sin conexión y sin modelos por defecto. Véase más abajo. |
 
 ## Inicio rápido (Python)
@@ -392,7 +393,7 @@ abiertos y [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Destacados:
 publicación en npm / PyPI, publicación en tiendas (Chrome Web Store),
 firma de código, modelos NER japoneses más pequeños, PII estructurado
 multirregión (más formatos de teléfono / ID nacional con validación por
-suma de comprobación), servidor MCP.
+suma de comprobación).
 
 ## Contributing / Security / License
 

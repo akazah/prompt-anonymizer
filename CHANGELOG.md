@@ -8,6 +8,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- MCP server (`@prompt-anonymizer/mcp`, `web/packages/mcp`): `anonymize` /
+  `deanonymize` / `scan` tools over stdio for any MCP client (Claude
+  Desktop, Claude Code, Cursor, …). `anonymize` returns the masked text and
+  a `mapping_id`; the label → original-value mapping stays in server memory
+  and is only included when `return_mapping: true` is passed explicitly.
+  `deanonymize` restores by `mapping_id` or an explicit mapping, optionally
+  writing straight to a file so restored PII never enters the model
+  context. `scan` mirrors the CLI gate contract: `file:line:col` and entity
+  type only, never the matched text. NER is opt-in via `--ner` (off by
+  default: offline and model-free), matching `scan`'s defaults.
+- npm packaging polish ahead of publication: per-package `README.md` and
+  `LICENSE` for `core` / `cli` / `element` / `react` / `vue` / `proxy` /
+  `mcp` (the npm listing page renders the README), plus `homepage` and
+  `bugs` fields in each publishable `package.json`.
+- Social preview card: `demo/social-preview.png` (1280×640, generated from
+  `demo/scripts/social-preview.html`) for the GitHub repo's Settings →
+  Social preview slot, so shared links render a real card.
+- Launch runbook and drafts under `docs/launch/`: publish checklist
+  (PyPI / npm trusted publishing, Chrome Web Store listing copy),
+  announcement drafts (Zenn ja article, Show HN, awesome-list blurbs) and
+  prepared `good first issue` texts.
+- Integration guide `docs/INTEGRATIONS.md` and self-audit guide
+  `docs/AUDIT.md`.
 - Spanish (`es`) and Vietnamese (`vi`) support in both cores (non-breaking,
   additive): locale-specific labels (`Nombre`, `Teléfono`, `Tên`,
   `SốĐiệnThoại`, …), Spain and Vietnam phone recognizers, spaCy / HF /

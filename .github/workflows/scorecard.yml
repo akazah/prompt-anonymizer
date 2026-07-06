@@ -1,0 +1,36 @@
+# OpenSSF Scorecard: supply-chain / repo-hygiene checks.
+# publish_results is off for now (no data leaves the run beyond the
+# SARIF upload to this repo's code-scanning tab). Flip it to true to get
+# the public scorecard + README badge at securityscorecards.dev.
+name: Scorecard
+
+on:
+  branch_protection_rule:
+  schedule:
+    - cron: "30 2 * * 1"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write # SARIF upload to code-scanning
+      id-token: write # needed by the action even when not publishing
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: ossf/scorecard-action@v2.4.0
+        with:
+          results_file: results.sarif
+          results_format: sarif
+          publish_results: false
+
+      - uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif

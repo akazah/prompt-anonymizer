@@ -1,25 +1,22 @@
 {
-  "name": "@prompt-anonymizer/core",
+  "name": "@prompt-anonymizer/mcp",
   "version": "0.2.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Browser-first core (regex recognizers + transformers.js NER).",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. MCP server (anonymize / deanonymize / scan tools) built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+  "bin": {
+    "prompt-anonymizer-mcp": "./dist/cli.js"
   },
   "files": [
     "dist"
   ],
-  "sideEffects": false,
+  "engines": {
+    "node": ">=20.16"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akazah/prompt-anonymizer.git",
-    "directory": "web/packages/core"
+    "directory": "web/packages/mcp"
   },
   "homepage": "https://github.com/akazah/prompt-anonymizer#readme",
   "bugs": {
@@ -30,8 +27,8 @@
     "anonymization",
     "privacy",
     "llm",
-    "presidio",
-    "ner"
+    "mcp",
+    "model-context-protocol"
   ],
   "publishConfig": {
     "access": "public"
@@ -42,10 +39,12 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@huggingface/transformers": "^4.2.0",
-    "ibantools": "^4.5.4"
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@prompt-anonymizer/core": "workspace:*",
+    "zod": "^3.25.0"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   }

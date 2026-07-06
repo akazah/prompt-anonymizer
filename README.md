@@ -35,7 +35,8 @@ to the language picker; auto-detect distinguishes all four.
 Detection runs on-device (WebGPU / WASM in the browser, spaCy or local
 transformers in Python). Don't take our word for it: open DevTools, watch
 the network tab, or read the source. It's MIT-licensed and small enough
-to audit in one sitting.
+to audit in one sitting — [docs/AUDIT.md](docs/AUDIT.md) is the
+step-by-step procedure.
 
 <details>
 <summary><b>Table of contents</b></summary>
@@ -45,6 +46,7 @@ to audit in one sitting.
 - [Quickstart (Python)](#quickstart-python)
 - [Quickstart (JavaScript / TypeScript)](#quickstart-javascript--typescript)
 - [Quickstart (local proxy)](#quickstart-local-proxy)
+- [Quickstart (MCP server)](#quickstart-mcp-server)
 - [Commit-time / CI gate (`scan`)](#commit-time--ci-gate-scan)
 - [Why not …?](#why-not-)
 - [How it works](#how-it-works)
@@ -86,6 +88,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Web Component** | `@prompt-anonymizer/element` (not on npm yet) | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (not on npm yet) | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
 | **Local proxy + admin GUI** | `@prompt-anonymizer/proxy` (not on npm yet — build from `web/packages/proxy`) | OpenAI-compatible reverse proxy: point `OPENAI_BASE_URL` at it and PII is masked before leaving your machine, labels restored in responses (incl. streaming). Admin GUI on `http://127.0.0.1:8787/admin/`. See Quickstart below. |
+| **MCP server** | `@prompt-anonymizer/mcp` (not on npm yet — build from `web/packages/mcp`) | `anonymize` / `deanonymize` / `scan` tools for any MCP client (Claude Desktop, Claude Code, Cursor, …). The label mapping stays in server memory (`mapping_id`) and is never shown to the model unless explicitly requested. See Quickstart below. |
 | **Commit hook / CI gate** | `prompt-anonymizer scan` (both CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-code PII gate for commit-time and CI checks: reports `file:line:col` and entity type, never the matched text. Offline and model-free by default. See below. |
 
 ## Quickstart (Python)
@@ -200,6 +203,26 @@ redaction events (labels and counts only), edits the proxy config
 (upstream, NER, deny/allow lists) and offers a local-only anonymization
 playground. The proxy binds to `127.0.0.1` by default; original values are
 only revealable in the GUI when you explicitly enable `--record-mappings`.
+
+## Quickstart (MCP server)
+
+Give any MCP client — Claude Desktop, Claude Code, Cursor, … — on-device
+anonymization tools:
+
+```bash
+# Not published to npm yet — build from the repo:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/mcp... build
+# Claude Code (once published: claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp):
+claude mcp add prompt-anonymizer -- node "$(pwd)/packages/mcp/dist/cli.js"
+```
+
+Three tools, all designed so PII stays out of the model context:
+`anonymize` returns the masked text plus a `mapping_id` (the mapping stays in
+server memory unless you explicitly ask for it), `deanonymize` restores by
+`mapping_id` — optionally straight to a file — and `scan` checks files for
+PII, reporting `file:line:col` and entity type but never the matched text.
+Pass `--ner` in the server args to also mask names/locations (one-time model
+download on first use).
 
 ## Commit-time / CI gate (`scan`)
 
@@ -371,10 +394,12 @@ See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Highlights: npm / PyPI
 publication, store publication (Chrome Web Store), code signing, smaller
 Japanese NER models, multi-region structured PII (more phone / national-ID
-formats via checksum validation), MCP server.
+formats via checksum validation).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md) — recipes for LiteLLM, OpenWebUI, MCP clients, git hooks and CI
 - [CONTRIBUTING.md](CONTRIBUTING.md) — dev setup (uv / pnpm), test and eval commands
+- [docs/AUDIT.md](docs/AUDIT.md) — verify the on-device claims yourself, step by step
 - [SECURITY.md](SECURITY.md) — reporting vulnerabilities and anonymization bypasses
 - [MIT](LICENSE)

@@ -18,6 +18,10 @@
     "url": "git+https://github.com/akazah/prompt-anonymizer.git",
     "directory": "web/packages/proxy"
   },
+  "homepage": "https://github.com/akazah/prompt-anonymizer#readme",
+  "bugs": {
+    "url": "https://github.com/akazah/prompt-anonymizer/issues"
+  },
   "keywords": [
     "pii",
     "anonymization",

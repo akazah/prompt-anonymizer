@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- Source for demo/social-preview.png (GitHub social preview, 1280x640).
+     Self-contained: system fonts only (needs a CJK font, e.g. fonts-noto-cjk),
+     no network. Regeneration command: docs/launch/social-preview.md -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --line: #e7e5e4;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Arial, "Noto Sans CJK JP", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 88px 60px;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent), #14b8a6 60%, var(--accent-soft));
+  }
+  h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .tagline {
+    margin-top: 20px;
+    font-size: 30px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .tagline b { color: var(--ink); font-weight: 600; }
+  .example {
+    margin-top: 44px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
+    font-size: 27px;
+  }
+  .box {
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 28px;
+    box-shadow: 0 2px 10px rgba(28, 25, 23, 0.05);
+    white-space: nowrap;
+  }
+  .arrow { font-size: 34px; color: var(--muted); font-family: inherit; }
+  .label {
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-weight: 600;
+  }
+  .footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--muted);
+    gap: 32px;
+    white-space: nowrap;
+  }
+  .footer .langs b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Prompt Anonymizer</h1>
+    <div class="tagline">
+      Use frontier LLMs <b>without showing them your PII</b> —<br>
+      reversible, on-device anonymization.
+    </div>
+    <div class="example">
+      <div class="box">山田太郎の電話は090-1234-5678</div>
+      <div class="arrow">→</div>
+      <div class="box"><span class="label">&lt;人名_1&gt;</span>の電話は<span class="label">&lt;電話番号_1&gt;</span></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="langs"><b>日本語 · English · Español · Tiếng Việt</b> · browser / CLI / proxy</div>
+    <div>MIT · github.com/akazah/prompt-anonymizer</div>
+  </div>
+</body>
+</html>
