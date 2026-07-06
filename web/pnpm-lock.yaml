@@ -26,6 +26,9 @@ importers:
       '@prompt-anonymizer/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       '@types/chrome':
         specifier: ^0.2.2
@@ -38,6 +41,10 @@ importers:
         version: 8.1.3(@types/node@26.1.0)
 
   apps/proxy-admin:
+    dependencies:
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       typescript:
         specifier: ^6.0.3
@@ -51,6 +58,9 @@ importers:
       '@prompt-anonymizer/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@prompt-anonymizer/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
     devDependencies:
       typescript:
         specifier: ^6.0.3
@@ -168,6 +178,12 @@ importers:
       vitest:
         specifier: ^4.1.9
         version: 4.1.9(@types/node@26.1.0)(jsdom@28.1.0)(vite@8.1.3(@types/node@26.1.0))
+
+  packages/theme:
+    dependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
 
   packages/vue:
     dependencies:
@@ -295,6 +311,9 @@ packages:
     peerDependenciesMeta:
       '@noble/hashes':
         optional: true
+
+  '@fontsource-variable/inter@5.2.8':
+    resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
 
   '@huggingface/jinja@0.5.9':
     resolution: {integrity: sha512-uWTG+l3VJRsl7EXxYizuL3P+cCPoc3cRqbWWRcQN0FhejRfbdq0RNhCmbY/YDtnTcz9icdLYuLDjsnz4d8JMuw==}
@@ -1483,6 +1502,8 @@ snapshots:
     optional: true
 
   '@exodus/bytes@1.15.1': {}
+
+  '@fontsource-variable/inter@5.2.8': {}
 
   '@huggingface/jinja@0.5.9': {}
 
