@@ -7,6 +7,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Python: optional transformer NER backend (`PromptAnonymizer(ner_backend="hf")`,
+  CLI `--ner-backend hf`, `pip install "prompt-anonymizer[hf]"`). Adds a
+  Presidio `HuggingFaceNerRecognizer` on top of spaCy using the same model
+  family the TypeScript core runs via transformers.js
+  (`tsmatz/xlm-roberta-ner-japanese`, `dslim/bert-base-NER`), fully
+  on-device. Golden-set ja PERSON recall goes 0.82 → 1.00 and ja LOCATION
+  recall 0.78 → 1.00 (see docs/EVAL.md).
+- Python: `PromptAnonymizer.anonymize_batch(texts, language, batch_size,
+  n_process)` built on Presidio's `BatchAnalyzerEngine` (spaCy `nlp.pipe`);
+  the eval harness and accuracy-regression tests now use it instead of a
+  per-case loop.
+- CREDIT_CARD detection in both cores and all languages (was Python/en
+  only, and undetected next to CJK text): a CJK-safe variant of Presidio's
+  credit card pattern (lookarounds instead of `\b`) with Luhn validation,
+  a matching TS regex recognizer, golden-set coverage and recall floors.
+- Python: US/NANP phone regex fallback recognizer (parity with the TS
+  core). Presidio's `PhoneRecognizer` validates against libphonenumber and
+  rejects well-formed numbers with unassigned area codes; golden-set en
+  PHONE_NUMBER recall goes 0.89 → 1.00.
+- TS core: on-device language auto-detection helper (`detectLanguage`,
+  `guessLanguage`). Uses Chrome's built-in `LanguageDetector` API
+  (Chrome 138+, on-device expert model; never triggers a model download)
+  with a script-range heuristic fallback everywhere else. The browser app
+  and Chrome extension language selectors gained an "Auto" option
+  (default in the extension flow for context-menu imports).
+
+### Changed
+- Both cores: `mergeSpans` / `merge_spans` no longer drop an overlapping
+  lower-score span entirely — the parts not covered by kept spans survive
+  as whitespace-trimmed remainder spans. Previously an NER address span
+  overlapping an already-masked postal code was discarded whole, leaking
+  the address text (e.g. `〒539-6608 福井県鴨川市…` kept the 福井県… part
+  unmasked when NER covered both). Covered by new tests in both cores plus
+  round-trip assertions.
+- Python: Presidio's context enhancement now runs in `whole_word` mode
+  (new in presidio-analyzer 2.2.361) instead of the default substring mode,
+  which could false-boost when a context word appears inside an unrelated
+  token (e.g. "TEL" in "hotel"). Golden-set metrics are unchanged. The
+  JP postal recognizer's context list gained 郵便 (Sudachi splits 郵便番号
+  into 郵便/番号, so the compound alone never matched a single lemma).
+- Python: regex execution is now capped via `REGEX_TIMEOUT_SECONDS=5`
+  (Presidio 2.2.362 feature; its default is 60s) as ReDoS
+  defense-in-depth. Override by exporting the variable.
+
+### Removed
+- `presidio-anonymizer` dependency: it was declared but never imported —
+  replacement/labeling has always been the custom reversible-label engine
+  in `labeling.py`.
+
 ### Fixed
 - TS core: NER no longer errors with "no available backend found. ERR:
   [webgpu] TypeError: … webgpuInit is not a function" on Safari/WebKit

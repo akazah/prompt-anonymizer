@@ -19,7 +19,19 @@ class JaPostalCodeRecognizer(PatternRecognizer):
         Pattern("jp_postal_bare", r"(?<![\d-])\d{3}-\d{4}(?![\d-])", 0.3),
     ]
 
-    CONTEXT: ClassVar[list[str]] = ["郵便番号", "住所", "宛先", "所在地", "〒", "postal", "zip"]
+    # Context matching compares whole lemmas; spaCy ja (Sudachi mode A)
+    # splits 郵便番号 into 郵便/番号, so the short unit 郵便 must be listed
+    # for the compound to count as context.
+    CONTEXT: ClassVar[list[str]] = [
+        "郵便番号",
+        "郵便",
+        "住所",
+        "宛先",
+        "所在地",
+        "〒",
+        "postal",
+        "zip",
+    ]
 
     def __init__(self, supported_language: str = "ja") -> None:
         super().__init__(

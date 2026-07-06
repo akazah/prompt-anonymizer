@@ -60,16 +60,54 @@ def load_labels(language: str) -> dict[str, str]:
     return {str(k): str(v) for k, v in data.items()}
 
 
-def merge_spans(spans: list[EntitySpan]) -> list[EntitySpan]:
-    """Drop overlapping spans, keeping the higher score (longer span on ties).
+# Whitespace trimmed from the edges of remainder segments. An explicit set
+# (rather than str.strip / String.trim) so both cores behave identically.
+_STRIP_CHARS = " \t\n\r\u3000"
 
+
+def merge_spans(spans: list[EntitySpan], text: str | None = None) -> list[EntitySpan]:
+    """Resolve overlaps, keeping the higher score (longer span on ties).
+
+    A span that overlaps an already-kept span is not dropped outright: the
+    parts not covered by kept spans survive as trimmed remainder spans.
+    Dropping the whole span would leak the non-overlapping text - e.g. an
+    NER address span that also covers an already-masked postal code.
+    When ``text`` is given, remainder edges are trimmed of whitespace.
     Returns spans sorted by start offset.
     """
     ordered = sorted(spans, key=lambda s: (-s.score, -(s.end - s.start), s.start))
     kept: list[EntitySpan] = []
     for span in ordered:
-        if all(span.end <= k.start or span.start >= k.end for k in kept):
+        blockers = sorted(
+            (k for k in kept if k.start < span.end and span.start < k.end),
+            key=lambda k: k.start,
+        )
+        if not blockers:
             kept.append(span)
+            continue
+        segments: list[tuple[int, int]] = []
+        cursor = span.start
+        for blocker in blockers:
+            if blocker.start > cursor:
+                segments.append((cursor, blocker.start))
+            cursor = max(cursor, blocker.end)
+        if cursor < span.end:
+            segments.append((cursor, span.end))
+        for seg_start, seg_end in segments:
+            if text is not None:
+                while seg_start < seg_end and text[seg_start] in _STRIP_CHARS:
+                    seg_start += 1
+                while seg_end > seg_start and text[seg_end - 1] in _STRIP_CHARS:
+                    seg_end -= 1
+            if seg_end > seg_start:
+                kept.append(
+                    EntitySpan(
+                        start=seg_start,
+                        end=seg_end,
+                        entity_type=span.entity_type,
+                        score=span.score,
+                    )
+                )
     return sorted(kept, key=lambda s: s.start)
 
 
@@ -83,7 +121,7 @@ def apply_labels(
     Identical source strings of the same entity type receive the same label.
     Returns the anonymized text and a ``label -> original`` mapping.
     """
-    merged = merge_spans(spans)
+    merged = merge_spans(spans, text)
 
     label_by_source: dict[tuple[str, str], str] = {}
     counters: dict[str, int] = {}

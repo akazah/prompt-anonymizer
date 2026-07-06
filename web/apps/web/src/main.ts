@@ -2,6 +2,7 @@ import {
   Anonymizer,
   RestoreSession,
   TransformersNerBackend,
+  detectLanguage,
   detectWebGpu,
   type AnonymizeResult,
   type Language,
@@ -31,6 +32,7 @@ app.innerHTML = `
     <div class="toolbar">
       <label>Language
         <select id="language">
+          <option value="auto">Auto / 自動判定</option>
           <option value="ja">日本語</option>
           <option value="en">English</option>
         </select>
@@ -160,10 +162,17 @@ function renderWithHighlights(text: string, labels: string[], cls: string): stri
   return html;
 }
 
+async function resolveLanguage(text: string): Promise<Language> {
+  // "Auto" resolves on-device: Chrome's built-in LanguageDetector when
+  // available, a script heuristic otherwise.
+  const value = languageEl.value;
+  return value === "auto" ? detectLanguage(text) : (value as Language);
+}
+
 async function runAnonymize(): Promise<void> {
   const text = inputEl.value;
   if (!text.trim()) return;
-  const language = languageEl.value as Language;
+  const language = await resolveLanguage(text);
   anonymizeBtn.disabled = true;
   anonymizeBtn.textContent = "Working…";
   try {
@@ -196,7 +205,10 @@ function flash(el: HTMLElement, message: string): void {
 
 $("#anonymize").addEventListener("click", () => void runAnonymize());
 $("#load-sample").addEventListener("click", () => {
-  inputEl.value = SAMPLES[languageEl.value as Language];
+  const value = languageEl.value;
+  const language: Language =
+    value === "auto" ? (navigator.language?.startsWith("ja") ? "ja" : "en") : (value as Language);
+  inputEl.value = SAMPLES[language];
 });
 $("#copy").addEventListener("click", () => {
   if (!lastResult) return;

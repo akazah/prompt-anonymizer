@@ -11,8 +11,10 @@ MIN_RECALL = {
     ("ja", "PHONE_NUMBER"): 0.9,
     ("ja", "EMAIL_ADDRESS"): 0.9,
     ("ja", "JP_POSTAL_CODE"): 0.9,
+    ("ja", "CREDIT_CARD"): 0.9,
     ("en", "PHONE_NUMBER"): 0.9,
     ("en", "EMAIL_ADDRESS"): 0.9,
+    ("en", "CREDIT_CARD"): 0.9,
     ("en", "PERSON"): 0.7,
 }
 
@@ -25,7 +27,10 @@ def test_recall_floor(language: str) -> None:
 
     cases = generate_cases(language, count=60)
     pa = PromptAnonymizer(languages=[language], model_size="sm")
-    predictions = [pa.anonymize(c.text, language=language).entities for c in cases]
+    predictions = [
+        r.entities
+        for r in pa.anonymize_batch([c.text for c in cases], language=language, batch_size=16)
+    ]
     report = evaluate_cases(cases, predictions)
 
     for (lang, entity), floor in MIN_RECALL.items():

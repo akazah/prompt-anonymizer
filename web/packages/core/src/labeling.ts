@@ -32,15 +32,47 @@ export const LABELS: Record<Language, Record<string, string>> = {
   },
 };
 
-/** Drop overlapping spans, keeping the higher score (longer span on ties). */
-export function mergeSpans(spans: EntitySpan[]): EntitySpan[] {
+// Whitespace trimmed from the edges of remainder segments. An explicit set
+// (rather than String.trim / str.strip) so both cores behave identically.
+const STRIP_CHARS = " \t\n\r\u3000";
+
+/**
+ * Resolve overlaps, keeping the higher score (longer span on ties).
+ *
+ * A span that overlaps an already-kept span is not dropped outright: the
+ * parts not covered by kept spans survive as trimmed remainder spans.
+ * Dropping the whole span would leak the non-overlapping text — e.g. an
+ * NER address span that also covers an already-masked postal code.
+ * When `text` is given, remainder edges are trimmed of whitespace.
+ */
+export function mergeSpans(spans: EntitySpan[], text?: string): EntitySpan[] {
   const ordered = [...spans].sort(
     (a, b) => b.score - a.score || b.end - b.start - (a.end - a.start) || a.start - b.start,
   );
   const kept: EntitySpan[] = [];
   for (const span of ordered) {
-    if (kept.every((k) => span.end <= k.start || span.start >= k.end)) {
+    const blockers = kept
+      .filter((k) => k.start < span.end && span.start < k.end)
+      .sort((a, b) => a.start - b.start);
+    if (blockers.length === 0) {
       kept.push(span);
+      continue;
+    }
+    const segments: Array<[number, number]> = [];
+    let cursor = span.start;
+    for (const blocker of blockers) {
+      if (blocker.start > cursor) segments.push([cursor, blocker.start]);
+      cursor = Math.max(cursor, blocker.end);
+    }
+    if (cursor < span.end) segments.push([cursor, span.end]);
+    for (let [segStart, segEnd] of segments) {
+      if (text !== undefined) {
+        while (segStart < segEnd && STRIP_CHARS.includes(text[segStart]!)) segStart++;
+        while (segEnd > segStart && STRIP_CHARS.includes(text[segEnd - 1]!)) segEnd--;
+      }
+      if (segEnd > segStart) {
+        kept.push({ start: segStart, end: segEnd, entityType: span.entityType, score: span.score });
+      }
     }
   }
   return kept.sort((a, b) => a.start - b.start);
@@ -51,7 +83,7 @@ export function applyLabels(
   spans: EntitySpan[],
   labels: Record<string, string>,
 ): { text: string; mapping: Record<string, string> } {
-  const merged = mergeSpans(spans);
+  const merged = mergeSpans(spans, text);
 
   const labelBySource = new Map<string, string>();
   const counters = new Map<string, number>();

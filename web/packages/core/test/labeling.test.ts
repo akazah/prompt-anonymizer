@@ -52,14 +52,52 @@ describe("applyLabels", () => {
 });
 
 describe("mergeSpans", () => {
-  it("prefers the higher score on overlap", () => {
+  it("prefers the higher score on overlap, keeping the loser's remainder", () => {
     const merged = mergeSpans([span(0, 10, "PERSON", 0.5), span(5, 15, "LOCATION", 0.9)]);
-    expect(merged).toEqual([span(5, 15, "LOCATION", 0.9)]);
+    expect(merged).toEqual([span(0, 5, "PERSON", 0.5), span(5, 15, "LOCATION", 0.9)]);
+  });
+
+  it("drops a span fully covered by a kept span", () => {
+    const merged = mergeSpans([span(0, 10, "LOCATION", 0.9), span(2, 8, "PERSON", 0.5)]);
+    expect(merged).toEqual([span(0, 10, "LOCATION", 0.9)]);
   });
 
   it("keeps non-overlapping spans sorted by start", () => {
     const merged = mergeSpans([span(10, 14, "PERSON"), span(0, 4, "PERSON")]);
     expect(merged.map((s) => s.start)).toEqual([0, 10]);
+  });
+
+  it("splits a low-score span around a kept span", () => {
+    const merged = mergeSpans([span(0, 20, "LOCATION", 0.5), span(8, 12, "JP_POSTAL_CODE", 1.0)]);
+    expect(merged).toEqual([
+      span(0, 8, "LOCATION", 0.5),
+      span(8, 12, "JP_POSTAL_CODE", 1.0),
+      span(12, 20, "LOCATION", 0.5),
+    ]);
+  });
+
+  it("trims whitespace from remainder edges when text is given", () => {
+    // NER span covers "〒539-6608 福井県鴨川市"; the postal recognizer wins
+    // the overlap and the address remainder must not keep the separator.
+    const text = "〒539-6608 福井県鴨川市";
+    const merged = mergeSpans(
+      [span(0, 15, "LOCATION", 0.85), span(0, 9, "JP_POSTAL_CODE", 1.0)],
+      text,
+    );
+    expect(merged).toEqual([span(0, 9, "JP_POSTAL_CODE", 1.0), span(10, 15, "LOCATION", 0.85)]);
+  });
+});
+
+describe("applyLabels with overlap remainders", () => {
+  it("masks the remainder and round-trips", () => {
+    const text = "〒539-6608 福井県鴨川市鍛冶ケ沢1丁目15番12号に送付。";
+    const { text: anonymized, mapping } = applyLabels(
+      text,
+      [span(0, 26, "LOCATION", 0.85), span(0, 9, "JP_POSTAL_CODE", 1.0)],
+      LABELS.ja,
+    );
+    expect(anonymized).not.toContain("福井県");
+    expect(deanonymize(anonymized, mapping)).toBe(text);
   });
 });
 

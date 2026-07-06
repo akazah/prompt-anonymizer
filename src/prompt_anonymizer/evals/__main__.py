@@ -40,9 +40,11 @@ and are not measured here. Regenerate with
 
 | Language | Entity | Precision | Recall | F1 | Support |
 |---|---|---|---|---|---|
+| ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 """
@@ -57,6 +59,13 @@ def main() -> None:
     parser.add_argument("--cases", type=int, default=200, help="cases per language")
     parser.add_argument("--languages", nargs="+", default=["ja", "en"])
     parser.add_argument("--model-size", default="sm", choices=["sm", "lg"])
+    parser.add_argument(
+        "--ner-backend",
+        default="spacy",
+        choices=["spacy", "hf"],
+        help="NER backend; 'hf' needs the hf extra and downloads models on first use",
+    )
+    parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--output", type=Path, default=Path("docs/EVAL.md"))
     parser.add_argument("--golden-dir", type=Path, default=Path("tests/golden"))
     args = parser.parse_args()
@@ -73,20 +82,22 @@ def main() -> None:
         )
         print(f"[{language}] exported {len(cases)} cases -> {golden_path}")
 
-        pa = PromptAnonymizer(languages=[language], model_size=args.model_size)
-        predictions = []
-        for i, case in enumerate(cases):
-            predictions.append(pa.anonymize(case.text, language=language).entities)
-            if (i + 1) % 50 == 0:
-                print(f"[{language}] analyzed {i + 1}/{len(cases)}")
-        reports.append(evaluate_cases(cases, predictions))
+        pa = PromptAnonymizer(
+            languages=[language], model_size=args.model_size, ner_backend=args.ner_backend
+        )
+        results = pa.anonymize_batch(
+            [case.text for case in cases], language=language, batch_size=args.batch_size
+        )
+        print(f"[{language}] analyzed {len(cases)} cases (batched)")
+        reports.append(evaluate_cases(cases, [r.entities for r in results]))
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     section = [TABLE_HEADER]
     for report in reports:
         section.extend(row + "\n" for row in report.to_markdown_rows())
     section.append(
-        f"\nModel size: `{args.model_size}` / cases per language: {args.cases} (seed fixed).\n"
+        f"\nModel size: `{args.model_size}` / NER backend: `{args.ner_backend}` / "
+        f"cases per language: {args.cases} (seed fixed).\n"
     )
 
     # Replace only the marked Python block so the TS section survives.

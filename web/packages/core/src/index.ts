@@ -23,7 +23,12 @@ export type {
   RestoreResult,
   RestoreSessionOptions,
 } from "./session.js";
-export { detectWithRegex, isValidMyNumber, myNumberCheckDigit } from "./recognizers.js";
+export {
+  detectWithRegex,
+  isValidCreditCard,
+  isValidMyNumber,
+  myNumberCheckDigit,
+} from "./recognizers.js";
 export {
   DEFAULT_NER_MODELS,
   TransformersNerBackend,
@@ -31,6 +36,7 @@ export {
   findSpan,
 } from "./ner.js";
 export type { NerDevice, NerProgress, TransformersNerOptions } from "./ner.js";
+export { detectLanguage, guessLanguage, resetLanguageDetector } from "./language-detect.js";
 
 const DEFAULT_SCORE_THRESHOLD = 0.4;
 
@@ -70,7 +76,7 @@ export class Anonymizer {
         !this.allowList.includes(text.slice(s.start, s.end)),
     );
     const { text: anonymized, mapping } = applyLabels(text, spans, LABELS[language]);
-    return { text: anonymized, mapping, entities: mergeSpans(spans) };
+    return { text: anonymized, mapping, entities: mergeSpans(spans, text) };
   }
 
   deanonymize(text: string, mapping: Record<string, string>): string {
