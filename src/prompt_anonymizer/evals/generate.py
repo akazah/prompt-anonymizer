@@ -99,6 +99,38 @@ def _credit_card(fake: Faker, rng: random.Random) -> str:
     return number
 
 
+def _mod97_digits(num_str: str) -> int:
+    remainder = 0
+    for ch in num_str:
+        remainder = (remainder * 10 + int(ch)) % 97
+    return remainder
+
+
+def _us_ssn(fake: Faker) -> str:
+    """A valid-format US SSN from Faker, rejecting known-invalid groups."""
+    for _ in range(100):
+        ssn = fake.ssn()
+        area, group, serial = ssn.split("-")
+        if area in ("000", "666") or area.startswith("9"):
+            continue
+        if group == "00" or serial == "0000":
+            continue
+        return ssn
+    return fake.ssn()
+
+
+def _iban(rng: random.Random) -> str:
+    """A valid German IBAN (DE + mod-97 check digits + 18-digit BBAN)."""
+    bban = "".join(str(rng.randint(0, 9)) for _ in range(18))
+    rearranged = bban + "DE" + "00"
+    digits = "".join(ch if ch.isdigit() else str(ord(ch) - ord("A") + 10) for ch in rearranged)
+    check = 98 - _mod97_digits(digits)
+    iban = f"DE{check:02d}{bban}"
+    if rng.random() < 0.5:
+        return " ".join(iban[i : i + 4] for i in range(0, len(iban), 4))
+    return iban
+
+
 def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
     b = _Builder()
     name = fake.name()
@@ -107,6 +139,7 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     phone = _ja_phone(rng)
     postal = _ja_postal(rng)
     city = fake.address().split("\n")[0]
+    iban = _iban(rng)
 
     if genre == "request":
         b.lit("お世話になっております。").pii(name, "PERSON").lit(
@@ -121,7 +154,7 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             "。決定事項: 資料は "
         ).pii(email, "EMAIL_ADDRESS").lit(" へ送付する。担当者直通は ").pii(
             phone, "PHONE_NUMBER"
-        ).lit("。")
+        ).lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit("。")
     else:
         card = _credit_card(fake, rng)
         b.lit("お問い合わせありがとうございます。ご登録のお名前は ").pii(name, "PERSON").lit(
@@ -142,6 +175,8 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     email = fake.ascii_safe_email()
     phone = _us_phone(rng)
     city = fake.city()
+    ssn = _us_ssn(fake)
+    iban = _iban(rng)
 
     if genre == "request":
         b.lit("Hi, my name is ").pii(name, "PERSON").lit(
@@ -154,7 +189,9 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             ". Next meeting will be held in "
         ).pii(city, "LOCATION").lit(". Action item: send the deck to ").pii(
             email, "EMAIL_ADDRESS"
-        ).lit(". Direct line: ").pii(phone, "PHONE_NUMBER").lit(".")
+        ).lit(". Direct line: ").pii(phone, "PHONE_NUMBER").lit(". Payroll: SSN ").pii(
+            ssn, "US_SSN"
+        ).lit(", reimbursement IBAN ").pii(iban, "IBAN_CODE").lit(".")
     else:
         card = _credit_card(fake, rng)
         b.lit("Thank you for contacting support. We have your name as ").pii(name, "PERSON").lit(

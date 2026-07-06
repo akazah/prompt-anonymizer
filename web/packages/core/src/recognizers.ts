@@ -4,6 +4,7 @@
  * LOCATION) come from the pluggable NER backend instead.
  */
 
+import { isValidIBAN } from "ibantools";
 import type { EntitySpan, Language } from "./types.js";
 
 interface RegexRule {
@@ -31,6 +32,37 @@ export function isValidMyNumber(candidate: string): boolean {
   const normalized = candidate.replace(/[- ]/g, "");
   if (!/^\d{12}$/.test(normalized)) return false;
   return myNumberCheckDigit(normalized.slice(0, 11)) === Number(normalized[11]);
+}
+
+/** Mirrors Presidio's UsSsnRecognizer.invalidate_result (parity with the Python core). */
+export function isValidUsSsn(candidate: string): boolean {
+  const delimiters = candidate.match(/[.\- ]/g) ?? [];
+  if (delimiters.length > 0) {
+    const first = delimiters[0]!;
+    if (!delimiters.every((d) => d === first)) return false;
+  }
+  const digits = candidate.replace(/[.\- ]/g, "");
+  if (!/^\d{9}$/.test(digits)) return false;
+  if (new Set(digits).size === 1) return false;
+  if (digits.slice(3, 5) === "00") return false;
+  if (digits.slice(5) === "0000") return false;
+  const blockedPrefixes = ["000", "666", "123456789", "98765432", "078051120"];
+  if (blockedPrefixes.some((prefix) => digits.startsWith(prefix))) return false;
+  return true;
+}
+
+export function isValidIban(candidate: string): boolean {
+  const compact = candidate.replace(/[ -]/g, "");
+  return isValidIBAN(compact);
+}
+
+/**
+ * Japanese phone numbers are 10 digits (11 for 050 IP phones). Mirrors
+ * `JaPhoneRegexRecognizer.validate_result` in the Python core.
+ */
+export function isValidJaPhoneLength(candidate: string): boolean {
+  const length = candidate.replace(/\D/g, "").length;
+  return length === 10 || length === 11;
 }
 
 /** Luhn checksum used by credit card numbers (parity with the Python core). */
@@ -70,12 +102,15 @@ const RULES: RegexRule[] = [
     score: 0.7,
     languages: "all",
   },
-  // JP landline: 03-1234-5678 / 0123-45-6789
+  // JP landline: 03-1234-5678 / 0123-45-6789. JP numbers are 10 digits
+  // (11 for 050 IP phones); the digit-count check keeps 9-digit strings
+  // like US SSNs (097-87-8191) from being mistyped as phone numbers.
   {
     entityType: "PHONE_NUMBER",
     regex: /(?<!\d)0\d{1,4}[-(]\d{1,4}[-)]\d{4}(?!\d)/g,
     score: 0.6,
     languages: "all",
+    validate: isValidJaPhoneLength,
   },
   // US: (333) 333-3333 / 333-333-3333 / +1 333 333 3333
   {
@@ -115,6 +150,23 @@ const RULES: RegexRule[] = [
     score: 1.0,
     languages: "all",
     validate: isValidCreditCard,
+  },
+  {
+    entityType: "US_SSN",
+    regex: /(?<![\d.-])\d{3}[- .]\d{2}[- .]\d{4}(?![\d.-])/g,
+    score: 0.5,
+    languages: "all",
+    validate: isValidUsSsn,
+  },
+  // Bounded quantifiers only ({2,7} and {1,3}); no nested unbounded repeats.
+  // Checksum-backed validation lifts matches to max score, mirroring CREDIT_CARD.
+  {
+    entityType: "IBAN_CODE",
+    regex:
+      /(?<![A-Za-z0-9])[A-Z]{2}\d{2}(?:[ -]?[A-Z0-9]{4}){2,7}(?:[ -]?[A-Z0-9]{1,3})?(?![A-Za-z0-9])/g,
+    score: 1.0,
+    languages: "all",
+    validate: isValidIban,
   },
 ];
 

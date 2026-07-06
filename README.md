@@ -58,6 +58,7 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (not on npm yet — build from `web/packages/cli`) | Same commands and flags as the Python CLI; transformers.js NER, fully on-device. |
 | **Web Component** | `@prompt-anonymizer/element` (not on npm yet) | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (not on npm yet) | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
+| **Local proxy + admin GUI** | `@prompt-anonymizer/proxy` (not on npm yet — build from `web/packages/proxy`) | OpenAI-compatible reverse proxy: point `OPENAI_BASE_URL` at it and PII is masked before leaving your machine, labels restored in responses (incl. streaming). Admin GUI on `http://127.0.0.1:8787/admin/`. See Quickstart below. |
 | **Commit hook / CI gate** | `prompt-anonymizer scan` (both CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-code PII gate for commit-time and CI checks: reports `file:line:col` and entity type, never the matched text. Offline and model-free by default. See below. |
 
 ## Quickstart (Python)
@@ -137,6 +138,28 @@ const { text: restored, unresolved } = await restore(llmReply);
 By default detection is regex-only (emails, phone numbers, …); pass a
 `ner` (e.g. `new TransformersNerBackend()` from `@prompt-anonymizer/core`)
 to also mask names and locations.
+
+## Quickstart (local proxy)
+
+Run the OpenAI-compatible proxy and point any client at it — PII is masked
+before the request leaves your machine and labels are restored in the
+response (streaming included). Mappings stay in proxy memory, per request:
+
+```bash
+# Not published to npm yet — build from the repo:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # listens on http://127.0.0.1:8787
+# Once published: npx @prompt-anonymizer/proxy
+
+# In your app / shell:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+The admin GUI at `http://127.0.0.1:8787/admin/` shows live status and
+redaction events (labels and counts only), edits the proxy config
+(upstream, NER, deny/allow lists) and offers a local-only anonymization
+playground. The proxy binds to `127.0.0.1` by default; original values are
+only revealable in the GUI when you explicitly enable `--record-mappings`.
 
 ## Commit-time / CI gate (`scan`)
 
@@ -223,8 +246,13 @@ the category has earned the skepticism.)
 | JP_MY_NUMBER | マイナンバー | MyNumber | pattern + check digit (custom) |
 | CREDIT_CARD | クレジットカード | CreditCard | pattern + Luhn check (both cores, ja/en) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | exact match |
+| US_SSN (opt-in) | 社会保障番号 | SSN | pattern + invalidation rules (both cores, ja/en) |
+| IBAN_CODE (opt-in) | IBAN | IBAN | pattern + mod-97 check (both cores, ja/en) |
 
 `deny_list` forces masking of specific strings; `allow_list` exempts them.
+Opt-in entities are not detected by default — request them explicitly:
+`PromptAnonymizer(entities=[...])`, `new Anonymizer({ entities })`, or
+`--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` on either CLI.
 
 ### Optional transformer NER backend (Python)
 

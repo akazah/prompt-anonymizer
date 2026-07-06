@@ -10,7 +10,7 @@ import os
 # override by exporting the variable themselves.
 os.environ.setdefault("REGEX_TIMEOUT_SECONDS", "5")
 
-from prompt_anonymizer.core import DEFAULT_ENTITIES, PromptAnonymizer
+from prompt_anonymizer.core import DEFAULT_ENTITIES, OPTIONAL_ENTITIES, PromptAnonymizer
 from prompt_anonymizer.exceptions import (
     ModelNotDownloadedError,
     PromptAnonymizerError,
@@ -23,6 +23,7 @@ __version__ = "0.2.0"
 
 __all__ = [
     "DEFAULT_ENTITIES",
+    "OPTIONAL_ENTITIES",
     "STRUCTURED_ENTITIES",
     "AnonymizeResult",
     "EntitySpan",

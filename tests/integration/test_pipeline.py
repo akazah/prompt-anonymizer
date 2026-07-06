@@ -143,3 +143,54 @@ def test_faker_roundtrip_50_cases(pa_ja, pa_en) -> None:
         for case in generate_cases(language, count=25):
             result = pa.anonymize(case.text, language=language)
             assert pa.deanonymize(result.text, result.mapping) == case.text
+
+
+@pytest.fixture(scope="module")
+def pa_en_opt_in():
+    from prompt_anonymizer.core import DEFAULT_ENTITIES, PromptAnonymizer
+
+    return PromptAnonymizer(
+        languages=["en"],
+        model_size="sm",
+        entities=[*DEFAULT_ENTITIES, "US_SSN", "IBAN_CODE"],
+    )
+
+
+@pytest.fixture(scope="module")
+def pa_ja_opt_in():
+    from prompt_anonymizer.core import DEFAULT_ENTITIES, PromptAnonymizer
+
+    return PromptAnonymizer(
+        languages=["ja"],
+        model_size="sm",
+        entities=[*DEFAULT_ENTITIES, "US_SSN", "IBAN_CODE"],
+    )
+
+
+def test_en_ssn_and_iban_opt_in(pa_en_opt_in) -> None:
+    text = "Payroll SSN 856-45-6780, reimbursement IBAN DE89 3704 0044 0532 0130 00."
+    result = pa_en_opt_in.anonymize(text, language="en")
+    assert "856-45-6780" not in result.text
+    assert "DE89 3704 0044 0532 0130 00" not in result.text
+    assert "<SSN_1>" in result.text
+    assert "<IBAN_1>" in result.text
+    assert pa_en_opt_in.deanonymize(result.text, result.mapping) == text
+
+
+def test_ja_iban_and_ssn_adjacent_to_cjk_opt_in(pa_ja_opt_in) -> None:
+    text = "社会保障番号は856-45-6780、振込先はDE89370400440532013000です"
+    result = pa_ja_opt_in.anonymize(text, language="ja")
+    assert "856-45-6780" not in result.text
+    assert "DE89370400440532013000" not in result.text
+    assert "<社会保障番号_1>" in result.text
+    assert "<IBAN_1>" in result.text
+    assert pa_ja_opt_in.deanonymize(result.text, result.mapping) == text
+
+
+def test_ssn_and_iban_not_masked_by_default(pa_en) -> None:
+    text = "Payroll SSN 856-45-6780, reimbursement IBAN DE89370400440532013000."
+    result = pa_en.anonymize(text, language="en")
+    assert "856-45-6780" in result.text
+    assert "DE89370400440532013000" in result.text
+    assert "<SSN_1>" not in result.text
+    assert "<IBAN_1>" not in result.text

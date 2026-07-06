@@ -22,6 +22,9 @@ DEFAULT_ENTITIES = [
     "CREDIT_CARD",
 ]
 
+# Opt-in entity types — pass via ``entities=`` on :class:`PromptAnonymizer`.
+OPTIONAL_ENTITIES = ["US_SSN", "IBAN_CODE"]
+
 _SPACY_MODELS = {
     "sm": {"en": "en_core_web_sm", "ja": "ja_core_news_sm"},
     "lg": {"en": "en_core_web_lg", "ja": "ja_core_news_lg"},
@@ -127,6 +130,7 @@ class PromptAnonymizer:
             UsPhoneRegexRecognizer,
             build_credit_card_recognizers,
             build_ja_phone_recognizers,
+            build_us_ssn_recognizers,
         )
 
         self._ensure_models()
@@ -174,6 +178,15 @@ class PromptAnonymizer:
         # mirroring the TS core.
         analyzer.registry.remove_recognizer("CreditCardRecognizer")
         for recognizer in build_credit_card_recognizers(self.languages):
+            analyzer.registry.add_recognizer(recognizer)
+
+        # Presidio's built-in UsSsnRecognizer is registered for ``en`` only
+        # and its \b anchors never match next to CJK text. Replace it with a
+        # CJK-safe variant covering every configured language.
+        # IBAN_CODE is available opt-in via Presidio's built-in IbanRecognizer
+        # (already registered for all languages, mod-97 validated).
+        analyzer.registry.remove_recognizer("UsSsnRecognizer")
+        for recognizer in build_us_ssn_recognizers(self.languages):
             analyzer.registry.add_recognizer(recognizer)
 
         if self.ner_backend == "hf":

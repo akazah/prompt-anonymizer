@@ -64,13 +64,35 @@ def anonymize(
     mapping_file: Annotated[
         Path | None, typer.Option(help="Write the label mapping to this JSON file.")
     ] = None,
+    entities: Annotated[
+        str | None,
+        typer.Option(
+            "--entities",
+            help=(
+                "Comma-separated entity types to detect (default: the built-in set). "
+                "Example: --entities PERSON,EMAIL_ADDRESS,US_SSN"
+            ),
+        ),
+    ] = None,
 ) -> None:
     """Anonymize PII in TEXT and print the result (and mapping)."""
     from prompt_anonymizer.core import PromptAnonymizer
 
     raw = _read_input(text, file)
     try:
-        pa = PromptAnonymizer(languages=[language], model_size=model_size, ner_backend=ner_backend)
+        if entities is not None:
+            pa = PromptAnonymizer(
+                languages=[language],
+                model_size=model_size,
+                ner_backend=ner_backend,
+                entities=[e.strip() for e in entities.split(",") if e.strip()],
+            )
+        else:
+            pa = PromptAnonymizer(
+                languages=[language],
+                model_size=model_size,
+                ner_backend=ner_backend,
+            )
         result = pa.anonymize(raw, language=language)
     except PromptAnonymizerError as exc:
         typer.secho(str(exc), fg=typer.colors.RED, err=True)

@@ -5,4 +5,6 @@ PHONE_NUMBER: 電話番号
 JP_POSTAL_CODE: 郵便番号
 JP_MY_NUMBER: マイナンバー
 CREDIT_CARD: クレジットカード
+US_SSN: 社会保障番号
+IBAN_CODE: IBAN
 CUSTOM: 秘匿情報

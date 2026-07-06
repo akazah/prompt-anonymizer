@@ -39,6 +39,7 @@ export interface CliIo {
 export interface EngineOptions {
   ner: boolean;
   io: CliIo;
+  entities?: string[];
   denyList?: string[];
   allowList?: string[];
 }
@@ -68,6 +69,7 @@ anonymize options:
   -f, --file FILE          Read text from a file.
   -l, --language LANG      en, ja or auto (default: auto).
       --no-ner             Disable the NER model (names/locations NOT masked).
+      --entities LIST      Comma-separated entity types (default: built-in set).
       --json               Output JSON with text, mapping and entities.
   -i, --interactive        Review the result before printing.
       --mapping-file FILE  Write the label mapping to this JSON file.
@@ -122,10 +124,11 @@ export function resultToDict(result: AnonymizeResult): Record<string, unknown> {
   };
 }
 
-function defaultEngineFactory({ ner, io, denyList, allowList }: EngineOptions): {
+function defaultEngineFactory({ ner, io, entities, denyList, allowList }: EngineOptions): {
   anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
 } {
-  if (!ner) return new Anonymizer({ denyList, allowList });
+  const anonymizerOptions = entities !== undefined ? { entities } : {};
+  if (!ner) return new Anonymizer({ ...anonymizerOptions, denyList, allowList });
   const lastPrinted = new Map<string, number>();
   const onProgress = (p: NerProgress): void => {
     // Download progress goes to stderr so stdout stays pipeable.
@@ -139,6 +142,7 @@ function defaultEngineFactory({ ner, io, denyList, allowList }: EngineOptions): 
   // supports cuda/webgpu/cpu in Node, and "auto" would resolve to the
   // browser-only "wasm" device.
   return new Anonymizer({
+    ...anonymizerOptions,
     ner: new TransformersNerBackend({ device: "cpu", onProgress }),
     denyList,
     allowList,
@@ -158,6 +162,7 @@ async function runAnonymize(
       file: { type: "string", short: "f" },
       language: { type: "string", short: "l", default: "auto" },
       ner: { type: "boolean", default: true },
+      entities: { type: "string" },
       json: { type: "boolean", default: false },
       interactive: { type: "boolean", short: "i", default: false },
       "mapping-file": { type: "string" },
@@ -168,7 +173,8 @@ async function runAnonymize(
   const language = await resolveLanguage(values.language, raw);
   if (!values.ner) io.err(NER_OFF_WARNING);
 
-  const engine = engineFactory({ ner: values.ner, io });
+  const entities = values.entities?.split(",").map((s) => s.trim()).filter(Boolean);
+  const engine = engineFactory({ ner: values.ner, entities, io });
   const result = await engine.anonymize(raw, { language });
 
   if (values.interactive) {
