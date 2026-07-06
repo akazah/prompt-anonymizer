@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { Anonymizer } from "../src/index.js";
+import { Anonymizer, DEFAULT_ENTITIES, OPTIONAL_ENTITIES } from "../src/index.js";
 import type { EntitySpan, Language, NerBackend } from "../src/types.js";
 
 /** Deterministic mock NER: marks configured strings wherever they occur. */
@@ -67,5 +67,47 @@ describe("Anonymizer", () => {
       language: "en",
     });
     expect(result.text).toBe("Call <Phone_1> or mail <Email_1>");
+  });
+
+  it("does not mask optional entities unless requested", async () => {
+    const text = "SSN 856-45-6780 and IBAN DE89370400440532013000";
+    const anonymizer = new Anonymizer();
+    const result = await anonymizer.anonymize(text, { language: "en" });
+    expect(result.text).toBe(text);
+    expect(result.mapping).toEqual({});
+  });
+
+  it("masks optional entities when explicitly requested", async () => {
+    const textEn = "SSN 856-45-6780 and IBAN DE89370400440532013000";
+    const anonymizerEn = new Anonymizer({
+      entities: [...DEFAULT_ENTITIES, ...OPTIONAL_ENTITIES],
+    });
+    const resultEn = await anonymizerEn.anonymize(textEn, { language: "en" });
+    expect(resultEn.text).not.toContain("856-45-6780");
+    expect(resultEn.text).not.toContain("DE89370400440532013000");
+    expect(resultEn.text).toContain("<SSN_1>");
+    expect(resultEn.text).toContain("<IBAN_1>");
+    expect(anonymizerEn.deanonymize(resultEn.text, resultEn.mapping)).toBe(textEn);
+
+    const textJa = "社会保障番号は856-45-6780、振込先はDE89370400440532013000です";
+    const anonymizerJa = new Anonymizer({
+      entities: [...DEFAULT_ENTITIES, ...OPTIONAL_ENTITIES],
+    });
+    const resultJa = await anonymizerJa.anonymize(textJa, { language: "ja" });
+    expect(resultJa.text).not.toContain("856-45-6780");
+    expect(resultJa.text).not.toContain("DE89370400440532013000");
+    expect(resultJa.text).toContain("<社会保障番号_1>");
+    expect(resultJa.text).toContain("<IBAN_1>");
+    expect(anonymizerJa.deanonymize(resultJa.text, resultJa.mapping)).toBe(textJa);
+  });
+
+  it("filters NER spans to the requested entity set", async () => {
+    const anonymizer = new Anonymizer({
+      ner: new MockNer({ "Jane Doe": "PERSON" }),
+      entities: ["EMAIL_ADDRESS"],
+    });
+    const result = await anonymizer.anonymize("Jane Doe wrote to a@b.co", { language: "en" });
+    expect(result.text).toContain("Jane Doe");
+    expect(result.text).toContain("<Email_1>");
   });
 });
