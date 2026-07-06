@@ -42,6 +42,9 @@ importers:
 
   apps/proxy-admin:
     dependencies:
+      '@prompt-anonymizer/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@prompt-anonymizer/theme':
         specifier: workspace:*
         version: link:../../packages/theme

@@ -9,11 +9,10 @@
 
 import {
   Anonymizer,
-  LANGUAGE_DISPLAY_NAMES,
   RestoreSession,
-  SUPPORTED_LANGUAGES,
   detectLanguage,
   isLanguage,
+  languagePickerEntries,
   type AnonymizeResult,
   type Language,
   type MappingStore,
@@ -25,9 +24,9 @@ import { PANEL_STYLES } from "./styles.js";
 const DEFAULT_TAG = "prompt-anonymizer";
 
 function languageOptionsMarkup(): string {
-  return SUPPORTED_LANGUAGES.map(
-    (l) => `<option value="${l}">${LANGUAGE_DISPLAY_NAMES[l]}</option>`,
-  ).join("");
+  return languagePickerEntries({ auto: true })
+    .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+    .join("");
 }
 
 function createPanelMarkup(): string {
@@ -41,7 +40,6 @@ function createPanelMarkup(): string {
       <div class="toolbar">
         <label>Language
           <select class="language">
-            <option value="auto">Auto / 自動判定</option>
             ${languageOptionsMarkup()}
           </select>
         </label>

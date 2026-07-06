@@ -3,6 +3,8 @@
  * (the app cannot depend on `@prompt-anonymizer/proxy` without a workspace cycle).
  */
 
+import type { Language, LanguageOption } from "@prompt-anonymizer/core/languages";
+
 /** Runtime-mutable proxy configuration (GET/PUT `/admin/api/config`). */
 export interface ProxyConfig {
   /** Upstream OpenAI-compatible base URL, e.g. `https://api.openai.com`. */
@@ -10,7 +12,7 @@ export interface ProxyConfig {
   /** Use the transformers.js NER model (names & locations). */
   ner: boolean;
   /** Language for detection; `auto` = on-device detection per request. */
-  language: "auto" | "en" | "ja" | "es" | "vi";
+  language: LanguageOption;
   /** Strings to always mask (labelled CUSTOM / 秘匿情報). */
   denyList: string[];
   /** Strings to never mask even when detected. */
@@ -50,7 +52,7 @@ export interface RedactionEvent {
   path: string;
   /** `model` from the request body, when present. */
   model?: string;
-  language: "en" | "ja" | "es" | "vi";
+  language: Language;
   stream: boolean;
   /** entityType -> number of masked occurrences, e.g. `{ PERSON: 2 }`. */
   entityCounts: Record<string, number>;
@@ -82,7 +84,7 @@ export interface EventMappingResponse {
 export interface PreviewRequest {
   text: string;
   /** Defaults to `auto`. */
-  language?: "auto" | "en" | "ja" | "es" | "vi";
+  language?: LanguageOption;
 }
 
 /**
@@ -95,7 +97,7 @@ export interface PreviewResponse {
   anonymized: string;
   mapping: Record<string, string>;
   entities: Array<{ start: number; end: number; entity_type: string; score: number }>;
-  language: "en" | "ja" | "es" | "vi";
+  language: Language;
 }
 
 export interface AdminErrorResponse {
