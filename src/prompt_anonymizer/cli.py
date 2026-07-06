@@ -99,6 +99,137 @@ def anonymize(
         print(result.text)
 
 
+_SCAN_NER_OFF_NOTICE = (
+    "Note: NER is off - names and locations are NOT scanned "
+    "(pass --ner to enable; requires spaCy models)."
+)
+
+
+def _line_col(text: str, offset: int) -> tuple[int, int]:
+    """1-based line and column of a character offset."""
+    line = text.count("\n", 0, offset) + 1
+    return line, offset - text.rfind("\n", 0, offset)
+
+
+def _scan_inputs(
+    files: list[Path] | None, text: str | None
+) -> list[tuple[str, str]]:
+    """Resolve scan targets to ``(display name, content)`` pairs."""
+    if files:
+        if text is not None:
+            raise typer.BadParameter("Provide FILES or --text, not both.")
+        inputs: list[tuple[str, str]] = []
+        for path in files:
+            try:
+                inputs.append((str(path), path.read_text(encoding="utf-8")))
+            except (OSError, UnicodeDecodeError) as exc:
+                typer.secho(f"cannot read {path}: {exc}", fg=typer.colors.RED, err=True)
+                raise typer.Exit(code=2) from exc
+        return inputs
+    return [("<text>" if text is not None else "<stdin>", _read_input(text, None))]
+
+
+@app.command()
+def scan(
+    files: Annotated[
+        list[Path] | None,
+        typer.Argument(help="Files to scan (e.g. staged files passed by pre-commit)."),
+    ] = None,
+    text: Annotated[str | None, typer.Option("--text", "-t", help="Text to scan.")] = None,
+    language: Annotated[
+        str, typer.Option("--language", "-l", help="Language for --ner: en, ja or auto.")
+    ] = "auto",
+    ner: Annotated[
+        bool,
+        typer.Option(
+            "--ner/--no-ner",
+            help="Also scan names/locations with the NER model (requires spaCy models).",
+        ),
+    ] = False,
+    deny: Annotated[
+        list[str] | None,
+        typer.Option("--deny", help="Term that must never appear (repeatable)."),
+    ] = None,
+    allow: Annotated[
+        list[str] | None,
+        typer.Option("--allow", help="Term to ignore when detected (repeatable)."),
+    ] = None,
+    as_json: Annotated[
+        bool, typer.Option("--json", help="Output findings as JSON (locations and types only).")
+    ] = False,
+) -> None:
+    """Fail (exit 1) when PII is found - a commit-time / CI gate.
+
+    Reports file:line:col and the entity type per finding; the matched text
+    itself is never printed. By default only structured PII (emails, phone
+    numbers, postal codes, My Number, credit cards) and --deny terms are
+    scanned - fast, offline, no models needed. Exit codes: 0 = clean,
+    1 = PII found, 2 = error.
+    """
+    from prompt_anonymizer.core import PromptAnonymizer
+    from prompt_anonymizer.labeling import EntitySpan
+    from prompt_anonymizer.scan import guess_language, scan_text
+
+    if language not in ("en", "ja", "auto"):
+        raise typer.BadParameter("Language must be en, ja or auto.")
+    deny = deny or []
+    allow = allow or []
+    inputs = _scan_inputs(files, text)
+    if not ner:
+        typer.secho(_SCAN_NER_OFF_NOTICE, fg=typer.colors.YELLOW, err=True)
+
+    anonymizers: dict[str, PromptAnonymizer] = {}
+
+    def spans_for(content: str) -> list[EntitySpan]:
+        if not ner:
+            return scan_text(content, deny_list=deny, allow_list=allow)
+        lang = guess_language(content) if language == "auto" else language
+        if lang not in anonymizers:
+            anonymizers[lang] = PromptAnonymizer(
+                languages=[lang], deny_list=deny, allow_list=allow
+            )
+        return anonymizers[lang].anonymize(content, language=lang).entities
+
+    findings: list[dict[str, object]] = []
+    try:
+        for name, content in inputs:
+            for span in spans_for(content):
+                line, column = _line_col(content, span.start)
+                findings.append(
+                    {
+                        "file": name,
+                        "line": line,
+                        "column": column,
+                        "start": span.start,
+                        "end": span.end,
+                        "entity_type": span.entity_type,
+                        "score": span.score,
+                    }
+                )
+    except PromptAnonymizerError as exc:
+        typer.secho(str(exc), fg=typer.colors.RED, err=True)
+        raise typer.Exit(code=2) from exc
+
+    if as_json:
+        print(json.dumps({"findings": findings, "inputs": len(inputs)}, ensure_ascii=False))
+    else:
+        for f in findings:
+            print(
+                f"{f['file']}:{f['line']}:{f['column']}: "
+                f"{f['entity_type']} (score {f['score']:.2f})"
+            )
+
+    if findings:
+        typer.secho(
+            f"PII found: {len(findings)} finding(s) in "
+            f"{len({f['file'] for f in findings})} of {len(inputs)} input(s).",
+            fg=typer.colors.RED,
+            err=True,
+        )
+        raise typer.Exit(code=1)
+    typer.secho(f"No PII found in {len(inputs)} input(s).", fg=typer.colors.GREEN, err=True)
+
+
 @app.command()
 def deanonymize(
     text: Annotated[str | None, typer.Option("--text", "-t", help="Text to restore.")] = None,

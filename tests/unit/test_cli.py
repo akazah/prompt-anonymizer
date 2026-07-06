@@ -100,3 +100,101 @@ def test_anonymize_unsupported_language_fails_cleanly() -> None:
     result = runner.invoke(app, ["anonymize", "--text", "hi", "--language", "xx"])
     assert result.exit_code == 1
     assert "Traceback" not in result.output
+
+
+# -- scan (commit-time / CI gate; engine-free, no models needed) ------------
+
+
+def test_scan_clean_file_exits_zero(tmp_path: Path) -> None:
+    clean = tmp_path / "clean.txt"
+    clean.write_text("nothing sensitive here\n", encoding="utf-8")
+    result = runner.invoke(app, ["scan", str(clean)])
+    assert result.exit_code == 0
+    assert "No PII found" in result.output
+
+
+def test_scan_finds_pii_exits_one_and_never_prints_values(tmp_path: Path) -> None:
+    dirty = tmp_path / "dirty.txt"
+    dirty.write_text("line one\ncall 090-1234-5678 or john@example.com\n", encoding="utf-8")
+    result = runner.invoke(app, ["scan", str(dirty)])
+    assert result.exit_code == 1
+    assert f"{dirty}:2:6: PHONE_NUMBER" in result.output
+    assert f"{dirty}:2:23: EMAIL_ADDRESS" in result.output
+    # P0: the gate must never echo the matched PII itself.
+    assert "090-1234-5678" not in result.output
+    assert "john@example.com" not in result.output
+
+
+def test_scan_json_reports_locations_only(tmp_path: Path) -> None:
+    dirty = tmp_path / "dirty.txt"
+    dirty.write_text("mail: a@b.co", encoding="utf-8")
+    result = runner.invoke(app, ["scan", "--json", str(dirty)])
+    assert result.exit_code == 1
+    payload = json.loads(result.stdout)
+    assert payload["inputs"] == 1
+    (finding,) = payload["findings"]
+    assert finding == {
+        "file": str(dirty),
+        "line": 1,
+        "column": 7,
+        "start": 6,
+        "end": 12,
+        "entity_type": "EMAIL_ADDRESS",
+        "score": 1.0,
+    }
+    assert "a@b.co" not in result.stdout
+
+
+def test_scan_text_and_stdin_inputs() -> None:
+    result = runner.invoke(app, ["scan", "-t", "call 090-1234-5678"])
+    assert result.exit_code == 1
+    assert "<text>:1:6: PHONE_NUMBER" in result.output
+
+    result = runner.invoke(app, ["scan"], input="john@example.com\n")
+    assert result.exit_code == 1
+    assert "<stdin>:1:1: EMAIL_ADDRESS" in result.output
+
+
+def test_scan_deny_and_allow_lists() -> None:
+    result = runner.invoke(app, ["scan", "-t", "ProjectXの件", "--deny", "ProjectX"])
+    assert result.exit_code == 1
+    assert "CUSTOM" in result.output
+
+    result = runner.invoke(
+        app, ["scan", "-t", "mail support@example.com", "--allow", "support@example.com"]
+    )
+    assert result.exit_code == 0
+
+
+def test_scan_warns_when_ner_off() -> None:
+    result = runner.invoke(app, ["scan", "-t", "hello"])
+    assert result.exit_code == 0
+    assert "names and locations are NOT scanned" in result.output
+
+
+def test_scan_missing_file_exits_two(tmp_path: Path) -> None:
+    result = runner.invoke(app, ["scan", str(tmp_path / "missing.txt")])
+    assert result.exit_code == 2
+    assert "cannot read" in result.output
+
+
+def test_scan_rejects_files_and_text_together(tmp_path: Path) -> None:
+    clean = tmp_path / "clean.txt"
+    clean.write_text("x", encoding="utf-8")
+    result = runner.invoke(app, ["scan", str(clean), "-t", "y"])
+    assert result.exit_code == 2
+
+
+def test_scan_rejects_unsupported_language() -> None:
+    result = runner.invoke(app, ["scan", "-t", "hi", "-l", "xx"])
+    assert result.exit_code == 2
+
+
+@pytest.mark.integration
+def test_scan_ner_detects_person() -> None:
+    result = runner.invoke(app, ["scan", "--ner", "-t", "山田太郎の電話は090-1234-5678"])
+    assert result.exit_code == 1
+    assert "PERSON" in result.output
+    assert "PHONE_NUMBER" in result.output
+    assert "山田太郎" not in result.output
+    assert "090-1234-5678" not in result.output

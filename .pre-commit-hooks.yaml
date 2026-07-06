@@ -1,0 +1,23 @@
+# Commit-time PII gate for the https://pre-commit.com framework.
+#
+# Consume from another repository's .pre-commit-config.yaml:
+#
+#   repos:
+#     - repo: https://github.com/akazah/prompt-anonymizer
+#       rev: main  # pin to a tag once one ships with this hook
+#       hooks:
+#         - id: prompt-anonymizer-scan
+#           # args: [--deny, ProjectX, --allow, support@example.com]
+#
+# The hook runs `prompt-anonymizer scan` on the staged files: offline,
+# deterministic and model-free (structured PII - emails, phone numbers,
+# JP postal codes, My Number, credit cards - plus --deny terms). It
+# reports file:line:col and the entity type only; the matched text is
+# never printed. Add `args: [--ner]` to also scan names/locations (the
+# hook env then needs spaCy models via additional_dependencies).
+- id: prompt-anonymizer-scan
+  name: prompt-anonymizer scan (PII gate)
+  description: Fail the commit when staged files contain structured PII (emails, phone numbers, JP postal codes, My Number, credit cards) or deny-listed terms.
+  entry: prompt-anonymizer scan
+  language: python
+  types: [text]

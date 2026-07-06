@@ -206,26 +206,6 @@ class PromptAnonymizer:
                 )
             )
 
-    def _deny_list_spans(self, text: str) -> list[EntitySpan]:
-        """Substring search for deny-listed terms.
-
-        Presidio's deny_list uses ``\\b`` word boundaries, which never match
-        between Japanese characters, so we match plain substrings instead.
-        """
-        spans: list[EntitySpan] = []
-        for needle in self.deny_list:
-            if not needle:
-                continue
-            start = text.find(needle)
-            while start != -1:
-                spans.append(
-                    EntitySpan(
-                        start=start, end=start + len(needle), entity_type="CUSTOM", score=1.0
-                    )
-                )
-                start = text.find(needle, start + len(needle))
-        return spans
-
     @property
     def analyzer(self) -> AnalyzerEngine:
         if self._analyzer is None:
@@ -311,7 +291,7 @@ class PromptAnonymizer:
             for r in results
             if r.entity_type in requested
         ]
-        spans.extend(self._deny_list_spans(text))
+        spans.extend(labeling.deny_list_spans(text, self.deny_list))
         labels = self._labels_for(language)
         anonymized, mapping = labeling.apply_labels(text, spans, labels)
         return AnonymizeResult(

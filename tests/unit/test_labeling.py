@@ -4,6 +4,7 @@ from prompt_anonymizer.labeling import (
     EntitySpan,
     apply_labels,
     deanonymize,
+    deny_list_spans,
     load_labels,
     merge_spans,
 )
@@ -132,6 +133,19 @@ def test_deanonymize_roundtrip() -> None:
 def test_deanonymize_longest_label_first() -> None:
     mapping = {"<Name_1>": "John", "<Name_11>": "Jane"}
     assert deanonymize("<Name_11> and <Name_1>", mapping) == "Jane and John"
+
+
+def test_deny_list_spans_finds_all_occurrences_between_cjk() -> None:
+    # Plain substring search: \b-based matching would miss both hits here.
+    spans = deny_list_spans("X計画のことをX計画と呼ぶ", ["X計画"])
+    assert spans == [
+        EntitySpan(0, 3, "CUSTOM", 1.0),
+        EntitySpan(7, 10, "CUSTOM", 1.0),
+    ]
+
+
+def test_deny_list_spans_ignores_empty_needles() -> None:
+    assert deny_list_spans("anything", [""]) == []
 
 
 def test_load_labels_packaged() -> None:

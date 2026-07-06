@@ -17,11 +17,13 @@ from prompt_anonymizer.exceptions import (
     UnsupportedLanguageError,
 )
 from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
+from prompt_anonymizer.scan import STRUCTURED_ENTITIES, guess_language, scan_text
 
 __version__ = "0.2.0"
 
 __all__ = [
     "DEFAULT_ENTITIES",
+    "STRUCTURED_ENTITIES",
     "AnonymizeResult",
     "EntitySpan",
     "ModelNotDownloadedError",
@@ -29,4 +31,6 @@ __all__ = [
     "PromptAnonymizerError",
     "UnsupportedLanguageError",
     "__version__",
+    "guess_language",
+    "scan_text",
 ]
