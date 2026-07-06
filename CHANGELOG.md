@@ -18,10 +18,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   pass `languages=["es"]` or `languages=["vi"]` to opt in. Existing `ja`/`en`
   labels unchanged. Vietnamese has no official spaCy pipeline (`xx_ent_wiki_sm`
   for both model sizes); `ner_backend="hf"` (`NlpHUST/ner-vietnamese-electra-base`)
-  is recommended for name/location recall.
+  is recommended for name/location recall. The opt-in `US_SSN` / `IBAN_CODE`
+  entities get `SSN` / `IBAN` labels in both new languages, and the `scan`
+  gate's language auto-detection and language-scoped phone patterns cover
+  `es` / `vi` in both CLIs.
 - Translated READMEs: `README_es.md` (Español) and `README_vi.md`
   (Tiếng Việt), cross-linked from the language switcher in `README.md` and
   `README_ja.md`.
+- Commit-time / CI gate: new `scan` subcommand in BOTH CLIs (Python and
+  Node) that exits `0` when the inputs are clean, `1` when PII is found
+  and `2` on errors. It reports `file:line:col` and the entity type only —
+  the matched text is never printed, keeping hook output and CI logs
+  PII-free. Accepts file arguments (as passed by pre-commit / lint-staged),
+  `--text` or stdin, plus repeatable `--deny` / `--allow` terms and
+  `--json`. By default it is offline, deterministic and model-free
+  (structured PII only: emails, phone numbers, JP postal codes, My Number,
+  credit cards); `--ner` opts into name/location detection. Ships with a
+  `.pre-commit-hooks.yaml` hook definition (`prompt-anonymizer-scan`) so
+  other repositories can consume it via the pre-commit framework.
+- Python: engine-free scan API (`prompt_anonymizer.scan`): `scan_text()` /
+  `detect_structured()` run the pattern recognizers directly without
+  Presidio's spaCy NLP engine (no models needed), `guess_language()`
+  mirrors the TS core's script-range heuristic, and
+  `STRUCTURED_ENTITIES` lists what the engine-free path covers.
+  `labeling.deny_list_spans()` is now a shared public helper (parity with
+  the TS core's `detectDenyList`), used by both `PromptAnonymizer` and the
+  scan path.
+- Opt-in structured-PII entities `US_SSN` and `IBAN_CODE` in both cores.
+  They are not in the default entity set; request them via
+  `PromptAnonymizer(entities=[...])` / `new Anonymizer({ entities })` or the
+  new `--entities` CLI flag (Python and Node CLIs). US SSNs are detected
+  with CJK-safe boundaries and Presidio's invalidation rules in both cores;
+  IBANs are mod-97 checksum-validated (Presidio's built-in recognizer on
+  Python, `ibantools` (MIT) in the TS core). New labels (additive only —
+  existing mappings stay valid): `SSN` / `社会保障番号` and `IBAN` / `IBAN`.
+- A licensing policy for new dependencies and default NER models in
+  `CONTRIBUTING.md`.
+- `@prompt-anonymizer/proxy` — OpenAI-compatible local reverse proxy
+  (`prompt-anonymizer-proxy`, default `http://127.0.0.1:8787`): point
+  `OPENAI_BASE_URL` at it and PII in `/v1/chat/completions` messages is
+  masked (with request-scoped label consistency across messages) before
+  the request leaves the machine; labels in the response are restored,
+  including streaming SSE where a label may be split across chunks. Other
+  `/v1/*` routes pass through. Mappings live in memory per request — never
+  logged or persisted — unless `--record-mappings` opts into a capped
+  in-memory buffer for the admin GUI's explicit reveal. Ships a localhost
+  admin GUI at `/admin/` (`web/apps/proxy-admin`: live status, redaction
+  events with labels/counts, config editing for upstream / NER /
+  deny/allow lists, local-only anonymization playground); admin routes are
+  Host-header guarded against DNS rebinding when bound to loopback.
 - New JS-ecosystem targets built on the shared TS core (label format and
   mapping semantics unchanged):
   - `@prompt-anonymizer/cli` — Node CLI (`npx @prompt-anonymizer/cli`)

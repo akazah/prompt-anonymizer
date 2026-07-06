@@ -86,6 +86,7 @@ export class PromptAnonymizerElement extends HTMLElement {
   private _denyList?: string[];
   private _allowList?: string[];
   private _scoreThreshold?: number;
+  private _entities?: string[];
 
   private readonly nerWarning: HTMLParagraphElement;
   private readonly languageSelect: HTMLSelectElement;
@@ -209,6 +210,14 @@ export class PromptAnonymizerElement extends HTMLElement {
     this._scoreThreshold = value;
   }
 
+  get entities(): string[] | undefined {
+    return this._entities;
+  }
+
+  set entities(value: string[] | undefined) {
+    this._entities = value;
+  }
+
   get result(): AnonymizeResult | null {
     return this._result;
   }
@@ -232,6 +241,7 @@ export class PromptAnonymizerElement extends HTMLElement {
               denyList: this._denyList,
               allowList: this._allowList,
               scoreThreshold: this._scoreThreshold,
+              entities: this._entities,
             }).anonymize(text, options),
         },
         store: this._store ?? undefined,

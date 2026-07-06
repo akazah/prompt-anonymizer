@@ -22,6 +22,8 @@ const REGEX_ENTITIES = new Set([
   "JP_POSTAL_CODE",
   "JP_MY_NUMBER",
   "CREDIT_CARD",
+  "US_SSN",
+  "IBAN_CODE",
 ]);
 
 const overlaps = (aS, aE, bS, bE) => aS < bE && bS < aE;

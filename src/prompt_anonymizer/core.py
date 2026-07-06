@@ -22,6 +22,9 @@ DEFAULT_ENTITIES = [
     "CREDIT_CARD",
 ]
 
+# Opt-in entity types — pass via ``entities=`` on :class:`PromptAnonymizer`.
+OPTIONAL_ENTITIES = ["US_SSN", "IBAN_CODE"]
+
 # Vietnamese has no official spaCy pipeline: the multi-language WikiNER
 # model (xx_ent_wiki_sm) provides tokenization plus baseline PER/LOC NER
 # for both sizes. Use ner_backend="hf" for markedly better vi recall.
@@ -145,6 +148,7 @@ class PromptAnonymizer:
             build_credit_card_recognizers,
             build_es_phone_recognizers,
             build_ja_phone_recognizers,
+            build_us_ssn_recognizers,
             build_vn_phone_recognizers,
         )
 
@@ -203,6 +207,15 @@ class PromptAnonymizer:
         for recognizer in build_credit_card_recognizers(self.languages):
             analyzer.registry.add_recognizer(recognizer)
 
+        # Presidio's built-in UsSsnRecognizer is registered for ``en`` only
+        # and its \b anchors never match next to CJK text. Replace it with a
+        # CJK-safe variant covering every configured language.
+        # IBAN_CODE is available opt-in via Presidio's built-in IbanRecognizer
+        # (already registered for all languages, mod-97 validated).
+        analyzer.registry.remove_recognizer("UsSsnRecognizer")
+        for recognizer in build_us_ssn_recognizers(self.languages):
+            analyzer.registry.add_recognizer(recognizer)
+
         if self.ner_backend == "hf":
             self._add_hf_ner(analyzer)
         return analyzer
@@ -232,26 +245,6 @@ class PromptAnonymizer:
                     label_mapping=_HF_LABEL_MAPPING,
                 )
             )
-
-    def _deny_list_spans(self, text: str) -> list[EntitySpan]:
-        """Substring search for deny-listed terms.
-
-        Presidio's deny_list uses ``\\b`` word boundaries, which never match
-        between Japanese characters, so we match plain substrings instead.
-        """
-        spans: list[EntitySpan] = []
-        for needle in self.deny_list:
-            if not needle:
-                continue
-            start = text.find(needle)
-            while start != -1:
-                spans.append(
-                    EntitySpan(
-                        start=start, end=start + len(needle), entity_type="CUSTOM", score=1.0
-                    )
-                )
-                start = text.find(needle, start + len(needle))
-        return spans
 
     @property
     def analyzer(self) -> AnalyzerEngine:
@@ -338,7 +331,7 @@ class PromptAnonymizer:
             for r in results
             if r.entity_type in requested
         ]
-        spans.extend(self._deny_list_spans(text))
+        spans.extend(labeling.deny_list_spans(text, self.deny_list))
         labels = self._labels_for(language)
         anonymized, mapping = labeling.apply_labels(text, spans, labels)
         return AnonymizeResult(

@@ -1,0 +1,349 @@
+@import "@prompt-anonymizer/theme/tokens.css";
+@import "@prompt-anonymizer/theme/base.css";
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--sp-5) 20px 60px;
+}
+
+/* ---------- hero (dashboard-scale) ---------- */
+
+.hero {
+  position: relative;
+  margin-bottom: var(--sp-5);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -60px -40px auto;
+  height: 200px;
+  background:
+    radial-gradient(520px 240px at 15% 0%, rgba(23, 24, 28, 0.05), transparent 70%),
+    radial-gradient(440px 220px at 70% -10%, rgba(23, 24, 28, 0.03), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-card), var(--shadow-card-inset);
+  color: var(--text);
+  flex: none;
+}
+
+header h1 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+header .spacer,
+.panel-header .spacer {
+  flex: 1;
+}
+
+.badge.version {
+  color: var(--text-faint);
+}
+
+.privacy {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  max-width: 780px;
+}
+
+.privacy strong {
+  color: var(--ok);
+}
+
+/* ---------- layout ---------- */
+
+.panel {
+  margin-bottom: var(--sp-4);
+}
+
+.panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.panel-header h2 {
+  margin: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+  margin-bottom: var(--sp-3);
+}
+
+.toolbar label {
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="text"] {
+  min-width: 280px;
+}
+
+/* ---------- status stat tiles ---------- */
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp-3) var(--sp-4);
+}
+
+.status-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-3) var(--sp-4);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+}
+
+.status-card .label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+
+.status-card .value {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.status-card .value.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+}
+
+/* ---------- config form ---------- */
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.form-row > label.field-label {
+  flex: 0 0 140px;
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  padding-top: 8px;
+}
+
+.form-row > .field-control {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-row > .field-control label {
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch-label {
+  padding-top: 6px;
+}
+
+input.switch {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 34px;
+  height: 19px;
+  margin: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg-input);
+  border: 1px solid var(--border-strong);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  flex: none;
+}
+
+input.switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+input.switch:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+input.switch:checked::after {
+  transform: translateX(15px);
+  background: #ffffff;
+}
+
+input.switch:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* ---------- output ---------- */
+
+.output {
+  min-height: 160px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+  font-size: var(--fs-base);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.output:empty::before {
+  content: "Anonymized preview will appear here…";
+  color: var(--text-faint);
+}
+
+.actions {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  align-items: center;
+}
+
+/* ---------- events table ---------- */
+
+table.events {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-xs);
+}
+
+table.events th,
+table.events td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table.events th {
+  color: var(--text-faint);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+table.events tr.event-row {
+  transition: background 0.15s ease;
+}
+
+table.events tr.event-row:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+table.events .status-ok {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+table.events .status-warn {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+table.events .chip {
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 11px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+table.events .entities {
+  color: var(--text-dim);
+  font-size: 11.5px;
+}
+
+table.events .reveal-btn {
+  padding: 2px 10px;
+  font-size: 11px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-dim);
+  margin-left: 6px;
+}
+
+table.events .reveal-btn:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--text-faint);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+table.events tr.mapping-row td {
+  background: var(--bg-input);
+  padding: 10px 12px 14px;
+  animation: fade-up 0.25s ease;
+}
+
+table.events .empty {
+  text-align: center;
+  color: var(--text-faint);
+  padding: var(--sp-5);
+}

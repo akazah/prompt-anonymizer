@@ -1,0 +1,71 @@
+/*
+ * Design tokens shared by every prompt-anonymizer UI surface.
+ * Light, neutral-monochrome palette: near-black accents on white,
+ * with color reserved for status (ok / warn / danger).
+ * The published web component (packages/element) intentionally does NOT
+ * depend on this package — keep its --pa-* defaults in
+ * packages/element/src/styles.ts in sync with these values.
+ */
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f7f7f8;
+  --bg-panel: #ffffff;
+  --bg-panel-2: #f2f3f5;
+  --bg-input: #fafafb;
+
+  /* borders */
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  /* text */
+  --text: #17181c;
+  --text-dim: #5c616b;
+  --text-faint: #9aa0aa;
+
+  /* accent: monochrome; color is reserved for status */
+  --accent: #17181c;
+  --accent-hover: #2e3138;
+  --ok: #047857;
+  --warn: #b45309;
+  --danger: #dc2626;
+  --btn-primary-bg: linear-gradient(180deg, #26282e, #17181c);
+  --btn-primary-bg-hover: linear-gradient(180deg, #33363d, #232529);
+
+  /* PII chips */
+  --chip-bg: rgba(23, 24, 28, 0.06);
+  --chip-border: rgba(23, 24, 28, 0.28);
+  --chip-ok-bg: rgba(4, 120, 87, 0.08);
+  --chip-ok-border: rgba(4, 120, 87, 0.38);
+
+  /* elevation / focus */
+  --shadow-card: 0 1px 2px rgba(16, 17, 20, 0.04), 0 8px 24px rgba(16, 17, 20, 0.05);
+  --shadow-card-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  --focus-ring: 0 0 0 3px rgba(23, 24, 28, 0.18);
+
+  /* geometry */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* spacing (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* type scale */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14.5px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --font-sans: "Inter Variable", "Inter", -apple-system, "Hiragino Sans",
+    "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+}

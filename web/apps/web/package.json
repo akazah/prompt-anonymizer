@@ -10,7 +10,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@prompt-anonymizer/core": "workspace:*"
+    "@prompt-anonymizer/core": "workspace:*",
+    "@prompt-anonymizer/theme": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^6.0.3",

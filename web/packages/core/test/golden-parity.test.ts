@@ -31,7 +31,14 @@ interface GoldenCase {
 const HERE = dirname(fileURLToPath(import.meta.url));
 const GOLDEN_DIR = join(HERE, "../../../../tests/golden");
 
-const REGEX_ENTITIES = new Set(["EMAIL_ADDRESS", "PHONE_NUMBER", "JP_POSTAL_CODE", "CREDIT_CARD"]);
+const REGEX_ENTITIES = new Set([
+  "EMAIL_ADDRESS",
+  "PHONE_NUMBER",
+  "JP_POSTAL_CODE",
+  "CREDIT_CARD",
+  "US_SSN",
+  "IBAN_CODE",
+]);
 const MIN_RECALL = 0.95;
 
 function loadGolden(language: Language): GoldenCase[] {

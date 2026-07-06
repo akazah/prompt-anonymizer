@@ -68,6 +68,8 @@ etiquetas → restaurar:
 | **CLI de Node (npx)** | `npx @prompt-anonymizer/cli` (aún no en npm — compilar desde `web/packages/cli`) | Mismos comandos y flags que la CLI de Python; NER con transformers.js, totalmente en el dispositivo. |
 | **Web Component** | `@prompt-anonymizer/element` (aún no en npm) | Elemento `<prompt-anonymizer>` independiente del framework: inserta el panel completo de anonimizar → restaurar en cualquier sitio (HTML plano, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (aún no en npm) | Componente `<AnonymizerPanel />` listo para usar más un hook `useAnonymizer()` / composable para interfaces personalizadas. Consulta el inicio rápido más abajo. |
+| **Proxy local + GUI de administración** | `@prompt-anonymizer/proxy` (aún no en npm — compilar desde `web/packages/proxy`) | Proxy inverso compatible con OpenAI: apunta `OPENAI_BASE_URL` hacia él y los PII se enmascaran antes de salir de tu máquina, con las etiquetas restauradas en las respuestas (incl. streaming). GUI de administración en `http://127.0.0.1:8787/admin/`. Consulta el inicio rápido más abajo. |
+| **Hook de commit / puerta de CI** | `prompt-anonymizer scan` (ambas CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Puerta de PII por código de salida para comprobaciones en el commit y en CI: informa `file:line:col` y el tipo de entidad, nunca el texto coincidente. Sin conexión y sin modelos por defecto. Véase más abajo. |
 
 ## Inicio rápido (Python)
 
@@ -161,6 +163,70 @@ Por defecto la detección es solo por expresiones regulares (correos,
 teléfonos, …); pasa un `ner` (p. ej. `new TransformersNerBackend()` de
 `@prompt-anonymizer/core`) para enmascarar también nombres y ubicaciones.
 
+## Inicio rápido (proxy local)
+
+Ejecuta el proxy compatible con OpenAI y apunta cualquier cliente hacia él —
+los PII se enmascaran antes de que la petición salga de tu máquina y las
+etiquetas se restauran en la respuesta (streaming incluido). Los mapeos
+permanecen en la memoria del proxy, por petición:
+
+```bash
+# Aún no publicado en npm — compilar desde el repositorio:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # escucha en http://127.0.0.1:8787
+# Cuando se publique: npx @prompt-anonymizer/proxy
+
+# En tu app / shell:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+La GUI de administración en `http://127.0.0.1:8787/admin/` muestra el estado
+en vivo y los eventos de redacción (solo etiquetas y recuentos), edita la
+configuración del proxy (upstream, NER, listas deny/allow) y ofrece un
+área de pruebas de anonimización solo local. El proxy se enlaza a
+`127.0.0.1` por defecto; los valores originales solo pueden revelarse en la
+GUI cuando activas explícitamente `--record-mappings`.
+
+## Puerta en el commit / CI (`scan`)
+
+Ambas CLI incluyen un subcomando `scan` diseñado para git hooks y CI: sale
+con `0` cuando las entradas están limpias, `1` cuando se encuentran PII y
+`2` en caso de error. Informa solo `file:line:col` y el tipo de entidad —
+**el texto coincidente nunca se imprime**, así que la salida del hook y los
+logs de CI quedan libres de PII. Por defecto es sin conexión, determinista
+y sin modelos (PII estructurado: correos, teléfonos, códigos postales de
+JP, My Number, tarjetas de crédito — más los términos de `--deny`); `--ner`
+activa la detección de nombres/ubicaciones donde haya modelos disponibles.
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # archivos (p. ej. en stage)
+git diff --cached -U0 | prompt-anonymizer scan       # o canaliza un diff
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+Con el framework [pre-commit](https://pre-commit.com)
+(definición del hook: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: main  # fija una etiqueta cuando se publique una con este hook
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Los proyectos Node pueden conectar la misma puerta mediante husky +
+lint-staged (`npx @prompt-anonymizer/cli` cuando se publique; hasta
+entonces, compilar desde `web/packages/cli`):
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+Como todo lo demás aquí, la detección es un mejor esfuerzo: trata `scan`
+como una red de seguridad frente a fugas evidentes, no como una garantía.
+
 ## ¿Por qué no…?
 
 **¿Por qué no usar Presidio directamente?** Usa
@@ -215,9 +281,15 @@ escepticismo.)
 | JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | patrón + dígito de control (personalizado) |
 | CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | patrón + comprobación Luhn (ambos núcleos, todos los idiomas) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | coincidencia exacta |
+| US_SSN (opcional) | 社会保障番号 | SSN | SSN | SSN | patrón + reglas de invalidación (ambos núcleos, todos los idiomas) |
+| IBAN_CODE (opcional) | IBAN | IBAN | IBAN | IBAN | patrón + comprobación mod-97 (ambos núcleos, todos los idiomas) |
 
 `deny_list` fuerza el enmascarado de cadenas concretas; `allow_list` las
 exime.
+Las entidades opcionales no se detectan por defecto — solicítalas
+explícitamente: `PromptAnonymizer(entities=[...])`,
+`new Anonymizer({ entities })` o
+`--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` en cualquiera de las CLI.
 
 ### Backend NER con transformer opcional (Python)
 

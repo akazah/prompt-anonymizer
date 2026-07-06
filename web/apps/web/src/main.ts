@@ -8,6 +8,7 @@ import {
   type Language,
   type NerProgress,
 } from "@prompt-anonymizer/core";
+import "@prompt-anonymizer/theme/fonts.css";
 import "./style.css";
 
 const SAMPLES: Record<Language, string> = {
@@ -25,19 +26,27 @@ function sampleLanguageFromNavigator(): Language {
   return "en";
 }
 
+const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
+const ICON_SEND = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12 20 4l-4.5 16-4-6.5L4 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
+const ICON_RESTORE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
   <div class="container">
-    <header>
-      <h1>Prompt Anonymizer</h1>
-      <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">checking…</span></span>
-      <div class="spacer"></div>
-      <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
-    </header>
-    <p class="privacy">
-      <strong>100% on-device.</strong> Detection runs in your browser via WebGPU/WASM —
-      your text is never sent to any server. <span lang="ja">テキストはサーバーへ一切送信されません（全処理がブラウザ内で完結します）。</span>
-    </p>
+    <div class="hero">
+      <header>
+        <span class="logo-mark">${ICON_SHIELD}</span>
+        <h1>Prompt Anonymizer</h1>
+        <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">checking…</span></span>
+        <div class="spacer"></div>
+        <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
+      </header>
+      <p class="privacy">
+        <strong>100% on-device.</strong> Detection runs in your browser via WebGPU/WASM —
+        your text is never sent to any server. <span lang="ja">テキストはサーバーへ一切送信されません（全処理がブラウザ内で完結します）。</span>
+      </p>
+    </div>
 
     <div class="toolbar">
       <label>Language
@@ -49,7 +58,8 @@ app.innerHTML = `
           <option value="vi">Tiếng Việt</option>
         </select>
       </label>
-      <label><input type="checkbox" id="use-ner" checked /> NER model (names & locations)</label>
+      <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER model (names & locations)</label>
+      <div class="spacer"></div>
       <button id="load-sample">Load sample</button>
       <button id="anonymize" class="primary">Anonymize</button>
     </div>
@@ -65,11 +75,11 @@ app.innerHTML = `
 
     <div class="grid">
       <section class="panel">
-        <h2>Original (stays on your device)</h2>
+        <h2>${ICON_LOCK}Original (stays on your device)</h2>
         <textarea id="input" placeholder="Paste the text you were about to send to an LLM…"></textarea>
       </section>
       <section class="panel">
-        <h2>Anonymized (safe to send)</h2>
+        <h2>${ICON_SEND}Anonymized (safe to send)</h2>
         <div id="output" class="output"></div>
         <div class="actions">
           <button id="copy">Copy anonymized text</button>
@@ -83,7 +93,7 @@ app.innerHTML = `
     </div>
 
     <section class="panel section-restore">
-      <h2>Restore (paste the LLM reply)</h2>
+      <h2>${ICON_RESTORE}Restore (paste the LLM reply)</h2>
       <textarea id="restore-input" placeholder="Paste the LLM response containing labels like <人名_1> …"></textarea>
       <div class="actions">
         <button id="restore" class="primary">Deanonymize</button>
@@ -191,6 +201,7 @@ async function runAnonymize(): Promise<void> {
     const result = await session.anonymize(text, { language });
     lastResult = result;
     outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
+    replayAppear(outputEl);
 
     const tbody = mappingTable.querySelector("tbody")!;
     tbody.innerHTML = Object.entries(result.mapping)
@@ -208,6 +219,12 @@ async function runAnonymize(): Promise<void> {
     progressEl.classList.remove("visible");
     void updateEngineBadge();
   }
+}
+
+function replayAppear(el: HTMLElement): void {
+  el.classList.remove("appear");
+  void el.offsetWidth;
+  el.classList.add("appear");
 }
 
 function flash(el: HTMLElement, message: string): void {
@@ -232,11 +249,13 @@ $("#restore").addEventListener("click", () => {
     const restoreInput = $<HTMLTextAreaElement>("#restore-input");
     if (!restoreInput.value.trim()) return;
     const result = await session.restore(restoreInput.value);
-    $("#restore-output").innerHTML = renderWithHighlights(
+    const restoreOutput = $("#restore-output");
+    restoreOutput.innerHTML = renderWithHighlights(
       result.text,
       result.replacements.map((r) => r.value),
       "pii-restored",
     );
+    replayAppear(restoreOutput);
     const warning = $("#restore-warning");
     warning.hidden = result.unresolved.length === 0;
     warning.textContent = result.unresolved.length

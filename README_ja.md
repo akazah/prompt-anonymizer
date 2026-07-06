@@ -65,6 +65,8 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 | **Node CLI（npx）** | `npx @prompt-anonymizer/cli`（npm未公開 — `web/packages/cli` からビルド） | Python CLIと同じコマンド・フラグ。transformers.js NERで完全オンデバイス。 |
 | **Web Component** | `@prompt-anonymizer/element`（npm未公開） | フレームワーク非依存の `<prompt-anonymizer>` 要素。匿名化→復元パネルを任意のサイトへ埋め込み可能（素のHTML・Svelte・Angular等）。 |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue`（npm未公開） | 組み込み用 `<AnonymizerPanel />` コンポーネント + カスタムUI向け `useAnonymizer()` フック / コンポーザブル。下のQuickstart参照。 |
+| **ローカルプロキシ + 管理GUI** | `@prompt-anonymizer/proxy`（npm未公開 — `web/packages/proxy` からビルド） | OpenAI互換のリバースプロキシ。`OPENAI_BASE_URL` を向けるだけでPIIをマスクして送信し、応答内のラベルを復元（ストリーミング対応）。管理GUIは `http://127.0.0.1:8787/admin/`。下のQuickstart参照。 |
+| **コミットフック / CIゲート** | `prompt-anonymizer scan`（両CLI） + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | 終了コードで判定するPIIゲート。`file:line:col` とエンティティ種別のみを報告し、検出したテキスト自体は出力しません。デフォルトはオフライン・モデル不要。下の解説参照。 |
 
 ## Quickstart（Python）
 
@@ -157,6 +159,68 @@ const { text: restored, unresolved } = await restore(llmReply);
 マスクするには `@prompt-anonymizer/core` の
 `new TransformersNerBackend()` を `ner` として渡してください。
 
+## Quickstart（ローカルプロキシ）
+
+OpenAI互換プロキシを起動してクライアントを向けるだけで、リクエストが
+マシンを離れる前にPIIがマスクされ、応答内のラベルは復元されます
+（ストリーミング対応）。マッピングはリクエスト単位でプロキシのメモリ内
+にのみ保持されます:
+
+```bash
+# npm未公開のためリポジトリからビルド:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # http://127.0.0.1:8787 で待ち受け
+# 公開後は: npx @prompt-anonymizer/proxy
+
+# アプリ / シェル側:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+管理GUI（`http://127.0.0.1:8787/admin/`）では、稼働状況とリダクション
+イベント（ラベルと件数のみ）の確認、設定（上流URL・NER・deny/allow
+リスト）の編集、ローカル完結の匿名化プレイグラウンドが使えます。
+プロキシはデフォルトで `127.0.0.1` にバインドされ、元の値のGUI表示は
+`--record-mappings` を明示的に有効化した場合のみ可能です。
+
+## コミット時 / CIゲート（`scan`）
+
+両CLIには、gitフックやCI向けに設計された `scan` サブコマンドがあります。
+入力がクリーンなら終了コード `0`、PIIが見つかれば `1`、エラーは `2` です。
+報告するのは `file:line:col` とエンティティ種別のみで、**検出したテキスト
+自体は決して出力しません** — フックの出力やCIログにPIIが残らない設計です。
+デフォルトはオフライン・決定的・モデル不要（構造化PII: メール・電話番号・
+郵便番号・マイナンバー・クレジットカード + `--deny` 指定語）。`--ner` を
+付けるとモデルのある環境で人名・住所も検査できます。
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # ファイル（ステージ済みなど）
+git diff --cached -U0 | prompt-anonymizer scan       # diffをパイプしてもOK
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+[pre-commit](https://pre-commit.com) フレームワークから使う場合
+（フック定義: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)）:
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: main  # このフックを含むタグが出たらタグ固定を推奨
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Nodeプロジェクトなら husky + lint-staged で同じゲートを組めます
+（npm公開後は `npx @prompt-anonymizer/cli`。それまでは
+`web/packages/cli` からビルド）:
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+他の機能と同じく検出はベストエフォートです。`scan` は明白な漏れを止める
+セーフティネットであり、保証ではありません。
+
 ## なぜ〇〇ではないのか？
 
 **Presidioをそのまま使えばいいのでは？** 汎用のPII検出・匿名化フレーム
@@ -206,8 +270,13 @@ Presidioを使いつつ、その上にLLMラウンドトリップのワークフ
 | JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | パターン + 検査用数字（カスタム） |
 | CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | パターン + Luhn検査（両コア、全言語） |
 | CUSTOM（deny list） | 秘匿情報 | Custom | Personalizado | TùyChỉnh | 完全一致 |
+| US_SSN（opt-in） | 社会保障番号 | SSN | SSN | SSN | パターン + 無効値ルール（両コア、全言語） |
+| IBAN_CODE（opt-in） | IBAN | IBAN | IBAN | IBAN | パターン + mod-97検査（両コア、全言語） |
 
 `deny_list` で特定の語を強制マスク、`allow_list` で除外できます。
+opt-inエンティティはデフォルトでは検出されません。
+`PromptAnonymizer(entities=[...])`、`new Anonymizer({ entities })`、または
+CLIの `--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` で明示指定してください。
 
 ### オプションのTransformer NERバックエンド（Python）
 

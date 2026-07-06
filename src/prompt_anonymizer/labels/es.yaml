@@ -5,4 +5,6 @@ PHONE_NUMBER: Teléfono
 JP_POSTAL_CODE: CódigoPostal
 JP_MY_NUMBER: MyNumber
 CREDIT_CARD: Tarjeta
+US_SSN: SSN
+IBAN_CODE: IBAN
 CUSTOM: Personalizado

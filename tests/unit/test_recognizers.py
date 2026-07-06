@@ -50,6 +50,17 @@ def test_ja_phone_regex_patterns() -> None:
     assert not patterns["jp_mobile"].search("1090-1234-5678の一部")
 
 
+def test_ja_phone_rejects_ssn_shaped_digit_counts() -> None:
+    from prompt_anonymizer.recognizers.ja_phone import JaPhoneRegexRecognizer
+
+    recognizer = JaPhoneRegexRecognizer()
+    # 9 digits (US-SSN-shaped, e.g. 021-14-3596) is not a JP number.
+    assert recognizer.validate_result("021-14-3596") is False
+    # Valid 10-digit landlines keep their pattern score (None = unchanged).
+    assert recognizer.validate_result("03-1234-5678") is None
+    assert recognizer.validate_result("0123-45-6789") is None
+
+
 def test_ja_postal_regex_patterns() -> None:
     import re
 
@@ -118,3 +129,25 @@ def test_credit_card_luhn_validation() -> None:
     assert recognizer.validate_result("4111111111111111") is True
     assert recognizer.validate_result("4111-1111-1111-1111") is True
     assert recognizer.validate_result("4111111111111112") is False
+
+
+def test_us_ssn_regex_matches_next_to_cjk() -> None:
+    import re
+
+    from prompt_anonymizer.recognizers.us_ssn import UsSsnLookaroundRecognizer
+
+    pattern = re.compile(UsSsnLookaroundRecognizer.PATTERNS[4].regex)
+    assert pattern.search("社会保障番号は123-45-6780です")
+    assert pattern.search("Payroll SSN 856-45-6780 for reimbursement")
+    # Not inside longer digit runs.
+    assert not pattern.search("9123-45-67809")
+
+
+def test_us_ssn_inherited_invalidation() -> None:
+    from prompt_anonymizer.recognizers.us_ssn import UsSsnLookaroundRecognizer
+
+    recognizer = UsSsnLookaroundRecognizer(supported_language="en")
+    assert recognizer.invalidate_result("000-12-3456") is True
+    assert recognizer.invalidate_result("123-45-6789") is True
+    assert recognizer.invalidate_result("123.45-6789") is True
+    assert recognizer.invalidate_result("856-45-6780") is False

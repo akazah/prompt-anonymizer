@@ -51,6 +51,17 @@ class JaPhoneRegexRecognizer(PatternRecognizer):
             name="JaPhoneRegexRecognizer",
         )
 
+    def validate_result(self, pattern_text: str) -> bool | None:
+        """Reject digit counts impossible for a Japanese number.
+
+        JP numbers are 10 digits (11 for mobile/IP). The landline pattern's
+        variable groups would otherwise also match 9-digit strings such as
+        US SSNs (``021-14-3596``). Returns ``None`` (not ``True``) on
+        success so the pattern score is kept instead of being lifted to 1.0.
+        """
+        digits = sum(ch.isdigit() for ch in pattern_text)
+        return None if digits in (10, 11) else False
+
 
 def build_ja_phone_recognizers() -> list[EntityRecognizer]:
     """Recognizers to register on the ``ja`` pipeline for PHONE_NUMBER."""

@@ -64,6 +64,8 @@ ngồi.
 | **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (chưa có trên npm — build từ `web/packages/cli`) | Cùng lệnh và cờ với CLI Python; transformers.js NER, hoàn toàn trên thiết bị. |
 | **Web Component** | `@prompt-anonymizer/element` (chưa có trên npm) | Phần tử `<prompt-anonymizer>` độc lập framework: nhúng toàn bộ bảng ẩn danh → khôi phục vào bất kỳ trang web nào (HTML thuần, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (chưa có trên npm) | Component `<AnonymizerPanel />` dùng ngay, kèm hook `useAnonymizer()` / composable cho giao diện tùy chỉnh. Xem Bắt đầu nhanh bên dưới. |
+| **Proxy cục bộ + GUI quản trị** | `@prompt-anonymizer/proxy` (chưa có trên npm — build từ `web/packages/proxy`) | Reverse proxy tương thích OpenAI: trỏ `OPENAI_BASE_URL` vào nó và PII được che trước khi rời máy của bạn, nhãn được khôi phục trong phản hồi (kể cả streaming). GUI quản trị tại `http://127.0.0.1:8787/admin/`. Xem Bắt đầu nhanh bên dưới. |
+| **Hook commit / cổng CI** | `prompt-anonymizer scan` (cả hai CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Cổng chặn PII qua mã thoát cho kiểm tra lúc commit và trong CI: báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp. Mặc định offline và không cần mô hình. Xem bên dưới. |
 
 ## Bắt đầu nhanh (Python)
 
@@ -156,6 +158,68 @@ Mặc định phát hiện chỉ dùng regex (email, số điện thoại, …);
 `ner` (ví dụ `new TransformersNerBackend()` từ `@prompt-anonymizer/core`)
 để cũng che tên và địa điểm.
 
+## Bắt đầu nhanh (proxy cục bộ)
+
+Chạy proxy tương thích OpenAI và trỏ bất kỳ client nào vào nó — PII được che
+trước khi yêu cầu rời khỏi máy của bạn và nhãn được khôi phục trong phản hồi
+(kể cả streaming). Bảng ánh xạ chỉ nằm trong bộ nhớ của proxy, theo từng yêu
+cầu:
+
+```bash
+# Chưa công bố lên npm — build từ repo:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # lắng nghe tại http://127.0.0.1:8787
+# Sau khi công bố: npx @prompt-anonymizer/proxy
+
+# Trong ứng dụng / shell của bạn:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+GUI quản trị tại `http://127.0.0.1:8787/admin/` hiển thị trạng thái trực tiếp
+và các sự kiện che PII (chỉ nhãn và số lượng), cho phép chỉnh cấu hình proxy
+(upstream, NER, danh sách deny/allow) và cung cấp playground ẩn danh chỉ chạy
+cục bộ. Proxy mặc định gắn vào `127.0.0.1`; giá trị gốc chỉ có thể xem trong
+GUI khi bạn bật `--record-mappings` một cách tường minh.
+
+## Cổng lúc commit / CI (`scan`)
+
+Cả hai CLI đều có lệnh con `scan` thiết kế cho git hook và CI: thoát mã
+`0` khi đầu vào sạch, `1` khi tìm thấy PII và `2` khi có lỗi. Nó chỉ báo cáo
+`file:line:col` và loại thực thể — **văn bản khớp không bao giờ được in ra**,
+nên đầu ra của hook và log CI không chứa PII. Mặc định nó offline, tất định và
+không cần mô hình (PII có cấu trúc: email, số điện thoại, mã bưu chính JP,
+My Number, thẻ tín dụng — cộng các cụm từ `--deny`); `--ner` bật thêm phát
+hiện tên/địa điểm ở nơi có mô hình.
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # tệp (ví dụ đã staged)
+git diff --cached -U0 | prompt-anonymizer scan       # hoặc pipe một diff
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+Với framework [pre-commit](https://pre-commit.com)
+(định nghĩa hook: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: main  # ghim vào một tag khi có tag kèm hook này
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Dự án Node có thể nối cùng cổng chặn này qua husky + lint-staged
+(`npx @prompt-anonymizer/cli` sau khi công bố; trước đó, build từ
+`web/packages/cli`):
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+Như mọi thứ khác ở đây, phát hiện là nỗ lực tốt nhất: hãy coi `scan` là lưới
+an toàn cho các rò rỉ hiển nhiên, không phải một sự đảm bảo.
+
 ## Tại sao không …?
 
 **Tại sao không dùng Presidio trực tiếp?** Dùng [Microsoft Presidio](https://github.com/microsoft/presidio)
@@ -205,8 +269,13 @@ hoài nghi.)
 | JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | mẫu regex + chữ số kiểm tra (tùy chỉnh) |
 | CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | mẫu regex + kiểm tra Luhn (cả hai lõi, mọi ngôn ngữ) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | khớp chính xác |
+| US_SSN (tùy chọn bật) | 社会保障番号 | SSN | SSN | SSN | mẫu regex + quy tắc loại trừ (cả hai lõi, mọi ngôn ngữ) |
+| IBAN_CODE (tùy chọn bật) | IBAN | IBAN | IBAN | IBAN | mẫu regex + kiểm tra mod-97 (cả hai lõi, mọi ngôn ngữ) |
 
 `deny_list` buộc che các chuỗi cụ thể; `allow_list` miễn trừ chúng.
+Các thực thể tùy chọn bật không được phát hiện theo mặc định — hãy yêu cầu
+tường minh: `PromptAnonymizer(entities=[...])`, `new Anonymizer({ entities })`,
+hoặc `--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` trên cả hai CLI.
 
 ### Backend NER transformer tùy chọn (Python)
 
