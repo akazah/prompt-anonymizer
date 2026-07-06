@@ -11,18 +11,43 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 <!-- python-eval:start -->
 | Language | Entity | Precision | Recall | F1 | Support |
 |---|---|---|---|---|---|
+| ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.96 | 0.80 | 0.87 | 200 |
-| ja | PERSON | 0.99 | 0.87 | 0.93 | 267 |
+| ja | LOCATION | 0.92 | 0.78 | 0.85 | 200 |
+| ja | PERSON | 0.98 | 0.82 | 0.89 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| en | LOCATION | 1.00 | 0.93 | 0.96 | 200 |
-| en | PERSON | 0.98 | 0.94 | 0.96 | 267 |
-| en | PHONE_NUMBER | 1.00 | 0.93 | 0.96 | 200 |
+| en | LOCATION | 0.99 | 0.94 | 0.96 | 200 |
+| en | PERSON | 0.98 | 0.97 | 0.97 | 267 |
+| en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 
-Model size: `sm` / cases per language: 200 (seed fixed).
+Model size: `sm` / NER backend: `spacy` / cases per language: 200 (seed fixed).
 <!-- python-eval:end -->
+
+## Python core with the transformer NER backend (`ner_backend="hf"`)
+
+Same golden set with the optional transformer NER recognizer added on top
+of spaCy (`pip install "prompt-anonymizer[hf]"`). The models are the same
+family the TypeScript core runs via transformers.js
+(`tsmatz/xlm-roberta-ner-japanese`, `dslim/bert-base-NER`). Regenerate with
+`uv run python -m prompt_anonymizer.evals --ner-backend hf --output /tmp/eval_hf.md --golden-dir /tmp/golden_hf`
+and copy the table (the default run above owns the marker block).
+
+| Language | Entity | Precision | Recall | F1 | Support |
+|---|---|---|---|---|---|
+| ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | LOCATION | 0.88 | 1.00 | 0.93 | 200 |
+| ja | PERSON | 0.94 | 1.00 | 0.97 | 267 |
+| ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| en | LOCATION | 0.98 | 0.99 | 0.99 | 200 |
+| en | PERSON | 0.91 | 1.00 | 0.95 | 267 |
+| en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 
 ## TypeScript core (regex recognizers, structured PII only)
 
@@ -33,8 +58,10 @@ and are not measured here. Regenerate with
 
 | Language | Entity | Precision | Recall | F1 | Support |
 |---|---|---|---|---|---|
+| ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
