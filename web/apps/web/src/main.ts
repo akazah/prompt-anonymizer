@@ -4,6 +4,8 @@ import {
   TransformersNerBackend,
   detectLanguage,
   detectWebGpu,
+  languageFromBcp47,
+  languagePickerEntries,
   type AnonymizeResult,
   type Language,
   type NerProgress,
@@ -19,12 +21,12 @@ const SAMPLES: Record<Language, string> = {
 };
 
 function sampleLanguageFromNavigator(): Language {
-  const lang = navigator.language?.toLowerCase() ?? "en";
-  if (lang.startsWith("ja")) return "ja";
-  if (lang.startsWith("es")) return "es";
-  if (lang.startsWith("vi")) return "vi";
-  return "en";
+  return languageFromBcp47(navigator.language ?? "") ?? "en";
 }
+
+const LANGUAGE_OPTIONS_MARKUP = languagePickerEntries({ auto: true })
+  .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+  .join("\n          ");
 
 const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
@@ -51,11 +53,7 @@ app.innerHTML = `
     <div class="toolbar">
       <label>Language
         <select id="language">
-          <option value="auto">Auto / 自動判定</option>
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="vi">Tiếng Việt</option>
+          ${LANGUAGE_OPTIONS_MARKUP}
         </select>
       </label>
       <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER model (names & locations)</label>

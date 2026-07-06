@@ -11,6 +11,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "@prompt-anonymizer/core": "workspace:*",
     "@prompt-anonymizer/theme": "workspace:*"
   },
   "devDependencies": {
