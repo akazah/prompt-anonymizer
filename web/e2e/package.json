@@ -1,0 +1,16 @@
+{
+  "name": "@prompt-anonymizer/e2e",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "e2e": "playwright test",
+    "e2e:ner": "E2E_NER=1 playwright test --project=ner",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.9",
+    "playwright": "^1.61.1",
+    "typescript": "^6.0.3"
+  }
+}

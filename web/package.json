@@ -5,6 +5,8 @@
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm -r test",
+    "e2e": "pnpm --filter @prompt-anonymizer/e2e e2e",
+    "e2e:ner": "pnpm --filter @prompt-anonymizer/e2e e2e:ner",
     "lint": "pnpm --filter @prompt-anonymizer/core build && pnpm -r lint"
   },
   "devDependencies": {
