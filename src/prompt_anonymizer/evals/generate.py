@@ -161,9 +161,7 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             " and your address in "
         ).pii(city, "LOCATION").lit(". We will call you back at ").pii(phone, "PHONE_NUMBER").lit(
             ". The card on file is "
-        ).pii(card, "CREDIT_CARD").lit(". A copy was sent to ").pii(email, "EMAIL_ADDRESS").lit(
-            "."
-        )
+        ).pii(card, "CREDIT_CARD").lit(". A copy was sent to ").pii(email, "EMAIL_ADDRESS").lit(".")
 
     return GoldenCase(id=case_id, language="en", genre=genre, text=b.text, spans=b.spans)
 
