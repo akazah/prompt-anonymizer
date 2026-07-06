@@ -31,7 +31,13 @@ interface GoldenCase {
 const HERE = dirname(fileURLToPath(import.meta.url));
 const GOLDEN_DIR = join(HERE, "../../../../tests/golden");
 
-const REGEX_ENTITIES = new Set(["EMAIL_ADDRESS", "PHONE_NUMBER", "JP_POSTAL_CODE", "CREDIT_CARD"]);
+const REGEX_ENTITIES = new Set([
+  "EMAIL_ADDRESS",
+  "PHONE_NUMBER",
+  "JP_POSTAL_CODE",
+  "JP_MY_NUMBER",
+  "CREDIT_CARD",
+]);
 const MIN_RECALL = 0.95;
 
 function loadGolden(language: Language): GoldenCase[] {
@@ -43,26 +49,31 @@ function overlaps(aStart: number, aEnd: number, bStart: number, bEnd: number): b
 }
 
 describe.each(["ja", "en"] as const)("golden set parity (%s)", (language) => {
-  it(`regex recall >= ${MIN_RECALL} on structured PII`, () => {
+  it(`regex recall >= ${MIN_RECALL} per structured entity`, () => {
     const cases = loadGolden(language);
     expect(cases.length).toBeGreaterThan(0);
 
-    let truePositives = 0;
-    let falseNegatives = 0;
+    const perEntity = new Map<string, { tp: number; fn: number }>();
     for (const goldenCase of cases) {
       const predictions = detectWithRegex(goldenCase.text, language);
       for (const gold of goldenCase.spans) {
         if (!REGEX_ENTITIES.has(gold.entity_type)) continue;
+        const tally = perEntity.get(gold.entity_type) ?? { tp: 0, fn: 0 };
         const hit = predictions.some(
           (p) =>
             p.entityType === gold.entity_type &&
             overlaps(p.start, p.end, gold.start, gold.end),
         );
-        if (hit) truePositives++;
-        else falseNegatives++;
+        if (hit) tally.tp++;
+        else tally.fn++;
+        perEntity.set(gold.entity_type, tally);
       }
     }
-    const recall = truePositives / (truePositives + falseNegatives);
-    expect(recall).toBeGreaterThanOrEqual(MIN_RECALL);
+    expect(perEntity.size).toBeGreaterThan(0);
+    for (const [entityType, { tp, fn }] of perEntity) {
+      const recall = tp / (tp + fn);
+      expect(recall, `${entityType}: recall ${recall.toFixed(3)} (${tp}/${tp + fn})`)
+        .toBeGreaterThanOrEqual(MIN_RECALL);
+    }
   });
 });
