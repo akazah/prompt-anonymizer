@@ -2,6 +2,7 @@ import {
   Anonymizer,
   RestoreSession,
   TransformersNerBackend,
+  detectLanguage,
   type AnonymizeResult,
   type Language,
   type MappingStore,
@@ -47,6 +48,7 @@ panel.innerHTML = `
       <textarea id="input" placeholder="Select text on a page → right-click → 'Anonymize selection', or paste here."></textarea>
       <div class="row" style="margin-top:8px">
         <select id="language">
+          <option value="auto">Auto / 自動判定</option>
           <option value="ja">日本語</option>
           <option value="en">English</option>
         </select>
@@ -129,14 +131,17 @@ function highlight(text: string, needles: string[], cls: string): string {
   return html;
 }
 
-function guessLanguage(text: string): Language {
-  return /[\u3040-\u30ff\u4e00-\u9fff]/.test(text) ? "ja" : "en";
+async function resolveLanguage(text: string): Promise<Language> {
+  // "Auto" resolves on-device: Chrome's built-in LanguageDetector when
+  // available, a script heuristic otherwise.
+  const value = $<HTMLSelectElement>("#language").value;
+  return value === "auto" ? detectLanguage(text) : (value as Language);
 }
 
 async function runAnonymize(): Promise<void> {
   const text = inputEl.value;
   if (!text.trim()) return;
-  const language = $<HTMLSelectElement>("#language").value as Language;
+  const language = await resolveLanguage(text);
   anonymizeBtn.disabled = true;
   try {
     // RestoreSession persists the mapping via ChromeSessionMappingStore.
@@ -207,7 +212,8 @@ async function consumePendingText(): Promise<void> {
   const pending = stored["pendingText"] as string | undefined;
   if (pending) {
     inputEl.value = pending;
-    $<HTMLSelectElement>("#language").value = guessLanguage(pending);
+    // Language resolves automatically inside runAnonymize when "Auto" is
+    // selected (the default), including for context-menu imports.
     void chrome.storage.session.remove("pendingText");
     switchTab("anon");
     void runAnonymize();
