@@ -1,14 +1,21 @@
+// Imported from the dependency-free registry subpath (not the core barrel)
+// so this bundle never pulls in transformers.js or its wasm assets.
 import {
-  LANGUAGES,
-  LANGUAGE_NAMES,
+  AUTO_DISPLAY_NAME,
+  LANGUAGE_DISPLAY_NAMES,
+  isLanguage,
+  isLanguageOption,
+  languageFromBcp47,
+  languagePickerEntries,
+  type Language,
+} from "@prompt-anonymizer/core/languages";
+import {
   getConfig,
   getEventMapping,
   getEvents,
   getStatus,
-  isLanguage,
   postPreview,
   putConfig,
-  type Language,
   type ProxyConfig,
   type ProxyStatus,
   type RedactionEvent,
@@ -19,18 +26,19 @@ import "./style.css";
 const SAMPLES: Record<Language, string> = {
   ja: "山田太郎は、来月、誕生日を迎えます。同僚の佐藤花子は、サプライズパーティーを計画しています。どんなプレゼントが適しているでしょうか。山田太郎は、東京都中央区に在住しています。彼のメールアドレスは taro.yamada@example.com、電話番号は 090-1234-5678 です。佐藤花子への連絡は hanako.sato@example.com までお願いします。",
   en: "John Smith will have a birthday next month. His colleague Emily Johnson is planning a surprise party. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333. You can reach Emily Johnson at emily.johnson@example.com.",
-  es: "María García vive en Madrid. Su correo electrónico es maria.garcia@example.com y su teléfono es +34 612 345 678.",
-  vi: "Nguyễn Văn An sống ở Hà Nội. Email của anh ấy là an.nguyen@example.com và số điện thoại là 0912 345 678.",
-  zh: "王小明住在北京。他的邮箱是 xiaoming.wang@example.com，电话号码是 138-1234-5678。",
-  ko: "김민준은 서울에 살고 있습니다. 이메일은 minjun.kim@example.com이고 전화번호는 010-1234-5678입니다.",
-  fr: "Jean Dupont habite à Paris. Son adresse e-mail est jean.dupont@example.com et son numéro de téléphone est le 06 12 34 56 78.",
-  de: "Max Mustermann wohnt in Berlin. Seine E-Mail-Adresse ist max.mustermann@example.com und seine Telefonnummer ist 0151 23456789.",
-  pt: "João Silva mora em São Paulo. O e-mail dele é joao.silva@example.com e o telefone é (11) 91234-5678.",
-  it: "Marco Rossi vive a Milano. La sua email è marco.rossi@example.com e il suo telefono è 333 123 4567.",
+  es: "María García celebrará su cumpleaños el próximo mes. Su colega Carlos Ruiz está planeando una fiesta sorpresa. ¿Qué regalo sería apropiado? María García vive en Madrid. Su correo electrónico es maria.garcia@example.com y su teléfono es +34 612 345 678. Puede contactar a Carlos Ruiz en carlos.ruiz@example.com.",
+  vi: "Nguyễn Văn An sẽ có sinh nhật vào tháng tới. Đồng nghiệp Trần Thị Mai đang lên kế hoạch một bữa tiệc bất ngờ. Món quà nào sẽ phù hợp? Nguyễn Văn An sống ở Hà Nội. Email của anh ấy là an.nguyen@example.com và số điện thoại là 0912 345 678. Bạn có thể liên hệ Trần Thị Mai tại mai.tran@example.com.",
+  zh: "王小明下个月过生日。他的同事李美玲正在筹划一个惊喜派对。送什么礼物比较合适呢？王小明住在北京市朝阳区。他的邮箱是 xiaoming.wang@example.com，电话号码是 138-1234-5678。联系李美玲请发邮件至 meiling.li@example.com。",
+  ko: "김민준은 다음 달에 생일을 맞이합니다. 동료인 이서연은 깜짝 파티를 계획하고 있습니다. 어떤 선물이 좋을까요? 김민준은 서울특별시 강남구에 살고 있습니다. 그의 이메일은 minjun.kim@example.com이고 전화번호는 010-1234-5678입니다. 이서연에게는 seoyeon.lee@example.com으로 연락해 주세요.",
+  fr: "Jean Dupont fêtera son anniversaire le mois prochain. Sa collègue Marie Martin prépare une fête surprise. Quel cadeau serait approprié ? Jean Dupont habite à Paris. Son adresse e-mail est jean.dupont@example.com et son numéro de téléphone est le 06 12 34 56 78. Vous pouvez contacter Marie Martin à marie.martin@example.com.",
+  de: "Max Mustermann hat nächsten Monat Geburtstag. Seine Kollegin Anna Schmidt plant eine Überraschungsparty. Welches Geschenk wäre passend? Max Mustermann wohnt in Berlin. Seine E-Mail-Adresse ist max.mustermann@example.com und seine Telefonnummer ist 0151 23456789. Anna Schmidt erreichen Sie unter anna.schmidt@example.com.",
+  pt: "João Silva fará aniversário no próximo mês. Sua colega Ana Costa está planejando uma festa surpresa. Qual presente seria adequado? João Silva mora em São Paulo. O e-mail dele é joao.silva@example.com e o telefone é (11) 91234-5678. Você pode contatar Ana Costa em ana.costa@example.com.",
+  it: "Marco Rossi festeggerà il compleanno il mese prossimo. La sua collega Giulia Bianchi sta organizzando una festa a sorpresa. Quale regalo sarebbe adatto? Marco Rossi vive a Milano. La sua email è marco.rossi@example.com e il suo telefono è 333 123 4567. Puoi contattare Giulia Bianchi all'indirizzo giulia.bianchi@example.com.",
 };
 
-const LANGUAGE_OPTIONS = `<option value="auto">Auto / 自動判定</option>
-            ${LANGUAGES.map((lang) => `<option value="${lang}">${LANGUAGE_NAMES[lang]}</option>`).join("\n            ")}`;
+const LANGUAGE_OPTIONS_MARKUP = languagePickerEntries({ auto: true })
+  .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+  .join("\n            ");
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
@@ -85,7 +93,7 @@ app.innerHTML = `
         <label class="field-label" for="cfg-language">Language</label>
         <div class="field-control">
           <select id="cfg-language">
-            ${LANGUAGE_OPTIONS}
+            ${LANGUAGE_OPTIONS_MARKUP}
           </select>
         </div>
       </div>
@@ -132,7 +140,7 @@ app.innerHTML = `
       <div class="toolbar">
         <label>Language
           <select id="preview-language">
-            ${LANGUAGE_OPTIONS}
+            ${LANGUAGE_OPTIONS_MARKUP}
           </select>
         </label>
         <button id="load-sample">Load sample</button>
@@ -217,8 +225,8 @@ function linesToText(lines: string[]): string {
 }
 
 function languageLabel(lang: string): string {
-  if (lang === "auto") return "Auto / 自動判定";
-  return isLanguage(lang) ? LANGUAGE_NAMES[lang] : lang;
+  if (lang === "auto") return AUTO_DISPLAY_NAME;
+  return isLanguage(lang) ? LANGUAGE_DISPLAY_NAMES[lang] : lang;
 }
 
 function setProxyOnline(online: boolean): void {
@@ -242,7 +250,7 @@ function readConfigForm(): Partial<ProxyConfig> {
   return {
     upstreamUrl: $<HTMLInputElement>("#cfg-upstream").value.trim(),
     ner: $<HTMLInputElement>("#cfg-ner").checked,
-    language: language === "auto" || isLanguage(language) ? language : "auto",
+    language: isLanguageOption(language) ? language : "auto",
     denyList: parseLines($<HTMLTextAreaElement>("#cfg-deny").value),
     allowList: parseLines($<HTMLTextAreaElement>("#cfg-allow").value),
     recordMappings: $<HTMLInputElement>("#cfg-record-mappings").checked,
@@ -433,7 +441,7 @@ $("#preview-btn").addEventListener("click", () => {
     previewBtn.disabled = true;
     previewBtn.textContent = "Working…";
     try {
-      const language = lang === "auto" || isLanguage(lang) ? lang : "auto";
+      const language = isLanguageOption(lang) ? lang : "auto";
       const result = await postPreview({ text, language });
       previewOutput.innerHTML = renderWithHighlights(
         result.anonymized,
@@ -460,13 +468,9 @@ $("#preview-btn").addEventListener("click", () => {
 
 $("#load-sample").addEventListener("click", () => {
   const value = $<HTMLSelectElement>("#preview-language").value;
-  // "auto" falls back to the navigator's base tag when supported, else English.
-  const navBase = (navigator.language?.toLowerCase() ?? "en").split("-")[0];
   const language: Language = isLanguage(value)
     ? value
-    : isLanguage(navBase)
-      ? navBase
-      : "en";
+    : (languageFromBcp47(navigator.language ?? "") ?? "en");
   $<HTMLTextAreaElement>("#preview-input").value = SAMPLES[language];
 });
 

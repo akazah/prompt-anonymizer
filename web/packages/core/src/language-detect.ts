@@ -1,6 +1,6 @@
 /**
- * On-device language detection across the supported languages (LANGUAGES in
- * types.ts).
+ * On-device language detection across the supported languages
+ * (SUPPORTED_LANGUAGES in languages.ts).
  *
  * Prefers the browser's built-in LanguageDetector API (Chrome 138+,
  * https://developer.mozilla.org/docs/Web/API/LanguageDetector) — an
@@ -10,7 +10,8 @@
  * downloaded: `detectLanguage` never triggers a model download itself.
  */
 
-import { LANGUAGES, type Language } from "./types.js";
+import { SUPPORTED_LANGUAGES, languageFromBcp47 } from "./languages.js";
+import type { Language } from "./types.js";
 
 /**
  * Ordered heuristic rules, evaluated top to bottom; no match means "en".
@@ -60,8 +61,7 @@ interface LanguageDetectorStatic {
   create(options?: { expectedInputLanguages?: string[] }): Promise<BuiltinLanguageDetector>;
 }
 
-const EXPECTED = { expectedInputLanguages: [...LANGUAGES] };
-const SUPPORTED_BASE_TAGS = new Set<Language>(LANGUAGES);
+const EXPECTED = { expectedInputLanguages: [...SUPPORTED_LANGUAGES] };
 
 let cachedDetector: Promise<BuiltinLanguageDetector | null> | null = null;
 
@@ -102,8 +102,8 @@ export async function detectLanguage(text: string): Promise<Language> {
   try {
     const results = await detector.detect(text);
     for (const result of results) {
-      const base = result.detectedLanguage.toLowerCase().split("-")[0] as Language;
-      if (SUPPORTED_BASE_TAGS.has(base)) return base;
+      const language = languageFromBcp47(result.detectedLanguage);
+      if (language) return language;
     }
     return fallback;
   } catch {

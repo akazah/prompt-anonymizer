@@ -7,7 +7,6 @@
  */
 
 import type { Language } from "@prompt-anonymizer/core";
-
 import type { ProxyConfig, RedactionEvent } from "./api-types.js";
 
 export interface StoredEvent {

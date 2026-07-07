@@ -15,11 +15,12 @@ import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   Anonymizer,
-  LANGUAGES,
+  LANGUAGE_LIST,
   TransformersNerBackend,
   deanonymize,
   detectLanguage,
   isLanguage,
+  isLanguageOption,
   type Language,
 } from "@prompt-anonymizer/core";
 import type {
@@ -319,8 +320,8 @@ function validateConfigPatch(
   }
 
   if ("language" in body) {
-    if (body.language !== "auto" && !isLanguage(body.language)) {
-      return { ok: false, error: `language must be auto or one of: ${LANGUAGES.join(", ")}.` };
+    if (!isLanguageOption(body.language)) {
+      return { ok: false, error: `language must be ${LANGUAGE_LIST} or auto.` };
     }
     out.language = body.language;
   }

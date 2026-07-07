@@ -1,10 +1,12 @@
-"""Central language registry - the single source of truth for language support.
+"""Single source of truth for the languages both cores support.
 
-Adding a language means adding one :class:`LanguageConfig` entry here plus a
-``labels/<code>.yaml`` file (and, for parity, mirroring the entry in the
-TypeScript core's ``web/packages/core/src``). Everything else - spaCy model
-resolution, transformer NER model choice, phone recognizers, heuristic
-language detection, CLI validation - is derived from this table.
+To add a language, add one :class:`LanguageConfig` entry to :data:`LANGUAGES`
+(plus a ``labels/<code>.yaml`` file) and mirror it in the TypeScript core's
+``web/packages/core/src/languages.ts``. CLI validation, spaCy/HF model
+resolution, phone recognizers, heuristic language detection, eval defaults
+and the consistency tests all derive from it; the tests in
+``tests/unit/test_languages.py`` then point at every remaining gap
+(labels, models, golden sets, README translation).
 
 This module is dependency-free (no presidio / spaCy imports) so the
 engine-free ``scan`` path stays light.
@@ -15,6 +17,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 __all__ = [
+    "DEFAULT_LANGUAGES",
     "DETECTION_RULES",
     "LANGUAGES",
     "SUPPORTED_LANGUAGES",
@@ -336,8 +339,14 @@ LANGUAGES: dict[str, LanguageConfig] = {
     ),
 }
 
-#: Supported language codes, in registry order.
-SUPPORTED_LANGUAGES: tuple[str, ...] = tuple(LANGUAGES)
+#: Display / evaluation order (mirrors the TS registry's ordering).
+SUPPORTED_LANGUAGES: tuple[str, ...] = ("ja", "en", "es", "vi", "zh", "ko", "fr", "de", "pt", "it")
+
+if set(SUPPORTED_LANGUAGES) != set(LANGUAGES):  # pragma: no cover - registry drift guard
+    raise AssertionError("SUPPORTED_LANGUAGES and LANGUAGES must list the same codes")
+
+#: Languages a default :class:`~prompt_anonymizer.core.PromptAnonymizer` loads models for.
+DEFAULT_LANGUAGES: tuple[str, ...] = ("en", "ja")
 
 #: Ordered ``(language, marker regex)`` rules for heuristic language
 #: detection, evaluated top to bottom; no match means ``en``. Script-scoped

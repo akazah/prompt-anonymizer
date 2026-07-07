@@ -1,10 +1,9 @@
 import {
   Anonymizer,
-  LANGUAGES,
-  LANGUAGE_NAMES,
   RestoreSession,
   TransformersNerBackend,
   detectLanguage,
+  languagePickerEntries,
   type AnonymizeResult,
   type Language,
   type MappingStore,
@@ -53,8 +52,9 @@ panel.innerHTML = `
       <textarea id="input" placeholder="Select text on a page → right-click → 'Anonymize selection', or paste here."></textarea>
       <div class="row mt-2">
         <select id="language">
-          <option value="auto">Auto / 自動判定</option>
-          ${LANGUAGES.map((lang) => `<option value="${lang}">${LANGUAGE_NAMES[lang]}</option>`).join("\n          ")}
+          ${languagePickerEntries({ auto: true })
+            .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+            .join("")}
         </select>
         <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER</label>
         <button id="anonymize" class="btn primary">Anonymize</button>

@@ -87,17 +87,17 @@ and are not measured here. Regenerate with
 
 | Language | Entity | Precision | Recall | F1 | Support |
 |---|---|---|---|---|---|
-| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
-| en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
-| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
 | es | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | es | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | es | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |

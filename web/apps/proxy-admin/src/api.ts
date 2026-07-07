@@ -3,34 +3,7 @@
  * (the app cannot depend on `@prompt-anonymizer/proxy` without a workspace cycle).
  */
 
-/**
- * Local mirror of the core language registry (`LANGUAGES` in
- * `web/packages/core/src/types.ts`) — this app does not depend on
- * `@prompt-anonymizer/core`, so keep this list in sync when adding a
- * language there. Everything below derives from this single list.
- */
-export const LANGUAGES = ["en", "ja", "es", "vi", "zh", "ko", "fr", "de", "pt", "it"] as const;
-
-export type Language = (typeof LANGUAGES)[number];
-
-/** Runtime guard for language strings (mirrors core's `isLanguage`). */
-export function isLanguage(value: unknown): value is Language {
-  return typeof value === "string" && (LANGUAGES as readonly string[]).includes(value);
-}
-
-/** Native display names (mirrors core's `LANGUAGE_NAMES`). */
-export const LANGUAGE_NAMES: Record<Language, string> = {
-  en: "English",
-  ja: "日本語",
-  es: "Español",
-  vi: "Tiếng Việt",
-  zh: "中文",
-  ko: "한국어",
-  fr: "Français",
-  de: "Deutsch",
-  pt: "Português",
-  it: "Italiano",
-};
+import type { Language, LanguageOption } from "@prompt-anonymizer/core/languages";
 
 /** Runtime-mutable proxy configuration (GET/PUT `/admin/api/config`). */
 export interface ProxyConfig {
@@ -39,7 +12,7 @@ export interface ProxyConfig {
   /** Use the transformers.js NER model (names & locations). */
   ner: boolean;
   /** Language for detection; `auto` = on-device detection per request. */
-  language: "auto" | Language;
+  language: LanguageOption;
   /** Strings to always mask (labelled CUSTOM / 秘匿情報). */
   denyList: string[];
   /** Strings to never mask even when detected. */
@@ -111,7 +84,7 @@ export interface EventMappingResponse {
 export interface PreviewRequest {
   text: string;
   /** Defaults to `auto`. */
-  language?: "auto" | Language;
+  language?: LanguageOption;
 }
 
 /**

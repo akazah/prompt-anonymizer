@@ -13,7 +13,7 @@
  *   unless the operator passes an explicit `--host`.
  */
 
-import type { Language } from "@prompt-anonymizer/core";
+import type { Language, LanguageOption } from "@prompt-anonymizer/core";
 
 /** Runtime-mutable proxy configuration (GET/PUT `/admin/api/config`). */
 export interface ProxyConfig {
@@ -22,7 +22,7 @@ export interface ProxyConfig {
   /** Use the transformers.js NER model (names & locations). */
   ner: boolean;
   /** Language for detection; `auto` = on-device detection per request. */
-  language: "auto" | Language;
+  language: LanguageOption;
   /** Strings to always mask (labelled CUSTOM / 秘匿情報). */
   denyList: string[];
   /** Strings to never mask even when detected. */
@@ -94,7 +94,7 @@ export interface EventMappingResponse {
 export interface PreviewRequest {
   text: string;
   /** Defaults to `auto`. */
-  language?: "auto" | Language;
+  language?: LanguageOption;
 }
 
 /**

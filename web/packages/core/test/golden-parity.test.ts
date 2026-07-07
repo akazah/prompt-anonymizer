@@ -11,8 +11,9 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { SUPPORTED_LANGUAGES } from "../src/languages.js";
 import { detectWithRegex } from "../src/recognizers.js";
-import { LANGUAGES, type Language } from "../src/types.js";
+import type { Language } from "../src/types.js";
 
 interface GoldenSpan {
   start: number;
@@ -50,7 +51,7 @@ function overlaps(aStart: number, aEnd: number, bStart: number, bEnd: number): b
   return aStart < bEnd && bStart < aEnd;
 }
 
-describe.each([...LANGUAGES] as const)("golden set parity (%s)", (language) => {
+describe.each(SUPPORTED_LANGUAGES)("golden set parity (%s)", (language) => {
   it(`regex recall >= ${MIN_RECALL} per structured entity`, () => {
     const cases = loadGolden(language);
     expect(cases.length).toBeGreaterThan(0);

@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 from prompt_anonymizer import labeling
 from prompt_anonymizer.exceptions import ModelNotDownloadedError, UnsupportedLanguageError
 from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
-from prompt_anonymizer.languages import LANGUAGES
+from prompt_anonymizer.languages import DEFAULT_LANGUAGES, LANGUAGES
 
 if TYPE_CHECKING:
     from presidio_analyzer import AnalyzerEngine, BatchAnalyzerEngine, RecognizerResult
@@ -79,7 +79,7 @@ class PromptAnonymizer:
 
     def __init__(
         self,
-        languages: Sequence[str] = ("en", "ja"),
+        languages: Sequence[str] = DEFAULT_LANGUAGES,
         model_size: str = "sm",
         entities: Sequence[str] | None = None,
         deny_list: Sequence[str] | None = None,
