@@ -22,5 +22,6 @@ const { chromium } = require('playwright');
 ```
 
 Regenerate whenever the tagline or supported languages change. Keep the
-design rule of the card: one before/after example, the four languages, and
-the on-device claim — no feature lists.
+design rule of the card: show the four languages as equals (no single
+language leads — the same name → label round-trip in each), and the
+on-device claim. No feature lists.

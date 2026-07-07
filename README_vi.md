@@ -252,10 +252,12 @@ cần Python.
 
 **Tại sao không LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 là bộ guardrail Python vững chắc với Anonymize/Deanonymize riêng.
-Prompt Anonymizer khác ở ba điểm: phát hiện ưu tiên tiếng Nhật (tên Nhật, địa
-chỉ, My Number có kiểm tra chữ số), giao diện cho người không phải lập trình
-viên (dán văn bản trên trang trình duyệt — không cần cài Python), và mã nguồn
-đủ nhỏ để thực sự đọc được.
+Prompt Anonymizer khác ở ba điểm: phát hiện đa ngôn ngữ trên tiếng Nhật,
+tiếng Anh, tiếng Tây Ban Nha và tiếng Việt với PII có cấu trúc riêng theo
+khu vực (ID quốc gia được kiểm tra chữ số như My Number, định dạng số điện
+thoại theo vùng), giao diện cho người không phải lập trình viên (dán văn
+bản trên trang trình duyệt — không cần cài Python), và mã nguồn đủ nhỏ để
+thực sự đọc được.
 
 **Tại sao không dùng tiện ích Chrome "100% cục bộ"?** Một số tiện ích mã
 đóng tuyên bố xử lý cục bộ. Tuyên bố không phải là kiểm toán. Dự án này có

@@ -274,10 +274,11 @@ extension and desktop surfaces that need no Python at all.
 
 **Why not LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 is a solid Python-side guardrail suite with its own Anonymize/Deanonymize.
-Prompt Anonymizer differs in three ways: Japanese-first detection (Japanese
-names, addresses, My Number with check-digit validation), non-developer
-surfaces (paste text in a browser page — no Python setup), and a codebase
-small enough to actually read.
+Prompt Anonymizer differs in three ways: multilingual detection across
+Japanese, English, Spanish and Vietnamese with locale-specific structured
+PII (checksum-validated national IDs such as My Number, per-region phone
+formats), non-developer surfaces (paste text in a browser page — no Python
+setup), and a codebase small enough to actually read.
 
 **Why not a "100% local" Chrome extension?** Several closed-source
 extensions claim local processing. Claims are not audits. This project is

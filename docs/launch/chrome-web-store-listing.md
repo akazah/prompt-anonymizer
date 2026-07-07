@@ -42,9 +42,10 @@ HOW IT WORKS
   restore the original values.
 
 LANGUAGES
-Japanese, English, Spanish, Vietnamese — with automatic detection.
-Japanese support is first-class: name NER, 〒 postal codes, My Number
-with check-digit validation, JP phone formats.
+Japanese, English, Spanish, Vietnamese — with automatic detection, all
+supported as equals. Each with locale-specific structured PII: per-region
+phone formats and checksum-validated national IDs (e.g. Japan's My Number,
+so it doesn't blindly mask every 12-digit number).
 
 PRIVACY
 This extension sends nothing anywhere. No telemetry, no accounts, no

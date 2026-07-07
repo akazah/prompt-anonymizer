@@ -261,10 +261,12 @@ superficies de navegador, extensión y escritorio que no requieren Python.
 **¿Por qué no LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 es un sólido conjunto de salvaguardas en Python con su propio
 Anonymize/Deanonymize. Prompt Anonymizer se diferencia en tres puntos:
-detección con prioridad en japonés (nombres japoneses, direcciones, My
-Number con validación de dígito de control), superficies para no
-desarrolladores (pega texto en una página del navegador — sin configurar
-Python) y una base de código lo bastante pequeña para leerla de verdad.
+detección multilingüe en japonés, inglés, español y vietnamita con PII
+estructurado propio de cada región (IDs nacionales validados por suma de
+comprobación como My Number, formatos de teléfono por región), superficies
+para no desarrolladores (pega texto en una página del navegador — sin
+configurar Python) y una base de código lo bastante pequeña para leerla de
+verdad.
 
 **¿Por qué no una extensión de Chrome «100 % local»?** Varias extensiones
 de código cerrado afirman procesamiento local. Las afirmaciones no son

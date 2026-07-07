@@ -85,7 +85,7 @@ All drafts live in this directory — review, personalize, then post:
 
 | Where | Draft | Timing |
 | --- | --- | --- |
-| Zenn (ja) | [zenn-article-ja.md](zenn-article-ja.md) | Day 0 — the Japanese-first angle is the differentiator |
+| Zenn (ja) | [zenn-article-ja.md](zenn-article-ja.md) | Day 0 — reaches a privacy-conscious dev audience in one of the four supported languages |
 | Hacker News (Show HN) | [show-hn.md](show-hn.md) | Day 0–1, weekday morning US time |
 | Reddit r/LocalLLaMA, r/privacy | adapt [show-hn.md](show-hn.md) | Day 1–2 |
 | awesome-list PRs | [awesome-list-blurbs.md](awesome-list-blurbs.md) | Day 2+ (steady inbound afterwards) |
