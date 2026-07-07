@@ -93,5 +93,5 @@ between the two is the golden set in `tests/golden/`.
 
 A network call we did not document, or any path that leaks input text or
 mappings, is a vulnerability: please report it per
-[SECURITY.md](../SECURITY.md) — as is any anonymization bypass (PII the
+[SECURITY.md](../.github/SECURITY.md) — as is any anonymization bypass (PII the
 detectors should catch but do not).
