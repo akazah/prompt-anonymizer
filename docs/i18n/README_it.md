@@ -1,4 +1,4 @@
-[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | Italiano
+[English](../../README.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | Italiano
 
 # Prompt Anonymizer
 
@@ -9,7 +9,7 @@
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
 Oggi hai due opzioni. Eseguire un modello locale — privato, ma rinunci
 all'intelligenza di frontiera. Oppure incollare in ChatGPT / Claude /
@@ -93,7 +93,7 @@ etichette → ripristina:
 | **Web Component** | `@prompt-anonymizer/element` (non ancora su npm) | Elemento `<prompt-anonymizer>` indipendente dal framework: inserisci il pannello completo anonimizza → ripristina in qualsiasi sito (HTML puro, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (non ancora su npm) | Componente `<AnonymizerPanel />` pronto all'uso più un hook `useAnonymizer()` / composable per interfacce personalizzate. Vedi l'avvio rapido qui sotto. |
 | **Proxy locale + GUI di amministrazione** | `@prompt-anonymizer/proxy` (non ancora su npm — compila da `web/packages/proxy`) | Reverse proxy compatibile con OpenAI: punta `OPENAI_BASE_URL` verso di esso e i PII vengono mascherati prima di lasciare la tua macchina, con le etichette ripristinate nelle risposte (streaming incluso). GUI di amministrazione su `http://127.0.0.1:8787/admin/`. Vedi l'avvio rapido qui sotto. |
-| **Hook di commit / barriera CI** | `prompt-anonymizer scan` (entrambe le CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Barriera PII basata sul codice di uscita per i controlli al commit e in CI: riporta `file:line:col` e il tipo di entità, mai il testo corrispondente. Offline e senza modelli per impostazione predefinita. Vedi sotto. |
+| **Hook di commit / barriera CI** | `prompt-anonymizer scan` (entrambe le CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Barriera PII basata sul codice di uscita per i controlli al commit e in CI: riporta `file:line:col` e il tipo di entità, mai il testo corrispondente. Offline e senza modelli per impostazione predefinita. Vedi sotto. |
 
 ## Avvio rapido (Python)
 
@@ -233,7 +233,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```
 
 Con il framework [pre-commit](https://pre-commit.com)
-(definizione dell'hook: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+(definizione dell'hook: [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml)):
 
 ```yaml
 repos:
@@ -385,7 +385,7 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 Misurato a livello di span su un golden set sintetico con seed (200
 documenti per ciascuna delle dieci lingue in
 `tests/golden/golden_{lang}.json`) — consulta
-[docs/EVAL.md](docs/EVAL.md) per la tabella completa e
+[docs/EVAL.md](../EVAL.md) per la tabella completa e
 `uv run python -m prompt_anonymizer.evals` per riprodurre (per impostazione
 predefinita tutte e dieci le lingue). In evidenza (core Python, modelli
 `sm`): recall 1.00 su ja PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE /
@@ -394,7 +394,7 @@ CREDIT_CARD; recall di ja PERSON 0.82 con spaCy, 1.00 con
 PERSON/LOCATION traggono grande beneficio da `ner_backend="hf"`. Il recall
 dei PII strutturati (telefono / email / carta) è 1.00 per le sei nuove
 lingue (zh, ko, fr, de, pt, it) sul golden set —
-[docs/EVAL.md](docs/EVAL.md) contiene la tabella del core TS; i numeri del
+[docs/EVAL.md](../EVAL.md) contiene la tabella del core TS; i numeri del
 NER Python sono prodotti dalla valutazione settimanale.
 
 Questi numeri esistono per intercettare le regressioni, non per promettere
@@ -419,7 +419,7 @@ recall su testo del mondo reale.
 ## Roadmap
 
 Consulta le [issues](https://github.com/akazah/prompt-anonymizer/issues)
-aperte e [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). In evidenza:
+aperte e [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). In evidenza:
 pubblicazione su npm / PyPI, pubblicazione negli store (Chrome Web Store),
 firma del codice, modelli NER giapponesi più piccoli, PII strutturati
 multi-regione (più formati di telefono / ID nazionali con validazione
@@ -427,6 +427,6 @@ tramite checksum), server MCP.
 
 ## Contributing / Security / License
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — configurazione di sviluppo (uv / pnpm), comandi di test e valutazione
-- [SECURITY.md](SECURITY.md) — segnalazione di vulnerabilità e di elusioni dell'anonimizzazione
-- [MIT](LICENSE)
+- [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configurazione di sviluppo (uv / pnpm), comandi di test e valutazione
+- [SECURITY.md](../../.github/SECURITY.md) — segnalazione di vulnerabilità e di elusioni dell'anonimizzazione
+- [MIT](../../LICENSE)

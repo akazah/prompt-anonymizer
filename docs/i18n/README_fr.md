@@ -1,4 +1,4 @@
-[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | Français | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
+[English](../../README.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | Français | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
 
 # Prompt Anonymizer
 
@@ -9,7 +9,7 @@
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
 Aujourd'hui, vous avez deux options. Exécuter un modèle local — privé, mais
 vous renoncez à l'intelligence de pointe. Ou coller votre texte dans
@@ -93,7 +93,7 @@ Anonymiser → le mapping reste local → la réponse du LLM conserve les
 | **Web Component** | `@prompt-anonymizer/element` (pas encore sur npm) | Élément `<prompt-anonymizer>` indépendant du framework : intégrez le panneau complet anonymiser → restaurer dans n'importe quel site (HTML pur, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (pas encore sur npm) | Composant `<AnonymizerPanel />` prêt à l'emploi plus un hook `useAnonymizer()` / composable pour les interfaces personnalisées. Voir le démarrage rapide ci-dessous. |
 | **Proxy local + GUI d'administration** | `@prompt-anonymizer/proxy` (pas encore sur npm — à compiler depuis `web/packages/proxy`) | Proxy inverse compatible OpenAI : pointez `OPENAI_BASE_URL` vers lui et les PII sont masquées avant de quitter votre machine, les étiquettes étant restaurées dans les réponses (streaming inclus). GUI d'administration sur `http://127.0.0.1:8787/admin/`. Voir le démarrage rapide ci-dessous. |
-| **Hook de commit / garde-fou CI** | `prompt-anonymizer scan` (les deux CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Garde-fou PII par code de sortie pour les vérifications au commit et en CI : rapporte `file:line:col` et le type d'entité, jamais le texte détecté. Hors ligne et sans modèle par défaut. Voir ci-dessous. |
+| **Hook de commit / garde-fou CI** | `prompt-anonymizer scan` (les deux CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Garde-fou PII par code de sortie pour les vérifications au commit et en CI : rapporte `file:line:col` et le type d'entité, jamais le texte détecté. Hors ligne et sans modèle par défaut. Voir ci-dessous. |
 
 ## Démarrage rapide (Python)
 
@@ -235,7 +235,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```
 
 Avec le framework [pre-commit](https://pre-commit.com)
-(définition du hook : [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)) :
+(définition du hook : [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml)) :
 
 ```yaml
 repos:
@@ -386,7 +386,7 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 
 Mesurée au niveau des spans sur un jeu doré synthétique généré avec graine
 (200 documents pour chacune des dix langues dans
-`tests/golden/golden_{lang}.json`) — voir [docs/EVAL.md](docs/EVAL.md) pour
+`tests/golden/golden_{lang}.json`) — voir [docs/EVAL.md](../EVAL.md) pour
 le tableau complet et `uv run python -m prompt_anonymizer.evals` pour
 reproduire (les dix langues par défaut). Points saillants (cœur Python,
 modèles `sm`) : rappel 1.00 pour ja PHONE_NUMBER / EMAIL_ADDRESS /
@@ -395,7 +395,7 @@ avec `ner_backend="hf"`. Le rappel es/vi PHONE_NUMBER est aussi de 1.00 ;
 vi PERSON/LOCATION bénéficient fortement de `ner_backend="hf"`. Le rappel
 des PII structurées (téléphone / e-mail / carte) est de 1.00 pour les six
 nouvelles langues (zh, ko, fr, de, pt, it) sur le jeu doré —
-[docs/EVAL.md](docs/EVAL.md) contient le tableau du cœur TS ; les chiffres
+[docs/EVAL.md](../EVAL.md) contient le tableau du cœur TS ; les chiffres
 NER Python sont produits par l'évaluation hebdomadaire.
 
 Ces chiffres servent à détecter des régressions, pas à promettre un rappel
@@ -420,7 +420,7 @@ sur du texte réel.
 ## Feuille de route
 
 Consultez les [issues](https://github.com/akazah/prompt-anonymizer/issues)
-ouvertes et [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Points
+ouvertes et [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Points
 saillants : publication sur npm / PyPI, publication sur les stores (Chrome
 Web Store), signature du code, modèles NER japonais plus petits, PII
 structurées multi-régions (plus de formats de téléphone / d'identifiants
@@ -428,6 +428,6 @@ nationaux avec validation par somme de contrôle), serveur MCP.
 
 ## Contributing / Security / License
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — configuration de développement (uv / pnpm), commandes de test et d'évaluation
-- [SECURITY.md](SECURITY.md) — signalement des vulnérabilités et des contournements d'anonymisation
-- [MIT](LICENSE)
+- [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuration de développement (uv / pnpm), commandes de test et d'évaluation
+- [SECURITY.md](../../.github/SECURITY.md) — signalement des vulnérabilités et des contournements d'anonymisation
+- [MIT](../../LICENSE)

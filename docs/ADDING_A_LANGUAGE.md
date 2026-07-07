@@ -111,7 +111,7 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 
 ### 8. Docs
 
-- `README_<lang>.md` translation, cross-linked from the language
+- `docs/i18n/README_<lang>.md` translation, cross-linked from the language
   switcher (first line) of every existing README —
   `tests/unit/test_languages.py` fails until the file exists.
 - READMEs keep their ja/en/es/vi label columns; other languages'

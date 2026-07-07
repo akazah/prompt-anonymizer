@@ -1,4 +1,4 @@
-English | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
+English | [日本語](docs/i18n/README_ja.md) | [Español](docs/i18n/README_es.md) | [Tiếng Việt](docs/i18n/README_vi.md) | [中文](docs/i18n/README_zh.md) | [한국어](docs/i18n/README_ko.md) | [Français](docs/i18n/README_fr.md) | [Deutsch](docs/i18n/README_de.md) | [Português](docs/i18n/README_pt.md) | [Italiano](docs/i18n/README_it.md)
 
 # Prompt Anonymizer
 
@@ -417,7 +417,7 @@ real-world text.
 ## Roadmap
 
 See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
-[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Highlights: npm / PyPI
+[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights: npm / PyPI
 publication, store publication (Chrome Web Store), code signing, smaller
 Japanese NER models, multi-region structured PII (more phone / national-ID
 formats via checksum validation).
@@ -425,7 +425,7 @@ formats via checksum validation).
 ## Contributing / Security / License
 
 - [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md) — recipes for LiteLLM, OpenWebUI, MCP clients, git hooks and CI
-- [CONTRIBUTING.md](CONTRIBUTING.md) — dev setup (uv / pnpm), test and eval commands
+- [CONTRIBUTING.md](.github/CONTRIBUTING.md) — dev setup (uv / pnpm), test and eval commands
 - [docs/AUDIT.md](docs/AUDIT.md) — verify the on-device claims yourself, step by step
-- [SECURITY.md](SECURITY.md) — reporting vulnerabilities and anonymization bypasses
+- [SECURITY.md](.github/SECURITY.md) — reporting vulnerabilities and anonymization bypasses
 - [MIT](LICENSE)

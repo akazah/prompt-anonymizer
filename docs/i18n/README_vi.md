@@ -1,4 +1,4 @@
-[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | Tiếng Việt | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
+[English](../../README.md) | [日本語](README_ja.md) | [Español](README_es.md) | Tiếng Việt | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
 
 # Prompt Anonymizer
 
@@ -8,7 +8,7 @@
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
 Hiện tại bạn có hai lựa chọn. Chạy mô hình cục bộ — riêng tư, nhưng phải từ bỏ
 trí tuệ frontier. Hoặc dán vào ChatGPT / Claude / Gemini và tự kiểm soát, từng
@@ -89,7 +89,7 @@ ngồi.
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (chưa có trên npm) | Component `<AnonymizerPanel />` dùng ngay, kèm hook `useAnonymizer()` / composable cho giao diện tùy chỉnh. Xem Bắt đầu nhanh bên dưới. |
 | **Proxy cục bộ + GUI quản trị** | `@prompt-anonymizer/proxy` (chưa có trên npm — build từ `web/packages/proxy`) | Reverse proxy tương thích OpenAI: trỏ `OPENAI_BASE_URL` vào nó và PII được che trước khi rời máy của bạn, nhãn được khôi phục trong phản hồi (kể cả streaming). GUI quản trị tại `http://127.0.0.1:8787/admin/`. Xem Bắt đầu nhanh bên dưới. |
 | **Máy chủ MCP** | `@prompt-anonymizer/mcp` (chưa có trên npm — build từ `web/packages/mcp`) | Các công cụ `anonymize` / `deanonymize` / `scan` cho mọi MCP client (Claude Desktop, Claude Code, Cursor, …). Bảng ánh xạ nhãn nằm trong bộ nhớ máy chủ (`mapping_id`) và không bao giờ hiển thị cho mô hình trừ khi được yêu cầu rõ ràng. |
-| **Hook commit / cổng CI** | `prompt-anonymizer scan` (cả hai CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Cổng chặn PII qua mã thoát cho kiểm tra lúc commit và trong CI: báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp. Mặc định offline và không cần mô hình. Xem bên dưới. |
+| **Hook commit / cổng CI** | `prompt-anonymizer scan` (cả hai CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Cổng chặn PII qua mã thoát cho kiểm tra lúc commit và trong CI: báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp. Mặc định offline và không cần mô hình. Xem bên dưới. |
 
 ## Bắt đầu nhanh (Python)
 
@@ -225,7 +225,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```
 
 Với framework [pre-commit](https://pre-commit.com)
-(định nghĩa hook: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+(định nghĩa hook: [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml)):
 
 ```yaml
 repos:
@@ -366,14 +366,14 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 
 Đo ở cấp span trên tập golden tổng hợp có seed (200 tài liệu cho mỗi ngôn
 ngữ trong cả mười ngôn ngữ, tại `tests/golden/golden_{lang}.json`) —
-xem [docs/EVAL.md](docs/EVAL.md) để có bảng đầy đủ và
+xem [docs/EVAL.md](../EVAL.md) để có bảng đầy đủ và
 `uv run python -m prompt_anonymizer.evals` để tái tạo (mặc định cả mười ngôn
 ngữ). Điểm nổi bật (lõi Python, mô hình `sm`): ja PHONE_NUMBER /
 EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD recall 1.00; ja PERSON recall
 0.82 với spaCy, 1.00 với `ner_backend="hf"`. es/vi PHONE_NUMBER recall cũng
 1.00; vi PERSON/LOCATION hưởng lợi mạnh từ `ner_backend="hf"`. Recall PII
 có cấu trúc (điện thoại / email / thẻ) đạt 1.00 cho sáu ngôn ngữ mới (zh,
-ko, fr, de, pt, it) trên tập golden — [docs/EVAL.md](docs/EVAL.md) có bảng
+ko, fr, de, pt, it) trên tập golden — [docs/EVAL.md](../EVAL.md) có bảng
 của lõi TS; số liệu NER Python do eval hằng tuần tạo ra.
 
 Các con số này nhằm bắt hồi quy, không phải hứa hẹn recall trên văn bản thực
@@ -396,13 +396,13 @@ tế.
 ## Lộ trình
 
 Xem [issues](https://github.com/akazah/prompt-anonymizer/issues) mở và
-[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Nổi bật: công bố npm / PyPI,
+[IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Nổi bật: công bố npm / PyPI,
 công bố cửa hàng (Chrome Web Store), ký mã, mô hình NER tiếng Nhật nhỏ hơn,
 PII có cấu trúc đa vùng (thêm định dạng số điện thoại / ID quốc gia qua kiểm
 tra checksum).
 
 ## Contributing / Security / License
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — thiết lập dev (uv / pnpm), lệnh test và eval
-- [SECURITY.md](SECURITY.md) — báo cáo lỗ hổng và cách vượt qua ẩn danh
-- [MIT](LICENSE)
+- [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — thiết lập dev (uv / pnpm), lệnh test và eval
+- [SECURITY.md](../../.github/SECURITY.md) — báo cáo lỗ hổng và cách vượt qua ẩn danh
+- [MIT](../../LICENSE)
