@@ -62,18 +62,18 @@ ngồi.
 
 Ẩn danh → bảng ánh xạ giữ tại local → phản hồi LLM giữ nhãn → khôi phục:
 
-<img alt="Demo ứng dụng trình duyệt: ẩn danh, bảng ánh xạ, vòng qua khôi phục" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Demo ứng dụng trình duyệt: ẩn danh, bảng ánh xạ, vòng qua khôi phục" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_vi.gif?raw=true" width="85%">
 
 <details>
-<summary>Demo CLI (tiếng Nhật / tiếng Anh — tám ngôn ngữ còn lại dùng tương tự)</summary>
+<summary>Demo CLI</summary>
 
-<img alt="Demo CLI (tiếng Nhật)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Demo CLI (tiếng Anh)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="Demo CLI" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_vi.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Demo tiện ích Chrome (bảng bên)</summary>
 
-<img alt="Demo tiện ích Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Demo tiện ích Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_vi.gif?raw=true" width="40%">
 </details>
 
 ## Dùng thử

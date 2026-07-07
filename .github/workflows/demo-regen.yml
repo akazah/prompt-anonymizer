@@ -1,0 +1,98 @@
+name: Regenerate demo GIFs
+
+# Manual workflow: re-records the per-language demo GIFs (browser app, CLI,
+# Chrome extension) used by README.md / README_<lang>.md. Needs real network
+# access for spaCy model / NER model downloads, so it can't run in the
+# sandboxed dev environment - see demo/README.md for the local equivalents.
+on:
+  workflow_dispatch:
+    inputs:
+      langs:
+        description: "Comma-separated language codes, or 'all'"
+        required: false
+        default: "all"
+      targets:
+        description: "Which demos to regenerate"
+        required: false
+        default: "web,extension,cli"
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: web/package.json
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install web deps
+        working-directory: web
+        run: pnpm install --frozen-lockfile
+
+      - name: Build core + web + extension
+        working-directory: web
+        run: pnpm --filter "@prompt-anonymizer/web..." --filter "@prompt-anonymizer/extension..." build
+
+      - name: Install Playwright Chromium
+        working-directory: web
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.3.0
+        with:
+          enable-cache: true
+
+      - name: Sync Python deps (incl. spaCy sm models for all 10 languages)
+        run: uv sync --all-extras --group models
+
+      - name: Install vhs, ttyd, ffmpeg, fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ttyd ffmpeg fonts-noto-cjk fonts-noto-cjk-extra fonts-dejavu-core
+          go install github.com/charmbracelet/vhs@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      # The tapes assume the repo lives at /workspace (matches the project's
+      # devcontainer), so the CI checkout is symlinked there too.
+      - name: Symlink checkout to /workspace
+        run: sudo ln -s "$GITHUB_WORKSPACE" /workspace
+
+      - name: Regenerate browser app demo GIFs
+        if: contains(inputs.targets, 'web')
+        run: node demo/scripts/record_web.mjs --lang=${{ inputs.langs }}
+
+      - name: Regenerate Chrome extension demo GIFs
+        if: contains(inputs.targets, 'extension')
+        run: node demo/scripts/record_extension.mjs --lang=${{ inputs.langs }}
+
+      - name: Regenerate CLI demo GIFs
+        if: contains(inputs.targets, 'cli')
+        run: |
+          source .venv/bin/activate
+          langs="${{ inputs.langs }}"
+          if [ "$langs" = "all" ]; then
+            tapes=(demo/tapes/demo_*.tape)
+          else
+            tapes=()
+            IFS=',' read -ra codes <<< "$langs"
+            for code in "${codes[@]}"; do tapes+=("demo/tapes/demo_${code}.tape"); done
+          fi
+          vhs "${tapes[@]}"
+
+      - name: Commit regenerated assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add demo/demo_*.gif
+          git diff --cached --quiet || git commit -m "docs: regenerate demo GIFs (${{ inputs.langs }} / ${{ inputs.targets }})"
+          git push

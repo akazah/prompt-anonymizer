@@ -67,18 +67,18 @@ MIT ed è abbastanza piccolo da poter essere verificato in una sola seduta.
 Anonimizza → la mappatura resta locale → la risposta dell'LLM mantiene le
 etichette → ripristina:
 
-<img alt="Demo dell'app web: anonimizzazione, mappatura e ripristino di andata e ritorno" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Demo dell'app web: anonimizzazione, mappatura e ripristino di andata e ritorno" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_it.gif?raw=true" width="85%">
 
 <details>
-<summary>Demo della CLI (giapponese / inglese — le altre otto lingue funzionano allo stesso modo)</summary>
+<summary>Demo della CLI</summary>
 
-<img alt="Demo della CLI (giapponese)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Demo della CLI (inglese)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="Demo della CLI" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_it.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Demo dell'estensione Chrome (pannello laterale)</summary>
 
-<img alt="Demo dell'estensione Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Demo dell'estensione Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_it.gif?raw=true" width="40%">
 </details>
 
 ## Provalo

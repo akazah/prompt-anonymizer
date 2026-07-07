@@ -64,18 +64,18 @@ step-by-step procedure.
 
 Anonymize → the mapping stays local → the LLM reply keeps the labels → restore:
 
-<img alt="Browser app demo: anonymize, mapping, restore round-trip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Browser app demo: anonymize, mapping, restore round-trip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_en.gif?raw=true" width="85%">
 
 <details>
-<summary>CLI demo (Japanese / English — the other eight languages work the same)</summary>
+<summary>CLI demo</summary>
 
-<img alt="CLI demo (Japanese)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLI demo (English)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="CLI demo" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Chrome extension demo (side panel)</summary>
 
-<img alt="Chrome extension demo" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Chrome extension demo" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_en.gif?raw=true" width="40%">
 </details>
 
 ## Try it

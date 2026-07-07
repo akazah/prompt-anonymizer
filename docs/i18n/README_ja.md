@@ -65,18 +65,18 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 
 匿名化 → 対応表はローカルに残る → LLM応答にはラベルが残る → 復元:
 
-<img alt="ブラウザ版デモ: 匿名化・対応表・復元のラウンドトリップ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="ブラウザ版デモ: 匿名化・対応表・復元のラウンドトリップ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_ja.gif?raw=true" width="85%">
 
 <details>
-<summary>CLIデモ（日本語 / 英語 — 残り8言語も同じように使えます）</summary>
+<summary>CLIデモ</summary>
 
-<img alt="CLIデモ（日本語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLIデモ（英語）" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="CLIデモ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Chrome拡張デモ（サイドパネル）</summary>
 
-<img alt="Chrome拡張デモ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Chrome拡張デモ" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_ja.gif?raw=true" width="40%">
 </details>
 
 ## 使ってみる

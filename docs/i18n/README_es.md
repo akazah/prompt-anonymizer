@@ -65,18 +65,18 @@ licencia MIT y es lo bastante pequeño para auditarlo de una sentada.
 Anonimizar → el mapeo permanece local → la respuesta del LLM conserva las
 etiquetas → restaurar:
 
-<img alt="Demo de la app web: anonimizar, mapeo y restauración en ida y vuelta" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Demo de la app web: anonimizar, mapeo y restauración en ida y vuelta" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_es.gif?raw=true" width="85%">
 
 <details>
-<summary>Demo de la CLI (japonés / inglés — los otros ocho idiomas funcionan igual)</summary>
+<summary>Demo de la CLI</summary>
 
-<img alt="Demo de la CLI (japonés)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Demo de la CLI (inglés)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="Demo de la CLI" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_es.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Demo de la extensión de Chrome (panel lateral)</summary>
 
-<img alt="Demo de la extensión de Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Demo de la extensión de Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_es.gif?raw=true" width="40%">
 </details>
 
 ## Pruébalo

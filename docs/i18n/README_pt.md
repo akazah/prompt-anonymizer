@@ -64,18 +64,18 @@ MIT e é suficientemente pequeno para ser auditado de uma assentada.
 
 Anonimizar → o mapeamento fica local → a resposta do LLM mantém os rótulos → restaurar:
 
-<img alt="Demo da aplicação web: anonimizar, mapeamento e restauro de ida e volta" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Demo da aplicação web: anonimizar, mapeamento e restauro de ida e volta" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_pt.gif?raw=true" width="85%">
 
 <details>
-<summary>Demo da CLI (japonês / inglês — os outros oito idiomas funcionam da mesma forma)</summary>
+<summary>Demo da CLI</summary>
 
-<img alt="Demo da CLI (japonês)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Demo da CLI (inglês)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="Demo da CLI" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_pt.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Demo da extensão Chrome (painel lateral)</summary>
 
-<img alt="Demo da extensão Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Demo da extensão Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_pt.gif?raw=true" width="40%">
 </details>
 
 ## Experimente
