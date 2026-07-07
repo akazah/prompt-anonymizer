@@ -284,18 +284,18 @@ the category has earned the skepticism.)
 
 ## Supported entities
 
-| Entity | ja label | en label | es label | vi label | Engine |
+| Entity | en label | ja label | es label | vi label | Engine |
 |---|---|---|---|---|---|
-| PERSON | 人名 | Name | Nombre | Tên | NER |
-| LOCATION | 住所 | Location | Dirección | ĐịaChỉ | NER |
-| EMAIL_ADDRESS | メールアドレス | Email | Correo | Email | pattern |
-| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | registry-driven per-language patterns + libphonenumber regions (JP/US/ES/VN/CN/KR/FR/DE/PT/IT) |
-| JP_POSTAL_CODE | 郵便番号 | PostalCode | CódigoPostal | MãBưuĐiện | pattern (custom) |
-| JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | pattern + check digit (custom) |
-| CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | pattern + Luhn check (both cores, all languages) |
-| CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | exact match |
-| US_SSN (opt-in) | 社会保障番号 | SSN | SSN | SSN | pattern + invalidation rules (both cores, all languages) |
+| PERSON | Name | 人名 | Nombre | Tên | NER |
+| EMAIL_ADDRESS | Email | メールアドレス | Correo | Email | pattern |
+| LOCATION | Location | 住所 | Dirección | ĐịaChỉ | NER |
+| PHONE_NUMBER | Phone | 電話番号 | Teléfono | SốĐiệnThoại | registry-driven per-language patterns + libphonenumber regions (JP/US/ES/VN/CN/KR/FR/DE/PT/IT) |
+| JP_POSTAL_CODE | PostalCode | 郵便番号 | CódigoPostal | MãBưuĐiện | pattern (custom) |
+| JP_MY_NUMBER | MyNumber | マイナンバー | MyNumber | MyNumber | pattern + check digit (custom) |
+| CREDIT_CARD | CreditCard | クレジットカード | Tarjeta | ThẻTínDụng | pattern + Luhn check (both cores, all languages) |
+| US_SSN (opt-in) | SSN | 社会保障番号 | SSN | SSN | pattern + invalidation rules (both cores, all languages) |
 | IBAN_CODE (opt-in) | IBAN | IBAN | IBAN | IBAN | pattern + mod-97 check (both cores, all languages) |
+| CUSTOM (deny list) | Custom | 秘匿情報 | Personalizado | TùyChỉnh | exact match |
 
 Labels for the six new languages (zh, ko, fr, de, pt, it) ship in
 `src/prompt_anonymizer/labels/*.yaml` (Python) and in `LABELS` in
