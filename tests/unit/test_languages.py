@@ -91,7 +91,7 @@ def test_golden_set_exists_and_is_language_consistent(language: str) -> None:
 
 @pytest.mark.parametrize("language", [lang for lang in SUPPORTED_LANGUAGES if lang != "en"])
 def test_readme_translation_exists(language: str) -> None:
-    assert (REPO_ROOT / f"README_{language}.md").exists()
+    assert (REPO_ROOT / "docs" / "i18n" / f"README_{language}.md").exists()
 
 
 def test_detection_rules_reference_supported_languages_only() -> None:
