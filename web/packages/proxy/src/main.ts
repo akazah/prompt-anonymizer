@@ -9,6 +9,7 @@
 
 import { readFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
+import { LANGUAGE_LIST, isLanguageOption } from "@prompt-anonymizer/core";
 import { startProxyServer } from "./server.js";
 
 export interface ProxyIo {
@@ -24,7 +25,7 @@ const USAGE = `prompt-anonymizer-proxy [options]
   -p, --port PORT        Listen port (default: 8787)
       --host HOST        Bind address (default: 127.0.0.1; use 0.0.0.0 at your own risk)
   -u, --upstream URL     OpenAI-compatible upstream base URL (default: https://api.openai.com)
-  -l, --language LANG    en, ja, es, vi or auto (default: auto)
+  -l, --language LANG    ${LANGUAGE_LIST} or auto (default: auto)
       --no-ner           Disable the NER model (names/locations NOT masked)
       --deny VALUE       Always mask VALUE (repeatable)
       --allow VALUE      Never mask VALUE (repeatable)
@@ -67,14 +68,8 @@ export async function run(argv: string[], io: ProxyIo): Promise<number> {
   }
 
   const language = values.language;
-  if (
-    language !== "auto" &&
-    language !== "en" &&
-    language !== "ja" &&
-    language !== "es" &&
-    language !== "vi"
-  ) {
-    throw new CliError(`Unsupported language: ${language} (use en, ja, es, vi or auto).`);
+  if (!isLanguageOption(language)) {
+    throw new CliError(`Unsupported language: ${language} (use ${LANGUAGE_LIST} or auto).`);
   }
 
   const port = Number.parseInt(values.port, 10);
