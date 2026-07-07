@@ -9,7 +9,7 @@
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
 Hoje tem duas opções. Executar um modelo local — privado, mas abdica da
 inteligência de fronteira. Ou colar no ChatGPT / Claude / Gemini e
@@ -90,7 +90,7 @@ Anonimizar → o mapeamento fica local → a resposta do LLM mantém os rótulos
 | **Web Component** | `@prompt-anonymizer/element` (ainda não está no npm) | Elemento `<prompt-anonymizer>` independente de framework: insira o painel completo de anonimizar → restaurar em qualquer site (HTML simples, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (ainda não está no npm) | Componente `<AnonymizerPanel />` pronto a usar mais um hook `useAnonymizer()` / composable para interfaces personalizadas. Veja o início rápido abaixo. |
 | **Proxy local + GUI de administração** | `@prompt-anonymizer/proxy` (ainda não está no npm — compile a partir de `web/packages/proxy`) | Proxy inverso compatível com OpenAI: aponte `OPENAI_BASE_URL` para ele e os PII são mascarados antes de saírem da sua máquina, com os rótulos restaurados nas respostas (incl. streaming). GUI de administração em `http://127.0.0.1:8787/admin/`. Veja o início rápido abaixo. |
-| **Hook de commit / barreira de CI** | `prompt-anonymizer scan` (ambas as CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Barreira de PII por código de saída para verificações no commit e em CI: reporta `file:line:col` e o tipo de entidade, nunca o texto correspondente. Offline e sem modelos por omissão. Veja abaixo. |
+| **Hook de commit / barreira de CI** | `prompt-anonymizer scan` (ambas as CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Barreira de PII por código de saída para verificações no commit e em CI: reporta `file:line:col` e o tipo de entidade, nunca o texto correspondente. Offline e sem modelos por omissão. Veja abaixo. |
 
 ## Início rápido (Python)
 
@@ -228,7 +228,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```
 
 Com o framework [pre-commit](https://pre-commit.com)
-(definição do hook: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+(definição do hook: [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml)):
 
 ```yaml
 repos:
@@ -379,7 +379,7 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 Medido ao nível do span num conjunto dourado sintético com semente (200
 documentos por cada um dos dez idiomas em
 `tests/golden/golden_{lang}.json`) — consulte
-[docs/EVAL.md](docs/EVAL.md) para a tabela completa e
+[docs/EVAL.md](../EVAL.md) para a tabela completa e
 `uv run python -m prompt_anonymizer.evals` para reproduzir (por omissão,
 todos os dez idiomas). Destaques (núcleo Python, modelos `sm`): recall 1.00
 em ja PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD; recall
@@ -387,7 +387,7 @@ de ja PERSON 0.82 com spaCy, 1.00 com `ner_backend="hf"`. O recall de
 es/vi PHONE_NUMBER também é 1.00; vi PERSON/LOCATION beneficiam fortemente
 de `ner_backend="hf"`. O recall de PII estruturado (telefone / email /
 cartão) é 1.00 para os seis idiomas novos (zh, ko, fr, de, pt, it) no
-conjunto dourado — [docs/EVAL.md](docs/EVAL.md) tem a tabela do núcleo TS;
+conjunto dourado — [docs/EVAL.md](../EVAL.md) tem a tabela do núcleo TS;
 os números de NER em Python são produzidos pela avaliação semanal.
 
 Estes números existem para apanhar regressões, não para prometer recall em
@@ -412,7 +412,7 @@ texto do mundo real.
 ## Roteiro
 
 Consulte os [issues](https://github.com/akazah/prompt-anonymizer/issues)
-abertos e [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Destaques:
+abertos e [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Destaques:
 publicação no npm / PyPI, publicação em lojas (Chrome Web Store),
 assinatura de código, modelos NER japoneses mais pequenos, PII estruturado
 multirregião (mais formatos de telefone / de identificação nacional com
@@ -420,6 +420,6 @@ validação por dígito de verificação), servidor MCP.
 
 ## Contributing / Security / License
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — configuração de desenvolvimento (uv / pnpm), comandos de teste e avaliação
-- [SECURITY.md](SECURITY.md) — comunicação de vulnerabilidades e de contornos da anonimização
-- [MIT](LICENSE)
+- [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuração de desenvolvimento (uv / pnpm), comandos de teste e avaliação
+- [SECURITY.md](../../.github/SECURITY.md) — comunicação de vulnerabilidades e de contornos da anonimização
+- [MIT](../../LICENSE)

@@ -9,7 +9,7 @@
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
 Heute haben Sie zwei Optionen. Ein lokales Modell ausführen — privat, aber
 Sie verzichten auf Frontier-Intelligenz. Oder in ChatGPT / Claude / Gemini
@@ -94,7 +94,7 @@ Label → wiederherstellen:
 | **Web Component** | `@prompt-anonymizer/element` (noch nicht auf npm) | Framework-unabhängiges `<prompt-anonymizer>`-Element: Bettet das komplette Anonymisieren-→-Wiederherstellen-Panel in jede Website ein (reines HTML, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (noch nicht auf npm) | Fertige `<AnonymizerPanel />`-Komponente plus ein `useAnonymizer()`-Hook / Composable für eigene UIs. Siehe Schnellstart unten. |
 | **Lokaler Proxy + Admin-GUI** | `@prompt-anonymizer/proxy` (noch nicht auf npm — aus `web/packages/proxy` bauen) | OpenAI-kompatibler Reverse-Proxy: Richten Sie `OPENAI_BASE_URL` darauf, und PII werden maskiert, bevor sie Ihren Rechner verlassen; in den Antworten werden die Label wiederhergestellt (inkl. Streaming). Admin-GUI unter `http://127.0.0.1:8787/admin/`. Siehe Schnellstart unten. |
-| **Commit-Hook / CI-Gate** | `prompt-anonymizer scan` (beide CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-Code-basiertes PII-Gate für Commit- und CI-Prüfungen: meldet `file:line:col` und den Entitätstyp, nie den gefundenen Text. Standardmäßig offline und ohne Modelle. Siehe unten. |
+| **Commit-Hook / CI-Gate** | `prompt-anonymizer scan` (beide CLIs) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Exit-Code-basiertes PII-Gate für Commit- und CI-Prüfungen: meldet `file:line:col` und den Entitätstyp, nie den gefundenen Text. Standardmäßig offline und ohne Modelle. Siehe unten. |
 
 ## Schnellstart (Python)
 
@@ -235,7 +235,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```
 
 Mit dem [pre-commit](https://pre-commit.com)-Framework
-(Hook-Definition: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+(Hook-Definition: [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml)):
 
 ```yaml
 repos:
@@ -386,7 +386,7 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 
 Gemessen auf Span-Ebene an einem geseedeten synthetischen Golden-Set (je 200
 Dokumente für alle zehn Sprachen in `tests/golden/golden_{lang}.json`) —
-siehe [docs/EVAL.md](docs/EVAL.md) für die vollständige Tabelle und
+siehe [docs/EVAL.md](../EVAL.md) für die vollständige Tabelle und
 `uv run python -m prompt_anonymizer.evals` zum Reproduzieren (standardmäßig
 alle zehn Sprachen). Highlights (Python-Kern, `sm`-Modelle): ja
 PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD Recall 1.00; ja
@@ -394,7 +394,7 @@ PERSON Recall 0.82 mit spaCy, 1.00 mit `ner_backend="hf"`. Der es/vi
 PHONE_NUMBER-Recall liegt ebenfalls bei 1.00; vi PERSON/LOCATION profitieren
 stark von `ner_backend="hf"`. Der Recall strukturierter PII (Telefon /
 E-Mail / Karte) beträgt 1.00 für die sechs neuen Sprachen (zh, ko, fr, de,
-pt, it) auf dem Golden-Set — [docs/EVAL.md](docs/EVAL.md) enthält die
+pt, it) auf dem Golden-Set — [docs/EVAL.md](../EVAL.md) enthält die
 Tabelle des TS-Kerns; die Python-NER-Zahlen erzeugt die wöchentliche
 Evaluation.
 
@@ -420,7 +420,7 @@ realem Text zu versprechen.
 ## Roadmap
 
 Siehe die offenen [Issues](https://github.com/akazah/prompt-anonymizer/issues)
-und [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Highlights:
+und [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Highlights:
 Veröffentlichung auf npm / PyPI, Store-Veröffentlichung (Chrome Web Store),
 Code-Signierung, kleinere japanische NER-Modelle, strukturierte PII für
 weitere Regionen (mehr Telefon- / nationale ID-Formate mit
@@ -428,6 +428,6 @@ Prüfsummenvalidierung), MCP-Server.
 
 ## Contributing / Security / License
 
-- [CONTRIBUTING.md](CONTRIBUTING.md) — Entwicklungs-Setup (uv / pnpm), Test- und Eval-Befehle
-- [SECURITY.md](SECURITY.md) — Melden von Sicherheitslücken und Anonymisierungs-Bypässen
-- [MIT](LICENSE)
+- [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — Entwicklungs-Setup (uv / pnpm), Test- und Eval-Befehle
+- [SECURITY.md](../../.github/SECURITY.md) — Melden von Sicherheitslücken und Anonymisierungs-Bypässen
+- [MIT](../../LICENSE)
