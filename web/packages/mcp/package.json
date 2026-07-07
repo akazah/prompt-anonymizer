@@ -1,25 +1,22 @@
 {
-  "name": "@prompt-anonymizer/react",
+  "name": "@prompt-anonymizer/mcp",
   "version": "0.2.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. React hooks for @prompt-anonymizer/core.",
+  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. MCP server (anonymize / deanonymize / scan tools) built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+  "bin": {
+    "prompt-anonymizer-mcp": "./dist/cli.js"
   },
   "files": [
     "dist"
   ],
-  "sideEffects": false,
+  "engines": {
+    "node": ">=20.16"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akazah/prompt-anonymizer.git",
-    "directory": "web/packages/react"
+    "directory": "web/packages/mcp"
   },
   "homepage": "https://github.com/akazah/prompt-anonymizer#readme",
   "bugs": {
@@ -30,8 +27,8 @@
     "anonymization",
     "privacy",
     "llm",
-    "react",
-    "hooks"
+    "mcp",
+    "model-context-protocol"
   ],
   "publishConfig": {
     "access": "public"
@@ -42,18 +39,12 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
     "@prompt-anonymizer/core": "workspace:*",
-    "@prompt-anonymizer/element": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": ">=18"
+    "zod": "^3.25.0"
   },
   "devDependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "@types/react": "^19.2.0",
-    "@testing-library/react": "^16.3.0",
-    "jsdom": "^28.0.0",
+    "@types/node": "^24.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   }

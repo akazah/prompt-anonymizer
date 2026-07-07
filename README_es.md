@@ -91,6 +91,7 @@ etiquetas → restaurar:
 | **Web Component** | `@prompt-anonymizer/element` (aún no en npm) | Elemento `<prompt-anonymizer>` independiente del framework: inserta el panel completo de anonimizar → restaurar en cualquier sitio (HTML plano, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (aún no en npm) | Componente `<AnonymizerPanel />` listo para usar más un hook `useAnonymizer()` / composable para interfaces personalizadas. Consulta el inicio rápido más abajo. |
 | **Proxy local + GUI de administración** | `@prompt-anonymizer/proxy` (aún no en npm — compilar desde `web/packages/proxy`) | Proxy inverso compatible con OpenAI: apunta `OPENAI_BASE_URL` hacia él y los PII se enmascaran antes de salir de tu máquina, con las etiquetas restauradas en las respuestas (incl. streaming). GUI de administración en `http://127.0.0.1:8787/admin/`. Consulta el inicio rápido más abajo. |
+| **Servidor MCP** | `@prompt-anonymizer/mcp` (aún no en npm — compilar desde `web/packages/mcp`) | Herramientas `anonymize` / `deanonymize` / `scan` para cualquier cliente MCP (Claude Desktop, Claude Code, Cursor, …). El mapeo de etiquetas permanece en la memoria del servidor (`mapping_id`) y nunca se muestra al modelo salvo petición explícita. |
 | **Hook de commit / puerta de CI** | `prompt-anonymizer scan` (ambas CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Puerta de PII por código de salida para comprobaciones en el commit y en CI: informa `file:line:col` y el tipo de entidad, nunca el texto coincidente. Sin conexión y sin modelos por defecto. Véase más abajo. |
 
 ## Inicio rápido (Python)
@@ -265,10 +266,11 @@ superficies de navegador, extensión y escritorio que no requieren Python.
 **¿Por qué no LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 es un sólido conjunto de salvaguardas en Python con su propio
 Anonymize/Deanonymize. Prompt Anonymizer se diferencia en tres puntos:
-detección con prioridad en japonés (nombres japoneses, direcciones, My
-Number con validación de dígito de control), superficies para no
-desarrolladores (pega texto en una página del navegador — sin configurar
-Python) y una base de código lo bastante pequeña para leerla de verdad.
+detección multilingüe en diez idiomas con PII estructurado propio de cada
+región (IDs nacionales validados por suma de comprobación como My Number,
+formatos de teléfono por región), superficies para no desarrolladores
+(pega texto en una página del navegador — sin configurar Python) y una base
+de código lo bastante pequeña para leerla de verdad.
 
 **¿Por qué no una extensión de Chrome «100 % local»?** Varias extensiones
 de código cerrado afirman procesamiento local. Las afirmaciones no son
@@ -417,7 +419,7 @@ abiertos y [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Destacados:
 publicación en npm / PyPI, publicación en tiendas (Chrome Web Store),
 firma de código, modelos NER japoneses más pequeños, PII estructurado
 multirregión (más formatos de teléfono / ID nacional con validación por
-suma de comprobación), servidor MCP.
+suma de comprobación).
 
 ## Contributing / Security / License
 

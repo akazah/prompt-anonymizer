@@ -7,7 +7,7 @@ Everything is driven by a `v*` tag push. One tag produces:
 | sdist + wheel | `release.yml` | GitHub Release (PyPI publish is opt-in, see below) |
 | `prompt-anonymizer-web-<ver>.zip` / `prompt-anonymizer-extension-<ver>.zip` | `release-apps.yml` | GitHub Release |
 | Tauri desktop bundles (`.dmg` / `.msi` / `.AppImage` / `.deb`) | `release-apps.yml` | GitHub Release |
-| `@prompt-anonymizer/{core,cli,element,react,vue}` npm packages | `release-npm.yml` | npm registry (opt-in, see below) |
+| `@prompt-anonymizer/{core,cli,element,react,vue,proxy,mcp}` npm packages | `release-npm.yml` | npm registry (opt-in, see below) |
 
 The browser app on GitHub Pages is deployed separately, on every push to
 `main` that touches `web/**` (`pages.yml`) — it is not tied to tags.
@@ -42,7 +42,7 @@ admin. Until they are done, the corresponding pipeline fails:
    `NPM_PUBLISH` is set to `true`. To turn it on later:
    1. Create the `@prompt-anonymizer` organization scope on
       [npmjs.com](https://www.npmjs.com/) and, for each package
-      (`core`, `cli`, `element`, `react`, `vue`), add a *trusted publisher*: repository
+      (`core`, `cli`, `element`, `react`, `vue`, `proxy`, `mcp`), add a *trusted publisher*: repository
       `akazah/prompt-anonymizer`, workflow `release-npm.yml`, environment
       `npm`. (First-ever publishes may need a one-time manual
       `pnpm publish` to create the package before the publisher can be

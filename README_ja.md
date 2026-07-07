@@ -38,7 +38,8 @@
 検出はオンデバイスで実行されます（ブラウザではWebGPU / WASM、Pythonでは
 spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みにする必要は
 ありません。DevToolsを開いてネットワークタブを監視するか、ソースを読んで
-ください。MITライセンスで、一度に読み切れる規模のコードベースです。
+ください。MITライセンスで、一度に読み切れる規模のコードベースです —
+手順は [docs/AUDIT.md](docs/AUDIT.md)（英語）にまとめてあります。
 
 <details>
 <summary><b>目次</b></summary>
@@ -48,6 +49,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 - [Quickstart（Python）](#quickstartpython)
 - [Quickstart（JavaScript / TypeScript）](#quickstartjavascript--typescript)
 - [Quickstart（ローカルプロキシ）](#quickstartローカルプロキシ)
+- [Quickstart（MCPサーバー）](#quickstartmcpサーバー)
 - [コミット時 / CIゲート（`scan`）](#コミット時--ciゲートscan)
 - [なぜ〇〇ではないのか？](#なぜ〇〇ではないのか)
 - [仕組み](#仕組み)
@@ -89,6 +91,7 @@ spaCyまたはローカルのtransformers）。私たちの言葉を鵜呑みに
 | **Web Component** | `@prompt-anonymizer/element`（npm未公開） | フレームワーク非依存の `<prompt-anonymizer>` 要素。匿名化→復元パネルを任意のサイトへ埋め込み可能（素のHTML・Svelte・Angular等）。 |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue`（npm未公開） | 組み込み用 `<AnonymizerPanel />` コンポーネント + カスタムUI向け `useAnonymizer()` フック / コンポーザブル。下のQuickstart参照。 |
 | **ローカルプロキシ + 管理GUI** | `@prompt-anonymizer/proxy`（npm未公開 — `web/packages/proxy` からビルド） | OpenAI互換のリバースプロキシ。`OPENAI_BASE_URL` を向けるだけでPIIをマスクして送信し、応答内のラベルを復元（ストリーミング対応）。管理GUIは `http://127.0.0.1:8787/admin/`。下のQuickstart参照。 |
+| **MCPサーバー** | `@prompt-anonymizer/mcp`（npm未公開 — `web/packages/mcp` からビルド） | MCPクライアント（Claude Desktop / Claude Code / Cursor など）向けの `anonymize` / `deanonymize` / `scan` ツール。マッピングはサーバーメモリ内に保持（`mapping_id` 参照）され、明示的に要求しない限りモデルには渡りません。下のQuickstart参照。 |
 | **コミットフック / CIゲート** | `prompt-anonymizer scan`（両CLI） + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | 終了コードで判定するPIIゲート。`file:line:col` とエンティティ種別のみを報告し、検出したテキスト自体は出力しません。デフォルトはオフライン・モデル不要。下の解説参照。 |
 
 ## Quickstart（Python）
@@ -208,6 +211,26 @@ export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
 プロキシはデフォルトで `127.0.0.1` にバインドされ、元の値のGUI表示は
 `--record-mappings` を明示的に有効化した場合のみ可能です。
 
+## Quickstart（MCPサーバー）
+
+MCPクライアント（Claude Desktop / Claude Code / Cursor など）に、
+オンデバイス匿名化ツールを追加できます:
+
+```bash
+# npm未公開のためリポジトリからビルド:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/mcp... build
+# Claude Code（公開後は: claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp）:
+claude mcp add prompt-anonymizer -- node "$(pwd)/packages/mcp/dist/cli.js"
+```
+
+3つのツールはいずれも「PIIをモデルのコンテキストに入れない」設計です:
+`anonymize` はマスク済みテキストと `mapping_id` を返し（マッピング自体は
+明示的に要求しない限りサーバーメモリ内に留まります）、`deanonymize` は
+`mapping_id` で復元（ファイルへの直接書き出しも可能）、`scan` はファイルの
+PIIチェックで `file:line:col` と種別のみを報告します（検出テキストは決して
+出力しません）。サーバー引数に `--ner` を付けると人名・住所もマスクします
+（初回のみモデルをダウンロード）。
+
 ## コミット時 / CIゲート（`scan`）
 
 両CLIには、gitフックやCI向けに設計された `scan` サブコマンドがあります。
@@ -259,10 +282,11 @@ Presidioを使いつつ、その上にLLMラウンドトリップのワークフ
 
 **LLM Guardではだめなのか？** [LLM Guard](https://github.com/protectai/llm-guard)
 は独自のAnonymize/Deanonymizeを備えた、堅実なPython側ガードレール
-スイートです。Prompt Anonymizerは3点で異なります: 日本語ファーストの検出
-（日本人名・住所・検査用数字の検証つきマイナンバー）、非開発者向けの
-ターゲット（ブラウザページにテキストを貼るだけ — Pythonのセットアップ
-不要）、そして実際に読み切れる規模のコードベースです。
+スイートです。Prompt Anonymizerは3点で異なります: 10言語をまたぐ多言語検出と
+ロケール固有の構造化PII（検査用数字を検証するマイナンバーなどの各国ID、
+地域別の電話番号形式）、非開発者向けのターゲット（ブラウザページに
+テキストを貼るだけ — Pythonのセットアップ不要）、そして実際に読み切れる
+規模のコードベースです。
 
 **「100%ローカル」を謳うChrome拡張ではだめなのか？** ローカル処理を主張
 するクローズドソースの拡張は複数あります。しかし主張は監査ではありません。
@@ -393,7 +417,7 @@ recallはゴールデンセット上で 1.00 です — TSコアの表は
 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) を参照。主なもの:
 npm / PyPI公開、Chrome Web Store公開、コード署名、より小型の日本語NER
 モデル、多地域の構造化PII（チェックサム検証による電話番号・国民ID形式の
-追加）、MCPサーバー。
+追加）。
 
 ## Contributing / Security / License
 

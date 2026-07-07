@@ -88,6 +88,7 @@ ngồi.
 | **Web Component** | `@prompt-anonymizer/element` (chưa có trên npm) | Phần tử `<prompt-anonymizer>` độc lập framework: nhúng toàn bộ bảng ẩn danh → khôi phục vào bất kỳ trang web nào (HTML thuần, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (chưa có trên npm) | Component `<AnonymizerPanel />` dùng ngay, kèm hook `useAnonymizer()` / composable cho giao diện tùy chỉnh. Xem Bắt đầu nhanh bên dưới. |
 | **Proxy cục bộ + GUI quản trị** | `@prompt-anonymizer/proxy` (chưa có trên npm — build từ `web/packages/proxy`) | Reverse proxy tương thích OpenAI: trỏ `OPENAI_BASE_URL` vào nó và PII được che trước khi rời máy của bạn, nhãn được khôi phục trong phản hồi (kể cả streaming). GUI quản trị tại `http://127.0.0.1:8787/admin/`. Xem Bắt đầu nhanh bên dưới. |
+| **Máy chủ MCP** | `@prompt-anonymizer/mcp` (chưa có trên npm — build từ `web/packages/mcp`) | Các công cụ `anonymize` / `deanonymize` / `scan` cho mọi MCP client (Claude Desktop, Claude Code, Cursor, …). Bảng ánh xạ nhãn nằm trong bộ nhớ máy chủ (`mapping_id`) và không bao giờ hiển thị cho mô hình trừ khi được yêu cầu rõ ràng. |
 | **Hook commit / cổng CI** | `prompt-anonymizer scan` (cả hai CLI) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Cổng chặn PII qua mã thoát cho kiểm tra lúc commit và trong CI: báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp. Mặc định offline và không cần mô hình. Xem bên dưới. |
 
 ## Bắt đầu nhanh (Python)
@@ -257,10 +258,11 @@ cần Python.
 
 **Tại sao không LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 là bộ guardrail Python vững chắc với Anonymize/Deanonymize riêng.
-Prompt Anonymizer khác ở ba điểm: phát hiện ưu tiên tiếng Nhật (tên Nhật, địa
-chỉ, My Number có kiểm tra chữ số), giao diện cho người không phải lập trình
-viên (dán văn bản trên trang trình duyệt — không cần cài Python), và mã nguồn
-đủ nhỏ để thực sự đọc được.
+Prompt Anonymizer khác ở ba điểm: phát hiện đa ngôn ngữ trên mười ngôn ngữ
+với PII có cấu trúc riêng theo khu vực (ID quốc gia được kiểm tra chữ số như
+My Number, định dạng số điện thoại theo vùng), giao diện cho người không
+phải lập trình viên (dán văn bản trên trang trình duyệt — không cần cài
+Python), và mã nguồn đủ nhỏ để thực sự đọc được.
 
 **Tại sao không dùng tiện ích Chrome "100% cục bộ"?** Một số tiện ích mã
 đóng tuyên bố xử lý cục bộ. Tuyên bố không phải là kiểm toán. Dự án này có
@@ -397,7 +399,7 @@ Xem [issues](https://github.com/akazah/prompt-anonymizer/issues) mở và
 [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Nổi bật: công bố npm / PyPI,
 công bố cửa hàng (Chrome Web Store), ký mã, mô hình NER tiếng Nhật nhỏ hơn,
 PII có cấu trúc đa vùng (thêm định dạng số điện thoại / ID quốc gia qua kiểm
-tra checksum), máy chủ MCP.
+tra checksum).
 
 ## Contributing / Security / License
 

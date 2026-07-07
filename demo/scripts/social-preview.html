@@ -1,0 +1,125 @@
+<!doctype html>
+<!-- Source for demo/social-preview.png (GitHub social preview, 1280x640).
+     Self-contained: system fonts only (needs a CJK font, e.g. fonts-noto-cjk),
+     no network. Regeneration command: docs/launch/social-preview.md -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --ink: #1c1917;
+    --muted: #78716c;
+    --line: #e7e5e4;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Arial, "Noto Sans CJK JP", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 88px 56px;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent), #14b8a6 60%, var(--accent-soft));
+  }
+  h1 {
+    font-size: 62px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .tagline {
+    margin-top: 18px;
+    font-size: 29px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .tagline b { color: var(--ink); font-weight: 600; }
+  .grid2 {
+    margin-top: 30px;
+    display: flex;
+    gap: 56px;
+  }
+  .examples {
+    display: grid;
+    grid-template-columns: max-content max-content min-content max-content;
+    align-items: center;
+    column-gap: 18px;
+    row-gap: 15px;
+    font-size: 22px;
+  }
+  .lang {
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 19px;
+    justify-self: start;
+    white-space: nowrap;
+  }
+  .src {
+    font-family: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .arrow { color: var(--muted); font-size: 26px; }
+  .label {
+    font-family: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--muted);
+    gap: 32px;
+    white-space: nowrap;
+  }
+  .footer b { color: var(--ink); }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Prompt Anonymizer</h1>
+    <div class="tagline">
+      Use frontier LLMs <b>without showing them your PII</b> —<br>
+      reversible, on-device anonymization in 10 languages.
+    </div>
+    <div class="grid2">
+      <div class="examples">
+        <span class="lang">日本語</span><span class="src">山田太郎</span><span class="arrow">→</span><span class="label">&lt;人名_1&gt;</span>
+        <span class="lang">English</span><span class="src">John Smith</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
+        <span class="lang">Español</span><span class="src">Javier Moreno</span><span class="arrow">→</span><span class="label">&lt;Nombre_1&gt;</span>
+        <span class="lang">Tiếng Việt</span><span class="src">Nguyễn Văn An</span><span class="arrow">→</span><span class="label">&lt;Tên_1&gt;</span>
+        <span class="lang">中文</span><span class="src">王小明</span><span class="arrow">→</span><span class="label">&lt;姓名_1&gt;</span>
+      </div>
+      <div class="examples">
+        <span class="lang">한국어</span><span class="src">김민준</span><span class="arrow">→</span><span class="label">&lt;이름_1&gt;</span>
+        <span class="lang">Français</span><span class="src">Camille Martin</span><span class="arrow">→</span><span class="label">&lt;Nom_1&gt;</span>
+        <span class="lang">Deutsch</span><span class="src">Max Müller</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
+        <span class="lang">Português</span><span class="src">João Silva</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
+        <span class="lang">Italiano</span><span class="src">Marco Rossi</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div><b>browser · extension · desktop · CLI · proxy · MCP</b></div>
+    <div>MIT · github.com/akazah/prompt-anonymizer</div>
+  </div>
+</body>
+</html>
