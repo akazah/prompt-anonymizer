@@ -1,0 +1,433 @@
+[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Tiếng Việt](README_vi.md) | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | Deutsch | [Português](README_pt.md) | [Italiano](README_it.md)
+
+# Prompt Anonymizer
+
+> **Nutzen Sie Frontier-LLMs, ohne ihnen Ihre PII zu zeigen.**
+> Reversible Anonymisierung direkt auf dem Gerät — tauschen Sie Intelligenz
+> nicht gegen Privatsphäre ein.
+
+[![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+[![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+Heute haben Sie zwei Optionen. Ein lokales Modell ausführen — privat, aber
+Sie verzichten auf Frontier-Intelligenz. Oder in ChatGPT / Claude / Gemini
+einfügen und sich selbst kontrollieren, Prompt für Prompt. Prompt Anonymizer
+liegt dazwischen:
+
+|  | Intelligenz | Privatsphäre | Worauf Sie vertrauen müssen |
+|---|---|---|---|
+| Lokales Modell | ✗ geopfert | ✓ | nichts |
+| Frontier-Modell, ungefiltert | ✓ | ✗ | der Anbieter und Ihre eigene Wachsamkeit |
+| **Frontier-Modell + Prompt Anonymizer** | **✓** | **✓** | **Code, den Sie lesen können + eine letzte Durchsicht** |
+
+Es ersetzt PII durch konsistente Label (`<人名_1>`, `<Name_1>`,
+`<Nombre_1>`, `<Tên_1>`, …), **bevor** der Text Ihren Rechner verlässt. Da
+derselbe Wert immer dasselbe Label erhält, ergibt die Antwort des LLM
+weiterhin Sinn. Kommt die Antwort zurück, stellt das Mapping — das Ihr Gerät
+nie verlassen hat — die echten Werte wieder her.
+
+Unterstützte Sprachen: Englisch (`en`), Japanisch (`ja`), Spanisch (`es`),
+Vietnamesisch (`vi`) und — neu — Chinesisch (`zh`), Koreanisch (`ko`),
+Französisch (`fr`), Deutsch (`de`), Portugiesisch (`pt`) und Italienisch
+(`it`). Der Standardwert von `PromptAnonymizer(languages=…)` bleibt
+`("en", "ja")`; jede weitere Sprache wird per `languages=[...]` aktiviert.
+Alle Sprachauswahlen in den Oberflächen und die automatische Erkennung
+decken alle zehn ab. Die Sprachunterstützung ist registry-gesteuert — eine
+Sprache hinzuzufügen bedeutet einen Registry-Eintrag (`languages.py` /
+`types.ts`) plus eine Label-Datei.
+
+Die Erkennung läuft auf dem Gerät (WebGPU / WASM im Browser, spaCy oder
+lokale Transformer in Python). Verlassen Sie sich nicht auf unser Wort:
+Öffnen Sie die DevTools, beobachten Sie den Netzwerk-Tab oder lesen Sie den
+Quellcode. Das Projekt ist MIT-lizenziert und klein genug, um es in einem
+Rutsch zu auditieren.
+
+<details>
+<summary><b>Inhaltsverzeichnis</b></summary>
+
+- [Demo](#demo)
+- [Ausprobieren](#ausprobieren)
+- [Schnellstart (Python)](#schnellstart-python)
+- [Schnellstart (JavaScript / TypeScript)](#schnellstart-javascript--typescript)
+- [Schnellstart (lokaler Proxy)](#schnellstart-lokaler-proxy)
+- [Commit- und CI-Gate (`scan`)](#commit--und-ci-gate-scan)
+- [Warum nicht …?](#warum-nicht-)
+- [Funktionsweise](#funktionsweise)
+- [Unterstützte Entitäten](#unterstützte-entitäten)
+- [Genauigkeit](#genauigkeit)
+- [Einschränkungen](#einschränkungen)
+- [Roadmap](#roadmap)
+- [Contributing / Security / License](#contributing--security--license)
+
+</details>
+
+## Demo
+
+Anonymisieren → das Mapping bleibt lokal → die LLM-Antwort behält die
+Label → wiederherstellen:
+
+<img alt="Demo der Browser-App: Anonymisieren, Mapping und Wiederherstellen im Roundtrip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+
+<details>
+<summary>CLI-Demo (Japanisch / Englisch — die anderen acht Sprachen funktionieren genauso)</summary>
+
+<img alt="CLI-Demo (Japanisch)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLI-Demo (Englisch)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+</details>
+
+<details>
+<summary>Demo der Chrome-Erweiterung (Seitenpanel)</summary>
+
+<img alt="Demo der Chrome-Erweiterung" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+</details>
+
+## Ausprobieren
+
+| Ziel | Wie | Hinweise |
+|---|---|---|
+| **Browser (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100 % auf dem Gerät: Das NER läuft per WebGPU in Ihrem Browser (WASM-Fallback). Ihr Text wird nie an einen Server gesendet — prüfen Sie es im Netzwerk-Tab. |
+| **Desktop-App** | Download von [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Vorerst unsigniert — Ihr Betriebssystem warnt beim ersten Start. |
+| **Chrome-Erweiterung** | `prompt-anonymizer-extension-*.zip` von [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Entpacken → `chrome://extensions` → Entwicklermodus aktivieren → „Entpackte Erweiterung laden“. Text markieren → Rechtsklick → *Anonymize selection*. |
+| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (noch nicht auf PyPI) | Presidio + spaCy. Siehe Schnellstart unten. |
+| **Node-CLI (npx)** | `npx @prompt-anonymizer/cli` (noch nicht auf npm — aus `web/packages/cli` bauen) | Dieselben Befehle und Flags wie die Python-CLI; transformers.js-NER, vollständig auf dem Gerät. |
+| **Web Component** | `@prompt-anonymizer/element` (noch nicht auf npm) | Framework-unabhängiges `<prompt-anonymizer>`-Element: Bettet das komplette Anonymisieren-→-Wiederherstellen-Panel in jede Website ein (reines HTML, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (noch nicht auf npm) | Fertige `<AnonymizerPanel />`-Komponente plus ein `useAnonymizer()`-Hook / Composable für eigene UIs. Siehe Schnellstart unten. |
+| **Lokaler Proxy + Admin-GUI** | `@prompt-anonymizer/proxy` (noch nicht auf npm — aus `web/packages/proxy` bauen) | OpenAI-kompatibler Reverse-Proxy: Richten Sie `OPENAI_BASE_URL` darauf, und PII werden maskiert, bevor sie Ihren Rechner verlassen; in den Antworten werden die Label wiederhergestellt (inkl. Streaming). Admin-GUI unter `http://127.0.0.1:8787/admin/`. Siehe Schnellstart unten. |
+| **Commit-Hook / CI-Gate** | `prompt-anonymizer scan` (beide CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-Code-basiertes PII-Gate für Commit- und CI-Prüfungen: meldet `file:line:col` und den Entitätstyp, nie den gefundenen Text. Standardmäßig offline und ohne Modelle. Siehe unten. |
+
+## Schnellstart (Python)
+
+```bash
+# Noch nicht auf PyPI veröffentlicht - von GitHub installieren (ein Tag oder main für den neuesten Stand):
+pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
+python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
+python -m spacy download xx_ent_wiki_sm    # vi: keine offizielle spaCy-Pipeline — WikiNER
+# zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — oder
+# alle sm-Modelle auf einmal installieren: uv sync --group models (lg: --group models-lg)
+```
+
+```python
+from prompt_anonymizer import PromptAnonymizer
+
+pa = PromptAnonymizer(languages=["ja"])
+result = pa.anonymize("山田太郎の電話は090-1234-5678", language="ja")
+
+result.text     # '<人名_1>の電話は<電話番号_1>'
+result.mapping  # {'<人名_1>': '山田太郎', '<電話番号_1>': '090-1234-5678'}
+
+pa_es = PromptAnonymizer(languages=["es"])
+pa_es.anonymize(
+    "El cliente es Javier Moreno, teléfono 612 345 678", language="es"
+).text  # 'El cliente es <Nombre_1>, teléfono <Teléfono_1>'
+
+# vi-Namen benötigen das Transformer-Backend (siehe „Optionales Transformer-NER-Backend“)
+pa_vi = PromptAnonymizer(languages=["vi"], ner_backend="hf")
+pa_vi.anonymize(
+    "Tôi tên là Nguyễn Văn An, số điện thoại 0912 345 678", language="vi"
+).text  # 'Tôi tên là <Tên_1>, số điện thoại <SốĐiệnThoại_1>'
+
+llm_output = call_your_llm(result.text)          # die Label überstehen den Roundtrip
+pa.deanonymize(llm_output, result.mapping)       # echte Werte lokal wiederhergestellt
+```
+
+CLI (`-l ja|en|es|vi|zh|ko|fr|de|pt|it`):
+
+```bash
+prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
+  -t "山田太郎の電話は090-1234-5678"
+prompt-anonymizer anonymize -l es -t "El cliente es Javier Moreno, teléfono 612 345 678"
+prompt-anonymizer anonymize -l fr -t "Le client est Pierre Durand, téléphone 06 12 34 56 78"
+prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
+```
+
+## Schnellstart (JavaScript / TypeScript)
+
+Die Node-CLI spiegelt die Python-CLI (dieselben Befehle, Flags und
+JSON-Ausgabe) und führt den TypeScript-Kern mit transformers.js-NER auf dem
+Gerät aus:
+
+```bash
+# Noch nicht auf npm veröffentlicht — aus dem Repository bauen:
+cd web && pnpm install && pnpm --filter "./packages/*" build
+node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
+# Nach der Veröffentlichung: npx @prompt-anonymizer/cli anonymize -t "..."
+```
+
+Um das fertige Anonymisieren-→-Wiederherstellen-Panel in ein beliebiges
+Frontend einzubetten, verwenden Sie das framework-unabhängige Web Component:
+
+```html
+<script type="module">
+  import { definePromptAnonymizer } from "@prompt-anonymizer/element";
+  definePromptAnonymizer();
+</script>
+<prompt-anonymizer language="auto"></prompt-anonymizer>
+```
+
+React (`@prompt-anonymizer/react`) und Vue 3 (`@prompt-anonymizer/vue`)
+liefern ein typisiertes `<AnonymizerPanel />`, das dieses Element kapselt:
+
+```tsx
+import { AnonymizerPanel } from "@prompt-anonymizer/react"; // oder "@prompt-anonymizer/vue"
+
+<AnonymizerPanel language="auto" denyList={["ProjectX"]}
+  onAnonymize={(result) => console.log(result.text)} />
+```
+
+Für eigene UIs stellen beide Pakete die Session Anonymisieren → LLM →
+Wiederherstellen auch als Hook / Composable bereit:
+
+```ts
+import { useAnonymizer } from "@prompt-anonymizer/react"; // oder "@prompt-anonymizer/vue"
+
+const { anonymize, restore, mapping, busy, error } = useAnonymizer();
+const result = await anonymize(input, { language: "ja" });
+// result.text an das LLM senden — das Mapping verlässt das Gerät nie — dann:
+const { text: restored, unresolved } = await restore(llmReply);
+```
+
+Standardmäßig arbeitet die Erkennung nur mit regulären Ausdrücken (E-Mails,
+Telefonnummern, …); übergeben Sie ein `ner` (z. B.
+`new TransformersNerBackend()` aus `@prompt-anonymizer/core`), um auch Namen
+und Orte zu maskieren.
+
+## Schnellstart (lokaler Proxy)
+
+Starten Sie den OpenAI-kompatiblen Proxy und richten Sie einen beliebigen
+Client darauf — PII werden maskiert, bevor die Anfrage Ihren Rechner
+verlässt, und die Label werden in der Antwort wiederhergestellt (Streaming
+inklusive). Mappings bleiben im Speicher des Proxys, pro Anfrage:
+
+```bash
+# Noch nicht auf npm veröffentlicht — aus dem Repository bauen:
+cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
+node packages/proxy/dist/cli.js            # lauscht auf http://127.0.0.1:8787
+# Nach der Veröffentlichung: npx @prompt-anonymizer/proxy
+
+# In Ihrer App / Shell:
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+```
+
+Die Admin-GUI unter `http://127.0.0.1:8787/admin/` zeigt den Live-Status und
+die Redaktionsereignisse (nur Label und Zähler), bearbeitet die
+Proxy-Konfiguration (Upstream, NER, Deny-/Allow-Listen) und bietet einen
+rein lokalen Anonymisierungs-Spielplatz. Der Proxy bindet standardmäßig an
+`127.0.0.1`; Originalwerte lassen sich in der GUI nur einsehen, wenn Sie
+`--record-mappings` ausdrücklich aktivieren.
+
+## Commit- und CI-Gate (`scan`)
+
+Beide CLIs enthalten einen `scan`-Unterbefehl für Git-Hooks und CI: Er
+beendet sich mit `0`, wenn die Eingaben sauber sind, mit `1`, wenn PII
+gefunden werden, und mit `2` bei Fehlern. Gemeldet werden nur
+`file:line:col` und der Entitätstyp — **der gefundene Text wird nie
+ausgegeben**, sodass Hook-Ausgabe und CI-Logs frei von PII bleiben.
+Standardmäßig arbeitet er offline, deterministisch und ohne Modelle
+(strukturierte PII: E-Mails, Telefonnummern, JP-Postleitzahlen, My Number,
+Kreditkarten — plus `--deny`-Begriffe); `--ner` aktiviert die
+Namens-/Ortserkennung, wo Modelle verfügbar sind.
+
+```bash
+prompt-anonymizer scan src/prompt.txt docs/*.md      # Dateien (z. B. gestagte)
+git diff --cached -U0 | prompt-anonymizer scan       # oder einen Diff durchleiten
+prompt-anonymizer scan --deny ProjectX --json -t "..."
+```
+
+Mit dem [pre-commit](https://pre-commit.com)-Framework
+(Hook-Definition: [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml)):
+
+```yaml
+repos:
+  - repo: https://github.com/akazah/prompt-anonymizer
+    rev: v0.2.2  # erstes Tag, das diesen Hook enthält
+    hooks:
+      - id: prompt-anonymizer-scan
+        # args: [--deny, ProjectX, --allow, support@example.com]
+```
+
+Node-Projekte können dasselbe Gate über husky + lint-staged anbinden
+(`npx @prompt-anonymizer/cli`, sobald veröffentlicht; bis dahin aus
+`web/packages/cli` bauen):
+
+```json
+{ "lint-staged": { "*": "prompt-anonymizer scan" } }
+```
+
+Wie alles andere hier ist die Erkennung Best-Effort: Betrachten Sie `scan`
+als Sicherheitsnetz gegen offensichtliche Leaks, nicht als Garantie.
+
+## Warum nicht …?
+
+**Warum nicht einfach Presidio?** Verwenden Sie
+[Microsoft Presidio](https://github.com/microsoft/presidio) direkt, wenn Sie
+ein universelles Framework zur PII-Erkennung / -Anonymisierung brauchen.
+Prompt Anonymizer nutzt Presidio als Engine seines Python-Kerns und setzt
+den LLM-Roundtrip-Workflow obendrauf: konsistente Platzhalter,
+anonymisierter Prompt nach draußen, lokale Wiederherstellung nach der
+Antwort — plus Browser-, Erweiterungs- und Desktop-Oberflächen, die gar kein
+Python benötigen.
+
+**Warum nicht LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
+ist eine solide Python-seitige Guardrail-Suite mit eigenem
+Anonymize/Deanonymize. Prompt Anonymizer unterscheidet sich in drei Punkten:
+japanisch-zentrierte Erkennung (japanische Namen, Adressen, My Number mit
+Prüfziffernvalidierung), Oberflächen für Nicht-Entwickler (Text in eine
+Browserseite einfügen — kein Python-Setup) und eine Codebasis, die klein
+genug ist, um sie wirklich zu lesen.
+
+**Warum keine „100 % lokale“ Chrome-Erweiterung?** Mehrere
+Closed-Source-Erweiterungen behaupten lokale Verarbeitung. Behauptungen sind
+keine Audits. Dieses Projekt ist MIT-lizenziert: Öffnen Sie den
+Netzwerk-Tab oder lesen Sie den Quellcode. (Bösartige
+„KI-Privatsphäre“-Erweiterungen, die Konversationen exfiltrieren, sind
+dokumentiert — die Kategorie hat sich die Skepsis verdient.)
+
+## Funktionsweise
+
+1. Erkennung — Presidio + spaCy-NER (Python) oder transformers.js-NER +
+   Regex-Erkenner (Browser/Desktop/Erweiterung), erweitert um
+   registry-gesteuerte, regionsspezifische Telefonmuster (JP, US/NANP, ES,
+   VN, CN, KR, FR, DE, PT, IT) und japan-spezifische Erkenner
+   (〒-Postleitzahlen, My Number mit Prüfziffernvalidierung). E-Mails und
+   Kreditkarten sind sprachunabhängig; JP_POSTAL_CODE und JP_MY_NUMBER
+   werden in jedem Sprachmodus erkannt.
+2. Konsistente Beschriftung — Spans werden zusammengeführt (Score zuerst)
+   und offsetbasiert vom Ende her ersetzt; identische Werte teilen sich ein
+   Label.
+3. Umkehrung — `deanonymize(text, mapping)` stellt die Originale wieder her,
+   längstes Label zuerst. Das Mapping wird an Sie zurückgegeben und von der
+   Bibliothek **nie persistiert**; es sicher aufzubewahren liegt in Ihrer
+   Verantwortung.
+
+## Unterstützte Entitäten
+
+| Entität | ja-Label | en-Label | es-Label | vi-Label | Engine |
+|---|---|---|---|---|---|
+| PERSON | 人名 | Name | Nombre | Tên | NER |
+| LOCATION | 住所 | Location | Dirección | ĐịaChỉ | NER |
+| EMAIL_ADDRESS | メールアドレス | Email | Correo | Email | Muster |
+| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | registry-gesteuerte sprachspezifische Muster + libphonenumber-Regionen (JP/US/ES/VN/CN/KR/FR/DE/PT/IT) |
+| JP_POSTAL_CODE | 郵便番号 | PostalCode | CódigoPostal | MãBưuĐiện | Muster (benutzerdefiniert) |
+| JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | Muster + Prüfziffer (benutzerdefiniert) |
+| CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | Muster + Luhn-Prüfung (beide Kerne, alle Sprachen) |
+| CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | exakte Übereinstimmung |
+| US_SSN (Opt-in) | 社会保障番号 | SSN | SSN | SSN | Muster + Invalidierungsregeln (beide Kerne, alle Sprachen) |
+| IBAN_CODE (Opt-in) | IBAN | IBAN | IBAN | IBAN | Muster + Mod-97-Prüfung (beide Kerne, alle Sprachen) |
+
+Die Label der sechs neuen Sprachen (zh, ko, fr, de, pt, it) liegen in
+`src/prompt_anonymizer/labels/*.yaml` (Python) und in `LABELS` in
+`web/packages/core/src/labeling.ts` (TS).
+
+`deny_list` erzwingt das Maskieren bestimmter Zeichenketten; `allow_list`
+nimmt sie aus. Opt-in-Entitäten werden standardmäßig nicht erkannt — fordern
+Sie sie explizit an: `PromptAnonymizer(entities=[...])`,
+`new Anonymizer({ entities })` oder
+`--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` auf einer der beiden
+CLIs.
+
+### Optionales Transformer-NER-Backend (Python)
+
+Das Standard-NER ist spaCy; das Modell je Sprache wird aus der zentralen
+Registry aufgelöst (siehe Tabelle unten; alle `sm`-Modelle installieren Sie
+mit `uv sync --group models`, die `lg`-Modelle mit `--group models-lg`, oder
+verwenden Sie `python -m spacy download <Modell>`). Vietnamesisch hat keine
+offizielle spaCy-Pipeline — beide Modellgrößen verwenden das mehrsprachige
+WikiNER-Modell `xx_ent_wiki_sm` für Tokenisierung und Basis-PER/LOC-NER. Für
+einen guten Recall vietnamesischer Namen/Orte verwenden Sie stattdessen das
+Transformer-Backend (siehe unten).
+
+Für deutlich besseren PERSON/LOCATION-Recall (besonders `ja` und `vi`)
+installieren Sie das Extra `hf` und wechseln das Backend —
+Hugging-Face-Modelle je Sprache, vollständig lokal:
+
+| Sprache | spaCy (`sm` / `lg`) | HF NER (`ner_backend="hf"`) |
+|---|---|---|
+| `ja` | `ja_core_news_sm` / `ja_core_news_lg` | `tsmatz/xlm-roberta-ner-japanese` |
+| `en` | `en_core_web_sm` / `en_core_web_lg` | `dslim/bert-base-NER` |
+| `es` | `es_core_news_sm` / `es_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `vi` | `xx_ent_wiki_sm` (beide Größen) | `NlpHUST/ner-vietnamese-electra-base` |
+| `zh` | `zh_core_web_sm` / `zh_core_web_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `ko` | `ko_core_news_sm` / `ko_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `fr` | `fr_core_news_sm` / `fr_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `de` | `de_core_news_sm` / `de_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `pt` | `pt_core_news_sm` / `pt_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `it` | `it_core_news_sm` / `it_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+
+Das mehrsprachige HRL-Modell deckt `de`/`es`/`fr`/`it`/`pt`/`zh` nativ ab;
+Koreanisch hat in dieser Familie keinen dedizierten Checkpoint und stützt
+sich auf den sprachübergreifenden Transfer von mBERT.
+
+Der TypeScript-Kern (Browser / Erweiterung / Desktop / Node-CLI) führt
+transformers.js-ONNX-Modelle aus: `ja` und `en` verwenden dieselben Familien
+wie oben; `es`, `vi`, `zh`, `ko`, `fr`, `de`, `pt` und `it` verwenden alle
+`Xenova/bert-base-multilingual-cased-ner-hrl` (es existiert kein
+ONNX-Export eines dedizierten vietnamesischen NER-Modells; das mehrsprachige
+Modell überträgt sich gut auf Vietnamesisch, und derselbe
+Transfer-Vorbehalt gilt für Koreanisch).
+
+```bash
+pip install "prompt-anonymizer[hf]"
+```
+
+```python
+pa = PromptAnonymizer(languages=["ja"], ner_backend="hf")  # CLI: --ner-backend hf
+pa_vi = PromptAnonymizer(languages=["vi"], ner_backend="hf")  # empfohlen für vi-Namen
+```
+
+Batch-Verarbeitung ist ebenfalls verfügbar und deutlich schneller als eine
+Schleife:
+
+```python
+results = pa.anonymize_batch(texts, language="ja", batch_size=16)
+```
+
+## Genauigkeit
+
+Gemessen auf Span-Ebene an einem geseedeten synthetischen Golden-Set (je 200
+Dokumente für alle zehn Sprachen in `tests/golden/golden_{lang}.json`) —
+siehe [docs/EVAL.md](docs/EVAL.md) für die vollständige Tabelle und
+`uv run python -m prompt_anonymizer.evals` zum Reproduzieren (standardmäßig
+alle zehn Sprachen). Highlights (Python-Kern, `sm`-Modelle): ja
+PHONE_NUMBER / EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD Recall 1.00; ja
+PERSON Recall 0.82 mit spaCy, 1.00 mit `ner_backend="hf"`. Der es/vi
+PHONE_NUMBER-Recall liegt ebenfalls bei 1.00; vi PERSON/LOCATION profitieren
+stark von `ner_backend="hf"`. Der Recall strukturierter PII (Telefon /
+E-Mail / Karte) beträgt 1.00 für die sechs neuen Sprachen (zh, ko, fr, de,
+pt, it) auf dem Golden-Set — [docs/EVAL.md](docs/EVAL.md) enthält die
+Tabelle des TS-Kerns; die Python-NER-Zahlen erzeugt die wöchentliche
+Evaluation.
+
+Diese Zahlen dienen dazu, Regressionen zu erkennen — nicht dazu, Recall auf
+realem Text zu versprechen.
+
+## Einschränkungen
+
+- **Die Erkennung ist Best-Effort und nicht garantiert.** Falsch-Negative
+  kommen vor; prüfen Sie den anonymisierten Text immer, bevor Sie ihn
+  irgendwohin senden (`--interactive` und die Mapping-Tabellen in den
+  Oberflächen existieren genau dafür).
+- Anonymisierung verbirgt Identifikatoren, nicht den Kontext.
+  Quasi-identifizierende Details im umgebenden Text (eine seltene
+  Berufsbezeichnung, ein bestimmtes Ereignis) können weiterhin eingrenzen,
+  über wen oder was Sie schreiben.
+- LOCATION hat den schwächsten Recall, besonders bei unvollständigen
+  japanischen Adressen.
+- Das Browser-NER-Modell ist ein einmaliger Download von ~100–300 MB (wird
+  danach gecacht).
+- Desktop- und Erweiterungs-Builds sind vorerst unsigniert.
+
+## Roadmap
+
+Siehe die offenen [Issues](https://github.com/akazah/prompt-anonymizer/issues)
+und [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). Highlights:
+Veröffentlichung auf npm / PyPI, Store-Veröffentlichung (Chrome Web Store),
+Code-Signierung, kleinere japanische NER-Modelle, strukturierte PII für
+weitere Regionen (mehr Telefon- / nationale ID-Formate mit
+Prüfsummenvalidierung), MCP-Server.
+
+## Contributing / Security / License
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — Entwicklungs-Setup (uv / pnpm), Test- und Eval-Befehle
+- [SECURITY.md](SECURITY.md) — Melden von Sicherheitslücken und Anonymisierungs-Bypässen
+- [MIT](LICENSE)
