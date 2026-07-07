@@ -1,6 +1,6 @@
 {
   "name": "@prompt-anonymizer/react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. React hooks for @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",

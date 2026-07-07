@@ -88,18 +88,17 @@ Anonymiser → le mapping reste local → la réponse du LLM conserve les
 | **Navigateur (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100 % sur l'appareil : le NER s'exécute dans votre navigateur via WebGPU (repli WASM). Votre texte n'est jamais envoyé à un serveur — vérifiez-le dans l'onglet réseau. |
 | **App de bureau** | Téléchargez depuis [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Non signée pour l'instant — votre OS affichera un avertissement au premier lancement. |
 | **Extension Chrome** | `prompt-anonymizer-extension-*.zip` depuis [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Décompressez → `chrome://extensions` → activez le mode développeur → « Charger l'extension non empaquetée ». Sélectionnez du texte → clic droit → *Anonymize selection*. |
-| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (pas encore sur PyPI) | Presidio + spaCy. Voir le démarrage rapide ci-dessous. |
-| **CLI Node (npx)** | `npx @prompt-anonymizer/cli` (pas encore sur npm — à compiler depuis `web/packages/cli`) | Mêmes commandes et options que la CLI Python ; NER transformers.js, entièrement sur l'appareil. |
-| **Web Component** | `@prompt-anonymizer/element` (pas encore sur npm) | Élément `<prompt-anonymizer>` indépendant du framework : intégrez le panneau complet anonymiser → restaurer dans n'importe quel site (HTML pur, Svelte, Angular, …). |
-| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (pas encore sur npm) | Composant `<AnonymizerPanel />` prêt à l'emploi plus un hook `useAnonymizer()` / composable pour les interfaces personnalisées. Voir le démarrage rapide ci-dessous. |
-| **Proxy local + GUI d'administration** | `@prompt-anonymizer/proxy` (pas encore sur npm — à compiler depuis `web/packages/proxy`) | Proxy inverse compatible OpenAI : pointez `OPENAI_BASE_URL` vers lui et les PII sont masquées avant de quitter votre machine, les étiquettes étant restaurées dans les réponses (streaming inclus). GUI d'administration sur `http://127.0.0.1:8787/admin/`. Voir le démarrage rapide ci-dessous. |
+| **Python / CLI** | `pip install prompt-anonymizer` | Presidio + spaCy. Voir le démarrage rapide ci-dessous. |
+| **CLI Node (npx)** | `npx @prompt-anonymizer/cli` | Mêmes commandes et options que la CLI Python ; NER transformers.js, entièrement sur l'appareil. |
+| **Web Component** | `@prompt-anonymizer/element` | Élément `<prompt-anonymizer>` indépendant du framework : intégrez le panneau complet anonymiser → restaurer dans n'importe quel site (HTML pur, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Composant `<AnonymizerPanel />` prêt à l'emploi plus un hook `useAnonymizer()` / composable pour les interfaces personnalisées. Voir le démarrage rapide ci-dessous. |
+| **Proxy local + GUI d'administration** | `npx @prompt-anonymizer/proxy` | Proxy inverse compatible OpenAI : pointez `OPENAI_BASE_URL` vers lui et les PII sont masquées avant de quitter votre machine, les étiquettes étant restaurées dans les réponses (streaming inclus). GUI d'administration sur `http://127.0.0.1:8787/admin/`. Voir le démarrage rapide ci-dessous. |
 | **Hook de commit / garde-fou CI** | `prompt-anonymizer scan` (les deux CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Garde-fou PII par code de sortie pour les vérifications au commit et en CI : rapporte `file:line:col` et le type d'entité, jamais le texte détecté. Hors ligne et sans modèle par défaut. Voir ci-dessous. |
 
 ## Démarrage rapide (Python)
 
 ```bash
-# Pas encore publié sur PyPI - installez depuis GitHub (un tag, ou main pour la dernière version) :
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
+pip install prompt-anonymizer
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi : pas de pipeline spaCy officiel — WikiNER
 # zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — ou
@@ -147,10 +146,7 @@ JSON), en exécutant le cœur TypeScript avec le NER transformers.js sur
 l'appareil :
 
 ```bash
-# Pas encore publié sur npm — à compiler depuis le dépôt :
-cd web && pnpm install && pnpm --filter "./packages/*" build
-node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
-# Une fois publié : npx @prompt-anonymizer/cli anonymize -t "..."
+npx @prompt-anonymizer/cli anonymize -t "山田太郎の電話は090-1234-5678"
 ```
 
 Pour intégrer le panneau anonymiser → restaurer prêt à l'emploi dans
@@ -200,10 +196,7 @@ les étiquettes sont restaurées dans la réponse (streaming inclus). Les
 mappings restent dans la mémoire du proxy, par requête :
 
 ```bash
-# Pas encore publié sur npm — à compiler depuis le dépôt :
-cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
-node packages/proxy/dist/cli.js            # écoute sur http://127.0.0.1:8787
-# Une fois publié : npx @prompt-anonymizer/proxy
+npx @prompt-anonymizer/proxy            # écoute sur http://127.0.0.1:8787
 
 # Dans votre app / shell :
 export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
@@ -240,15 +233,14 @@ Avec le framework [pre-commit](https://pre-commit.com)
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.2.2  # premier tag qui fournit ce hook
+    rev: v0.3.0
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
 ```
 
 Les projets Node peuvent brancher le même garde-fou via husky + lint-staged
-(`npx @prompt-anonymizer/cli` une fois publié ; d'ici là, compilez depuis
-`web/packages/cli`) :
+(`npx @prompt-anonymizer/cli scan`) :
 
 ```json
 { "lint-staged": { "*": "prompt-anonymizer scan" } }

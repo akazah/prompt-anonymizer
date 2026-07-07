@@ -1,6 +1,6 @@
 {
   "name": "@prompt-anonymizer/mcp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. MCP server (anonymize / deanonymize / scan tools) built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",

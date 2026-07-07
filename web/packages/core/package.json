@@ -1,6 +1,6 @@
 {
   "name": "@prompt-anonymizer/core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Browser-first core (regex recognizers + transformers.js NER).",
   "license": "MIT",
   "type": "module",
