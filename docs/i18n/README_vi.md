@@ -83,19 +83,18 @@ ngồi.
 | **Trình duyệt (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100% trên thiết bị: NER chạy trong trình duyệt qua WebGPU (dự phòng WASM). Văn bản của bạn không bao giờ gửi lên máy chủ — kiểm chứng trong tab mạng. |
 | **Ứng dụng desktop** | Tải từ [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Hiện chưa ký — hệ điều hành sẽ cảnh báo khi chạy lần đầu. |
 | **Tiện ích Chrome** | `prompt-anonymizer-extension-*.zip` từ [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Giải nén → `chrome://extensions` → bật Chế độ nhà phát triển → "Tải tiện ích đã giải nén". Chọn văn bản → nhấp chuột phải → *Anonymize selection*. |
-| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (chưa có trên PyPI) | Presidio + spaCy. Xem Bắt đầu nhanh bên dưới. |
-| **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (chưa có trên npm — build từ `web/packages/cli`) | Cùng lệnh và cờ với CLI Python; transformers.js NER, hoàn toàn trên thiết bị. |
-| **Web Component** | `@prompt-anonymizer/element` (chưa có trên npm) | Phần tử `<prompt-anonymizer>` độc lập framework: nhúng toàn bộ bảng ẩn danh → khôi phục vào bất kỳ trang web nào (HTML thuần, Svelte, Angular, …). |
-| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (chưa có trên npm) | Component `<AnonymizerPanel />` dùng ngay, kèm hook `useAnonymizer()` / composable cho giao diện tùy chỉnh. Xem Bắt đầu nhanh bên dưới. |
-| **Proxy cục bộ + GUI quản trị** | `@prompt-anonymizer/proxy` (chưa có trên npm — build từ `web/packages/proxy`) | Reverse proxy tương thích OpenAI: trỏ `OPENAI_BASE_URL` vào nó và PII được che trước khi rời máy của bạn, nhãn được khôi phục trong phản hồi (kể cả streaming). GUI quản trị tại `http://127.0.0.1:8787/admin/`. Xem Bắt đầu nhanh bên dưới. |
-| **Máy chủ MCP** | `@prompt-anonymizer/mcp` (chưa có trên npm — build từ `web/packages/mcp`) | Các công cụ `anonymize` / `deanonymize` / `scan` cho mọi MCP client (Claude Desktop, Claude Code, Cursor, …). Bảng ánh xạ nhãn nằm trong bộ nhớ máy chủ (`mapping_id`) và không bao giờ hiển thị cho mô hình trừ khi được yêu cầu rõ ràng. |
+| **Python / CLI** | `pip install prompt-anonymizer` | Presidio + spaCy. Xem Bắt đầu nhanh bên dưới. |
+| **Node CLI (npx)** | `npx @prompt-anonymizer/cli` | Cùng lệnh và cờ với CLI Python; transformers.js NER, hoàn toàn trên thiết bị. |
+| **Web Component** | `@prompt-anonymizer/element` | Phần tử `<prompt-anonymizer>` độc lập framework: nhúng toàn bộ bảng ẩn danh → khôi phục vào bất kỳ trang web nào (HTML thuần, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Component `<AnonymizerPanel />` dùng ngay, kèm hook `useAnonymizer()` / composable cho giao diện tùy chỉnh. Xem Bắt đầu nhanh bên dưới. |
+| **Proxy cục bộ + GUI quản trị** | `npx @prompt-anonymizer/proxy` | Reverse proxy tương thích OpenAI: trỏ `OPENAI_BASE_URL` vào nó và PII được che trước khi rời máy của bạn, nhãn được khôi phục trong phản hồi (kể cả streaming). GUI quản trị tại `http://127.0.0.1:8787/admin/`. Xem Bắt đầu nhanh bên dưới. |
+| **Máy chủ MCP** | `npx @prompt-anonymizer/mcp` | Các công cụ `anonymize` / `deanonymize` / `scan` cho mọi MCP client (Claude Desktop, Claude Code, Cursor, …). Bảng ánh xạ nhãn nằm trong bộ nhớ máy chủ (`mapping_id`) và không bao giờ hiển thị cho mô hình trừ khi được yêu cầu rõ ràng. |
 | **Hook commit / cổng CI** | `prompt-anonymizer scan` (cả hai CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Cổng chặn PII qua mã thoát cho kiểm tra lúc commit và trong CI: báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp. Mặc định offline và không cần mô hình. Xem bên dưới. |
 
 ## Bắt đầu nhanh (Python)
 
 ```bash
-# Chưa công bố lên PyPI — cài từ GitHub (theo tag, hoặc main để lấy bản mới nhất):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
+pip install prompt-anonymizer
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: không có pipeline spaCy chính thức — WikiNER
 # zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — hoặc
@@ -142,10 +141,7 @@ Node CLI phản chiếu CLI Python (cùng lệnh, cờ và đầu ra JSON),
 chạy lõi TypeScript với transformers.js NER trên thiết bị:
 
 ```bash
-# Chưa công bố lên npm — build từ repo:
-cd web && pnpm install && pnpm --filter "./packages/*" build
-node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
-# Sau khi công bố: npx @prompt-anonymizer/cli anonymize -t "..."
+npx @prompt-anonymizer/cli anonymize -t "山田太郎の電話は090-1234-5678"
 ```
 
 Để nhúng bảng ẩn danh → khôi phục có sẵn vào bất kỳ frontend nào, dùng
@@ -193,10 +189,7 @@ trước khi yêu cầu rời khỏi máy của bạn và nhãn được khôi p
 cầu:
 
 ```bash
-# Chưa công bố lên npm — build từ repo:
-cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
-node packages/proxy/dist/cli.js            # lắng nghe tại http://127.0.0.1:8787
-# Sau khi công bố: npx @prompt-anonymizer/proxy
+npx @prompt-anonymizer/proxy            # lắng nghe tại http://127.0.0.1:8787
 
 # Trong ứng dụng / shell của bạn:
 export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
@@ -230,15 +223,14 @@ Với framework [pre-commit](https://pre-commit.com)
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.2.2  # tag đầu tiên kèm hook này
+    rev: v0.3.0
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
 ```
 
 Dự án Node có thể nối cùng cổng chặn này qua husky + lint-staged
-(`npx @prompt-anonymizer/cli` sau khi công bố; trước đó, build từ
-`web/packages/cli`):
+(`npx @prompt-anonymizer/cli scan`):
 
 ```json
 { "lint-staged": { "*": "prompt-anonymizer scan" } }

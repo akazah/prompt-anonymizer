@@ -89,18 +89,17 @@ Label → wiederherstellen:
 | **Browser (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100 % auf dem Gerät: Das NER läuft per WebGPU in Ihrem Browser (WASM-Fallback). Ihr Text wird nie an einen Server gesendet — prüfen Sie es im Netzwerk-Tab. |
 | **Desktop-App** | Download von [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Vorerst unsigniert — Ihr Betriebssystem warnt beim ersten Start. |
 | **Chrome-Erweiterung** | `prompt-anonymizer-extension-*.zip` von [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Entpacken → `chrome://extensions` → Entwicklermodus aktivieren → „Entpackte Erweiterung laden“. Text markieren → Rechtsklick → *Anonymize selection*. |
-| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (noch nicht auf PyPI) | Presidio + spaCy. Siehe Schnellstart unten. |
-| **Node-CLI (npx)** | `npx @prompt-anonymizer/cli` (noch nicht auf npm — aus `web/packages/cli` bauen) | Dieselben Befehle und Flags wie die Python-CLI; transformers.js-NER, vollständig auf dem Gerät. |
-| **Web Component** | `@prompt-anonymizer/element` (noch nicht auf npm) | Framework-unabhängiges `<prompt-anonymizer>`-Element: Bettet das komplette Anonymisieren-→-Wiederherstellen-Panel in jede Website ein (reines HTML, Svelte, Angular, …). |
-| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (noch nicht auf npm) | Fertige `<AnonymizerPanel />`-Komponente plus ein `useAnonymizer()`-Hook / Composable für eigene UIs. Siehe Schnellstart unten. |
-| **Lokaler Proxy + Admin-GUI** | `@prompt-anonymizer/proxy` (noch nicht auf npm — aus `web/packages/proxy` bauen) | OpenAI-kompatibler Reverse-Proxy: Richten Sie `OPENAI_BASE_URL` darauf, und PII werden maskiert, bevor sie Ihren Rechner verlassen; in den Antworten werden die Label wiederhergestellt (inkl. Streaming). Admin-GUI unter `http://127.0.0.1:8787/admin/`. Siehe Schnellstart unten. |
+| **Python / CLI** | `pip install prompt-anonymizer` | Presidio + spaCy. Siehe Schnellstart unten. |
+| **Node-CLI (npx)** | `npx @prompt-anonymizer/cli` | Dieselben Befehle und Flags wie die Python-CLI; transformers.js-NER, vollständig auf dem Gerät. |
+| **Web Component** | `@prompt-anonymizer/element` | Framework-unabhängiges `<prompt-anonymizer>`-Element: Bettet das komplette Anonymisieren-→-Wiederherstellen-Panel in jede Website ein (reines HTML, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Fertige `<AnonymizerPanel />`-Komponente plus ein `useAnonymizer()`-Hook / Composable für eigene UIs. Siehe Schnellstart unten. |
+| **Lokaler Proxy + Admin-GUI** | `npx @prompt-anonymizer/proxy` | OpenAI-kompatibler Reverse-Proxy: Richten Sie `OPENAI_BASE_URL` darauf, und PII werden maskiert, bevor sie Ihren Rechner verlassen; in den Antworten werden die Label wiederhergestellt (inkl. Streaming). Admin-GUI unter `http://127.0.0.1:8787/admin/`. Siehe Schnellstart unten. |
 | **Commit-Hook / CI-Gate** | `prompt-anonymizer scan` (beide CLIs) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Exit-Code-basiertes PII-Gate für Commit- und CI-Prüfungen: meldet `file:line:col` und den Entitätstyp, nie den gefundenen Text. Standardmäßig offline und ohne Modelle. Siehe unten. |
 
 ## Schnellstart (Python)
 
 ```bash
-# Noch nicht auf PyPI veröffentlicht - von GitHub installieren (ein Tag oder main für den neuesten Stand):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
+pip install prompt-anonymizer
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: keine offizielle spaCy-Pipeline — WikiNER
 # zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — oder
@@ -148,10 +147,7 @@ JSON-Ausgabe) und führt den TypeScript-Kern mit transformers.js-NER auf dem
 Gerät aus:
 
 ```bash
-# Noch nicht auf npm veröffentlicht — aus dem Repository bauen:
-cd web && pnpm install && pnpm --filter "./packages/*" build
-node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
-# Nach der Veröffentlichung: npx @prompt-anonymizer/cli anonymize -t "..."
+npx @prompt-anonymizer/cli anonymize -t "山田太郎の電話は090-1234-5678"
 ```
 
 Um das fertige Anonymisieren-→-Wiederherstellen-Panel in ein beliebiges
@@ -200,10 +196,7 @@ verlässt, und die Label werden in der Antwort wiederhergestellt (Streaming
 inklusive). Mappings bleiben im Speicher des Proxys, pro Anfrage:
 
 ```bash
-# Noch nicht auf npm veröffentlicht — aus dem Repository bauen:
-cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
-node packages/proxy/dist/cli.js            # lauscht auf http://127.0.0.1:8787
-# Nach der Veröffentlichung: npx @prompt-anonymizer/proxy
+npx @prompt-anonymizer/proxy            # lauscht auf http://127.0.0.1:8787
 
 # In Ihrer App / Shell:
 export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
@@ -240,15 +233,14 @@ Mit dem [pre-commit](https://pre-commit.com)-Framework
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.2.2  # erstes Tag, das diesen Hook enthält
+    rev: v0.3.0
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
 ```
 
 Node-Projekte können dasselbe Gate über husky + lint-staged anbinden
-(`npx @prompt-anonymizer/cli`, sobald veröffentlicht; bis dahin aus
-`web/packages/cli` bauen):
+(`npx @prompt-anonymizer/cli scan`):
 
 ```json
 { "lint-staged": { "*": "prompt-anonymizer scan" } }

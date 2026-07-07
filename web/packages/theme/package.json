@@ -1,7 +1,7 @@
 {
   "name": "@prompt-anonymizer/theme",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared design tokens and base styles for prompt-anonymizer UI surfaces",
   "exports": {
     "./tokens.css": "./tokens.css",

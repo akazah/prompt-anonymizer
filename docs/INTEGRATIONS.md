@@ -10,7 +10,7 @@ Start the proxy once (see the
 [README quickstart](../README.md#quickstart-local-proxy)):
 
 ```bash
-npx @prompt-anonymizer/proxy      # not on npm yet — build from web/packages/proxy
+npx @prompt-anonymizer/proxy
 # → http://127.0.0.1:8787/v1  (admin GUI: http://127.0.0.1:8787/admin/)
 ```
 

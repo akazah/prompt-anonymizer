@@ -20,7 +20,7 @@ from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
 from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
 from prompt_anonymizer.scan import STRUCTURED_ENTITIES, guess_language, scan_text
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "DEFAULT_ENTITIES",

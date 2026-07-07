@@ -85,19 +85,18 @@ Anonymize → the mapping stays local → the LLM reply keeps the labels → res
 | **Browser (WebGPU)** | [akazah.github.io/prompt-anonymizer](https://akazah.github.io/prompt-anonymizer/) | 100% on-device: NER runs in your browser via WebGPU (WASM fallback). Your text is never sent to a server — verify it in the network tab. |
 | **Desktop app** | Download from [Releases](https://github.com/akazah/prompt-anonymizer/releases) (`.dmg` / `.msi` / `.exe` / `.AppImage` / `.deb` / `.rpm`) | Tauri 2. Unsigned for now — your OS will warn on first launch. |
 | **Chrome extension** | `prompt-anonymizer-extension-*.zip` from [Releases](https://github.com/akazah/prompt-anonymizer/releases) | Unzip → `chrome://extensions` → enable Developer mode → "Load unpacked". Select text → right-click → *Anonymize selection*. |
-| **Python / CLI** | `pip install git+https://github.com/akazah/prompt-anonymizer` (not on PyPI yet) | Presidio + spaCy. See Quickstart below. |
-| **Node CLI (npx)** | `npx @prompt-anonymizer/cli` (not on npm yet — build from `web/packages/cli`) | Same commands and flags as the Python CLI; transformers.js NER, fully on-device. |
-| **Web Component** | `@prompt-anonymizer/element` (not on npm yet) | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
-| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` (not on npm yet) | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
-| **Local proxy + admin GUI** | `@prompt-anonymizer/proxy` (not on npm yet — build from `web/packages/proxy`) | OpenAI-compatible reverse proxy: point `OPENAI_BASE_URL` at it and PII is masked before leaving your machine, labels restored in responses (incl. streaming). Admin GUI on `http://127.0.0.1:8787/admin/`. See Quickstart below. |
-| **MCP server** | `@prompt-anonymizer/mcp` (not on npm yet — build from `web/packages/mcp`) | `anonymize` / `deanonymize` / `scan` tools for any MCP client (Claude Desktop, Claude Code, Cursor, …). The label mapping stays in server memory (`mapping_id`) and is never shown to the model unless explicitly requested. See Quickstart below. |
+| **Python / CLI** | `pip install prompt-anonymizer` | Presidio + spaCy. See Quickstart below. |
+| **Node CLI (npx)** | `npx @prompt-anonymizer/cli` | Same commands and flags as the Python CLI; transformers.js NER, fully on-device. |
+| **Web Component** | `@prompt-anonymizer/element` | Framework-agnostic `<prompt-anonymizer>` element: drop the full anonymize → restore panel into any site (plain HTML, Svelte, Angular, …). |
+| **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Drop-in `<AnonymizerPanel />` component plus a `useAnonymizer()` hook / composable for custom UIs. See Quickstart below. |
+| **Local proxy + admin GUI** | `npx @prompt-anonymizer/proxy` | OpenAI-compatible reverse proxy: point `OPENAI_BASE_URL` at it and PII is masked before leaving your machine, labels restored in responses (incl. streaming). Admin GUI on `http://127.0.0.1:8787/admin/`. See Quickstart below. |
+| **MCP server** | `npx @prompt-anonymizer/mcp` | `anonymize` / `deanonymize` / `scan` tools for any MCP client (Claude Desktop, Claude Code, Cursor, …). The label mapping stays in server memory (`mapping_id`) and is never shown to the model unless explicitly requested. See Quickstart below. |
 | **Commit hook / CI gate** | `prompt-anonymizer scan` (both CLIs) + [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) | Exit-code PII gate for commit-time and CI checks: reports `file:line:col` and entity type, never the matched text. Offline and model-free by default. See below. |
 
 ## Quickstart (Python)
 
 ```bash
-# Not published to PyPI yet - install from GitHub (a tag, or main for latest):
-pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
+pip install prompt-anonymizer
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: no official spaCy pipeline — WikiNER
 # zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — or
@@ -144,10 +143,7 @@ The Node CLI mirrors the Python CLI (same commands, flags and JSON output),
 running the TypeScript core with transformers.js NER on-device:
 
 ```bash
-# Not published to npm yet — build from the repo:
-cd web && pnpm install && pnpm --filter "./packages/*" build
-node packages/cli/dist/cli.js anonymize -t "山田太郎の電話は090-1234-5678"
-# Once published: npx @prompt-anonymizer/cli anonymize -t "..."
+npx @prompt-anonymizer/cli anonymize -t "山田太郎の電話は090-1234-5678"
 ```
 
 To embed the ready-made anonymize → restore panel in any frontend, use the
@@ -194,10 +190,7 @@ before the request leaves your machine and labels are restored in the
 response (streaming included). Mappings stay in proxy memory, per request:
 
 ```bash
-# Not published to npm yet — build from the repo:
-cd web && pnpm install && pnpm --filter @prompt-anonymizer/proxy... build
-node packages/proxy/dist/cli.js            # listens on http://127.0.0.1:8787
-# Once published: npx @prompt-anonymizer/proxy
+npx @prompt-anonymizer/proxy            # listens on http://127.0.0.1:8787
 
 # In your app / shell:
 export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
@@ -215,10 +208,8 @@ Give any MCP client — Claude Desktop, Claude Code, Cursor, … — on-device
 anonymization tools:
 
 ```bash
-# Not published to npm yet — build from the repo:
-cd web && pnpm install && pnpm --filter @prompt-anonymizer/mcp... build
-# Claude Code (once published: claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp):
-claude mcp add prompt-anonymizer -- node "$(pwd)/packages/mcp/dist/cli.js"
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
 Three tools, all designed so PII stays out of the model context:
@@ -251,15 +242,14 @@ With the [pre-commit](https://pre-commit.com) framework
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.2.2  # first tag that ships this hook
+    rev: v0.3.0
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
 ```
 
 Node projects can wire the same gate through husky + lint-staged
-(`npx @prompt-anonymizer/cli` once published; until then, build from
-`web/packages/cli`):
+(`npx @prompt-anonymizer/cli scan`):
 
 ```json
 { "lint-staged": { "*": "prompt-anonymizer scan" } }

@@ -14,12 +14,9 @@ sitting (registry account setup aside).
       (`core`, `cli`, `element`, `react`, `vue`, `proxy`, `mcp`) — the npm
       package page renders the README; without one the listing is blank.
 - [x] `homepage` / `bugs` fields in each publishable `package.json`.
-- [ ] **Version consistency.** Tags `v0.2.1` / `v0.2.2` were cut while every
-      version field still says `0.2.0`. Registries reject duplicate versions,
-      so the first published release must use a fresh version: bump
-      everything to `0.3.0` in one PR (the `rg` one-liner in
-      [../RELEASING.md](../RELEASING.md) lists all 14 files), run `uv lock`,
-      and move `[Unreleased]` in `CHANGELOG.md`.
+- [x] **Version consistency.** First published release uses `0.3.0` (bumped in
+      the release PR; `rg` one-liner in [../RELEASING.md](../RELEASING.md)
+      lists all version files).
 - [ ] Local dry-runs pass: `uv build` and
       `cd web && pnpm --filter "./packages/*" build && pnpm --filter "./packages/*" exec pnpm pack`
       (inspect a tarball: it should contain `dist/`, `README.md`,
