@@ -2,7 +2,7 @@
 
 Paste-ready copy for the Developer Dashboard. Screenshots: capture the side
 panel over a real ChatGPT page (with fake PII), 1280×800, light theme; reuse
-frames from `demo/demo_extension.gif`.
+frames from `demo/demo_extension_en.gif`.
 
 ## Name
 

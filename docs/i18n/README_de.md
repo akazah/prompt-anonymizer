@@ -68,18 +68,18 @@ Rutsch zu auditieren.
 Anonymisieren → das Mapping bleibt lokal → die LLM-Antwort behält die
 Label → wiederherstellen:
 
-<img alt="Demo der Browser-App: Anonymisieren, Mapping und Wiederherstellen im Roundtrip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Demo der Browser-App: Anonymisieren, Mapping und Wiederherstellen im Roundtrip" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_de.gif?raw=true" width="85%">
 
 <details>
-<summary>CLI-Demo (Japanisch / Englisch — die anderen acht Sprachen funktionieren genauso)</summary>
+<summary>CLI-Demo</summary>
 
-<img alt="CLI-Demo (Japanisch)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="CLI-Demo (Englisch)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="CLI-Demo" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_de.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Demo der Chrome-Erweiterung (Seitenpanel)</summary>
 
-<img alt="Demo der Chrome-Erweiterung" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Demo der Chrome-Erweiterung" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_de.gif?raw=true" width="40%">
 </details>
 
 ## Ausprobieren

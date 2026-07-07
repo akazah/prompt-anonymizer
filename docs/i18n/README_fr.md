@@ -67,18 +67,18 @@ projet est sous licence MIT et assez petit pour être audité d'une traite.
 Anonymiser → le mapping reste local → la réponse du LLM conserve les
 étiquettes → restaurer :
 
-<img alt="Démo de l'app navigateur : anonymisation, mapping et restauration aller-retour" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
+<img alt="Démo de l'app navigateur : anonymisation, mapping et restauration aller-retour" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web_fr.gif?raw=true" width="85%">
 
 <details>
-<summary>Démo de la CLI (japonais / anglais — les huit autres langues fonctionnent de la même façon)</summary>
+<summary>Démo de la CLI</summary>
 
-<img alt="Démo de la CLI (japonais)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Démo de la CLI (anglais)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
+<img alt="Démo de la CLI" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_fr.gif?raw=true" width="70%">
 </details>
 
 <details>
 <summary>Démo de l'extension Chrome (panneau latéral)</summary>
 
-<img alt="Démo de l'extension Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension.gif?raw=true" width="40%">
+<img alt="Démo de l'extension Chrome" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_extension_fr.gif?raw=true" width="40%">
 </details>
 
 ## Essayez-le
