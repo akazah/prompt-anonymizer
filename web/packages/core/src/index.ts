@@ -9,6 +9,17 @@ import type {
 } from "./types.js";
 
 export * from "./types.js";
+export {
+  AUTO_DISPLAY_NAME,
+  LANGUAGE_DISPLAY_NAMES,
+  LANGUAGE_LIST,
+  SUPPORTED_LANGUAGES,
+  isLanguage,
+  isLanguageOption,
+  languageFromBcp47,
+  languagePickerEntries,
+} from "./languages.js";
+export type { LanguageOption } from "./languages.js";
 export { LABELS, applyLabels, mergeSpans } from "./labeling.js";
 export {
   InMemoryMappingStore,

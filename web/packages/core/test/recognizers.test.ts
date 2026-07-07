@@ -134,6 +134,38 @@ describe("detectWithRegex", () => {
     }
   });
 
+  it("detects phone formats for the six new languages", () => {
+    const samples: Array<[Parameters<typeof detectWithRegex>[1], string]> = [
+      ["zh", "手机是 138 0013 8000"],
+      ["zh", "+86 159-4606-2826"],
+      ["ko", "전화는 010-1234-5678"],
+      ["ko", "+82 10-1234-5678"],
+      ["fr", "appelez le 06 12 34 56 78"],
+      ["fr", "+33 6 12 34 56 78"],
+      ["de", "Telefon: 030 901820"],
+      ["de", "+49 171 2345678"],
+      ["pt", "ligue para 912 345 678"],
+      ["pt", "+351 912 345 678"],
+      ["it", "chiamami al 333 123 4567"],
+      ["it", "+39 333 123 4567"],
+    ];
+    for (const [language, text] of samples) {
+      const types = detectWithRegex(text, language).map((s) => s.entityType);
+      expect(types, `${language}: ${text}`).toContain("PHONE_NUMBER");
+    }
+  });
+
+  it("does not fire new-language phone patterns on English text", () => {
+    // A Chinese bare mobile (11 digits, no separators) must not fire on en.
+    expect(
+      detectWithRegex("order id 13800138000", "en").filter((s) => s.entityType === "PHONE_NUMBER"),
+    ).toEqual([]);
+    // A Portuguese grouped mobile must not fire on en either.
+    expect(
+      detectWithRegex("ref 912 345 678", "en").filter((s) => s.entityType === "PHONE_NUMBER"),
+    ).toEqual([]);
+  });
+
   it("does not detect Vietnamese phones when language is en", () => {
     const spans = detectWithRegex("Call 0912 345 678", "en");
     expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);
@@ -221,5 +253,75 @@ describe("detectDenyList", () => {
     const spans = detectDenyList("X計画のことをX計画と呼ぶ", ["X計画"]);
     expect(spans).toHaveLength(2);
     expect(spans.every((s) => s.entityType === "CUSTOM")).toBe(true);
+  });
+});
+
+/**
+ * Score parity table (Python vs web/packages/core recognizers.ts).
+ * Scores intentionally differ today; this pin makes future drift visible.
+ *   jp_mobile     py 0.6 / ts 0.7
+ *   jp_landline   py 0.5 / ts 0.6
+ *   jp_tollfree   py 0.6 / ts 0.7
+ *   us_phone      py 0.6 / ts 0.6
+ *   postal_marked py 0.9 / ts 0.9
+ *   postal_bare   py 0.3 (all langs, context-boosted) / ts 0.35 (ja only)
+ *   my_number     py 0.5 -> 1.0 on check-digit / ts 0.7 flat
+ *   credit_card   py 0.3 -> 1.0 on Luhn / ts 1.0 (pre-validated)
+ */
+describe("detectWithRegex score pins", () => {
+  it("emits JP mobile at 0.7", () => {
+    const spans = detectWithRegex("090-1234-5678", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.7);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits JP toll-free at 0.7", () => {
+    const spans = detectWithRegex("0120-123-456", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.7);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits JP landline at 0.6", () => {
+    const spans = detectWithRegex("03-1234-5678", "ja");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.6);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits US phone at 0.6", () => {
+    const spans = detectWithRegex("(333) 333-3333", "en");
+    const phone = spans.find((s) => s.entityType === "PHONE_NUMBER" && s.score === 0.6);
+    expect(phone).toBeDefined();
+  });
+
+  it("emits marked postal code at 0.9", () => {
+    const spans = detectWithRegex("〒100-0001", "ja");
+    const postal = spans.find((s) => s.entityType === "JP_POSTAL_CODE" && s.score === 0.9);
+    expect(postal).toBeDefined();
+  });
+
+  it("emits bare postal code at 0.35 (ja only)", () => {
+    const spans = detectWithRegex("100-0001", "ja");
+    const postal = spans.find((s) => s.entityType === "JP_POSTAL_CODE" && s.score === 0.35);
+    expect(postal).toBeDefined();
+  });
+
+  it("emits valid my number at 0.7", () => {
+    const body = "12345678901";
+    const myNumber = body + String(myNumberCheckDigit(body));
+    const spans = detectWithRegex(`マイナンバー${myNumber}です`, "ja");
+    const mn = spans.find((s) => s.entityType === "JP_MY_NUMBER" && s.score === 0.7);
+    expect(mn).toBeDefined();
+  });
+
+  it("emits Luhn-valid credit card at 1.0", () => {
+    const spans = detectWithRegex("4111111111111111", "ja");
+    const card = spans.find((s) => s.entityType === "CREDIT_CARD" && s.score === 1.0);
+    expect(card).toBeDefined();
+  });
+
+  it("emits email address at 0.9", () => {
+    const spans = detectWithRegex("taro@example.com", "en");
+    const email = spans.find((s) => s.entityType === "EMAIL_ADDRESS" && s.score === 0.9);
+    expect(email).toBeDefined();
   });
 });

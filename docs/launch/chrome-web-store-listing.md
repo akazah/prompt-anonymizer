@@ -42,7 +42,8 @@ HOW IT WORKS
   restore the original values.
 
 LANGUAGES
-Japanese, English, Spanish, Vietnamese — with automatic detection, all
+Ten languages — Japanese, English, Spanish, Vietnamese, Chinese, Korean,
+French, German, Portuguese, Italian — with automatic detection, all
 supported as equals. Each with locale-specific structured PII: per-region
 phone formats and checksum-validated national IDs (e.g. Japan's My Number,
 so it doesn't blindly mask every 12-digit number).
@@ -60,7 +61,8 @@ sending — the mapping table exists exactly for that final check.
 ## Category / language
 
 - Category: **Workflow & Planning** (alt: Tools)
-- Languages: English, Japanese, Spanish, Vietnamese
+- Languages: English, Japanese, Spanish, Vietnamese, Chinese, Korean,
+  French, German, Portuguese, Italian
 
 ## Privacy tab answers
 

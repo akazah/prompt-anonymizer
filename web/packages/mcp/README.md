@@ -39,8 +39,8 @@ postal codes, My Number with check-digit validation, credit cards, deny-list
 terms). Add `--ner` to the args to also mask names and locations with an
 on-device transformers.js model (one-time download on first use).
 
-Supported languages: Japanese, English, Spanish, Vietnamese (plus
-auto-detection).
+Supported languages (10): Japanese, English, Spanish, Vietnamese, Chinese,
+Korean, French, German, Portuguese, Italian — plus auto-detection.
 
 ## Privacy notes
 

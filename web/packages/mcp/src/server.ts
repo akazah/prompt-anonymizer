@@ -25,9 +25,12 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import {
   Anonymizer,
+  LANGUAGE_LIST,
   TransformersNerBackend,
   deanonymize,
   detectLanguage,
+  isLanguage,
+  isLanguageOption,
   type AnonymizeResult,
   type Language,
   type NerBackend,
@@ -99,9 +102,9 @@ const defaultEngineFactory: EngineFactory = ({ ner, entities, denyList, allowLis
 };
 
 async function resolveLanguage(value: string, text: string): Promise<Language> {
-  if (value === "en" || value === "ja" || value === "es" || value === "vi") return value;
+  if (isLanguage(value)) return value;
   if (value === "auto") return detectLanguage(text);
-  throw new Error(`Unsupported language: ${value} (use en, ja, es, vi or auto).`);
+  throw new Error(`Unsupported language: ${value} (use ${LANGUAGE_LIST} or auto).`);
 }
 
 /** 1-based line and column of a character offset (parity with both CLIs). */
@@ -126,9 +129,12 @@ function fail(message: string): ToolResult {
 }
 
 const languageSchema = z
-  .enum(["auto", "en", "ja", "es", "vi"])
+  .string()
   .default("auto")
-  .describe("Language of the text: en, ja, es, vi, or auto to detect.");
+  .refine(isLanguageOption, {
+    message: `Language must be one of ${LANGUAGE_LIST}, or auto.`,
+  })
+  .describe(`Language of the text: ${LANGUAGE_LIST}, or auto to detect.`);
 
 export function createServer(options: CreateServerOptions = {}): McpServer {
   const ner = options.ner ?? false;

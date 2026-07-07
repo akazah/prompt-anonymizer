@@ -10,12 +10,17 @@ from typing import Annotated
 import typer
 
 from prompt_anonymizer.exceptions import PromptAnonymizerError
+from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
 
 app = typer.Typer(
     name="prompt-anonymizer",
     help="Anonymize PII before it reaches an LLM - with consistent, reversible labels.",
     no_args_is_help=True,
 )
+
+# typer help strings must be constants at decoration time, so derive them here.
+_LANGUAGE_HELP = f"Language ({'/'.join(SUPPORTED_LANGUAGES)})."
+_SCAN_LANGUAGE_HELP = f"Language: {', '.join(SUPPORTED_LANGUAGES)} or auto."
 
 
 def _read_input(text: str | None, file: Path | None) -> str:
@@ -47,9 +52,7 @@ def anonymize(
     file: Annotated[
         Path | None, typer.Option("--file", "-f", exists=True, help="Read text from a file.")
     ] = None,
-    language: Annotated[
-        str, typer.Option("--language", "-l", help="Language (en/ja/es/vi).")
-    ] = "en",
+    language: Annotated[str, typer.Option("--language", "-l", help=_LANGUAGE_HELP)] = "en",
     model_size: Annotated[str, typer.Option(help="spaCy model size: sm or lg.")] = "sm",
     ner_backend: Annotated[
         str,
@@ -80,6 +83,8 @@ def anonymize(
     """Anonymize PII in TEXT and print the result (and mapping)."""
     from prompt_anonymizer.core import PromptAnonymizer
 
+    if language not in SUPPORTED_LANGUAGES:
+        raise typer.BadParameter(f"Language must be one of: {', '.join(SUPPORTED_LANGUAGES)}.")
     raw = _read_input(text, file)
     try:
         if entities is not None:
@@ -158,9 +163,7 @@ def scan(
         typer.Argument(help="Files to scan (e.g. staged files passed by pre-commit)."),
     ] = None,
     text: Annotated[str | None, typer.Option("--text", "-t", help="Text to scan.")] = None,
-    language: Annotated[
-        str, typer.Option("--language", "-l", help="Language: en, ja, es, vi or auto.")
-    ] = "auto",
+    language: Annotated[str, typer.Option("--language", "-l", help=_SCAN_LANGUAGE_HELP)] = "auto",
     ner: Annotated[
         bool,
         typer.Option(
@@ -192,8 +195,10 @@ def scan(
     from prompt_anonymizer.labeling import EntitySpan
     from prompt_anonymizer.scan import guess_language, scan_text
 
-    if language not in ("en", "ja", "es", "vi", "auto"):
-        raise typer.BadParameter("Language must be en, ja, es, vi or auto.")
+    if language not in (*SUPPORTED_LANGUAGES, "auto"):
+        raise typer.BadParameter(
+            f"Language must be one of: {', '.join(SUPPORTED_LANGUAGES)} or auto."
+        )
     deny = deny or []
     allow = allow or []
     inputs = _scan_inputs(files, text)

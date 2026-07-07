@@ -19,6 +19,18 @@ def test_guess_language_matches_ts_heuristic() -> None:
     assert guess_language("Số điện thoại, ¿vale?") == "vi"
 
 
+def test_guess_language_new_languages() -> None:
+    assert guess_language("请给我打电话") == "zh"
+    assert guess_language("전화해 주세요") == "ko"
+    assert guess_language("größere Straße") == "de"
+    assert guess_language("informação não recebida") == "pt"
+    assert guess_language("ça marche très bien") == "fr"
+    assert guess_language("la città è però lontana") == "it"
+    # Kana wins over han (ja before zh); hangul wins over everything Latin.
+    assert guess_language("山田さんは北京にいる") == "ja"
+    assert guess_language("서울 kontakt") == "ko"
+
+
 def test_scan_text_detects_structured_pii() -> None:
     spans = scan_text("Mail john@example.com or call 090-1234-5678.")
     types = {s.entity_type for s in spans}

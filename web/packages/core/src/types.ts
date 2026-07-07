@@ -1,4 +1,6 @@
-export type Language = "en" | "ja" | "es" | "vi";
+import type { Language } from "./languages.js";
+
+export type { Language } from "./languages.js";
 
 export interface EntitySpan {
   start: number;

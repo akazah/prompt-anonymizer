@@ -14,6 +14,7 @@ from pathlib import Path
 from prompt_anonymizer.core import DEFAULT_ENTITIES, OPTIONAL_ENTITIES, PromptAnonymizer
 from prompt_anonymizer.evals.generate import generate_cases
 from prompt_anonymizer.evals.metrics import EvalReport, evaluate_cases
+from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
 
 PY_START = "<!-- python-eval:start -->"
 PY_END = "<!-- python-eval:end -->"
@@ -42,6 +43,7 @@ and are not measured here. Regenerate with
 |---|---|---|---|---|---|
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
@@ -57,7 +59,7 @@ TABLE_HEADER = (
 def main() -> None:
     parser = argparse.ArgumentParser(description="prompt-anonymizer evaluation harness")
     parser.add_argument("--cases", type=int, default=200, help="cases per language")
-    parser.add_argument("--languages", nargs="+", default=["ja", "en", "es", "vi"])
+    parser.add_argument("--languages", nargs="+", default=list(SUPPORTED_LANGUAGES))
     parser.add_argument("--model-size", default="sm", choices=["sm", "lg"])
     parser.add_argument(
         "--ner-backend",

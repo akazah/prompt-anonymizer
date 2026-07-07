@@ -4,6 +4,8 @@ import {
   TransformersNerBackend,
   detectLanguage,
   detectWebGpu,
+  languageFromBcp47,
+  languagePickerEntries,
   type AnonymizeResult,
   type Language,
   type NerProgress,
@@ -16,15 +18,21 @@ const SAMPLES: Record<Language, string> = {
   en: "John Smith will have a birthday next month. His colleague Emily Johnson is planning a surprise party. What gift would be appropriate? John Smith lives in New York. His email is john@example.com and his mobile is (333) 333-3333. You can reach Emily Johnson at emily.johnson@example.com.",
   es: "María García celebrará su cumpleaños el próximo mes. Su colega Carlos Ruiz está planeando una fiesta sorpresa. ¿Qué regalo sería apropiado? María García vive en Madrid. Su correo electrónico es maria.garcia@example.com y su teléfono es +34 612 345 678. Puede contactar a Carlos Ruiz en carlos.ruiz@example.com.",
   vi: "Nguyễn Văn An sẽ có sinh nhật vào tháng tới. Đồng nghiệp Trần Thị Mai đang lên kế hoạch một bữa tiệc bất ngờ. Món quà nào sẽ phù hợp? Nguyễn Văn An sống ở Hà Nội. Email của anh ấy là an.nguyen@example.com và số điện thoại là 0912 345 678. Bạn có thể liên hệ Trần Thị Mai tại mai.tran@example.com.",
+  zh: "王小明下个月过生日。他的同事李美玲正在筹划一个惊喜派对。送什么礼物比较合适呢？王小明住在北京市朝阳区。他的邮箱是 xiaoming.wang@example.com，电话号码是 138-1234-5678。联系李美玲请发邮件至 meiling.li@example.com。",
+  ko: "김민준은 다음 달에 생일을 맞이합니다. 동료인 이서연은 깜짝 파티를 계획하고 있습니다. 어떤 선물이 좋을까요? 김민준은 서울특별시 강남구에 살고 있습니다. 그의 이메일은 minjun.kim@example.com이고 전화번호는 010-1234-5678입니다. 이서연에게는 seoyeon.lee@example.com으로 연락해 주세요.",
+  fr: "Jean Dupont fêtera son anniversaire le mois prochain. Sa collègue Marie Martin prépare une fête surprise. Quel cadeau serait approprié ? Jean Dupont habite à Paris. Son adresse e-mail est jean.dupont@example.com et son numéro de téléphone est le 06 12 34 56 78. Vous pouvez contacter Marie Martin à marie.martin@example.com.",
+  de: "Max Mustermann hat nächsten Monat Geburtstag. Seine Kollegin Anna Schmidt plant eine Überraschungsparty. Welches Geschenk wäre passend? Max Mustermann wohnt in Berlin. Seine E-Mail-Adresse ist max.mustermann@example.com und seine Telefonnummer ist 0151 23456789. Anna Schmidt erreichen Sie unter anna.schmidt@example.com.",
+  pt: "João Silva fará aniversário no próximo mês. Sua colega Ana Costa está planejando uma festa surpresa. Qual presente seria adequado? João Silva mora em São Paulo. O e-mail dele é joao.silva@example.com e o telefone é (11) 91234-5678. Você pode contatar Ana Costa em ana.costa@example.com.",
+  it: "Marco Rossi festeggerà il compleanno il mese prossimo. La sua collega Giulia Bianchi sta organizzando una festa a sorpresa. Quale regalo sarebbe adatto? Marco Rossi vive a Milano. La sua email è marco.rossi@example.com e il suo telefono è 333 123 4567. Puoi contattare Giulia Bianchi all'indirizzo giulia.bianchi@example.com.",
 };
 
 function sampleLanguageFromNavigator(): Language {
-  const lang = navigator.language?.toLowerCase() ?? "en";
-  if (lang.startsWith("ja")) return "ja";
-  if (lang.startsWith("es")) return "es";
-  if (lang.startsWith("vi")) return "vi";
-  return "en";
+  return languageFromBcp47(navigator.language ?? "") ?? "en";
 }
+
+const LANGUAGE_OPTIONS_MARKUP = languagePickerEntries({ auto: true })
+  .map(({ value, label }) => `<option value="${value}">${label}</option>`)
+  .join("\n          ");
 
 const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
@@ -51,11 +59,7 @@ app.innerHTML = `
     <div class="toolbar">
       <label>Language
         <select id="language">
-          <option value="auto">Auto / 自動判定</option>
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="vi">Tiếng Việt</option>
+          ${LANGUAGE_OPTIONS_MARKUP}
         </select>
       </label>
       <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER model (names & locations)</label>

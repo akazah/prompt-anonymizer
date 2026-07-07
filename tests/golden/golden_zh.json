@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "zh-0000",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫邓雷。我想安排下个月的会议，地点定在南宁市。请拨打 +86 159-4606-2826 联系我，或发邮件至 haoxia@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "邓雷"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "南宁市"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 159-4606-2826"
+   },
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haoxia@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0001",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：陈东、栗莹。下次会议将在海门县举行。待办事项：请将资料发送至 shenmin@example.org。直线电话：161 3864 1801。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "陈东"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "栗莹"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "海门县"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shenmin@example.org"
+   },
+   {
+    "start": 66,
+    "end": 79,
+    "entity_type": "PHONE_NUMBER",
+    "value": "161 3864 1801"
+   }
+  ]
+ },
+ {
+  "id": "zh-0002",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘丽华，地址位于济南县。我们将回拨 17627263109。登记的银行卡号为 4934423311055385。副本已发送至 yinwei@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "刘丽华"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "济南县"
+   },
+   {
+    "start": 33,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17627263109"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "CREDIT_CARD",
+    "value": "4934423311055385"
+   },
+   {
+    "start": 78,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yinwei@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0003",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫靳玲。我想安排下个月的会议，地点定在哈尔滨县。请拨打 +86 170-5145-2929 联系我，或发邮件至 jie03@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "靳玲"
+   },
+   {
+    "start": 23,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "哈尔滨县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 170-5145-2929"
+   },
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jie03@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0004",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：赵平、郎凯。下次会议将在六安市举行。待办事项：请将资料发送至 gang40@example.net。直线电话：16692391763。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "赵平"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "郎凯"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "六安市"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gang40@example.net"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16692391763"
+   }
+  ]
+ },
+ {
+  "id": "zh-0005",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是宫文，地址位于浩县。我们将回拨 151 1574 6193。登记的银行卡号为 4936232171403074。副本已发送至 dhan@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "宫文"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "浩县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "151 1574 6193"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "CREDIT_CARD",
+    "value": "4936232171403074"
+   },
+   {
+    "start": 78,
+    "end": 94,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dhan@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0006",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫黄娜。我想安排下个月的会议，地点定在丽丽县。请拨打 175 4105 0716 联系我，或发邮件至 lqin@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "黄娜"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "丽丽县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "175 4105 0716"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lqin@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0007",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：康莹、江凤兰。下次会议将在凯市举行。待办事项：请将资料发送至 leiyang@example.net。直线电话：168 6257 0127。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "康莹"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "江凤兰"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "凯市"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leiyang@example.net"
+   },
+   {
+    "start": 66,
+    "end": 79,
+    "entity_type": "PHONE_NUMBER",
+    "value": "168 6257 0127"
+   }
+  ]
+ },
+ {
+  "id": "zh-0008",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李波，地址位于晨县。我们将回拨 +86 179-1971-1980。登记的银行卡号为 4614-2215-4804-7416。副本已发送至 pgong@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "李波"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "晨县"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 179-1971-1980"
+   },
+   {
+    "start": 58,
+    "end": 77,
+    "entity_type": "CREDIT_CARD",
+    "value": "4614-2215-4804-7416"
+   },
+   {
+    "start": 85,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pgong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0009",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫陈丹丹。我想安排下个月的会议，地点定在玉英县。请拨打 +86 183-5079-4948 联系我，或发邮件至 byan@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "陈丹丹"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "玉英县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 183-5079-4948"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "byan@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0010",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：孔淑英、王明。下次会议将在昆明县举行。待办事项：请将资料发送至 hulei@example.com。直线电话：14310961239。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "孔淑英"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "王明"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "昆明县"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hulei@example.com"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14310961239"
+   }
+  ]
+ },
+ {
+  "id": "zh-0011",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是庞桂兰，地址位于洁县。我们将回拨 18557513824。登记的银行卡号为 4633105139239986。副本已发送至 changxiulan@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "庞桂兰"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "洁县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18557513824"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4633105139239986"
+   },
+   {
+    "start": 77,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "changxiulan@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0012",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫项东。我想安排下个月的会议，地点定在彬县。请拨打 154 7454 1842 联系我，或发邮件至 li36@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "项东"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "彬县"
+   },
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "154 7454 1842"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "li36@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0013",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：吴丽娟、杨桂芝。下次会议将在南昌市举行。待办事项：请将资料发送至 guiying63@example.org。直线电话：135 2513 0181。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "吴丽娟"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "杨桂芝"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "南昌市"
+   },
+   {
+    "start": 43,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guiying63@example.org"
+   },
+   {
+    "start": 70,
+    "end": 83,
+    "entity_type": "PHONE_NUMBER",
+    "value": "135 2513 0181"
+   }
+  ]
+ },
+ {
+  "id": "zh-0014",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王燕，地址位于西安市。我们将回拨 15205195796。登记的银行卡号为 4518-4407-0061-1945。副本已发送至 sshi@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "王燕"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "西安市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15205195796"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4518-4407-0061-1945"
+   },
+   {
+    "start": 80,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sshi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0015",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王辉。我想安排下个月的会议，地点定在辽阳县。请拨打 13313915942 联系我，或发邮件至 juan78@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "王辉"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "辽阳县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13313915942"
+   },
+   {
+    "start": 53,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juan78@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0016",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：任刚、彭明。下次会议将在深圳市举行。待办事项：请将资料发送至 fengping@example.net。直线电话：18400913058。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "任刚"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "彭明"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "深圳市"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fengping@example.net"
+   },
+   {
+    "start": 67,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18400913058"
+   }
+  ]
+ },
+ {
+  "id": "zh-0017",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是张琴，地址位于武汉市。我们将回拨 192 7431 3292。登记的银行卡号为 4490-3924-0951-9279。副本已发送至 lye@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "张琴"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "武汉市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "192 7431 3292"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4490-3924-0951-9279"
+   },
+   {
+    "start": 82,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lye@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0018",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫舒想。我想安排下个月的会议，地点定在沈阳县。请拨打 14573992761 联系我，或发邮件至 xwei@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "舒想"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "沈阳县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14573992761"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xwei@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0019",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：张畅、温桂芝。下次会议将在郑州市举行。待办事项：请将资料发送至 litao@example.com。直线电话：13992658386。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "张畅"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "温桂芝"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "郑州市"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "litao@example.com"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13992658386"
+   }
+  ]
+ },
+ {
+  "id": "zh-0020",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李春梅，地址位于长春县。我们将回拨 137 2147 9600。登记的银行卡号为 4528443167761524。副本已发送至 liuguiying@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "李春梅"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "长春县"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "137 2147 9600"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4528443167761524"
+   },
+   {
+    "start": 80,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "liuguiying@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0021",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫蓝桂芝。我想安排下个月的会议，地点定在哈尔滨县。请拨打 143 2661 1358 联系我，或发邮件至 yongwu@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "蓝桂芝"
+   },
+   {
+    "start": 24,
+    "end": 28,
+    "entity_type": "LOCATION",
+    "value": "哈尔滨县"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "143 2661 1358"
+   },
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yongwu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0022",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王俊、赵建国。下次会议将在建平市举行。待办事项：请将资料发送至 gangren@example.net。直线电话：191 4483 0373。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王俊"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "赵建国"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "建平市"
+   },
+   {
+    "start": 42,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gangren@example.net"
+   },
+   {
+    "start": 67,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "191 4483 0373"
+   }
+  ]
+ },
+ {
+  "id": "zh-0023",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是陈静，地址位于鑫县。我们将回拨 13757176033。登记的银行卡号为 4787-6707-5065-5988。副本已发送至 nahuang@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "陈静"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "鑫县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13757176033"
+   },
+   {
+    "start": 52,
+    "end": 71,
+    "entity_type": "CREDIT_CARD",
+    "value": "4787-6707-5065-5988"
+   },
+   {
+    "start": 79,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nahuang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0024",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫巩欢。我想安排下个月的会议，地点定在佳市。请拨打 +86 180-0849-9805 联系我，或发邮件至 leixiang@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "巩欢"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "佳市"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 180-0849-9805"
+   },
+   {
+    "start": 58,
+    "end": 78,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leixiang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0025",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：杨亮、刘勇。下次会议将在桂珍市举行。待办事项：请将资料发送至 yangwu@example.net。直线电话：16629856928。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "杨亮"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "刘勇"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "桂珍市"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangwu@example.net"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16629856928"
+   }
+  ]
+ },
+ {
+  "id": "zh-0026",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是杨玉华，地址位于宁德市。我们将回拨 164 3079 6578。登记的银行卡号为 4880-2535-1039-0174。副本已发送至 jingqin@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "杨玉华"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "宁德市"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "164 3079 6578"
+   },
+   {
+    "start": 56,
+    "end": 75,
+    "entity_type": "CREDIT_CARD",
+    "value": "4880-2535-1039-0174"
+   },
+   {
+    "start": 83,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jingqin@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0027",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫吴晶。我想安排下个月的会议，地点定在太原县。请拨打 18890951963 联系我，或发邮件至 longli@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "吴晶"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "太原县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18890951963"
+   },
+   {
+    "start": 53,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "longli@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0028",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：林娜、张波。下次会议将在阜新县举行。待办事项：请将资料发送至 oxiong@example.net。直线电话：188 9727 7898。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "林娜"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "张波"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "阜新县"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oxiong@example.net"
+   },
+   {
+    "start": 65,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "188 9727 7898"
+   }
+  ]
+ },
+ {
+  "id": "zh-0029",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李林，地址位于上海县。我们将回拨 +86 171-4057-5232。登记的银行卡号为 4414-8360-9661-7575。副本已发送至 taomin@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "李林"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "上海县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 171-4057-5232"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4414-8360-9661-7575"
+   },
+   {
+    "start": 86,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taomin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0030",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫黄敏。我想安排下个月的会议，地点定在阜新市。请拨打 13867618095 联系我，或发邮件至 qiangtian@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "黄敏"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "阜新市"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13867618095"
+   },
+   {
+    "start": 53,
+    "end": 74,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiangtian@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0031",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：胡晨、宁波。下次会议将在嘉禾市举行。待办事项：请将资料发送至 mengxiulan@example.com。直线电话：14168052561。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "胡晨"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "宁波"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "嘉禾市"
+   },
+   {
+    "start": 41,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mengxiulan@example.com"
+   },
+   {
+    "start": 69,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14168052561"
+   }
+  ]
+ },
+ {
+  "id": "zh-0032",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是罗琴，地址位于海燕县。我们将回拨 +86 163-6159-1675。登记的银行卡号为 4575-3924-0196-2616。副本已发送至 yanchang@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "罗琴"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "海燕县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 163-6159-1675"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4575-3924-0196-2616"
+   },
+   {
+    "start": 86,
+    "end": 106,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yanchang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0033",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫刘明。我想安排下个月的会议，地点定在齐齐哈尔县。请拨打 +86 192-1368-5269 联系我，或发邮件至 qiang05@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "刘明"
+   },
+   {
+    "start": 23,
+    "end": 28,
+    "entity_type": "LOCATION",
+    "value": "齐齐哈尔县"
+   },
+   {
+    "start": 33,
+    "end": 50,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 192-1368-5269"
+   },
+   {
+    "start": 61,
+    "end": 80,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiang05@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0034",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李勇、吴超。下次会议将在武汉县举行。待办事项：请将资料发送至 taoliu@example.com。直线电话：188 0193 4808。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "李勇"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "吴超"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "武汉县"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taoliu@example.com"
+   },
+   {
+    "start": 65,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "188 0193 4808"
+   }
+  ]
+ },
+ {
+  "id": "zh-0035",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王金凤，地址位于济南县。我们将回拨 151 1540 4968。登记的银行卡号为 4339192476190359。副本已发送至 yang06@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "王金凤"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "济南县"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "151 1540 4968"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4339192476190359"
+   },
+   {
+    "start": 80,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yang06@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0036",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫贺超。我想安排下个月的会议，地点定在沈阳市。请拨打 157 6595 9623 联系我，或发邮件至 mingxue@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "贺超"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "沈阳市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "157 6595 9623"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mingxue@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0037",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：赵成、潘颖。下次会议将在晶县举行。待办事项：请将资料发送至 shenyan@example.net。直线电话：18654178159。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "赵成"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "潘颖"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "晶县"
+   },
+   {
+    "start": 40,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "shenyan@example.net"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18654178159"
+   }
+  ]
+ },
+ {
+  "id": "zh-0038",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是巫宇，地址位于林市。我们将回拨 +86 150-7430-5875。登记的银行卡号为 4787-5469-6254-8825。副本已发送至 cwen@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "巫宇"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "林市"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 150-7430-5875"
+   },
+   {
+    "start": 58,
+    "end": 77,
+    "entity_type": "CREDIT_CARD",
+    "value": "4787-5469-6254-8825"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cwen@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0039",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫汤辉。我想安排下个月的会议，地点定在军市。请拨打 18032504111 联系我，或发邮件至 xia39@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "汤辉"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "军市"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18032504111"
+   },
+   {
+    "start": 52,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xia39@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0040",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：裴坤、张瑜。下次会议将在辛集市举行。待办事项：请将资料发送至 izhou@example.org。直线电话：183 9415 9968。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "裴坤"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "张瑜"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "辛集市"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "izhou@example.org"
+   },
+   {
+    "start": 64,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "183 9415 9968"
+   }
+  ]
+ },
+ {
+  "id": "zh-0041",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是严红霞，地址位于宁德县。我们将回拨 +86 172-7284-9778。登记的银行卡号为 4669569105500571。副本已发送至 kangchao@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "严红霞"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "宁德县"
+   },
+   {
+    "start": 33,
+    "end": 50,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 172-7284-9778"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "CREDIT_CARD",
+    "value": "4669569105500571"
+   },
+   {
+    "start": 84,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kangchao@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0042",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王淑英。我想安排下个月的会议，地点定在郑州县。请拨打 +86 174-8321-1727 联系我，或发邮件至 tangfang@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "王淑英"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "郑州县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 174-8321-1727"
+   },
+   {
+    "start": 60,
+    "end": 80,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tangfang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0043",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：丁秀英、张林。下次会议将在敏市举行。待办事项：请将资料发送至 xiadu@example.com。直线电话：179 9852 3811。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "丁秀英"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "张林"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "敏市"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiadu@example.com"
+   },
+   {
+    "start": 64,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "179 9852 3811"
+   }
+  ]
+ },
+ {
+  "id": "zh-0044",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是何婷婷，地址位于龙县。我们将回拨 13967366077。登记的银行卡号为 4636-2890-6237-6317。副本已发送至 kwen@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "何婷婷"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "龙县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13967366077"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4636-2890-6237-6317"
+   },
+   {
+    "start": 80,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kwen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0045",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫张玉珍。我想安排下个月的会议，地点定在北京县。请拨打 +86 186-6950-3941 联系我，或发邮件至 tyang@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "张玉珍"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "北京县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 186-6950-3941"
+   },
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tyang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0046",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王颖、陈欣。下次会议将在济南县举行。待办事项：请将资料发送至 sunjuan@example.com。直线电话：+86 141-0032-5504。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王颖"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "陈欣"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "济南县"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sunjuan@example.com"
+   },
+   {
+    "start": 66,
+    "end": 83,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 141-0032-5504"
+   }
+  ]
+ },
+ {
+  "id": "zh-0047",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是徐建国，地址位于梅县。我们将回拨 14930083607。登记的银行卡号为 4234764509592474。副本已发送至 ming14@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "徐建国"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "梅县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14930083607"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4234764509592474"
+   },
+   {
+    "start": 77,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ming14@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0048",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫马丽丽。我想安排下个月的会议，地点定在西宁县。请拨打 +86 193-8488-2881 联系我，或发邮件至 caili@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "马丽丽"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "西宁县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 193-8488-2881"
+   },
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caili@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0049",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：亢凤兰、易玉梅。下次会议将在拉萨县举行。待办事项：请将资料发送至 tao59@example.net。直线电话：159 5812 9285。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "亢凤兰"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "易玉梅"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "拉萨县"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tao59@example.net"
+   },
+   {
+    "start": 66,
+    "end": 79,
+    "entity_type": "PHONE_NUMBER",
+    "value": "159 5812 9285"
+   }
+  ]
+ },
+ {
+  "id": "zh-0050",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是范宇，地址位于太原县。我们将回拨 194 3221 6364。登记的银行卡号为 4532-3546-5052-6353。副本已发送至 xiuyingli@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "范宇"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "太原县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "194 3221 6364"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4532-3546-5052-6353"
+   },
+   {
+    "start": 82,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiuyingli@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0051",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫李慧。我想安排下个月的会议，地点定在沈阳县。请拨打 +86 169-3041-8641 联系我，或发邮件至 lijun@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "李慧"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "沈阳县"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 169-3041-8641"
+   },
+   {
+    "start": 59,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lijun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0052",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：罗亮、吉浩。下次会议将在晨县举行。待办事项：请将资料发送至 chao57@example.com。直线电话：+86 168-5969-6308。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "罗亮"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "吉浩"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "晨县"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chao57@example.com"
+   },
+   {
+    "start": 64,
+    "end": 81,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 168-5969-6308"
+   }
+  ]
+ },
+ {
+  "id": "zh-0053",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是马帆，地址位于宜都县。我们将回拨 +86 196-2556-5564。登记的银行卡号为 4823-1924-9114-7866。副本已发送至 leipan@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "马帆"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "宜都县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 196-2556-5564"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4823-1924-9114-7866"
+   },
+   {
+    "start": 86,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leipan@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0054",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫杨桂芳。我想安排下个月的会议，地点定在杰县。请拨打 151 6146 3565 联系我，或发邮件至 hanli@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "杨桂芳"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "杰县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "151 6146 3565"
+   },
+   {
+    "start": 55,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanli@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0055",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：陈林、段玲。下次会议将在柳县举行。待办事项：请将资料发送至 qiangyang@example.org。直线电话：17135172938。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "陈林"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "段玲"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "柳县"
+   },
+   {
+    "start": 40,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiangyang@example.org"
+   },
+   {
+    "start": 67,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17135172938"
+   }
+  ]
+ },
+ {
+  "id": "zh-0056",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是龙建华，地址位于博市。我们将回拨 +86 182-0033-1871。登记的银行卡号为 4573-3499-1681-3678。副本已发送至 fanjie@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "龙建华"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "博市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 182-0033-1871"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4573-3499-1681-3678"
+   },
+   {
+    "start": 86,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fanjie@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0057",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫周雷。我想安排下个月的会议，地点定在华县。请拨打 15165457112 联系我，或发邮件至 tmao@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "周雷"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "华县"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15165457112"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tmao@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0058",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：郑岩、陈峰。下次会议将在俊县举行。待办事项：请将资料发送至 na72@example.org。直线电话：151 1614 3851。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "郑岩"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "陈峰"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "俊县"
+   },
+   {
+    "start": 40,
+    "end": 56,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "na72@example.org"
+   },
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "151 1614 3851"
+   }
+  ]
+ },
+ {
+  "id": "zh-0059",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李红梅，地址位于慧县。我们将回拨 15186284301。登记的银行卡号为 4531-1172-5003-6904。副本已发送至 llu@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "李红梅"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "慧县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15186284301"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4531-1172-5003-6904"
+   },
+   {
+    "start": 80,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "llu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0060",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫廖金凤。我想安排下个月的会议，地点定在永安市。请拨打 +86 197-0430-0932 联系我，或发邮件至 nagong@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "廖金凤"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "永安市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 197-0430-0932"
+   },
+   {
+    "start": 60,
+    "end": 78,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nagong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0061",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：金平、王涛。下次会议将在天津市举行。待办事项：请将资料发送至 gang52@example.net。直线电话：+86 161-1407-4907。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "金平"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "王涛"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "天津市"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gang52@example.net"
+   },
+   {
+    "start": 65,
+    "end": 82,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 161-1407-4907"
+   }
+  ]
+ },
+ {
+  "id": "zh-0062",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王丹，地址位于波市。我们将回拨 136 0806 1139。登记的银行卡号为 4872-4350-9425-2165。副本已发送至 yan37@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "王丹"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "波市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "136 0806 1139"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "CREDIT_CARD",
+    "value": "4872-4350-9425-2165"
+   },
+   {
+    "start": 81,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yan37@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0063",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫程冬梅。我想安排下个月的会议，地点定在斌市。请拨打 153 7985 8489 联系我，或发邮件至 wei52@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "程冬梅"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "斌市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "153 7985 8489"
+   },
+   {
+    "start": 55,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wei52@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0064",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：夏凤兰、王敏。下次会议将在倩县举行。待办事项：请将资料发送至 guiyingduan@example.net。直线电话：145 4937 8780。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "夏凤兰"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "王敏"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "倩县"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guiyingduan@example.net"
+   },
+   {
+    "start": 70,
+    "end": 83,
+    "entity_type": "PHONE_NUMBER",
+    "value": "145 4937 8780"
+   }
+  ]
+ },
+ {
+  "id": "zh-0065",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘雪，地址位于欣县。我们将回拨 +86 145-0665-2620。登记的银行卡号为 4152467353167363。副本已发送至 pingcai@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "刘雪"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "欣县"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 145-0665-2620"
+   },
+   {
+    "start": 58,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4152467353167363"
+   },
+   {
+    "start": 82,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pingcai@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0066",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫董彬。我想安排下个月的会议，地点定在春梅县。请拨打 13171022717 联系我，或发邮件至 guoqiang@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "董彬"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "春梅县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13171022717"
+   },
+   {
+    "start": 53,
+    "end": 73,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guoqiang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0067",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：段春梅、洪桂芝。下次会议将在佳市举行。待办事项：请将资料发送至 jiemo@example.com。直线电话：141 3143 5821。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "段春梅"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "洪桂芝"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "佳市"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jiemo@example.com"
+   },
+   {
+    "start": 65,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "141 3143 5821"
+   }
+  ]
+ },
+ {
+  "id": "zh-0068",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李磊，地址位于呼和浩特县。我们将回拨 +86 153-8150-7835。登记的银行卡号为 4914812405783213。副本已发送至 jing62@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "李磊"
+   },
+   {
+    "start": 22,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "呼和浩特县"
+   },
+   {
+    "start": 34,
+    "end": 51,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 153-8150-7835"
+   },
+   {
+    "start": 61,
+    "end": 77,
+    "entity_type": "CREDIT_CARD",
+    "value": "4914812405783213"
+   },
+   {
+    "start": 85,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jing62@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0069",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫郭建军。我想安排下个月的会议，地点定在斌县。请拨打 13215119850 联系我，或发邮件至 ncheng@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "郭建军"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "斌县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13215119850"
+   },
+   {
+    "start": 53,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ncheng@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0070",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：杨桂荣、张丽。下次会议将在云市举行。待办事项：请将资料发送至 fang20@example.org。直线电话：18497490592。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "杨桂荣"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "张丽"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "云市"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fang20@example.org"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18497490592"
+   }
+  ]
+ },
+ {
+  "id": "zh-0071",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是宋龙，地址位于辛集市。我们将回拨 17244201016。登记的银行卡号为 4599515150396618。副本已发送至 changtao@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "宋龙"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "辛集市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17244201016"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4599515150396618"
+   },
+   {
+    "start": 77,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "changtao@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0072",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫谢丽。我想安排下个月的会议，地点定在瑞市。请拨打 181 9810 2455 联系我，或发邮件至 osong@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "谢丽"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "瑞市"
+   },
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "181 9810 2455"
+   },
+   {
+    "start": 54,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osong@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0073",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：彭斌、赵玉珍。下次会议将在莹县举行。待办事项：请将资料发送至 ading@example.com。直线电话：153 9936 4350。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "彭斌"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "赵玉珍"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "莹县"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ading@example.com"
+   },
+   {
+    "start": 64,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "153 9936 4350"
+   }
+  ]
+ },
+ {
+  "id": "zh-0074",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是马英，地址位于燕市。我们将回拨 177 7276 8396。登记的银行卡号为 4697472156179245。副本已发送至 juan27@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "马英"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "燕市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "177 7276 8396"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "CREDIT_CARD",
+    "value": "4697472156179245"
+   },
+   {
+    "start": 78,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juan27@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0075",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫宋华。我想安排下个月的会议，地点定在拉萨县。请拨打 193 5033 6493 联系我，或发邮件至 na04@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "宋华"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "拉萨县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "193 5033 6493"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "na04@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0076",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：崔瑜、诸玉兰。下次会议将在武汉县举行。待办事项：请将资料发送至 juanxiao@example.net。直线电话：14547106353。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "崔瑜"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "诸玉兰"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "武汉县"
+   },
+   {
+    "start": 42,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juanxiao@example.net"
+   },
+   {
+    "start": 68,
+    "end": 79,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14547106353"
+   }
+  ]
+ },
+ {
+  "id": "zh-0077",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是戴阳，地址位于北镇县。我们将回拨 134 8174 7147。登记的银行卡号为 4066321760343734。副本已发送至 caoyan@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "戴阳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "北镇县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "134 8174 7147"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "CREDIT_CARD",
+    "value": "4066321760343734"
+   },
+   {
+    "start": 79,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caoyan@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0078",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫吴伟。我想安排下个月的会议，地点定在太原县。请拨打 13184730201 联系我，或发邮件至 juanzhao@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "吴伟"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "太原县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13184730201"
+   },
+   {
+    "start": 53,
+    "end": 73,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juanzhao@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0079",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：张小红、汪凤兰。下次会议将在长沙县举行。待办事项：请将资料发送至 fangyi@example.com。直线电话：13679989409。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "张小红"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "汪凤兰"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "长沙县"
+   },
+   {
+    "start": 43,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fangyi@example.com"
+   },
+   {
+    "start": 67,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13679989409"
+   }
+  ]
+ },
+ {
+  "id": "zh-0080",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王雪，地址位于博县。我们将回拨 +86 150-4905-1642。登记的银行卡号为 4551816229477447。副本已发送至 jun93@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "王雪"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "博县"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 150-4905-1642"
+   },
+   {
+    "start": 58,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4551816229477447"
+   },
+   {
+    "start": 82,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jun93@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0081",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫卢秀芳。我想安排下个月的会议，地点定在南宁县。请拨打 +86 193-0728-7785 联系我，或发邮件至 changping@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "卢秀芳"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "南宁县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 193-0728-7785"
+   },
+   {
+    "start": 60,
+    "end": 81,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "changping@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0082",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李宁、张红。下次会议将在楠县举行。待办事项：请将资料发送至 yanwan@example.com。直线电话：15287514840。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "李宁"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "张红"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "楠县"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yanwan@example.com"
+   },
+   {
+    "start": 64,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15287514840"
+   }
+  ]
+ },
+ {
+  "id": "zh-0083",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李波，地址位于长春市。我们将回拨 141 6398 7582。登记的银行卡号为 4997-5347-4529-1109。副本已发送至 qchang@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "李波"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "长春市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "141 6398 7582"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4997-5347-4529-1109"
+   },
+   {
+    "start": 82,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qchang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0084",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫庞林。我想安排下个月的会议，地点定在涛县。请拨打 15229623473 联系我，或发邮件至 yanqin@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "庞林"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "涛县"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15229623473"
+   },
+   {
+    "start": 52,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yanqin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0085",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：陈霞、张丽丽。下次会议将在银川市举行。待办事项：请将资料发送至 mengqiang@example.net。直线电话：+86 160-0635-2909。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "陈霞"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "张丽丽"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "银川市"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mengqiang@example.net"
+   },
+   {
+    "start": 69,
+    "end": 86,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 160-0635-2909"
+   }
+  ]
+ },
+ {
+  "id": "zh-0086",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是雷艳，地址位于北京市。我们将回拨 +86 148-6008-3444。登记的银行卡号为 4757-7226-9113-1599。副本已发送至 wujie@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "雷艳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "北京市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 148-6008-3444"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4757-7226-9113-1599"
+   },
+   {
+    "start": 86,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wujie@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0087",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫刘兰英。我想安排下个月的会议，地点定在敏市。请拨打 13897321512 联系我，或发邮件至 renping@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "刘兰英"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "敏市"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13897321512"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renping@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0088",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王梅、吴慧。下次会议将在桂花市举行。待办事项：请将资料发送至 wei62@example.net。直线电话：+86 199-7699-6754。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王梅"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "吴慧"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "桂花市"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wei62@example.net"
+   },
+   {
+    "start": 64,
+    "end": 81,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 199-7699-6754"
+   }
+  ]
+ },
+ {
+  "id": "zh-0089",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是周倩，地址位于岩县。我们将回拨 172 3443 1400。登记的银行卡号为 4193-4474-9913-0526。副本已发送至 yong66@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "周倩"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "岩县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "172 3443 1400"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "CREDIT_CARD",
+    "value": "4193-4474-9913-0526"
+   },
+   {
+    "start": 81,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yong66@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0090",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫朱婷婷。我想安排下个月的会议，地点定在杰县。请拨打 173 1270 2851 联系我，或发邮件至 fuguiying@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "朱婷婷"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "杰县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "173 1270 2851"
+   },
+   {
+    "start": 55,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fuguiying@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0091",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：阎明、黄杨。下次会议将在东莞市举行。待办事项：请将资料发送至 xiasu@example.net。直线电话：138 3865 8454。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "阎明"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "黄杨"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "东莞市"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiasu@example.net"
+   },
+   {
+    "start": 64,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "138 3865 8454"
+   }
+  ]
+ },
+ {
+  "id": "zh-0092",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是何飞，地址位于济南县。我们将回拨 133 6219 3356。登记的银行卡号为 4311958506778443。副本已发送至 yangxia@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "何飞"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "济南县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "133 6219 3356"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "CREDIT_CARD",
+    "value": "4311958506778443"
+   },
+   {
+    "start": 79,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangxia@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0093",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫刘瑞。我想安排下个月的会议，地点定在丽丽县。请拨打 181 8101 5312 联系我，或发邮件至 zhongfang@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "刘瑞"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "丽丽县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "181 8101 5312"
+   },
+   {
+    "start": 55,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhongfang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0094",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：邹建华、邱莹。下次会议将在太原县举行。待办事项：请将资料发送至 jingzou@example.org。直线电话：177 6207 7724。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "邹建华"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "邱莹"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "太原县"
+   },
+   {
+    "start": 42,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jingzou@example.org"
+   },
+   {
+    "start": 67,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "177 6207 7724"
+   }
+  ]
+ },
+ {
+  "id": "zh-0095",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是都春梅，地址位于飞县。我们将回拨 16508676958。登记的银行卡号为 4450-3271-9225-2819。副本已发送至 juan59@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "都春梅"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "飞县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16508676958"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4450-3271-9225-2819"
+   },
+   {
+    "start": 80,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juan59@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0096",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王颖。我想安排下个月的会议，地点定在宇县。请拨打 178 6610 8794 联系我，或发邮件至 weichao@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "王颖"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "宇县"
+   },
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "178 6610 8794"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weichao@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0097",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王丹丹、赵丽。下次会议将在潜江县举行。待办事项：请将资料发送至 wyuan@example.org。直线电话：+86 131-3906-9015。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "王丹丹"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "赵丽"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "潜江县"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wyuan@example.org"
+   },
+   {
+    "start": 65,
+    "end": 82,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 131-3906-9015"
+   }
+  ]
+ },
+ {
+  "id": "zh-0098",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是唐帆，地址位于斌县。我们将回拨 199 3151 4311。登记的银行卡号为 4229577389159827。副本已发送至 ggong@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "唐帆"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "斌县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "199 3151 4311"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "CREDIT_CARD",
+    "value": "4229577389159827"
+   },
+   {
+    "start": 78,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ggong@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0099",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫钱娜。我想安排下个月的会议，地点定在明市。请拨打 195 2022 0247 联系我，或发邮件至 chao97@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "钱娜"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "明市"
+   },
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "195 2022 0247"
+   },
+   {
+    "start": 54,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chao97@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0100",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：苏雪梅、梁丽丽。下次会议将在宁德县举行。待办事项：请将资料发送至 zren@example.com。直线电话：+86 177-5431-1607。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "苏雪梅"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "梁丽丽"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "宁德县"
+   },
+   {
+    "start": 43,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zren@example.com"
+   },
+   {
+    "start": 65,
+    "end": 82,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 177-5431-1607"
+   }
+  ]
+ },
+ {
+  "id": "zh-0101",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是赵华，地址位于昆明县。我们将回拨 15402628637。登记的银行卡号为 4214080378276378。副本已发送至 fang34@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "赵华"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "昆明县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15402628637"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4214080378276378"
+   },
+   {
+    "start": 77,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fang34@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0102",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫李静。我想安排下个月的会议，地点定在欣市。请拨打 +86 193-8658-9633 联系我，或发邮件至 weiwu@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "李静"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "欣市"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 193-8658-9633"
+   },
+   {
+    "start": 58,
+    "end": 75,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weiwu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0103",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：龚华、罗涛。下次会议将在梧州市举行。待办事项：请将资料发送至 juanyang@example.org。直线电话：+86 175-6524-2589。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "龚华"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "罗涛"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "梧州市"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juanyang@example.org"
+   },
+   {
+    "start": 67,
+    "end": 84,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 175-6524-2589"
+   }
+  ]
+ },
+ {
+  "id": "zh-0104",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是彭林，地址位于志强县。我们将回拨 150 6966 1215。登记的银行卡号为 4964215219557832。副本已发送至 pingqin@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "彭林"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "志强县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "150 6966 1215"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "CREDIT_CARD",
+    "value": "4964215219557832"
+   },
+   {
+    "start": 79,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pingqin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0105",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫高秀华。我想安排下个月的会议，地点定在通辽市。请拨打 18325986522 联系我，或发邮件至 jing18@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "高秀华"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "通辽市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18325986522"
+   },
+   {
+    "start": 54,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jing18@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0106",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王帆、陈洁。下次会议将在重庆市举行。待办事项：请将资料发送至 qiaolei@example.com。直线电话：+86 193-6872-1168。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王帆"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "陈洁"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "重庆市"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiaolei@example.com"
+   },
+   {
+    "start": 66,
+    "end": 83,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 193-6872-1168"
+   }
+  ]
+ },
+ {
+  "id": "zh-0107",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是林阳，地址位于拉萨县。我们将回拨 178 0303 2684。登记的银行卡号为 4676-0042-4275-8420。副本已发送至 olong@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "林阳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "拉萨县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "178 0303 2684"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4676-0042-4275-8420"
+   },
+   {
+    "start": 82,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "olong@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0108",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫芦淑华。我想安排下个月的会议，地点定在成都县。请拨打 15109234075 联系我，或发邮件至 hanxiuying@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "芦淑华"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "成都县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15109234075"
+   },
+   {
+    "start": 54,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanxiuying@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0109",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：朱玲、陈波。下次会议将在荆门市举行。待办事项：请将资料发送至 dongxiuying@example.org。直线电话：+86 131-7976-9313。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "朱玲"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "陈波"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "荆门市"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dongxiuying@example.org"
+   },
+   {
+    "start": 70,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 131-7976-9313"
+   }
+  ]
+ },
+ {
+  "id": "zh-0110",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王淑兰，地址位于北京县。我们将回拨 16953491933。登记的银行卡号为 4841-3760-4750-1928。副本已发送至 wuxiuying@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "王淑兰"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "北京县"
+   },
+   {
+    "start": 33,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16953491933"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "CREDIT_CARD",
+    "value": "4841-3760-4750-1928"
+   },
+   {
+    "start": 81,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wuxiuying@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0111",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫吕秀云。我想安排下个月的会议，地点定在红县。请拨打 13447581409 联系我，或发邮件至 yang72@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "吕秀云"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "红县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13447581409"
+   },
+   {
+    "start": 53,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yang72@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0112",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：张玲、张淑兰。下次会议将在海门县举行。待办事项：请将资料发送至 guiying42@example.com。直线电话：14893777759。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "张玲"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "张淑兰"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "海门县"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guiying42@example.com"
+   },
+   {
+    "start": 69,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14893777759"
+   }
+  ]
+ },
+ {
+  "id": "zh-0113",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是段楠，地址位于昆明县。我们将回拨 17437661904。登记的银行卡号为 4222-9171-6814-0076。副本已发送至 yanjing@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "段楠"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "昆明县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17437661904"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4222-9171-6814-0076"
+   },
+   {
+    "start": 80,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yanjing@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0114",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫吴秀荣。我想安排下个月的会议，地点定在合肥县。请拨打 17692941159 联系我，或发邮件至 jing43@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "吴秀荣"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "合肥县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17692941159"
+   },
+   {
+    "start": 54,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jing43@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0115",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李丽、虞婷。下次会议将在淑英县举行。待办事项：请将资料发送至 bqin@example.com。直线电话：162 1397 8892。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "李丽"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "虞婷"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "淑英县"
+   },
+   {
+    "start": 41,
+    "end": 57,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bqin@example.com"
+   },
+   {
+    "start": 63,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "162 1397 8892"
+   }
+  ]
+ },
+ {
+  "id": "zh-0116",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘艳，地址位于辛集市。我们将回拨 +86 135-6663-1312。登记的银行卡号为 4182458933579908。副本已发送至 duanyong@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "刘艳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "辛集市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 135-6663-1312"
+   },
+   {
+    "start": 59,
+    "end": 75,
+    "entity_type": "CREDIT_CARD",
+    "value": "4182458933579908"
+   },
+   {
+    "start": 83,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duanyong@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0117",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫梁淑英。我想安排下个月的会议，地点定在荆门市。请拨打 +86 165-7969-1795 联系我，或发邮件至 yangwei@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "梁淑英"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "荆门市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 165-7969-1795"
+   },
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangwei@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0118",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：冯洋、陈小红。下次会议将在昆明县举行。待办事项：请将资料发送至 junyu@example.net。直线电话：+86 139-8704-4839。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "冯洋"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "陈小红"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "昆明县"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junyu@example.net"
+   },
+   {
+    "start": 65,
+    "end": 82,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 139-8704-4839"
+   }
+  ]
+ },
+ {
+  "id": "zh-0119",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是朱雷，地址位于马鞍山市。我们将回拨 151 4795 9038。登记的银行卡号为 4861234949738178。副本已发送至 ezhou@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "朱雷"
+   },
+   {
+    "start": 22,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "马鞍山市"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "151 4795 9038"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4861234949738178"
+   },
+   {
+    "start": 80,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ezhou@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0120",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫张丽娟。我想安排下个月的会议，地点定在澳门市。请拨打 +86 160-6175-7005 联系我，或发邮件至 dingxiuying@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "张丽娟"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "澳门市"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 160-6175-7005"
+   },
+   {
+    "start": 60,
+    "end": 83,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dingxiuying@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0121",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：仲玉华、张秀芳。下次会议将在长沙县举行。待办事项：请将资料发送至 schen@example.org。直线电话：19758257749。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "仲玉华"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "张秀芳"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "长沙县"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "schen@example.org"
+   },
+   {
+    "start": 66,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19758257749"
+   }
+  ]
+ },
+ {
+  "id": "zh-0122",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘楠，地址位于六安市。我们将回拨 156 3813 6603。登记的银行卡号为 4068-6411-1613-4588。副本已发送至 zhenglei@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "刘楠"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "六安市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "156 3813 6603"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4068-6411-1613-4588"
+   },
+   {
+    "start": 82,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhenglei@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0123",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫孟玉兰。我想安排下个月的会议，地点定在杨县。请拨打 +86 163-7486-7963 联系我，或发邮件至 xiulan20@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "孟玉兰"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "杨县"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 163-7486-7963"
+   },
+   {
+    "start": 59,
+    "end": 79,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiulan20@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0124",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：涂坤、张璐。下次会议将在辛集市举行。待办事项：请将资料发送至 gluo@example.net。直线电话：+86 173-5620-2288。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "涂坤"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "张璐"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "辛集市"
+   },
+   {
+    "start": 41,
+    "end": 57,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gluo@example.net"
+   },
+   {
+    "start": 63,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 173-5620-2288"
+   }
+  ]
+ },
+ {
+  "id": "zh-0125",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是唐秀梅，地址位于深圳市。我们将回拨 +86 158-6986-8498。登记的银行卡号为 4661-4212-5219-1804。副本已发送至 fang54@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "唐秀梅"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "深圳市"
+   },
+   {
+    "start": 33,
+    "end": 50,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 158-6986-8498"
+   },
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "CREDIT_CARD",
+    "value": "4661-4212-5219-1804"
+   },
+   {
+    "start": 87,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fang54@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0126",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫萧倩。我想安排下个月的会议，地点定在宁县。请拨打 16115255691 联系我，或发邮件至 junwang@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "萧倩"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "宁县"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16115255691"
+   },
+   {
+    "start": 52,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junwang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0127",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：刘秀梅、薛雷。下次会议将在玉英县举行。待办事项：请将资料发送至 kangmin@example.net。直线电话：+86 152-6973-3352。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "刘秀梅"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "薛雷"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "玉英县"
+   },
+   {
+    "start": 42,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kangmin@example.net"
+   },
+   {
+    "start": 67,
+    "end": 84,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 152-6973-3352"
+   }
+  ]
+ },
+ {
+  "id": "zh-0128",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李建国，地址位于佛山市。我们将回拨 172 5810 5673。登记的银行卡号为 4836-7421-2034-9732。副本已发送至 qiang10@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "李建国"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "佛山市"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "172 5810 5673"
+   },
+   {
+    "start": 56,
+    "end": 75,
+    "entity_type": "CREDIT_CARD",
+    "value": "4836-7421-2034-9732"
+   },
+   {
+    "start": 83,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiang10@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0129",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王杰。我想安排下个月的会议，地点定在关岭县。请拨打 18304796500 联系我，或发邮件至 weisong@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "王杰"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "关岭县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18304796500"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weisong@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0130",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：朱玉华、刘晨。下次会议将在关岭县举行。待办事项：请将资料发送至 qiangjia@example.com。直线电话：+86 166-6202-1139。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "朱玉华"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "刘晨"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "关岭县"
+   },
+   {
+    "start": 42,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qiangjia@example.com"
+   },
+   {
+    "start": 68,
+    "end": 85,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 166-6202-1139"
+   }
+  ]
+ },
+ {
+  "id": "zh-0131",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是杨雪梅，地址位于南京市。我们将回拨 187 5308 3752。登记的银行卡号为 4987449413919521。副本已发送至 jieguo@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "杨雪梅"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "南京市"
+   },
+   {
+    "start": 33,
+    "end": 46,
+    "entity_type": "PHONE_NUMBER",
+    "value": "187 5308 3752"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4987449413919521"
+   },
+   {
+    "start": 80,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jieguo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0132",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫邓淑珍。我想安排下个月的会议，地点定在潮州县。请拨打 +86 194-0634-1430 联系我，或发邮件至 wdong@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "邓淑珍"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "潮州县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 194-0634-1430"
+   },
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wdong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0133",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：谭杰、王峰。下次会议将在北京县举行。待办事项：请将资料发送至 xiulanding@example.org。直线电话：+86 196-2825-6338。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "谭杰"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "王峰"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "北京县"
+   },
+   {
+    "start": 41,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiulanding@example.org"
+   },
+   {
+    "start": 69,
+    "end": 86,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 196-2825-6338"
+   }
+  ]
+ },
+ {
+  "id": "zh-0134",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是徐玉梅，地址位于佳市。我们将回拨 18940273790。登记的银行卡号为 4770483776907220。副本已发送至 juanhou@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "徐玉梅"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "佳市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18940273790"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4770483776907220"
+   },
+   {
+    "start": 77,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juanhou@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0135",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫郑颖。我想安排下个月的会议，地点定在峰市。请拨打 +86 162-4724-8314 联系我，或发邮件至 mincao@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "郑颖"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "峰市"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 162-4724-8314"
+   },
+   {
+    "start": 58,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mincao@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0136",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：张东、杨鑫。下次会议将在桂花市举行。待办事项：请将资料发送至 yuping@example.com。直线电话：160 5714 5250。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "张东"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "杨鑫"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "桂花市"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yuping@example.com"
+   },
+   {
+    "start": 65,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "160 5714 5250"
+   }
+  ]
+ },
+ {
+  "id": "zh-0137",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘坤，地址位于佛山县。我们将回拨 +86 145-8017-5856。登记的银行卡号为 4281-2643-9120-4330。副本已发送至 ping86@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "刘坤"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "佛山县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 145-8017-5856"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4281-2643-9120-4330"
+   },
+   {
+    "start": 86,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ping86@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0138",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫刘淑珍。我想安排下个月的会议，地点定在浩县。请拨打 19867476236 联系我，或发邮件至 linli@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "刘淑珍"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "浩县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19867476236"
+   },
+   {
+    "start": 53,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "linli@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0139",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：魏婷、杨敏。下次会议将在宇县举行。待办事项：请将资料发送至 leisun@example.com。直线电话：180 3651 8090。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "魏婷"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "杨敏"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "宇县"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leisun@example.com"
+   },
+   {
+    "start": 64,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "180 3651 8090"
+   }
+  ]
+ },
+ {
+  "id": "zh-0140",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是石斌，地址位于红梅市。我们将回拨 152 2326 8826。登记的银行卡号为 4880-9096-4113-3433。副本已发送至 huyan@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "石斌"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "红梅市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "152 2326 8826"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4880-9096-4113-3433"
+   },
+   {
+    "start": 82,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "huyan@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0141",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫何兰英。我想安排下个月的会议，地点定在旭市。请拨打 18721033656 联系我，或发邮件至 tao40@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "何兰英"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "旭市"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18721033656"
+   },
+   {
+    "start": 53,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tao40@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0142",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：易凤兰、刘慧。下次会议将在淮安县举行。待办事项：请将资料发送至 xiuyingyi@example.org。直线电话：17501206324。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "易凤兰"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "刘慧"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "淮安县"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiuyingyi@example.org"
+   },
+   {
+    "start": 69,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17501206324"
+   }
+  ]
+ },
+ {
+  "id": "zh-0143",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是杨莉，地址位于平市。我们将回拨 17020386944。登记的银行卡号为 4902169613544562。副本已发送至 renguiying@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "杨莉"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "平市"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17020386944"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "CREDIT_CARD",
+    "value": "4902169613544562"
+   },
+   {
+    "start": 76,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renguiying@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0144",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫欧阳莉。我想安排下个月的会议，地点定在瑜市。请拨打 +86 184-3915-3338 联系我，或发邮件至 yanglu@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "欧阳莉"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "瑜市"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 184-3915-3338"
+   },
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yanglu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0145",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：梁勇、蒙俊。下次会议将在丽娟市举行。待办事项：请将资料发送至 guiying99@example.net。直线电话：+86 139-2484-4158。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "梁勇"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "蒙俊"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "丽娟市"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guiying99@example.net"
+   },
+   {
+    "start": 68,
+    "end": 85,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 139-2484-4158"
+   }
+  ]
+ },
+ {
+  "id": "zh-0146",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是徐莹，地址位于勇市。我们将回拨 161 0621 3354。登记的银行卡号为 4436-9455-4083-9778。副本已发送至 juan68@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "徐莹"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "勇市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "161 0621 3354"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "CREDIT_CARD",
+    "value": "4436-9455-4083-9778"
+   },
+   {
+    "start": 81,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juan68@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0147",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王桂荣。我想安排下个月的会议，地点定在瑞县。请拨打 190 0298 9938 联系我，或发邮件至 li63@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "王桂荣"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "瑞县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "190 0298 9938"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "li63@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0148",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王刚、阎亮。下次会议将在香港市举行。待办事项：请将资料发送至 rtao@example.com。直线电话：17923249074。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王刚"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "阎亮"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "香港市"
+   },
+   {
+    "start": 41,
+    "end": 57,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rtao@example.com"
+   },
+   {
+    "start": 63,
+    "end": 74,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17923249074"
+   }
+  ]
+ },
+ {
+  "id": "zh-0149",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是李淑兰，地址位于鹏市。我们将回拨 15931032567。登记的银行卡号为 4715-3947-9681-4478。副本已发送至 yangjin@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "李淑兰"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "鹏市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15931032567"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4715-3947-9681-4478"
+   },
+   {
+    "start": 80,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangjin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0150",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫马健。我想安排下个月的会议，地点定在济南县。请拨打 15638218638 联系我，或发邮件至 chao29@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "马健"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "济南县"
+   },
+   {
+    "start": 31,
+    "end": 42,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15638218638"
+   },
+   {
+    "start": 53,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chao29@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0151",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：傅志强、何东。下次会议将在石家庄县举行。待办事项：请将资料发送至 rxiao@example.com。直线电话：18241295481。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "傅志强"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "何东"
+   },
+   {
+    "start": 23,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "石家庄县"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rxiao@example.com"
+   },
+   {
+    "start": 66,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18241295481"
+   }
+  ]
+ },
+ {
+  "id": "zh-0152",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是吴柳，地址位于兴城县。我们将回拨 +86 136-7593-5350。登记的银行卡号为 4719-9454-0009-3662。副本已发送至 dujun@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "吴柳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "兴城县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 136-7593-5350"
+   },
+   {
+    "start": 59,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4719-9454-0009-3662"
+   },
+   {
+    "start": 86,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dujun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0153",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫杨秀珍。我想安排下个月的会议，地点定在雪梅县。请拨打 131 8592 1745 联系我，或发邮件至 caoyang@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "杨秀珍"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "雪梅县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "131 8592 1745"
+   },
+   {
+    "start": 56,
+    "end": 75,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caoyang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0154",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：白倩、黄海燕。下次会议将在斌市举行。待办事项：请将资料发送至 yan68@example.org。直线电话：+86 136-8480-0541。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "白倩"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "黄海燕"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "斌市"
+   },
+   {
+    "start": 41,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yan68@example.org"
+   },
+   {
+    "start": 64,
+    "end": 81,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 136-8480-0541"
+   }
+  ]
+ },
+ {
+  "id": "zh-0155",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是郭瑞，地址位于辛集县。我们将回拨 16918762047。登记的银行卡号为 4043-5128-8899-4303。副本已发送至 gongwei@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "郭瑞"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "辛集县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16918762047"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4043-5128-8899-4303"
+   },
+   {
+    "start": 80,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gongwei@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0156",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫崔丽。我想安排下个月的会议，地点定在霞县。请拨打 +86 165-5033-6342 联系我，或发邮件至 kangjing@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "崔丽"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "霞县"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 165-5033-6342"
+   },
+   {
+    "start": 58,
+    "end": 78,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kangjing@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0157",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：姚云、何琳。下次会议将在长春市举行。待办事项：请将资料发送至 guiyingqiao@example.com。直线电话：+86 162-5214-4472。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "姚云"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "何琳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "长春市"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guiyingqiao@example.com"
+   },
+   {
+    "start": 70,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 162-5214-4472"
+   }
+  ]
+ },
+ {
+  "id": "zh-0158",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王桂芝，地址位于永安市。我们将回拨 +86 172-8619-3253。登记的银行卡号为 4877085445719894。副本已发送至 yongluo@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "王桂芝"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "永安市"
+   },
+   {
+    "start": 33,
+    "end": 50,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 172-8619-3253"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "CREDIT_CARD",
+    "value": "4877085445719894"
+   },
+   {
+    "start": 84,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yongluo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0159",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫任莉。我想安排下个月的会议，地点定在岩县。请拨打 14772784744 联系我，或发邮件至 fang22@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "任莉"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "岩县"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14772784744"
+   },
+   {
+    "start": 52,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fang22@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0160",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：方洋、王军。下次会议将在潜江市举行。待办事项：请将资料发送至 weitang@example.org。直线电话：+86 149-5242-7658。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "方洋"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "王军"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "潜江市"
+   },
+   {
+    "start": 41,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weitang@example.org"
+   },
+   {
+    "start": 66,
+    "end": 83,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 149-5242-7658"
+   }
+  ]
+ },
+ {
+  "id": "zh-0161",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘玉，地址位于汕尾市。我们将回拨 13331184405。登记的银行卡号为 4960-8632-2129-8012。副本已发送至 taoxiao@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "刘玉"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "汕尾市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13331184405"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4960-8632-2129-8012"
+   },
+   {
+    "start": 80,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "taoxiao@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0162",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫张玉英。我想安排下个月的会议，地点定在雷市。请拨打 +86 187-6350-2226 联系我，或发邮件至 chao00@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "张玉英"
+   },
+   {
+    "start": 24,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "雷市"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 187-6350-2226"
+   },
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chao00@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0163",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：萧勇、邓建平。下次会议将在关岭市举行。待办事项：请将资料发送至 ghuang@example.com。直线电话：18047501101。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "萧勇"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "邓建平"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "关岭市"
+   },
+   {
+    "start": 42,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ghuang@example.com"
+   },
+   {
+    "start": 66,
+    "end": 77,
+    "entity_type": "PHONE_NUMBER",
+    "value": "18047501101"
+   }
+  ]
+ },
+ {
+  "id": "zh-0164",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是陆勇，地址位于马鞍山县。我们将回拨 +86 186-0859-3564。登记的银行卡号为 4787-3599-4019-7701。副本已发送至 weitao@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "陆勇"
+   },
+   {
+    "start": 22,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "马鞍山县"
+   },
+   {
+    "start": 33,
+    "end": 50,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 186-0859-3564"
+   },
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "CREDIT_CARD",
+    "value": "4787-3599-4019-7701"
+   },
+   {
+    "start": 87,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weitao@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0165",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫秦亮。我想安排下个月的会议，地点定在红县。请拨打 +86 151-3862-0188 联系我，或发邮件至 duanchao@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "秦亮"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "红县"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 151-3862-0188"
+   },
+   {
+    "start": 58,
+    "end": 78,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "duanchao@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0166",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李雪、杨建。下次会议将在大冶市举行。待办事项：请将资料发送至 yangyuan@example.org。直线电话：13699048197。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "李雪"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "杨建"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "大冶市"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangyuan@example.org"
+   },
+   {
+    "start": 67,
+    "end": 78,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13699048197"
+   }
+  ]
+ },
+ {
+  "id": "zh-0167",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是林秀芳，地址位于齐齐哈尔市。我们将回拨 +86 154-6374-6715。登记的银行卡号为 4038761678724035。副本已发送至 jun53@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "林秀芳"
+   },
+   {
+    "start": 23,
+    "end": 28,
+    "entity_type": "LOCATION",
+    "value": "齐齐哈尔市"
+   },
+   {
+    "start": 35,
+    "end": 52,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 154-6374-6715"
+   },
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "CREDIT_CARD",
+    "value": "4038761678724035"
+   },
+   {
+    "start": 86,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jun53@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0168",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫徐畅。我想安排下个月的会议，地点定在帅市。请拨打 +86 189-5891-7062 联系我，或发邮件至 zhufang@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "徐畅"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "帅市"
+   },
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 189-5891-7062"
+   },
+   {
+    "start": 58,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zhufang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0169",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：周娟、狄佳。下次会议将在银川县举行。待办事项：请将资料发送至 pingpeng@example.org。直线电话：+86 171-0061-5340。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "周娟"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "狄佳"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "银川县"
+   },
+   {
+    "start": 41,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pingpeng@example.org"
+   },
+   {
+    "start": 67,
+    "end": 84,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 171-0061-5340"
+   }
+  ]
+ },
+ {
+  "id": "zh-0170",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是王瑜，地址位于淮安县。我们将回拨 130 5671 7323。登记的银行卡号为 4999443823423766。副本已发送至 chao10@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "王瑜"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "淮安县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "130 5671 7323"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "CREDIT_CARD",
+    "value": "4999443823423766"
+   },
+   {
+    "start": 79,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chao10@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0171",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫赵桂英。我想安排下个月的会议，地点定在六安市。请拨打 136 7461 6123 联系我，或发邮件至 chaotian@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "赵桂英"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "六安市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "136 7461 6123"
+   },
+   {
+    "start": 56,
+    "end": 76,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chaotian@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0172",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：张桂英、曾文。下次会议将在兴安盟市举行。待办事项：请将资料发送至 yangcao@example.com。直线电话：191 8459 1303。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "张桂英"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "曾文"
+   },
+   {
+    "start": 23,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "兴安盟市"
+   },
+   {
+    "start": 43,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangcao@example.com"
+   },
+   {
+    "start": 68,
+    "end": 81,
+    "entity_type": "PHONE_NUMBER",
+    "value": "191 8459 1303"
+   }
+  ]
+ },
+ {
+  "id": "zh-0173",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是段楠，地址位于秀英县。我们将回拨 135 3350 1801。登记的银行卡号为 4239-3629-3540-8707。副本已发送至 rluo@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "段楠"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "秀英县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "135 3350 1801"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4239-3629-3540-8707"
+   },
+   {
+    "start": 82,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rluo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0174",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫王英。我想安排下个月的会议，地点定在晨市。请拨打 187 3917 0955 联系我，或发邮件至 sumin@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "王英"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "晨市"
+   },
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "187 3917 0955"
+   },
+   {
+    "start": 54,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sumin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0175",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：贾桂兰、马博。下次会议将在淑华县举行。待办事项：请将资料发送至 ghan@example.com。直线电话：19138268968。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "贾桂兰"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "马博"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "淑华县"
+   },
+   {
+    "start": 42,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ghan@example.com"
+   },
+   {
+    "start": 64,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19138268968"
+   }
+  ]
+ },
+ {
+  "id": "zh-0176",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是刘桂花，地址位于拉萨县。我们将回拨 16872723837。登记的银行卡号为 4305-3534-2568-6299。副本已发送至 yangtao@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "刘桂花"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "拉萨县"
+   },
+   {
+    "start": 33,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16872723837"
+   },
+   {
+    "start": 54,
+    "end": 73,
+    "entity_type": "CREDIT_CARD",
+    "value": "4305-3534-2568-6299"
+   },
+   {
+    "start": 81,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yangtao@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0177",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫刘勇。我想安排下个月的会议，地点定在长沙市。请拨打 +86 146-4495-8404 联系我，或发邮件至 juanye@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "刘勇"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "长沙市"
+   },
+   {
+    "start": 31,
+    "end": 48,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 146-4495-8404"
+   },
+   {
+    "start": 59,
+    "end": 77,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juanye@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0178",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：陈强、杨辉。下次会议将在兵县举行。待办事项：请将资料发送至 dingli@example.org。直线电话：13684709354。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "陈强"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "杨辉"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "兵县"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dingli@example.org"
+   },
+   {
+    "start": 64,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "13684709354"
+   }
+  ]
+ },
+ {
+  "id": "zh-0179",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是白俊，地址位于重庆县。我们将回拨 175 1835 7646。登记的银行卡号为 4505-6937-7074-0243。副本已发送至 xiuying66@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "白俊"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "重庆县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "175 1835 7646"
+   },
+   {
+    "start": 55,
+    "end": 74,
+    "entity_type": "CREDIT_CARD",
+    "value": "4505-6937-7074-0243"
+   },
+   {
+    "start": 82,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiuying66@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0180",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫左敏。我想安排下个月的会议，地点定在南京市。请拨打 193 6560 2204 联系我，或发邮件至 li92@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "左敏"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "南京市"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "193 6560 2204"
+   },
+   {
+    "start": 55,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "li92@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0181",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：王敏、黄秀梅。下次会议将在澳门市举行。待办事项：请将资料发送至 xiulan69@example.net。直线电话：+86 170-6197-2065。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "王敏"
+   },
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "黄秀梅"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "澳门市"
+   },
+   {
+    "start": 42,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiulan69@example.net"
+   },
+   {
+    "start": 68,
+    "end": 85,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 170-6197-2065"
+   }
+  ]
+ },
+ {
+  "id": "zh-0182",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是仝浩，地址位于桂芝县。我们将回拨 16637711682。登记的银行卡号为 4714-2889-6562-8217。副本已发送至 xia44@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "仝浩"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "桂芝县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16637711682"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4714-2889-6562-8217"
+   },
+   {
+    "start": 80,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xia44@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0183",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫江秀荣。我想安排下个月的会议，地点定在玉华市。请拨打 17951989037 联系我，或发邮件至 tao19@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "江秀荣"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "玉华市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "17951989037"
+   },
+   {
+    "start": 54,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tao19@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0184",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：林帆、彭军。下次会议将在帆市举行。待办事项：请将资料发送至 panlei@example.com。直线电话：19774989777。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "林帆"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "彭军"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "帆市"
+   },
+   {
+    "start": 40,
+    "end": 58,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "panlei@example.com"
+   },
+   {
+    "start": 64,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19774989777"
+   }
+  ]
+ },
+ {
+  "id": "zh-0185",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是吕利，地址位于太原县。我们将回拨 +86 161-0099-8888。登记的银行卡号为 4568705628029985。副本已发送至 weihe@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "吕利"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "太原县"
+   },
+   {
+    "start": 32,
+    "end": 49,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 161-0099-8888"
+   },
+   {
+    "start": 59,
+    "end": 75,
+    "entity_type": "CREDIT_CARD",
+    "value": "4568705628029985"
+   },
+   {
+    "start": 83,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "weihe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0186",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫郭斌。我想安排下个月的会议，地点定在南宁县。请拨打 140 9153 5455 联系我，或发邮件至 pengna@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "郭斌"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "南宁县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "140 9153 5455"
+   },
+   {
+    "start": 55,
+    "end": 73,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pengna@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0187",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李玉兰、王明。下次会议将在福州县举行。待办事项：请将资料发送至 tyuan@example.org。直线电话：+86 144-4371-7414。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "李玉兰"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "王明"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "福州县"
+   },
+   {
+    "start": 42,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tyuan@example.org"
+   },
+   {
+    "start": 65,
+    "end": 82,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+86 144-4371-7414"
+   }
+  ]
+ },
+ {
+  "id": "zh-0188",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是何秀兰，地址位于雪县。我们将回拨 16361053929。登记的银行卡号为 4643047566827156。副本已发送至 kjia@example.com。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "何秀兰"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "雪县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16361053929"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4643047566827156"
+   },
+   {
+    "start": 77,
+    "end": 93,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kjia@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0189",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫吴芳。我想安排下个月的会议，地点定在娟县。请拨打 16273122465 联系我，或发邮件至 tye@example.com。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "吴芳"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "娟县"
+   },
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16273122465"
+   },
+   {
+    "start": 52,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tye@example.com"
+   }
+  ]
+ },
+ {
+  "id": "zh-0190",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：庄秀珍、田雪梅。下次会议将在秀珍县举行。待办事项：请将资料发送至 juankang@example.org。直线电话：16259786092。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "庄秀珍"
+   },
+   {
+    "start": 14,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "田雪梅"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "秀珍县"
+   },
+   {
+    "start": 43,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juankang@example.org"
+   },
+   {
+    "start": 69,
+    "end": 80,
+    "entity_type": "PHONE_NUMBER",
+    "value": "16259786092"
+   }
+  ]
+ },
+ {
+  "id": "zh-0191",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是罗建平，地址位于霞市。我们将回拨 15297325461。登记的银行卡号为 4120-1044-5406-0879。副本已发送至 gongping@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 18,
+    "entity_type": "PERSON",
+    "value": "罗建平"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "霞市"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "15297325461"
+   },
+   {
+    "start": 53,
+    "end": 72,
+    "entity_type": "CREDIT_CARD",
+    "value": "4120-1044-5406-0879"
+   },
+   {
+    "start": 80,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gongping@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0192",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫许桂荣。我想安排下个月的会议，地点定在兰州市。请拨打 143 4893 7812 联系我，或发邮件至 juantan@example.org。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "许桂荣"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "兰州市"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "143 4893 7812"
+   },
+   {
+    "start": 56,
+    "end": 75,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juantan@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0193",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：徐刚、缪婷。下次会议将在华县举行。待办事项：请将资料发送至 wjia@example.com。直线电话：155 0359 9551。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "徐刚"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "缪婷"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "华县"
+   },
+   {
+    "start": 40,
+    "end": 56,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wjia@example.com"
+   },
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PHONE_NUMBER",
+    "value": "155 0359 9551"
+   }
+  ]
+ },
+ {
+  "id": "zh-0194",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是兰艳，地址位于旭县。我们将回拨 172 4239 7299。登记的银行卡号为 4940900886030077。副本已发送至 flu@example.net。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "兰艳"
+   },
+   {
+    "start": 22,
+    "end": 24,
+    "entity_type": "LOCATION",
+    "value": "旭县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "172 4239 7299"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "CREDIT_CARD",
+    "value": "4940900886030077"
+   },
+   {
+    "start": 78,
+    "end": 93,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0195",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫丁东。我想安排下个月的会议，地点定在建华县。请拨打 167 9732 4562 联系我，或发邮件至 houyan@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 7,
+    "entity_type": "PERSON",
+    "value": "丁东"
+   },
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "LOCATION",
+    "value": "建华县"
+   },
+   {
+    "start": 31,
+    "end": 44,
+    "entity_type": "PHONE_NUMBER",
+    "value": "167 9732 4562"
+   },
+   {
+    "start": 55,
+    "end": 73,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "houyan@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0196",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：吴丽丽、吴浩。下次会议将在倩市举行。待办事项：请将资料发送至 xiulancheng@example.org。直线电话：19874890175。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 13,
+    "entity_type": "PERSON",
+    "value": "吴丽丽"
+   },
+   {
+    "start": 14,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "吴浩"
+   },
+   {
+    "start": 23,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "倩市"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xiulancheng@example.org"
+   },
+   {
+    "start": 70,
+    "end": 81,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19874890175"
+   }
+  ]
+ },
+ {
+  "id": "zh-0197",
+  "language": "zh",
+  "genre": "inquiry",
+  "text": "感谢您联系客服。您登记的姓名是张琴，地址位于桂兰县。我们将回拨 19435561454。登记的银行卡号为 4534845931003847。副本已发送至 wangjun@example.org。",
+  "spans": [
+   {
+    "start": 15,
+    "end": 17,
+    "entity_type": "PERSON",
+    "value": "张琴"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "桂兰县"
+   },
+   {
+    "start": 32,
+    "end": 43,
+    "entity_type": "PHONE_NUMBER",
+    "value": "19435561454"
+   },
+   {
+    "start": 53,
+    "end": 69,
+    "entity_type": "CREDIT_CARD",
+    "value": "4534845931003847"
+   },
+   {
+    "start": 77,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wangjun@example.org"
+   }
+  ]
+ },
+ {
+  "id": "zh-0198",
+  "language": "zh",
+  "genre": "request",
+  "text": "您好，我叫胡秀芳。我想安排下个月的会议，地点定在汕尾县。请拨打 175 8869 8348 联系我，或发邮件至 chaozou@example.net。谢谢！",
+  "spans": [
+   {
+    "start": 5,
+    "end": 8,
+    "entity_type": "PERSON",
+    "value": "胡秀芳"
+   },
+   {
+    "start": 24,
+    "end": 27,
+    "entity_type": "LOCATION",
+    "value": "汕尾县"
+   },
+   {
+    "start": 32,
+    "end": 45,
+    "entity_type": "PHONE_NUMBER",
+    "value": "175 8869 8348"
+   },
+   {
+    "start": 56,
+    "end": 75,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chaozou@example.net"
+   }
+  ]
+ },
+ {
+  "id": "zh-0199",
+  "language": "zh",
+  "genre": "minutes",
+  "text": "【会议纪要】出席者：李建、徐楠。下次会议将在香港县举行。待办事项：请将资料发送至 guojun@example.com。直线电话：14851505000。",
+  "spans": [
+   {
+    "start": 10,
+    "end": 12,
+    "entity_type": "PERSON",
+    "value": "李建"
+   },
+   {
+    "start": 13,
+    "end": 15,
+    "entity_type": "PERSON",
+    "value": "徐楠"
+   },
+   {
+    "start": 22,
+    "end": 25,
+    "entity_type": "LOCATION",
+    "value": "香港县"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guojun@example.com"
+   },
+   {
+    "start": 65,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "14851505000"
+   }
+  ]
+ }
+]

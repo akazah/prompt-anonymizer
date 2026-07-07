@@ -11,23 +11,25 @@ Suggested labels to create first: `good first issue`, `help wanted`,
 
 ---
 
-## 1. Add French (`fr`) language support
+## 1. Add an 11th language (e.g. Hindi `hi` or Arabic `ar`)
 
 Labels: `help wanted`, `new-language`
 
-Following the pattern of the Spanish/Vietnamese additions (#21): locale
-labels (`<Nom_1>`, …), France phone-number patterns, spaCy
-`fr_core_news_sm` + an HF/transformers.js NER model, a 200-doc golden set
-(`tests/golden/golden_fr.json`), language picker + auto-detect entries.
-The es/vi PR is a complete map of every file that needs touching — follow
-it side by side. Both cores must stay in behavioural parity.
+The core is now registry-driven (`languages.py` / `languages.ts`), so a
+new language is one registry entry + one `labels/*.yaml` + a README
+translation, with the CI parity guards pointing at every remaining gap
+(model, phone recognizer, golden set). Follow `docs/ADDING_A_LANGUAGE.md`
+step by step; pick a language with an available spaCy pipeline (or a
+multilingual HRL fallback) and a checksum-friendly national-ID/phone
+format. Both cores must stay in behavioural parity.
 
 ## 2. Add UK phone number formats to PHONE_NUMBER
 
 Labels: `good first issue`, `recognizer`
 
-`detectWithRegex` (TS) and the Presidio recognizers (Python) cover JP,
-US/NANP, ES and VI formats. Add UK landline/mobile patterns (+44, 07…,
+`detectWithRegex` (TS) and the Presidio recognizers (Python) cover the ten
+supported locales (JP, US/NANP, ES, VI, CN, KR, FR, DE, PT, IT). Add UK
+landline/mobile patterns (+44, 07…,
 grouped forms) with bounded quantifiers (ReDoS: see AGENTS.md P1), plus
 golden-set cases in both cores.
 

@@ -46,22 +46,26 @@
     line-height: 1.35;
   }
   .tagline b { color: var(--ink); font-weight: 600; }
+  .grid2 {
+    margin-top: 30px;
+    display: flex;
+    gap: 56px;
+  }
   .examples {
-    margin-top: 40px;
     display: grid;
     grid-template-columns: max-content max-content min-content max-content;
     align-items: center;
-    column-gap: 22px;
-    row-gap: 16px;
-    font-size: 25px;
+    column-gap: 18px;
+    row-gap: 15px;
+    font-size: 22px;
   }
   .lang {
     font-weight: 600;
     color: var(--accent);
     background: var(--accent-soft);
     border-radius: 999px;
-    padding: 5px 16px;
-    font-size: 21px;
+    padding: 4px 14px;
+    font-size: 19px;
     justify-self: start;
     white-space: nowrap;
   }
@@ -94,13 +98,23 @@
     <h1>Prompt Anonymizer</h1>
     <div class="tagline">
       Use frontier LLMs <b>without showing them your PII</b> —<br>
-      reversible, on-device anonymization in any language.
+      reversible, on-device anonymization in 10 languages.
     </div>
-    <div class="examples">
-      <span class="lang">English</span><span class="src">John Smith</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
-      <span class="lang">日本語</span><span class="src">山田太郎</span><span class="arrow">→</span><span class="label">&lt;人名_1&gt;</span>
-      <span class="lang">Español</span><span class="src">Javier Moreno</span><span class="arrow">→</span><span class="label">&lt;Nombre_1&gt;</span>
-      <span class="lang">Tiếng Việt</span><span class="src">Nguyễn Văn An</span><span class="arrow">→</span><span class="label">&lt;Tên_1&gt;</span>
+    <div class="grid2">
+      <div class="examples">
+        <span class="lang">日本語</span><span class="src">山田太郎</span><span class="arrow">→</span><span class="label">&lt;人名_1&gt;</span>
+        <span class="lang">English</span><span class="src">John Smith</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
+        <span class="lang">Español</span><span class="src">Javier Moreno</span><span class="arrow">→</span><span class="label">&lt;Nombre_1&gt;</span>
+        <span class="lang">Tiếng Việt</span><span class="src">Nguyễn Văn An</span><span class="arrow">→</span><span class="label">&lt;Tên_1&gt;</span>
+        <span class="lang">中文</span><span class="src">王小明</span><span class="arrow">→</span><span class="label">&lt;姓名_1&gt;</span>
+      </div>
+      <div class="examples">
+        <span class="lang">한국어</span><span class="src">김민준</span><span class="arrow">→</span><span class="label">&lt;이름_1&gt;</span>
+        <span class="lang">Français</span><span class="src">Camille Martin</span><span class="arrow">→</span><span class="label">&lt;Nom_1&gt;</span>
+        <span class="lang">Deutsch</span><span class="src">Max Müller</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
+        <span class="lang">Português</span><span class="src">João Silva</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
+        <span class="lang">Italiano</span><span class="src">Marco Rossi</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
+      </div>
     </div>
   </div>
   <div class="footer">

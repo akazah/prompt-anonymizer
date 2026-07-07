@@ -31,6 +31,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   prepared `good first issue` texts.
 - Integration guide `docs/INTEGRATIONS.md` and self-audit guide
   `docs/AUDIT.md`.
+- Six new languages — Chinese (`zh`), Korean (`ko`), French (`fr`), German
+  (`de`), Portuguese (`pt`) and Italian (`it`) — bringing language support
+  to ten in both cores (non-breaking, additive): locale-specific labels,
+  registry-driven per-language phone recognizers (CN/KR/FR/DE/PT/IT regions
+  plus regex fallbacks), spaCy pipelines (`zh_core_web_*`, `ko_core_news_*`,
+  `fr/de/pt/it_core_news_*` in the `models` / `models-lg` dependency
+  groups), HF / transformers.js NER via the multilingual HRL model, golden
+  sets (`tests/golden/golden_{zh,ko,fr,de,pt,it}.json`, 200 cases each),
+  all ten languages in every UI language picker, and script/diacritic
+  auto-detection extended to all ten. Default
+  `PromptAnonymizer(languages=…)` remains `("en", "ja")`.
+
+- Language registry as single source of truth per core
+  (`prompt_anonymizer.languages.SUPPORTED_LANGUAGES` /
+  `SUPPORTED_LANGUAGES` from `@prompt-anonymizer/core`, also exposed via
+  the dependency-free `@prompt-anonymizer/core/languages` subpath): type
+  unions, CLI validation/help, language pickers, detector tags and eval
+  loops all derive from it. New CI-enforced consistency guards:
+  cross-core label parity (`labels/*.yaml` ⟷ TS `LABELS`, byte-exact),
+  registry coverage of models/golden sets/README translations, golden-set
+  freshness vs `evals/generate.py`, and a `eval-golden.mjs --check` CI
+  step that fails when the TS table in `docs/EVAL.md` drifts. Adding a
+  language is documented in `docs/ADDING_A_LANGUAGE.md`.
 - Spanish (`es`) and Vietnamese (`vi`) support in both cores (non-breaking,
   additive): locale-specific labels (`Nombre`, `Teléfono`, `Tên`,
   `SốĐiệnThoại`, …), Spain and Vietnam phone recognizers, spaCy / HF /
@@ -157,6 +180,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   (default in the extension flow for context-menu imports).
 
 ### Changed
+- Language support is now driven by a central registry in each core
+  (`src/prompt_anonymizer/languages.py`; `LANGUAGES` / `isLanguage` /
+  `LANGUAGE_NAMES` in `web/packages/core/src/types.ts`): spaCy/HF model
+  resolution, phone recognizers, heuristic detection, CLI validation and
+  UI pickers all derive from it, so adding a language is one registry entry
+  plus a label file. The per-language `es_phone.py` / `vn_phone.py`
+  recognizer modules were replaced by the registry-driven
+  `recognizers/phone.py` (`build_phone_recognizers`); the golden-set
+  generator's per-language builders were likewise consolidated into a
+  phrase-table template (es/vi output is byte-identical).
+- Heuristic language detection now distinguishes han-without-kana as `zh`
+  and hangul as `ko`; kanji-only Japanese fragments are therefore guessed
+  as `zh` by the offline heuristic (the browser's built-in LanguageDetector,
+  when available, is unaffected).
 - Both cores: `mergeSpans` / `merge_spans` no longer drop an overlapping
   lower-score span entirely — the parts not covered by kept spans survive
   as whitespace-trimmed remainder spans. Previously an NER address span
@@ -180,6 +217,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   in `labeling.py`.
 
 ### Fixed
+- Proxy admin API and GUI now accept `es` / `vi` (config updates
+  previously collapsed them to `auto`, and an `es`/`vi` configured
+  language fell back to detection); admin GUI ships Spanish/Vietnamese
+  sample texts and displays all language names.
 - TS core: NER no longer errors with "no available backend found. ERR:
   [webgpu] TypeError: … webgpuInit is not a function" on Safari/WebKit
   (iOS/macOS Safari 26, Tauri's WKWebView). transformers.js <= 4.2 serves

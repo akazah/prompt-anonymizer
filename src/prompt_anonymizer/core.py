@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from prompt_anonymizer import labeling
 from prompt_anonymizer.exceptions import ModelNotDownloadedError, UnsupportedLanguageError
 from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
+from prompt_anonymizer.languages import DEFAULT_LANGUAGES, LANGUAGES
 
 if TYPE_CHECKING:
     from presidio_analyzer import AnalyzerEngine, BatchAnalyzerEngine, RecognizerResult
@@ -25,23 +26,7 @@ DEFAULT_ENTITIES = [
 # Opt-in entity types — pass via ``entities=`` on :class:`PromptAnonymizer`.
 OPTIONAL_ENTITIES = ["US_SSN", "IBAN_CODE"]
 
-# Vietnamese has no official spaCy pipeline: the multi-language WikiNER
-# model (xx_ent_wiki_sm) provides tokenization plus baseline PER/LOC NER
-# for both sizes. Use ner_backend="hf" for markedly better vi recall.
-_SPACY_MODELS = {
-    "sm": {
-        "en": "en_core_web_sm",
-        "ja": "ja_core_news_sm",
-        "es": "es_core_news_sm",
-        "vi": "xx_ent_wiki_sm",
-    },
-    "lg": {
-        "en": "en_core_web_lg",
-        "ja": "ja_core_news_lg",
-        "es": "es_core_news_lg",
-        "vi": "xx_ent_wiki_sm",
-    },
-}
+_MODEL_SIZES = ("sm", "lg")
 
 _NER_BACKENDS = ("spacy", "hf")
 
@@ -50,12 +35,7 @@ _NER_BACKENDS = ("spacy", "hf")
 # original checkpoints here keeps NER behaviour aligned across both cores.
 # Exception: vi uses the native VLSP-trained ELECTRA model (no ONNX export
 # exists), while the TS core falls back to the multilingual HRL model.
-DEFAULT_HF_NER_MODELS = {
-    "ja": "tsmatz/xlm-roberta-ner-japanese",
-    "en": "dslim/bert-base-NER",
-    "es": "Davlan/bert-base-multilingual-cased-ner-hrl",
-    "vi": "NlpHUST/ner-vietnamese-electra-base",
-}
+DEFAULT_HF_NER_MODELS = {code: config.hf_ner_model for code, config in LANGUAGES.items()}
 
 # Mirror of the TS core's TAG_MAP (web/packages/core/src/ner.ts). Tags not
 # listed here (ORG, PRD, ...) are filtered out by the engine-level entity
@@ -99,7 +79,7 @@ class PromptAnonymizer:
 
     def __init__(
         self,
-        languages: Sequence[str] = ("en", "ja"),
+        languages: Sequence[str] = DEFAULT_LANGUAGES,
         model_size: str = "sm",
         entities: Sequence[str] | None = None,
         deny_list: Sequence[str] | None = None,
@@ -108,8 +88,8 @@ class PromptAnonymizer:
         ner_backend: str = "spacy",
         hf_models: dict[str, str] | None = None,
     ) -> None:
-        if model_size not in _SPACY_MODELS:
-            raise ValueError(f"model_size must be one of {sorted(_SPACY_MODELS)}")
+        if model_size not in _MODEL_SIZES:
+            raise ValueError(f"model_size must be one of {sorted(_MODEL_SIZES)}")
         if ner_backend not in _NER_BACKENDS:
             raise ValueError(f"ner_backend must be one of {sorted(_NER_BACKENDS)}")
         self.languages = list(languages)
@@ -127,7 +107,10 @@ class PromptAnonymizer:
     # -- engine ---------------------------------------------------------
 
     def _model_name(self, language: str) -> str:
-        return _SPACY_MODELS[self.model_size].get(language, f"{language}_core_news_sm")
+        config = LANGUAGES.get(language)
+        if config is None:
+            return f"{language}_core_news_sm"
+        return config.spacy_lg if self.model_size == "lg" else config.spacy_sm
 
     def _ensure_models(self) -> None:
         import spacy.util
@@ -146,10 +129,9 @@ class PromptAnonymizer:
             MyNumberRecognizer,
             UsPhoneRegexRecognizer,
             build_credit_card_recognizers,
-            build_es_phone_recognizers,
             build_ja_phone_recognizers,
+            build_phone_recognizers,
             build_us_ssn_recognizers,
-            build_vn_phone_recognizers,
         )
 
         self._ensure_models()
@@ -180,15 +162,12 @@ class PromptAnonymizer:
             analyzer.registry.add_recognizer(JaPostalCodeRecognizer())
             analyzer.registry.add_recognizer(MyNumberRecognizer())
 
-        if "es" in self.languages:
-            for recognizer in build_es_phone_recognizers():
-                analyzer.registry.add_recognizer(recognizer)
-
-        if "vi" in self.languages:
-            for recognizer in build_vn_phone_recognizers():
-                analyzer.registry.add_recognizer(recognizer)
-
         for language in self.languages:
+            # Language-scoped phone recognizers come from the registry
+            # (prompt_anonymizer.languages); languages without a phone spec
+            # rely on the cross-language ja/us recognizers below.
+            for recognizer in build_phone_recognizers(language):
+                analyzer.registry.add_recognizer(recognizer)
             if language != "ja":
                 analyzer.registry.add_recognizer(
                     JaPostalCodeRecognizer(supported_language=language)

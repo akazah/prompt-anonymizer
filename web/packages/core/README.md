@@ -36,8 +36,9 @@ import { Anonymizer, TransformersNerBackend } from "@prompt-anonymizer/core";
 const anonymizer = new Anonymizer({ ner: new TransformersNerBackend() });
 ```
 
-Supported languages: Japanese, English, Spanish, Vietnamese (plus `auto`
-detection). Opt-in entities: `US_SSN`, `IBAN_CODE`.
+Supported languages (10): Japanese, English, Spanish, Vietnamese, Chinese,
+Korean, French, German, Portuguese, Italian (plus `auto` detection).
+Opt-in entities: `US_SSN`, `IBAN_CODE`.
 
 ## Documentation
 

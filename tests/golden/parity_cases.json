@@ -1,0 +1,314 @@
+{
+  "description": "Hand-written cross-core parity cases, one entry per detection-target behavior. Unlike golden_*.json these are NEVER regenerated. Consumed by tests/integration/test_parity_cases.py (Python, full pipeline) and web/packages/core/test/parity-cases.test.ts (TS, regex-only Anonymizer). Semantics: must_mask values must be absent from the anonymized text and covered by a span of the given entity_type; min_count >= 2 additionally requires that many masked occurrences and a single reused label; must_not_mask values must survive verbatim; must_not_detect forbids spans of that entity_type over the value; every case asserts deanonymize(anonymize(text)) == text. cores selects which consumer asserts the case (PERSON/LOCATION are python-only: the TS unit suite runs without a NER model; divergent cases carry one entry per core).",
+  "cases": [
+    {
+      "id": "email-en-plain",
+      "language": "en",
+      "text": "Contact me at taro@example.com or stop by the desk.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "EMAIL_ADDRESS", "value": "taro@example.com" }]
+    },
+    {
+      "id": "email-ja-spaced",
+      "language": "ja",
+      "text": "資料の送付先のメールは taro@example.com までお願いします。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "EMAIL_ADDRESS", "value": "taro@example.com" }]
+    },
+    {
+      "id": "email-ja-cjk-adjacent-ts",
+      "language": "ja",
+      "text": "メールはtaro@example.comです。",
+      "cores": ["ts"],
+      "must_mask": [{ "entity_type": "EMAIL_ADDRESS", "value": "taro@example.com" }],
+      "notes": "Known divergence: Presidio's EmailRecognizer uses \\b boundaries, which never match between CJK and ASCII, so the Python core misses fully CJK-adjacent emails (pinned in tests/unit/test_recognizers.py). The TS regex has no boundary and masks it."
+    },
+    {
+      "id": "email-en-subaddress",
+      "language": "en",
+      "text": "Send the invite to a.b+tag@mail.example.co.jp today.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "EMAIL_ADDRESS", "value": "a.b+tag@mail.example.co.jp" }]
+    },
+    {
+      "id": "email-en-no-tld-negative",
+      "language": "en",
+      "text": "The handle not-an-email@nowhere is not a real address.",
+      "cores": ["ts"],
+      "must_not_mask": ["not-an-email@nowhere"],
+      "notes": "TS email regex requires a dot-TLD. Python-side negative is pinned at unit level; the full pipeline is kept out to avoid NER noise on the synthetic token."
+    },
+    {
+      "id": "phone-ja-mobile-hyphen",
+      "language": "ja",
+      "text": "電話番号は090-1234-5678です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "090-1234-5678" }]
+    },
+    {
+      "id": "phone-ja-mobile-bare",
+      "language": "ja",
+      "text": "携帯は09012345678までお願いします。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "09012345678" }]
+    },
+    {
+      "id": "phone-ja-mobile-paren",
+      "language": "ja",
+      "text": "連絡先は090(1234)5678です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "090(1234)5678" }]
+    },
+    {
+      "id": "phone-ja-tollfree",
+      "language": "ja",
+      "text": "ご注文はフリーダイヤル0120-123-456へどうぞ。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "0120-123-456" }]
+    },
+    {
+      "id": "phone-ja-landline",
+      "language": "ja",
+      "text": "オフィスの電話は03-1234-5678です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "03-1234-5678" }]
+    },
+    {
+      "id": "phone-ja-landline-4-2-4",
+      "language": "ja",
+      "text": "支店の電話は0123-45-6789です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "0123-45-6789" }]
+    },
+    {
+      "id": "phone-en-paren",
+      "language": "en",
+      "text": "Call me at (333) 333-3333 tomorrow morning.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "(333) 333-3333" }]
+    },
+    {
+      "id": "phone-en-hyphen",
+      "language": "en",
+      "text": "Their direct line is 333-333-3333.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "333-333-3333" }]
+    },
+    {
+      "id": "phone-en-intl",
+      "language": "en",
+      "text": "Reach us at +1 333 333 3333 anytime.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "+1 333 333 3333" }]
+    },
+    {
+      "id": "phone-neg-leading-digit",
+      "language": "ja",
+      "text": "注文番号は1090-1234-5678です。",
+      "cores": ["python", "ts"],
+      "must_not_mask": ["1090-1234-5678"],
+      "notes": "Digit lookbehind: a mobile-shaped run inside a longer digit run must not be masked."
+    },
+    {
+      "id": "phone-neg-trailing-digit",
+      "language": "ja",
+      "text": "整理コードは090-1234-56789です。",
+      "cores": ["python", "ts"],
+      "must_not_mask": ["090-1234-56789"],
+      "notes": "Digit lookahead: trailing extra digit disqualifies the mobile/landline match."
+    },
+    {
+      "id": "postal-ja-marked",
+      "language": "ja",
+      "text": "送付先は〒100-0001です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_POSTAL_CODE", "value": "〒100-0001" }]
+    },
+    {
+      "id": "postal-ja-marked-compact",
+      "language": "ja",
+      "text": "宛先は〒1000001としてください。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_POSTAL_CODE", "value": "〒1000001" }]
+    },
+    {
+      "id": "postal-en-marked",
+      "language": "en",
+      "text": "Ship the package to 〒100-0001 please.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_POSTAL_CODE", "value": "〒100-0001" }],
+      "notes": "The marked-postal recognizer is registered for every language in both cores."
+    },
+    {
+      "id": "postal-ja-bare-context-python",
+      "language": "ja",
+      "text": "郵便番号は100-0001です。",
+      "cores": ["python"],
+      "must_mask": [{ "entity_type": "JP_POSTAL_CODE", "value": "100-0001" }],
+      "notes": "Known divergence (documented, not hidden): Python's bare-postal pattern (0.3) is lifted above the 0.4 threshold by the 郵便番号 context word. See the ts twin below."
+    },
+    {
+      "id": "postal-ja-bare-context-ts",
+      "language": "ja",
+      "text": "郵便番号は100-0001です。",
+      "cores": ["ts"],
+      "must_not_mask": ["100-0001"],
+      "notes": "Known divergence: the TS core has no context boosting, so bare NNN-NNNN stays at 0.35 < 0.4 and is never masked. Aligning this is a product decision out of scope for tests (AGENTS.md: threshold/score changes are review-blocking)."
+    },
+    {
+      "id": "postal-neg-inside-phone",
+      "language": "ja",
+      "text": "折り返しは090-1234-5678へお願いします。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "090-1234-5678" }],
+      "must_not_detect": [{ "entity_type": "JP_POSTAL_CODE", "value": "090-1234-5678" }],
+      "notes": "The bare postal pattern must not fire inside a phone number."
+    },
+    {
+      "id": "mynumber-ja-bare",
+      "language": "ja",
+      "text": "マイナンバーは123456789018です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_MY_NUMBER", "value": "123456789018" }],
+      "must_not_detect": [{ "entity_type": "CREDIT_CARD", "value": "123456789018" }],
+      "notes": "Valid check digit (body 12345678901 -> 8). Must be classified as My Number, not credit card (the 12-digit run fails Luhn)."
+    },
+    {
+      "id": "mynumber-ja-grouped-hyphen",
+      "language": "ja",
+      "text": "個人番号は 9876-5432-1093 で登録済みです。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_MY_NUMBER", "value": "9876-5432-1093" }],
+      "notes": "Valid check digit (body 98765432109 -> 3), 4-4-4 hyphen grouping."
+    },
+    {
+      "id": "mynumber-ja-grouped-space",
+      "language": "ja",
+      "text": "マイナンバーは 5555 5555 5557 です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "JP_MY_NUMBER", "value": "5555 5555 5557" }],
+      "notes": "Valid check digit (body 55555555555 -> 7), space grouping."
+    },
+    {
+      "id": "mynumber-neg-check-digit",
+      "language": "ja",
+      "text": "整理番号は123456789019です。",
+      "cores": ["python", "ts"],
+      "must_not_mask": ["123456789019"],
+      "must_not_detect": [{ "entity_type": "JP_MY_NUMBER", "value": "123456789019" }],
+      "notes": "Wrong check digit (8 expected, 9 given); also fails Luhn so no recognizer may claim it."
+    },
+    {
+      "id": "mynumber-neg-digit-run",
+      "language": "ja",
+      "text": "伝票IDは1234567890181234です。",
+      "cores": ["python", "ts"],
+      "must_not_detect": [{ "entity_type": "JP_MY_NUMBER", "value": "1234567890181234" }],
+      "must_not_mask": ["1234567890181234"],
+      "notes": "A valid 12-digit My Number embedded in a longer digit run must not match (lookarounds); the 16-digit run also fails Luhn."
+    },
+    {
+      "id": "card-ja-cjk-adjacent",
+      "language": "ja",
+      "text": "お支払いのカード番号は4111111111111111です。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "CREDIT_CARD", "value": "4111111111111111" }]
+    },
+    {
+      "id": "card-en-hyphen",
+      "language": "en",
+      "text": "The card on file is 4111-1111-1111-1111.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "CREDIT_CARD", "value": "4111-1111-1111-1111" }]
+    },
+    {
+      "id": "card-en-space",
+      "language": "en",
+      "text": "Card: 4111 1111 1111 1111 was charged.",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "CREDIT_CARD", "value": "4111 1111 1111 1111" }]
+    },
+    {
+      "id": "card-neg-luhn",
+      "language": "ja",
+      "text": "注文コードは4111111111111112です。",
+      "cores": ["python", "ts"],
+      "must_not_mask": ["4111111111111112"],
+      "notes": "Fails the Luhn checksum by one."
+    },
+    {
+      "id": "card-neg-unix-timestamp",
+      "language": "en",
+      "text": "Logged at 1748503543012 by the collector.",
+      "cores": ["python", "ts"],
+      "must_not_mask": ["1748503543012"],
+      "notes": "13-digit runs starting with 1 (millisecond timestamps) are explicitly excluded in both cores."
+    },
+    {
+      "id": "custom-deny-ja-repeat",
+      "language": "ja",
+      "text": "プロジェクトXの資料は明日、プロジェクトX担当者に渡してください。",
+      "cores": ["python", "ts"],
+      "deny_list": ["プロジェクトX"],
+      "must_mask": [{ "entity_type": "CUSTOM", "value": "プロジェクトX", "min_count": 2 }],
+      "notes": "Deny-list matching is plain substring: CJK-adjacent, no word boundaries, every occurrence masked with one reused label."
+    },
+    {
+      "id": "custom-deny-en-repeat",
+      "language": "en",
+      "text": "Codename Bluebird must not leak. Bluebird v2 ships in May.",
+      "cores": ["python", "ts"],
+      "deny_list": ["Bluebird"],
+      "must_mask": [{ "entity_type": "CUSTOM", "value": "Bluebird", "min_count": 2 }]
+    },
+    {
+      "id": "allow-list-email-survives",
+      "language": "ja",
+      "text": "窓口のメールは taro@example.com です。個人アドレスは hanako@example.org です。",
+      "cores": ["python", "ts"],
+      "allow_list": ["taro@example.com"],
+      "must_mask": [{ "entity_type": "EMAIL_ADDRESS", "value": "hanako@example.org" }],
+      "must_not_mask": ["taro@example.com"],
+      "notes": "Allow-listed values survive even when a recognizer detects them; other values of the same type are still masked."
+    },
+    {
+      "id": "label-reuse-same-value",
+      "language": "ja",
+      "text": "電話は090-1111-2222へ。念のため再掲します: 090-1111-2222。",
+      "cores": ["python", "ts"],
+      "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "090-1111-2222", "min_count": 2 }],
+      "notes": "Consistent labeling: the same value must reuse a single label across occurrences."
+    },
+    {
+      "id": "person-en",
+      "language": "en",
+      "text": "John lives in New York. Contact John at john@example.com.",
+      "cores": ["python"],
+      "must_mask": [
+        { "entity_type": "PERSON", "value": "John", "min_count": 2 },
+        { "entity_type": "LOCATION", "value": "New York" },
+        { "entity_type": "EMAIL_ADDRESS", "value": "john@example.com" }
+      ],
+      "notes": "NER targets are python-only here: the TS unit suite runs without a model (see e2e:ner / weekly CI for the TS side)."
+    },
+    {
+      "id": "person-ja",
+      "language": "ja",
+      "text": "お世話になっております。山田太郎と申します。折り返しは 090-2222-3333 までお願いします。",
+      "cores": ["python"],
+      "must_mask": [
+        { "entity_type": "PERSON", "value": "山田太郎" },
+        { "entity_type": "PHONE_NUMBER", "value": "090-2222-3333" }
+      ],
+      "notes": "Text mirrors the golden 'request' genre that the ja sm model handles."
+    },
+    {
+      "id": "location-ja",
+      "language": "ja",
+      "text": "次回の会場の住所は 東京都千代田区丸の内1丁目 です。",
+      "cores": ["python"],
+      "must_mask": [{ "entity_type": "LOCATION", "value": "東京都千代田区丸の内1丁目" }],
+      "notes": "Span may extend beyond the value; overlap of a LOCATION span is what is asserted."
+    }
+  ]
+}

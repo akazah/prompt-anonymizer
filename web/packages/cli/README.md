@@ -34,7 +34,8 @@ With husky + lint-staged:
 { "lint-staged": { "*": "prompt-anonymizer scan" } }
 ```
 
-Supported languages: `ja`, `en`, `es`, `vi` (plus auto-detection).
+Supported languages: `ja`, `en`, `es`, `vi`, `zh`, `ko`, `fr`, `de`, `pt`,
+`it` (plus `auto` detection).
 
 ## Documentation
 

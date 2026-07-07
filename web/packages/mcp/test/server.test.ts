@@ -60,6 +60,26 @@ describe("anonymize", () => {
     expect(payload.entity_counts).toEqual({ PHONE_NUMBER: 1, EMAIL_ADDRESS: 1 });
   });
 
+  it("accepts a language added by the registry (zh) and uses its labels", async () => {
+    const { client } = await connect();
+    const result = await client.callTool({
+      name: "anonymize",
+      arguments: { text: "请发送到 test@example.com", language: "zh" },
+    });
+    const payload = JSON.parse(firstText(result)) as Record<string, unknown>;
+    expect(payload.text).toBe("请发送到 <电子邮箱_1>");
+    expect(payload.entity_counts).toEqual({ EMAIL_ADDRESS: 1 });
+  });
+
+  it("rejects an unsupported language code", async () => {
+    const { client } = await connect();
+    const result = await client.callTool({
+      name: "anonymize",
+      arguments: { text: "hello", language: "xx" },
+    });
+    expect(result.isError).toBe(true);
+  });
+
   it("returns the mapping only when return_mapping is true", async () => {
     const { client } = await connect();
     const result = await client.callTool({

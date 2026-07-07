@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "ko-0000",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이수빈입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안산시입니다. 연락처는 +82 10-6455-5606 이고, 이메일은 gweonminseo@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이수빈"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "안산시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-6455-5606"
+   },
+   {
+    "start": 82,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gweonminseo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0001",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 한은정, 이보람. 다음 회의 장소는 동해시. 할 일: 자료를 ki@example.org 로 보낼 것. 직통 전화: 010-6173-8273.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "한은정"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이보람"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "동해시"
+   },
+   {
+    "start": 45,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ki@example.org"
+   },
+   {
+    "start": 75,
+    "end": 88,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6173-8273"
+   }
+  ]
+ },
+ {
+  "id": "ko-0002",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 한성훈 님이고, 주소는 파주시 입니다. 회신 전화는 010-4864-2801 로 드리겠습니다. 등록된 카드 번호는 4140934423311052 입니다. 사본은 gyang@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "한성훈"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4864-2801"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4140934423311052"
+   },
+   {
+    "start": 113,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gyang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0003",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김정수입니다. 다음 달 회의를 잡고 싶습니다. 장소는 수원시입니다. 연락처는 +82 10-7633-3726 이고, 이메일은 wgim@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김정수"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "수원시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7633-3726"
+   },
+   {
+    "start": 82,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wgim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0004",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이혜진, 이승민. 다음 회의 장소는 예산군. 할 일: 자료를 jangyeongsig@example.net 로 보낼 것. 직통 전화: +82 10-4109-2451.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이혜진"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이승민"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "예산군"
+   },
+   {
+    "start": 45,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jangyeongsig@example.net"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4109-2451"
+   }
+  ]
+ },
+ {
+  "id": "ko-0005",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김명자 님이고, 주소는 광명시 입니다. 회신 전화는 +82 10-9689-1196 로 드리겠습니다. 등록된 카드 번호는 4572-0099-8717-2930 입니다. 사본은 hyeonugim@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김명자"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "광명시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9689-1196"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4572-0099-8717-2930"
+   },
+   {
+    "start": 119,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hyeonugim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0006",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김민지입니다. 다음 달 회의를 잡고 싶습니다. 장소는 과천시입니다. 연락처는 010-1145-7160 이고, 이메일은 gyeongsui@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김민지"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "과천시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-1145-7160"
+   },
+   {
+    "start": 79,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gyeongsui@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0007",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 윤명숙, 최하은. 다음 회의 장소는 속초시. 할 일: 자료를 zgim@example.com 로 보낼 것. 직통 전화: 01027638034.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "윤명숙"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "최하은"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "속초시"
+   },
+   {
+    "start": 45,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zgim@example.com"
+   },
+   {
+    "start": 77,
+    "end": 88,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01027638034"
+   }
+  ]
+ },
+ {
+  "id": "ko-0008",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이서연 님이고, 주소는 평창군 입니다. 회신 전화는 01021402574 로 드리겠습니다. 등록된 카드 번호는 4351-1086-7231-9629 입니다. 사본은 imyeongja@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이서연"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "평창군"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01021402574"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4351-1086-7231-9629"
+   },
+   {
+    "start": 114,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "imyeongja@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0009",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 안영미입니다. 다음 달 회의를 잡고 싶습니다. 장소는 양구군입니다. 연락처는 01093166143 이고, 이메일은 byeongceoli@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "안영미"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "양구군"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01093166143"
+   },
+   {
+    "start": 77,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "byeongceoli@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0010",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이수빈, 김현준. 다음 회의 장소는 논산시. 할 일: 자료를 ci@example.com 로 보낼 것. 직통 전화: 01017168593.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이수빈"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김현준"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "논산시"
+   },
+   {
+    "start": 45,
+    "end": 59,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ci@example.com"
+   },
+   {
+    "start": 75,
+    "end": 86,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01017168593"
+   }
+  ]
+ },
+ {
+  "id": "ko-0011",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이영식 님이고, 주소는 태안군 입니다. 회신 전화는 01092317257 로 드리겠습니다. 등록된 카드 번호는 4034-6399-8279-8495 입니다. 사본은 wno@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이영식"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "태안군"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01092317257"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4034-6399-8279-8495"
+   },
+   {
+    "start": 114,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wno@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0012",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 홍지혜입니다. 다음 달 회의를 잡고 싶습니다. 장소는 양주시입니다. 연락처는 +82 10-2971-2980 이고, 이메일은 sanghyeoncoe@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "홍지혜"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "양주시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2971-2980"
+   },
+   {
+    "start": 82,
+    "end": 106,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghyeoncoe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0013",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 최현우, 이정희. 다음 회의 장소는 고양시 일산동구. 할 일: 자료를 gimhayun@example.org 로 보낼 것. 직통 전화: 01013484812.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "최현우"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이정희"
+   },
+   {
+    "start": 31,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "고양시 일산동구"
+   },
+   {
+    "start": 50,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimhayun@example.org"
+   },
+   {
+    "start": 86,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01013484812"
+   }
+  ]
+ },
+ {
+  "id": "ko-0014",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김은영 님이고, 주소는 가평군 입니다. 회신 전화는 01059484064 로 드리겠습니다. 등록된 카드 번호는 4364-6928-6856-6254 입니다. 사본은 yeongceoljo@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김은영"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "가평군"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01059484064"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4364-6928-6856-6254"
+   },
+   {
+    "start": 114,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongceoljo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0015",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박진호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안산시 상록구입니다. 연락처는 010-2096-2239 이고, 이메일은 jangseonghun@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박진호"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "안산시 상록구"
+   },
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2096-2239"
+   },
+   {
+    "start": 83,
+    "end": 107,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jangseonghun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0016",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이민준, 이지영. 다음 회의 장소는 안양시 동안구. 할 일: 자료를 fi@example.net 로 보낼 것. 직통 전화: 010-6994-6751.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이민준"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이지영"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "안양시 동안구"
+   },
+   {
+    "start": 49,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fi@example.net"
+   },
+   {
+    "start": 79,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6994-6751"
+   }
+  ]
+ },
+ {
+  "id": "ko-0017",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이정식 님이고, 주소는 안양시 입니다. 회신 전화는 010-9030-6836 로 드리겠습니다. 등록된 카드 번호는 4947060151753789 입니다. 사본은 vgim@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이정식"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "안양시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9030-6836"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4947060151753789"
+   },
+   {
+    "start": 113,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vgim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0018",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이영철입니다. 다음 달 회의를 잡고 싶습니다. 장소는 성남시 중원구입니다. 연락처는 01028428433 이고, 이메일은 gimseongmin@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이영철"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "성남시 중원구"
+   },
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01028428433"
+   },
+   {
+    "start": 81,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimseongmin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0019",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이정웅, 김서연. 다음 회의 장소는 고양시. 할 일: 자료를 gimjeonghun@example.com 로 보낼 것. 직통 전화: 010-6851-3513.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이정웅"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김서연"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "고양시"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimjeonghun@example.com"
+   },
+   {
+    "start": 84,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6851-3513"
+   }
+  ]
+ },
+ {
+  "id": "ko-0020",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 배예지 님이고, 주소는 단양군 입니다. 회신 전화는 010-4083-5773 로 드리겠습니다. 등록된 카드 번호는 4924-0951-9274-3941 입니다. 사본은 yunujin@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "배예지"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "단양군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4083-5773"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4924-0951-9274-3941"
+   },
+   {
+    "start": 116,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yunujin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0021",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박현준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 포천시입니다. 연락처는 010-6796-6528 이고, 이메일은 jeongnami@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박현준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "포천시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6796-6528"
+   },
+   {
+    "start": 79,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongnami@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0022",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이경수, 엄동현. 다음 회의 장소는 안양시 동안구. 할 일: 자료를 gominjae@example.org 로 보낼 것. 직통 전화: 01014051727.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이경수"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "엄동현"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "안양시 동안구"
+   },
+   {
+    "start": 49,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gominjae@example.org"
+   },
+   {
+    "start": 85,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01014051727"
+   }
+  ]
+ },
+ {
+  "id": "ko-0023",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 강영환 님이고, 주소는 과천시 입니다. 회신 전화는 +82 10-4771-2391 로 드리겠습니다. 등록된 카드 번호는 4284-4316-7761-5227 입니다. 사본은 donghyeonbaeg@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "강영환"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "과천시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4771-2391"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4284-4316-7761-5227"
+   },
+   {
+    "start": 119,
+    "end": 144,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "donghyeonbaeg@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0024",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 강지현입니다. 다음 달 회의를 잡고 싶습니다. 장소는 포천시입니다. 연락처는 +82 10-5885-1091 이고, 이메일은 areumyun@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "강지현"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "포천시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-5885-1091"
+   },
+   {
+    "start": 82,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "areumyun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0025",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 신경희, 최우진. 다음 회의 장소는 양주시. 할 일: 자료를 jangseoyeon@example.com 로 보낼 것. 직통 전화: +82 10-4058-7318.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "신경희"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "최우진"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "양주시"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jangseoyeon@example.com"
+   },
+   {
+    "start": 84,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4058-7318"
+   }
+  ]
+ },
+ {
+  "id": "ko-0026",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오서영 님이고, 주소는 양양군 입니다. 회신 전화는 010-8431-4292 로 드리겠습니다. 등록된 카드 번호는 4851-3631-6175-7871 입니다. 사본은 naseonghun@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오서영"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양양군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8431-4292"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4851-3631-6175-7871"
+   },
+   {
+    "start": 116,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "naseonghun@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0027",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김진호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안양시 동안구입니다. 연락처는 010-4057-6252 이고, 이메일은 lgu@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김진호"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "안양시 동안구"
+   },
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4057-6252"
+   },
+   {
+    "start": 83,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lgu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0028",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 송성민, 이채원. 다음 회의 장소는 연천군. 할 일: 자료를 sanghun98@example.com 로 보낼 것. 직통 전화: 01037611983.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "송성민"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이채원"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "연천군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghun98@example.com"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01037611983"
+   }
+  ]
+ },
+ {
+  "id": "ko-0029",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이정식 님이고, 주소는 연천군 입니다. 회신 전화는 010-9386-8809 로 드리겠습니다. 등록된 카드 번호는 4612-3268-3614-8800 입니다. 사본은 yeonghyi62@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이정식"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "연천군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9386-8809"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4612-3268-3614-8800"
+   },
+   {
+    "start": 116,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeonghyi62@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0030",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 강순자입니다. 다음 달 회의를 잡고 싶습니다. 장소는 정선군입니다. 연락처는 010-4136-7481 이고, 이메일은 seohyeonheo@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "강순자"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "정선군"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4136-7481"
+   },
+   {
+    "start": 79,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seohyeonheo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0031",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이지우, 김영호. 다음 회의 장소는 부천시 오정구. 할 일: 자료를 ibyeongceol@example.org 로 보낼 것. 직통 전화: 010-4877-3661.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이지우"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김영호"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "부천시 오정구"
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ibyeongceol@example.org"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4877-3661"
+   }
+  ]
+ },
+ {
+  "id": "ko-0032",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 하예은 님이고, 주소는 충주시 입니다. 회신 전화는 +82 10-2358-9084 로 드리겠습니다. 등록된 카드 번호는 4562181569107576 입니다. 사본은 coejihun@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "하예은"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "충주시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2358-9084"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4562181569107576"
+   },
+   {
+    "start": 116,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "coejihun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0033",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김영진입니다. 다음 달 회의를 잡고 싶습니다. 장소는 동해시입니다. 연락처는 01013734106 이고, 이메일은 areumgim@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김영진"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "동해시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01013734106"
+   },
+   {
+    "start": 77,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "areumgim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0034",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 문예은, 이영순. 다음 회의 장소는 고양시. 할 일: 자료를 junhogim@example.com 로 보낼 것. 직통 전화: 010-8566-6717.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "문예은"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이영순"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "고양시"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junhogim@example.com"
+   },
+   {
+    "start": 81,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8566-6717"
+   }
+  ]
+ },
+ {
+  "id": "ko-0035",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박영환 님이고, 주소는 강릉시 입니다. 회신 전화는 01027994730 로 드리겠습니다. 등록된 카드 번호는 4159526378255488 입니다. 사본은 kgang@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박영환"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "강릉시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01027994730"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4159526378255488"
+   },
+   {
+    "start": 111,
+    "end": 128,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kgang@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0036",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 배준영입니다. 다음 달 회의를 잡고 싶습니다. 장소는 홍천군입니다. 연락처는 +82 10-1035-1849 이고, 이메일은 wi@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "배준영"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "홍천군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1035-1849"
+   },
+   {
+    "start": 82,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0037",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 최정식, 김준서. 다음 회의 장소는 남양주시. 할 일: 자료를 junyeongo@example.net 로 보낼 것. 직통 전화: +82 10-2567-8808.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "최정식"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김준서"
+   },
+   {
+    "start": 31,
+    "end": 35,
+    "entity_type": "LOCATION",
+    "value": "남양주시"
+   },
+   {
+    "start": 46,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junyeongo@example.net"
+   },
+   {
+    "start": 83,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2567-8808"
+   }
+  ]
+ },
+ {
+  "id": "ko-0038",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김주원 님이고, 주소는 논산시 입니다. 회신 전화는 01039857928 로 드리겠습니다. 등록된 카드 번호는 4575-1208-6640-3747 입니다. 사본은 jihye05@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김주원"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "논산시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01039857928"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4575-1208-6640-3747"
+   },
+   {
+    "start": 114,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jihye05@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0039",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 윤진호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 화천군입니다. 연락처는 01056284079 이고, 이메일은 osong@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "윤진호"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "화천군"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01056284079"
+   },
+   {
+    "start": 77,
+    "end": 94,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0040",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김진우, 김재호. 다음 회의 장소는 이천시. 할 일: 자료를 yeongil91@example.net 로 보낼 것. 직통 전화: 01070194292.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김진우"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김재호"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "이천시"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongil91@example.net"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01070194292"
+   }
+  ]
+ },
+ {
+  "id": "ko-0041",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이현준 님이고, 주소는 수원시 권선구 입니다. 회신 전화는 +82 10-9357-2963 로 드리겠습니다. 등록된 카드 번호는 4892-8359-3243-4634 입니다. 사본은 jongsui@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이현준"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "수원시 권선구"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9357-2963"
+   },
+   {
+    "start": 94,
+    "end": 113,
+    "entity_type": "CREDIT_CARD",
+    "value": "4892-8359-3243-4634"
+   },
+   {
+    "start": 123,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jongsui@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0042",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김서연입니다. 다음 달 회의를 잡고 싶습니다. 장소는 횡성군입니다. 연락처는 +82 10-8898-9538 이고, 이메일은 yyang@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김서연"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "횡성군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8898-9538"
+   },
+   {
+    "start": 82,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yyang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0043",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 문현숙, 우도현. 다음 회의 장소는 수원시 영통구. 할 일: 자료를 bagdoyun@example.net 로 보낼 것. 직통 전화: +82 10-2406-5057.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "문현숙"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "우도현"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "수원시 영통구"
+   },
+   {
+    "start": 49,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bagdoyun@example.net"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2406-5057"
+   }
+  ]
+ },
+ {
+  "id": "ko-0044",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박은경 님이고, 주소는 청주시 흥덕구 입니다. 회신 전화는 01024062114 로 드리겠습니다. 등록된 카드 번호는 4488-2830-2774-8396 입니다. 사본은 jeongnam96@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박은경"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "청주시 흥덕구"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01024062114"
+   },
+   {
+    "start": 89,
+    "end": 108,
+    "entity_type": "CREDIT_CARD",
+    "value": "4488-2830-2774-8396"
+   },
+   {
+    "start": 118,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongnam96@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0045",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김진호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 광명시입니다. 연락처는 01090953392 이고, 이메일은 seongho76@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김진호"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "광명시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01090953392"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongho76@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0046",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김경희, 오승현. 다음 회의 장소는 부천시 소사구. 할 일: 자료를 hwangjeongsug@example.com 로 보낼 것. 직통 전화: 010-2086-7805.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김경희"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "오승현"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "부천시 소사구"
+   },
+   {
+    "start": 49,
+    "end": 74,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hwangjeongsug@example.com"
+   },
+   {
+    "start": 90,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2086-7805"
+   }
+  ]
+ },
+ {
+  "id": "ko-0047",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김현지 님이고, 주소는 태백시 입니다. 회신 전화는 010-7834-4130 로 드리겠습니다. 등록된 카드 번호는 4055-0057-6067-5517 입니다. 사본은 yeongceol69@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김현지"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "태백시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7834-4130"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4055-0057-6067-5517"
+   },
+   {
+    "start": 116,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongceol69@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0048",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박지영입니다. 다음 달 회의를 잡고 싶습니다. 장소는 구리시입니다. 연락처는 01034253880 이고, 이메일은 bagjinu@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박지영"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "구리시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01034253880"
+   },
+   {
+    "start": 77,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bagjinu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0049",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 황상호, 강준영. 다음 회의 장소는 고양시. 할 일: 자료를 tsong@example.org 로 보낼 것. 직통 전화: 010-6269-5713.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "황상호"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "강준영"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "고양시"
+   },
+   {
+    "start": 45,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tsong@example.org"
+   },
+   {
+    "start": 78,
+    "end": 91,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6269-5713"
+   }
+  ]
+ },
+ {
+  "id": "ko-0050",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김진우 님이고, 주소는 강릉시 입니다. 회신 전화는 +82 10-9416-1193 로 드리겠습니다. 등록된 카드 번호는 4628-9062-3763-1728 입니다. 사본은 seonyeong17@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김진우"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "강릉시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9416-1193"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4628-9062-3763-1728"
+   },
+   {
+    "start": 119,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seonyeong17@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0051",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 임예준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 파주시입니다. 연락처는 01026472540 이고, 이메일은 ccoe@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "임예준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01026472540"
+   },
+   {
+    "start": 77,
+    "end": 93,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ccoe@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0052",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 윤영숙, 홍주원. 다음 회의 장소는 고양시 덕양구. 할 일: 자료를 jeongnambag@example.com 로 보낼 것. 직통 전화: 01086495429.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "윤영숙"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "홍주원"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "고양시 덕양구"
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongnambag@example.com"
+   },
+   {
+    "start": 88,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01086495429"
+   }
+  ]
+ },
+ {
+  "id": "ko-0053",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 나재현 님이고, 주소는 양주시 입니다. 회신 전화는 01075951355 로 드리겠습니다. 등록된 카드 번호는 4429547523476450 입니다. 사본은 sanghohwang@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "나재현"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양주시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01075951355"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4429547523476450"
+   },
+   {
+    "start": 111,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghohwang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0054",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이진호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 의왕시입니다. 연락처는 01091595504 이고, 이메일은 nbag@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이진호"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "의왕시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01091595504"
+   },
+   {
+    "start": 77,
+    "end": 93,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nbag@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0055",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 홍영길, 이재호. 다음 회의 장소는 천안시 동남구. 할 일: 자료를 byeongceolcoe@example.com 로 보낼 것. 직통 전화: 010-8430-6875.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "홍영길"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이재호"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "천안시 동남구"
+   },
+   {
+    "start": 49,
+    "end": 74,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "byeongceolcoe@example.com"
+   },
+   {
+    "start": 90,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8430-6875"
+   }
+  ]
+ },
+ {
+  "id": "ko-0056",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 정영일 님이고, 주소는 부여군 입니다. 회신 전화는 010-1599-1231 로 드리겠습니다. 등록된 카드 번호는 4374-7121-2942-2960 입니다. 사본은 hi@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "정영일"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "부여군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-1599-1231"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4374-7121-2942-2960"
+   },
+   {
+    "start": 116,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0057",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김현준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 단양군입니다. 연락처는 01049524012 이고, 이메일은 cunja52@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김현준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "단양군"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01049524012"
+   },
+   {
+    "start": 77,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cunja52@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0058",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 안혜진, 김은주. 다음 회의 장소는 청주시 서원구. 할 일: 자료를 gyeonghyi95@example.net 로 보낼 것. 직통 전화: 01054025769.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "안혜진"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김은주"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "청주시 서원구"
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gyeonghyi95@example.net"
+   },
+   {
+    "start": 88,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01054025769"
+   }
+  ]
+ },
+ {
+  "id": "ko-0059",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김재현 님이고, 주소는 김포시 입니다. 회신 전화는 +82 10-9321-2727 로 드리겠습니다. 등록된 카드 번호는 4185057794266766 입니다. 사본은 sumin68@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김재현"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "김포시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9321-2727"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4185057794266766"
+   },
+   {
+    "start": 116,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sumin68@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0060",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김민재입니다. 다음 달 회의를 잡고 싶습니다. 장소는 동두천시입니다. 연락처는 +82 10-4811-2680 이고, 이메일은 seoyeongi@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김민재"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "동두천시"
+   },
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4811-2680"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seoyeongi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0061",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 배정순, 심숙자. 다음 회의 장소는 단양군. 할 일: 자료를 anyeeun@example.com 로 보낼 것. 직통 전화: 010-7736-7077.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "배정순"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "심숙자"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "단양군"
+   },
+   {
+    "start": 45,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anyeeun@example.com"
+   },
+   {
+    "start": 80,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7736-7077"
+   }
+  ]
+ },
+ {
+  "id": "ko-0062",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 안영자 님이고, 주소는 안산시 입니다. 회신 전화는 01071547950 로 드리겠습니다. 등록된 카드 번호는 4285-0482-4591-6397 입니다. 사본은 jiagim@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "안영자"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "안산시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01071547950"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4285-0482-4591-6397"
+   },
+   {
+    "start": 114,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jiagim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0063",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 류예은입니다. 다음 달 회의를 잡고 싶습니다. 장소는 수원시 팔달구입니다. 연락처는 010-2562-1032 이고, 이메일은 jeongja25@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "류예은"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "수원시 팔달구"
+   },
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2562-1032"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongja25@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0064",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김서준, 김민서. 다음 회의 장소는 아산시. 할 일: 자료를 nju@example.com 로 보낼 것. 직통 전화: 01028344521.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김서준"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김민서"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "아산시"
+   },
+   {
+    "start": 45,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nju@example.com"
+   },
+   {
+    "start": 76,
+    "end": 87,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01028344521"
+   }
+  ]
+ },
+ {
+  "id": "ko-0065",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 홍현지 님이고, 주소는 속초시 입니다. 회신 전화는 +82 10-4008-4607 로 드리겠습니다. 등록된 카드 번호는 4622810586545982 입니다. 사본은 eunjeongsong@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "홍현지"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "속초시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4008-4607"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4622810586545982"
+   },
+   {
+    "start": 116,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eunjeongsong@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0066",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 구영길입니다. 다음 달 회의를 잡고 싶습니다. 장소는 횡성군입니다. 연락처는 +82 10-4665-9488 이고, 이메일은 jeonghyi24@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "구영길"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "횡성군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4665-9488"
+   },
+   {
+    "start": 82,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeonghyi24@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0067",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김정수, 김미영. 다음 회의 장소는 평창군. 할 일: 자료를 habyeongceol@example.org 로 보낼 것. 직통 전화: +82 10-3881-5173.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김정수"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김미영"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "평창군"
+   },
+   {
+    "start": 45,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "habyeongceol@example.org"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3881-5173"
+   }
+  ]
+ },
+ {
+  "id": "ko-0068",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 최상철 님이고, 주소는 삼척시 입니다. 회신 전화는 01068126613 로 드리겠습니다. 등록된 카드 번호는 4500369033875754 입니다. 사본은 hyeonjeong11@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "최상철"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "삼척시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01068126613"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4500369033875754"
+   },
+   {
+    "start": 111,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hyeonjeong11@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0069",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이미정입니다. 다음 달 회의를 잡고 싶습니다. 장소는 성남시입니다. 연락처는 010-7364-6082 이고, 이메일은 chwang@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이미정"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "성남시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7364-6082"
+   },
+   {
+    "start": 79,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chwang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0070",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이성현, 윤지후. 다음 회의 장소는 의왕시. 할 일: 자료를 gimseungmin@example.com 로 보낼 것. 직통 전화: +82 10-7842-4041.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이성현"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "윤지후"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "의왕시"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimseungmin@example.com"
+   },
+   {
+    "start": 84,
+    "end": 100,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7842-4041"
+   }
+  ]
+ },
+ {
+  "id": "ko-0071",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이지현 님이고, 주소는 공주시 입니다. 회신 전화는 +82 10-7896-9704 로 드리겠습니다. 등록된 카드 번호는 4243-5094-2521-6560 입니다. 사본은 hyeonsug28@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이지현"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "공주시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7896-9704"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4243-5094-2521-6560"
+   },
+   {
+    "start": 119,
+    "end": 141,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hyeonsug28@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0072",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이아름입니다. 다음 달 회의를 잡고 싶습니다. 장소는 부천시 오정구입니다. 연락처는 +82 10-7794-3556 이고, 이메일은 seongho51@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이아름"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "부천시 오정구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7794-3556"
+   },
+   {
+    "start": 86,
+    "end": 107,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongho51@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0073",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 안은지, 김서현. 다음 회의 장소는 예산군. 할 일: 자료를 sangceolhwang@example.org 로 보낼 것. 직통 전화: 01015858959.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "안은지"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김서현"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "예산군"
+   },
+   {
+    "start": 45,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sangceolhwang@example.org"
+   },
+   {
+    "start": 86,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01015858959"
+   }
+  ]
+ },
+ {
+  "id": "ko-0074",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이상훈 님이고, 주소는 수원시 장안구 입니다. 회신 전화는 01026427146 로 드리겠습니다. 등록된 카드 번호는 4481152467353164 입니다. 사본은 jungsugim@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이상훈"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "수원시 장안구"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01026427146"
+   },
+   {
+    "start": 89,
+    "end": 105,
+    "entity_type": "CREDIT_CARD",
+    "value": "4481152467353164"
+   },
+   {
+    "start": 115,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jungsugim@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0075",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김시우입니다. 다음 달 회의를 잡고 싶습니다. 장소는 용인시입니다. 연락처는 010-9831-2379 이고, 이메일은 yeongjasin@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김시우"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "용인시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9831-2379"
+   },
+   {
+    "start": 79,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongjasin@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0076",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 정수진, 김지영. 다음 회의 장소는 논산시. 할 일: 자료를 jihusin@example.com 로 보낼 것. 직통 전화: +82 10-4517-3938.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "정수진"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김지영"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "논산시"
+   },
+   {
+    "start": 45,
+    "end": 64,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jihusin@example.com"
+   },
+   {
+    "start": 80,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4517-3938"
+   }
+  ]
+ },
+ {
+  "id": "ko-0077",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이우진 님이고, 주소는 평택시 입니다. 회신 전화는 +82 10-3851-1033 로 드리겠습니다. 등록된 카드 번호는 4588-9781-2831-9018 입니다. 사본은 tcoe@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이우진"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "평택시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3851-1033"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4588-9781-2831-9018"
+   },
+   {
+    "start": 119,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tcoe@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0078",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 우지혜입니다. 다음 달 회의를 잡고 싶습니다. 장소는 계룡시입니다. 연락처는 +82 10-3780-5573 이고, 이메일은 songsujin@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "우지혜"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "계룡시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3780-5573"
+   },
+   {
+    "start": 82,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "songsujin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0079",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 문옥자, 김경자. 다음 회의 장소는 성남시 분당구. 할 일: 자료를 pbag@example.org 로 보낼 것. 직통 전화: +82 10-2957-7545.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "문옥자"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김경자"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "성남시 분당구"
+   },
+   {
+    "start": 49,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pbag@example.org"
+   },
+   {
+    "start": 81,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2957-7545"
+   }
+  ]
+ },
+ {
+  "id": "ko-0080",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박민재 님이고, 주소는 단양군 입니다. 회신 전화는 +82 10-8112-5737 로 드리겠습니다. 등록된 카드 번호는 4715-0633-9350-2014 입니다. 사본은 jihyeonjang@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박민재"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "단양군"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8112-5737"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4715-0633-9350-2014"
+   },
+   {
+    "start": 119,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jihyeonjang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0081",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이영숙입니다. 다음 달 회의를 잡고 싶습니다. 장소는 수원시 영통구입니다. 연락처는 +82 10-2614-4851 이고, 이메일은 sujin07@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이영숙"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "수원시 영통구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2614-4851"
+   },
+   {
+    "start": 86,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sujin07@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0082",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 윤지연, 서영환. 다음 회의 장소는 단양군. 할 일: 자료를 ihyeonjeong@example.net 로 보낼 것. 직통 전화: 010-6504-2628.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "윤지연"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "서영환"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "단양군"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ihyeonjeong@example.net"
+   },
+   {
+    "start": 84,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-6504-2628"
+   }
+  ]
+ },
+ {
+  "id": "ko-0083",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 구현준 님이고, 주소는 영월군 입니다. 회신 전화는 +82 10-9628-5301 로 드리겠습니다. 등록된 카드 번호는 4362-0691-5657-1654 입니다. 사본은 seongjingim@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "구현준"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "영월군"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9628-5301"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4362-0691-5657-1654"
+   },
+   {
+    "start": 119,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongjingim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0084",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이영수입니다. 다음 달 회의를 잡고 싶습니다. 장소는 홍천군입니다. 연락처는 +82 10-8818-1430 이고, 이메일은 siu32@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이영수"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "홍천군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8818-1430"
+   },
+   {
+    "start": 82,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "siu32@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0085",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이서현, 조성수. 다음 회의 장소는 음성군. 할 일: 자료를 sangceolo@example.com 로 보낼 것. 직통 전화: 010-7327-2302.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이서현"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "조성수"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "음성군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sangceolo@example.com"
+   },
+   {
+    "start": 82,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7327-2302"
+   }
+  ]
+ },
+ {
+  "id": "ko-0086",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김지영 님이고, 주소는 인제군 입니다. 회신 전화는 010-5907-8326 로 드리겠습니다. 등록된 카드 번호는 4460-4392-3426-7743 입니다. 사본은 seohyeongo@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김지영"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "인제군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-5907-8326"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4460-4392-3426-7743"
+   },
+   {
+    "start": 116,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seohyeongo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0087",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김주원입니다. 다음 달 회의를 잡고 싶습니다. 장소는 과천시입니다. 연락처는 010-2139-6337 이고, 이메일은 jieun32@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김주원"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "과천시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2139-6337"
+   },
+   {
+    "start": 79,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jieun32@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0088",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 문지영, 한종수. 다음 회의 장소는 여주시. 할 일: 자료를 jeongsig20@example.com 로 보낼 것. 직통 전화: 010-8557-6406.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "문지영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "한종수"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "여주시"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongsig20@example.com"
+   },
+   {
+    "start": 83,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8557-6406"
+   }
+  ]
+ },
+ {
+  "id": "ko-0089",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김정식 님이고, 주소는 파주시 입니다. 회신 전화는 010-8985-9489 로 드리겠습니다. 등록된 카드 번호는 4478-1331-2244-2753 입니다. 사본은 yeongjin36@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김정식"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8985-9489"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4478-1331-2244-2753"
+   },
+   {
+    "start": 116,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongjin36@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0090",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박경희입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안양시입니다. 연락처는 01059379780 이고, 이메일은 munareum@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박경희"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "안양시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01059379780"
+   },
+   {
+    "start": 77,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "munareum@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0091",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박윤서, 류현우. 다음 회의 장소는 고성군. 할 일: 자료를 sunogu@example.net 로 보낼 것. 직통 전화: +82 10-3877-6190.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박윤서"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "류현우"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "고성군"
+   },
+   {
+    "start": 45,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sunogu@example.net"
+   },
+   {
+    "start": 79,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3877-6190"
+   }
+  ]
+ },
+ {
+  "id": "ko-0092",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이예은 님이고, 주소는 하남시 입니다. 회신 전화는 010-3620-3179 로 드리겠습니다. 등록된 카드 번호는 4744359775010641 입니다. 사본은 jgim@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이예은"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "하남시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-3620-3179"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4744359775010641"
+   },
+   {
+    "start": 113,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jgim@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0093",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 조병철입니다. 다음 달 회의를 잡고 싶습니다. 장소는 고양시 일산동구입니다. 연락처는 010-1995-3031 이고, 이메일은 misug75@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "조병철"
+   },
+   {
+    "start": 43,
+    "end": 51,
+    "entity_type": "LOCATION",
+    "value": "고양시 일산동구"
+   },
+   {
+    "start": 61,
+    "end": 74,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-1995-3031"
+   },
+   {
+    "start": 84,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "misug75@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0094",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김도윤, 이영수. 다음 회의 장소는 청양군. 할 일: 자료를 minjaegim@example.net 로 보낼 것. 직통 전화: 01037178701.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김도윤"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이영수"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "청양군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minjaegim@example.net"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01037178701"
+   }
+  ]
+ },
+ {
+  "id": "ko-0095",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박서영 님이고, 주소는 파주시 입니다. 회신 전화는 010-2199-4143 로 드리겠습니다. 등록된 카드 번호는 4911503656096644 입니다. 사본은 seonyeongseong@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박서영"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2199-4143"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4911503656096644"
+   },
+   {
+    "start": 113,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seonyeongseong@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0096",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김상철입니다. 다음 달 회의를 잡고 싶습니다. 장소는 남양주시입니다. 연락처는 +82 10-6105-4222 이고, 이메일은 sanghogim@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김상철"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "남양주시"
+   },
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-6105-4222"
+   },
+   {
+    "start": 83,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghogim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0097",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박민석, 최건우. 다음 회의 장소는 용인시 수지구. 할 일: 자료를 casangceol@example.net 로 보낼 것. 직통 전화: 01088353926.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박민석"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "최건우"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "용인시 수지구"
+   },
+   {
+    "start": 49,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "casangceol@example.net"
+   },
+   {
+    "start": 87,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01088353926"
+   }
+  ]
+ },
+ {
+  "id": "ko-0098",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김승민 님이고, 주소는 안산시 상록구 입니다. 회신 전화는 010-2827-3398 로 드리겠습니다. 등록된 카드 번호는 4453054066963365 입니다. 사본은 gimjeongung@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김승민"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "안산시 상록구"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2827-3398"
+   },
+   {
+    "start": 91,
+    "end": 107,
+    "entity_type": "CREDIT_CARD",
+    "value": "4453054066963365"
+   },
+   {
+    "start": 117,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimjeongung@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0099",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 배성호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 의정부시입니다. 연락처는 +82 10-1704-5615 이고, 이메일은 xgim@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "배성호"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "의정부시"
+   },
+   {
+    "start": 57,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1704-5615"
+   },
+   {
+    "start": 83,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xgim@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0100",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 장경희, 나영희. 다음 회의 장소는 청주시 상당구. 할 일: 자료를 jiweon11@example.com 로 보낼 것. 직통 전화: +82 10-1592-4940.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "장경희"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "나영희"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "청주시 상당구"
+   },
+   {
+    "start": 49,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jiweon11@example.com"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1592-4940"
+   }
+  ]
+ },
+ {
+  "id": "ko-0101",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이영순 님이고, 주소는 당진시 입니다. 회신 전화는 +82 10-3837-5420 로 드리겠습니다. 등록된 카드 번호는 4305-2176-2720-2199 입니다. 사본은 areumi@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이영순"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "당진시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3837-5420"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4305-2176-2720-2199"
+   },
+   {
+    "start": 119,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "areumi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0102",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 강은정입니다. 다음 달 회의를 잡고 싶습니다. 장소는 천안시 서북구입니다. 연락처는 01021583455 이고, 이메일은 igyeonghyi@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "강은정"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "천안시 서북구"
+   },
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01021583455"
+   },
+   {
+    "start": 81,
+    "end": 103,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "igyeonghyi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0103",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 안주원, 한서연. 다음 회의 장소는 평창군. 할 일: 자료를 hwangmijeong@example.org 로 보낼 것. 직통 전화: 01051444173.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "안주원"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "한서연"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "평창군"
+   },
+   {
+    "start": 45,
+    "end": 69,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hwangmijeong@example.org"
+   },
+   {
+    "start": 85,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01051444173"
+   }
+  ]
+ },
+ {
+  "id": "ko-0104",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오상철 님이고, 주소는 부천시 원미구 입니다. 회신 전화는 +82 10-5350-5987 로 드리겠습니다. 등록된 카드 번호는 4958506778448845 입니다. 사본은 sanghuni@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오상철"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "부천시 원미구"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-5350-5987"
+   },
+   {
+    "start": 94,
+    "end": 110,
+    "entity_type": "CREDIT_CARD",
+    "value": "4958506778448845"
+   },
+   {
+    "start": 120,
+    "end": 140,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghuni@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0105",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 조민준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 의왕시입니다. 연락처는 01093967127 이고, 이메일은 hongjiyeon@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "조민준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "의왕시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01093967127"
+   },
+   {
+    "start": 77,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hongjiyeon@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0106",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이영호, 송정순. 다음 회의 장소는 홍성군. 할 일: 자료를 seohyeonan@example.com 로 보낼 것. 직통 전화: 01049476033.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이영호"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "송정순"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "홍성군"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seohyeonan@example.com"
+   },
+   {
+    "start": 83,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01049476033"
+   }
+  ]
+ },
+ {
+  "id": "ko-0107",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오경수 님이고, 주소는 하남시 입니다. 회신 전화는 01045203844 로 드리겠습니다. 등록된 카드 번호는 4590604245032716 입니다. 사본은 mgim@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오경수"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "하남시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01045203844"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4590604245032716"
+   },
+   {
+    "start": 111,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mgim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0108",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 진민서입니다. 다음 달 회의를 잡고 싶습니다. 장소는 고양시입니다. 연락처는 01073538950 이고, 이메일은 gimjeongung@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "진민서"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "고양시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01073538950"
+   },
+   {
+    "start": 77,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimjeongung@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0109",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김옥순, 이영진. 다음 회의 장소는 고양시 덕양구. 할 일: 자료를 dmin@example.org 로 보낼 것. 직통 전화: 010-5464-9174.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김옥순"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이영진"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "고양시 덕양구"
+   },
+   {
+    "start": 49,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dmin@example.org"
+   },
+   {
+    "start": 81,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-5464-9174"
+   }
+  ]
+ },
+ {
+  "id": "ko-0110",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오서윤 님이고, 주소는 포천시 입니다. 회신 전화는 01026912806 로 드리겠습니다. 등록된 카드 번호는 4901043728517840 입니다. 사본은 gimogja@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오서윤"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "포천시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01026912806"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4901043728517840"
+   },
+   {
+    "start": 111,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimogja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0111",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 강정숙입니다. 다음 달 회의를 잡고 싶습니다. 장소는 부천시 소사구입니다. 연락처는 010-9473-1201 이고, 이메일은 jheo@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "강정숙"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "부천시 소사구"
+   },
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9473-1201"
+   },
+   {
+    "start": 83,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jheo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0112",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 오윤서, 고종수. 다음 회의 장소는 수원시. 할 일: 자료를 donghyeoni@example.com 로 보낼 것. 직통 전화: 010-2172-7257.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "오윤서"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "고종수"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "수원시"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "donghyeoni@example.com"
+   },
+   {
+    "start": 83,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2172-7257"
+   }
+  ]
+ },
+ {
+  "id": "ko-0113",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 문예원 님이고, 주소는 서산시 입니다. 회신 전화는 +82 10-8998-9211 로 드리겠습니다. 등록된 카드 번호는 4907766436706503 입니다. 사본은 hanjinu@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "문예원"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "서산시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8998-9211"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4907766436706503"
+   },
+   {
+    "start": 116,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hanjinu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0114",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 조서준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 증평군입니다. 연락처는 010-5905-2642 이고, 이메일은 zgim@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "조서준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "증평군"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-5905-2642"
+   },
+   {
+    "start": 79,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zgim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0115",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박진호, 박민준. 다음 회의 장소는 부천시 오정구. 할 일: 자료를 cgim@example.com 로 보낼 것. 직통 전화: +82 10-9334-4319.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박진호"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "박민준"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "부천시 오정구"
+   },
+   {
+    "start": 49,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cgim@example.com"
+   },
+   {
+    "start": 81,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9334-4319"
+   }
+  ]
+ },
+ {
+  "id": "ko-0116",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 한미숙 님이고, 주소는 인제군 입니다. 회신 전화는 010-8785-4738 로 드리겠습니다. 등록된 카드 번호는 4869-0239-2280-2115 입니다. 사본은 minseo16@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "한미숙"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "인제군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8785-4738"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4869-0239-2280-2115"
+   },
+   {
+    "start": 116,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minseo16@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0117",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김준서입니다. 다음 달 회의를 잡고 싶습니다. 장소는 고양시 덕양구입니다. 연락처는 +82 10-5840-5423 이고, 이메일은 cunja92@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김준서"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "고양시 덕양구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-5840-5423"
+   },
+   {
+    "start": 86,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cunja92@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0118",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 최혜진, 김도윤. 다음 회의 장소는 연천군. 할 일: 자료를 hyejingim@example.com 로 보낼 것. 직통 전화: 010-2698-7398.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "최혜진"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김도윤"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "연천군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hyejingim@example.com"
+   },
+   {
+    "start": 82,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2698-7398"
+   }
+  ]
+ },
+ {
+  "id": "ko-0119",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오상호 님이고, 주소는 천안시 동남구 입니다. 회신 전화는 01087517673 로 드리겠습니다. 등록된 카드 번호는 4842209164985161 입니다. 사본은 jeonghogim@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오상호"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "천안시 동남구"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01087517673"
+   },
+   {
+    "start": 89,
+    "end": 105,
+    "entity_type": "CREDIT_CARD",
+    "value": "4842209164985161"
+   },
+   {
+    "start": 115,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeonghogim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0120",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이혜진입니다. 다음 달 회의를 잡고 싶습니다. 장소는 서천군입니다. 연락처는 01034753962 이고, 이메일은 iyeonghyi@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이혜진"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "서천군"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01034753962"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "iyeonghyi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0121",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 강서영, 이지혜. 다음 회의 장소는 부천시 오정구. 할 일: 자료를 seunghyeonbae@example.com 로 보낼 것. 직통 전화: 010-8957-1318.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "강서영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이지혜"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "부천시 오정구"
+   },
+   {
+    "start": 49,
+    "end": 74,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seunghyeonbae@example.com"
+   },
+   {
+    "start": 90,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8957-1318"
+   }
+  ]
+ },
+ {
+  "id": "ko-0122",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이건우 님이고, 주소는 용인시 입니다. 회신 전화는 +82 10-1635-3909 로 드리겠습니다. 등록된 카드 번호는 4857064029502582 입니다. 사본은 seongho75@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이건우"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "용인시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1635-3909"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4857064029502582"
+   },
+   {
+    "start": 116,
+    "end": 137,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongho75@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0123",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박수민입니다. 다음 달 회의를 잡고 싶습니다. 장소는 태백시입니다. 연락처는 +82 10-9612-7008 이고, 이메일은 gimminsu@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박수민"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "태백시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9612-7008"
+   },
+   {
+    "start": 82,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimminsu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0124",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 홍정자, 김영진. 다음 회의 장소는 홍천군. 할 일: 자료를 minseoggim@example.net 로 보낼 것. 직통 전화: +82 10-4444-1529.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "홍정자"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김영진"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "홍천군"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minseoggim@example.net"
+   },
+   {
+    "start": 83,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4444-1529"
+   }
+  ]
+ },
+ {
+  "id": "ko-0125",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 윤영진 님이고, 주소는 양주시 입니다. 회신 전화는 01018552180 로 드리겠습니다. 등록된 카드 번호는 4192286813974727 입니다. 사본은 dgim@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "윤영진"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양주시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01018552180"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4192286813974727"
+   },
+   {
+    "start": 111,
+    "end": 127,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dgim@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0126",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 최정수입니다. 다음 달 회의를 잡고 싶습니다. 장소는 평택시입니다. 연락처는 +82 10-2512-8699 이고, 이메일은 seongjinjo@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "최정수"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "평택시"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2512-8699"
+   },
+   {
+    "start": 82,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongjinjo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0127",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 주준호, 김미정. 다음 회의 장소는 음성군. 할 일: 자료를 junseoyun@example.net 로 보낼 것. 직통 전화: 01070593453.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "주준호"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김미정"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "음성군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junseoyun@example.net"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01070593453"
+   }
+  ]
+ },
+ {
+  "id": "ko-0128",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 류서영 님이고, 주소는 안산시 단원구 입니다. 회신 전화는 +82 10-4443-2400 로 드리겠습니다. 등록된 카드 번호는 4122-2917-1681-4009 입니다. 사본은 seonghogang@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "류서영"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "안산시 단원구"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4443-2400"
+   },
+   {
+    "start": 94,
+    "end": 113,
+    "entity_type": "CREDIT_CARD",
+    "value": "4122-2917-1681-4009"
+   },
+   {
+    "start": 123,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seonghogang@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0129",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 최영길입니다. 다음 달 회의를 잡고 싶습니다. 장소는 동두천시입니다. 연락처는 01096294586 이고, 이메일은 yeeun59@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "최영길"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "동두천시"
+   },
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01096294586"
+   },
+   {
+    "start": 78,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeeun59@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0130",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김서영, 이수진. 다음 회의 장소는 안양시 동안구. 할 일: 자료를 jeongsunnam@example.com 로 보낼 것. 직통 전화: 010-3851-5421.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김서영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이수진"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "안양시 동안구"
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongsunnam@example.com"
+   },
+   {
+    "start": 88,
+    "end": 101,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-3851-5421"
+   }
+  ]
+ },
+ {
+  "id": "ko-0131",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박지원 님이고, 주소는 삼척시 입니다. 회신 전화는 010-9815-4865 로 드리겠습니다. 등록된 카드 번호는 4376501791434181 입니다. 사본은 rbag@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박지원"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "삼척시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9815-4865"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4376501791434181"
+   },
+   {
+    "start": 113,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rbag@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0132",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김순자입니다. 다음 달 회의를 잡고 싶습니다. 장소는 수원시 권선구입니다. 연락처는 01028324375 이고, 이메일은 eungyeong99@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김순자"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "수원시 권선구"
+   },
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01028324375"
+   },
+   {
+    "start": 81,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eungyeong99@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0133",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이민지, 권현숙. 다음 회의 장소는 안양시. 할 일: 자료를 gimsugja@example.net 로 보낼 것. 직통 전화: 01043562035.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이민지"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "권현숙"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "안양시"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimsugja@example.net"
+   },
+   {
+    "start": 81,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01043562035"
+   }
+  ]
+ },
+ {
+  "id": "ko-0134",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이미정 님이고, 주소는 청양군 입니다. 회신 전화는 01020469101 로 드리겠습니다. 등록된 카드 번호는 4276-7824-9271-4169 입니다. 사본은 yejun73@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이미정"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "청양군"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01020469101"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4276-7824-9271-4169"
+   },
+   {
+    "start": 114,
+    "end": 133,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yejun73@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0135",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김옥자입니다. 다음 달 회의를 잡고 싶습니다. 장소는 홍천군입니다. 연락처는 +82 10-9130-7207 이고, 이메일은 jiyeongcoe@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김옥자"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "홍천군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9130-7207"
+   },
+   {
+    "start": 82,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jiyeongcoe@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0136",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김현우, 이승현. 다음 회의 장소는 수원시. 할 일: 자료를 osanghun@example.net 로 보낼 것. 직통 전화: 01013908429.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김현우"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이승현"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "수원시"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "osanghun@example.net"
+   },
+   {
+    "start": 81,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01013908429"
+   }
+  ]
+ },
+ {
+  "id": "ko-0137",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이유진 님이고, 주소는 동해시 입니다. 회신 전화는 01018677958 로 드리겠습니다. 등록된 카드 번호는 4232-4533-5087-1417 입니다. 사본은 siuheo@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이유진"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "동해시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01018677958"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4232-4533-5087-1417"
+   },
+   {
+    "start": 114,
+    "end": 132,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "siuheo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0138",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김수빈입니다. 다음 달 회의를 잡고 싶습니다. 장소는 고양시 덕양구입니다. 연락처는 01095357610 이고, 이메일은 yujinu@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김수빈"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "고양시 덕양구"
+   },
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01095357610"
+   },
+   {
+    "start": 81,
+    "end": 99,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yujinu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0139",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박주원, 김재현. 다음 회의 장소는 안산시 단원구. 할 일: 자료를 yeongsug05@example.net 로 보낼 것. 직통 전화: +82 10-2924-2654.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박주원"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김재현"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "안산시 단원구"
+   },
+   {
+    "start": 49,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongsug05@example.net"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-2924-2654"
+   }
+  ]
+ },
+ {
+  "id": "ko-0140",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이상철 님이고, 주소는 화천군 입니다. 회신 전화는 010-5880-4151 로 드리겠습니다. 등록된 카드 번호는 4518-0424-9666-8251 입니다. 사본은 jaehyeonseo@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이상철"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "화천군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-5880-4151"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4518-0424-9666-8251"
+   },
+   {
+    "start": 116,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jaehyeonseo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0141",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 황준서입니다. 다음 달 회의를 잡고 싶습니다. 장소는 의정부시입니다. 연락처는 01061843022 이고, 이메일은 hansubin@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "황준서"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "의정부시"
+   },
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01061843022"
+   },
+   {
+    "start": 78,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hansubin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0142",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 임성민, 심민석. 다음 회의 장소는 고성군. 할 일: 자료를 seojun19@example.org 로 보낼 것. 직통 전화: 010-9237-9073.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "임성민"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "심민석"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "고성군"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seojun19@example.org"
+   },
+   {
+    "start": 81,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9237-9073"
+   }
+  ]
+ },
+ {
+  "id": "ko-0143",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 최재호 님이고, 주소는 남양주시 입니다. 회신 전화는 01026073177 로 드리겠습니다. 등록된 카드 번호는 4419-7436-6638-2033 입니다. 사본은 bagujin@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "최재호"
+   },
+   {
+    "start": 36,
+    "end": 40,
+    "entity_type": "LOCATION",
+    "value": "남양주시"
+   },
+   {
+    "start": 53,
+    "end": 64,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01026073177"
+   },
+   {
+    "start": 86,
+    "end": 105,
+    "entity_type": "CREDIT_CARD",
+    "value": "4419-7436-6638-2033"
+   },
+   {
+    "start": 115,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bagujin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0144",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박순옥입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안양시 만안구입니다. 연락처는 +82 10-1262-9637 이고, 이메일은 noseongjin@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박순옥"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "안양시 만안구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1262-9637"
+   },
+   {
+    "start": 86,
+    "end": 108,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "noseongjin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0145",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박명자, 한예은. 다음 회의 장소는 청주시 상당구. 할 일: 자료를 myeongja67@example.com 로 보낼 것. 직통 전화: +82 10-9876-9636.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박명자"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "한예은"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "청주시 상당구"
+   },
+   {
+    "start": 49,
+    "end": 71,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "myeongja67@example.com"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9876-9636"
+   }
+  ]
+ },
+ {
+  "id": "ko-0146",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 홍민재 님이고, 주소는 성남시 입니다. 회신 전화는 010-9658-9708 로 드리겠습니다. 등록된 카드 번호는 4355387408447765 입니다. 사본은 ugim@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "홍민재"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "성남시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9658-9708"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4355387408447765"
+   },
+   {
+    "start": 113,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ugim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0147",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 윤영진입니다. 다음 달 회의를 잡고 싶습니다. 장소는 인제군입니다. 연락처는 +82 10-7524-3589 이고, 이메일은 coemyeongja@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "윤영진"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "인제군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7524-3589"
+   },
+   {
+    "start": 82,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "coemyeongja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0148",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이미영, 강병철. 다음 회의 장소는 시흥시. 할 일: 자료를 yeonghyigim@example.org 로 보낼 것. 직통 전화: 01063802004.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이미영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "강병철"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "시흥시"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeonghyigim@example.org"
+   },
+   {
+    "start": 84,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01063802004"
+   }
+  ]
+ },
+ {
+  "id": "ko-0149",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 조정자 님이고, 주소는 이천시 입니다. 회신 전화는 01022153637 로 드리겠습니다. 등록된 카드 번호는 4998638907151370 입니다. 사본은 gimbyeongceol@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "조정자"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "이천시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01022153637"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4998638907151370"
+   },
+   {
+    "start": 111,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimbyeongceol@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0150",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 권경수입니다. 다음 달 회의를 잡고 싶습니다. 장소는 파주시입니다. 연락처는 010-7522-4355 이고, 이메일은 seoyeonggim@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "권경수"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7522-4355"
+   },
+   {
+    "start": 79,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seoyeonggim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0151",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박영호, 안민준. 다음 회의 장소는 보은군. 할 일: 자료를 caeweon33@example.org 로 보낼 것. 직통 전화: 01021686027.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박영호"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "안민준"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "보은군"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caeweon33@example.org"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01021686027"
+   }
+  ]
+ },
+ {
+  "id": "ko-0152",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김종수 님이고, 주소는 금산군 입니다. 회신 전화는 +82 10-9604-1303 로 드리겠습니다. 등록된 카드 번호는 4722694568772502 입니다. 사본은 myeongjabae@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김종수"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "금산군"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9604-1303"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4722694568772502"
+   },
+   {
+    "start": 116,
+    "end": 139,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "myeongjabae@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0153",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김준호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 화천군입니다. 연락처는 +82 10-3684-6778 이고, 이메일은 yunseo06@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김준호"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "화천군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3684-6778"
+   },
+   {
+    "start": 82,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yunseo06@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0154",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박민지, 김서연. 다음 회의 장소는 원주시. 할 일: 자료를 mijeonggim@example.com 로 보낼 것. 직통 전화: +82 10-4287-6674.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박민지"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김서연"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "원주시"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mijeonggim@example.com"
+   },
+   {
+    "start": 83,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-4287-6674"
+   }
+  ]
+ },
+ {
+  "id": "ko-0155",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김예은 님이고, 주소는 영동군 입니다. 회신 전화는 010-1923-5075 로 드리겠습니다. 등록된 카드 번호는 4204335426573115 입니다. 사본은 junyeongson@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김예은"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "영동군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-1923-5075"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4204335426573115"
+   },
+   {
+    "start": 113,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "junyeongson@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0156",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김영식입니다. 다음 달 회의를 잡고 싶습니다. 장소는 옥천군입니다. 연락처는 010-8976-2866 이고, 이메일은 jeongung89@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김영식"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "옥천군"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-8976-2866"
+   },
+   {
+    "start": 79,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongung89@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0157",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이영길, 김영진. 다음 회의 장소는 수원시. 할 일: 자료를 imcaeweon@example.org 로 보낼 것. 직통 전화: 01063492933.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이영길"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김영진"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "수원시"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "imcaeweon@example.org"
+   },
+   {
+    "start": 82,
+    "end": 93,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01063492933"
+   }
+  ]
+ },
+ {
+  "id": "ko-0158",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 최명자 님이고, 주소는 옥천군 입니다. 회신 전화는 010-4621-2980 로 드리겠습니다. 등록된 카드 번호는 4909-6411-3343-5854 입니다. 사본은 jeongsug13@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "최명자"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "옥천군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-4621-2980"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4909-6411-3343-5854"
+   },
+   {
+    "start": 116,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongsug13@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0159",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 최준호입니다. 다음 달 회의를 잡고 싶습니다. 장소는 양구군입니다. 연락처는 010-2791-3117 이고, 이메일은 sanghyeon21@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "최준호"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "양구군"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2791-3117"
+   },
+   {
+    "start": 79,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sanghyeon21@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0160",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 유지훈, 강현준. 다음 회의 장소는 서산시. 할 일: 자료를 hyeonu55@example.net 로 보낼 것. 직통 전화: +82 10-8759-1073.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "유지훈"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "강현준"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "서산시"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hyeonu55@example.net"
+   },
+   {
+    "start": 81,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8759-1073"
+   }
+  ]
+ },
+ {
+  "id": "ko-0161",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김정희 님이고, 주소는 보은군 입니다. 회신 전화는 +82 10-6083-4766 로 드리겠습니다. 등록된 카드 번호는 4309-0216-9613-5447 입니다. 사본은 songjunhyeog@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김정희"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "보은군"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-6083-4766"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4309-0216-9613-5447"
+   },
+   {
+    "start": 119,
+    "end": 143,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "songjunhyeog@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0162",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 윤영숙입니다. 다음 달 회의를 잡고 싶습니다. 장소는 청양군입니다. 연락처는 010-7982-2159 이고, 이메일은 gimhyeonju@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "윤영숙"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "청양군"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7982-2159"
+   },
+   {
+    "start": 79,
+    "end": 101,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimhyeonju@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0163",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박현정, 박현지. 다음 회의 장소는 수원시 장안구. 할 일: 자료를 bcoe@example.net 로 보낼 것. 직통 전화: 01081063081.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박현정"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "박현지"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "수원시 장안구"
+   },
+   {
+    "start": 49,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bcoe@example.net"
+   },
+   {
+    "start": 81,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01081063081"
+   }
+  ]
+ },
+ {
+  "id": "ko-0164",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김수민 님이고, 주소는 양양군 입니다. 회신 전화는 010-9892-2885 로 드리겠습니다. 등록된 카드 번호는 4782343684403926 입니다. 사본은 ggim@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김수민"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양양군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9892-2885"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4782343684403926"
+   },
+   {
+    "start": 113,
+    "end": 129,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ggim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0165",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 이서준입니다. 다음 달 회의를 잡고 싶습니다. 장소는 논산시입니다. 연락처는 01076632312 이고, 이메일은 yejingang@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "이서준"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "논산시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01076632312"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yejingang@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0166",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김상철, 장성민. 다음 회의 장소는 파주시. 할 일: 자료를 juweongim@example.com 로 보낼 것. 직통 전화: +82 10-1969-8834.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김상철"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "장성민"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "파주시"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "juweongim@example.com"
+   },
+   {
+    "start": 82,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1969-8834"
+   }
+  ]
+ },
+ {
+  "id": "ko-0167",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김준영 님이고, 주소는 군포시 입니다. 회신 전화는 01089692795 로 드리겠습니다. 등록된 카드 번호는 4634423760085712 입니다. 사본은 yejun34@example.org 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김준영"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "군포시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01089692795"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4634423760085712"
+   },
+   {
+    "start": 111,
+    "end": 130,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yejun34@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0168",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 배상훈입니다. 다음 달 회의를 잡고 싶습니다. 장소는 영월군입니다. 연락처는 +82 10-9704-5839 이고, 이메일은 jeongsun78@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "배상훈"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "영월군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-9704-5839"
+   },
+   {
+    "start": 82,
+    "end": 104,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongsun78@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0169",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 권상철, 허진호. 다음 회의 장소는 양주시. 할 일: 자료를 gimseunghyeon@example.org 로 보낼 것. 직통 전화: 01052572286.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "권상철"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "허진호"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "양주시"
+   },
+   {
+    "start": 45,
+    "end": 70,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimseunghyeon@example.org"
+   },
+   {
+    "start": 86,
+    "end": 97,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01052572286"
+   }
+  ]
+ },
+ {
+  "id": "ko-0170",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 윤건우 님이고, 주소는 여주시 입니다. 회신 전화는 01050657783 로 드리겠습니다. 등록된 카드 번호는 4525-0133-5949-9572 입니다. 사본은 minjun17@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "윤건우"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "여주시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01050657783"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4525-0133-5949-9572"
+   },
+   {
+    "start": 114,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "minjun17@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0171",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 최영환입니다. 다음 달 회의를 잡고 싶습니다. 장소는 의정부시입니다. 연락처는 01080052455 이고, 이메일은 gweonsunja@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "최영환"
+   },
+   {
+    "start": 43,
+    "end": 47,
+    "entity_type": "LOCATION",
+    "value": "의정부시"
+   },
+   {
+    "start": 57,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01080052455"
+   },
+   {
+    "start": 78,
+    "end": 100,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gweonsunja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0172",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김은지, 이춘자. 다음 회의 장소는 철원군. 할 일: 자료를 gimyejin@example.com 로 보낼 것. 직통 전화: 01068258749.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김은지"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "이춘자"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "철원군"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimyejin@example.com"
+   },
+   {
+    "start": 81,
+    "end": 92,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01068258749"
+   }
+  ]
+ },
+ {
+  "id": "ko-0173",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박옥자 님이고, 주소는 수원시 장안구 입니다. 회신 전화는 01067907596 로 드리겠습니다. 등록된 카드 번호는 4591008821044120 입니다. 사본은 qryu@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박옥자"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "수원시 장안구"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01067907596"
+   },
+   {
+    "start": 89,
+    "end": 105,
+    "entity_type": "CREDIT_CARD",
+    "value": "4591008821044120"
+   },
+   {
+    "start": 115,
+    "end": 131,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qryu@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0174",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 백서연입니다. 다음 달 회의를 잡고 싶습니다. 장소는 부천시 오정구입니다. 연락처는 01053353639 이고, 이메일은 ijeongsig@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "백서연"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "부천시 오정구"
+   },
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01053353639"
+   },
+   {
+    "start": 81,
+    "end": 102,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ijeongsig@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0175",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 문은영, 윤도윤. 다음 회의 장소는 양평군. 할 일: 자료를 ogja39@example.org 로 보낼 것. 직통 전화: +82 10-7949-4295.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "문은영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "윤도윤"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "양평군"
+   },
+   {
+    "start": 45,
+    "end": 63,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ogja39@example.org"
+   },
+   {
+    "start": 79,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-7949-4295"
+   }
+  ]
+ },
+ {
+  "id": "ko-0176",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김상호 님이고, 주소는 양양군 입니다. 회신 전화는 01089634417 로 드리겠습니다. 등록된 카드 번호는 4216-4001-4057-0676 입니다. 사본은 yejinsim@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김상호"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양양군"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01089634417"
+   },
+   {
+    "start": 85,
+    "end": 104,
+    "entity_type": "CREDIT_CARD",
+    "value": "4216-4001-4057-0676"
+   },
+   {
+    "start": 114,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yejinsim@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0177",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김정남입니다. 다음 달 회의를 잡고 싶습니다. 장소는 천안시 동남구입니다. 연락처는 +82 10-5324-9258 이고, 이메일은 haeun77@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김정남"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "천안시 동남구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-5324-9258"
+   },
+   {
+    "start": 86,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haeun77@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0178",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 이수민, 김정식. 다음 회의 장소는 서천군. 할 일: 자료를 tseo@example.org 로 보낼 것. 직통 전화: 01094983562.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "이수민"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김정식"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "서천군"
+   },
+   {
+    "start": 45,
+    "end": 61,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tseo@example.org"
+   },
+   {
+    "start": 77,
+    "end": 88,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01094983562"
+   }
+  ]
+ },
+ {
+  "id": "ko-0179",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김현우 님이고, 주소는 평창군 입니다. 회신 전화는 010-7832-2129 로 드리겠습니다. 등록된 카드 번호는 4418-0387-0378-0732 입니다. 사본은 haeuneom@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김현우"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "평창군"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7832-2129"
+   },
+   {
+    "start": 87,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4418-0387-0378-0732"
+   },
+   {
+    "start": 116,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "haeuneom@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0180",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 강영희입니다. 다음 달 회의를 잡고 싶습니다. 장소는 철원군입니다. 연락처는 +82 10-6822-3068 이고, 이메일은 gyeongjagim@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "강영희"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "철원군"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-6822-3068"
+   },
+   {
+    "start": 82,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gyeongjagim@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0181",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 권준영, 홍옥자. 다음 회의 장소는 홍성군. 할 일: 자료를 seongjingim@example.net 로 보낼 것. 직통 전화: 01043528475.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "권준영"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "홍옥자"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "홍성군"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seongjingim@example.net"
+   },
+   {
+    "start": 84,
+    "end": 95,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01043528475"
+   }
+  ]
+ },
+ {
+  "id": "ko-0182",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 김현숙 님이고, 주소는 양평군 입니다. 회신 전화는 +82 10-3739-6810 로 드리겠습니다. 등록된 카드 번호는 4005-2250-9596-3633 입니다. 사본은 yejin43@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "김현숙"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "양평군"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-3739-6810"
+   },
+   {
+    "start": 90,
+    "end": 109,
+    "entity_type": "CREDIT_CARD",
+    "value": "4005-2250-9596-3633"
+   },
+   {
+    "start": 119,
+    "end": 138,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yejin43@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0183",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김지우입니다. 다음 달 회의를 잡고 싶습니다. 장소는 청주시 청원구입니다. 연락처는 +82 10-1586-4650 이고, 이메일은 gimujin@example.com 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김지우"
+   },
+   {
+    "start": 43,
+    "end": 50,
+    "entity_type": "LOCATION",
+    "value": "청주시 청원구"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1586-4650"
+   },
+   {
+    "start": 86,
+    "end": 105,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimujin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0184",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박예은, 김순옥. 다음 회의 장소는 남양주시. 할 일: 자료를 hbag@example.com 로 보낼 것. 직통 전화: +82 10-1479-7500.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박예은"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "김순옥"
+   },
+   {
+    "start": 31,
+    "end": 35,
+    "entity_type": "LOCATION",
+    "value": "남양주시"
+   },
+   {
+    "start": 46,
+    "end": 62,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hbag@example.com"
+   },
+   {
+    "start": 78,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1479-7500"
+   }
+  ]
+ },
+ {
+  "id": "ko-0185",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 오정훈 님이고, 주소는 성남시 중원구 입니다. 회신 전화는 +82 10-8384-7324 로 드리겠습니다. 등록된 카드 번호는 4024-8931-1097-4971 입니다. 사본은 gimgyeongja@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "오정훈"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "성남시 중원구"
+   },
+   {
+    "start": 56,
+    "end": 72,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-8384-7324"
+   },
+   {
+    "start": 94,
+    "end": 113,
+    "entity_type": "CREDIT_CARD",
+    "value": "4024-8931-1097-4971"
+   },
+   {
+    "start": 123,
+    "end": 146,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimgyeongja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0186",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 손상철입니다. 다음 달 회의를 잡고 싶습니다. 장소는 삼척시입니다. 연락처는 01084946308 이고, 이메일은 bagdoyun@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "손상철"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "삼척시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01084946308"
+   },
+   {
+    "start": 77,
+    "end": 97,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bagdoyun@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0187",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박춘자, 지성수. 다음 회의 장소는 계룡시. 할 일: 자료를 sinminseog@example.net 로 보낼 것. 직통 전화: 010-3394-5204.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박춘자"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "지성수"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "계룡시"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sinminseog@example.net"
+   },
+   {
+    "start": 83,
+    "end": 96,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-3394-5204"
+   }
+  ]
+ },
+ {
+  "id": "ko-0188",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이하윤 님이고, 주소는 광명시 입니다. 회신 전화는 010-2430-7531 로 드리겠습니다. 등록된 카드 번호는 4031758841094905 입니다. 사본은 jimyeongja@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이하윤"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "광명시"
+   },
+   {
+    "start": 52,
+    "end": 65,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-2430-7531"
+   },
+   {
+    "start": 87,
+    "end": 103,
+    "entity_type": "CREDIT_CARD",
+    "value": "4031758841094905"
+   },
+   {
+    "start": 113,
+    "end": 135,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jimyeongja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0189",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 심순옥입니다. 다음 달 회의를 잡고 싶습니다. 장소는 안성시입니다. 연락처는 010-7338-2810 이고, 이메일은 jiu32@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "심순옥"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "안성시"
+   },
+   {
+    "start": 56,
+    "end": 69,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-7338-2810"
+   },
+   {
+    "start": 79,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jiu32@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0190",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 안진우, 권영숙. 다음 회의 장소는 안성시. 할 일: 자료를 gwangsu75@example.com 로 보낼 것. 직통 전화: +82 10-5027-4790.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "안진우"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "권영숙"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "안성시"
+   },
+   {
+    "start": 45,
+    "end": 66,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gwangsu75@example.com"
+   },
+   {
+    "start": 82,
+    "end": 98,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-5027-4790"
+   }
+  ]
+ },
+ {
+  "id": "ko-0191",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박수빈 님이고, 주소는 당진시 입니다. 회신 전화는 +82 10-1606-7357 로 드리겠습니다. 등록된 카드 번호는 4438234237606644 입니다. 사본은 sunogbag@example.net 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박수빈"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "당진시"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+82 10-1606-7357"
+   },
+   {
+    "start": 90,
+    "end": 106,
+    "entity_type": "CREDIT_CARD",
+    "value": "4438234237606644"
+   },
+   {
+    "start": 116,
+    "end": 136,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sunogbag@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0192",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 김은서입니다. 다음 달 회의를 잡고 싶습니다. 장소는 당진시입니다. 연락처는 01093146409 이고, 이메일은 subini@example.org 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "김은서"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "당진시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01093146409"
+   },
+   {
+    "start": 77,
+    "end": 95,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "subini@example.org"
+   }
+  ]
+ },
+ {
+  "id": "ko-0193",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 김옥자, 민준서. 다음 회의 장소는 고양시 덕양구. 할 일: 자료를 yeongsughan@example.net 로 보낼 것. 직통 전화: 01018746714.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "김옥자"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "민준서"
+   },
+   {
+    "start": 31,
+    "end": 38,
+    "entity_type": "LOCATION",
+    "value": "고양시 덕양구"
+   },
+   {
+    "start": 49,
+    "end": 72,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yeongsughan@example.net"
+   },
+   {
+    "start": 88,
+    "end": 99,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01018746714"
+   }
+  ]
+ },
+ {
+  "id": "ko-0194",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 박수빈 님이고, 주소는 용인시 수지구 입니다. 회신 전화는 01036316872 로 드리겠습니다. 등록된 카드 번호는 4593-6523-9362-9350 입니다. 사본은 jeonjeonghyi@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "박수빈"
+   },
+   {
+    "start": 36,
+    "end": 43,
+    "entity_type": "LOCATION",
+    "value": "용인시 수지구"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01036316872"
+   },
+   {
+    "start": 89,
+    "end": 108,
+    "entity_type": "CREDIT_CARD",
+    "value": "4593-6523-9362-9350"
+   },
+   {
+    "start": 118,
+    "end": 142,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeonjeonghyi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0195",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 박정남입니다. 다음 달 회의를 잡고 싶습니다. 장소는 양양군입니다. 연락처는 01026363423 이고, 이메일은 jieun31@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "박정남"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "양양군"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01026363423"
+   },
+   {
+    "start": 77,
+    "end": 96,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jieun31@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0196",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 나지아, 전준서. 다음 회의 장소는 부천시. 할 일: 자료를 kan@example.net 로 보낼 것. 직통 전화: 010-9291-7747.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "나지아"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "전준서"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "부천시"
+   },
+   {
+    "start": 45,
+    "end": 60,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kan@example.net"
+   },
+   {
+    "start": 76,
+    "end": 89,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-9291-7747"
+   }
+  ]
+ },
+ {
+  "id": "ko-0197",
+  "language": "ko",
+  "genre": "inquiry",
+  "text": "문의해 주셔서 감사합니다. 등록된 성함은 이예은 님이고, 주소는 오산시 입니다. 회신 전화는 01052201517 로 드리겠습니다. 등록된 카드 번호는 4895589962740363 입니다. 사본은 baggyeongja@example.com 로 발송되었습니다.",
+  "spans": [
+   {
+    "start": 23,
+    "end": 26,
+    "entity_type": "PERSON",
+    "value": "이예은"
+   },
+   {
+    "start": 36,
+    "end": 39,
+    "entity_type": "LOCATION",
+    "value": "오산시"
+   },
+   {
+    "start": 52,
+    "end": 63,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01052201517"
+   },
+   {
+    "start": 85,
+    "end": 101,
+    "entity_type": "CREDIT_CARD",
+    "value": "4895589962740363"
+   },
+   {
+    "start": 111,
+    "end": 134,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "baggyeongja@example.com"
+   }
+  ]
+ },
+ {
+  "id": "ko-0198",
+  "language": "ko",
+  "genre": "request",
+  "text": "안녕하세요, 제 이름은 오도윤입니다. 다음 달 회의를 잡고 싶습니다. 장소는 강릉시입니다. 연락처는 01058997058 이고, 이메일은 jeongnami@example.net 입니다. 감사합니다!",
+  "spans": [
+   {
+    "start": 13,
+    "end": 16,
+    "entity_type": "PERSON",
+    "value": "오도윤"
+   },
+   {
+    "start": 43,
+    "end": 46,
+    "entity_type": "LOCATION",
+    "value": "강릉시"
+   },
+   {
+    "start": 56,
+    "end": 67,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01058997058"
+   },
+   {
+    "start": 77,
+    "end": 98,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jeongnami@example.net"
+   }
+  ]
+ },
+ {
+  "id": "ko-0199",
+  "language": "ko",
+  "genre": "minutes",
+  "text": "[회의록] 참석자: 박우진, 한보람. 다음 회의 장소는 서산시. 할 일: 자료를 gimsubin@example.com 로 보낼 것. 직통 전화: 010-3326-9826.",
+  "spans": [
+   {
+    "start": 11,
+    "end": 14,
+    "entity_type": "PERSON",
+    "value": "박우진"
+   },
+   {
+    "start": 16,
+    "end": 19,
+    "entity_type": "PERSON",
+    "value": "한보람"
+   },
+   {
+    "start": 31,
+    "end": 34,
+    "entity_type": "LOCATION",
+    "value": "서산시"
+   },
+   {
+    "start": 45,
+    "end": 65,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gimsubin@example.com"
+   },
+   {
+    "start": 81,
+    "end": 94,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010-3326-9826"
+   }
+  ]
+ }
+]

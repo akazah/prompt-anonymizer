@@ -28,7 +28,7 @@ format, no marketing language). Suggested targets and ready-to-paste lines:
 
 > - [Prompt Anonymizer](https://github.com/akazah/prompt-anonymizer) -
 >   Reversible pseudonymization tuned for the LLM round-trip: same value →
->   same label, mapping never leaves the device. JA/EN/ES/VI. Python +
+>   same label, mapping never leaves the device. 10 languages. Python +
 >   TypeScript cores with behavioural parity.
 
 ## awesome-chatgpt / awesome-llm-tools lists

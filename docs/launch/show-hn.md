@@ -38,10 +38,10 @@ A few design decisions that might be interesting:
   the browser, spaCy or local transformers in Python. The browser demo
   works with DevTools open — you can watch the network tab and see that
   nothing is sent (after the one-time model download).
-- Multilingual: English, Japanese, Spanish and Vietnamese, with
-  locale-specific structured PII — e.g. per-region phone formats, and
-  checksum-validated national IDs like Japan's My Number (so it doesn't
-  blindly mask every 12-digit number).
+- Multilingual: ten languages (en, ja, es, vi, zh, ko, fr, de, pt, it) via
+  a central language registry, each with locale-specific structured PII —
+  e.g. per-region phone formats, and checksum-validated national IDs like
+  Japan's My Number (so it doesn't blindly mask every 12-digit number).
 - The mapping is returned to you and never persisted by the library.
 - There's also a `scan` subcommand designed for pre-commit/CI: exit code
   1 if PII is found, and it prints file:line:col + entity type only —
