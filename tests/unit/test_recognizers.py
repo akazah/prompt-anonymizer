@@ -73,37 +73,84 @@ def test_ja_postal_regex_patterns() -> None:
     assert not patterns["jp_postal_bare"].search("090-1234-5678")
 
 
-def test_es_phone_regex_patterns() -> None:
+PHONE_SAMPLES = {
+    # language -> (matching samples, non-matching samples)
+    "es": (
+        [
+            "Llámame al +34 612 345 678.",
+            "+34612345678",
+            "mi móvil es 612 345 678",
+            "612-345-678",
+            "el fijo es 91 234 56 78",
+        ],
+        # Bare 9-digit runs without separators or prefix are too ambiguous;
+        # not inside longer digit runs.
+        ["612345678", "9612 345 678987"],
+    ),
+    "vi": (
+        [
+            "gọi 0912 345 678 nhé",
+            "091 234 5678",
+            "0912345678",
+            "024 3826 8888",
+            "+84 912 345 678",
+            "+84912345678",
+        ],
+        ["10912345678"],
+    ),
+    "zh": (
+        ["手机是 138 0013 8000", "13800138000", "+86 138-0013-8000", "电话 010-12345678"],
+        ["213800138000"],
+    ),
+    "ko": (
+        ["전화는 010-1234-5678", "01012345678", "+82 10-1234-5678", "02-312-3456"],
+        ["9010-1234-5678"],
+    ),
+    "fr": (
+        ["appelez le 06 12 34 56 78", "+33 6 12 34 56 78", "0612345678"],
+        ["06 12 34 56 789"],
+    ),
+    "de": (
+        ["Telefon: 030 901820", "0171 2345678", "+49 30 901820", "0711/123456"],
+        # Separator required without the +49 prefix.
+        ["030901820"],
+    ),
+    "pt": (
+        ["ligue para 912 345 678", "+351 912 345 678", "+351912345678", "212 345 678"],
+        ["912345678"],
+    ),
+    "it": (
+        ["chiamami al 333 123 4567", "+39 333 123 4567", "+39 3331234567", "06 698212"],
+        ["333123456789"],
+    ),
+}
+
+
+@pytest.mark.parametrize("language", sorted(PHONE_SAMPLES))
+def test_registry_phone_regex_patterns(language: str) -> None:
     import re
 
-    from prompt_anonymizer.recognizers.es_phone import EsPhoneRegexRecognizer
+    from prompt_anonymizer.languages import LANGUAGES
 
-    patterns = {p.name: re.compile(p.regex) for p in EsPhoneRegexRecognizer.PATTERNS}
-    assert patterns["es_phone_prefixed"].search("Llámame al +34 612 345 678.")
-    assert patterns["es_phone_prefixed"].search("+34612345678")
-    assert patterns["es_phone_grouped"].search("mi móvil es 612 345 678")
-    assert patterns["es_phone_grouped"].search("612-345-678")
-    assert patterns["es_phone_landline"].search("el fijo es 91 234 56 78")
-    # Bare 9-digit runs without separators or prefix are too ambiguous.
-    assert not patterns["es_phone_grouped"].search("612345678")
-    # Not inside longer digit runs.
-    assert not patterns["es_phone_grouped"].search("9612 345 678987")
+    spec = LANGUAGES[language].phone
+    assert spec is not None
+    patterns = [re.compile(p.regex) for p in spec.patterns]
+    positives, negatives = PHONE_SAMPLES[language]
+    for sample in positives:
+        assert any(p.search(sample) for p in patterns), f"{language}: no pattern matched {sample!r}"
+    for sample in negatives:
+        assert not any(p.search(sample) for p in patterns), f"{language}: false match on {sample!r}"
 
 
-def test_vn_phone_regex_patterns() -> None:
-    import re
+def test_registry_phone_recognizer_scoped_to_language() -> None:
+    from prompt_anonymizer.recognizers import build_phone_regex_recognizer
 
-    from prompt_anonymizer.recognizers.vn_phone import VnPhoneRegexRecognizer
-
-    patterns = {p.name: re.compile(p.regex) for p in VnPhoneRegexRecognizer.PATTERNS}
-    assert patterns["vn_phone_domestic"].search("gọi 0912 345 678 nhé")
-    assert patterns["vn_phone_domestic"].search("091 234 5678")
-    assert patterns["vn_phone_domestic"].search("0912345678")
-    assert patterns["vn_phone_domestic"].search("024 3826 8888")
-    assert patterns["vn_phone_prefixed"].search("+84 912 345 678")
-    assert patterns["vn_phone_prefixed"].search("+84912345678")
-    # Not inside longer digit runs.
-    assert not patterns["vn_phone_domestic"].search("10912345678")
+    recognizer = build_phone_regex_recognizer("es")
+    assert recognizer is not None
+    assert recognizer.supported_language == "es"
+    # Languages without a registry phone spec have no scoped recognizer.
+    assert build_phone_regex_recognizer("en") is None
+    assert build_phone_regex_recognizer("ja") is None
 
 
 def test_credit_card_regex_matches_next_to_cjk() -> None:

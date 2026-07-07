@@ -134,6 +134,38 @@ describe("detectWithRegex", () => {
     }
   });
 
+  it("detects phone formats for the six new languages", () => {
+    const samples: Array<[Parameters<typeof detectWithRegex>[1], string]> = [
+      ["zh", "手机是 138 0013 8000"],
+      ["zh", "+86 159-4606-2826"],
+      ["ko", "전화는 010-1234-5678"],
+      ["ko", "+82 10-1234-5678"],
+      ["fr", "appelez le 06 12 34 56 78"],
+      ["fr", "+33 6 12 34 56 78"],
+      ["de", "Telefon: 030 901820"],
+      ["de", "+49 171 2345678"],
+      ["pt", "ligue para 912 345 678"],
+      ["pt", "+351 912 345 678"],
+      ["it", "chiamami al 333 123 4567"],
+      ["it", "+39 333 123 4567"],
+    ];
+    for (const [language, text] of samples) {
+      const types = detectWithRegex(text, language).map((s) => s.entityType);
+      expect(types, `${language}: ${text}`).toContain("PHONE_NUMBER");
+    }
+  });
+
+  it("does not fire new-language phone patterns on English text", () => {
+    // A Chinese bare mobile (11 digits, no separators) must not fire on en.
+    expect(
+      detectWithRegex("order id 13800138000", "en").filter((s) => s.entityType === "PHONE_NUMBER"),
+    ).toEqual([]);
+    // A Portuguese grouped mobile must not fire on en either.
+    expect(
+      detectWithRegex("ref 912 345 678", "en").filter((s) => s.entityType === "PHONE_NUMBER"),
+    ).toEqual([]);
+  });
+
   it("does not detect Vietnamese phones when language is en", () => {
     const spans = detectWithRegex("Call 0912 345 678", "en");
     expect(spans.some((s) => s.entityType === "PHONE_NUMBER")).toBe(false);

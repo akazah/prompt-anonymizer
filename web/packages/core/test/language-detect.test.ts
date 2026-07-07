@@ -23,6 +23,20 @@ describe("guessLanguage", () => {
     expect(guessLanguage("me llamo María")).toBe("es");
   });
 
+  it("detects the six new languages by script or diacritics", () => {
+    expect(guessLanguage("请给我打电话")).toBe("zh");
+    expect(guessLanguage("전화해 주세요")).toBe("ko");
+    expect(guessLanguage("größere Straße")).toBe("de");
+    expect(guessLanguage("informação não recebida")).toBe("pt");
+    expect(guessLanguage("ça marche, où êtes-vous ?")).toBe("fr");
+    expect(guessLanguage("la città è però lontana")).toBe("it");
+  });
+
+  it("prefers kana over han and hangul over Latin", () => {
+    expect(guessLanguage("山田さんは北京にいる")).toBe("ja");
+    expect(guessLanguage("서울 kontakt")).toBe("ko");
+  });
+
   it("defaults to English otherwise", () => {
     expect(guessLanguage("Hello John Smith")).toBe("en");
     expect(guessLanguage("12345")).toBe("en");

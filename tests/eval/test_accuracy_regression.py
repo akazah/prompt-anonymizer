@@ -9,26 +9,32 @@ pytestmark = [pytest.mark.slow, pytest.mark.integration]
 # Regression floors, intentionally below current measured values so that
 # only real regressions fail the suite. Update after significant model or
 # recognizer changes (see docs/EVAL.md for current numbers).
-MIN_RECALL = {
-    ("ja", "PHONE_NUMBER"): 0.9,
-    ("ja", "EMAIL_ADDRESS"): 0.9,
-    ("ja", "JP_POSTAL_CODE"): 0.9,
-    ("ja", "JP_MY_NUMBER"): 0.9,
-    ("ja", "CREDIT_CARD"): 0.9,
-    ("en", "PHONE_NUMBER"): 0.9,
-    ("en", "EMAIL_ADDRESS"): 0.9,
-    ("en", "CREDIT_CARD"): 0.9,
-    ("en", "PERSON"): 0.7,
-    ("es", "PHONE_NUMBER"): 0.9,
-    ("es", "EMAIL_ADDRESS"): 0.9,
-    ("es", "CREDIT_CARD"): 0.9,
-    ("es", "PERSON"): 0.5,
-    # vi PERSON/LOCATION recall with the spaCy backend (xx_ent_wiki_sm) is
-    # too weak to gate on; use ner_backend="hf" for Vietnamese names.
-    ("vi", "PHONE_NUMBER"): 0.9,
-    ("vi", "EMAIL_ADDRESS"): 0.9,
-    ("vi", "CREDIT_CARD"): 0.9,
+#
+# Structured-PII floors (phone / email / card) apply to every language: the
+# golden generator only emits notations the regex recognizers are built for.
+# PERSON floors exist only where a baseline has been measured; NER quality
+# for the newer languages is tracked in docs/EVAL.md before gating.
+_STRUCTURED_FLOORS = {
+    "PHONE_NUMBER": 0.9,
+    "EMAIL_ADDRESS": 0.9,
+    "CREDIT_CARD": 0.9,
 }
+
+MIN_RECALL = {
+    (language, entity): floor
+    for language in SUPPORTED_LANGUAGES
+    for entity, floor in _STRUCTURED_FLOORS.items()
+}
+MIN_RECALL.update(
+    {
+        ("ja", "JP_POSTAL_CODE"): 0.9,
+        ("ja", "JP_MY_NUMBER"): 0.9,
+        ("en", "PERSON"): 0.7,
+        ("es", "PERSON"): 0.5,
+        # vi PERSON/LOCATION recall with the spaCy backend (xx_ent_wiki_sm) is
+        # too weak to gate on; use ner_backend="hf" for Vietnamese names.
+    }
+)
 
 
 @pytest.mark.parametrize("language", SUPPORTED_LANGUAGES)

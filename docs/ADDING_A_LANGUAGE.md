@@ -8,7 +8,7 @@ failing tests walk you through the rest.**
 
 | Registry | File |
 |---|---|
-| Python | `src/prompt_anonymizer/languages.py` (`SUPPORTED_LANGUAGES`) |
+| Python | `src/prompt_anonymizer/languages.py` (`SUPPORTED_LANGUAGES` + a `LanguageConfig` entry in `LANGUAGES`: spaCy models, HF NER model, phone spec, detection markers) |
 | TypeScript | `web/packages/core/src/languages.ts` (`SUPPORTED_LANGUAGES`, `LANGUAGE_DISPLAY_NAMES`) |
 
 Everything that is a *list of languages* (type unions, CLI validation and
@@ -20,8 +20,9 @@ language lists. What remains is per-language *data*, listed below.
 
 ### 1. Register the code
 
-Add the ISO 639-1 code to both registries above (and a native-script
-display name in `LANGUAGE_DISPLAY_NAMES`). From here on,
+Add the ISO 639-1 code to both registries above: a `LanguageConfig` entry
+in the Python `LANGUAGES` dict (plus the code in `SUPPORTED_LANGUAGES`) and
+the code + a native-script display name in the TS registry. From here on,
 `uv run pytest tests/unit/test_languages.py` and
 `pnpm --filter @prompt-anonymizer/core test` enumerate what is missing.
 
@@ -38,11 +39,12 @@ reversible-mapping contract: once released they must never change.
 
 ### 3. NER models
 
-- Python spaCy: `_SPACY_MODELS` in `core.py` (both `sm` and `lg`; if no
-  official pipeline exists, use `xx_ent_wiki_sm` like `vi` does) + the
+- Python spaCy: `spacy_sm` / `spacy_lg` on the `LanguageConfig` entry (if
+  no official pipeline exists, use `xx_ent_wiki_sm` like `vi` does) + the
   model wheels in `pyproject.toml` `dependency-groups` (`models`,
   `models-lg`).
-- Python HF: `DEFAULT_HF_NER_MODELS` in `core.py`.
+- Python HF: `hf_ner_model` on the `LanguageConfig` entry
+  (`DEFAULT_HF_NER_MODELS` in `core.py` derives from it).
 - TypeScript: `DEFAULT_NER_MODELS` in `web/packages/core/src/ner.ts`
   (needs an ONNX export on the Hub, e.g. a `Xenova/...` model).
 
@@ -51,11 +53,13 @@ in `docs/EVAL.md`). Mind the licensing policy in `CONTRIBUTING.md`.
 
 ### 4. Structured-PII recognizers (usually phone numbers)
 
-- Python: `src/prompt_anonymizer/recognizers/<region>_phone.py` +
-  registration in `core.py` `_build_analyzer` and in `scan.py`
-  `_structured_recognizers` (language-scoped).
+- Python: a `PhoneSpec` (libphonenumber region + regex fallback patterns +
+  context words) on the `LanguageConfig` entry - the registry-driven
+  `recognizers/phone.py` registers it on both the analyzer and the
+  engine-free `scan` path automatically; no new module or registration
+  code is needed.
 - TypeScript: language-scoped entries (`languages: ["<lang>"]`) in
-  `web/packages/core/src/recognizers.ts`.
+  `web/packages/core/src/recognizers.ts`, mirroring the Python patterns.
 
 Keep the patterns bounded (no nested quantifiers — ReDoS is P1) and
 mirror them between the cores. Add regex unit tests in both cores,
@@ -64,19 +68,22 @@ languages.
 
 ### 5. Language detection
 
-- TypeScript: extend `guessLanguage` in
-  `web/packages/core/src/language-detect.ts` with a marker heuristic.
-- Python: mirror it in `scan.guess_language` (`scan.py`).
+- Python: add an ordered marker rule to `DETECTION_RULES` in
+  `languages.py` (more-specific scripts first).
+- TypeScript: mirror it in `DETECTION_RULES` in
+  `web/packages/core/src/language-detect.ts`.
 
 Document the ordering rationale in the comment (more-specific scripts
 must be tested first).
 
 ### 6. Golden set + evaluation
 
-- Add a Faker locale to `_LOCALES` and a `_build_<lang>` builder to
-  `_BUILDERS` in `src/prompt_anonymizer/evals/generate.py`. Verify the
-  Faker locale produces sane names/cities (curate lists like `_VN_CITIES`
-  when it does not).
+- Add a Faker locale to `_LOCALES` and a `_GenericSpec` phrase table
+  (request / minutes / inquiry templates + a phone generator) to
+  `_GENERIC_SPECS` in `src/prompt_anonymizer/evals/generate.py` (ja/en
+  keep bespoke builders). Verify the Faker locale produces sane,
+  process-deterministic names/cities (curate lists like `_VN_CITIES` /
+  `_IT_CITIES` when it does not).
 - Regenerate: `uv run python -m prompt_anonymizer.evals` (rewrites
   `tests/golden/golden_<lang>.json` and the spaCy table in
   `docs/EVAL.md`), then the HF table
@@ -107,7 +114,8 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 - `README_<lang>.md` translation, cross-linked from the language
   switcher (first line) of every existing README —
   `tests/unit/test_languages.py` fails until the file exists.
-- Supported-entities tables in all READMEs gain a `<lang> label` column.
+- READMEs keep their ja/en/es/vi label columns; other languages'
+  labels live in `labels/*.yaml` / TS `LABELS` (linked after the table).
 - `CHANGELOG.md` entry (labels are additive; existing mappings stay
   valid).
 

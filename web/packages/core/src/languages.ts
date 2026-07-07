@@ -9,7 +9,18 @@
  */
 
 /** Display order (used by language pickers). */
-export const SUPPORTED_LANGUAGES = ["ja", "en", "es", "vi"] as const;
+export const SUPPORTED_LANGUAGES = [
+  "ja",
+  "en",
+  "es",
+  "vi",
+  "zh",
+  "ko",
+  "fr",
+  "de",
+  "pt",
+  "it",
+] as const;
 
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
@@ -22,6 +33,12 @@ export const LANGUAGE_DISPLAY_NAMES: Record<Language, string> = {
   en: "English",
   es: "Español",
   vi: "Tiếng Việt",
+  zh: "中文",
+  ko: "한국어",
+  fr: "Français",
+  de: "Deutsch",
+  pt: "Português",
+  it: "Italiano",
 };
 
 export const AUTO_DISPLAY_NAME = "Auto / 自動判定";

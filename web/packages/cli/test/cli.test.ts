@@ -148,9 +148,9 @@ describe("anonymize", () => {
 
   it("rejects unsupported languages", async () => {
     const { io, stderr } = makeIo();
-    const code = await run(["anonymize", "--no-ner", "-l", "fr", "-t", "x"], io, regexOnly);
+    const code = await run(["anonymize", "--no-ner", "-l", "xx", "-t", "x"], io, regexOnly);
     expect(code).toBe(1);
-    expect(stderr.join("\n")).toContain("Unsupported language: fr");
+    expect(stderr.join("\n")).toContain("Unsupported language: xx");
   });
 });
 
@@ -247,8 +247,8 @@ describe("scan (commit-time / CI gate)", () => {
 
   it("exits 2 on unsupported languages", async () => {
     const { io, stderr } = makeIo();
-    expect(await run(["scan", "-l", "fr", "-t", "x"], io, regexOnly)).toBe(2);
-    expect(stderr.join("\n")).toContain("Unsupported language: fr");
+    expect(await run(["scan", "-l", "xx", "-t", "x"], io, regexOnly)).toBe(2);
+    expect(stderr.join("\n")).toContain("Unsupported language: xx");
   });
 });
 

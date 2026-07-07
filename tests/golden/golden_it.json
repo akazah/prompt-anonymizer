@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "it-0000",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Iolanda Lollobrigida. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al 024 42392658 o scrivermi a gilardoniromana@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Iolanda Lollobrigida"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "024 42392658"
+   },
+   {
+    "start": 157,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gilardoniromana@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0001",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Pellegrino Dellucci e Dott. Valentina Brunello. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a mazzocchiferdinando@example.org. Linea diretta: 340 954 2801.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Pellegrino Dellucci"
+   },
+   {
+    "start": 46,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Dott. Valentina Brunello"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 148,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mazzocchiferdinando@example.org"
+   },
+   {
+    "start": 196,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "340 954 2801"
+   }
+  ]
+ },
+ {
+  "id": "it-0002",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Lolita Zarlino e il suo indirizzo si trova a Milano. La richiameremo al 091 25483242. La carta registrata è 4854077860891149. Una copia è stata inviata a cafarchianicolo@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Lolita Zarlino"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "091 25483242"
+   },
+   {
+    "start": 170,
+    "end": 186,
+    "entity_type": "CREDIT_CARD",
+    "value": "4854077860891149"
+   },
+   {
+    "start": 216,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cafarchianicolo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0003",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Gianpaolo Mastandrea. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 03 50477561 o scrivermi a borrominiagostino@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Gianpaolo Mastandrea"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 130,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "03 50477561"
+   },
+   {
+    "start": 156,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "borrominiagostino@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0004",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Sig. Gianpaolo Villarosa e Melina Nosiglia-Interminelli. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a dcarducci@example.org. Linea diretta: 010 92973026.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Sig. Gianpaolo Villarosa"
+   },
+   {
+    "start": 51,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Melina Nosiglia-Interminelli"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 157,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dcarducci@example.org"
+   },
+   {
+    "start": 195,
+    "end": 207,
+    "entity_type": "PHONE_NUMBER",
+    "value": "010 92973026"
+   }
+  ]
+ },
+ {
+  "id": "it-0005",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig.ra Daria Amaldi e il suo indirizzo si trova a Venezia. La richiameremo al +39 387 929 8192. La carta registrata è 4039-1514-0262-7333. Una copia è stata inviata a nittomartino@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Daria Amaldi"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 140,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 387 929 8192"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4039-1514-0262-7333"
+   },
+   {
+    "start": 229,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nittomartino@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0006",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Chiara Fanucci. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al 369 997 8861 o scrivermi a zianiubaldo@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Chiara Fanucci"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "369 997 8861"
+   },
+   {
+    "start": 151,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zianiubaldo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0007",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Raimondo Chechi e Elvira Petrassi. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a gilbertocutuli@example.net. Linea diretta: +39 310 747 9625.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Raimondo Chechi"
+   },
+   {
+    "start": 42,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Elvira Petrassi"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 135,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gilbertocutuli@example.net"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 310 747 9625"
+   }
+  ]
+ },
+ {
+  "id": "it-0008",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Silvio Cantimori e il suo indirizzo si trova a Torino. La richiameremo al 04 76247263. La carta registrata è 4900-9176-2677-4366. Una copia è stata inviata a xnavone@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Silvio Cantimori"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "04 76247263"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4900-9176-2677-4366"
+   },
+   {
+    "start": 220,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xnavone@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0009",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Tullio Vittadello. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 339 768 4330 o scrivermi a ttremonti@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Dott. Tullio Vittadello"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "339 768 4330"
+   },
+   {
+    "start": 159,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ttremonti@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0010",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Dott. Griselda Briccialdi e Arnaldo Tosi. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a jtafuri@example.org. Linea diretta: 311 821 6994.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Dott. Griselda Briccialdi"
+   },
+   {
+    "start": 52,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Arnaldo Tosi"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jtafuri@example.org"
+   },
+   {
+    "start": 178,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "311 821 6994"
+   }
+  ]
+ },
+ {
+  "id": "it-0011",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Pierluigi Crisafulli e il suo indirizzo si trova a Genova. La richiameremo al 380 795 9030. La carta registrata è 4154804741147475. Una copia è stata inviata a rcamicione@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Pierluigi Crisafulli"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "380 795 9030"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4154804741147475"
+   },
+   {
+    "start": 222,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rcamicione@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0012",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Renata Argenti. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Genova. Può chiamarmi al +39 324 564 2419 o scrivermi a susanna07@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Renata Argenti"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 324 564 2419"
+   },
+   {
+    "start": 154,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "susanna07@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0013",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Amleto Angeli e Giorgio Pederiva. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a ariazabarella@example.org. Linea diretta: 311 292 5773.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Amleto Angeli"
+   },
+   {
+    "start": 40,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Giorgio Pederiva"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 134,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ariazabarella@example.org"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "311 292 5773"
+   }
+  ]
+ },
+ {
+  "id": "it-0014",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Roberta Zanazzo e il suo indirizzo si trova a Roma. La richiameremo al 355 445 7557. La carta registrata è 4109-6579-6633-1059. Una copia è stata inviata a annalisa99@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Roberta Zanazzo"
+   },
+   {
+    "start": 108,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "355 445 7557"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4109-6579-6633-1059"
+   },
+   {
+    "start": 218,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "annalisa99@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0015",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Giampiero Ziani. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Genova. Può chiamarmi al 388 765 2391 o scrivermi a evatravaglia@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Giampiero Ziani"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "388 765 2391"
+   },
+   {
+    "start": 151,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "evatravaglia@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0016",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Giovanni Mazzeo e Lara Zito. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a stella43@example.com. Linea diretta: 398 405 1091.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Giovanni Mazzeo"
+   },
+   {
+    "start": 42,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Lara Zito"
+   },
+   {
+    "start": 85,
+    "end": 91,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 129,
+    "end": 149,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "stella43@example.com"
+   },
+   {
+    "start": 166,
+    "end": 178,
+    "entity_type": "PHONE_NUMBER",
+    "value": "398 405 1091"
+   }
+  ]
+ },
+ {
+  "id": "it-0017",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Piermaria Fantoni-Tron e il suo indirizzo si trova a Torino. La richiameremo al +39 330 564 4292. La carta registrata è 4751-6318-1322-0147. Una copia è stata inviata a jpozzecco@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Piermaria Fantoni-Tron"
+   },
+   {
+    "start": 115,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 142,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 330 564 4292"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4751-6318-1322-0147"
+   },
+   {
+    "start": 231,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jpozzecco@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0018",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Gianna Casalodi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Roma. Può chiamarmi al 351 562 3761 o scrivermi a carmelo13@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Dott. Gianna Casalodi"
+   },
+   {
+    "start": 105,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "351 562 3761"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carmelo13@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0019",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Dott. Vincentio Iacovelli e Amadeo Sismondi-Aulenti. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a pavonebernardo@example.org. Linea diretta: 388 984 9386.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Dott. Vincentio Iacovelli"
+   },
+   {
+    "start": 52,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Amadeo Sismondi-Aulenti"
+   },
+   {
+    "start": 109,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 154,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pavonebernardo@example.org"
+   },
+   {
+    "start": 197,
+    "end": 209,
+    "entity_type": "PHONE_NUMBER",
+    "value": "388 984 9386"
+   }
+  ]
+ },
+ {
+  "id": "it-0020",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Valeria Manolesso e il suo indirizzo si trova a Bologna. La richiameremo al 366 234 4136. La carta registrata è 4537-8535-4882-5021. Una copia è stata inviata a bonannomanuel@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Valeria Manolesso"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "366 234 4136"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4537-8535-4882-5021"
+   },
+   {
+    "start": 223,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bonannomanuel@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0021",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Chiara Baresi-Bignardi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 394 184 9084 o scrivermi a qfantoni@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Chiara Baresi-Bignardi"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "394 184 9084"
+   },
+   {
+    "start": 158,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qfantoni@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0022",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Michelangelo Mazzacurati e Stefano Sobrero. La prossima riunione si terrà a Roma. Da fare: inviare la presentazione a gianfrancocaracciolo@example.org. Linea diretta: +39 312 966 4106.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Michelangelo Mazzacurati"
+   },
+   {
+    "start": 51,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Stefano Sobrero"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 142,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gianfrancocaracciolo@example.org"
+   },
+   {
+    "start": 191,
+    "end": 207,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 312 966 4106"
+   }
+  ]
+ },
+ {
+  "id": "it-0023",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Antonello Lombardi e il suo indirizzo si trova a Torino. La richiameremo al +39 354 477 2799. La carta registrata è 4192743944977854. Una copia è stata inviata a grecoblasi@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Antonello Lombardi"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 138,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 354 477 2799"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4192743944977854"
+   },
+   {
+    "start": 224,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "grecoblasi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0024",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Livio Petrocelli. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al 063 52556178 o scrivermi a teresa67@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Dott. Livio Petrocelli"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "063 52556178"
+   },
+   {
+    "start": 158,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "teresa67@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0025",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Telemaco Roero-Camiscione e Baldassare Trapanese. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a calvobenedetto@example.com. Linea diretta: 038 25236994.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Telemaco Roero-Camiscione"
+   },
+   {
+    "start": 52,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Baldassare Trapanese"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 151,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "calvobenedetto@example.com"
+   },
+   {
+    "start": 194,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "038 25236994"
+   }
+  ]
+ },
+ {
+  "id": "it-0026",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Melania Tasso e il suo indirizzo si trova a Venezia. La richiameremo al +39 335 746 9357. La carta registrata è 4284431677615227. Una copia è stata inviata a antonellosiffredi@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Melania Tasso"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 335 746 9357"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4284431677615227"
+   },
+   {
+    "start": 220,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antonellosiffredi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0027",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sebastiano Antonioni. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al +39 390 616 8898 o scrivermi a lara30@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Sebastiano Antonioni"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 390 616 8898"
+   },
+   {
+    "start": 161,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lara30@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0028",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Benedetto Zabarella e Roberta Cabibbo. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a xpometta@example.net. Linea diretta: 042 11534037.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Benedetto Zabarella"
+   },
+   {
+    "start": 46,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Roberta Cabibbo"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 139,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xpometta@example.net"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "042 11534037"
+   }
+  ]
+ },
+ {
+  "id": "it-0029",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Giacobbe Briccialdi e il suo indirizzo si trova a Firenze. La richiameremo al 375 977 7761. La carta registrata è 4083-8513-6316-1751. Una copia è stata inviata a vittoriaborzomi@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Giacobbe Briccialdi"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "375 977 7761"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4083-8513-6316-1751"
+   },
+   {
+    "start": 225,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vittoriaborzomi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0030",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Paoletta Tamburello. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 388 525 3561 o scrivermi a dmissoni@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Paoletta Tamburello"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "388 525 3561"
+   },
+   {
+    "start": 155,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dmissoni@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0031",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Sig. Umberto Pininfarina e Ramona Casadei. La prossima riunione si terrà a Palermo. Da fare: inviare la presentazione a giorgettiida@example.net. Linea diretta: +39 334 484 2675.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Sig. Umberto Pininfarina"
+   },
+   {
+    "start": 51,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Ramona Casadei"
+   },
+   {
+    "start": 99,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 144,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "giorgettiida@example.net"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 334 484 2675"
+   }
+  ]
+ },
+ {
+  "id": "it-0032",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Fredo Iadanza-Vecellio e il suo indirizzo si trova a Milano. La richiameremo al 393 875 3880. La carta registrata è 4244088883898853. Una copia è stata inviata a tedescosilvio@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Fredo Iadanza-Vecellio"
+   },
+   {
+    "start": 115,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 142,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "393 875 3880"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4244088883898853"
+   },
+   {
+    "start": 224,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tedescosilvio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0033",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig.ra Victoria Cuda. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Palermo. Può chiamarmi al +39 375 940 1193 o scrivermi a curielletizia@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Victoria Cuda"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 375 940 1193"
+   },
+   {
+    "start": 161,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "curielletizia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0034",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Paride Vigorelli e Dott. Lucrezia Bongiorno. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a allegra80@example.net. Linea diretta: +39 345 992 2647.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Paride Vigorelli"
+   },
+   {
+    "start": 43,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Dott. Lucrezia Bongiorno"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 145,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "allegra80@example.net"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 345 992 2647"
+   }
+  ]
+ },
+ {
+  "id": "it-0035",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Mauro Filogamo e il suo indirizzo si trova a Bologna. La richiameremo al +39 369 376 8201. La carta registrata è 4695108314411284. Una copia è stata inviata a cattaneosergius@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Mauro Filogamo"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 135,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 369 376 8201"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4695108314411284"
+   },
+   {
+    "start": 221,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cattaneosergius@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0036",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Martina Agostinelli. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Roma. Può chiamarmi al 085 36913573 o scrivermi a comeriatobartolomeo@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Martina Agostinelli"
+   },
+   {
+    "start": 103,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 126,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "085 36913573"
+   },
+   {
+    "start": 153,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "comeriatobartolomeo@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0037",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Pierina Bonaventura e Sig. Dionigi Bresciani. La prossima riunione si terrà a Roma. Da fare: inviare la presentazione a moruccipier@example.net. Linea diretta: 047 9793637.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Pierina Bonaventura"
+   },
+   {
+    "start": 46,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Sig. Dionigi Bresciani"
+   },
+   {
+    "start": 102,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 144,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "moruccipier@example.net"
+   },
+   {
+    "start": 184,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "047 9793637"
+   }
+  ]
+ },
+ {
+  "id": "it-0038",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Atenulf Sobrero e il suo indirizzo si trova a Torino. La richiameremo al 051 86788678. La carta registrata è 4609661757656364. Una copia è stata inviata a silvestro41@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Atenulf Sobrero"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "051 86788678"
+   },
+   {
+    "start": 171,
+    "end": 187,
+    "entity_type": "CREDIT_CARD",
+    "value": "4609661757656364"
+   },
+   {
+    "start": 217,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "silvestro41@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0039",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Ernesto Rapisardi-Filzi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al 058 80115397 o scrivermi a elladio94@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Ernesto Rapisardi-Filzi"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "058 80115397"
+   },
+   {
+    "start": 160,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elladio94@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0040",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Rosaria Travaglio e Antonio Priuli. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a cabotomattia@example.net. Linea diretta: +39 388 698 5769.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Rosaria Travaglio"
+   },
+   {
+    "start": 44,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Antonio Priuli"
+   },
+   {
+    "start": 92,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 137,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cabotomattia@example.net"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 388 698 5769"
+   }
+  ]
+ },
+ {
+  "id": "it-0041",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Pietro Flaiano e il suo indirizzo si trova a Milano. La richiameremo al 355 672 4811. La carta registrata è 4069-7661-5753-9244. Una copia è stata inviata a mattia48@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Dott. Pietro Flaiano"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "355 672 4811"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4069-7661-5753-9244"
+   },
+   {
+    "start": 225,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mattia48@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0042",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Calogero Piacentini. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 083 79921532 o scrivermi a giannibarese@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Calogero Piacentini"
+   },
+   {
+    "start": 103,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "083 79921532"
+   },
+   {
+    "start": 156,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "giannibarese@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0043",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Eleanora Luria e Imelda Scarpa. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a navoneludovico@example.net. Linea diretta: +39 340 836 5052.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Eleanora Luria"
+   },
+   {
+    "start": 41,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Imelda Scarpa"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 132,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "navoneludovico@example.net"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 340 836 5052"
+   }
+  ]
+ },
+ {
+  "id": "it-0044",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Micheletto Stein e il suo indirizzo si trova a Verona. La richiameremo al 353 214 4521. La carta registrata è 4037-4522-8440-7238. Una copia è stata inviata a tognazzipiergiorgio@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Micheletto Stein"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "353 214 4521"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4037-4522-8440-7238"
+   },
+   {
+    "start": 221,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tognazzipiergiorgio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0045",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Tonino Onisto. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al 084 69549456 o scrivermi a catenazzifiamma@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Tonino Onisto"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 122,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "084 69549456"
+   },
+   {
+    "start": 149,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "catenazzifiamma@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0046",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Nicoletta Maffei e Gastone Calvo. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a giosueruffini@example.com. Linea diretta: +39 350 719 6812.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Nicoletta Maffei"
+   },
+   {
+    "start": 43,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Gastone Calvo"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 134,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "giosueruffini@example.com"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 350 719 6812"
+   }
+  ]
+ },
+ {
+  "id": "it-0047",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Rossana Barillaro e il suo indirizzo si trova a Palermo. La richiameremo al +39 347 301 7364. La carta registrata è 4835932434638224. Una copia è stata inviata a antonetticlelia@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Dott. Rossana Barillaro"
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 144,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 347 301 7364"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4835932434638224"
+   },
+   {
+    "start": 230,
+    "end": 257,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antonetticlelia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0048",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Fortunata Monteverdi-Agostini. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al +39 383 854 4041 o scrivermi a guarino77@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Fortunata Monteverdi-Agostini"
+   },
+   {
+    "start": 113,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 139,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 383 854 4041"
+   },
+   {
+    "start": 170,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guarino77@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0049",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Venancio Canetta e Allegra Parmitano. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a ciciliasimone@example.net. Linea diretta: 051 98868011.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Venancio Canetta"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Allegra Parmitano"
+   },
+   {
+    "start": 94,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 139,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ciciliasimone@example.net"
+   },
+   {
+    "start": 181,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "051 98868011"
+   }
+  ]
+ },
+ {
+  "id": "it-0050",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Cassandra Abbagnale e il suo indirizzo si trova a Genova. La richiameremo al 353 136 8959. La carta registrata è 4548828302774836. Una copia è stata inviata a livio69@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Dott. Cassandra Abbagnale"
+   },
+   {
+    "start": 118,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "353 136 8959"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4548828302774836"
+   },
+   {
+    "start": 227,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "livio69@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0051",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Griselda Schicchi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al 358 322 2647 o scrivermi a francescaioppi@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Griselda Schicchi"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "358 322 2647"
+   },
+   {
+    "start": 154,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "francescaioppi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0052",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Stefano Pedersoli e Dott. Allegra Barozzi. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a baldassare60@example.net. Linea diretta: 395 319 3938.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Stefano Pedersoli"
+   },
+   {
+    "start": 44,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Dott. Allegra Barozzi"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 143,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "baldassare60@example.net"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "395 319 3938"
+   }
+  ]
+ },
+ {
+  "id": "it-0053",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Piergiuseppe Catenazzi e il suo indirizzo si trova a Palermo. La richiameremo al 324 368 3780. La carta registrata è 4988446695691058. Una copia è stata inviata a agostinoajello@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Piergiuseppe Catenazzi"
+   },
+   {
+    "start": 115,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 143,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "324 368 3780"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4988446695691058"
+   },
+   {
+    "start": 225,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "agostinoajello@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0054",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Arturo Muti. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al +39 365 396 6954 o scrivermi a paoluccimarta@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Dott. Arturo Muti"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 365 396 6954"
+   },
+   {
+    "start": 157,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "paoluccimarta@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0055",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Sig. Azeglio Tozzo e Salvatore Barsanti. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a gastone17@example.com. Linea diretta: 045 13347188.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Sig. Azeglio Tozzo"
+   },
+   {
+    "start": 45,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Salvatore Barsanti"
+   },
+   {
+    "start": 97,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 142,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gastone17@example.com"
+   },
+   {
+    "start": 180,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "045 13347188"
+   }
+  ]
+ },
+ {
+  "id": "it-0056",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig.ra Filippa Biagi e il suo indirizzo si trova a Roma. La richiameremo al +39 348 130 8818. La carta registrata è 4335-8264-8106-8951. Una copia è stata inviata a paolettielvira@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Filippa Biagi"
+   },
+   {
+    "start": 113,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 138,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 348 130 8818"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4335-8264-8106-8951"
+   },
+   {
+    "start": 227,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "paolettielvira@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0057",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Lauretta Cardano. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al +39 320 187 5907 o scrivermi a neddapiccio@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Lauretta Cardano"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 320 187 5907"
+   },
+   {
+    "start": 157,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "neddapiccio@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0058",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Renata Bixio e Caterina Fieramosca. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a oraimondi@example.org. Linea diretta: 359 934 1806.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Renata Bixio"
+   },
+   {
+    "start": 39,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Caterina Fieramosca"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 136,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oraimondi@example.org"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "359 934 1806"
+   }
+  ]
+ },
+ {
+  "id": "it-0059",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Eliana Dossi e il suo indirizzo si trova a Genova. La richiameremo al +39 320 910 8557. La carta registrata è 4971089620858241. Una copia è stata inviata a marisataliercio@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Eliana Dossi"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 320 910 8557"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4971089620858241"
+   },
+   {
+    "start": 218,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marisataliercio@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0060",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Rocco Bulzoni-Scaduto. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Genova. Può chiamarmi al +39 376 465 4625 o scrivermi a schiavoserafina@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Rocco Bulzoni-Scaduto"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 376 465 4625"
+   },
+   {
+    "start": 161,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "schiavoserafina@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0061",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Cristina Canova e Dolores Ossani. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a delfino42@example.net. Linea diretta: +39 378 870 9671.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Cristina Canova"
+   },
+   {
+    "start": 42,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Dolores Ossani"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 134,
+    "end": 155,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "delfino42@example.net"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 378 870 9671"
+   }
+  ]
+ },
+ {
+  "id": "it-0062",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig. Simone Monteverdi e il suo indirizzo si trova a Roma. La richiameremo al 083 17861645. La carta registrata è 4959-2473-7679-9433. Una copia è stata inviata a spizziol@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Sig. Simone Monteverdi"
+   },
+   {
+    "start": 115,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "083 17861645"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4959-2473-7679-9433"
+   },
+   {
+    "start": 225,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "spizziol@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0063",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Marina Altera. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al +39 331 581 4042 o scrivermi a zecchinibianca@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Marina Altera"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 122,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 331 581 4042"
+   },
+   {
+    "start": 153,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zecchinibianca@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0064",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Letizia Vendetti e Monica Gasperi. La prossima riunione si terrà a Torino. Da fare: inviare la presentazione a ubaldomazzocchi@example.com. Linea diretta: 355 758 6105.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Letizia Vendetti"
+   },
+   {
+    "start": 43,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Monica Gasperi"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 135,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ubaldomazzocchi@example.com"
+   },
+   {
+    "start": 179,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "355 758 6105"
+   }
+  ]
+ },
+ {
+  "id": "it-0065",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Jolanda Trussardi e il suo indirizzo si trova a Torino. La richiameremo al +39 389 589 3926. La carta registrata è 4212-9422-9655-3232. Una copia è stata inviata a sandroliverotti@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Jolanda Trussardi"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 137,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 389 589 3926"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4212-9422-9655-3232"
+   },
+   {
+    "start": 226,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sandroliverotti@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0066",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig. Piergiuseppe Morabito. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 386 144 5615 o scrivermi a vgolgi@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Sig. Piergiuseppe Morabito"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "386 144 5615"
+   },
+   {
+    "start": 162,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vgolgi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0067",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Dott. Danilo Moschino e Marissa Zeffirelli. La prossima riunione si terrà a Palermo. Da fare: inviare la presentazione a annunziata04@example.org. Linea diretta: 340 701 3837.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Dott. Danilo Moschino"
+   },
+   {
+    "start": 48,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Marissa Zeffirelli"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 145,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "annunziata04@example.org"
+   },
+   {
+    "start": 186,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "340 701 3837"
+   }
+  ]
+ },
+ {
+  "id": "it-0068",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Elvira Maspero-Gritti e il suo indirizzo si trova a Milano. La richiameremo al 388 920 6906. La carta registrata è 4057794266761123. Una copia è stata inviata a laureanostradivari@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Elvira Maspero-Gritti"
+   },
+   {
+    "start": 114,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "388 920 6906"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4057794266761123"
+   },
+   {
+    "start": 223,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "laureanostradivari@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0069",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Daria Giannetti-Guidotti. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al +39 342 814 4173 o scrivermi a telemaco82@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Daria Giannetti-Guidotti"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 133,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 342 814 4173"
+   },
+   {
+    "start": 164,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "telemaco82@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0070",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Benvenuto Draghi e Baccio Briccialdi-Luxardo. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a bughi@example.com. Linea diretta: +39 348 693 8313.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Benvenuto Draghi"
+   },
+   {
+    "start": 43,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Baccio Briccialdi-Luxardo"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 147,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bughi@example.com"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 348 693 8313"
+   }
+  ]
+ },
+ {
+  "id": "it-0071",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig. Torquato Dibiasi e il suo indirizzo si trova a Bologna. La richiameremo al 032 41245102. La carta registrata è 4048-2459-1639-4270. Una copia è stata inviata a lambertocoardi@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Sig. Torquato Dibiasi"
+   },
+   {
+    "start": 114,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 142,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 41245102"
+   },
+   {
+    "start": 178,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4048-2459-1639-4270"
+   },
+   {
+    "start": 227,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lambertocoardi@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0072",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Clelia Martucci. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al +39 346 997 7353 o scrivermi a giannameucci@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Clelia Martucci"
+   },
+   {
+    "start": 99,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 125,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 346 997 7353"
+   },
+   {
+    "start": 156,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "giannameucci@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0073",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Fiorenzo Campano e Domenico Longhena. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a marcella22@example.org. Linea diretta: 344 610 8147.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Fiorenzo Campano"
+   },
+   {
+    "start": 43,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Domenico Longhena"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 138,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcella22@example.org"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "344 610 8147"
+   }
+  ]
+ },
+ {
+  "id": "it-0074",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig. Giampaolo Gabrieli e il suo indirizzo si trova a Venezia. La richiameremo al 324 979 2118. La carta registrata è 4362-2810-5865-4591. Una copia è stata inviata a filogamonina@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Sig. Giampaolo Gabrieli"
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "324 979 2118"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4362-2810-5865-4591"
+   },
+   {
+    "start": 229,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "filogamonina@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0075",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Annetta Samele. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 358 736 8998 o scrivermi a uliverotti@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Annetta Samele"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 123,
+    "end": 135,
+    "entity_type": "PHONE_NUMBER",
+    "value": "358 736 8998"
+   },
+   {
+    "start": 150,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "uliverotti@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0076",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Nino Scialpi-Donà e Matteo Bulzoni. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a icapone@example.org. Linea diretta: 014 80682130.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Nino Scialpi-Donà"
+   },
+   {
+    "start": 44,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Matteo Bulzoni"
+   },
+   {
+    "start": 92,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 137,
+    "end": 156,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "icapone@example.org"
+   },
+   {
+    "start": 173,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "014 80682130"
+   }
+  ]
+ },
+ {
+  "id": "it-0077",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Massimiliano Carriera e il suo indirizzo si trova a Napoli. La richiameremo al 031 42367294. La carta registrata è 4053111725003696. Una copia è stata inviata a vitopetrassi@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 89,
+    "entity_type": "PERSON",
+    "value": "Dott. Massimiliano Carriera"
+   },
+   {
+    "start": 120,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "031 42367294"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4053111725003696"
+   },
+   {
+    "start": 229,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vitopetrassi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0078",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Anita Garibaldi-Forza. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al +39 344 348 2698 o scrivermi a todescalchi@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Anita Garibaldi-Forza"
+   },
+   {
+    "start": 105,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 131,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 344 348 2698"
+   },
+   {
+    "start": 162,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "todescalchi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0079",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Concetta Ciampi e Piergiorgio Bevilacqua. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a csinisi@example.com. Linea diretta: +39 370 517 2105.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Concetta Ciampi"
+   },
+   {
+    "start": 42,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Piergiorgio Bevilacqua"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "csinisi@example.com"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 370 517 2105"
+   }
+  ]
+ },
+ {
+  "id": "it-0080",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Mattia Babato e il suo indirizzo si trova a Roma. La richiameremo al 333 317 8957. La carta registrata è 4144896543704126. Una copia è stata inviata a zairaantelami@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Mattia Babato"
+   },
+   {
+    "start": 106,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "333 317 8957"
+   },
+   {
+    "start": 167,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4144896543704126"
+   },
+   {
+    "start": 213,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zairaantelami@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0081",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Luigina Volterra. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Genova. Può chiamarmi al 086 70567099 o scrivermi a maurobabato@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Luigina Volterra"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 125,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "086 70567099"
+   },
+   {
+    "start": 152,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maurobabato@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0082",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Donato Molesini-Curatoli e Dott. Loredana Mogherini. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a yvittadello@example.com. Linea diretta: 08 9683555.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Donato Molesini-Curatoli"
+   },
+   {
+    "start": 51,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Dott. Loredana Mogherini"
+   },
+   {
+    "start": 109,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 154,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "yvittadello@example.com"
+   },
+   {
+    "start": 194,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "08 9683555"
+   }
+  ]
+ },
+ {
+  "id": "it-0083",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Amalia Leonardi e il suo indirizzo si trova a Firenze. La richiameremo al 089 76041915. La carta registrata è 4826-3893-0038-2117. Una copia è stata inviata a girolamopanatta@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Amalia Leonardi"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "089 76041915"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4826-3893-0038-2117"
+   },
+   {
+    "start": 221,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "girolamopanatta@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0084",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Laura Natta-Mattarella. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 012 55301573 o scrivermi a camicioneluciana@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Laura Natta-Mattarella"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "012 55301573"
+   },
+   {
+    "start": 158,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "camicioneluciana@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0085",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Adriana Gatto e Lidia Salvo-Jacuzzi. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a cagnottomarcantonio@example.org. Linea diretta: +39 377 324 2270.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Adriana Gatto"
+   },
+   {
+    "start": 40,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Lidia Salvo-Jacuzzi"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 137,
+    "end": 168,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cagnottomarcantonio@example.org"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 377 324 2270"
+   }
+  ]
+ },
+ {
+  "id": "it-0086",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Paride Salvemini-Ferrara e il suo indirizzo si trova a Venezia. La richiameremo al +39 315 650 4865. La carta registrata è 4928-4484-0273-6674. Una copia è stata inviata a rfischetti@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 86,
+    "entity_type": "PERSON",
+    "value": "Paride Salvemini-Ferrara"
+   },
+   {
+    "start": 117,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 145,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 315 650 4865"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4928-4484-0273-6674"
+   },
+   {
+    "start": 234,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rfischetti@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0087",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Annamaria Pucci. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 336 488 4356 o scrivermi a sraffaaurora@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Annamaria Pucci"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "336 488 4356"
+   },
+   {
+    "start": 151,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sraffaaurora@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0088",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Elmo Oliboni e Sig. Dario Cusano. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a danielealtera@example.org. Linea diretta: +39 318 606 6312.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Elmo Oliboni"
+   },
+   {
+    "start": 39,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Sig. Dario Cusano"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 135,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "danielealtera@example.org"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 318 606 6312"
+   }
+  ]
+ },
+ {
+  "id": "it-0089",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Caterina Nadi-Crispi e il suo indirizzo si trova a Genova. La richiameremo al 05 60874143. La carta registrata è 4914-8124-0578-3213. Una copia è stata inviata a reniereleanora@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Caterina Nadi-Crispi"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 140,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "05 60874143"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4914-8124-0578-3213"
+   },
+   {
+    "start": 224,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reniereleanora@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0090",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Raffaello Fantozzi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al +39 397 434 9535 o scrivermi a carlonosiglia@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Dott. Raffaello Fantozzi"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 397 434 9535"
+   },
+   {
+    "start": 165,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carlonosiglia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0091",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Antonietta Meucci e Pier Gasperi. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a chiaragori@example.com. Linea diretta: 032 93391466.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Antonietta Meucci"
+   },
+   {
+    "start": 44,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Pier Gasperi"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 135,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chiaragori@example.com"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 93391466"
+   }
+  ]
+ },
+ {
+  "id": "it-0092",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Filippo Bassi e il suo indirizzo si trova a Venezia. La richiameremo al +39 388 296 5311. La carta registrata è 4842984107604158. Una copia è stata inviata a pepecamilla@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Filippo Bassi"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 388 296 5311"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4842984107604158"
+   },
+   {
+    "start": 220,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pepecamilla@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0093",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig. Corrado Modiano. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al +39 325 115 9237 o scrivermi a carlapareto@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Sig. Corrado Modiano"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 130,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 325 115 9237"
+   },
+   {
+    "start": 161,
+    "end": 184,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carlapareto@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0094",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ronaldo Gotti e Sandro Fogazzaro. La prossima riunione si terrà a Palermo. Da fare: inviare la presentazione a salvatore73@example.net. Linea diretta: +39 322 236 5448.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ronaldo Gotti"
+   },
+   {
+    "start": 40,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Sandro Fogazzaro"
+   },
+   {
+    "start": 90,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 135,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "salvatore73@example.net"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 322 236 5448"
+   }
+  ]
+ },
+ {
+  "id": "it-0095",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sylvia Cutuli e il suo indirizzo si trova a Torino. La richiameremo al 071 70760979. La carta registrata è 4566627948185341. Una copia è stata inviata a patrizio57@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Sylvia Cutuli"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "071 70760979"
+   },
+   {
+    "start": 169,
+    "end": 185,
+    "entity_type": "CREDIT_CARD",
+    "value": "4566627948185341"
+   },
+   {
+    "start": 215,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patrizio57@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0096",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Elmo Satta. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al 091 53459648 o scrivermi a renzopetrucci@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 32,
+    "entity_type": "PERSON",
+    "value": "Elmo Satta"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 119,
+    "end": 131,
+    "entity_type": "PHONE_NUMBER",
+    "value": "091 53459648"
+   },
+   {
+    "start": 146,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renzopetrucci@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0097",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Giuseppina Seddio e Donna Cagnin-Nicolucci. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a fbriccialdi@example.net. Linea diretta: +39 352 162 7966.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Giuseppina Seddio"
+   },
+   {
+    "start": 44,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Donna Cagnin-Nicolucci"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 144,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fbriccialdi@example.net"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 352 162 7966"
+   }
+  ]
+ },
+ {
+  "id": "it-0098",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Giosuè Zeffirelli e il suo indirizzo si trova a Venezia. La richiameremo al 022 53444429. La carta registrata è 4043923426774331. Una copia è stata inviata a tremontipuccio@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Giosuè Zeffirelli"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "022 53444429"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4043923426774331"
+   },
+   {
+    "start": 220,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tremontipuccio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0099",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Dott. Clelia Jacuzzi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al 363 173 6027 o scrivermi a arialigorio@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Dott. Clelia Jacuzzi"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 130,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "363 173 6027"
+   },
+   {
+    "start": 157,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "arialigorio@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0100",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Annamaria Antonetti e Dott. Iolanda Modiano. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a lorettabadoer@example.com. Linea diretta: 047 26938035.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Annamaria Antonetti"
+   },
+   {
+    "start": 46,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Dott. Iolanda Modiano"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 145,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lorettabadoer@example.com"
+   },
+   {
+    "start": 187,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "047 26938035"
+   }
+  ]
+ },
+ {
+  "id": "it-0101",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Federica Fantoni e il suo indirizzo si trova a Verona. La richiameremo al 317 945 5075. La carta registrata è 4736-6014-7813-3125. Una copia è stata inviata a gangemilidia@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Federica Fantoni"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "317 945 5075"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4736-6014-7813-3125"
+   },
+   {
+    "start": 221,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gangemilidia@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0102",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Leopoldo Mascheroni. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 372 682 2866 o scrivermi a ansaldomazzeo@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Leopoldo Mascheroni"
+   },
+   {
+    "start": 103,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 129,
+    "end": 141,
+    "entity_type": "PHONE_NUMBER",
+    "value": "372 682 2866"
+   },
+   {
+    "start": 156,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ansaldomazzeo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0103",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ottone Curiel e Martino Pincherle. La prossima riunione si terrà a Torino. Da fare: inviare la presentazione a trupianoannalisa@example.com. Linea diretta: 04 75008697.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ottone Curiel"
+   },
+   {
+    "start": 40,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Martino Pincherle"
+   },
+   {
+    "start": 91,
+    "end": 97,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 135,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "trupianoannalisa@example.com"
+   },
+   {
+    "start": 180,
+    "end": 191,
+    "entity_type": "PHONE_NUMBER",
+    "value": "04 75008697"
+   }
+  ]
+ },
+ {
+  "id": "it-0104",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig.ra Federica Giulietti e il suo indirizzo si trova a Milano. La richiameremo al 349 397 2409. La carta registrata è 4181-6229-4774-4359. Una copia è stata inviata a pellegrinoseddio@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 87,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Federica Giulietti"
+   },
+   {
+    "start": 118,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 145,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "349 397 2409"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4181-6229-4774-4359"
+   },
+   {
+    "start": 230,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pellegrinoseddio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0105",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Maria Salvini. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 041 30868851 o scrivermi a emattarella@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Maria Salvini"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 122,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "041 30868851"
+   },
+   {
+    "start": 149,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emattarella@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0106",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Elisa Prada e Enrico Gualtieri. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a bellucciermanno@example.com. Linea diretta: 318 669 7982.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Elisa Prada"
+   },
+   {
+    "start": 38,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Enrico Gualtieri"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 132,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bellucciermanno@example.com"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "318 669 7982"
+   }
+  ]
+ },
+ {
+  "id": "it-0107",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Elena Taliercio e il suo indirizzo si trova a Napoli. La richiameremo al 045 58230211. La carta registrata è 4358-7031-0349-9751. Una copia è stata inviata a carloleonardi@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Elena Taliercio"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "045 58230211"
+   },
+   {
+    "start": 171,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4358-7031-0349-9751"
+   },
+   {
+    "start": 220,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carloleonardi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0108",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Giustino Spinelli. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 054 82102411 o scrivermi a boninoadriano@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Giustino Spinelli"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 126,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "054 82102411"
+   },
+   {
+    "start": 153,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "boninoadriano@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0109",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Carla Brugnaro e Dott. Gaetano Peranda. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a paolo09@example.com. Linea diretta: 042 65296576.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Carla Brugnaro"
+   },
+   {
+    "start": 41,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Dott. Gaetano Peranda"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 140,
+    "end": 159,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "paolo09@example.com"
+   },
+   {
+    "start": 176,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "042 65296576"
+   }
+  ]
+ },
+ {
+  "id": "it-0110",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Giulietta Piazzi e il suo indirizzo si trova a Palermo. La richiameremo al 039 65939224. La carta registrata è 4218-0230-8718-2939. Una copia è stata inviata a dvianello@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Giulietta Piazzi"
+   },
+   {
+    "start": 109,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "039 65939224"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4218-0230-8718-2939"
+   },
+   {
+    "start": 222,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dvianello@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0111",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Camillo Cagnotto. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 06 83688402 o scrivermi a ksorrentino@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Camillo Cagnotto"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 126,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 83688402"
+   },
+   {
+    "start": 152,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ksorrentino@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0112",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Rossana Casalodi e Dott. Erika Caetani. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a priscilla92@example.org. Linea diretta: +39 321 985 8718.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Rossana Casalodi"
+   },
+   {
+    "start": 43,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Dott. Erika Caetani"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 140,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "priscilla92@example.org"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 321 985 8718"
+   }
+  ]
+ },
+ {
+  "id": "it-0113",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Michele Filippelli-Barsanti e il suo indirizzo si trova a Torino. La richiameremo al 053 83966921. La carta registrata è 4145-6558-6286-9806. Una copia è stata inviata a opriuli@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 89,
+    "entity_type": "PERSON",
+    "value": "Michele Filippelli-Barsanti"
+   },
+   {
+    "start": 120,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "053 83966921"
+   },
+   {
+    "start": 183,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4145-6558-6286-9806"
+   },
+   {
+    "start": 232,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "opriuli@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0114",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Isabella Roccabonella. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al 386 534 4295 o scrivermi a bodonimirco@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Isabella Roccabonella"
+   },
+   {
+    "start": 105,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "386 534 4295"
+   },
+   {
+    "start": 158,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bodonimirco@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0115",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Lidia Pirandello-Giannotti e Emma Opizzi. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a dantezeffirelli@example.org. Linea diretta: +39 387 697 4417.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Lidia Pirandello-Giannotti"
+   },
+   {
+    "start": 53,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Emma Opizzi"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 142,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dantezeffirelli@example.org"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 387 697 4417"
+   }
+  ]
+ },
+ {
+  "id": "it-0116",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Giuliana Majewski-Sermonti e il suo indirizzo si trova a Bologna. La richiameremo al 383 370 9258. La carta registrata è 4720219986043047. Una copia è stata inviata a ennio17@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 88,
+    "entity_type": "PERSON",
+    "value": "Giuliana Majewski-Sermonti"
+   },
+   {
+    "start": 119,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 147,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "383 370 9258"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4720219986043047"
+   },
+   {
+    "start": 229,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ennio17@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0117",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig. Galasso Vigorelli. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 316 527 2129 o scrivermi a barsantivittorio@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Sig. Galasso Vigorelli"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 131,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "316 527 2129"
+   },
+   {
+    "start": 158,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "barsantivittorio@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0118",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Sante Agostini e Virginia Foà-Fornaciari. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a uberto31@example.net. Linea diretta: +39 382 463 3068.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Sante Agostini"
+   },
+   {
+    "start": 41,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Virginia Foà-Fornaciari"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 143,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "uberto31@example.net"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 382 463 3068"
+   }
+  ]
+ },
+ {
+  "id": "it-0119",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Ezio Florio-Capecchi e il suo indirizzo si trova a Genova. La richiameremo al 368 667 3739. La carta registrata è 4844-8843-9254-7104. Una copia è stata inviata a livia06@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Ezio Florio-Capecchi"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "368 667 3739"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4844-8843-9254-7104"
+   },
+   {
+    "start": 225,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "livia06@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0120",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Anita Littizzetto-Rosselli. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 091 3941156 o scrivermi a vergadonatello@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Anita Littizzetto-Rosselli"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 136,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "091 3941156"
+   },
+   {
+    "start": 162,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vergadonatello@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0121",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Sig. Pasqual Cuomo e Alessio Cilea. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a lucianostein@example.com. Linea diretta: 050 9341157.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Sig. Pasqual Cuomo"
+   },
+   {
+    "start": 45,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Alessio Cilea"
+   },
+   {
+    "start": 92,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 136,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucianostein@example.com"
+   },
+   {
+    "start": 177,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "050 9341157"
+   }
+  ]
+ },
+ {
+  "id": "it-0122",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Ronaldo Finzi e il suo indirizzo si trova a Palermo. La richiameremo al 077 19629693. La carta registrata è 4450-3271-9225-2819. Una copia è stata inviata a rblasi@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Ronaldo Finzi"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "077 19629693"
+   },
+   {
+    "start": 170,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4450-3271-9225-2819"
+   },
+   {
+    "start": 219,
+    "end": 237,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rblasi@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0123",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Arnulfo Ariosto. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 051 14844018 o scrivermi a tomasinialphons@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Arnulfo Ariosto"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "051 14844018"
+   },
+   {
+    "start": 151,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tomasinialphons@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0124",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Benvenuto Trapani-Vidoni e Morena Bernardini. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a fittipaldivaleria@example.com. Linea diretta: 339 792 1606.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Benvenuto Trapani-Vidoni"
+   },
+   {
+    "start": 51,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Morena Bernardini"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 147,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fittipaldivaleria@example.com"
+   },
+   {
+    "start": 193,
+    "end": 205,
+    "entity_type": "PHONE_NUMBER",
+    "value": "339 792 1606"
+   }
+  ]
+ },
+ {
+  "id": "it-0125",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Lolita Gotti e il suo indirizzo si trova a Firenze. La richiameremo al 346 619 6409. La carta registrata è 4901-0437-2851-7840. Una copia è stata inviata a soleruffini@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Dott. Lolita Gotti"
+   },
+   {
+    "start": 111,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "346 619 6409"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4901-0437-2851-7840"
+   },
+   {
+    "start": 224,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "soleruffini@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0126",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Serena Coppola-Ceci. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al +39 385 264 6872 o scrivermi a jficino@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Serena Coppola-Ceci"
+   },
+   {
+    "start": 103,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 129,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 385 264 6872"
+   },
+   {
+    "start": 160,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jficino@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0127",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Nanni Zetticci e Dina Falcone. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a antoniopavone@example.org. Linea diretta: 04 67935325.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Nanni Zetticci"
+   },
+   {
+    "start": 41,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Dina Falcone"
+   },
+   {
+    "start": 87,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 132,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antoniopavone@example.org"
+   },
+   {
+    "start": 174,
+    "end": 185,
+    "entity_type": "PHONE_NUMBER",
+    "value": "04 67935325"
+   }
+  ]
+ },
+ {
+  "id": "it-0128",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Agnolo Strangio-Saracino e il suo indirizzo si trova a Torino. La richiameremo al +39 342 791 1517. La carta registrata è 4907-7664-3670-6503. Una copia è stata inviata a trentiniraffaele@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 86,
+    "entity_type": "PERSON",
+    "value": "Agnolo Strangio-Saracino"
+   },
+   {
+    "start": 117,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 144,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 342 791 1517"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4907-7664-3670-6503"
+   },
+   {
+    "start": 233,
+    "end": 261,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "trentiniraffaele@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0129",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Enrico Brancaccio. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al +39 327 771 3326 o scrivermi a flaviojuvara@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Enrico Brancaccio"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 127,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 327 771 3326"
+   },
+   {
+    "start": 158,
+    "end": 182,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flaviojuvara@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0130",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Dario Lucchesi e Vincenzo Bianchini. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a roccozanazzo@example.org. Linea diretta: +39 349 128 9085.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Dario Lucchesi"
+   },
+   {
+    "start": 41,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Vincenzo Bianchini"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 137,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "roccozanazzo@example.org"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 349 128 9085"
+   }
+  ]
+ },
+ {
+  "id": "it-0131",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Loredana Gravina e il suo indirizzo si trova a Roma. La richiameremo al 336 618 6915. La carta registrata è 4128-8895-8716-0867. Una copia è stata inviata a irmasegre@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Loredana Gravina"
+   },
+   {
+    "start": 109,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 134,
+    "end": 146,
+    "entity_type": "PHONE_NUMBER",
+    "value": "336 618 6915"
+   },
+   {
+    "start": 170,
+    "end": 189,
+    "entity_type": "CREDIT_CARD",
+    "value": "4128-8895-8716-0867"
+   },
+   {
+    "start": 219,
+    "end": 240,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "irmasegre@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0132",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Loredana Baglioni. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 382 108 3038 o scrivermi a ubaldobattaglia@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Loredana Baglioni"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 127,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "382 108 3038"
+   },
+   {
+    "start": 154,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ubaldobattaglia@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0133",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Antonietta Carosone-Bottaro e Flora Tresoldi-Pertini. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a piergiuseppeperanda@example.org. Linea diretta: 032 27355963.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 51,
+    "entity_type": "PERSON",
+    "value": "Antonietta Carosone-Bottaro"
+   },
+   {
+    "start": 54,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Flora Tresoldi-Pertini"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 154,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "piergiuseppeperanda@example.org"
+   },
+   {
+    "start": 202,
+    "end": 214,
+    "entity_type": "PHONE_NUMBER",
+    "value": "032 27355963"
+   }
+  ]
+ },
+ {
+  "id": "it-0134",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Pierina Torlonia-Moccia e il suo indirizzo si trova a Firenze. La richiameremo al 385 255 5158. La carta registrata è 4152-1955-7831-8376. Una copia è stata inviata a liciaperanda@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Pierina Torlonia-Moccia"
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "385 255 5158"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4152-1955-7831-8376"
+   },
+   {
+    "start": 229,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "liciaperanda@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0135",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Gioffre Fornaciari-Mortati. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Torino. Può chiamarmi al 389 883 1621 o scrivermi a pierinavigliotti@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Gioffre Fornaciari-Mortati"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 135,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "389 883 1621"
+   },
+   {
+    "start": 162,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pierinavigliotti@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0136",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ermenegildo Blasi e Berenice Riccati. La prossima riunione si terrà a Roma. Da fare: inviare la presentazione a mariana98@example.com. Linea diretta: +39 345 962 1543.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Ermenegildo Blasi"
+   },
+   {
+    "start": 44,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Berenice Riccati"
+   },
+   {
+    "start": 94,
+    "end": 98,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 136,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariana98@example.com"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 345 962 1543"
+   }
+  ]
+ },
+ {
+  "id": "it-0137",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Orlando Guidotti e il suo indirizzo si trova a Genova. La richiameremo al 072 29542789. La carta registrata è 4974323952676005. Una copia è stata inviata a tonino20@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Orlando Guidotti"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "072 29542789"
+   },
+   {
+    "start": 172,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4974323952676005"
+   },
+   {
+    "start": 218,
+    "end": 238,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tonino20@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0138",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Federico Mazzanti-Doglioni. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Palermo. Può chiamarmi al 349 826 4784 o scrivermi a fortunata28@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Federico Mazzanti-Doglioni"
+   },
+   {
+    "start": 110,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 136,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "349 826 4784"
+   },
+   {
+    "start": 163,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fortunata28@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0139",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Adelasia Peruzzi e Antonello Donati-Monteverdi. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a donatonigiada@example.net. Linea diretta: +39 339 767 9638.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Adelasia Peruzzi"
+   },
+   {
+    "start": 43,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Antonello Donati-Monteverdi"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 148,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "donatonigiada@example.net"
+   },
+   {
+    "start": 190,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 339 767 9638"
+   }
+  ]
+ },
+ {
+  "id": "it-0140",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig. Saverio Querini e il suo indirizzo si trova a Roma. La richiameremo al 044 86187463. La carta registrata è 4061306822430897. Una copia è stata inviata a campisebiagio@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Sig. Saverio Querini"
+   },
+   {
+    "start": 113,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "044 86187463"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4061306822430897"
+   },
+   {
+    "start": 220,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "campisebiagio@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0141",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Arnulfo Abate. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Palermo. Può chiamarmi al +39 369 748 6350 o scrivermi a rossana84@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Arnulfo Abate"
+   },
+   {
+    "start": 97,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 369 748 6350"
+   },
+   {
+    "start": 154,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rossana84@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0142",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Gianfranco Taliercio e Tina Ritacca-Antonini. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a romeo50@example.org. Linea diretta: +39 369 178 2554.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Gianfranco Taliercio"
+   },
+   {
+    "start": 47,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Tina Ritacca-Antonini"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 147,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "romeo50@example.org"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 369 178 2554"
+   }
+  ]
+ },
+ {
+  "id": "it-0143",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Daria Chiesa e il suo indirizzo si trova a Venezia. La richiameremo al 378 127 7225. La carta registrata è 4227-9449-2249-4222. Una copia è stata inviata a chiarasalieri@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Daria Chiesa"
+   },
+   {
+    "start": 105,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "378 127 7225"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4227-9449-2249-4222"
+   },
+   {
+    "start": 218,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "chiarasalieri@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0144",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Raffaellino Ligorio. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 373 970 2876 o scrivermi a natalia83@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Raffaellino Ligorio"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 128,
+    "end": 140,
+    "entity_type": "PHONE_NUMBER",
+    "value": "373 970 2876"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "natalia83@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0145",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Giampaolo Fuseli-Bombieri e Benvenuto Bosurgi. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a fabriziofederici@example.net. Linea diretta: 369 612 8691.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Giampaolo Fuseli-Bombieri"
+   },
+   {
+    "start": 52,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Benvenuto Bosurgi"
+   },
+   {
+    "start": 103,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 147,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fabriziofederici@example.net"
+   },
+   {
+    "start": 192,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "369 612 8691"
+   }
+  ]
+ },
+ {
+  "id": "it-0146",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Pellegrino Caffarelli e il suo indirizzo si trova a Napoli. La richiameremo al +39 359 685 7472. La carta registrata è 4400799762640592. Una copia è stata inviata a sabbatinicesare@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Pellegrino Caffarelli"
+   },
+   {
+    "start": 114,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 141,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 359 685 7472"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "CREDIT_CARD",
+    "value": "4400799762640592"
+   },
+   {
+    "start": 227,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sabbatinicesare@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0147",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Ermes Leblanc-Gagliano. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Venezia. Può chiamarmi al +39 378 625 3960 o scrivermi a luigimalatesta@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Ermes Leblanc-Gagliano"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 378 625 3960"
+   },
+   {
+    "start": 163,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luigimalatesta@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0148",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Flavia Romagnoli e Vittorio Mattarella. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a bperini@example.com. Linea diretta: 316 263 8896.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Flavia Romagnoli"
+   },
+   {
+    "start": 43,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Vittorio Mattarella"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 141,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bperini@example.com"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "316 263 8896"
+   }
+  ]
+ },
+ {
+  "id": "it-0149",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Lolita Saraceno e il suo indirizzo si trova a Firenze. La richiameremo al +39 379 343 6242. La carta registrata è 4179-1434-1824-5895. Una copia è stata inviata a qpirandello@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Lolita Saraceno"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 136,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 379 343 6242"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4179-1434-1824-5895"
+   },
+   {
+    "start": 225,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qpirandello@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0150",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Fredo Moneta. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al 086 36096169 o scrivermi a antonietta27@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Fredo Moneta"
+   },
+   {
+    "start": 96,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 121,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "086 36096169"
+   },
+   {
+    "start": 148,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "antonietta27@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0151",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Berenice Giusti e Monica Brenna-Argurio. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a kchiaramonte@example.net. Linea diretta: 390 802 9150.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Berenice Giusti"
+   },
+   {
+    "start": 42,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Monica Brenna-Argurio"
+   },
+   {
+    "start": 97,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 142,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kchiaramonte@example.net"
+   },
+   {
+    "start": 183,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "390 802 9150"
+   }
+  ]
+ },
+ {
+  "id": "it-0152",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Rossana Opizzi e il suo indirizzo si trova a Palermo. La richiameremo al 095 5194191. La carta registrata è 4782-4927-1416-9161. Una copia è stata inviata a fantinisante@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Dott. Rossana Opizzi"
+   },
+   {
+    "start": 113,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 141,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "095 5194191"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4782-4927-1416-9161"
+   },
+   {
+    "start": 225,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fantinisante@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0153",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Zaira Peano. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Bologna. Può chiamarmi al 091 29210028 o scrivermi a carolina49@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Zaira Peano"
+   },
+   {
+    "start": 95,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 121,
+    "end": 133,
+    "entity_type": "PHONE_NUMBER",
+    "value": "091 29210028"
+   },
+   {
+    "start": 148,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carolina49@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0154",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ciro Salandra e Livia Cortese. La prossima riunione si terrà a Torino. Da fare: inviare la presentazione a sylvia65@example.org. Linea diretta: 383 369 2251.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ciro Salandra"
+   },
+   {
+    "start": 40,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Livia Cortese"
+   },
+   {
+    "start": 87,
+    "end": 93,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 131,
+    "end": 151,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sylvia65@example.org"
+   },
+   {
+    "start": 168,
+    "end": 180,
+    "entity_type": "PHONE_NUMBER",
+    "value": "383 369 2251"
+   }
+  ]
+ },
+ {
+  "id": "it-0155",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Cassandra Borsellino e il suo indirizzo si trova a Verona. La richiameremo al 310 202 7893. La carta registrata è 4369760232453353. Una copia è stata inviata a adele37@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 88,
+    "entity_type": "PERSON",
+    "value": "Dott. Cassandra Borsellino"
+   },
+   {
+    "start": 119,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 146,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "310 202 7893"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4369760232453353"
+   },
+   {
+    "start": 228,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "adele37@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0156",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Rocco Borrani. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al +39 342 498 7715 o scrivermi a rgiammusso@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Rocco Borrani"
+   },
+   {
+    "start": 97,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 122,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 342 498 7715"
+   },
+   {
+    "start": 153,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rgiammusso@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0157",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Olga Persico e Benedetto Canova-Boccherini. La prossima riunione si terrà a Roma. Da fare: inviare la presentazione a ncarli@example.com. Linea diretta: +39 365 822 2218.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Olga Persico"
+   },
+   {
+    "start": 39,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Benedetto Canova-Boccherini"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 142,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ncarli@example.com"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 365 822 2218"
+   }
+  ]
+ },
+ {
+  "id": "it-0158",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig. Gianfranco Lussu e il suo indirizzo si trova a Firenze. La richiameremo al 09 46468476. La carta registrata è 4935503429887511. Una copia è stata inviata a aurora20@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Sig. Gianfranco Lussu"
+   },
+   {
+    "start": 114,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 142,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "09 46468476"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4935503429887511"
+   },
+   {
+    "start": 223,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aurora20@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0159",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Alessia Malatesta. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Genova. Può chiamarmi al +39 314 486 8461 o scrivermi a zpanzera@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Alessia Malatesta"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 314 486 8461"
+   },
+   {
+    "start": 157,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zpanzera@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0160",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Michelotto Benedetti e Sig.ra Gemma Mezzetta. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a segnialessandro@example.net. Linea diretta: +39 318 992 9459.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Michelotto Benedetti"
+   },
+   {
+    "start": 47,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Gemma Mezzetta"
+   },
+   {
+    "start": 102,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 146,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "segnialessandro@example.net"
+   },
+   {
+    "start": 190,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 318 992 9459"
+   }
+  ]
+ },
+ {
+  "id": "it-0161",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Rosina Viola e il suo indirizzo si trova a Milano. La richiameremo al +39 315 447 4350. La carta registrata è 4252-1918-0840-8581. Una copia è stata inviata a lupotatiana@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Rosina Viola"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 132,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 315 447 4350"
+   },
+   {
+    "start": 172,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4252-1918-0840-8581"
+   },
+   {
+    "start": 221,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lupotatiana@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0162",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Romina Bajardi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Torino. Può chiamarmi al +39 373 344 1955 o scrivermi a gioachinoterragni@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Romina Bajardi"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 373 344 1955"
+   },
+   {
+    "start": 154,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gioachinoterragni@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0163",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Corrado Ruggeri-Manunta e Pellegrino Pontecorvo. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a oferrazzi@example.net. Linea diretta: 339 660 2478.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Corrado Ruggeri-Manunta"
+   },
+   {
+    "start": 50,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Pellegrino Pontecorvo"
+   },
+   {
+    "start": 105,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 150,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "oferrazzi@example.net"
+   },
+   {
+    "start": 188,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "339 660 2478"
+   }
+  ]
+ },
+ {
+  "id": "it-0164",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Alessio Giulietti e il suo indirizzo si trova a Torino. La richiameremo al 098 94462154. La carta registrata è 4061-8471-0270-4832. Una copia è stata inviata a simonetta51@example.net.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Alessio Giulietti"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 137,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "098 94462154"
+   },
+   {
+    "start": 173,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4061-8471-0270-4832"
+   },
+   {
+    "start": 222,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "simonetta51@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0165",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Marissa Leopardi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Roma. Può chiamarmi al 067 9600555 o scrivermi a forzalamberto@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Marissa Leopardi"
+   },
+   {
+    "start": 100,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 123,
+    "end": 134,
+    "entity_type": "PHONE_NUMBER",
+    "value": "067 9600555"
+   },
+   {
+    "start": 149,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "forzalamberto@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0166",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Valentina Sagnelli e Beppe Battaglia. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a gasperimariano@example.com. Linea diretta: +39 376 684 6863.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Valentina Sagnelli"
+   },
+   {
+    "start": 45,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Beppe Battaglia"
+   },
+   {
+    "start": 94,
+    "end": 100,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 138,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gasperimariano@example.com"
+   },
+   {
+    "start": 181,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 376 684 6863"
+   }
+  ]
+ },
+ {
+  "id": "it-0167",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Ugolino Romiti e il suo indirizzo si trova a Firenze. La richiameremo al +39 393 896 2835. La carta registrata è 4289-2734-8198-7250. Una copia è stata inviata a sante76@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Ugolino Romiti"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 135,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 393 896 2835"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "CREDIT_CARD",
+    "value": "4289-2734-8198-7250"
+   },
+   {
+    "start": 224,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sante76@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0168",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Serena Ricolfi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al +39 335 916 7560 o scrivermi a elmocuda@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Serena Ricolfi"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 335 916 7560"
+   },
+   {
+    "start": 154,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elmocuda@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0169",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ermenegildo Foconi e Roman Iannelli-Mascagni. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a gianna13@example.net. Linea diretta: 018 26657097.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Ermenegildo Foconi"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Roman Iannelli-Mascagni"
+   },
+   {
+    "start": 102,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 147,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gianna13@example.net"
+   },
+   {
+    "start": 184,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "018 26657097"
+   }
+  ]
+ },
+ {
+  "id": "it-0170",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Napoleone Corcos e il suo indirizzo si trova a Napoli. La richiameremo al +39 339 205 9164. La carta registrata è 4375-5808-8202-3914. Una copia è stata inviata a tamburinibernardo@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Napoleone Corcos"
+   },
+   {
+    "start": 109,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 136,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 339 205 9164"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4375-5808-8202-3914"
+   },
+   {
+    "start": 225,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tamburinibernardo@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0171",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Fulvio Alfieri. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al 072 29546990 o scrivermi a virginia42@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Fulvio Alfieri"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "072 29546990"
+   },
+   {
+    "start": 151,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "virginia42@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0172",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Elladio Ferragni-Ferrari e Giulio Catenazzi. La prossima riunione si terrà a Venezia. Da fare: inviare la presentazione a bassirodolfo@example.com. Linea diretta: 017 828180.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Elladio Ferragni-Ferrari"
+   },
+   {
+    "start": 51,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Giulio Catenazzi"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Venezia"
+   },
+   {
+    "start": 146,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bassirodolfo@example.com"
+   },
+   {
+    "start": 187,
+    "end": 197,
+    "entity_type": "PHONE_NUMBER",
+    "value": "017 828180"
+   }
+  ]
+ },
+ {
+  "id": "it-0173",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Livio Valier e il suo indirizzo si trova a Genova. La richiameremo al 08 74999070. La carta registrata è 4694568772506720. Una copia è stata inviata a caldobrandi@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Livio Valier"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 132,
+    "end": 143,
+    "entity_type": "PHONE_NUMBER",
+    "value": "08 74999070"
+   },
+   {
+    "start": 167,
+    "end": 183,
+    "entity_type": "CREDIT_CARD",
+    "value": "4694568772506720"
+   },
+   {
+    "start": 213,
+    "end": 236,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "caldobrandi@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0174",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Delfino Folliero. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Milano. Può chiamarmi al 349 373 8414 o scrivermi a marisa10@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Delfino Folliero"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 125,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "349 373 8414"
+   },
+   {
+    "start": 152,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marisa10@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0175",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Licia Tirabassi e Michela Cusano. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a gaglianodurante@example.org. Linea diretta: +39 336 481 4929.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Licia Tirabassi"
+   },
+   {
+    "start": 42,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Michela Cusano"
+   },
+   {
+    "start": 90,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 134,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gaglianodurante@example.org"
+   },
+   {
+    "start": 178,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 336 481 4929"
+   }
+  ]
+ },
+ {
+  "id": "it-0176",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dolores Ungaretti e il suo indirizzo si trova a Milano. La richiameremo al +39 327 557 3465. La carta registrata è 4028-1264-3912-0430. Una copia è stata inviata a mcastellitto@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Dolores Ungaretti"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 137,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 327 557 3465"
+   },
+   {
+    "start": 177,
+    "end": 196,
+    "entity_type": "CREDIT_CARD",
+    "value": "4028-1264-3912-0430"
+   },
+   {
+    "start": 226,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mcastellitto@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0177",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Manuel Gualtieri. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Palermo. Può chiamarmi al 356 480 3030 o scrivermi a fferrata@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Manuel Gualtieri"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Palermo"
+   },
+   {
+    "start": 126,
+    "end": 138,
+    "entity_type": "PHONE_NUMBER",
+    "value": "356 480 3030"
+   },
+   {
+    "start": 153,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fferrata@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0178",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ippazio Cicilia-Spinola e Lorenzo Oscuro. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a eva45@example.com. Linea diretta: 386 441 5918.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Ippazio Cicilia-Spinola"
+   },
+   {
+    "start": 50,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Lorenzo Oscuro"
+   },
+   {
+    "start": 98,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eva45@example.com"
+   },
+   {
+    "start": 177,
+    "end": 189,
+    "entity_type": "PHONE_NUMBER",
+    "value": "386 441 5918"
+   }
+  ]
+ },
+ {
+  "id": "it-0179",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Rosa Giannini e il suo indirizzo si trova a Firenze. La richiameremo al +39 333 344 5893. La carta registrata è 4811910185135580. Una copia è stata inviata a psantorio@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Rosa Giannini"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 134,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 333 344 5893"
+   },
+   {
+    "start": 174,
+    "end": 190,
+    "entity_type": "CREDIT_CARD",
+    "value": "4811910185135580"
+   },
+   {
+    "start": 220,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "psantorio@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0180",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Gaetano Valentino. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al +39 347 450 1359 o scrivermi a gleone@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Gaetano Valentino"
+   },
+   {
+    "start": 101,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 347 450 1359"
+   },
+   {
+    "start": 157,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gleone@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0181",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Giacobbe Fuseli e Franco Odescalchi-Turrini. La prossima riunione si terrà a Firenze. Da fare: inviare la presentazione a salvatore79@example.com. Linea diretta: +39 384 247 5239.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Giacobbe Fuseli"
+   },
+   {
+    "start": 42,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Franco Odescalchi-Turrini"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 146,
+    "end": 169,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "salvatore79@example.com"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 384 247 5239"
+   }
+  ]
+ },
+ {
+  "id": "it-0182",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Sig.ra Melina Maspero e il suo indirizzo si trova a Verona. La richiameremo al 369 544 8228. La carta registrata è 4352992257559843. Una copia è stata inviata a doriavictoria@example.org.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Sig.ra Melina Maspero"
+   },
+   {
+    "start": 114,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 141,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "369 544 8228"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4352992257559843"
+   },
+   {
+    "start": 223,
+    "end": 248,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "doriavictoria@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0183",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Marcantonio Argurio. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Roma. Può chiamarmi al +39 336 892 8489 o scrivermi a pellibarbara@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Marcantonio Argurio"
+   },
+   {
+    "start": 103,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 336 892 8489"
+   },
+   {
+    "start": 157,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pellibarbara@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0184",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Anita Gonzaga e Agnolo Cicilia. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a pizzocassandra@example.com. Linea diretta: 349 758 4556.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Anita Gonzaga"
+   },
+   {
+    "start": 40,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Agnolo Cicilia"
+   },
+   {
+    "start": 88,
+    "end": 94,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 132,
+    "end": 158,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pizzocassandra@example.com"
+   },
+   {
+    "start": 175,
+    "end": 187,
+    "entity_type": "PHONE_NUMBER",
+    "value": "349 758 4556"
+   }
+  ]
+ },
+ {
+  "id": "it-0185",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Dott. Etta Monduzzi e il suo indirizzo si trova a Verona. La richiameremo al 048 72668314. La carta registrata è 4550135747369064. Una copia è stata inviata a flavia64@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Dott. Etta Monduzzi"
+   },
+   {
+    "start": 112,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 139,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "048 72668314"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4550135747369064"
+   },
+   {
+    "start": 221,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flavia64@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0186",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Carlo Infantino. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Firenze. Può chiamarmi al 375 421 6000 o scrivermi a coluccioruffini@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Carlo Infantino"
+   },
+   {
+    "start": 99,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 125,
+    "end": 137,
+    "entity_type": "PHONE_NUMBER",
+    "value": "375 421 6000"
+   },
+   {
+    "start": 152,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "coluccioruffini@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0187",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Lolita Stoppani-Tresoldi e Gioacchino Guarneri. La prossima riunione si terrà a Verona. Da fare: inviare la presentazione a giulianapertile@example.net. Linea diretta: +39 387 642 9453.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Lolita Stoppani-Tresoldi"
+   },
+   {
+    "start": 51,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Gioacchino Guarneri"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 148,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "giulianapertile@example.net"
+   },
+   {
+    "start": 192,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 387 642 9453"
+   }
+  ]
+ },
+ {
+  "id": "it-0188",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Giorgio Antonioni-Finzi e il suo indirizzo si trova a Firenze. La richiameremo al 335 589 5596. La carta registrata è 4408-3977-9401-6345. Una copia è stata inviata a pasqualeliverotti@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Giorgio Antonioni-Finzi"
+   },
+   {
+    "start": 116,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 144,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "335 589 5596"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4408-3977-9401-6345"
+   },
+   {
+    "start": 229,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "pasqualeliverotti@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0189",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig. Jacopo Pininfarina. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Verona. Può chiamarmi al 393 165 3109 o scrivermi a ceciliaroccabonella@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Sig. Jacopo Pininfarina"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Verona"
+   },
+   {
+    "start": 132,
+    "end": 144,
+    "entity_type": "PHONE_NUMBER",
+    "value": "393 165 3109"
+   },
+   {
+    "start": 159,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ceciliaroccabonella@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0190",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Ansaldo Bembo e Dott. Raffaellino Sismondi. La prossima riunione si terrà a Napoli. Da fare: inviare la presentazione a guido83@example.com. Linea diretta: +39 399 916 3298.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Ansaldo Bembo"
+   },
+   {
+    "start": 40,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Dott. Raffaellino Sismondi"
+   },
+   {
+    "start": 100,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 144,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guido83@example.com"
+   },
+   {
+    "start": 180,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 399 916 3298"
+   }
+  ]
+ },
+ {
+  "id": "it-0191",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Guarino Camiscione e il suo indirizzo si trova a Napoli. La richiameremo al 044 28448260. La carta registrata è 4008-5715-3947-9687. Una copia è stata inviata a vincenza23@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Guarino Camiscione"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 138,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "044 28448260"
+   },
+   {
+    "start": 174,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4008-5715-3947-9687"
+   },
+   {
+    "start": 223,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vincenza23@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0192",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Lazzaro Littizzetto. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Roma. Può chiamarmi al +39 344 523 6499 o scrivermi a qbonomo@example.org. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Lazzaro Littizzetto"
+   },
+   {
+    "start": 103,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Roma"
+   },
+   {
+    "start": 126,
+    "end": 142,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 344 523 6499"
+   },
+   {
+    "start": 157,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qbonomo@example.org"
+   }
+  ]
+ },
+ {
+  "id": "it-0193",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Arnaldo Gioberti e Mariano Badoglio. La prossima riunione si terrà a Genova. Da fare: inviare la presentazione a cristinafibonacci@example.org. Linea diretta: +39 329 526 4971.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Arnaldo Gioberti"
+   },
+   {
+    "start": 43,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Mariano Badoglio"
+   },
+   {
+    "start": 93,
+    "end": 99,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 137,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cristinafibonacci@example.org"
+   },
+   {
+    "start": 183,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 329 526 4971"
+   }
+  ]
+ },
+ {
+  "id": "it-0194",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Napoleone Tamborini e il suo indirizzo si trova a Firenze. La richiameremo al 325 757 6612. La carta registrata è 4191-7464-5250-1330. Una copia è stata inviata a raimondoverri@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Napoleone Tamborini"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Firenze"
+   },
+   {
+    "start": 140,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "325 757 6612"
+   },
+   {
+    "start": 176,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4191-7464-5250-1330"
+   },
+   {
+    "start": 225,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "raimondoverri@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0195",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Sig. Nico Sordi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Torino. Può chiamarmi al 036 32103720 o scrivermi a amleto00@example.net. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Sig. Nico Sordi"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Torino"
+   },
+   {
+    "start": 124,
+    "end": 136,
+    "entity_type": "PHONE_NUMBER",
+    "value": "036 32103720"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "amleto00@example.net"
+   }
+  ]
+ },
+ {
+  "id": "it-0196",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Elisa Rapisardi-Pellegrini e Antonella Montessori. La prossima riunione si terrà a Bologna. Da fare: inviare la presentazione a donna75@example.com. Linea diretta: 079 72628408.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Elisa Rapisardi-Pellegrini"
+   },
+   {
+    "start": 53,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Antonella Montessori"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Bologna"
+   },
+   {
+    "start": 152,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "donna75@example.com"
+   },
+   {
+    "start": 188,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "079 72628408"
+   }
+  ]
+ },
+ {
+  "id": "it-0197",
+  "language": "it",
+  "genre": "inquiry",
+  "text": "Grazie per aver contattato l'assistenza. Il nome registrato è Carla Ariasso e il suo indirizzo si trova a Genova. La richiameremo al 012 72684074. La carta registrata è 4586-4681-5910-0885. Una copia è stata inviata a hsolimena@example.com.",
+  "spans": [
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Carla Ariasso"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Genova"
+   },
+   {
+    "start": 133,
+    "end": 145,
+    "entity_type": "PHONE_NUMBER",
+    "value": "012 72684074"
+   },
+   {
+    "start": 169,
+    "end": 188,
+    "entity_type": "CREDIT_CARD",
+    "value": "4586-4681-5910-0885"
+   },
+   {
+    "start": 218,
+    "end": 239,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hsolimena@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0198",
+  "language": "it",
+  "genre": "request",
+  "text": "Buongiorno, mi chiamo Azeglio Baresi. Vorrei fissare una riunione il mese prossimo. Il luogo sarà Napoli. Può chiamarmi al +39 373 567 5657 o scrivermi a farandaliliana@example.com. Grazie!",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Azeglio Baresi"
+   },
+   {
+    "start": 98,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Napoli"
+   },
+   {
+    "start": 123,
+    "end": 139,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+39 373 567 5657"
+   },
+   {
+    "start": 154,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "farandaliliana@example.com"
+   }
+  ]
+ },
+ {
+  "id": "it-0199",
+  "language": "it",
+  "genre": "minutes",
+  "text": "[Verbale] Partecipanti: Irma Soranzo e Dott. Gloria Giannuzzi. La prossima riunione si terrà a Milano. Da fare: inviare la presentazione a ciro28@example.net. Linea diretta: 057 12601599.",
+  "spans": [
+   {
+    "start": 24,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Irma Soranzo"
+   },
+   {
+    "start": 39,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Dott. Gloria Giannuzzi"
+   },
+   {
+    "start": 95,
+    "end": 101,
+    "entity_type": "LOCATION",
+    "value": "Milano"
+   },
+   {
+    "start": 139,
+    "end": 157,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ciro28@example.net"
+   },
+   {
+    "start": 174,
+    "end": 186,
+    "entity_type": "PHONE_NUMBER",
+    "value": "057 12601599"
+   }
+  ]
+ }
+]

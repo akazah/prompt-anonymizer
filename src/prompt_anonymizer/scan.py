@@ -20,6 +20,7 @@ from collections.abc import Sequence
 from typing import TYPE_CHECKING
 
 from prompt_anonymizer.labeling import EntitySpan, deny_list_spans, merge_spans
+from prompt_anonymizer.languages import DETECTION_RULES
 
 if TYPE_CHECKING:
     from presidio_analyzer import EntityRecognizer
@@ -35,9 +36,7 @@ STRUCTURED_ENTITIES = [
 
 DEFAULT_SCORE_THRESHOLD = 0.4
 
-_JA_SCRIPT = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
-_VI_MARKERS = re.compile(r"[ăâđơưĂÂĐƠƯ\u01a0\u01a1\u01af\u01b0\u1ea0-\u1ef9]")
-_ES_MARKERS = re.compile(r"[¿¡ñÑáéíóúüÁÉÍÓÚÜ]")
+_DETECTION_RULES = tuple((lang, re.compile(regex)) for lang, regex in DETECTION_RULES)
 
 _recognizers: dict[str, list[EntityRecognizer]] = {}
 
@@ -45,16 +44,14 @@ _recognizers: dict[str, list[EntityRecognizer]] = {}
 def guess_language(text: str) -> str:
     """Heuristic language guess from script ranges and marker letters.
 
-    Ordering: kana/kanji → ``ja``; Vietnamese-specific letters → ``vi``;
-    Spanish markers → ``es``; otherwise ``en``. Mirrors ``guessLanguage``
-    in the TypeScript core (``web/packages/core/src/language-detect.ts``).
+    Applies :data:`prompt_anonymizer.languages.DETECTION_RULES` top to
+    bottom (script rules first, then Latin-diacritic rules); no match means
+    ``en``. Mirrors ``guessLanguage`` in the TypeScript core
+    (``web/packages/core/src/language-detect.ts``).
     """
-    if _JA_SCRIPT.search(text):
-        return "ja"
-    if _VI_MARKERS.search(text):
-        return "vi"
-    if _ES_MARKERS.search(text):
-        return "es"
+    for language, marker in _DETECTION_RULES:
+        if marker.search(text):
+            return language
     return "en"
 
 
@@ -63,21 +60,21 @@ def _structured_recognizers(language: str = "en") -> list[EntityRecognizer]:
 
     ``supported_language`` is only consulted by the analyzer registry, not
     by direct ``analyze()`` calls, so one language-agnostic base list covers
-    en and ja - like the TypeScript core's regex rule table. The es / vi
-    phone patterns are language-scoped (mirroring the TS rules' ``languages``
-    field) because e.g. a Vietnamese ``0912 345 678`` must not fire on en text.
+    en and ja - like the TypeScript core's regex rule table. Phone patterns
+    from the language registry are language-scoped (mirroring the TS rules'
+    ``languages`` field) because e.g. a Vietnamese ``0912 345 678`` must not
+    fire on en text.
     """
     if language not in _recognizers:
         from presidio_analyzer.predefined_recognizers import EmailRecognizer, PhoneRecognizer
 
         from prompt_anonymizer.recognizers import (
             CreditCardLookaroundRecognizer,
-            EsPhoneRegexRecognizer,
             JaPhoneRegexRecognizer,
             JaPostalCodeRecognizer,
             MyNumberRecognizer,
             UsPhoneRegexRecognizer,
-            VnPhoneRegexRecognizer,
+            build_phone_regex_recognizer,
         )
 
         recognizers: list[EntityRecognizer] = [
@@ -89,10 +86,9 @@ def _structured_recognizers(language: str = "en") -> list[EntityRecognizer]:
             MyNumberRecognizer(),
             CreditCardLookaroundRecognizer(),
         ]
-        if language == "es":
-            recognizers.append(EsPhoneRegexRecognizer())
-        elif language == "vi":
-            recognizers.append(VnPhoneRegexRecognizer())
+        language_phone = build_phone_regex_recognizer(language)
+        if language_phone is not None:
+            recognizers.append(language_phone)
         _recognizers[language] = recognizers
     return _recognizers[language]
 
@@ -100,7 +96,7 @@ def _structured_recognizers(language: str = "en") -> list[EntityRecognizer]:
 def detect_structured(text: str, language: str = "auto") -> list[EntitySpan]:
     """Detect structured PII with pattern recognizers only (no NLP engine).
 
-    ``language`` selects the language-scoped patterns (es / vi phones);
+    ``language`` selects the language-scoped phone patterns (registry);
     ``"auto"`` uses :func:`guess_language`. Returns raw, unmerged spans;
     scores below recognizer context boosts (which require the full engine)
     are reported as-is.

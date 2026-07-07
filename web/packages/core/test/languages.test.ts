@@ -35,7 +35,8 @@ describe("language registry", () => {
   });
 
   it("isLanguage rejects unsupported codes", () => {
-    expect(isLanguage("fr")).toBe(false);
+    expect(isLanguage("xx")).toBe(false);
+    expect(isLanguage("th")).toBe(false);
   });
 
   it("isLanguageOption accepts the auto sentinel", () => {
@@ -45,7 +46,8 @@ describe("language registry", () => {
   it("languageFromBcp47 maps regional tags and rejects unsupported ones", () => {
     expect(languageFromBcp47("es-MX")).toBe("es");
     expect(languageFromBcp47("JA")).toBe("ja");
-    expect(languageFromBcp47("fr-FR")).toBeNull();
+    expect(languageFromBcp47("fr-FR")).toBe("fr");
+    expect(languageFromBcp47("th-TH")).toBeNull();
     expect(languageFromBcp47("")).toBeNull();
   });
 

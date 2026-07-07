@@ -1,0 +1,7200 @@
+[
+ {
+  "id": "fr-0000",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Margaret-Laurence Giraud. Je souhaite organiser une réunion le mois prochain. Le lieu sera Lebon-les-Bains. Vous pouvez me joindre au 01 75 42 77 35 ou m'écrire à victoiremasson@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Margaret-Laurence Giraud"
+   },
+   {
+    "start": 113,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Lebon-les-Bains"
+   },
+   {
+    "start": 156,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 75 42 77 35"
+   },
+   {
+    "start": 185,
+    "end": 211,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "victoiremasson@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0001",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Benjamin de Bouvier et Aimé Mallet. La prochaine réunion aura lieu à Muller. À faire : envoyer la présentation à gthibault@example.com. Ligne directe : +33 1 09 30 14 96.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 49,
+    "entity_type": "PERSON",
+    "value": "Benjamin de Bouvier"
+   },
+   {
+    "start": 53,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Aimé Mallet"
+   },
+   {
+    "start": 99,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Muller"
+   },
+   {
+    "start": 143,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gthibault@example.com"
+   },
+   {
+    "start": 182,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 09 30 14 96"
+   }
+  ]
+ },
+ {
+  "id": "fr-0002",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Laurent Raynaud et votre adresse se trouve à RobertBourg. Nous vous rappellerons au 07 93 21 89 24. La carte enregistrée est 4409344233110551. Une copie a été envoyée à benjamin77@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Laurent Raynaud"
+   },
+   {
+    "start": 105,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "RobertBourg"
+   },
+   {
+    "start": 144,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 93 21 89 24"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4409344233110551"
+   },
+   {
+    "start": 229,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "benjamin77@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0003",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Robert Potier-Camus. Je souhaite organiser une réunion le mois prochain. Le lieu sera Brunet. Vous pouvez me joindre au 06 01 40 22 01 ou m'écrire à de-sousaemmanuel@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Robert Potier-Camus"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Brunet"
+   },
+   {
+    "start": 142,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 01 40 22 01"
+   },
+   {
+    "start": 171,
+    "end": 199,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "de-sousaemmanuel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0004",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Étienne Klein et Alfred Monnier. La prochaine réunion aura lieu à Bourdon. À faire : envoyer la présentation à andree00@example.net. Ligne directe : +33 1 72 13 54 43.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Étienne Klein"
+   },
+   {
+    "start": 47,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Alfred Monnier"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Bourdon"
+   },
+   {
+    "start": 141,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andree00@example.net"
+   },
+   {
+    "start": 179,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 72 13 54 43"
+   }
+  ]
+ },
+ {
+  "id": "fr-0005",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jules Muller et votre adresse se trouve à Lucas-les-Bains. Nous vous rappellerons au 06 48 77 56 64. La carte enregistrée est 4720-0998-7172-9367. Une copie a été envoyée à cecilebourgeois@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Jules Muller"
+   },
+   {
+    "start": 102,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Lucas-les-Bains"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 48 77 56 64"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4720-0998-7172-9367"
+   },
+   {
+    "start": 233,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cecilebourgeois@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0006",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Georges Goncalves. Je souhaite organiser une réunion le mois prochain. Le lieu sera Sainte Adèle. Vous pouvez me joindre au +33 7 61 64 48 00 ou m'écrire à parisalphonse@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Georges Goncalves"
+   },
+   {
+    "start": 106,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Sainte Adèle"
+   },
+   {
+    "start": 146,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 61 64 48 00"
+   },
+   {
+    "start": 178,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "parisalphonse@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0007",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Cécile Dumas et Adélaïde Roux de Martel. La prochaine réunion aura lieu à Sauvage-la-Forêt. À faire : envoyer la présentation à vvidal@example.com. Ligne directe : +33 1 83 15 15 38.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Cécile Dumas"
+   },
+   {
+    "start": 46,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Adélaïde Roux de Martel"
+   },
+   {
+    "start": 104,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Sauvage-la-Forêt"
+   },
+   {
+    "start": 158,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vvidal@example.com"
+   },
+   {
+    "start": 194,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 83 15 15 38"
+   }
+  ]
+ },
+ {
+  "id": "fr-0008",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Luc Le Bourgeois et votre adresse se trouve à Saint TimothéeBourg. Nous vous rappellerons au 01 83 29 39 38. La carte enregistrée est 4086-7231-9629-6368. Une copie a été envoyée à hrocher@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Luc Le Bourgeois"
+   },
+   {
+    "start": 106,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Saint TimothéeBourg"
+   },
+   {
+    "start": 153,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 83 29 39 38"
+   },
+   {
+    "start": 194,
+    "end": 213,
+    "entity_type": "CREDIT_CARD",
+    "value": "4086-7231-9629-6368"
+   },
+   {
+    "start": 241,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hrocher@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0009",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Guillaume Caron. Je souhaite organiser une réunion le mois prochain. Le lieu sera LopesBourg. Vous pouvez me joindre au 06 08 09 01 90 ou m'écrire à sebastien80@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Guillaume Caron"
+   },
+   {
+    "start": 104,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "LopesBourg"
+   },
+   {
+    "start": 142,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 08 09 01 90"
+   },
+   {
+    "start": 171,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sebastien80@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0010",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Henri Bigot et Matthieu-Luc Coste. La prochaine réunion aura lieu à Bègue-la-Forêt. À faire : envoyer la présentation à normandaurelie@example.com. Ligne directe : +33 6 29 70 86 62.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Henri Bigot"
+   },
+   {
+    "start": 45,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Matthieu-Luc Coste"
+   },
+   {
+    "start": 98,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Bègue-la-Forêt"
+   },
+   {
+    "start": 150,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "normandaurelie@example.com"
+   },
+   {
+    "start": 194,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 29 70 86 62"
+   }
+  ]
+ },
+ {
+  "id": "fr-0011",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Zacharie Samson et votre adresse se trouve à Chevallier. Nous vous rappellerons au 07 58 14 58 11. La carte enregistrée est 4998-2798-4994-8159. Une copie a été envoyée à lecontealexandre@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Zacharie Samson"
+   },
+   {
+    "start": 105,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Chevallier"
+   },
+   {
+    "start": 143,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 58 14 58 11"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4998-2798-4994-8159"
+   },
+   {
+    "start": 231,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lecontealexandre@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0012",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Hortense Henry-Michel. Je souhaite organiser une réunion le mois prochain. Le lieu sera Gauthier. Vous pouvez me joindre au 06 24 37 18 04 ou m'écrire à plamy@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Hortense Henry-Michel"
+   },
+   {
+    "start": 110,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Gauthier"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 24 37 18 04"
+   },
+   {
+    "start": 175,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "plamy@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0013",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Jean Marie et Roland de la Vasseur. La prochaine réunion aura lieu à Adam. À faire : envoyer la présentation à lucypaul@example.net. Ligne directe : +33 7 03 05 84 29.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Jean Marie"
+   },
+   {
+    "start": 44,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Roland de la Vasseur"
+   },
+   {
+    "start": 99,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Adam"
+   },
+   {
+    "start": 141,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucypaul@example.net"
+   },
+   {
+    "start": 179,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 03 05 84 29"
+   }
+  ]
+ },
+ {
+  "id": "fr-0014",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Marthe Duhamel et votre adresse se trouve à Gallet-sur-Blot. Nous vous rappellerons au 06 10 46 08 88. La carte enregistrée est 4868-5662-5075-1636. Une copie a été envoyée à uruiz@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Marthe Duhamel"
+   },
+   {
+    "start": 104,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Gallet-sur-Blot"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 10 46 08 88"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4868-5662-5075-1636"
+   },
+   {
+    "start": 235,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "uruiz@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0015",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle René Clément. Je souhaite organiser une réunion le mois prochain. Le lieu sera Munoz. Vous pouvez me joindre au 01 99 20 58 25 ou m'écrire à charlesnathalie@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "René Clément"
+   },
+   {
+    "start": 101,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Munoz"
+   },
+   {
+    "start": 134,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 99 20 58 25"
+   },
+   {
+    "start": 163,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "charlesnathalie@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0016",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Luc Boulay et Luce Marchal. La prochaine réunion aura lieu à Sainte Eugène. À faire : envoyer la présentation à maceeugene@example.org. Ligne directe : 01 23 41 57 21.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Luc Boulay"
+   },
+   {
+    "start": 44,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Luce Marchal"
+   },
+   {
+    "start": 91,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Sainte Eugène"
+   },
+   {
+    "start": 142,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maceeugene@example.org"
+   },
+   {
+    "start": 182,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 23 41 57 21"
+   }
+  ]
+ },
+ {
+  "id": "fr-0017",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Julie Le Martinez et votre adresse se trouve à Cohen. Nous vous rappellerons au 07 78 99 84 72. La carte enregistrée est 4601-5175-3785-3549. Une copie a été envoyée à fchevalier@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Julie Le Martinez"
+   },
+   {
+    "start": 107,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Cohen"
+   },
+   {
+    "start": 140,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 78 99 84 72"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4601-5175-3785-3549"
+   },
+   {
+    "start": 228,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fchevalier@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0018",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Diane Petitjean-Prévost. Je souhaite organiser une réunion le mois prochain. Le lieu sera Petitjean-les-Bains. Vous pouvez me joindre au 01 75 24 99 50 ou m'écrire à augustebonnet@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Diane Petitjean-Prévost"
+   },
+   {
+    "start": 112,
+    "end": 131,
+    "entity_type": "LOCATION",
+    "value": "Petitjean-les-Bains"
+   },
+   {
+    "start": 159,
+    "end": 173,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 75 24 99 50"
+   },
+   {
+    "start": 188,
+    "end": 213,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "augustebonnet@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0019",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Éléonore Dupré et Étienne Monnier. La prochaine réunion aura lieu à Colin-sur-Hubert. À faire : envoyer la présentation à louis79@example.com. Ligne directe : 01 84 10 63 96.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Éléonore Dupré"
+   },
+   {
+    "start": 48,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Étienne Monnier"
+   },
+   {
+    "start": 98,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Colin-sur-Hubert"
+   },
+   {
+    "start": 152,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "louis79@example.com"
+   },
+   {
+    "start": 189,
+    "end": 203,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 84 10 63 96"
+   }
+  ]
+ },
+ {
+  "id": "fr-0020",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est David Morin et votre adresse se trouve à Dupuy. Nous vous rappellerons au 06 24 01 59 44. La carte enregistrée est 4951927439449773. Une copie a été envoyée à leleuolivier@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "David Morin"
+   },
+   {
+    "start": 101,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Dupuy"
+   },
+   {
+    "start": 134,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 24 01 59 44"
+   },
+   {
+    "start": 175,
+    "end": 191,
+    "entity_type": "CREDIT_CARD",
+    "value": "4951927439449773"
+   },
+   {
+    "start": 219,
+    "end": 243,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leleuolivier@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0021",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Michelle Le Diallo. Je souhaite organiser une réunion le mois prochain. Le lieu sera ValléeVille. Vous pouvez me joindre au +33 7 84 00 06 96 ou m'écrire à suzanneetienne@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Michelle Le Diallo"
+   },
+   {
+    "start": 107,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "ValléeVille"
+   },
+   {
+    "start": 146,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 84 00 06 96"
+   },
+   {
+    "start": 178,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzanneetienne@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0022",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Paul-Martin Legendre et Bertrand Mercier. La prochaine réunion aura lieu à Coulon-sur-Bruneau. À faire : envoyer la présentation à rousseldavid@example.com. Ligne directe : 06 61 50 23 94.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Paul-Martin Legendre"
+   },
+   {
+    "start": 54,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Bertrand Mercier"
+   },
+   {
+    "start": 105,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Coulon-sur-Bruneau"
+   },
+   {
+    "start": 161,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rousseldavid@example.com"
+   },
+   {
+    "start": 203,
+    "end": 217,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 61 50 23 94"
+   }
+  ]
+ },
+ {
+  "id": "fr-0023",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Lucie de Ribeiro et votre adresse se trouve à Gérard. Nous vous rappellerons au +33 6 57 36 24 51. La carte enregistrée est 4431677615223977. Une copie a été envoyée à benjaminollivier@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Lucie de Ribeiro"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Gérard"
+   },
+   {
+    "start": 140,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 57 36 24 51"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4431677615223977"
+   },
+   {
+    "start": 228,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "benjaminollivier@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0024",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Vincent Morel. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Frédérique. Vous pouvez me joindre au 01 65 98 71 78 ou m'écrire à michele30@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Vincent Morel"
+   },
+   {
+    "start": 102,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Saint Frédérique"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 65 98 71 78"
+   },
+   {
+    "start": 175,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "michele30@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0025",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Bernadette Bazin du Pasquier et Clémence Ramos. La prochaine réunion aura lieu à Laine. À faire : envoyer la présentation à emilebouchet@example.net. Ligne directe : +33 7 64 84 75 61.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Bernadette Bazin du Pasquier"
+   },
+   {
+    "start": 62,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Clémence Ramos"
+   },
+   {
+    "start": 111,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Laine"
+   },
+   {
+    "start": 154,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "emilebouchet@example.net"
+   },
+   {
+    "start": 196,
+    "end": 213,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 64 84 75 61"
+   }
+  ]
+ },
+ {
+  "id": "fr-0026",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Auguste Roger-Dupuy et votre adresse se trouve à Sainte NathBourg. Nous vous rappellerons au +33 1 10 92 31 40. La carte enregistrée est 4578-7670-7506-5597. Une copie a été envoyée à frederic36@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Auguste Roger-Dupuy"
+   },
+   {
+    "start": 109,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Sainte NathBourg"
+   },
+   {
+    "start": 153,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 10 92 31 40"
+   },
+   {
+    "start": 197,
+    "end": 216,
+    "entity_type": "CREDIT_CARD",
+    "value": "4578-7670-7506-5597"
+   },
+   {
+    "start": 244,
+    "end": 266,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "frederic36@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0027",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Océane de Roussel. Je souhaite organiser une réunion le mois prochain. Le lieu sera Denis. Vous pouvez me joindre au +33 1 52 63 18 31 ou m'écrire à remygimenez@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Océane de Roussel"
+   },
+   {
+    "start": 106,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Denis"
+   },
+   {
+    "start": 139,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 52 63 18 31"
+   },
+   {
+    "start": 171,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "remygimenez@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0028",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Théophile Gaudin et Margot Perrin. La prochaine réunion aura lieu à Saint Manon. À faire : envoyer la présentation à richardroyer@example.net. Ligne directe : +33 6 53 97 20 75.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Théophile Gaudin"
+   },
+   {
+    "start": 50,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Margot Perrin"
+   },
+   {
+    "start": 98,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Saint Manon"
+   },
+   {
+    "start": 147,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "richardroyer@example.net"
+   },
+   {
+    "start": 189,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 53 97 20 75"
+   }
+  ]
+ },
+ {
+  "id": "fr-0029",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Marianne du Delannoy et votre adresse se trouve à Wagner. Nous vous rappellerons au +33 7 48 13 35 18. La carte enregistrée est 4268361488025359. Une copie a été envoyée à lamydavid@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Marianne du Delannoy"
+   },
+   {
+    "start": 110,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Wagner"
+   },
+   {
+    "start": 144,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 48 13 35 18"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4268361488025359"
+   },
+   {
+    "start": 232,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lamydavid@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0030",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Antoine Menard. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Gabrielle-sur-Mer. Vous pouvez me joindre au +33 7 10 94 41 36 ou m'écrire à carlierjuliette@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Antoine Menard"
+   },
+   {
+    "start": 103,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Saint Gabrielle-sur-Mer"
+   },
+   {
+    "start": 154,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 10 94 41 36"
+   },
+   {
+    "start": 186,
+    "end": 213,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "carlierjuliette@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0031",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Honoré Charpentier et Bernard Dumont. La prochaine réunion aura lieu à Ferreira. À faire : envoyer la présentation à gthomas@example.com. Ligne directe : +33 1 01 37 56 35.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Honoré Charpentier"
+   },
+   {
+    "start": 52,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Bernard Dumont"
+   },
+   {
+    "start": 101,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Ferreira"
+   },
+   {
+    "start": 147,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gthomas@example.com"
+   },
+   {
+    "start": 184,
+    "end": 201,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 01 37 56 35"
+   }
+  ]
+ },
+ {
+  "id": "fr-0032",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Arthur Berthelot et votre adresse se trouve à Sainte AnoukBourg. Nous vous rappellerons au +33 6 38 59 34 56. La carte enregistrée est 4757109847414832. Une copie a été envoyée à frodriguez@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Arthur Berthelot"
+   },
+   {
+    "start": 106,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Sainte AnoukBourg"
+   },
+   {
+    "start": 151,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 38 59 34 56"
+   },
+   {
+    "start": 195,
+    "end": 211,
+    "entity_type": "CREDIT_CARD",
+    "value": "4757109847414832"
+   },
+   {
+    "start": 239,
+    "end": 261,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "frodriguez@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0033",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Alex Ferrand. Je souhaite organiser une réunion le mois prochain. Le lieu sera Benardnec. Vous pouvez me joindre au +33 1 42 63 83 35 ou m'écrire à phamon@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Alex Ferrand"
+   },
+   {
+    "start": 101,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Benardnec"
+   },
+   {
+    "start": 138,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 42 63 83 35"
+   },
+   {
+    "start": 170,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "phamon@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0034",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Luc Aubry-Renard et Pauline Bourgeois du Vallée. La prochaine réunion aura lieu à Bodin. À faire : envoyer la présentation à zachariejoly@example.net. Ligne directe : 07 97 58 45 09.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Luc Aubry-Renard"
+   },
+   {
+    "start": 50,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Pauline Bourgeois du Vallée"
+   },
+   {
+    "start": 112,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Bodin"
+   },
+   {
+    "start": 155,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zachariejoly@example.net"
+   },
+   {
+    "start": 197,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 97 58 45 09"
+   }
+  ]
+ },
+ {
+  "id": "fr-0035",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Constance Rousseau et votre adresse se trouve à Pineau. Nous vous rappellerons au +33 6 85 01 25 32. La carte enregistrée est 4554-8030-6976-6151. Une copie a été envoyée à helene52@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Constance Rousseau"
+   },
+   {
+    "start": 108,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Pineau"
+   },
+   {
+    "start": 142,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 85 01 25 32"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4554-8030-6976-6151"
+   },
+   {
+    "start": 233,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "helene52@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0036",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Margot Rolland. Je souhaite organiser une réunion le mois prochain. Le lieu sera Chevallier. Vous pouvez me joindre au 01 73 77 85 71 ou m'écrire à godardtherese@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Margot Rolland"
+   },
+   {
+    "start": 103,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Chevallier"
+   },
+   {
+    "start": 141,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 73 77 85 71"
+   },
+   {
+    "start": 170,
+    "end": 195,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "godardtherese@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0037",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Roland Moulin et Yves Da Silva-Lagarde. La prochaine réunion aura lieu à Barthelemy. À faire : envoyer la présentation à sschmitt@example.net. Ligne directe : +33 7 76 71 34 78.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Roland Moulin"
+   },
+   {
+    "start": 47,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Yves Da Silva-Lagarde"
+   },
+   {
+    "start": 103,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Barthelemy"
+   },
+   {
+    "start": 151,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "sschmitt@example.net"
+   },
+   {
+    "start": 189,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 76 71 34 78"
+   }
+  ]
+ },
+ {
+  "id": "fr-0038",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jérôme Lebrun et votre adresse se trouve à Gillet-la-Forêt. Nous vous rappellerons au +33 1 37 87 87 65. La carte enregistrée est 4374522844072333. Une copie a été envoyée à eugene20@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Jérôme Lebrun"
+   },
+   {
+    "start": 103,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Gillet-la-Forêt"
+   },
+   {
+    "start": 146,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 37 87 87 65"
+   },
+   {
+    "start": 190,
+    "end": 206,
+    "entity_type": "CREDIT_CARD",
+    "value": "4374522844072333"
+   },
+   {
+    "start": 234,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eugene20@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0039",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Maryse de Collin. Je souhaite organiser une réunion le mois prochain. Le lieu sera Chauveau-la-Forêt. Vous pouvez me joindre au +33 1 76 90 29 13 ou m'écrire à guibertaudrey@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Maryse de Collin"
+   },
+   {
+    "start": 105,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Chauveau-la-Forêt"
+   },
+   {
+    "start": 150,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 76 90 29 13"
+   },
+   {
+    "start": 182,
+    "end": 207,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guibertaudrey@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0040",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : François Loiseau-Roussel et Clémence-Jeannine Hebert. La prochaine réunion aura lieu à Saint Agnès. À faire : envoyer la présentation à flemonnier@example.net. Ligne directe : +33 7 52 47 60 81.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "François Loiseau-Roussel"
+   },
+   {
+    "start": 58,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Clémence-Jeannine Hebert"
+   },
+   {
+    "start": 117,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Saint Agnès"
+   },
+   {
+    "start": 166,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "flemonnier@example.net"
+   },
+   {
+    "start": 206,
+    "end": 223,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 52 47 60 81"
+   }
+  ]
+ },
+ {
+  "id": "fr-0041",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Alfred-Alain Seguin et votre adresse se trouve à Mary. Nous vous rappellerons au +33 1 87 81 48 54. La carte enregistrée est 4243-4638-2245-0671. Une copie a été envoyée à dominiquelenoir@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Alfred-Alain Seguin"
+   },
+   {
+    "start": 109,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Mary"
+   },
+   {
+    "start": 141,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 87 81 48 54"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4243-4638-2245-0671"
+   },
+   {
+    "start": 232,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dominiquelenoir@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0042",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Laetitia Voisin. Je souhaite organiser une réunion le mois prochain. Le lieu sera David-les-Bains. Vous pouvez me joindre au 01 43 14 27 72 ou m'écrire à rossiandre@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Laetitia Voisin"
+   },
+   {
+    "start": 104,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "David-les-Bains"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 43 14 27 72"
+   },
+   {
+    "start": 176,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rossiandre@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0043",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Céline Denis et Nicolas Charrier. La prochaine réunion aura lieu à Delaunay-sur-Leroux. À faire : envoyer la présentation à tbenard@example.com. Ligne directe : +33 7 77 70 99 28.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Céline Denis"
+   },
+   {
+    "start": 46,
+    "end": 62,
+    "entity_type": "PERSON",
+    "value": "Nicolas Charrier"
+   },
+   {
+    "start": 97,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Delaunay-sur-Leroux"
+   },
+   {
+    "start": 154,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tbenard@example.com"
+   },
+   {
+    "start": 191,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 77 70 99 28"
+   }
+  ]
+ },
+ {
+  "id": "fr-0044",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Laetitia Joubert et votre adresse se trouve à Gomezboeuf. Nous vous rappellerons au +33 6 22 32 40 77. La carte enregistrée est 4013-3421-7620-0411. Une copie a été envoyée à christinehebert@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Laetitia Joubert"
+   },
+   {
+    "start": 106,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Gomezboeuf"
+   },
+   {
+    "start": 144,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 22 32 40 77"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4013-3421-7620-0411"
+   },
+   {
+    "start": 235,
+    "end": 262,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christinehebert@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0045",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Anastasie Pires. Je souhaite organiser une réunion le mois prochain. Le lieu sera Sainte Josette-la-Forêt. Vous pouvez me joindre au +33 7 37 25 49 39 ou m'écrire à denis30@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Anastasie Pires"
+   },
+   {
+    "start": 104,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Sainte Josette-la-Forêt"
+   },
+   {
+    "start": 155,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 37 25 49 39"
+   },
+   {
+    "start": 187,
+    "end": 206,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "denis30@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0046",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Léon-Lucas Torres et Maryse-Philippine Munoz. La prochaine réunion aura lieu à Lopez. À faire : envoyer la présentation à bernardnicole@example.com. Ligne directe : +33 1 73 94 88 82.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Léon-Lucas Torres"
+   },
+   {
+    "start": 51,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Maryse-Philippine Munoz"
+   },
+   {
+    "start": 109,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Lopez"
+   },
+   {
+    "start": 152,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bernardnicole@example.com"
+   },
+   {
+    "start": 195,
+    "end": 212,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 73 94 88 82"
+   }
+  ]
+ },
+ {
+  "id": "fr-0047",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jérôme Cohen et votre adresse se trouve à Chevalierdan. Nous vous rappellerons au +33 7 53 68 46 49. La carte enregistrée est 4531-7673-0313-8162. Une copie a été envoyée à wbesson@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Jérôme Cohen"
+   },
+   {
+    "start": 102,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Chevalierdan"
+   },
+   {
+    "start": 142,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 53 68 46 49"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4531-7673-0313-8162"
+   },
+   {
+    "start": 233,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wbesson@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0048",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Simone Hamel-Fischer. Je souhaite organiser une réunion le mois prochain. Le lieu sera GuérinVille. Vous pouvez me joindre au +33 6 04 62 41 12 ou m'écrire à astridbazin@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Simone Hamel-Fischer"
+   },
+   {
+    "start": 109,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "GuérinVille"
+   },
+   {
+    "start": 148,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 04 62 41 12"
+   },
+   {
+    "start": 180,
+    "end": 203,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "astridbazin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0049",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Martine Joseph et Cécile Gosselin. La prochaine réunion aura lieu à Maréchal. À faire : envoyer la présentation à ymoreau@example.com. Ligne directe : 01 12 68 10 85.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Martine Joseph"
+   },
+   {
+    "start": 48,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Cécile Gosselin"
+   },
+   {
+    "start": 98,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Maréchal"
+   },
+   {
+    "start": 144,
+    "end": 163,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ymoreau@example.com"
+   },
+   {
+    "start": 181,
+    "end": 195,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 12 68 10 85"
+   }
+  ]
+ },
+ {
+  "id": "fr-0050",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Pierre Pruvost et votre adresse se trouve à Sainte Julien-les-Bains. Nous vous rappellerons au +33 6 86 22 00 14. La carte enregistrée est 4837-7971-0896-2087. Une copie a été envoyée à christinebriand@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Pierre Pruvost"
+   },
+   {
+    "start": 104,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Sainte Julien-les-Bains"
+   },
+   {
+    "start": 155,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 86 22 00 14"
+   },
+   {
+    "start": 199,
+    "end": 218,
+    "entity_type": "CREDIT_CARD",
+    "value": "4837-7971-0896-2087"
+   },
+   {
+    "start": 246,
+    "end": 273,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christinebriand@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0051",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Camille Marchand. Je souhaite organiser une réunion le mois prochain. Le lieu sera Sainte Claude-les-Bains. Vous pouvez me joindre au 06 15 51 96 94 ou m'écrire à alixdiaz@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Camille Marchand"
+   },
+   {
+    "start": 105,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Sainte Claude-les-Bains"
+   },
+   {
+    "start": 156,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 15 51 96 94"
+   },
+   {
+    "start": 185,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "alixdiaz@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0052",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Clémence Nicolas et Danielle Marchal. La prochaine réunion aura lieu à Ribeiro. À faire : envoyer la présentation à gerard42@example.net. Ligne directe : 01 11 92 12 30.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Clémence Nicolas"
+   },
+   {
+    "start": 50,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Danielle Marchal"
+   },
+   {
+    "start": 101,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Ribeiro"
+   },
+   {
+    "start": 146,
+    "end": 166,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gerard42@example.net"
+   },
+   {
+    "start": 184,
+    "end": 198,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 11 92 12 30"
+   }
+  ]
+ },
+ {
+  "id": "fr-0053",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Margaret Gonzalez et votre adresse se trouve à Tessier-sur-Mary. Nous vous rappellerons au +33 1 89 67 33 38. La carte enregistrée est 4473767994387003. Une copie a été envoyée à vklein@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Margaret Gonzalez"
+   },
+   {
+    "start": 107,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Tessier-sur-Mary"
+   },
+   {
+    "start": 151,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 89 67 33 38"
+   },
+   {
+    "start": 195,
+    "end": 211,
+    "entity_type": "CREDIT_CARD",
+    "value": "4473767994387003"
+   },
+   {
+    "start": 239,
+    "end": 257,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vklein@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0054",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Tristan Blot de la Blanc. Je souhaite organiser une réunion le mois prochain. Le lieu sera Costa. Vous pouvez me joindre au 07 98 61 03 07 ou m'écrire à michelblanchet@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Tristan Blot de la Blanc"
+   },
+   {
+    "start": 113,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Costa"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 98 61 03 07"
+   },
+   {
+    "start": 175,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "michelblanchet@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0055",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Éléonore Pierre et Laurence Samson. La prochaine réunion aura lieu à Saint Julie-la-Forêt. À faire : envoyer la présentation à vgarnier@example.org. Ligne directe : 06 10 79 89 38.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Éléonore Pierre"
+   },
+   {
+    "start": 49,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Laurence Samson"
+   },
+   {
+    "start": 99,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Saint Julie-la-Forêt"
+   },
+   {
+    "start": 157,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vgarnier@example.org"
+   },
+   {
+    "start": 195,
+    "end": 209,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 10 79 89 38"
+   }
+  ]
+ },
+ {
+  "id": "fr-0056",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Christophe Torres et votre adresse se trouve à Pasquier. Nous vous rappellerons au +33 1 97 06 08 41. La carte enregistrée est 4052-6351-1577-9599. Une copie a été envoyée à lucasleleu@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Christophe Torres"
+   },
+   {
+    "start": 107,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Pasquier"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 97 06 08 41"
+   },
+   {
+    "start": 187,
+    "end": 206,
+    "entity_type": "CREDIT_CARD",
+    "value": "4052-6351-1577-9599"
+   },
+   {
+    "start": 234,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucasleleu@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0057",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Grégoire Dupuis. Je souhaite organiser une réunion le mois prochain. Le lieu sera Collet. Vous pouvez me joindre au 01 25 62 66 45 ou m'écrire à josette86@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Grégoire Dupuis"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Collet"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 25 62 66 45"
+   },
+   {
+    "start": 167,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "josette86@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0058",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Audrey Allard et Aimée Le Roux. La prochaine réunion aura lieu à Toussaint. À faire : envoyer la présentation à mpineau@example.com. Ligne directe : 07 68 96 67 22.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Audrey Allard"
+   },
+   {
+    "start": 47,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Aimée Le Roux"
+   },
+   {
+    "start": 95,
+    "end": 104,
+    "entity_type": "LOCATION",
+    "value": "Toussaint"
+   },
+   {
+    "start": 142,
+    "end": 161,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mpineau@example.com"
+   },
+   {
+    "start": 179,
+    "end": 193,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 68 96 67 22"
+   }
+  ]
+ },
+ {
+  "id": "fr-0059",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Nath Bigot et votre adresse se trouve à Poirier. Nous vous rappellerons au 01 05 20 81 17. La carte enregistrée est 4439757823192495. Une copie a été envoyée à louisebrunet@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Nath Bigot"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Poirier"
+   },
+   {
+    "start": 135,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 05 20 81 17"
+   },
+   {
+    "start": 176,
+    "end": 192,
+    "entity_type": "CREDIT_CARD",
+    "value": "4439757823192495"
+   },
+   {
+    "start": 220,
+    "end": 244,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "louisebrunet@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0060",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Augustin Mendès. Je souhaite organiser une réunion le mois prochain. Le lieu sera Guillou. Vous pouvez me joindre au +33 7 93 21 60 23 ou m'écrire à madeleine78@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Augustin Mendès"
+   },
+   {
+    "start": 104,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Guillou"
+   },
+   {
+    "start": 139,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 93 21 60 23"
+   },
+   {
+    "start": 171,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "madeleine78@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0061",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Émile Klein et Rémy Potier. La prochaine réunion aura lieu à Gomes. À faire : envoyer la présentation à andre48@example.org. Ligne directe : +33 1 24 45 82 39.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Émile Klein"
+   },
+   {
+    "start": 45,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Rémy Potier"
+   },
+   {
+    "start": 91,
+    "end": 96,
+    "entity_type": "LOCATION",
+    "value": "Gomes"
+   },
+   {
+    "start": 134,
+    "end": 153,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andre48@example.org"
+   },
+   {
+    "start": 171,
+    "end": 188,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 24 45 82 39"
+   }
+  ]
+ },
+ {
+  "id": "fr-0062",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Céline-Michelle Olivier et votre adresse se trouve à Tanguy. Nous vous rappellerons au 01 79 61 78 22. La carte enregistrée est 4540211244222578. Une copie a été envoyée à thibaultbesson@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Céline-Michelle Olivier"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Tanguy"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 79 61 78 22"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4540211244222578"
+   },
+   {
+    "start": 232,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "thibaultbesson@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0063",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Franck Le Masse. Je souhaite organiser une réunion le mois prochain. Le lieu sera Launay. Vous pouvez me joindre au 07 76 05 83 36 ou m'écrire à suzannenguyen@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Franck Le Masse"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Launay"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 76 05 83 36"
+   },
+   {
+    "start": 167,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzannenguyen@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0064",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Emmanuel Charrier et Alexandre Marty. La prochaine réunion aura lieu à Valentin. À faire : envoyer la présentation à tmaillot@example.net. Ligne directe : 06 30 75 95 22.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Emmanuel Charrier"
+   },
+   {
+    "start": 51,
+    "end": 66,
+    "entity_type": "PERSON",
+    "value": "Alexandre Marty"
+   },
+   {
+    "start": 101,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Valentin"
+   },
+   {
+    "start": 147,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tmaillot@example.net"
+   },
+   {
+    "start": 185,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 30 75 95 22"
+   }
+  ]
+ },
+ {
+  "id": "fr-0065",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Andrée Neveu-Sauvage et votre adresse se trouve à Picard-sur-Mer. Nous vous rappellerons au 01 46 89 09 76. La carte enregistrée est 4171205151775939. Une copie a été envoyée à camille24@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 80,
+    "entity_type": "PERSON",
+    "value": "Andrée Neveu-Sauvage"
+   },
+   {
+    "start": 110,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Picard-sur-Mer"
+   },
+   {
+    "start": 152,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 46 89 09 76"
+   },
+   {
+    "start": 193,
+    "end": 209,
+    "entity_type": "CREDIT_CARD",
+    "value": "4171205151775939"
+   },
+   {
+    "start": 237,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "camille24@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0066",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Nicole Leblanc-Texier. Je souhaite organiser une réunion le mois prochain. Le lieu sera Schmittboeuf. Vous pouvez me joindre au 06 93 24 99 77 ou m'écrire à henryvalentine@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Nicole Leblanc-Texier"
+   },
+   {
+    "start": 110,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Schmittboeuf"
+   },
+   {
+    "start": 150,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 93 24 99 77"
+   },
+   {
+    "start": 179,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "henryvalentine@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0067",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : André Dupuis et Amélie Potier. La prochaine réunion aura lieu à Fouquetboeuf. À faire : envoyer la présentation à patricialacroix@example.net. Ligne directe : +33 6 57 56 65 47.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "André Dupuis"
+   },
+   {
+    "start": 46,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Amélie Potier"
+   },
+   {
+    "start": 94,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Fouquetboeuf"
+   },
+   {
+    "start": 144,
+    "end": 171,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patricialacroix@example.net"
+   },
+   {
+    "start": 189,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 57 56 65 47"
+   }
+  ]
+ },
+ {
+  "id": "fr-0068",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Martine Munoz et votre adresse se trouve à Beckerdan. Nous vous rappellerons au +33 1 30 39 50 27. La carte enregistrée est 4505-0415-2930-3212. Une copie a été envoyée à bouchetbertrand@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Martine Munoz"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Beckerdan"
+   },
+   {
+    "start": 140,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 30 39 50 27"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4505-0415-2930-3212"
+   },
+   {
+    "start": 231,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bouchetbertrand@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0069",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Guillaume Gimenez du Pages. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Élisenec. Vous pouvez me joindre au 06 49 62 02 34 ou m'écrire à coletteda-silva@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Guillaume Gimenez du Pages"
+   },
+   {
+    "start": 115,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Saint Élisenec"
+   },
+   {
+    "start": 157,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 49 62 02 34"
+   },
+   {
+    "start": 186,
+    "end": 213,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "coletteda-silva@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0070",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Virginie Marchand-Ribeiro et Joseph Petitjean-Leroy. La prochaine réunion aura lieu à Sainte Victornec. À faire : envoyer la présentation à gregoire52@example.net. Ligne directe : 07 79 13 14 08.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 55,
+    "entity_type": "PERSON",
+    "value": "Virginie Marchand-Ribeiro"
+   },
+   {
+    "start": 59,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Joseph Petitjean-Leroy"
+   },
+   {
+    "start": 116,
+    "end": 132,
+    "entity_type": "LOCATION",
+    "value": "Sainte Victornec"
+   },
+   {
+    "start": 170,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gregoire52@example.net"
+   },
+   {
+    "start": 210,
+    "end": 224,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 79 13 14 08"
+   }
+  ]
+ },
+ {
+  "id": "fr-0071",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Nath Boulay Le Bonneau et votre adresse se trouve à Saint Antoinette-sur-Mer. Nous vous rappellerons au +33 7 09 48 79 62. La carte enregistrée est 4003-8211-5544-4456. Une copie a été envoyée à jean45@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Nath Boulay Le Bonneau"
+   },
+   {
+    "start": 112,
+    "end": 136,
+    "entity_type": "LOCATION",
+    "value": "Saint Antoinette-sur-Mer"
+   },
+   {
+    "start": 164,
+    "end": 181,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 09 48 79 62"
+   },
+   {
+    "start": 208,
+    "end": 227,
+    "entity_type": "CREDIT_CARD",
+    "value": "4003-8211-5544-4456"
+   },
+   {
+    "start": 255,
+    "end": 273,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jean45@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0072",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Bernard Bernier. Je souhaite organiser une réunion le mois prochain. Le lieu sera RoyerBourg. Vous pouvez me joindre au 07 38 12 76 65 ou m'écrire à ufischer@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Bernard Bernier"
+   },
+   {
+    "start": 104,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "RoyerBourg"
+   },
+   {
+    "start": 142,
+    "end": 156,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 38 12 76 65"
+   },
+   {
+    "start": 171,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ufischer@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0073",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Isaac Meyer et Louis-Maurice Leclercq. La prochaine réunion aura lieu à Torres. À faire : envoyer la présentation à patrick16@example.com. Ligne directe : 07 60 29 40 19.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Isaac Meyer"
+   },
+   {
+    "start": 45,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Louis-Maurice Leclercq"
+   },
+   {
+    "start": 102,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Torres"
+   },
+   {
+    "start": 146,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "patrick16@example.com"
+   },
+   {
+    "start": 185,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 60 29 40 19"
+   }
+  ]
+ },
+ {
+  "id": "fr-0074",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jeanne Martineau et votre adresse se trouve à Gilletdan. Nous vous rappellerons au 06 31 13 49 59. La carte enregistrée est 4699-6880-7922-5587. Une copie a été envoyée à andre27@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Jeanne Martineau"
+   },
+   {
+    "start": 106,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Gilletdan"
+   },
+   {
+    "start": 143,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 31 13 49 59"
+   },
+   {
+    "start": 184,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4699-6880-7922-5587"
+   },
+   {
+    "start": 231,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andre27@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0075",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Valérie de Renard. Je souhaite organiser une réunion le mois prochain. Le lieu sera Barbier. Vous pouvez me joindre au +33 6 19 23 27 79 ou m'écrire à roussellucie@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Valérie de Renard"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Barbier"
+   },
+   {
+    "start": 141,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 19 23 27 79"
+   },
+   {
+    "start": 173,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "roussellucie@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0076",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Danielle Texier et Stéphane Berthelot. La prochaine réunion aura lieu à Saint Théodore. À faire : envoyer la présentation à launaylaurence@example.net. Ligne directe : +33 1 84 04 83 95.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Danielle Texier"
+   },
+   {
+    "start": 49,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Stéphane Berthelot"
+   },
+   {
+    "start": 102,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Saint Théodore"
+   },
+   {
+    "start": 154,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "launaylaurence@example.net"
+   },
+   {
+    "start": 198,
+    "end": 215,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 84 04 83 95"
+   }
+  ]
+ },
+ {
+  "id": "fr-0077",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Célina de la Collet et votre adresse se trouve à Gimenez-les-Bains. Nous vous rappellerons au 07 84 67 46 91. La carte enregistrée est 4921-6031-9517-1508. Une copie a été envoyée à williamlegrand@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Célina de la Collet"
+   },
+   {
+    "start": 109,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Gimenez-les-Bains"
+   },
+   {
+    "start": 154,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 84 67 46 91"
+   },
+   {
+    "start": 195,
+    "end": 214,
+    "entity_type": "CREDIT_CARD",
+    "value": "4921-6031-9517-1508"
+   },
+   {
+    "start": 242,
+    "end": 268,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "williamlegrand@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0078",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Hélène Lecomte. Je souhaite organiser une réunion le mois prochain. Le lieu sera Morin. Vous pouvez me joindre au +33 1 09 71 78 76 ou m'écrire à merciergabrielle@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Hélène Lecomte"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Morin"
+   },
+   {
+    "start": 136,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 09 71 78 76"
+   },
+   {
+    "start": 168,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "merciergabrielle@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0079",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Josette Masson et Lorraine de la Texier. La prochaine réunion aura lieu à David-la-Forêt. À faire : envoyer la présentation à lorraine10@example.com. Ligne directe : 07 72 60 52 47.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Josette Masson"
+   },
+   {
+    "start": 48,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Lorraine de la Texier"
+   },
+   {
+    "start": 104,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "David-la-Forêt"
+   },
+   {
+    "start": 156,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lorraine10@example.com"
+   },
+   {
+    "start": 196,
+    "end": 210,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 72 60 52 47"
+   }
+  ]
+ },
+ {
+  "id": "fr-0080",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Joseph Étienne et votre adresse se trouve à BriandBourg. Nous vous rappellerons au +33 7 96 26 10 52. La carte enregistrée est 4932735773620691. Une copie a été envoyée à olivie03@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Joseph Étienne"
+   },
+   {
+    "start": 104,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "BriandBourg"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 96 26 10 52"
+   },
+   {
+    "start": 187,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4932735773620691"
+   },
+   {
+    "start": 231,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "olivie03@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0081",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Jules Antoine. Je souhaite organiser une réunion le mois prochain. Le lieu sera Gérarddan. Vous pouvez me joindre au 07 09 22 34 05 ou m'écrire à zlebrun@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Jules Antoine"
+   },
+   {
+    "start": 102,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Gérarddan"
+   },
+   {
+    "start": 139,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 09 22 34 05"
+   },
+   {
+    "start": 168,
+    "end": 187,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "zlebrun@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0082",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Lucie Gaudin de Gimenez et Emmanuelle Renault. La prochaine réunion aura lieu à Toussaintnec. À faire : envoyer la présentation à nathalieblanchard@example.net. Ligne directe : 06 66 42 14 26.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Lucie Gaudin de Gimenez"
+   },
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Emmanuelle Renault"
+   },
+   {
+    "start": 110,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Toussaintnec"
+   },
+   {
+    "start": 160,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nathalieblanchard@example.net"
+   },
+   {
+    "start": 207,
+    "end": 221,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 66 42 14 26"
+   }
+  ]
+ },
+ {
+  "id": "fr-0083",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Roland-Gabriel Hebert et votre adresse se trouve à Ledoux. Nous vous rappellerons au 06 08 48 93 08. La carte enregistrée est 4179249297008641. Une copie a été envoyée à lleconte@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Roland-Gabriel Hebert"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Ledoux"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 08 48 93 08"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4179249297008641"
+   },
+   {
+    "start": 230,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lleconte@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0084",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Alex Ribeiro. Je souhaite organiser une réunion le mois prochain. Le lieu sera Peltierdan. Vous pouvez me joindre au 01 71 63 48 60 ou m'écrire à louisguyot@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Alex Ribeiro"
+   },
+   {
+    "start": 101,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Peltierdan"
+   },
+   {
+    "start": 139,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 71 63 48 60"
+   },
+   {
+    "start": 168,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "louisguyot@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0085",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Louise Rey et Robert de Meunier. La prochaine réunion aura lieu à Bruneau. À faire : envoyer la présentation à noemi32@example.net. Ligne directe : 07 41 06 54 47.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Louise Rey"
+   },
+   {
+    "start": 44,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "Robert de Meunier"
+   },
+   {
+    "start": 96,
+    "end": 103,
+    "entity_type": "LOCATION",
+    "value": "Bruneau"
+   },
+   {
+    "start": 141,
+    "end": 160,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "noemi32@example.net"
+   },
+   {
+    "start": 178,
+    "end": 192,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 41 06 54 47"
+   }
+  ]
+ },
+ {
+  "id": "fr-0086",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Michel-André Moreau et votre adresse se trouve à Dumas-les-Bains. Nous vous rappellerons au 07 80 66 51 68. La carte enregistrée est 4760-3437-3660-1473. Une copie a été envoyée à nicoleleroy@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Michel-André Moreau"
+   },
+   {
+    "start": 109,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Dumas-les-Bains"
+   },
+   {
+    "start": 152,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 80 66 51 68"
+   },
+   {
+    "start": 193,
+    "end": 212,
+    "entity_type": "CREDIT_CARD",
+    "value": "4760-3437-3660-1473"
+   },
+   {
+    "start": 240,
+    "end": 263,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "nicoleleroy@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0087",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Anouk de la Roche. Je souhaite organiser une réunion le mois prochain. Le lieu sera CaronVille. Vous pouvez me joindre au 01 70 38 96 78 ou m'écrire à thierry27@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Anouk de la Roche"
+   },
+   {
+    "start": 106,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "CaronVille"
+   },
+   {
+    "start": 144,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 70 38 96 78"
+   },
+   {
+    "start": 173,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "thierry27@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0088",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Margaux Renard de la Michaud et Alain Marques. La prochaine réunion aura lieu à Voisin-la-Forêt. À faire : envoyer la présentation à fbruneau@example.net. Ligne directe : +33 1 62 97 40 15.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 58,
+    "entity_type": "PERSON",
+    "value": "Margaux Renard de la Michaud"
+   },
+   {
+    "start": 62,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Alain Marques"
+   },
+   {
+    "start": 110,
+    "end": 125,
+    "entity_type": "LOCATION",
+    "value": "Voisin-la-Forêt"
+   },
+   {
+    "start": 163,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "fbruneau@example.net"
+   },
+   {
+    "start": 201,
+    "end": 218,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 62 97 40 15"
+   }
+  ]
+ },
+ {
+  "id": "fr-0089",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Stéphane Dupuis-Clerc et votre adresse se trouve à Parent. Nous vous rappellerons au 01 64 63 42 12. La carte enregistrée est 4816229477443593. Une copie a été envoyée à annelelievre@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Stéphane Dupuis-Clerc"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Parent"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 64 63 42 12"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4816229477443593"
+   },
+   {
+    "start": 230,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "annelelievre@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0090",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Stéphanie Alves. Je souhaite organiser une réunion le mois prochain. Le lieu sera Raynaud-sur-Aubert. Vous pouvez me joindre au +33 1 67 68 69 67 ou m'écrire à tleleu@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Stéphanie Alves"
+   },
+   {
+    "start": 104,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Raynaud-sur-Aubert"
+   },
+   {
+    "start": 150,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 67 68 69 67"
+   },
+   {
+    "start": 182,
+    "end": 200,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tleleu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0091",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Émilie Caron et Bernard-André Meyer. La prochaine réunion aura lieu à Lecomte. À faire : envoyer la présentation à diane27@example.com. Ligne directe : +33 7 75 68 66 43.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Émilie Caron"
+   },
+   {
+    "start": 46,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Bernard-André Meyer"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Lecomte"
+   },
+   {
+    "start": 145,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "diane27@example.com"
+   },
+   {
+    "start": 182,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 75 68 66 43"
+   }
+  ]
+ },
+ {
+  "id": "fr-0092",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Claudine Robin et votre adresse se trouve à Guérin. Nous vous rappellerons au 01 91 20 33 42. La carte enregistrée est 4349975347452919. Une copie a été envoyée à dorothee70@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Claudine Robin"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Guérin"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 91 20 33 42"
+   },
+   {
+    "start": 179,
+    "end": 195,
+    "entity_type": "CREDIT_CARD",
+    "value": "4349975347452919"
+   },
+   {
+    "start": 223,
+    "end": 245,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dorothee70@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0093",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Adrien Vallée. Je souhaite organiser une réunion le mois prochain. Le lieu sera GuyonVille. Vous pouvez me joindre au +33 6 20 91 24 20 ou m'écrire à marinemichaud@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Adrien Vallée"
+   },
+   {
+    "start": 102,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "GuyonVille"
+   },
+   {
+    "start": 140,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 20 91 24 20"
+   },
+   {
+    "start": 172,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marinemichaud@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0094",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Patricia Antoine Le Alexandre et François-Émile Guillot. La prochaine réunion aura lieu à Peron-les-Bains. À faire : envoyer la présentation à ddias@example.com. Ligne directe : +33 6 89 26 53 09.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Patricia Antoine Le Alexandre"
+   },
+   {
+    "start": 63,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "François-Émile Guillot"
+   },
+   {
+    "start": 120,
+    "end": 135,
+    "entity_type": "LOCATION",
+    "value": "Peron-les-Bains"
+   },
+   {
+    "start": 173,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ddias@example.com"
+   },
+   {
+    "start": 208,
+    "end": 225,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 89 26 53 09"
+   }
+  ]
+ },
+ {
+  "id": "fr-0095",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Richard Rousseau et votre adresse se trouve à Bourgeois-sur-Robert. Nous vous rappellerons au +33 6 67 02 81 20. La carte enregistrée est 4175-7722-6911-3150. Une copie a été envoyée à hdenis@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Richard Rousseau"
+   },
+   {
+    "start": 106,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Bourgeois-sur-Robert"
+   },
+   {
+    "start": 154,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 67 02 81 20"
+   },
+   {
+    "start": 198,
+    "end": 217,
+    "entity_type": "CREDIT_CARD",
+    "value": "4175-7722-6911-3150"
+   },
+   {
+    "start": 245,
+    "end": 263,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hdenis@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0096",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Dorothée-Isabelle Poirier. Je souhaite organiser une réunion le mois prochain. Le lieu sera Delattre-sur-Grondin. Vous pouvez me joindre au +33 1 15 07 31 75 ou m'écrire à remy06@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Dorothée-Isabelle Poirier"
+   },
+   {
+    "start": 114,
+    "end": 134,
+    "entity_type": "LOCATION",
+    "value": "Delattre-sur-Grondin"
+   },
+   {
+    "start": 162,
+    "end": 179,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 15 07 31 75"
+   },
+   {
+    "start": 194,
+    "end": 212,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "remy06@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0097",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Luc Guérin-Ribeiro et Nath Le Goff. La prochaine réunion aura lieu à PerrierVille. À faire : envoyer la présentation à camille86@example.org. Ligne directe : +33 6 15 62 72 14.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Luc Guérin-Ribeiro"
+   },
+   {
+    "start": 52,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Nath Le Goff"
+   },
+   {
+    "start": 99,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "PerrierVille"
+   },
+   {
+    "start": 149,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "camille86@example.org"
+   },
+   {
+    "start": 188,
+    "end": 205,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 15 62 72 14"
+   }
+  ]
+ },
+ {
+  "id": "fr-0098",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Marie Nguyen du Lévêque et votre adresse se trouve à Lebon-sur-Mer. Nous vous rappellerons au 07 41 98 15 02. La carte enregistrée est 4352-1934-4749-9137. Une copie a été envoyée à marchalmarguerite@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Marie Nguyen du Lévêque"
+   },
+   {
+    "start": 113,
+    "end": 126,
+    "entity_type": "LOCATION",
+    "value": "Lebon-sur-Mer"
+   },
+   {
+    "start": 154,
+    "end": 168,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 41 98 15 02"
+   },
+   {
+    "start": 195,
+    "end": 214,
+    "entity_type": "CREDIT_CARD",
+    "value": "4352-1934-4749-9137"
+   },
+   {
+    "start": 242,
+    "end": 271,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marchalmarguerite@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0099",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Jérôme Rodrigues. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Eugène. Vous pouvez me joindre au +33 7 11 13 16 65 ou m'écrire à celinepotier@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Jérôme Rodrigues"
+   },
+   {
+    "start": 105,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Saint Eugène"
+   },
+   {
+    "start": 145,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 11 13 16 65"
+   },
+   {
+    "start": 177,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "celinepotier@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0100",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Michelle Laurent Le Benoit et William Lemaître. La prochaine réunion aura lieu à Lenoir. À faire : envoyer la présentation à tbourgeois@example.net. Ligne directe : 01 60 00 64 39.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Michelle Laurent Le Benoit"
+   },
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "William Lemaître"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Lenoir"
+   },
+   {
+    "start": 155,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tbourgeois@example.net"
+   },
+   {
+    "start": 195,
+    "end": 209,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 60 00 64 39"
+   }
+  ]
+ },
+ {
+  "id": "fr-0101",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Élise Charrier et votre adresse se trouve à Guillaume. Nous vous rappellerons au +33 7 08 71 99 54. La carte enregistrée est 4831423119585066. Une copie a été envoyée à elopez@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Élise Charrier"
+   },
+   {
+    "start": 104,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Guillaume"
+   },
+   {
+    "start": 141,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 08 71 99 54"
+   },
+   {
+    "start": 185,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4831423119585066"
+   },
+   {
+    "start": 229,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elopez@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0102",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Sabine Evrard. Je souhaite organiser une réunion le mois prochain. Le lieu sera Teixeira. Vous pouvez me joindre au +33 7 43 55 16 10 ou m'écrire à olivier92@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Sabine Evrard"
+   },
+   {
+    "start": 102,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Teixeira"
+   },
+   {
+    "start": 138,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 43 55 16 10"
+   },
+   {
+    "start": 170,
+    "end": 191,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "olivier92@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0103",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Adrien Pottier et Guillaume Besnard. La prochaine réunion aura lieu à Sanchez. À faire : envoyer la présentation à ksamson@example.net. Ligne directe : 07 85 99 43 52.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Adrien Pottier"
+   },
+   {
+    "start": 48,
+    "end": 65,
+    "entity_type": "PERSON",
+    "value": "Guillaume Besnard"
+   },
+   {
+    "start": 100,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Sanchez"
+   },
+   {
+    "start": 145,
+    "end": 164,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ksamson@example.net"
+   },
+   {
+    "start": 182,
+    "end": 196,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 85 99 43 52"
+   }
+  ]
+ },
+ {
+  "id": "fr-0104",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Christelle Coste-Guichard et votre adresse se trouve à Lecoq-sur-Joly. Nous vous rappellerons au 06 07 99 95 61. La carte enregistrée est 4576379343590604. Une copie a été envoyée à isaacneveu@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Christelle Coste-Guichard"
+   },
+   {
+    "start": 115,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Lecoq-sur-Joly"
+   },
+   {
+    "start": 157,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 07 99 95 61"
+   },
+   {
+    "start": 198,
+    "end": 214,
+    "entity_type": "CREDIT_CARD",
+    "value": "4576379343590604"
+   },
+   {
+    "start": 242,
+    "end": 264,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "isaacneveu@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0105",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Éric-Thomas Royer. Je souhaite organiser une réunion le mois prochain. Le lieu sera Marchand-sur-Rodrigues. Vous pouvez me joindre au 06 74 68 37 62 ou m'écrire à isaacturpin@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Éric-Thomas Royer"
+   },
+   {
+    "start": 106,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Marchand-sur-Rodrigues"
+   },
+   {
+    "start": 156,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 74 68 37 62"
+   },
+   {
+    "start": 185,
+    "end": 208,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "isaacturpin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0106",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Édith Mendès et Aurélie de Vincent. La prochaine réunion aura lieu à BourgeoisBourg. À faire : envoyer la présentation à dialloxavier@example.com. Ligne directe : +33 1 70 31 84 52.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Édith Mendès"
+   },
+   {
+    "start": 46,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Aurélie de Vincent"
+   },
+   {
+    "start": 99,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "BourgeoisBourg"
+   },
+   {
+    "start": 151,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dialloxavier@example.com"
+   },
+   {
+    "start": 193,
+    "end": 210,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 70 31 84 52"
+   }
+  ]
+ },
+ {
+  "id": "fr-0107",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Alix de Ribeiro et votre adresse se trouve à Turpin. Nous vous rappellerons au 07 54 11 60 45. La carte enregistrée est 4637-0275-9290-1041. Une copie a été envoyée à dbuisson@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Alix de Ribeiro"
+   },
+   {
+    "start": 105,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Turpin"
+   },
+   {
+    "start": 139,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 54 11 60 45"
+   },
+   {
+    "start": 180,
+    "end": 199,
+    "entity_type": "CREDIT_CARD",
+    "value": "4637-0275-9290-1041"
+   },
+   {
+    "start": 227,
+    "end": 247,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dbuisson@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0108",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Patrick de la Gaudin. Je souhaite organiser une réunion le mois prochain. Le lieu sera Laroche. Vous pouvez me joindre au +33 1 80 29 51 33 ou m'écrire à maggie22@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Patrick de la Gaudin"
+   },
+   {
+    "start": 109,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Laroche"
+   },
+   {
+    "start": 144,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 80 29 51 33"
+   },
+   {
+    "start": 176,
+    "end": 196,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maggie22@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0109",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Simone Philippe et Célina Guyon-Lacombe. La prochaine réunion aura lieu à Rousseau. À faire : envoyer la présentation à genevieve82@example.org. Ligne directe : +33 7 54 25 58 62.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Simone Philippe"
+   },
+   {
+    "start": 49,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Célina Guyon-Lacombe"
+   },
+   {
+    "start": 104,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Rousseau"
+   },
+   {
+    "start": 150,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "genevieve82@example.org"
+   },
+   {
+    "start": 191,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 54 25 58 62"
+   }
+  ]
+ },
+ {
+  "id": "fr-0110",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Denise Baron et votre adresse se trouve à Sainte Philippine. Nous vous rappellerons au 07 81 26 43 17. La carte enregistrée est 4907-7664-3670-6503. Une copie a été envoyée à cchauvin@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Denise Baron"
+   },
+   {
+    "start": 102,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Sainte Philippine"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 81 26 43 17"
+   },
+   {
+    "start": 188,
+    "end": 207,
+    "entity_type": "CREDIT_CARD",
+    "value": "4907-7664-3670-6503"
+   },
+   {
+    "start": 235,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "cchauvin@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0111",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle David Raynaud. Je souhaite organiser une réunion le mois prochain. Le lieu sera Dupuy. Vous pouvez me joindre au 01 66 20 06 53 ou m'écrire à stephanepascal@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "David Raynaud"
+   },
+   {
+    "start": 102,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Dupuy"
+   },
+   {
+    "start": 135,
+    "end": 149,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 66 20 06 53"
+   },
+   {
+    "start": 164,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "stephanepascal@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0112",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Colette Rivière et Adrien Evrard de Pottier. La prochaine réunion aura lieu à Lebon-sur-Mer. À faire : envoyer la présentation à catherineguilbert@example.org. Ligne directe : +33 1 72 45 93 91.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Colette Rivière"
+   },
+   {
+    "start": 49,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Adrien Evrard de Pottier"
+   },
+   {
+    "start": 108,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Lebon-sur-Mer"
+   },
+   {
+    "start": 159,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "catherineguilbert@example.org"
+   },
+   {
+    "start": 206,
+    "end": 223,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 72 45 93 91"
+   }
+  ]
+ },
+ {
+  "id": "fr-0113",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Olivie Marchand et votre adresse se trouve à Chartierboeuf. Nous vous rappellerons au 06 26 58 70 21. La carte enregistrée est 4160868690239221. Une copie a été envoyée à dos-santosedith@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Olivie Marchand"
+   },
+   {
+    "start": 105,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Chartierboeuf"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 26 58 70 21"
+   },
+   {
+    "start": 187,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4160868690239221"
+   },
+   {
+    "start": 231,
+    "end": 258,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dos-santosedith@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0114",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Amélie de la Weiss. Je souhaite organiser une réunion le mois prochain. Le lieu sera Pasquier. Vous pouvez me joindre au +33 6 83 28 89 03 ou m'écrire à dorotheecarlier@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 40,
+    "entity_type": "PERSON",
+    "value": "Amélie de la Weiss"
+   },
+   {
+    "start": 107,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Pasquier"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 83 28 89 03"
+   },
+   {
+    "start": 175,
+    "end": 202,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "dorotheecarlier@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0115",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Adèle Gilles et Dominique-Margot Lefort. La prochaine réunion aura lieu à Jacquot-sur-Michaud. À faire : envoyer la présentation à brigitteleclerc@example.net. Ligne directe : +33 6 84 49 48 08.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Adèle Gilles"
+   },
+   {
+    "start": 46,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Dominique-Margot Lefort"
+   },
+   {
+    "start": 104,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Jacquot-sur-Michaud"
+   },
+   {
+    "start": 161,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "brigitteleclerc@example.net"
+   },
+   {
+    "start": 206,
+    "end": 223,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 84 49 48 08"
+   }
+  ]
+ },
+ {
+  "id": "fr-0116",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Émile Mercier Le Lombard et votre adresse se trouve à Masson. Nous vous rappellerons au +33 7 41 29 75 18. La carte enregistrée est 4743-3521-8384-2201. Une copie a été envoyée à vincent78@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Émile Mercier Le Lombard"
+   },
+   {
+    "start": 114,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Masson"
+   },
+   {
+    "start": 148,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 41 29 75 18"
+   },
+   {
+    "start": 192,
+    "end": 211,
+    "entity_type": "CREDIT_CARD",
+    "value": "4743-3521-8384-2201"
+   },
+   {
+    "start": 239,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "vincent78@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0117",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Brigitte Perret Le Ledoux. Je souhaite organiser une réunion le mois prochain. Le lieu sera Rocher-les-Bains. Vous pouvez me joindre au 06 76 51 94 22 ou m'écrire à marcel01@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Brigitte Perret Le Ledoux"
+   },
+   {
+    "start": 114,
+    "end": 130,
+    "entity_type": "LOCATION",
+    "value": "Rocher-les-Bains"
+   },
+   {
+    "start": 158,
+    "end": 172,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 76 51 94 22"
+   },
+   {
+    "start": 187,
+    "end": 207,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcel01@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0118",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Thomas Labbé et Émilie Colas-De Sousa. La prochaine réunion aura lieu à Rodriguez. À faire : envoyer la présentation à maurice23@example.net. Ligne directe : +33 1 72 31 29 86.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Thomas Labbé"
+   },
+   {
+    "start": 46,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Émilie Colas-De Sousa"
+   },
+   {
+    "start": 102,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Rodriguez"
+   },
+   {
+    "start": 149,
+    "end": 170,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "maurice23@example.net"
+   },
+   {
+    "start": 188,
+    "end": 205,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 72 31 29 86"
+   }
+  ]
+ },
+ {
+  "id": "fr-0119",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Sylvie Briand et votre adresse se trouve à Georges. Nous vous rappellerons au 07 88 49 22 36. La carte enregistrée est 4842-8570-6402-9504. Une copie a été envoyée à valerienormand@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Sylvie Briand"
+   },
+   {
+    "start": 103,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Georges"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 88 49 22 36"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4842-8570-6402-9504"
+   },
+   {
+    "start": 226,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "valerienormand@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0120",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Yves Parent. Je souhaite organiser une réunion le mois prochain. Le lieu sera Rossi. Vous pouvez me joindre au 06 44 41 75 20 ou m'écrire à jda-costa@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Yves Parent"
+   },
+   {
+    "start": 100,
+    "end": 105,
+    "entity_type": "LOCATION",
+    "value": "Rossi"
+   },
+   {
+    "start": 133,
+    "end": 147,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 44 41 75 20"
+   },
+   {
+    "start": 162,
+    "end": 183,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "jda-costa@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0121",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Bernard Faure et Astrid Richard du Andre. La prochaine réunion aura lieu à Goncalves. À faire : envoyer la présentation à andregay@example.net. Ligne directe : 07 45 12 18 02.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Bernard Faure"
+   },
+   {
+    "start": 47,
+    "end": 70,
+    "entity_type": "PERSON",
+    "value": "Astrid Richard du Andre"
+   },
+   {
+    "start": 105,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Goncalves"
+   },
+   {
+    "start": 152,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andregay@example.net"
+   },
+   {
+    "start": 190,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 45 12 18 02"
+   }
+  ]
+ },
+ {
+  "id": "fr-0122",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Gabriel-Alphonse Laporte et votre adresse se trouve à KleinBourg. Nous vous rappellerons au 01 32 86 04 85. La carte enregistrée est 4760-4750-1922-8689. Une copie a été envoyée à ocharles@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 84,
+    "entity_type": "PERSON",
+    "value": "Gabriel-Alphonse Laporte"
+   },
+   {
+    "start": 114,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "KleinBourg"
+   },
+   {
+    "start": 152,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 32 86 04 85"
+   },
+   {
+    "start": 193,
+    "end": 212,
+    "entity_type": "CREDIT_CARD",
+    "value": "4760-4750-1922-8689"
+   },
+   {
+    "start": 240,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ocharles@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0123",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle François Marion. Je souhaite organiser une réunion le mois prochain. Le lieu sera Jacquet-sur-Torres. Vous pouvez me joindre au 06 83 18 68 35 ou m'écrire à kbarbier@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "François Marion"
+   },
+   {
+    "start": 104,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Jacquet-sur-Torres"
+   },
+   {
+    "start": 150,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 83 18 68 35"
+   },
+   {
+    "start": 179,
+    "end": 199,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "kbarbier@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0124",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Thibault-Édouard Gérard et Thibaut Lagarde Le Meunier. La prochaine réunion aura lieu à Henry. À faire : envoyer la présentation à andredelorme@example.com. Ligne directe : 07 63 16 28 26.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Thibault-Édouard Gérard"
+   },
+   {
+    "start": 57,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Thibaut Lagarde Le Meunier"
+   },
+   {
+    "start": 118,
+    "end": 123,
+    "entity_type": "LOCATION",
+    "value": "Henry"
+   },
+   {
+    "start": 161,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andredelorme@example.com"
+   },
+   {
+    "start": 203,
+    "end": 217,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 63 16 28 26"
+   }
+  ]
+ },
+ {
+  "id": "fr-0125",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Daniel Alves de la Mallet et votre adresse se trouve à Saint MaryseBourg. Nous vous rappellerons au 01 00 49 14 72. La carte enregistrée est 4922-9326-1222-9170. Une copie a été envoyée à valerievallet@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 85,
+    "entity_type": "PERSON",
+    "value": "Daniel Alves de la Mallet"
+   },
+   {
+    "start": 115,
+    "end": 132,
+    "entity_type": "LOCATION",
+    "value": "Saint MaryseBourg"
+   },
+   {
+    "start": 160,
+    "end": 174,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 00 49 14 72"
+   },
+   {
+    "start": 201,
+    "end": 220,
+    "entity_type": "CREDIT_CARD",
+    "value": "4922-9326-1222-9170"
+   },
+   {
+    "start": 248,
+    "end": 273,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "valerievallet@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0126",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Marc Joubert. Je souhaite organiser une réunion le mois prochain. Le lieu sera Chevallier-les-Bains. Vous pouvez me joindre au 01 67 93 81 37 ou m'écrire à bigotgenevieve@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Marc Joubert"
+   },
+   {
+    "start": 101,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Chevallier-les-Bains"
+   },
+   {
+    "start": 149,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 67 93 81 37"
+   },
+   {
+    "start": 178,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bigotgenevieve@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0127",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Julie Delannoy et Hugues Coste. La prochaine réunion aura lieu à Saint Margot-les-Bains. À faire : envoyer la présentation à suzanne24@example.org. Ligne directe : 06 12 75 19 32.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Julie Delannoy"
+   },
+   {
+    "start": 48,
+    "end": 60,
+    "entity_type": "PERSON",
+    "value": "Hugues Coste"
+   },
+   {
+    "start": 95,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Saint Margot-les-Bains"
+   },
+   {
+    "start": 155,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "suzanne24@example.org"
+   },
+   {
+    "start": 194,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 12 75 19 32"
+   }
+  ]
+ },
+ {
+  "id": "fr-0128",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Lucie Dos Santos et votre adresse se trouve à Guillou. Nous vous rappellerons au 01 10 79 97 04. La carte enregistrée est 4759-7337-6501-7919. Une copie a été envoyée à elisabeth66@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Lucie Dos Santos"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Guillou"
+   },
+   {
+    "start": 141,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 10 79 97 04"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4759-7337-6501-7919"
+   },
+   {
+    "start": 229,
+    "end": 252,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "elisabeth66@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0129",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Xavier Louis Le Roussel. Je souhaite organiser une réunion le mois prochain. Le lieu sera Marion-sur-Letellier. Vous pouvez me joindre au +33 7 04 02 77 20 ou m'écrire à leonboulanger@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Xavier Louis Le Roussel"
+   },
+   {
+    "start": 112,
+    "end": 132,
+    "entity_type": "LOCATION",
+    "value": "Marion-sur-Letellier"
+   },
+   {
+    "start": 160,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 04 02 77 20"
+   },
+   {
+    "start": 192,
+    "end": 217,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "leonboulanger@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0130",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Vincent Besson et Constance-Susanne Voisin. La prochaine réunion aura lieu à Saint Aurore-les-Bains. À faire : envoyer la présentation à guillotlouise@example.net. Ligne directe : 07 18 70 28 47.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Vincent Besson"
+   },
+   {
+    "start": 48,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Constance-Susanne Voisin"
+   },
+   {
+    "start": 107,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Saint Aurore-les-Bains"
+   },
+   {
+    "start": 167,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "guillotlouise@example.net"
+   },
+   {
+    "start": 210,
+    "end": 224,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 18 70 28 47"
+   }
+  ]
+ },
+ {
+  "id": "fr-0131",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Thierry Vallet et votre adresse se trouve à Faure-les-Bains. Nous vous rappellerons au 06 39 90 29 34. La carte enregistrée est 4678249271416915. Une copie a été envoyée à roger73@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Thierry Vallet"
+   },
+   {
+    "start": 104,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Faure-les-Bains"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 39 90 29 34"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4678249271416915"
+   },
+   {
+    "start": 232,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "roger73@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0132",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Nathalie Robin. Je souhaite organiser une réunion le mois prochain. Le lieu sera Sainte Françoisenec. Vous pouvez me joindre au +33 6 93 23 84 32 ou m'écrire à laure73@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Nathalie Robin"
+   },
+   {
+    "start": 103,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Sainte Françoisenec"
+   },
+   {
+    "start": 150,
+    "end": 167,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 93 23 84 32"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "laure73@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0133",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Grégoire Delattre et Alexandria Neveu. La prochaine réunion aura lieu à Saint Rémy. À faire : envoyer la présentation à denisdenis@example.net. Ligne directe : +33 6 99 54 91 90.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Grégoire Delattre"
+   },
+   {
+    "start": 51,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Alexandria Neveu"
+   },
+   {
+    "start": 102,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Saint Rémy"
+   },
+   {
+    "start": 150,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "denisdenis@example.net"
+   },
+   {
+    "start": 190,
+    "end": 207,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 99 54 91 90"
+   }
+  ]
+ },
+ {
+  "id": "fr-0134",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Élodie Jacques-Lamy et votre adresse se trouve à Philippe. Nous vous rappellerons au 01 41 34 61 59. La carte enregistrée est 4453-3508-7141-6346. Une copie a été envoyée à clamy@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Élodie Jacques-Lamy"
+   },
+   {
+    "start": 109,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Philippe"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 41 34 61 59"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4453-3508-7141-6346"
+   },
+   {
+    "start": 233,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "clamy@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0135",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Marc Allard. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Renéboeuf. Vous pouvez me joindre au 01 03 48 66 04 ou m'écrire à andreaurore@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Marc Allard"
+   },
+   {
+    "start": 100,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Saint Renéboeuf"
+   },
+   {
+    "start": 143,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 03 48 66 04"
+   },
+   {
+    "start": 172,
+    "end": 195,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "andreaurore@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0136",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Michelle Hubert-Boutin et Hugues Parent de Blot. La prochaine réunion aura lieu à Loiseau. À faire : envoyer la présentation à hortense20@example.com. Ligne directe : 01 73 90 14 15.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 52,
+    "entity_type": "PERSON",
+    "value": "Michelle Hubert-Boutin"
+   },
+   {
+    "start": 56,
+    "end": 77,
+    "entity_type": "PERSON",
+    "value": "Hugues Parent de Blot"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Loiseau"
+   },
+   {
+    "start": 157,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hortense20@example.com"
+   },
+   {
+    "start": 197,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 73 90 14 15"
+   }
+  ]
+ },
+ {
+  "id": "fr-0137",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jules Le Boyer et votre adresse se trouve à Sainte Honoré. Nous vous rappellerons au 07 60 45 39 49. La carte enregistrée est 4966682505450709. Une copie a été envoyée à ggermain@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Jules Le Boyer"
+   },
+   {
+    "start": 104,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Sainte Honoré"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 60 45 39 49"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4966682505450709"
+   },
+   {
+    "start": 230,
+    "end": 250,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ggermain@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0138",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Véronique Perrier-Weber. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint ÉléonoreVille. Vous pouvez me joindre au +33 1 34 68 65 98 ou m'écrire à meyeralix@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 45,
+    "entity_type": "PERSON",
+    "value": "Véronique Perrier-Weber"
+   },
+   {
+    "start": 112,
+    "end": 131,
+    "entity_type": "LOCATION",
+    "value": "Saint ÉléonoreVille"
+   },
+   {
+    "start": 159,
+    "end": 176,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 34 68 65 98"
+   },
+   {
+    "start": 191,
+    "end": 212,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "meyeralix@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0139",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Laure Weiss-Girard et Marine de Voisin. La prochaine réunion aura lieu à Bodin. À faire : envoyer la présentation à renaultconstance@example.org. Ligne directe : +33 6 06 20 61 56.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Laure Weiss-Girard"
+   },
+   {
+    "start": 52,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Marine de Voisin"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Bodin"
+   },
+   {
+    "start": 146,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "renaultconstance@example.org"
+   },
+   {
+    "start": 192,
+    "end": 209,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 06 20 61 56"
+   }
+  ]
+ },
+ {
+  "id": "fr-0140",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Grégoire Nicolas et votre adresse se trouve à RogerVille. Nous vous rappellerons au +33 1 77 40 59 02. La carte enregistrée est 4585585518206185. Une copie a été envoyée à mmallet@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Grégoire Nicolas"
+   },
+   {
+    "start": 106,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "RogerVille"
+   },
+   {
+    "start": 144,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 77 40 59 02"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4585585518206185"
+   },
+   {
+    "start": 232,
+    "end": 251,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mmallet@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0141",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Michel-Arthur Durand. Je souhaite organiser une réunion le mois prochain. Le lieu sera Martineau. Vous pouvez me joindre au 06 93 87 24 84 ou m'écrire à constance36@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Michel-Arthur Durand"
+   },
+   {
+    "start": 109,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Martineau"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 93 87 24 84"
+   },
+   {
+    "start": 175,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "constance36@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0142",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Charles Caron et François Klein. La prochaine réunion aura lieu à Saint Maurice. À faire : envoyer la présentation à ulouis@example.org. Ligne directe : +33 6 80 87 82 63.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Charles Caron"
+   },
+   {
+    "start": 47,
+    "end": 61,
+    "entity_type": "PERSON",
+    "value": "François Klein"
+   },
+   {
+    "start": 96,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Saint Maurice"
+   },
+   {
+    "start": 147,
+    "end": 165,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ulouis@example.org"
+   },
+   {
+    "start": 183,
+    "end": 200,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 80 87 82 63"
+   }
+  ]
+ },
+ {
+  "id": "fr-0143",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Marine Jean et votre adresse se trouve à Dumas-les-Bains. Nous vous rappellerons au +33 1 03 93 04 37. La carte enregistrée est 4734819872589641. Une copie a été envoyée à theodore77@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Marine Jean"
+   },
+   {
+    "start": 101,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Dumas-les-Bains"
+   },
+   {
+    "start": 144,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 03 93 04 37"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4734819872589641"
+   },
+   {
+    "start": 232,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "theodore77@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0144",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Honoré Poulain. Je souhaite organiser une réunion le mois prochain. Le lieu sera Rousset-sur-Bonnin. Vous pouvez me joindre au 06 06 98 89 27 ou m'écrire à barbierlucas@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Honoré Poulain"
+   },
+   {
+    "start": 103,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Rousset-sur-Bonnin"
+   },
+   {
+    "start": 149,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 06 98 89 27"
+   },
+   {
+    "start": 178,
+    "end": 202,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "barbierlucas@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0145",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Suzanne Charles-Le Gall et Lucy-Aurore Pierre. La prochaine réunion aura lieu à Rodrigues. À faire : envoyer la présentation à seguinodette@example.com. Ligne directe : 01 33 09 30 01.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Suzanne Charles-Le Gall"
+   },
+   {
+    "start": 57,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Lucy-Aurore Pierre"
+   },
+   {
+    "start": 110,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Rodrigues"
+   },
+   {
+    "start": 157,
+    "end": 181,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "seguinodette@example.com"
+   },
+   {
+    "start": 199,
+    "end": 213,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 33 09 30 01"
+   }
+  ]
+ },
+ {
+  "id": "fr-0146",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Michelle Hubert de Mahe et votre adresse se trouve à Faivre. Nous vous rappellerons au 06 77 64 70 32. La carte enregistrée est 4882023910306270. Une copie a été envoyée à margotvoisin@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 83,
+    "entity_type": "PERSON",
+    "value": "Michelle Hubert de Mahe"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Faivre"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 77 64 70 32"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4882023910306270"
+   },
+   {
+    "start": 232,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "margotvoisin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0147",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Margaux Jacquet-Goncalves. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Céciledan. Vous pouvez me joindre au 06 82 89 85 72 ou m'écrire à wagnerraymond@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Margaux Jacquet-Goncalves"
+   },
+   {
+    "start": 114,
+    "end": 129,
+    "entity_type": "LOCATION",
+    "value": "Saint Céciledan"
+   },
+   {
+    "start": 157,
+    "end": 171,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 82 89 85 72"
+   },
+   {
+    "start": 186,
+    "end": 211,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "wagnerraymond@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0148",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Honoré Leconte et Geneviève Didier-Reynaud. La prochaine réunion aura lieu à Meunier. À faire : envoyer la présentation à achauvet@example.com. Ligne directe : 06 79 09 00 94.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Honoré Leconte"
+   },
+   {
+    "start": 48,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Geneviève Didier-Reynaud"
+   },
+   {
+    "start": 107,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Meunier"
+   },
+   {
+    "start": 152,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "achauvet@example.com"
+   },
+   {
+    "start": 190,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 79 09 00 94"
+   }
+  ]
+ },
+ {
+  "id": "fr-0149",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Louise Daniel et votre adresse se trouve à Caron-les-Bains. Nous vous rappellerons au 06 07 44 57 84. La carte enregistrée est 4312751065868203. Une copie a été envoyée à victorsimon@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Louise Daniel"
+   },
+   {
+    "start": 103,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Caron-les-Bains"
+   },
+   {
+    "start": 146,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 07 44 57 84"
+   },
+   {
+    "start": 187,
+    "end": 203,
+    "entity_type": "CREDIT_CARD",
+    "value": "4312751065868203"
+   },
+   {
+    "start": 231,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "victorsimon@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0150",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Daniel de la Berthelot. Je souhaite organiser une réunion le mois prochain. Le lieu sera Barthelemy. Vous pouvez me joindre au +33 1 47 45 08 66 ou m'écrire à anouk86@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Daniel de la Berthelot"
+   },
+   {
+    "start": 111,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Barthelemy"
+   },
+   {
+    "start": 149,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 47 45 08 66"
+   },
+   {
+    "start": 181,
+    "end": 200,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "anouk86@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0151",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Alexandrie Renard et Capucine de la Weber. La prochaine réunion aura lieu à Fontaine. À faire : envoyer la présentation à olivier91@example.net. Ligne directe : +33 6 05 43 26 14.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Alexandrie Renard"
+   },
+   {
+    "start": 51,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Capucine de la Weber"
+   },
+   {
+    "start": 106,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "Fontaine"
+   },
+   {
+    "start": 152,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "olivier91@example.net"
+   },
+   {
+    "start": 191,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 05 43 26 14"
+   }
+  ]
+ },
+ {
+  "id": "fr-0152",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Gérard-Étienne Germain et votre adresse se trouve à Jacquet. Nous vous rappellerons au +33 1 91 63 30 07. La carte enregistrée est 4714-5545-5893-3474. Une copie a été envoyée à colette31@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Gérard-Étienne Germain"
+   },
+   {
+    "start": 112,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Jacquet"
+   },
+   {
+    "start": 147,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 91 63 30 07"
+   },
+   {
+    "start": 191,
+    "end": 210,
+    "entity_type": "CREDIT_CARD",
+    "value": "4714-5545-5893-3474"
+   },
+   {
+    "start": 238,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "colette31@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0153",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Susanne Clerc. Je souhaite organiser une réunion le mois prochain. Le lieu sera Legrand-sur-Garcia. Vous pouvez me joindre au +33 6 11 48 80 69 ou m'écrire à merlefrederic@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Susanne Clerc"
+   },
+   {
+    "start": 102,
+    "end": 120,
+    "entity_type": "LOCATION",
+    "value": "Legrand-sur-Garcia"
+   },
+   {
+    "start": 148,
+    "end": 165,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 11 48 80 69"
+   },
+   {
+    "start": 180,
+    "end": 205,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "merlefrederic@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0154",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Robert Barre et Eugène Blot. La prochaine réunion aura lieu à RamosVille. À faire : envoyer la présentation à adelaide81@example.org. Ligne directe : 07 90 29 25 47.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Robert Barre"
+   },
+   {
+    "start": 46,
+    "end": 57,
+    "entity_type": "PERSON",
+    "value": "Eugène Blot"
+   },
+   {
+    "start": 92,
+    "end": 102,
+    "entity_type": "LOCATION",
+    "value": "RamosVille"
+   },
+   {
+    "start": 140,
+    "end": 162,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "adelaide81@example.org"
+   },
+   {
+    "start": 180,
+    "end": 194,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 90 29 25 47"
+   }
+  ]
+ },
+ {
+  "id": "fr-0155",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Agathe Texier du Paris et votre adresse se trouve à Pelletier. Nous vous rappellerons au 01 87 35 65 09. La carte enregistrée est 4779657404112185. Une copie a été envoyée à marcelgosselin@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 82,
+    "entity_type": "PERSON",
+    "value": "Agathe Texier du Paris"
+   },
+   {
+    "start": 112,
+    "end": 121,
+    "entity_type": "LOCATION",
+    "value": "Pelletier"
+   },
+   {
+    "start": 149,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 87 35 65 09"
+   },
+   {
+    "start": 190,
+    "end": 206,
+    "entity_type": "CREDIT_CARD",
+    "value": "4779657404112185"
+   },
+   {
+    "start": 234,
+    "end": 260,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marcelgosselin@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0156",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Gabriel-Jean Rodrigues. Je souhaite organiser une réunion le mois prochain. Le lieu sera Millet. Vous pouvez me joindre au +33 7 73 45 76 46 ou m'écrire à tristan98@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 44,
+    "entity_type": "PERSON",
+    "value": "Gabriel-Jean Rodrigues"
+   },
+   {
+    "start": 111,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Millet"
+   },
+   {
+    "start": 145,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 73 45 76 46"
+   },
+   {
+    "start": 177,
+    "end": 198,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "tristan98@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0157",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Augustin Lejeune et Arthur Perrier. La prochaine réunion aura lieu à Saint Marthe. À faire : envoyer la présentation à bergerbenjamin@example.net. Ligne directe : +33 1 98 59 02 53.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Augustin Lejeune"
+   },
+   {
+    "start": 50,
+    "end": 64,
+    "entity_type": "PERSON",
+    "value": "Arthur Perrier"
+   },
+   {
+    "start": 99,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Saint Marthe"
+   },
+   {
+    "start": 149,
+    "end": 175,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bergerbenjamin@example.net"
+   },
+   {
+    "start": 193,
+    "end": 210,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 98 59 02 53"
+   }
+  ]
+ },
+ {
+  "id": "fr-0158",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Lucas Godard et votre adresse se trouve à Lecoq-la-Forêt. Nous vous rappellerons au 01 51 17 65 75. La carte enregistrée est 4455-0135-7473-6901. Une copie a été envoyée à margaud44@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Lucas Godard"
+   },
+   {
+    "start": 102,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Lecoq-la-Forêt"
+   },
+   {
+    "start": 144,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 51 17 65 75"
+   },
+   {
+    "start": 185,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4455-0135-7473-6901"
+   },
+   {
+    "start": 232,
+    "end": 253,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "margaud44@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0159",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Denise Robin. Je souhaite organiser une réunion le mois prochain. Le lieu sera Lefortnec. Vous pouvez me joindre au 01 54 29 13 63 ou m'écrire à arnaude21@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Denise Robin"
+   },
+   {
+    "start": 101,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Lefortnec"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 54 29 13 63"
+   },
+   {
+    "start": 167,
+    "end": 188,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "arnaude21@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0160",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Claudine Guillot et Franck-Zacharie Carlier. La prochaine réunion aura lieu à Dupuy. À faire : envoyer la présentation à philippe03@example.net. Ligne directe : +33 7 88 81 75 40.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Claudine Guillot"
+   },
+   {
+    "start": 50,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Franck-Zacharie Carlier"
+   },
+   {
+    "start": 108,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Dupuy"
+   },
+   {
+    "start": 151,
+    "end": 173,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "philippe03@example.net"
+   },
+   {
+    "start": 191,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 88 81 75 40"
+   }
+  ]
+ },
+ {
+  "id": "fr-0161",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Luc Le Breton et votre adresse se trouve à Hebert-sur-Bigot. Nous vous rappellerons au +33 7 98 63 93 58. La carte enregistrée est 4016-3454-4635-4295. Une copie a été envoyée à paulmanon@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Luc Le Breton"
+   },
+   {
+    "start": 103,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Hebert-sur-Bigot"
+   },
+   {
+    "start": 147,
+    "end": 164,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 98 63 93 58"
+   },
+   {
+    "start": 191,
+    "end": 210,
+    "entity_type": "CREDIT_CARD",
+    "value": "4016-3454-4635-4295"
+   },
+   {
+    "start": 238,
+    "end": 259,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "paulmanon@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0162",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Adélaïde Lefèvre. Je souhaite organiser une réunion le mois prochain. Le lieu sera Baron. Vous pouvez me joindre au 01 69 82 78 50 ou m'écrire à bernadetteperon@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Adélaïde Lefèvre"
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Baron"
+   },
+   {
+    "start": 138,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 69 82 78 50"
+   },
+   {
+    "start": 167,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bernadetteperon@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0163",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Isabelle Salmon-Boucher et Grégoire Henry-Nguyen. La prochaine réunion aura lieu à Turpin. À faire : envoyer la présentation à remyfleury@example.org. Ligne directe : 06 42 64 16 39.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 53,
+    "entity_type": "PERSON",
+    "value": "Isabelle Salmon-Boucher"
+   },
+   {
+    "start": 57,
+    "end": 78,
+    "entity_type": "PERSON",
+    "value": "Grégoire Henry-Nguyen"
+   },
+   {
+    "start": 113,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Turpin"
+   },
+   {
+    "start": 157,
+    "end": 179,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "remyfleury@example.org"
+   },
+   {
+    "start": 197,
+    "end": 211,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 42 64 16 39"
+   }
+  ]
+ },
+ {
+  "id": "fr-0164",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Anastasie Petit et votre adresse se trouve à Cohen. Nous vous rappellerons au +33 1 58 26 47 81. La carte enregistrée est 4814-4784-7113-0324. Une copie a été envoyée à marchalnicolas@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Anastasie Petit"
+   },
+   {
+    "start": 105,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Cohen"
+   },
+   {
+    "start": 138,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 58 26 47 81"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4814-4784-7113-0324"
+   },
+   {
+    "start": 229,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "marchalnicolas@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0165",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Alix Rodriguez. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Brigitte. Vous pouvez me joindre au +33 6 17 57 19 13 ou m'écrire à qrousset@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Alix Rodriguez"
+   },
+   {
+    "start": 103,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Saint Brigitte"
+   },
+   {
+    "start": 145,
+    "end": 162,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 17 57 19 13"
+   },
+   {
+    "start": 177,
+    "end": 197,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "qrousset@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0166",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Laetitia Charles-Chevalier et Anouk-Suzanne Poirier. La prochaine réunion aura lieu à Girard. À faire : envoyer la présentation à xrenault@example.org. Ligne directe : +33 1 46 47 15 37.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Laetitia Charles-Chevalier"
+   },
+   {
+    "start": 60,
+    "end": 81,
+    "entity_type": "PERSON",
+    "value": "Anouk-Suzanne Poirier"
+   },
+   {
+    "start": 116,
+    "end": 122,
+    "entity_type": "LOCATION",
+    "value": "Girard"
+   },
+   {
+    "start": 160,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xrenault@example.org"
+   },
+   {
+    "start": 198,
+    "end": 215,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 46 47 15 37"
+   }
+  ]
+ },
+ {
+  "id": "fr-0167",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Frédéric Ramos et votre adresse se trouve à Ribeiro-sur-Bousquet. Nous vous rappellerons au 01 42 38 63 42. La carte enregistrée est 4400-0936-6915-4976. Une copie a été envoyée à valerie71@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Frédéric Ramos"
+   },
+   {
+    "start": 104,
+    "end": 124,
+    "entity_type": "LOCATION",
+    "value": "Ribeiro-sur-Bousquet"
+   },
+   {
+    "start": 152,
+    "end": 166,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 42 38 63 42"
+   },
+   {
+    "start": 193,
+    "end": 212,
+    "entity_type": "CREDIT_CARD",
+    "value": "4400-0936-6915-4976"
+   },
+   {
+    "start": 240,
+    "end": 261,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "valerie71@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0168",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Madeleine Duhamel. Je souhaite organiser une réunion le mois prochain. Le lieu sera Richard. Vous pouvez me joindre au +33 1 99 52 37 43 ou m'écrire à aurore77@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 39,
+    "entity_type": "PERSON",
+    "value": "Madeleine Duhamel"
+   },
+   {
+    "start": 106,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Richard"
+   },
+   {
+    "start": 141,
+    "end": 158,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 99 52 37 43"
+   },
+   {
+    "start": 173,
+    "end": 193,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "aurore77@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0169",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Nathalie Charles et Audrey Imbert. La prochaine réunion aura lieu à Rossi-les-Bains. À faire : envoyer la présentation à josette10@example.org. Ligne directe : 01 74 18 33 57.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Nathalie Charles"
+   },
+   {
+    "start": 50,
+    "end": 63,
+    "entity_type": "PERSON",
+    "value": "Audrey Imbert"
+   },
+   {
+    "start": 98,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Rossi-les-Bains"
+   },
+   {
+    "start": 151,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "josette10@example.org"
+   },
+   {
+    "start": 190,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 74 18 33 57"
+   }
+  ]
+ },
+ {
+  "id": "fr-0170",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Alfred Le Gall et votre adresse se trouve à Dijoux. Nous vous rappellerons au +33 1 56 79 76 35. La carte enregistrée est 4704351288899436. Une copie a été envoyée à costejulien@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Alfred Le Gall"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Dijoux"
+   },
+   {
+    "start": 138,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 56 79 76 35"
+   },
+   {
+    "start": 182,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4704351288899436"
+   },
+   {
+    "start": 226,
+    "end": 249,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "costejulien@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0171",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Jean Bouvet. Je souhaite organiser une réunion le mois prochain. Le lieu sera Fontaine. Vous pouvez me joindre au +33 7 01 01 98 39 ou m'écrire à candre@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 33,
+    "entity_type": "PERSON",
+    "value": "Jean Bouvet"
+   },
+   {
+    "start": 100,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Fontaine"
+   },
+   {
+    "start": 136,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 01 01 98 39"
+   },
+   {
+    "start": 168,
+    "end": 186,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "candre@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0172",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Joséphine Delaunay et Jules Le Tanguy. La prochaine réunion aura lieu à HernandezVille. À faire : envoyer la présentation à xgoncalves@example.org. Ligne directe : 07 11 72 75 55.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Joséphine Delaunay"
+   },
+   {
+    "start": 52,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Jules Le Tanguy"
+   },
+   {
+    "start": 102,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "HernandezVille"
+   },
+   {
+    "start": 154,
+    "end": 176,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xgoncalves@example.org"
+   },
+   {
+    "start": 194,
+    "end": 208,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 11 72 75 55"
+   }
+  ]
+ },
+ {
+  "id": "fr-0173",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Auguste Baron et votre adresse se trouve à Martineau. Nous vous rappellerons au +33 1 69 79 65 28. La carte enregistrée est 4036358770854455. Une copie a été envoyée à gilletcapucine@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Auguste Baron"
+   },
+   {
+    "start": 103,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Martineau"
+   },
+   {
+    "start": 140,
+    "end": 157,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 69 79 65 28"
+   },
+   {
+    "start": 184,
+    "end": 200,
+    "entity_type": "CREDIT_CARD",
+    "value": "4036358770854455"
+   },
+   {
+    "start": 228,
+    "end": 254,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gilletcapucine@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0174",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Audrey Ferrand. Je souhaite organiser une réunion le mois prochain. Le lieu sera David. Vous pouvez me joindre au +33 7 63 44 77 67 ou m'écrire à reneelombard@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Audrey Ferrand"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "David"
+   },
+   {
+    "start": 136,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 63 44 77 67"
+   },
+   {
+    "start": 168,
+    "end": 192,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "reneelombard@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0175",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Émile Dupré et Zoé Fouquet de la Neveu. La prochaine réunion aura lieu à Simon-sur-Mer. À faire : envoyer la présentation à christine04@example.org. Ligne directe : +33 6 79 23 25 61.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Émile Dupré"
+   },
+   {
+    "start": 45,
+    "end": 68,
+    "entity_type": "PERSON",
+    "value": "Zoé Fouquet de la Neveu"
+   },
+   {
+    "start": 103,
+    "end": 116,
+    "entity_type": "LOCATION",
+    "value": "Simon-sur-Mer"
+   },
+   {
+    "start": 154,
+    "end": 177,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "christine04@example.org"
+   },
+   {
+    "start": 195,
+    "end": 212,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 79 23 25 61"
+   }
+  ]
+ },
+ {
+  "id": "fr-0176",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Thérèse de Gomez et votre adresse se trouve à Charriernec. Nous vous rappellerons au 07 09 95 18 98. La carte enregistrée est 4682782371696089. Une copie a été envoyée à odetteraymond@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 76,
+    "entity_type": "PERSON",
+    "value": "Thérèse de Gomez"
+   },
+   {
+    "start": 106,
+    "end": 117,
+    "entity_type": "LOCATION",
+    "value": "Charriernec"
+   },
+   {
+    "start": 145,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 09 95 18 98"
+   },
+   {
+    "start": 186,
+    "end": 202,
+    "entity_type": "CREDIT_CARD",
+    "value": "4682782371696089"
+   },
+   {
+    "start": 230,
+    "end": 255,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "odetteraymond@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0177",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Hortense Brunet. Je souhaite organiser une réunion le mois prochain. Le lieu sera Dupré. Vous pouvez me joindre au +33 7 89 17 16 87 ou m'écrire à mariejeannine@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 37,
+    "entity_type": "PERSON",
+    "value": "Hortense Brunet"
+   },
+   {
+    "start": 104,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Dupré"
+   },
+   {
+    "start": 137,
+    "end": 154,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 89 17 16 87"
+   },
+   {
+    "start": 169,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "mariejeannine@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0178",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Margot-Lorraine Jean et Marine Robert. La prochaine réunion aura lieu à Blanchard. À faire : envoyer la présentation à garciamonique@example.com. Ligne directe : 01 49 40 42 27.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 50,
+    "entity_type": "PERSON",
+    "value": "Margot-Lorraine Jean"
+   },
+   {
+    "start": 54,
+    "end": 67,
+    "entity_type": "PERSON",
+    "value": "Marine Robert"
+   },
+   {
+    "start": 102,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Blanchard"
+   },
+   {
+    "start": 149,
+    "end": 174,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "garciamonique@example.com"
+   },
+   {
+    "start": 192,
+    "end": 206,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 49 40 42 27"
+   }
+  ]
+ },
+ {
+  "id": "fr-0179",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Agnès Brunel et votre adresse se trouve à LecomteVille. Nous vous rappellerons au +33 1 40 34 52 42. La carte enregistrée est 4018-4851-8733-6560. Une copie a été envoyée à annemartins@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Agnès Brunel"
+   },
+   {
+    "start": 102,
+    "end": 114,
+    "entity_type": "LOCATION",
+    "value": "LecomteVille"
+   },
+   {
+    "start": 142,
+    "end": 159,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 40 34 52 42"
+   },
+   {
+    "start": 186,
+    "end": 205,
+    "entity_type": "CREDIT_CARD",
+    "value": "4018-4851-8733-6560"
+   },
+   {
+    "start": 233,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "annemartins@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0180",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Susan Menard. Je souhaite organiser une réunion le mois prochain. Le lieu sera Boyernec. Vous pouvez me joindre au 06 98 31 95 84 ou m'écrire à francoisisabelle@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 34,
+    "entity_type": "PERSON",
+    "value": "Susan Menard"
+   },
+   {
+    "start": 101,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Boyernec"
+   },
+   {
+    "start": 137,
+    "end": 151,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 98 31 95 84"
+   },
+   {
+    "start": 166,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "francoisisabelle@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0181",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Daniel Charpentier et Émilie Chevalier-Perrin. La prochaine réunion aura lieu à Sauvage-sur-Carre. À faire : envoyer la présentation à godardcolette@example.com. Ligne directe : +33 6 82 85 43 61.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "Daniel Charpentier"
+   },
+   {
+    "start": 52,
+    "end": 75,
+    "entity_type": "PERSON",
+    "value": "Émilie Chevalier-Perrin"
+   },
+   {
+    "start": 110,
+    "end": 127,
+    "entity_type": "LOCATION",
+    "value": "Sauvage-sur-Carre"
+   },
+   {
+    "start": 165,
+    "end": 190,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "godardcolette@example.com"
+   },
+   {
+    "start": 208,
+    "end": 225,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 82 85 43 61"
+   }
+  ]
+ },
+ {
+  "id": "fr-0182",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Jean Martins et votre adresse se trouve à Sainte AndréVille. Nous vous rappellerons au 06 46 72 86 05. La carte enregistrée est 4483435310589169. Une copie a été envoyée à luciejourdan@example.org.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Jean Martins"
+   },
+   {
+    "start": 102,
+    "end": 119,
+    "entity_type": "LOCATION",
+    "value": "Sainte AndréVille"
+   },
+   {
+    "start": 147,
+    "end": 161,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 46 72 86 05"
+   },
+   {
+    "start": 188,
+    "end": 204,
+    "entity_type": "CREDIT_CARD",
+    "value": "4483435310589169"
+   },
+   {
+    "start": 232,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "luciejourdan@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0183",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Eugène Gimenez. Je souhaite organiser une réunion le mois prochain. Le lieu sera Aubry. Vous pouvez me joindre au +33 7 99 24 76 39 ou m'écrire à imahe@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 36,
+    "entity_type": "PERSON",
+    "value": "Eugène Gimenez"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Aubry"
+   },
+   {
+    "start": 136,
+    "end": 153,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 99 24 76 39"
+   },
+   {
+    "start": 168,
+    "end": 185,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "imahe@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0184",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Eugène Perez et Maryse Allard. La prochaine réunion aura lieu à Moreau-sur-Bonnin. À faire : envoyer la présentation à eric09@example.com. Ligne directe : 01 77 69 55 70.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 42,
+    "entity_type": "PERSON",
+    "value": "Eugène Perez"
+   },
+   {
+    "start": 46,
+    "end": 59,
+    "entity_type": "PERSON",
+    "value": "Maryse Allard"
+   },
+   {
+    "start": 94,
+    "end": 111,
+    "entity_type": "LOCATION",
+    "value": "Moreau-sur-Bonnin"
+   },
+   {
+    "start": 149,
+    "end": 167,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "eric09@example.com"
+   },
+   {
+    "start": 185,
+    "end": 199,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 77 69 55 70"
+   }
+  ]
+ },
+ {
+  "id": "fr-0185",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Thomas Breton et votre adresse se trouve à Blot. Nous vous rappellerons au +33 1 62 10 69 42. La carte enregistrée est 4213-6502-1689-5091. Une copie a été envoyée à xsauvage@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Thomas Breton"
+   },
+   {
+    "start": 103,
+    "end": 107,
+    "entity_type": "LOCATION",
+    "value": "Blot"
+   },
+   {
+    "start": 135,
+    "end": 152,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 62 10 69 42"
+   },
+   {
+    "start": 179,
+    "end": 198,
+    "entity_type": "CREDIT_CARD",
+    "value": "4213-6502-1689-5091"
+   },
+   {
+    "start": 226,
+    "end": 246,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "xsauvage@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0186",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Marie Michaud. Je souhaite organiser une réunion le mois prochain. Le lieu sera Diaz. Vous pouvez me joindre au 06 77 36 20 80 ou m'écrire à garciamichelle@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 35,
+    "entity_type": "PERSON",
+    "value": "Marie Michaud"
+   },
+   {
+    "start": 102,
+    "end": 106,
+    "entity_type": "LOCATION",
+    "value": "Diaz"
+   },
+   {
+    "start": 134,
+    "end": 148,
+    "entity_type": "PHONE_NUMBER",
+    "value": "06 77 36 20 80"
+   },
+   {
+    "start": 163,
+    "end": 189,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "garciamichelle@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0187",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Susanne Cohen et Lucie-Juliette Bourgeois. La prochaine réunion aura lieu à Didier. À faire : envoyer la présentation à lucasguyot@example.org. Ligne directe : 07 55 12 08 23.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 43,
+    "entity_type": "PERSON",
+    "value": "Susanne Cohen"
+   },
+   {
+    "start": 47,
+    "end": 71,
+    "entity_type": "PERSON",
+    "value": "Lucie-Juliette Bourgeois"
+   },
+   {
+    "start": 106,
+    "end": 112,
+    "entity_type": "LOCATION",
+    "value": "Didier"
+   },
+   {
+    "start": 150,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lucasguyot@example.org"
+   },
+   {
+    "start": 190,
+    "end": 204,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 55 12 08 23"
+   }
+  ]
+ },
+ {
+  "id": "fr-0188",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Adélaïde Lebon et votre adresse se trouve à Michel. Nous vous rappellerons au +33 1 29 33 46 39. La carte enregistrée est 4129-6290-3484-4336. Une copie a été envoyée à loiseauisabelle@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 74,
+    "entity_type": "PERSON",
+    "value": "Adélaïde Lebon"
+   },
+   {
+    "start": 104,
+    "end": 110,
+    "entity_type": "LOCATION",
+    "value": "Michel"
+   },
+   {
+    "start": 138,
+    "end": 155,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 29 33 46 39"
+   },
+   {
+    "start": 182,
+    "end": 201,
+    "entity_type": "CREDIT_CARD",
+    "value": "4129-6290-3484-4336"
+   },
+   {
+    "start": 229,
+    "end": 256,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "loiseauisabelle@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0189",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Emmanuelle-Agnès De Sousa. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Camille-sur-Mer. Vous pouvez me joindre au 07 69 20 91 28 ou m'écrire à da-costamarcel@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 47,
+    "entity_type": "PERSON",
+    "value": "Emmanuelle-Agnès De Sousa"
+   },
+   {
+    "start": 114,
+    "end": 135,
+    "entity_type": "LOCATION",
+    "value": "Saint Camille-sur-Mer"
+   },
+   {
+    "start": 163,
+    "end": 177,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 69 20 91 28"
+   },
+   {
+    "start": 192,
+    "end": 218,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "da-costamarcel@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0190",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Marguerite Labbé et Isaac-Théodore Valette. La prochaine réunion aura lieu à Menard. À faire : envoyer la présentation à bernadettemaillot@example.net. Ligne directe : +33 7 75 22 39 99.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 46,
+    "entity_type": "PERSON",
+    "value": "Marguerite Labbé"
+   },
+   {
+    "start": 50,
+    "end": 72,
+    "entity_type": "PERSON",
+    "value": "Isaac-Théodore Valette"
+   },
+   {
+    "start": 107,
+    "end": 113,
+    "entity_type": "LOCATION",
+    "value": "Menard"
+   },
+   {
+    "start": 151,
+    "end": 180,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "bernadettemaillot@example.net"
+   },
+   {
+    "start": 198,
+    "end": 215,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 75 22 39 99"
+   }
+  ]
+ },
+ {
+  "id": "fr-0191",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Geneviève Lejeune de la Letellier et votre adresse se trouve à Sainte Benjamin. Nous vous rappellerons au +33 7 10 91 37 57. La carte enregistrée est 4318808175497226. Une copie a été envoyée à blondelclemence@example.net.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 93,
+    "entity_type": "PERSON",
+    "value": "Geneviève Lejeune de la Letellier"
+   },
+   {
+    "start": 123,
+    "end": 138,
+    "entity_type": "LOCATION",
+    "value": "Sainte Benjamin"
+   },
+   {
+    "start": 166,
+    "end": 183,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 7 10 91 37 57"
+   },
+   {
+    "start": 210,
+    "end": 226,
+    "entity_type": "CREDIT_CARD",
+    "value": "4318808175497226"
+   },
+   {
+    "start": 254,
+    "end": 281,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "blondelclemence@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0192",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Caroline Adam-Klein. Je souhaite organiser une réunion le mois prochain. Le lieu sera Reynaud. Vous pouvez me joindre au +33 6 63 43 82 94 ou m'écrire à gpicard@example.com. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 41,
+    "entity_type": "PERSON",
+    "value": "Caroline Adam-Klein"
+   },
+   {
+    "start": 108,
+    "end": 115,
+    "entity_type": "LOCATION",
+    "value": "Reynaud"
+   },
+   {
+    "start": 143,
+    "end": 160,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 63 43 82 94"
+   },
+   {
+    "start": 175,
+    "end": 194,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "gpicard@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0193",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Martin Boucher Le Gaudin et Michèle-Marianne Dias. La prochaine réunion aura lieu à Mace. À faire : envoyer la présentation à ogoncalves@example.com. Ligne directe : 01 21 27 64 08.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 54,
+    "entity_type": "PERSON",
+    "value": "Martin Boucher Le Gaudin"
+   },
+   {
+    "start": 58,
+    "end": 79,
+    "entity_type": "PERSON",
+    "value": "Michèle-Marianne Dias"
+   },
+   {
+    "start": 114,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Mace"
+   },
+   {
+    "start": 156,
+    "end": 178,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "ogoncalves@example.com"
+   },
+   {
+    "start": 196,
+    "end": 210,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 21 27 64 08"
+   }
+  ]
+ },
+ {
+  "id": "fr-0194",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Eugène Gillet et votre adresse se trouve à Marty. Nous vous rappellerons au 01 67 86 93 43. La carte enregistrée est 4862974980220037. Une copie a été envoyée à martin53@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 73,
+    "entity_type": "PERSON",
+    "value": "Eugène Gillet"
+   },
+   {
+    "start": 103,
+    "end": 108,
+    "entity_type": "LOCATION",
+    "value": "Marty"
+   },
+   {
+    "start": 136,
+    "end": 150,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 67 86 93 43"
+   },
+   {
+    "start": 177,
+    "end": 193,
+    "entity_type": "CREDIT_CARD",
+    "value": "4862974980220037"
+   },
+   {
+    "start": 221,
+    "end": 241,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "martin53@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0195",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Thibault du Blin. Je souhaite organiser une réunion le mois prochain. Le lieu sera Saint Vincent. Vous pouvez me joindre au +33 1 35 40 87 72 ou m'écrire à hervegenevieve@example.net. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Thibault du Blin"
+   },
+   {
+    "start": 105,
+    "end": 118,
+    "entity_type": "LOCATION",
+    "value": "Saint Vincent"
+   },
+   {
+    "start": 146,
+    "end": 163,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 1 35 40 87 72"
+   },
+   {
+    "start": 178,
+    "end": 204,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "hervegenevieve@example.net"
+   }
+  ]
+ },
+ {
+  "id": "fr-0196",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : René Mary-Rousseau et Auguste Schneider. La prochaine réunion aura lieu à Munoz. À faire : envoyer la présentation à rolandblondel@example.net. Ligne directe : +33 6 24 72 34 17.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 48,
+    "entity_type": "PERSON",
+    "value": "René Mary-Rousseau"
+   },
+   {
+    "start": 52,
+    "end": 69,
+    "entity_type": "PERSON",
+    "value": "Auguste Schneider"
+   },
+   {
+    "start": 104,
+    "end": 109,
+    "entity_type": "LOCATION",
+    "value": "Munoz"
+   },
+   {
+    "start": 147,
+    "end": 172,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "rolandblondel@example.net"
+   },
+   {
+    "start": 190,
+    "end": 207,
+    "entity_type": "PHONE_NUMBER",
+    "value": "+33 6 24 72 34 17"
+   }
+  ]
+ },
+ {
+  "id": "fr-0197",
+  "language": "fr",
+  "genre": "inquiry",
+  "text": "Merci d'avoir contacté le support. Votre nom enregistré est Marcelle Goncalves de Lebrun et votre adresse se trouve à Sainte Benjamin. Nous vous rappellerons au 07 18 39 47 33. La carte enregistrée est 4693770740240835. Une copie a été envoyée à broy@example.com.",
+  "spans": [
+   {
+    "start": 60,
+    "end": 88,
+    "entity_type": "PERSON",
+    "value": "Marcelle Goncalves de Lebrun"
+   },
+   {
+    "start": 118,
+    "end": 133,
+    "entity_type": "LOCATION",
+    "value": "Sainte Benjamin"
+   },
+   {
+    "start": 161,
+    "end": 175,
+    "entity_type": "PHONE_NUMBER",
+    "value": "07 18 39 47 33"
+   },
+   {
+    "start": 202,
+    "end": 218,
+    "entity_type": "CREDIT_CARD",
+    "value": "4693770740240835"
+   },
+   {
+    "start": 246,
+    "end": 262,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "broy@example.com"
+   }
+  ]
+ },
+ {
+  "id": "fr-0198",
+  "language": "fr",
+  "genre": "request",
+  "text": "Bonjour, je m'appelle Grégoire Joubert. Je souhaite organiser une réunion le mois prochain. Le lieu sera Sainte Antoine-la-Forêt. Vous pouvez me joindre au 01 86 82 40 37 ou m'écrire à josephinemeunier@example.org. Merci !",
+  "spans": [
+   {
+    "start": 22,
+    "end": 38,
+    "entity_type": "PERSON",
+    "value": "Grégoire Joubert"
+   },
+   {
+    "start": 105,
+    "end": 128,
+    "entity_type": "LOCATION",
+    "value": "Sainte Antoine-la-Forêt"
+   },
+   {
+    "start": 156,
+    "end": 170,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 86 82 40 37"
+   },
+   {
+    "start": 185,
+    "end": 213,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "josephinemeunier@example.org"
+   }
+  ]
+ },
+ {
+  "id": "fr-0199",
+  "language": "fr",
+  "genre": "minutes",
+  "text": "[Compte rendu] Participants : Patrick Pelletier-Pasquier et Stéphane Alexandre de la Poirier. La prochaine réunion aura lieu à Françoisboeuf. À faire : envoyer la présentation à lerouxrobert@example.org. Ligne directe : 01 13 16 36 35.",
+  "spans": [
+   {
+    "start": 30,
+    "end": 56,
+    "entity_type": "PERSON",
+    "value": "Patrick Pelletier-Pasquier"
+   },
+   {
+    "start": 60,
+    "end": 92,
+    "entity_type": "PERSON",
+    "value": "Stéphane Alexandre de la Poirier"
+   },
+   {
+    "start": 127,
+    "end": 140,
+    "entity_type": "LOCATION",
+    "value": "Françoisboeuf"
+   },
+   {
+    "start": 178,
+    "end": 202,
+    "entity_type": "EMAIL_ADDRESS",
+    "value": "lerouxrobert@example.org"
+   },
+   {
+    "start": 220,
+    "end": 234,
+    "entity_type": "PHONE_NUMBER",
+    "value": "01 13 16 36 35"
+   }
+  ]
+ }
+]

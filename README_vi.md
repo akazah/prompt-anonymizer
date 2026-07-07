@@ -1,4 +1,4 @@
-[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | Tiếng Việt
+[English](README.md) | [日本語](README_ja.md) | [Español](README_es.md) | Tiếng Việt | [中文](README_zh.md) | [한국어](README_ko.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [Português](README_pt.md) | [Italiano](README_it.md)
 
 # Prompt Anonymizer
 
@@ -25,11 +25,14 @@ Nó thay thế PII bằng nhãn nhất quán (`<人名_1>`, `<Name_1>`, `<Nombre
 luôn nhận cùng một nhãn, câu trả lời của LLM vẫn có nghĩa. Khi phản hồi trở
 về, bảng ánh xạ — không bao giờ rời thiết bị — khôi phục các giá trị thật.
 
-Ngôn ngữ hỗ trợ: tiếng Nhật (`ja`), tiếng Anh (`en`), tiếng Tây Ban Nha (`es`),
-và tiếng Việt (`vi`). Mặc định `PromptAnonymizer(languages=…)` vẫn là
-`("en", "ja")`; truyền `languages=["es"]` hoặc `languages=["vi"]` (hoặc thêm
-vào danh sách đa ngôn ngữ) để bật. Giao diện trình duyệt bổ sung Español /
-Tiếng Việt vào bộ chọn ngôn ngữ; tự động nhận diện phân biệt cả bốn ngôn ngữ.
+Ngôn ngữ hỗ trợ: tiếng Anh (`en`), tiếng Nhật (`ja`), tiếng Tây Ban Nha (`es`),
+tiếng Việt (`vi`), và — mới — tiếng Trung (`zh`), tiếng Hàn (`ko`), tiếng
+Pháp (`fr`), tiếng Đức (`de`), tiếng Bồ Đào Nha (`pt`) và tiếng Ý (`it`).
+Mặc định `PromptAnonymizer(languages=…)` vẫn là `("en", "ja")`; các ngôn ngữ
+còn lại bật qua `languages=[...]`. Mọi bộ chọn ngôn ngữ trong giao diện và
+tự động nhận diện đều bao phủ cả mười ngôn ngữ. Hỗ trợ ngôn ngữ được điều
+khiển bởi registry trung tâm — thêm một ngôn ngữ chỉ cần một mục registry
+(`languages.py` / `types.ts`) cộng một tệp nhãn.
 
 Phát hiện chạy trên thiết bị (WebGPU / WASM trong trình duyệt, spaCy hoặc
 transformers cục bộ trong Python). Đừng chỉ tin lời chúng tôi: mở DevTools, xem
@@ -62,7 +65,7 @@ ngồi.
 <img alt="Demo ứng dụng trình duyệt: ẩn danh, bảng ánh xạ, vòng qua khôi phục" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_web.gif?raw=true" width="85%">
 
 <details>
-<summary>Demo CLI (tiếng Nhật / tiếng Anh — cũng hỗ trợ tiếng Tây Ban Nha và tiếng Việt)</summary>
+<summary>Demo CLI (tiếng Nhật / tiếng Anh — tám ngôn ngữ còn lại dùng tương tự)</summary>
 
 <img alt="Demo CLI (tiếng Nhật)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_ja.gif?raw=true" width="49%"> <img alt="Demo CLI (tiếng Anh)" src="https://github.com/akazah/prompt-anonymizer/blob/main/demo/demo_en.gif?raw=true" width="49%">
 </details>
@@ -94,6 +97,8 @@ ngồi.
 pip install git+https://github.com/akazah/prompt-anonymizer@v0.2.2
 python -m spacy download ja_core_news_sm   # en: en_core_web_sm; es: es_core_news_sm
 python -m spacy download xx_ent_wiki_sm    # vi: không có pipeline spaCy chính thức — WikiNER
+# zh: zh_core_web_sm; ko: ko_core_news_sm; fr/de/pt/it: *_core_news_sm — hoặc
+# cài mọi mô hình sm cùng lúc: uv sync --group models (lg: --group models-lg)
 ```
 
 ```python
@@ -120,12 +125,13 @@ llm_output = call_your_llm(result.text)          # nhãn vẫn còn sau vòng qu
 pa.deanonymize(llm_output, result.mapping)       # khôi phục giá trị thật, cục bộ
 ```
 
-CLI (`-l ja|en|es|vi`):
+CLI (`-l ja|en|es|vi|zh|ko|fr|de|pt|it`):
 
 ```bash
 prompt-anonymizer anonymize -l ja --interactive --mapping-file mapping.json \
   -t "山田太郎の電話は090-1234-5678"
 prompt-anonymizer anonymize -l es -t "El cliente es Javier Moreno, teléfono 612 345 678"
+prompt-anonymizer anonymize -l fr -t "Le client est Pierre Durand, téléphone 06 12 34 56 78"
 prompt-anonymizer deanonymize --mapping-file mapping.json -t "<人名_1>様 ..."
 ```
 
@@ -266,8 +272,8 @@ hoài nghi.)
 
 1. Phát hiện — Presidio + spaCy NER (Python) hoặc transformers.js NER + bộ nhận
    dạng regex (trình duyệt/desktop/tiện ích), mở rộng với mẫu số điện thoại
-   theo locale (JP, US/NANP, Tây Ban Nha +34 / di động và cố định nhóm, định
-   dạng di động và cố định Việt Nam) và bộ nhận dạng riêng cho Nhật (mã bưu
+   theo locale do registry điều khiển (JP, US/NANP, ES, VN, CN, KR, FR, DE,
+   PT, IT) và bộ nhận dạng riêng cho Nhật (mã bưu
    chính 〒, My Number có kiểm tra chữ số). Email và thẻ tín dụng không phụ
    thuộc ngôn ngữ; JP_POSTAL_CODE và JP_MY_NUMBER được phát hiện ở mọi chế độ
    ngôn ngữ.
@@ -284,13 +290,17 @@ hoài nghi.)
 | PERSON | 人名 | Name | Nombre | Tên | NER |
 | LOCATION | 住所 | Location | Dirección | ĐịaChỉ | NER |
 | EMAIL_ADDRESS | メールアドレス | Email | Correo | Email | mẫu regex |
-| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | mẫu regex (JP/US/ES/VI) + libphonenumber (Python) |
+| PHONE_NUMBER | 電話番号 | Phone | Teléfono | SốĐiệnThoại | mẫu regex theo ngôn ngữ do registry điều khiển + vùng libphonenumber (JP/US/ES/VN/CN/KR/FR/DE/PT/IT) |
 | JP_POSTAL_CODE | 郵便番号 | PostalCode | CódigoPostal | MãBưuĐiện | mẫu regex (tùy chỉnh) |
 | JP_MY_NUMBER | マイナンバー | MyNumber | MyNumber | MyNumber | mẫu regex + chữ số kiểm tra (tùy chỉnh) |
 | CREDIT_CARD | クレジットカード | CreditCard | Tarjeta | ThẻTínDụng | mẫu regex + kiểm tra Luhn (cả hai lõi, mọi ngôn ngữ) |
 | CUSTOM (deny list) | 秘匿情報 | Custom | Personalizado | TùyChỉnh | khớp chính xác |
 | US_SSN (tùy chọn bật) | 社会保障番号 | SSN | SSN | SSN | mẫu regex + quy tắc loại trừ (cả hai lõi, mọi ngôn ngữ) |
 | IBAN_CODE (tùy chọn bật) | IBAN | IBAN | IBAN | IBAN | mẫu regex + kiểm tra mod-97 (cả hai lõi, mọi ngôn ngữ) |
+
+Nhãn cho sáu ngôn ngữ mới (zh, ko, fr, de, pt, it) nằm trong
+`src/prompt_anonymizer/labels/*.yaml` (Python) và trong `LABELS` ở
+`web/packages/core/src/labeling.ts` (TS).
 
 `deny_list` buộc che các chuỗi cụ thể; `allow_list` miễn trừ chúng.
 Các thực thể tùy chọn bật không được phát hiện theo mặc định — hãy yêu cầu
@@ -299,12 +309,13 @@ hoặc `--entities PERSON,EMAIL_ADDRESS,US_SSN,IBAN_CODE` trên cả hai CLI.
 
 ### Backend NER transformer tùy chọn (Python)
 
-NER mặc định là spaCy (`ja` → `ja_core_news_sm` / `ja_core_news_lg`,
-`en` → `en_core_web_sm` / `en_core_web_lg`, `es` → `es_core_news_sm` /
-`es_core_news_lg`). Tiếng Việt không có pipeline spaCy chính thức — cả hai kích
-thước dùng mô hình WikiNER đa ngôn ngữ `xx_ent_wiki_sm` để token hóa và NER
-PER/LOC cơ bản. Để có recall tên/địa điểm tiếng Việt tốt, hãy dùng backend
-transformer thay thế (xem bên dưới).
+NER mặc định là spaCy, với mô hình theo từng ngôn ngữ được phân giải từ
+registry trung tâm (xem bảng bên dưới; cài mọi mô hình `sm` bằng
+`uv sync --group models`, bản `lg` bằng `--group models-lg`, hoặc dùng
+`python -m spacy download <mô hình>`). Tiếng Việt không có pipeline spaCy
+chính thức — cả hai kích thước dùng mô hình WikiNER đa ngôn ngữ
+`xx_ent_wiki_sm` để token hóa và NER PER/LOC cơ bản. Để có recall tên/địa
+điểm tiếng Việt tốt, hãy dùng backend transformer thay thế (xem bên dưới).
 
 Để cải thiện đáng kể recall PERSON/LOCATION (đặc biệt `ja` và `vi`),
 cài extra `hf` và chuyển backend — mô hình Hugging Face theo ngôn ngữ, hoàn
@@ -316,12 +327,23 @@ toàn cục bộ:
 | `en` | `en_core_web_sm` / `en_core_web_lg` | `dslim/bert-base-NER` |
 | `es` | `es_core_news_sm` / `es_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
 | `vi` | `xx_ent_wiki_sm` (cả hai kích thước) | `NlpHUST/ner-vietnamese-electra-base` |
+| `zh` | `zh_core_web_sm` / `zh_core_web_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `ko` | `ko_core_news_sm` / `ko_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `fr` | `fr_core_news_sm` / `fr_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `de` | `de_core_news_sm` / `de_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `pt` | `pt_core_news_sm` / `pt_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+| `it` | `it_core_news_sm` / `it_core_news_lg` | `Davlan/bert-base-multilingual-cased-ner-hrl` |
+
+Mô hình HRL đa ngôn ngữ bao phủ `de`/`es`/`fr`/`it`/`pt`/`zh` một cách bản
+địa; tiếng Hàn không có checkpoint chuyên dụng trong họ này và dựa vào khả
+năng chuyển giao xuyên ngôn ngữ của mBERT.
 
 Lõi TypeScript (trình duyệt / tiện ích / desktop / Node CLI) chạy mô hình
-ONNX transformers.js: `ja` và `en` dùng cùng họ với trên; `es` và `vi` đều
-dùng `Xenova/bert-base-multilingual-cased-ner-hrl` (không có bản export ONNX
+ONNX transformers.js: `ja` và `en` dùng cùng họ với trên; `es`, `vi`, `zh`,
+`ko`, `fr`, `de`, `pt` và `it` đều dùng
+`Xenova/bert-base-multilingual-cased-ner-hrl` (không có bản export ONNX
 của mô hình NER tiếng Việt chuyên dụng; mô hình đa ngôn ngữ chuyển giao tốt
-sang tiếng Việt).
+sang tiếng Việt, và lưu ý chuyển giao tương tự áp dụng cho tiếng Hàn).
 
 ```bash
 pip install "prompt-anonymizer[hf]"
@@ -340,14 +362,17 @@ results = pa.anonymize_batch(texts, language="ja", batch_size=16)
 
 ## Độ chính xác
 
-Đo ở cấp span trên tập golden tổng hợp có seed (200 tài liệu mỗi ngôn ngữ
-`ja`, `en`, `es`, và `vi` trong `tests/golden/golden_{ja,en,es,vi}.json`) —
+Đo ở cấp span trên tập golden tổng hợp có seed (200 tài liệu cho mỗi ngôn
+ngữ trong cả mười ngôn ngữ, tại `tests/golden/golden_{lang}.json`) —
 xem [docs/EVAL.md](docs/EVAL.md) để có bảng đầy đủ và
-`uv run python -m prompt_anonymizer.evals` để tái tạo (mặc định cả bốn ngôn
+`uv run python -m prompt_anonymizer.evals` để tái tạo (mặc định cả mười ngôn
 ngữ). Điểm nổi bật (lõi Python, mô hình `sm`): ja PHONE_NUMBER /
 EMAIL_ADDRESS / JP_POSTAL_CODE / CREDIT_CARD recall 1.00; ja PERSON recall
 0.82 với spaCy, 1.00 với `ner_backend="hf"`. es/vi PHONE_NUMBER recall cũng
-1.00; vi PERSON/LOCATION hưởng lợi mạnh từ `ner_backend="hf"`.
+1.00; vi PERSON/LOCATION hưởng lợi mạnh từ `ner_backend="hf"`. Recall PII
+có cấu trúc (điện thoại / email / thẻ) đạt 1.00 cho sáu ngôn ngữ mới (zh,
+ko, fr, de, pt, it) trên tập golden — [docs/EVAL.md](docs/EVAL.md) có bảng
+của lõi TS; số liệu NER Python do eval hằng tuần tạo ra.
 
 Các con số này nhằm bắt hồi quy, không phải hứa hẹn recall trên văn bản thực
 tế.
