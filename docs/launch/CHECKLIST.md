@@ -78,7 +78,7 @@ Once packages are live, delete every "not on PyPI/npm yet" caveat in
 `README.md` and every `docs/i18n/README_*.md`, and replace any remaining
 build-from-repo instructions with the one-liners
 (`pip install prompt-anonymizer`, `npx @prompt-anonymizer/cli`, …).
-Run `pnpm -C web docs:links` after editing.
+Run `pnpm -C web docs:check` after editing.
 
 Progress: all READMEs (including `docs/i18n/README_it.md`) now use the
 one-liners. Re-run this step after packages go live to catch any drift.

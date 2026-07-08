@@ -34,7 +34,7 @@ alemán (`de`), portugués (`pt`) e italiano (`it`). El valor por defecto de
 idiomas se activan con `languages=[...]`. Todos los selectores de idioma de
 las interfaces y la detección automática cubren los diez. El soporte de
 idiomas se rige por un registro central: añadir un idioma es una entrada en
-el registro (`languages.py` / `types.ts`) más un archivo de etiquetas.
+el registro (`languages.py` / `languages.ts`) más un archivo de etiquetas.
 
 La detección se ejecuta en el dispositivo (WebGPU / WASM en el navegador,
 spaCy o transformers locales en Python). No te fíes de nuestra palabra:
@@ -428,13 +428,15 @@ texto del mundo real.
 
 Consulta los [issues](https://github.com/akazah/prompt-anonymizer/issues)
 abiertos y [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Destacados:
-publicación en npm / PyPI, publicación en tiendas (Chrome Web Store),
-firma de código, modelos NER japoneses más pequeños, PII estructurado
-multirregión (más formatos de teléfono / ID nacional con validación por
-suma de comprobación).
+publicación en PyPI / npm (Trusted Publishing — hoy instalable desde
+GitHub Releases), Chrome Web Store, firma de código, modelos NER japoneses
+más pequeños, PII estructurado multirregión (más formatos de teléfono / ID
+nacional con validación por suma de comprobación).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — recetas para LiteLLM, OpenWebUI, clientes MCP, git hooks y CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuración de desarrollo (uv / pnpm), comandos de prueba y evaluación
+- [docs/AUDIT.md](../AUDIT.md) — verifica tú mismo las afirmaciones on-device, paso a paso
 - [SECURITY.md](../../.github/SECURITY.md) — reporte de vulnerabilidades y bypasses de anonimización
 - [MIT](../../LICENSE)

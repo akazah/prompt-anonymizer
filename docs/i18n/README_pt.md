@@ -34,7 +34,7 @@ alemão (`de`), português (`pt`) e italiano (`it`). O valor por omissão de
 outros idiomas são ativados via `languages=[...]`. Todos os seletores de
 idioma das interfaces e a deteção automática cobrem os dez. O suporte de
 idiomas é orientado por um registo — adicionar um idioma é uma entrada no
-registo (`languages.py` / `types.ts`) mais um ficheiro de rótulos.
+registo (`languages.py` / `languages.ts`) mais um ficheiro de rótulos.
 
 A deteção corre no dispositivo (WebGPU / WASM no navegador, spaCy ou
 transformers locais em Python). Não confie apenas na nossa palavra: abra as
@@ -91,6 +91,7 @@ Anonimizar → o mapeamento fica local → a resposta do LLM mantém os rótulos
 | **Web Component** | `@prompt-anonymizer/element` | Elemento `<prompt-anonymizer>` independente de framework: insira o painel completo de anonimizar → restaurar em qualquer site (HTML simples, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Componente `<AnonymizerPanel />` pronto a usar mais um hook `useAnonymizer()` / composable para interfaces personalizadas. Veja o início rápido abaixo. |
 | **Proxy local + GUI de administração** | `npx @prompt-anonymizer/proxy` | Proxy inverso compatível com OpenAI: aponte `OPENAI_BASE_URL` para ele e os PII são mascarados antes de saírem da sua máquina, com os rótulos restaurados nas respostas (incl. streaming). GUI de administração em `http://127.0.0.1:8787/admin/`. Veja o início rápido abaixo. |
+| **Servidor MCP** | `npx @prompt-anonymizer/mcp` | Ferramentas `anonymize` / `deanonymize` / `scan` para qualquer cliente MCP (Claude Desktop, Claude Code, Cursor, …). O mapeamento de rótulos permanece na memória do servidor (`mapping_id`) e nunca é mostrado ao modelo salvo pedido explícito. Veja o início rápido abaixo. |
 | **Hook de commit / barreira de CI** | `prompt-anonymizer scan` (ambas as CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Barreira de PII por código de saída para verificações no commit e em CI: reporta `file:line:col` e o tipo de entidade, nunca o texto correspondente. Offline e sem modelos por omissão. Veja abaixo. |
 
 ## Início rápido (Python)
@@ -424,13 +425,16 @@ texto do mundo real.
 
 Consulte os [issues](https://github.com/akazah/prompt-anonymizer/issues)
 abertos e [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Destaques:
-publicação no npm / PyPI, publicação em lojas (Chrome Web Store),
-assinatura de código, modelos NER japoneses mais pequenos, PII estruturado
-multirregião (mais formatos de telefone / de identificação nacional com
-validação por dígito de verificação), servidor MCP.
+publicação no PyPI / npm (Trusted Publishing — hoje instalável a partir de
+GitHub Releases), Chrome Web Store, assinatura de código, modelos NER
+japoneses mais pequenos, PII estruturado multirregião (mais formatos de
+telefone / de identificação nacional com validação por dígito de
+verificação).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — receitas para LiteLLM, OpenWebUI, clientes MCP, git hooks e CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuração de desenvolvimento (uv / pnpm), comandos de teste e avaliação
+- [docs/AUDIT.md](../AUDIT.md) — verifique você mesmo as afirmações on-device, passo a passo
 - [SECURITY.md](../../.github/SECURITY.md) — comunicação de vulnerabilidades e de contornos da anonimização
 - [MIT](../../LICENSE)

@@ -35,7 +35,7 @@ predefinito di `PromptAnonymizer(languages=…)` resta `("en", "ja")`; ogni
 altra lingua si attiva con `languages=[...]`. Tutti i selettori di lingua
 delle interfacce e il rilevamento automatico coprono tutte e dieci. Il
 supporto delle lingue è guidato da un registro — aggiungere una lingua è
-una voce nel registro (`languages.py` / `types.ts`) più un file di
+una voce nel registro (`languages.py` / `languages.ts`) più un file di
 etichette.
 
 Il rilevamento avviene sul dispositivo (WebGPU / WASM nel browser, spaCy o
@@ -281,11 +281,11 @@ richiedono affatto Python.
 **Perché non LLM Guard?** [LLM Guard](https://github.com/protectai/llm-guard)
 è una solida suite di guardrail lato Python con i propri
 Anonymize/Deanonymize. Prompt Anonymizer si differenzia in tre punti:
-rilevamento con priorità al giapponese (nomi giapponesi, indirizzi, My
-Number con validazione della cifra di controllo), superfici per non
-sviluppatori (incolla il testo in una pagina del browser — nessuna
-configurazione Python) e una base di codice abbastanza piccola da poter
-essere letta davvero.
+rilevamento multilingue su dieci lingue con PII strutturati specifici per
+locale (ID nazionali con validazione checksum come My Number, formati
+telefonici per regione), superfici per non sviluppatori (incolla il testo
+in una pagina del browser — nessuna configurazione Python) e una base di
+codice abbastanza piccola da poter essere letta davvero.
 
 **Perché non un'estensione Chrome «100% locale»?** Diverse estensioni a
 codice chiuso dichiarano un'elaborazione locale. Le dichiarazioni non sono
@@ -432,13 +432,15 @@ recall su testo del mondo reale.
 
 Consulta le [issues](https://github.com/akazah/prompt-anonymizer/issues)
 aperte e [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). In evidenza:
-pubblicazione su npm / PyPI, pubblicazione negli store (Chrome Web Store),
-firma del codice, modelli NER giapponesi più piccoli, PII strutturati
-multi-regione (più formati di telefono / ID nazionali con validazione
-tramite checksum), server MCP.
+pubblicazione su PyPI / npm (Trusted Publishing — oggi installabile da
+GitHub Releases), Chrome Web Store, firma del codice, modelli NER giaponesi
+più piccoli, PII strutturati multi-regione (più formati di telefono / ID
+nazionali con validazione tramite checksum).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — ricette per LiteLLM, OpenWebUI, client MCP, git hook e CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configurazione di sviluppo (uv / pnpm), comandi di test e valutazione
+- [docs/AUDIT.md](../AUDIT.md) — verifica tu stesso le affermazioni on-device, passo dopo passo
 - [SECURITY.md](../../.github/SECURITY.md) — segnalazione di vulnerabilità e di elusioni dell'anonimizzazione
 - [MIT](../../LICENSE)

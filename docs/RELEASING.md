@@ -66,6 +66,7 @@ admin. Until they are done, the corresponding pipeline fails:
      web/package.json web/packages/core/package.json web/packages/cli/package.json \
      web/packages/element/package.json \
      web/packages/react/package.json web/packages/vue/package.json \
+     web/packages/proxy/package.json web/packages/mcp/package.json \
      web/apps/web/package.json \
      web/apps/extension/package.json web/apps/extension/public/manifest.json \
      web/apps/desktop/package.json web/apps/desktop/src-tauri/tauri.conf.json \
@@ -79,8 +80,8 @@ admin. Until they are done, the corresponding pipeline fails:
 
    ```bash
    git checkout main && git pull
-   git tag v0.2.0
-   git push origin v0.2.0
+   git tag v0.4.0    # example — use the version you just merged
+   git push origin v0.4.0
    ```
 
 4. Watch the release workflows (`Release (PyPI)`,
