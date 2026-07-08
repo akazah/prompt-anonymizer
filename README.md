@@ -410,7 +410,11 @@ See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
 [IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights: npm / PyPI
 publication, store publication (Chrome Web Store), code signing, smaller
 Japanese NER models, multi-region structured PII (more phone / national-ID
-formats via checksum validation).
+formats via checksum validation), **opt-in granular redaction** (locale-aware
+policies that preserve coarse-grained context — e.g. surname-only hints, phone
+area/exchange codes, addresses down to prefecture/municipality — with
+per-country legal/privacy scope defined before implementation; preserved
+fragments may still be quasi-identifying).
 
 ## Contributing / Security / License
 
