@@ -47,6 +47,7 @@ ngồi.
 - [Bắt đầu nhanh (Python)](#bắt-đầu-nhanh-python)
 - [Bắt đầu nhanh (JavaScript / TypeScript)](#bắt-đầu-nhanh-javascript--typescript)
 - [Bắt đầu nhanh (proxy cục bộ)](#bắt-đầu-nhanh-proxy-cục-bộ)
+- [Bắt đầu nhanh (máy chủ MCP)](#bắt-đầu-nhanh-máy-chủ-mcp)
 - [Cổng lúc commit / CI (`scan`)](#cổng-lúc-commit--ci-scan)
 - [Tại sao không …?](#tại-sao-không-)
 - [Cách hoạt động](#cách-hoạt-động)
@@ -200,6 +201,24 @@ và các sự kiện che PII (chỉ nhãn và số lượng), cho phép chỉnh 
 (upstream, NER, danh sách deny/allow) và cung cấp playground ẩn danh chỉ chạy
 cục bộ. Proxy mặc định gắn vào `127.0.0.1`; giá trị gốc chỉ có thể xem trong
 GUI khi bạn bật `--record-mappings` một cách tường minh.
+
+## Bắt đầu nhanh (máy chủ MCP)
+
+Cung cấp công cụ ẩn danh hóa trên thiết bị cho mọi MCP client — Claude Desktop,
+Claude Code, Cursor, …:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Ba công cụ, đều được thiết kế để PII không vào ngữ cảnh của mô hình:
+`anonymize` trả về văn bản đã che và một `mapping_id` (bảng ánh xạ nằm trong
+bộ nhớ máy chủ trừ khi bạn yêu cầu rõ ràng), `deanonymize` khôi phục theo
+`mapping_id` — tùy chọn ghi thẳng ra tệp — và `scan` kiểm tra tệp tìm PII,
+báo cáo `file:line:col` và loại thực thể nhưng không bao giờ in văn bản khớp.
+Truyền `--ner` trong tham số máy chủ để che thêm tên/địa điểm (tải mô hình một
+lần khi dùng lần đầu).
 
 ## Cổng lúc commit / CI (`scan`)
 

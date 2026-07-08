@@ -52,6 +52,7 @@ Rutsch zu auditieren.
 - [Schnellstart (Python)](#schnellstart-python)
 - [Schnellstart (JavaScript / TypeScript)](#schnellstart-javascript--typescript)
 - [Schnellstart (lokaler Proxy)](#schnellstart-lokaler-proxy)
+- [Schnellstart (MCP-Server)](#schnellstart-mcp-server)
 - [Commit- und CI-Gate (`scan`)](#commit--und-ci-gate-scan)
 - [Warum nicht …?](#warum-nicht-)
 - [Funktionsweise](#funktionsweise)
@@ -208,6 +209,24 @@ Proxy-Konfiguration (Upstream, NER, Deny-/Allow-Listen) und bietet einen
 rein lokalen Anonymisierungs-Spielplatz. Der Proxy bindet standardmäßig an
 `127.0.0.1`; Originalwerte lassen sich in der GUI nur einsehen, wenn Sie
 `--record-mappings` ausdrücklich aktivieren.
+
+## Schnellstart (MCP-Server)
+
+Stellen Sie jedem MCP-Client — Claude Desktop, Claude Code, Cursor, … —
+Anonymisierungswerkzeuge auf dem Gerät bereit:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Drei Werkzeuge, alle so konzipiert, dass PII nicht in den Modellkontext gelangen:
+`anonymize` liefert den maskierten Text und eine `mapping_id` (das Mapping bleibt
+im Serverspeicher, sofern Sie es nicht ausdrücklich anfordern), `deanonymize`
+stellt per `mapping_id` wieder her — optional direkt in eine Datei — und `scan`
+prüft Dateien auf PII und meldet nur `file:line:col` und den Entitätstyp, nie den
+gefundenen Text. Übergeben Sie `--ner` in den Server-Argumenten, um auch
+Namen/Orte zu maskieren (einmaliger Modell-Download beim ersten Einsatz).
 
 ## Commit- und CI-Gate (`scan`)
 

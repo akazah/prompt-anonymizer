@@ -1,0 +1,39 @@
+# README i18n registry — single source of truth for the language switcher
+# and render targets. Adding a language here + a locale YAML under locales/
+# is required before tests/unit/test_languages.py will pass.
+#
+# Regenerate README outputs: uv run python scripts/render_readme_i18n.py
+# CI freshness check:        uv run python scripts/render_readme_i18n.py --check
+
+languages:
+  - code: en
+    native: English
+    output: README.md
+    root: true
+  - code: ja
+    native: 日本語
+    output: docs/i18n/README_ja.md
+  - code: es
+    native: Español
+    output: docs/i18n/README_es.md
+  - code: vi
+    native: Tiếng Việt
+    output: docs/i18n/README_vi.md
+  - code: zh
+    native: 中文
+    output: docs/i18n/README_zh.md
+  - code: ko
+    native: 한국어
+    output: docs/i18n/README_ko.md
+  - code: fr
+    native: Français
+    output: docs/i18n/README_fr.md
+  - code: de
+    native: Deutsch
+    output: docs/i18n/README_de.md
+  - code: pt
+    native: Português
+    output: docs/i18n/README_pt.md
+  - code: it
+    native: Italiano
+    output: docs/i18n/README_it.md

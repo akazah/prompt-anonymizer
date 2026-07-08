@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- README i18n: `README.md` and `docs/i18n/README_*.md` are now generated from
+  `docs/i18n/locales/<code>.yaml` via `scripts/render_readme_i18n.py` (CI
+  `--check` gate). Added missing MCP quickstart sections to eight translated
+  READMEs.
+
 ## [0.3.0] - 2026-07-07
 
 ### Added

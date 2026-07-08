@@ -51,6 +51,7 @@ MIT ed è abbastanza piccolo da poter essere verificato in una sola seduta.
 - [Avvio rapido (Python)](#avvio-rapido-python)
 - [Avvio rapido (JavaScript / TypeScript)](#avvio-rapido-javascript--typescript)
 - [Avvio rapido (proxy locale)](#avvio-rapido-proxy-locale)
+- [Avvio rapido (server MCP)](#avvio-rapido-server-mcp)
 - [Barriera al commit / in CI (`scan`)](#barriera-al-commit--in-ci-scan)
 - [Perché no…?](#perché-no)
 - [Come funziona](#come-funziona)
@@ -207,6 +208,24 @@ modifica la configurazione del proxy (upstream, NER, liste deny/allow) e
 offre un playground di anonimizzazione solo locale. Il proxy si collega a
 `127.0.0.1` per impostazione predefinita; i valori originali sono
 rivelabili nella GUI solo quando attivi esplicitamente `--record-mappings`.
+
+## Avvio rapido (server MCP)
+
+Offri strumenti di anonimizzazione sul dispositivo a qualsiasi client MCP —
+Claude Desktop, Claude Code, Cursor, …:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Tre strumenti, tutti progettati perché i PII non entrino nel contesto del modello:
+`anonymize` restituisce il testo mascherato e un `mapping_id` (la mappatura resta
+in memoria del server salvo richiesta esplicita), `deanonymize` ripristina tramite
+`mapping_id` — opzionalmente direttamente su file — e `scan` controlla i file alla
+ricerca di PII, riportando solo `file:line:col` e il tipo di entità, mai il testo
+corrispondente. Passa `--ner` negli argomenti del server per mascherare anche
+nomi/luoghi (download del modello una tantum al primo utilizzo).
 
 ## Barriera al commit / in CI (`scan`)
 

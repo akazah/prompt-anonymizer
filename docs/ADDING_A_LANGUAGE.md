@@ -111,9 +111,12 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 
 ### 8. Docs
 
-- `docs/i18n/README_<lang>.md` translation, cross-linked from the language
-  switcher (first line) of every existing README —
-  `tests/unit/test_languages.py` fails until the file exists.
+- `docs/i18n/locales/<lang>.yaml` — README translation source (section bodies).
+  Regenerate outputs with `uv run python scripts/render_readme_i18n.py`.
+  `docs/i18n/README_<lang>.md` and the language switcher are generated;
+  edit the locale YAML instead of the markdown files by hand.
+  `tests/unit/test_languages.py` fails until the locale file exists and
+  rendered output is fresh (`render_readme_i18n.py --check`).
 - READMEs keep their ja/en/es/vi label columns; other languages'
   labels live in `labels/*.yaml` / TS `LABELS` (linked after the table).
 - `CHANGELOG.md` entry (labels are additive; existing mappings stay

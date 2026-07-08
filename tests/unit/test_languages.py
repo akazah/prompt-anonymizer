@@ -92,6 +92,20 @@ def test_golden_set_exists_and_is_language_consistent(language: str) -> None:
 @pytest.mark.parametrize("language", [lang for lang in SUPPORTED_LANGUAGES if lang != "en"])
 def test_readme_translation_exists(language: str) -> None:
     assert (REPO_ROOT / "docs" / "i18n" / f"README_{language}.md").exists()
+    assert (REPO_ROOT / "docs" / "i18n" / "locales" / f"{language}.yaml").exists()
+
+
+def test_readme_i18n_is_fresh() -> None:
+    import subprocess
+
+    result = subprocess.run(
+        ["uv", "run", "python", "scripts/render_readme_i18n.py", "--check"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr or result.stdout
 
 
 def test_detection_rules_reference_supported_languages_only() -> None:
