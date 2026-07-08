@@ -48,6 +48,9 @@ A few design decisions that might be interesting:
   never the matched text, so your CI logs stay clean.
 - An OpenAI-compatible local proxy, so existing apps only change
   OPENAI_BASE_URL.
+- An MCP server (`npx @prompt-anonymizer/mcp`) with `anonymize` /
+  `deanonymize` / `scan` tools — the mapping stays server-side unless you
+  explicitly ask for it.
 
 Honest limitations: detection is best-effort (the README says so in
 bold) — false negatives happen, LOCATION recall is the weakest, and

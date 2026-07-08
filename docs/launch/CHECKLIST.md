@@ -5,8 +5,15 @@ everywhere", and announce it once, loudly, when that is true. Mechanics of
 tagging/building live in [../RELEASING.md](../RELEASING.md); this file is the
 growth-facing runbook on top of it.
 
+Japanese summary (status + timeline): [README_ja.md](README_ja.md).
+
 Everything below is written so a repo admin can execute top-to-bottom in one
 sitting (registry account setup aside).
+
+**Status (2026-07-08, v0.3.0):** code and package metadata are ready; local
+dry-runs pass; per-language demo GIFs are regenerated. Remaining work is
+registry admin (PyPI/npm trusted publishing switches), GitHub Social preview
+upload, then tag + announce.
 
 ## 0. Pre-flight (repo-side, no external effect)
 
@@ -17,10 +24,13 @@ sitting (registry account setup aside).
 - [x] **Version consistency.** First published release uses `0.3.0` (bumped in
       the release PR; `rg` one-liner in [../RELEASING.md](../RELEASING.md)
       lists all version files).
-- [ ] Local dry-runs pass: `uv build` and
+- [x] Local dry-runs pass: `uv build` and
       `cd web && pnpm --filter "./packages/*" build && pnpm --filter "./packages/*" exec pnpm pack`
       (inspect a tarball: it should contain `dist/`, `README.md`,
-      `LICENSE`, `package.json` and nothing else).
+      `LICENSE`, `package.json` and nothing else). Verified 2026-07-08.
+- [x] Per-language demo GIFs for README embeds (regenerated; see PR #33).
+- [x] Social preview asset committed (`demo/social-preview.png`; upload to
+      GitHub Settings is still step 5 below).
 
 ## 1. PyPI
 
@@ -65,10 +75,13 @@ sitting (registry account setup aside).
 ## 4. README cleanup (same PR as the switch-flip)
 
 Once packages are live, delete every "not on PyPI/npm yet" caveat in
-`README.md` / `README_ja.md` / `README_es.md` / `README_vi.md` and replace
-the build-from-repo instructions with the one-liners
+`README.md` and every `docs/i18n/README_*.md`, and replace any remaining
+build-from-repo instructions with the one-liners
 (`pip install prompt-anonymizer`, `npx @prompt-anonymizer/cli`, …).
 Run `pnpm -C web docs:links` after editing.
+
+Progress: all READMEs (including `docs/i18n/README_it.md`) now use the
+one-liners. Re-run this step after packages go live to catch any drift.
 
 ## 5. Repo polish (GitHub settings, 5 minutes)
 
