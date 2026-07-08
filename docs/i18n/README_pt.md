@@ -207,7 +207,7 @@ explicitamente `--record-mappings`.
 
 ## Início rápido (servidor MCP)
 
-Ferramentas de anonimização no dispositivo para qualquer cliente MCP —
+Disponibilize ferramentas de anonimização no dispositivo a qualquer cliente MCP —
 Claude Desktop, Claude Code, Cursor, …:
 
 ```bash
@@ -215,14 +215,13 @@ Claude Desktop, Claude Code, Cursor, …:
 claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
-Três ferramentas concebidas para manter PII fora do contexto do modelo:
-`anonymize` devolve o texto mascarado e um `mapping_id` (o mapeamento fica
-na memória do servidor salvo pedido explícito), `deanonymize` restaura por
-`mapping_id` — opcionalmente diretamente para um ficheiro — e `scan`
-verifica ficheiros quanto a PII, reportando apenas `file:line:col` e o tipo
-de entidade, nunca o texto correspondente. Passe `--ner` nos argumentos do
-servidor para mascarar também nomes/locais (transferência única do modelo
-no primeiro uso).
+Três ferramentas, todas concebidas para que PII não entrem no contexto do modelo:
+`anonymize` devolve o texto mascarado e um `mapping_id` (o mapeamento permanece na
+memória do servidor salvo pedido explícito), `deanonymize` restaura por
+`mapping_id` — opcionalmente diretamente para um ficheiro — e `scan` verifica
+ficheiros à procura de PII, reportando apenas `file:line:col` e o tipo de entidade,
+nunca o texto correspondente. Passe `--ner` nos argumentos do servidor para mascarar
+também nomes/localizações (descarga única do modelo na primeira utilização).
 
 ## Barreira no commit / CI (`scan`)
 

@@ -21,7 +21,7 @@ Show
 Type "# 1) Anonymize a request full of PII (mapping stays local)"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer anonymize -l en --mapping-file mapping.json -t "Hi, I'm John Smith. Please draft an office-move announcement. We are moving to New York. Contact: (333) 333-3333 / john.smith@example.com"`
+Type `prompt-anonymizer anonymize -l en --mapping-file mapping.json -t "Hi, I'm John Smith from New York. Please draft a vendor onboarding checklist for our compliance audit. Contact: (333) 333-3333 / john.smith@example.com"`
 Enter
 Sleep 5s
 
@@ -35,6 +35,6 @@ Sleep 2.5s
 Type "# 3) The LLM reply keeps the labels -> restore the real values"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Dear <Name_1>, we are pleased to announce our office is moving to <Location_1>. For questions, reach us at <Phone_1> or <Email_1>."`
+Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Dear <Name_1>, thank you for onboarding. We have registered your details in <Location_1>. For questions, call <Phone_1> or email <Email_1>."`
 Enter
 Sleep 6s

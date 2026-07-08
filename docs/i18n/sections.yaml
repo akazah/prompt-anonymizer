@@ -1,0 +1,19 @@
+# Ordered section IDs stitched into README outputs by scripts/render_readme_i18n.py.
+# Each locale file under locales/<code>.yaml must define every key (use the
+# English locale as fallback when bootstrapping a new translation).
+sections:
+  - preamble
+  - demo
+  - try_it
+  - quickstart_python
+  - quickstart_js
+  - quickstart_proxy
+  - quickstart_mcp
+  - scan
+  - why_not
+  - how_it_works
+  - supported_entities
+  - accuracy
+  - limitations
+  - roadmap
+  - contributing

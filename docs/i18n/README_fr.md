@@ -213,22 +213,21 @@ dans la GUI que si vous activez explicitement `--record-mappings`.
 
 ## Démarrage rapide (serveur MCP)
 
-Outils d'anonymisation sur l'appareil pour tout client MCP — Claude Desktop,
-Claude Code, Cursor, … :
+Offrez des outils d'anonymisation sur l'appareil à tout client MCP — Claude
+Desktop, Claude Code, Cursor, … :
 
 ```bash
 # Claude Code:
 claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
-Trois outils conçus pour que les PII restent hors du contexte du modèle :
-`anonymize` renvoie le texte masqué et un `mapping_id` (le mapping reste en
-mémoire serveur sauf demande explicite), `deanonymize` restaure par
-`mapping_id` — éventuellement directement vers un fichier — et `scan`
-contrôle les fichiers pour des PII en ne rapportant que `file:line:col` et
-le type d'entité, jamais le texte détecté. Passez `--ner` dans les
-arguments du serveur pour masquer aussi noms/lieux (téléchargement unique du
-modèle au premier usage).
+Trois outils, tous conçus pour que les PII ne pénètrent pas le contexte du
+modèle : `anonymize` renvoie le texte masqué et un `mapping_id` (le mapping
+reste en mémoire serveur sauf demande explicite), `deanonymize` restaure par
+`mapping_id` — éventuellement directement dans un fichier — et `scan` vérifie
+les fichiers pour des PII, en ne rapportant que `file:line:col` et le type
+d'entité, jamais le texte détecté. Passez `--ner` dans les arguments du serveur
+pour masquer aussi noms/lieux (téléchargement unique du modèle au premier usage).
 
 ## Garde-fou au commit / en CI (`scan`)
 

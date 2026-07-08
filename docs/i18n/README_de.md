@@ -213,22 +213,21 @@ rein lokalen Anonymisierungs-Spielplatz. Der Proxy bindet standardmäßig an
 
 ## Schnellstart (MCP-Server)
 
-On-Device-Anonymisierungstools für jeden MCP-Client — Claude Desktop,
-Claude Code, Cursor, …:
+Stellen Sie jedem MCP-Client — Claude Desktop, Claude Code, Cursor, … —
+Anonymisierungswerkzeuge auf dem Gerät bereit:
 
 ```bash
 # Claude Code:
 claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
-Drei Tools, die PII aus dem Modellkontext fernhalten: `anonymize` liefert
-den maskierten Text und eine `mapping_id` (die Zuordnung bleibt im
-Server-Speicher, sofern nicht ausdrücklich angefordert), `deanonymize`
-stellt per `mapping_id` wieder her — optional direkt in eine Datei — und
-`scan` prüft Dateien auf PII und meldet nur `file:line:col` und den
-Entitätstyp, nie den gefundenen Text. Übergeben Sie `--ner` in den
-Server-Argumenten, um auch Namen/Orte zu maskieren (einmaliger
-Modell-Download beim ersten Einsatz).
+Drei Werkzeuge, alle so konzipiert, dass PII nicht in den Modellkontext gelangen:
+`anonymize` liefert den maskierten Text und eine `mapping_id` (das Mapping bleibt
+im Serverspeicher, sofern Sie es nicht ausdrücklich anfordern), `deanonymize`
+stellt per `mapping_id` wieder her — optional direkt in eine Datei — und `scan`
+prüft Dateien auf PII und meldet nur `file:line:col` und den Entitätstyp, nie den
+gefundenen Text. Übergeben Sie `--ner` in den Server-Argumenten, um auch
+Namen/Orte zu maskieren (einmaliger Modell-Download beim ersten Einsatz).
 
 ## Commit- und CI-Gate (`scan`)
 

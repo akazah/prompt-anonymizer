@@ -204,7 +204,7 @@ GUI khi bạn bật `--record-mappings` một cách tường minh.
 
 ## Bắt đầu nhanh (máy chủ MCP)
 
-Thêm công cụ ẩn danh trên thiết bị cho mọi MCP client — Claude Desktop,
+Cung cấp công cụ ẩn danh hóa trên thiết bị cho mọi MCP client — Claude Desktop,
 Claude Code, Cursor, …:
 
 ```bash
@@ -212,13 +212,13 @@ Claude Code, Cursor, …:
 claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
-Ba công cụ đều được thiết kế để PII không vào ngữ cảnh mô hình:
-`anonymize` trả về văn bản đã che và `mapping_id` (bảng ánh xạ nằm trong
-bộ nhớ máy chủ trừ khi được yêu cầu rõ ràng), `deanonymize` khôi phục theo
-`mapping_id` — có thể ghi thẳng ra file — và `scan` kiểm tra file tìm PII,
-chỉ báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp.
-Truyền `--ner` trong tham số máy chủ để che thêm tên/địa điểm (tải mô hình
-một lần khi dùng lần đầu).
+Ba công cụ, đều được thiết kế để PII không vào ngữ cảnh của mô hình:
+`anonymize` trả về văn bản đã che và một `mapping_id` (bảng ánh xạ nằm trong
+bộ nhớ máy chủ trừ khi bạn yêu cầu rõ ràng), `deanonymize` khôi phục theo
+`mapping_id` — tùy chọn ghi thẳng ra tệp — và `scan` kiểm tra tệp tìm PII,
+báo cáo `file:line:col` và loại thực thể nhưng không bao giờ in văn bản khớp.
+Truyền `--ner` trong tham số máy chủ để che thêm tên/địa điểm (tải mô hình một
+lần khi dùng lần đầu).
 
 ## Cổng lúc commit / CI (`scan`)
 

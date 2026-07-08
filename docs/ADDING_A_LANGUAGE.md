@@ -101,8 +101,9 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 
 ### 7. UI samples and round-trip tests
 
-- Sample paragraphs: `SAMPLES` in `web/apps/web/src/main.ts` and
-  `web/apps/proxy-admin/src/main.ts`, defaults in `demo/demo_openai.py`.
+- Sample paragraphs: `SAMPLES` in `web/packages/core/src/samples.ts` (imported by
+  `web/apps/web/src/main.ts` and `web/apps/proxy-admin/src/main.ts`), defaults in
+  `demo/demo_openai.py` and per-target scenarios in `demo/scripts/lang-data.mjs`.
   (Pickers update automatically from the registry.)
 - Round-trip tests in both cores: anonymize → deanonymize identity for a
   sample text (`tests/integration/test_pipeline.py`,
@@ -111,9 +112,12 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 
 ### 8. Docs
 
-- `docs/i18n/README_<lang>.md` translation, cross-linked from the language
-  switcher (first line) of every existing README —
-  `tests/unit/test_languages.py` fails until the file exists.
+- `docs/i18n/locales/<lang>.yaml` — README translation source (section bodies).
+  Regenerate outputs with `uv run python scripts/render_readme_i18n.py`.
+  `docs/i18n/README_<lang>.md` and the language switcher are generated;
+  edit the locale YAML instead of the markdown files by hand.
+  `tests/unit/test_languages.py` fails until the locale file exists and
+  rendered output is fresh (`render_readme_i18n.py --check`).
 - READMEs keep their ja/en/es/vi label columns; other languages'
   labels live in `labels/*.yaml` / TS `LABELS` (linked after the table).
 - `CHANGELOG.md` entry (labels are additive; existing mappings stay

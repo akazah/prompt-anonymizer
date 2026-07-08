@@ -198,19 +198,18 @@ export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
 
 ## 快速上手（MCP 服务器）
 
-为任意 MCP 客户端 — Claude Desktop、Claude Code、Cursor 等 — 添加
-设备端匿名化工具：
+为任意 MCP 客户端 — Claude Desktop、Claude Code、Cursor 等 — 提供设备端匿名化工具：
 
 ```bash
 # Claude Code:
 claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
 ```
 
-三个工具均遵循「PII 不进入模型上下文」的设计：`anonymize` 返回遮蔽后的
-文本和 `mapping_id`（映射表除非显式请求，否则留在服务器内存中），
-`deanonymize` 通过 `mapping_id` 还原 — 也可直接写入文件 — `scan` 检查
-文件中的 PII，只报告 `file:line:col` 和实体类型，绝不输出匹配文本。在
-服务器参数中加上 `--ner` 可同时遮蔽人名和地址（首次使用时一次性下载模型）。
+三个工具均旨在让 PII 不进入模型上下文：`anonymize` 返回脱敏文本和
+`mapping_id`（映射默认留在服务器内存，除非你显式要求返回），`deanonymize`
+按 `mapping_id` 还原 — 也可直接写入文件 — `scan` 检查文件中的 PII，只报告
+`file:line:col` 和实体类型，绝不打印匹配文本。在服务器参数中传入 `--ner` 可
+额外遮盖人名/地址（首次使用时一次性下载模型）。
 
 ## 提交时 / CI 门禁（`scan`）
 

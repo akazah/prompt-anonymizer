@@ -16,24 +16,66 @@ from prompt_anonymizer import PromptAnonymizer
 
 DEFAULT_TEXTS = {
     "ja": (
-        "山田太郎は、来月、誕生日を迎えます。どんなプレゼントが適しているでしょうか。"
-        "山田太郎は、おいしいものが大好きです。山田太郎は、東京都中央区に在住しています。"
-        "彼のメールアドレスは taro.yamada@example.com です。彼の電話番号は 090-0000-0000 です。"
+        "来週から新プロジェクトに配属される山田太郎さんの業務引き継ぎをお願いします。"
+        "前任担当の佐藤花子さんに手順と未完了タスクを確認したいです。"
+        "山田太郎さんは東京都中央区在住で、緊急連絡は "
+        "090-1234-5678 または taro.yamada@example.com へ。"
+        "佐藤花子さんへの確認は hanako.sato@example.com までお願いします。"
     ),
     "en": (
-        "John will have a birthday next month. What kind of gift would be appropriate? "
-        "John loves nice cuisine. John lives in New York. His email is john@example.com. "
-        "His mobile is (333) 333-3333."
+        "We need to onboard vendor John Smith before the compliance audit next month. "
+        "Emily Johnson from procurement will coordinate the paperwork. "
+        "John Smith is based in New York — reach him at john@example.com or (333) 333-3333. "
+        "Loop in Emily Johnson at emily.johnson@example.com for contract amendments."
     ),
     "es": (
-        "María García cumple años el mes que viene. ¿Qué regalo sería apropiado? "
-        "María García vive en Madrid. Su correo es maria.garcia@example.com. "
-        "Su teléfono es 612 345 678."
+        "Hay un error en el itinerario de María García para el congreso en Madrid. "
+        "Su colega Carlos Ruiz puede confirmar vuelos y alojamiento. "
+        "María García reside en Madrid; su correo es maria.garcia@example.com "
+        "y su móvil es +34 612 345 678. "
+        "Escriba también a Carlos Ruiz en carlos.ruiz@example.com."
     ),
     "vi": (
-        "Nguyễn Văn An sẽ có sinh nhật vào tháng tới. Nên tặng quà gì? "
-        "Nguyễn Văn An sống tại Hà Nội. Email là nguyen.an@example.com. "
-        "Số điện thoại là 0912 345 678."
+        "Khách hàng Nguyễn Văn An báo lỗi bảo hành máy lạnh đã mua tại Hà Nội. "
+        "Trần Thị Mai từ bộ phận hỗ trợ sẽ điều phối kỹ thuật viên. "
+        "Liên hệ Nguyễn Văn An qua an.nguyen@example.com hoặc 0912 345 678. "
+        "Gửi lịch hẹn sửa chữa cho Trần Thị Mai tại mai.tran@example.com."
+    ),
+    "zh": (
+        "承建商王小明尚未收到上月工程款，李美玲需要起草催款函。"
+        "王小明公司在北京市朝阳区注册，对账联系 xiaoming.wang@example.com，电话 138-1234-5678。"
+        "抄送项目经理李美玲 meiling.li@example.com，请在本周五前回复付款计划。"
+    ),
+    "ko": (
+        "김민준 학생의 올해 가을 입학 서류 제출 기한을 확인해 주세요. "
+        "입학 담당 이서연과 면접 일정을 조율해야 합니다. "
+        "김민준은 서울특별시 강남구에 거주하며, 연락은 minjun.kim@example.com "
+        "또는 010-1234-5678로 부탁드립니다. "
+        "이서연에게는 seoyeon.lee@example.com으로 서류 목록을 공유해 주세요."
+    ),
+    "fr": (
+        "Pourriez-vous modifier la réservation de Jean Dupont au restaurant près de Paris ? "
+        "Marie Martin gère la liste des invités et les allergies. "
+        "Jean Dupont est joignable au 06 12 34 56 78 ou jean.dupont@example.com. "
+        "Transmettez le menu adapté à Marie Martin via marie.martin@example.com."
+    ),
+    "de": (
+        "Bitte verfassen Sie ein Follow-up zur Schadensmeldung von Max Mustermann (Wasserschaden). "
+        "Anna Schmidt aus der Versicherungsabteilung benötigt Fotos und die Schadensnummer. "
+        "Max Mustermann wohnt in Berlin; Tel. 0151 23456789, E-Mail max.mustermann@example.com. "
+        "Kopie an Anna Schmidt: anna.schmidt@example.com."
+    ),
+    "pt": (
+        "Solicito agendamento de visita ao imóvel para João Silva em São Paulo. "
+        "Ana Costa do corretor enviará as chaves e a planta. "
+        "Fale com João Silva pelo joao.silva@example.com ou (11) 91234-5678. "
+        "Confirme horários com Ana Costa em ana.costa@example.com."
+    ),
+    "it": (
+        "Marco Rossi non riesce a trasferire i biglietti del concerto a Milano. "
+        "La collega Giulia Bianchi deve redigere l'email al servizio clienti. "
+        "Contattare Marco Rossi a marco.rossi@example.com o al 333 123 4567. "
+        "Inoltrare la risposta a Giulia Bianchi su giulia.bianchi@example.com."
     ),
 }
 
@@ -41,7 +83,11 @@ DEFAULT_TEXTS = {
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--text", default=None)
-    parser.add_argument("--language", default="en", choices=["en", "ja", "es", "vi"])
+    parser.add_argument(
+        "--language",
+        default="en",
+        choices=["en", "ja", "es", "vi", "zh", "ko", "fr", "de", "pt", "it"],
+    )
     parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model name")
     args = parser.parse_args()
 
