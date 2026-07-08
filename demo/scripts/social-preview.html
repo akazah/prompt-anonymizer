@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 64px 88px 56px;
+    padding: 64px 72px 56px;
     position: relative;
   }
   body::before {
@@ -47,25 +47,25 @@
   }
   .tagline b { color: var(--ink); font-weight: 600; }
   .grid2 {
-    margin-top: 30px;
+    margin-top: 28px;
     display: flex;
-    gap: 56px;
+    gap: 40px;
   }
   .examples {
     display: grid;
-    grid-template-columns: max-content max-content min-content max-content;
+    grid-template-columns: max-content max-content min-content max-content min-content max-content;
     align-items: center;
-    column-gap: 18px;
-    row-gap: 15px;
-    font-size: 22px;
+    column-gap: 12px;
+    row-gap: 13px;
+    font-size: 20px;
   }
   .lang {
     font-weight: 600;
     color: var(--accent);
     background: var(--accent-soft);
     border-radius: 999px;
-    padding: 4px 14px;
-    font-size: 19px;
+    padding: 4px 12px;
+    font-size: 17px;
     justify-self: start;
     white-space: nowrap;
   }
@@ -74,7 +74,7 @@
     color: var(--ink);
     white-space: nowrap;
   }
-  .arrow { color: var(--muted); font-size: 26px; }
+  .arrow { color: var(--muted); font-size: 22px; }
   .label {
     font-family: "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
     color: var(--accent);
@@ -102,18 +102,18 @@
     </div>
     <div class="grid2">
       <div class="examples">
-        <span class="lang">日本語</span><span class="src">山田太郎</span><span class="arrow">→</span><span class="label">&lt;人名_1&gt;</span>
-        <span class="lang">English</span><span class="src">John Smith</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
-        <span class="lang">Español</span><span class="src">Javier Moreno</span><span class="arrow">→</span><span class="label">&lt;Nombre_1&gt;</span>
-        <span class="lang">Tiếng Việt</span><span class="src">Nguyễn Văn An</span><span class="arrow">→</span><span class="label">&lt;Tên_1&gt;</span>
-        <span class="lang">中文</span><span class="src">王小明</span><span class="arrow">→</span><span class="label">&lt;姓名_1&gt;</span>
+        <span class="lang">English</span><span class="src">John Smith</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span><span class="arrow">→</span><span class="src">John Smith</span>
+        <span class="lang">日本語</span><span class="src">山田太郎</span><span class="arrow">→</span><span class="label">&lt;人名_1&gt;</span><span class="arrow">→</span><span class="src">山田太郎</span>
+        <span class="lang">Español</span><span class="src">Javier Moreno</span><span class="arrow">→</span><span class="label">&lt;Nombre_1&gt;</span><span class="arrow">→</span><span class="src">Javier Moreno</span>
+        <span class="lang">Tiếng Việt</span><span class="src">Nguyễn Văn An</span><span class="arrow">→</span><span class="label">&lt;Tên_1&gt;</span><span class="arrow">→</span><span class="src">Nguyễn Văn An</span>
+        <span class="lang">中文</span><span class="src">王小明</span><span class="arrow">→</span><span class="label">&lt;姓名_1&gt;</span><span class="arrow">→</span><span class="src">王小明</span>
       </div>
       <div class="examples">
-        <span class="lang">한국어</span><span class="src">김민준</span><span class="arrow">→</span><span class="label">&lt;이름_1&gt;</span>
-        <span class="lang">Français</span><span class="src">Camille Martin</span><span class="arrow">→</span><span class="label">&lt;Nom_1&gt;</span>
-        <span class="lang">Deutsch</span><span class="src">Max Müller</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span>
-        <span class="lang">Português</span><span class="src">João Silva</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
-        <span class="lang">Italiano</span><span class="src">Marco Rossi</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span>
+        <span class="lang">한국어</span><span class="src">김민준</span><span class="arrow">→</span><span class="label">&lt;이름_1&gt;</span><span class="arrow">→</span><span class="src">김민준</span>
+        <span class="lang">Français</span><span class="src">Camille Martin</span><span class="arrow">→</span><span class="label">&lt;Nom_1&gt;</span><span class="arrow">→</span><span class="src">Camille Martin</span>
+        <span class="lang">Deutsch</span><span class="src">Max Müller</span><span class="arrow">→</span><span class="label">&lt;Name_1&gt;</span><span class="arrow">→</span><span class="src">Max Müller</span>
+        <span class="lang">Português</span><span class="src">João Silva</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span><span class="arrow">→</span><span class="src">João Silva</span>
+        <span class="lang">Italiano</span><span class="src">Marco Rossi</span><span class="arrow">→</span><span class="label">&lt;Nome_1&gt;</span><span class="arrow">→</span><span class="src">Marco Rossi</span>
       </div>
     </div>
   </div>

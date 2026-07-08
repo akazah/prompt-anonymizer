@@ -22,7 +22,7 @@ published: false
   spaCy / ローカル transformers)。DevTools のネットワークタブで無通信を
   確認できます
 - ブラウザ版・Chrome 拡張・デスクトップアプリ・Python/Node CLI・
-  OpenAI 互換プロキシ・pre-commit フックの形で使えます
+  OpenAI 互換プロキシ・MCP サーバー・pre-commit フックの形で使えます
 - MIT ライセンス。リポジトリ: https://github.com/akazah/prompt-anonymizer
 - デモ(インストール不要): https://akazah.github.io/prompt-anonymizer/
 
