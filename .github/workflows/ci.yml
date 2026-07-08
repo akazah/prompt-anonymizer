@@ -73,9 +73,9 @@ jobs:
 
       # Validates every *.md in the repo: relative file links exist and
       # #anchors resolve via github-slugger (GitHub's slug algorithm).
-      - name: Docs link check
+      - name: Docs check (links + freshness)
         working-directory: web
-        run: pnpm docs:links
+        run: pnpm docs:check
 
       - name: Lint (tsc)
         working-directory: web

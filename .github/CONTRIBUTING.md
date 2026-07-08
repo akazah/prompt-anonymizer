@@ -29,7 +29,7 @@ cd web
 pnpm install
 pnpm test        # vitest (core + cli + element + react + vue + proxy + mcp)
 pnpm lint        # tsc across packages
-pnpm docs:links  # all repo *.md: relative links + #anchors resolve (runs in CI)
+pnpm docs:check  # all repo *.md: links/anchors + release-aligned doc freshness (runs in CI)
 pnpm build       # all packages + apps
 pnpm --filter @prompt-anonymizer/web dev        # local dev server
 pnpm --filter @prompt-anonymizer/desktop dev    # Tauri (needs Rust + system deps)
