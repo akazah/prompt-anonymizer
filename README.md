@@ -32,7 +32,7 @@ German (`de`), Portuguese (`pt`) and Italian (`it`). The default
 `PromptAnonymizer(languages=…)` remains `("en", "ja")`; every other language
 is opt-in via `languages=[...]`. All UI language pickers and auto-detect
 cover all ten. Language support is registry-driven — adding a language is one
-registry entry (`languages.py` / `types.ts`) plus one label file.
+registry entry (`languages.py` / `languages.ts`) plus one label file.
 
 Detection runs on-device (WebGPU / WASM in the browser, spaCy or local
 transformers in Python). Don't take our word for it: open DevTools, watch
@@ -407,8 +407,9 @@ real-world text.
 ## Roadmap
 
 See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
-[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights: npm / PyPI
-publication, store publication (Chrome Web Store), code signing, smaller
+[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights: PyPI /
+npm registry publication (enable trusted publishing — packages ship with
+GitHub Releases today), Chrome Web Store listing, code signing, smaller
 Japanese NER models, multi-region structured PII (more phone / national-ID
 formats via checksum validation).
 

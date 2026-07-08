@@ -35,7 +35,7 @@ défaut de `PromptAnonymizer(languages=…)` reste `("en", "ja")` ; toutes les
 autres langues s'activent via `languages=[...]`. Tous les sélecteurs de
 langue des interfaces et la détection automatique couvrent les dix. La prise
 en charge des langues est pilotée par un registre — ajouter une langue se
-résume à une entrée dans le registre (`languages.py` / `types.ts`) plus un
+résume à une entrée dans le registre (`languages.py` / `languages.ts`) plus un
 fichier d'étiquettes.
 
 La détection s'exécute sur l'appareil (WebGPU / WASM dans le navigateur,
@@ -51,6 +51,7 @@ projet est sous licence MIT et assez petit pour être audité d'une traite.
 - [Démarrage rapide (Python)](#démarrage-rapide-python)
 - [Démarrage rapide (JavaScript / TypeScript)](#démarrage-rapide-javascript--typescript)
 - [Démarrage rapide (proxy local)](#démarrage-rapide-proxy-local)
+- [Démarrage rapide (serveur MCP)](#démarrage-rapide-serveur-mcp)
 - [Garde-fou au commit / en CI (`scan`)](#garde-fou-au-commit--en-ci-scan)
 - [Pourquoi pas… ?](#pourquoi-pas-)
 - [Comment ça marche](#comment-ça-marche)
@@ -93,6 +94,7 @@ Anonymiser → le mapping reste local → la réponse du LLM conserve les
 | **Web Component** | `@prompt-anonymizer/element` | Élément `<prompt-anonymizer>` indépendant du framework : intégrez le panneau complet anonymiser → restaurer dans n'importe quel site (HTML pur, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Composant `<AnonymizerPanel />` prêt à l'emploi plus un hook `useAnonymizer()` / composable pour les interfaces personnalisées. Voir le démarrage rapide ci-dessous. |
 | **Proxy local + GUI d'administration** | `npx @prompt-anonymizer/proxy` | Proxy inverse compatible OpenAI : pointez `OPENAI_BASE_URL` vers lui et les PII sont masquées avant de quitter votre machine, les étiquettes étant restaurées dans les réponses (streaming inclus). GUI d'administration sur `http://127.0.0.1:8787/admin/`. Voir le démarrage rapide ci-dessous. |
+| **Serveur MCP** | `npx @prompt-anonymizer/mcp` | Outils `anonymize` / `deanonymize` / `scan` pour tout client MCP (Claude Desktop, Claude Code, Cursor, …). Le mapping des étiquettes reste en mémoire serveur (`mapping_id`) et n'est jamais montré au modèle sauf demande explicite. Voir le démarrage rapide ci-dessous. |
 | **Hook de commit / garde-fou CI** | `prompt-anonymizer scan` (les deux CLI) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Garde-fou PII par code de sortie pour les vérifications au commit et en CI : rapporte `file:line:col` et le type d'entité, jamais le texte détecté. Hors ligne et sans modèle par défaut. Voir ci-dessous. |
 
 ## Démarrage rapide (Python)
@@ -208,6 +210,25 @@ permet d'éditer la configuration du proxy (upstream, NER, listes deny/allow)
 et offre un bac à sable d'anonymisation strictement local. Le proxy écoute
 sur `127.0.0.1` par défaut ; les valeurs originales ne peuvent être révélées
 dans la GUI que si vous activez explicitement `--record-mappings`.
+
+## Démarrage rapide (serveur MCP)
+
+Outils d'anonymisation sur l'appareil pour tout client MCP — Claude Desktop,
+Claude Code, Cursor, … :
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Trois outils conçus pour que les PII restent hors du contexte du modèle :
+`anonymize` renvoie le texte masqué et un `mapping_id` (le mapping reste en
+mémoire serveur sauf demande explicite), `deanonymize` restaure par
+`mapping_id` — éventuellement directement vers un fichier — et `scan`
+contrôle les fichiers pour des PII en ne rapportant que `file:line:col` et
+le type d'entité, jamais le texte détecté. Passez `--ner` dans les
+arguments du serveur pour masquer aussi noms/lieux (téléchargement unique du
+modèle au premier usage).
 
 ## Garde-fou au commit / en CI (`scan`)
 
@@ -413,13 +434,16 @@ sur du texte réel.
 
 Consultez les [issues](https://github.com/akazah/prompt-anonymizer/issues)
 ouvertes et [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Points
-saillants : publication sur npm / PyPI, publication sur les stores (Chrome
-Web Store), signature du code, modèles NER japonais plus petits, PII
-structurées multi-régions (plus de formats de téléphone / d'identifiants
-nationaux avec validation par somme de contrôle), serveur MCP.
+saillants : publication PyPI / npm (Trusted Publishing — installable
+aujourd'hui via GitHub Releases), Chrome Web Store, signature du code,
+modèles NER japonais plus petits, PII structurées multi-régions (plus de
+formats de téléphone / d'identifiants nationaux avec validation par somme
+de contrôle).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — recettes pour LiteLLM, OpenWebUI, clients MCP, hooks git et CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuration de développement (uv / pnpm), commandes de test et d'évaluation
+- [docs/AUDIT.md](../AUDIT.md) — vérifiez vous-même les affirmations on-device, étape par étape
 - [SECURITY.md](../../.github/SECURITY.md) — signalement des vulnérabilités et des contournements d'anonymisation
 - [MIT](../../LICENSE)

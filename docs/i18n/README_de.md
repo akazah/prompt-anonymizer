@@ -36,7 +36,7 @@ Französisch (`fr`), Deutsch (`de`), Portugiesisch (`pt`) und Italienisch
 Alle Sprachauswahlen in den Oberflächen und die automatische Erkennung
 decken alle zehn ab. Die Sprachunterstützung ist registry-gesteuert — eine
 Sprache hinzuzufügen bedeutet einen Registry-Eintrag (`languages.py` /
-`types.ts`) plus eine Label-Datei.
+`languages.ts`) plus eine Label-Datei.
 
 Die Erkennung läuft auf dem Gerät (WebGPU / WASM im Browser, spaCy oder
 lokale Transformer in Python). Verlassen Sie sich nicht auf unser Wort:
@@ -52,6 +52,7 @@ Rutsch zu auditieren.
 - [Schnellstart (Python)](#schnellstart-python)
 - [Schnellstart (JavaScript / TypeScript)](#schnellstart-javascript--typescript)
 - [Schnellstart (lokaler Proxy)](#schnellstart-lokaler-proxy)
+- [Schnellstart (MCP-Server)](#schnellstart-mcp-server)
 - [Commit- und CI-Gate (`scan`)](#commit--und-ci-gate-scan)
 - [Warum nicht …?](#warum-nicht-)
 - [Funktionsweise](#funktionsweise)
@@ -94,6 +95,7 @@ Label → wiederherstellen:
 | **Web Component** | `@prompt-anonymizer/element` | Framework-unabhängiges `<prompt-anonymizer>`-Element: Bettet das komplette Anonymisieren-→-Wiederherstellen-Panel in jede Website ein (reines HTML, Svelte, Angular, …). |
 | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | Fertige `<AnonymizerPanel />`-Komponente plus ein `useAnonymizer()`-Hook / Composable für eigene UIs. Siehe Schnellstart unten. |
 | **Lokaler Proxy + Admin-GUI** | `npx @prompt-anonymizer/proxy` | OpenAI-kompatibler Reverse-Proxy: Richten Sie `OPENAI_BASE_URL` darauf, und PII werden maskiert, bevor sie Ihren Rechner verlassen; in den Antworten werden die Label wiederhergestellt (inkl. Streaming). Admin-GUI unter `http://127.0.0.1:8787/admin/`. Siehe Schnellstart unten. |
+| **MCP-Server** | `npx @prompt-anonymizer/mcp` | `anonymize` / `deanonymize` / `scan`-Tools für jeden MCP-Client (Claude Desktop, Claude Code, Cursor, …). Die Label-Zuordnung bleibt im Server-Speicher (`mapping_id`) und wird dem Modell nur auf explizite Anfrage gezeigt. Siehe Schnellstart unten. |
 | **Commit-Hook / CI-Gate** | `prompt-anonymizer scan` (beide CLIs) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | Exit-Code-basiertes PII-Gate für Commit- und CI-Prüfungen: meldet `file:line:col` und den Entitätstyp, nie den gefundenen Text. Standardmäßig offline und ohne Modelle. Siehe unten. |
 
 ## Schnellstart (Python)
@@ -208,6 +210,25 @@ Proxy-Konfiguration (Upstream, NER, Deny-/Allow-Listen) und bietet einen
 rein lokalen Anonymisierungs-Spielplatz. Der Proxy bindet standardmäßig an
 `127.0.0.1`; Originalwerte lassen sich in der GUI nur einsehen, wenn Sie
 `--record-mappings` ausdrücklich aktivieren.
+
+## Schnellstart (MCP-Server)
+
+On-Device-Anonymisierungstools für jeden MCP-Client — Claude Desktop,
+Claude Code, Cursor, …:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Drei Tools, die PII aus dem Modellkontext fernhalten: `anonymize` liefert
+den maskierten Text und eine `mapping_id` (die Zuordnung bleibt im
+Server-Speicher, sofern nicht ausdrücklich angefordert), `deanonymize`
+stellt per `mapping_id` wieder her — optional direkt in eine Datei — und
+`scan` prüft Dateien auf PII und meldet nur `file:line:col` und den
+Entitätstyp, nie den gefundenen Text. Übergeben Sie `--ner` in den
+Server-Argumenten, um auch Namen/Orte zu maskieren (einmaliger
+Modell-Download beim ersten Einsatz).
 
 ## Commit- und CI-Gate (`scan`)
 
@@ -413,13 +434,16 @@ realem Text zu versprechen.
 
 Siehe die offenen [Issues](https://github.com/akazah/prompt-anonymizer/issues)
 und [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Highlights:
-Veröffentlichung auf npm / PyPI, Store-Veröffentlichung (Chrome Web Store),
+PyPI- / npm-Registry-Veröffentlichung (Trusted Publishing aktivieren —
+Pakete sind heute über GitHub Releases installierbar), Chrome Web Store,
 Code-Signierung, kleinere japanische NER-Modelle, strukturierte PII für
 weitere Regionen (mehr Telefon- / nationale ID-Formate mit
-Prüfsummenvalidierung), MCP-Server.
+Prüfsummenvalidierung).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — Rezepte für LiteLLM, OpenWebUI, MCP-Clients, Git-Hooks und CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — Entwicklungs-Setup (uv / pnpm), Test- und Eval-Befehle
+- [docs/AUDIT.md](../AUDIT.md) — On-Device-Behauptungen Schritt für Schritt selbst prüfen
 - [SECURITY.md](../../.github/SECURITY.md) — Melden von Sicherheitslücken und Anonymisierungs-Bypässen
 - [MIT](../../LICENSE)

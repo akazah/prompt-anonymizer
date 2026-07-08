@@ -70,9 +70,10 @@ no crash reporting in any surface.
 ## 4. Read the source in one sitting (an afternoon)
 
 Reading order for the TypeScript core (~2k lines,
-`web/packages/core/src/`): `types.ts` → `recognizers.ts` (regex + checksum
-validators) → `labeling.ts` (span merge + replacement) → `session.ts`
-(restore) → `ner.ts` (the only file that touches transformers.js). The
+`web/packages/core/src/`): `languages.ts` (registry) → `types.ts` →
+`recognizers.ts` (regex + checksum validators) → `labeling.ts` (span merge +
+replacement) → `session.ts` (restore) → `ner.ts` (the only file that touches
+transformers.js). The
 Python core mirrors it under `src/prompt_anonymizer/`. The parity contract
 between the two is the golden set in `tests/golden/`.
 

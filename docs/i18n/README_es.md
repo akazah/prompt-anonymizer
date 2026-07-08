@@ -34,7 +34,7 @@ alemán (`de`), portugués (`pt`) e italiano (`it`). El valor por defecto de
 idiomas se activan con `languages=[...]`. Todos los selectores de idioma de
 las interfaces y la detección automática cubren los diez. El soporte de
 idiomas se rige por un registro central: añadir un idioma es una entrada en
-el registro (`languages.py` / `types.ts`) más un archivo de etiquetas.
+el registro (`languages.py` / `languages.ts`) más un archivo de etiquetas.
 
 La detección se ejecuta en el dispositivo (WebGPU / WASM en el navegador,
 spaCy o transformers locales en Python). No te fíes de nuestra palabra:
@@ -49,6 +49,7 @@ licencia MIT y es lo bastante pequeño para auditarlo de una sentada.
 - [Inicio rápido (Python)](#inicio-rápido-python)
 - [Inicio rápido (JavaScript / TypeScript)](#inicio-rápido-javascript--typescript)
 - [Inicio rápido (proxy local)](#inicio-rápido-proxy-local)
+- [Inicio rápido (servidor MCP)](#inicio-rápido-servidor-mcp)
 - [Puerta en el commit / CI (`scan`)](#puerta-en-el-commit--ci-scan)
 - [¿Por qué no…?](#por-qué-no)
 - [Cómo funciona](#cómo-funciona)
@@ -205,6 +206,25 @@ configuración del proxy (upstream, NER, listas deny/allow) y ofrece un
 área de pruebas de anonimización solo local. El proxy se enlaza a
 `127.0.0.1` por defecto; los valores originales solo pueden revelarse en la
 GUI cuando activas explícitamente `--record-mappings`.
+
+## Inicio rápido (servidor MCP)
+
+Herramientas de anonimización en el dispositivo para cualquier cliente MCP —
+Claude Desktop, Claude Code, Cursor, …:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Tres herramientas diseñadas para que los PII no entren en el contexto del
+modelo: `anonymize` devuelve el texto enmascarado y un `mapping_id` (el
+mapeo permanece en la memoria del servidor salvo petición explícita),
+`deanonymize` restaura por `mapping_id` — opcionalmente directo a un
+archivo — y `scan` comprueba archivos en busca de PII, informando solo
+`file:line:col` y el tipo de entidad, nunca el texto coincidente. Pasa
+`--ner` en los argumentos del servidor para enmascarar también
+nombres/ubicaciones (descarga única del modelo en el primer uso).
 
 ## Puerta en el commit / CI (`scan`)
 
@@ -408,13 +428,15 @@ texto del mundo real.
 
 Consulta los [issues](https://github.com/akazah/prompt-anonymizer/issues)
 abiertos y [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Destacados:
-publicación en npm / PyPI, publicación en tiendas (Chrome Web Store),
-firma de código, modelos NER japoneses más pequeños, PII estructurado
-multirregión (más formatos de teléfono / ID nacional con validación por
-suma de comprobación).
+publicación en PyPI / npm (Trusted Publishing — hoy instalable desde
+GitHub Releases), Chrome Web Store, firma de código, modelos NER japoneses
+más pequeños, PII estructurado multirregión (más formatos de teléfono / ID
+nacional con validación por suma de comprobación).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — recetas para LiteLLM, OpenWebUI, clientes MCP, git hooks y CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — configuración de desarrollo (uv / pnpm), comandos de prueba y evaluación
+- [docs/AUDIT.md](../AUDIT.md) — verifica tú mismo las afirmaciones on-device, paso a paso
 - [SECURITY.md](../../.github/SECURITY.md) — reporte de vulnerabilidades y bypasses de anonimización
 - [MIT](../../LICENSE)

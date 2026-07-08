@@ -65,7 +65,9 @@ sitting (registry account setup aside).
 ## 4. README cleanup (same PR as the switch-flip)
 
 Once packages are live, delete every "not on PyPI/npm yet" caveat in
-`README.md` / `README_ja.md` / `README_es.md` / `README_vi.md` and replace
+`README.md` and every translated README under `docs/i18n/` (`README_ja.md`,
+`README_es.md`, `README_vi.md`, `README_zh.md`, `README_ko.md`,
+`README_fr.md`, `README_de.md`, `README_pt.md`, `README_it.md`) and replace
 the build-from-repo instructions with the one-liners
 (`pip install prompt-anonymizer`, `npx @prompt-anonymizer/cli`, …).
 Run `pnpm -C web docs:links` after editing.

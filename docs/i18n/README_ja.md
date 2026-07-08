@@ -32,7 +32,7 @@
 デフォルトの `PromptAnonymizer(languages=…)` は引き続き `("en", "ja")` のままで、
 それ以外の言語は `languages=[...]` でオプトインします。各UIの言語ピッカーと
 自動検出は10言語すべてをカバーします。言語サポートはレジストリ駆動です —
-言語の追加はレジストリ1エントリ（`languages.py` / `types.ts`）+
+言語の追加はレジストリ1エントリ（`languages.py` / `languages.ts`）+
 ラベルファイル1つで済みます。
 
 検出はオンデバイスで実行されます（ブラウザではWebGPU / WASM、Pythonでは
@@ -405,12 +405,15 @@ recallはゴールデンセット上で 1.00 です — TSコアの表は
 
 [Issues](https://github.com/akazah/prompt-anonymizer/issues) と
 [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md) を参照。主なもの:
-npm / PyPI公開、Chrome Web Store公開、コード署名、より小型の日本語NER
-モデル、多地域の構造化PII（チェックサム検証による電話番号・国民ID形式の
-追加）。
+PyPI / npm レジストリ公開（Trusted Publishing の有効化 — 現時点では
+GitHub Releases からインストール可能）、Chrome Web Store 公開、コード署名、
+より小型の日本語NERモデル、多地域の構造化PII（チェックサム検証による
+電話番号・国民ID形式の追加）。
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — LiteLLM、OpenWebUI、MCP クライアント、git フックと CI のレシピ
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — 開発環境（uv / pnpm）、テスト・評価の実行手順
+- [docs/AUDIT.md](../AUDIT.md) — オンデバイス主張を自分で検証する手順
 - [SECURITY.md](../../.github/SECURITY.md) — 脆弱性・匿名化バイパスの報告窓口
 - [MIT](../../LICENSE)

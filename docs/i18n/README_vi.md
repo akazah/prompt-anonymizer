@@ -32,7 +32,7 @@ Mặc định `PromptAnonymizer(languages=…)` vẫn là `("en", "ja")`; các n
 còn lại bật qua `languages=[...]`. Mọi bộ chọn ngôn ngữ trong giao diện và
 tự động nhận diện đều bao phủ cả mười ngôn ngữ. Hỗ trợ ngôn ngữ được điều
 khiển bởi registry trung tâm — thêm một ngôn ngữ chỉ cần một mục registry
-(`languages.py` / `types.ts`) cộng một tệp nhãn.
+(`languages.py` / `languages.ts`) cộng một tệp nhãn.
 
 Phát hiện chạy trên thiết bị (WebGPU / WASM trong trình duyệt, spaCy hoặc
 transformers cục bộ trong Python). Đừng chỉ tin lời chúng tôi: mở DevTools, xem
@@ -47,6 +47,7 @@ ngồi.
 - [Bắt đầu nhanh (Python)](#bắt-đầu-nhanh-python)
 - [Bắt đầu nhanh (JavaScript / TypeScript)](#bắt-đầu-nhanh-javascript--typescript)
 - [Bắt đầu nhanh (proxy cục bộ)](#bắt-đầu-nhanh-proxy-cục-bộ)
+- [Bắt đầu nhanh (máy chủ MCP)](#bắt-đầu-nhanh-máy-chủ-mcp)
 - [Cổng lúc commit / CI (`scan`)](#cổng-lúc-commit--ci-scan)
 - [Tại sao không …?](#tại-sao-không-)
 - [Cách hoạt động](#cách-hoạt-động)
@@ -200,6 +201,24 @@ và các sự kiện che PII (chỉ nhãn và số lượng), cho phép chỉnh 
 (upstream, NER, danh sách deny/allow) và cung cấp playground ẩn danh chỉ chạy
 cục bộ. Proxy mặc định gắn vào `127.0.0.1`; giá trị gốc chỉ có thể xem trong
 GUI khi bạn bật `--record-mappings` một cách tường minh.
+
+## Bắt đầu nhanh (máy chủ MCP)
+
+Thêm công cụ ẩn danh trên thiết bị cho mọi MCP client — Claude Desktop,
+Claude Code, Cursor, …:
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Ba công cụ đều được thiết kế để PII không vào ngữ cảnh mô hình:
+`anonymize` trả về văn bản đã che và `mapping_id` (bảng ánh xạ nằm trong
+bộ nhớ máy chủ trừ khi được yêu cầu rõ ràng), `deanonymize` khôi phục theo
+`mapping_id` — có thể ghi thẳng ra file — và `scan` kiểm tra file tìm PII,
+chỉ báo cáo `file:line:col` và loại thực thể, không bao giờ in văn bản khớp.
+Truyền `--ner` trong tham số máy chủ để che thêm tên/địa điểm (tải mô hình
+một lần khi dùng lần đầu).
 
 ## Cổng lúc commit / CI (`scan`)
 
@@ -388,13 +407,15 @@ tế.
 ## Lộ trình
 
 Xem [issues](https://github.com/akazah/prompt-anonymizer/issues) mở và
-[IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Nổi bật: công bố npm / PyPI,
-công bố cửa hàng (Chrome Web Store), ký mã, mô hình NER tiếng Nhật nhỏ hơn,
-PII có cấu trúc đa vùng (thêm định dạng số điện thoại / ID quốc gia qua kiểm
-tra checksum).
+[IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Nổi bật: công bố PyPI /
+npm (Trusted Publishing — hiện cài được từ GitHub Releases), Chrome Web Store,
+ký mã, mô hình NER tiếng Nhật nhỏ hơn, PII có cấu trúc đa vùng (thêm định
+dạng số điện thoại / ID quốc gia qua kiểm tra checksum).
 
 ## Contributing / Security / License
 
+- [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — công thức cho LiteLLM, OpenWebUI, MCP client, git hook và CI
 - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — thiết lập dev (uv / pnpm), lệnh test và eval
+- [docs/AUDIT.md](../AUDIT.md) — tự xác minh các tuyên bố on-device, từng bước
 - [SECURITY.md](../../.github/SECURITY.md) — báo cáo lỗ hổng và cách vượt qua ẩn danh
 - [MIT](../../LICENSE)
