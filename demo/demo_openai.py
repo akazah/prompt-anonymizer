@@ -18,7 +18,8 @@ DEFAULT_TEXTS = {
     "ja": (
         "来週から新プロジェクトに配属される山田太郎さんの業務引き継ぎをお願いします。"
         "前任担当の佐藤花子さんに手順と未完了タスクを確認したいです。"
-        "山田太郎さんは東京都中央区在住で、緊急連絡は 090-1234-5678 または taro.yamada@example.com へ。"
+        "山田太郎さんは東京都中央区在住で、緊急連絡は "
+        "090-1234-5678 または taro.yamada@example.com へ。"
         "佐藤花子さんへの確認は hanako.sato@example.com までお願いします。"
     ),
     "en": (
@@ -30,7 +31,8 @@ DEFAULT_TEXTS = {
     "es": (
         "Hay un error en el itinerario de María García para el congreso en Madrid. "
         "Su colega Carlos Ruiz puede confirmar vuelos y alojamiento. "
-        "María García reside en Madrid; su correo es maria.garcia@example.com y su móvil es +34 612 345 678. "
+        "María García reside en Madrid; su correo es maria.garcia@example.com "
+        "y su móvil es +34 612 345 678. "
         "Escriba también a Carlos Ruiz en carlos.ruiz@example.com."
     ),
     "vi": (
@@ -47,7 +49,8 @@ DEFAULT_TEXTS = {
     "ko": (
         "김민준 학생의 올해 가을 입학 서류 제출 기한을 확인해 주세요. "
         "입학 담당 이서연과 면접 일정을 조율해야 합니다. "
-        "김민준은 서울특별시 강남구에 거주하며, 연락은 minjun.kim@example.com 또는 010-1234-5678로 부탁드립니다. "
+        "김민준은 서울특별시 강남구에 거주하며, 연락은 minjun.kim@example.com "
+        "또는 010-1234-5678로 부탁드립니다. "
         "이서연에게는 seoyeon.lee@example.com으로 서류 목록을 공유해 주세요."
     ),
     "fr": (
