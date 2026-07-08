@@ -101,8 +101,9 @@ CI guards: `tests/unit/test_golden_freshness.py` fails when
 
 ### 7. UI samples and round-trip tests
 
-- Sample paragraphs: `SAMPLES` in `web/apps/web/src/main.ts` and
-  `web/apps/proxy-admin/src/main.ts`, defaults in `demo/demo_openai.py`.
+- Sample paragraphs: `SAMPLES` in `web/packages/core/src/samples.ts` (imported by
+  `web/apps/web/src/main.ts` and `web/apps/proxy-admin/src/main.ts`), defaults in
+  `demo/demo_openai.py` and per-target scenarios in `demo/scripts/lang-data.mjs`.
   (Pickers update automatically from the registry.)
 - Round-trip tests in both cores: anonymize → deanonymize identity for a
   sample text (`tests/integration/test_pipeline.py`,

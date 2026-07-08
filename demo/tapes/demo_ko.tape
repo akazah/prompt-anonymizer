@@ -21,7 +21,7 @@ Show
 Type "# 1) 개인정보가 포함된 요청을 익명화합니다 (매핑은 로컬에만 저장됩니다)"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer anonymize -l ko --mapping-file mapping.json -t "안녕하세요, 저는 김민준입니다. 사무실 이전 안내문을 작성해 주세요. 저희는 서울로 이전합니다. 연락처: 010-1234-5678 / minjun.kim@example.com"`
+Type `prompt-anonymizer anonymize -l ko --mapping-file mapping.json -t "안녕하세요, 서울특별시 강남구에 사는 김민준입니다. 올해 가을 입학 서류 제출 기한을 확인해 주세요. 연락: 010-1234-5678 / minjun.kim@example.com"`
 Enter
 Sleep 5s
 
@@ -35,6 +35,6 @@ Sleep 2.5s
 Type "# 3) LLM 응답에는 라벨이 그대로 남습니다 -> 실제 값으로 복원합니다"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "<이름_1>님께, 저희 사무실이 <주소_1>(으)로 이전함을 안내드립니다. 문의사항은 <전화번호_1> 또는 <이메일_1>로 연락 주세요."`
+Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "<이름_1>님, <주소_1> 거주 확인되었습니다. <전화번호_1> 또는 <이메일_1>로 서류 안내를 보내드리겠습니다."`
 Enter
 Sleep 6s

@@ -14,6 +14,10 @@
     "./languages": {
       "types": "./dist/languages.d.ts",
       "import": "./dist/languages.js"
+    },
+    "./samples": {
+      "types": "./dist/samples.d.ts",
+      "import": "./dist/samples.js"
     }
   },
   "files": [
