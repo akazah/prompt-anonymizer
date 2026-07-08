@@ -102,6 +102,38 @@ yourself. Add a CI job that builds `web/apps/web` twice (or compares
 against the Pages artifact) and documents the diff procedure, moving the
 claim from "trust CI" toward "verify yourself".
 
+## 11. Opt-in granular redaction policies (per-locale)
+
+Labels: `help wanted`
+
+Today every detected span is fully replaced with a reversible label
+(`<人名_1>`, `<電話番号_1>`, …). Some workflows want to **preserve
+coarse-grained context** while masking the rest — e.g. surname-only hints
+for names, phone area/exchange prefixes, Japanese addresses down to
+都道府県 + 市区町村.
+
+**Not a quick recognizer patch.** Rules differ by locale and jurisdiction:
+
+| Dimension | Examples of variation |
+|---|---|
+| Names | family/given order, patronymics, cultures without surnames |
+| Phones | JP 市外局番/携帯 prefix vs NANP area code vs national trunk codes |
+| Addresses | JP 都道府県/市区町村 vs US state + ZIP vs EU street/postcode norms |
+| Law | APPI, GDPR, sector rules — what may remain without becoming personal data |
+
+**Scope before coding** (comment on the issue; do not open a PR until agreed):
+
+1. Per-locale policy matrix: which entity types support which preservation
+   levels, all **default-off** and opt-in via `entities` / CLI / proxy config.
+2. Output shape: literal partial text vs extended labels — implications for
+   `mapping`, deanonymize round-trip, and **P0** leak risk (mapping must not
+   expose more than the chosen policy allows).
+3. Golden-set cases + round-trip tests in **both** cores (parity contract).
+4. ReDoS-safe split parsers inside existing span boundaries (AGENTS.md P1).
+
+Start with one reference locale (likely `ja`). Preserved fragments may still
+be quasi-identifying — document that in README limitations.
+
 ---
 
 Filing tips: one issue per item, link back to the roadmap section, and add
