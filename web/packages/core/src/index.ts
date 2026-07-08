@@ -20,6 +20,7 @@ export {
   languagePickerEntries,
 } from "./languages.js";
 export type { LanguageOption } from "./languages.js";
+export { SAMPLES } from "./samples.js";
 export { LABELS, applyLabels, mergeSpans } from "./labeling.js";
 export {
   InMemoryMappingStore,

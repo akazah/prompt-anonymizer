@@ -14,9 +14,9 @@ shared English/Japanese-only pair.
 
 `<lang>` is one of `en`, `ja`, `es`, `vi`, `zh`, `ko`, `fr`, `de`, `pt`, `it`.
 Per-language sample text, phone numbers and label strings live in
-`demo/scripts/lang-data.mjs`, which both recording scripts import — keep it in
-sync with `src/prompt_anonymizer/labels/<lang>.yaml` and
-`src/prompt_anonymizer/languages.py`'s phone patterns.
+`web/packages/core/src/samples.ts` (UI samples) and
+`demo/scripts/lang-data.mjs` (recording scripts) — keep phone patterns aligned with
+`src/prompt_anonymizer/languages.py` / `web/packages/core/src/recognizers.ts`.
 
 The browser and CLI demos need model downloads (transformers.js / spaCy) that
 a sandboxed dev environment's network policy may block; the

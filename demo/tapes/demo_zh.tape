@@ -21,7 +21,7 @@ Show
 Type "# 1) 匿名化含有个人信息的请求（对照表仅保存在本地）"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer anonymize -l zh --mapping-file mapping.json -t "你好，我是王小明。请起草一份办公室搬迁公告。我们将搬到北京。联系方式：138-1234-5678 / xiaoming.wang@example.com"`
+Type `prompt-anonymizer anonymize -l zh --mapping-file mapping.json -t "你好，我是王小明，公司在北京市朝阳区。请起草上月工程款催款函。联系：138-1234-5678 / xiaoming.wang@example.com"`
 Enter
 Sleep 5s
 
@@ -35,6 +35,6 @@ Sleep 2.5s
 Type "# 3) LLM 的回复保留标签 -> 还原真实值"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "尊敬的<姓名_1>，我们很高兴地宣布公司办公室将迁至<地址_1>。如有疑问，请通过<电话号码_1>或<电子邮箱_1>联系我们。"`
+Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "尊敬的<姓名_1>，我们已记录您在<地址_1>的账款。请通过<电话号码_1>或<电子邮箱_1>确认付款安排。"`
 Enter
 Sleep 6s

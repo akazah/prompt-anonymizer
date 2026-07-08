@@ -21,7 +21,7 @@ Show
 Type "# 1) Ẩn danh yêu cầu chứa thông tin cá nhân (bảng ánh xạ chỉ lưu cục bộ)"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer anonymize -l vi --mapping-file mapping.json -t "Xin chào, tôi là Nguyễn Văn An. Vui lòng soạn thông báo chuyển văn phòng. Chúng tôi chuyển đến Hà Nội. Liên hệ: 0912 345 678 / an.nguyen@example.com"`
+Type `prompt-anonymizer anonymize -l vi --mapping-file mapping.json -t "Xin chào, tôi là Nguyễn Văn An ở Hà Nội. Máy lạnh bảo hành bị lỗi, cần lịch sửa. Liên hệ: 0912 345 678 / an.nguyen@example.com"`
 Enter
 Sleep 5s
 
@@ -35,6 +35,6 @@ Sleep 2.5s
 Type "# 3) Phản hồi của LLM vẫn giữ nhãn -> khôi phục giá trị thật"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Kính gửi <Tên_1>, chúng tôi vui mừng thông báo văn phòng sẽ chuyển đến <ĐịaChỉ_1>. Mọi thắc mắc xin liên hệ <SốĐiệnThoại_1> hoặc <Email_1>."`
+Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Kính gửi <Tên_1>, chúng tôi đã lên lịch kỹ thuật viên tại <ĐịaChỉ_1>. Gọi <SốĐiệnThoại_1> hoặc email <Email_1>."`
 Enter
 Sleep 6s

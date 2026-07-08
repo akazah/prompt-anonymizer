@@ -21,7 +21,7 @@ Show
 Type "# 1) Eine Anfrage mit personenbezogenen Daten anonymisieren (Mapping bleibt lokal)"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer anonymize -l de --mapping-file mapping.json -t "Hallo, ich bin Max Mustermann. Bitte verfassen Sie eine Ankündigung zum Bürostandortwechsel. Wir ziehen nach Berlin um. Kontakt: 0151 23456789 / max.mustermann@example.com"`
+Type `prompt-anonymizer anonymize -l de --mapping-file mapping.json -t "Hallo, ich bin Max Mustermann aus Berlin. Bitte formulieren Sie ein Follow-up zur Schadensmeldung (Wasserschaden). Kontakt: 0151 23456789 / max.mustermann@example.com"`
 Enter
 Sleep 5s
 
@@ -35,6 +35,6 @@ Sleep 2.5s
 Type "# 3) Die Antwort des LLM behält die Labels -> die echten Werte wiederherstellen"
 Enter
 Sleep 800ms
-Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Sehr geehrte(r) <Name_1>, wir freuen uns, Ihnen mitzuteilen, dass unser Büro nach <Adresse_1> umzieht. Bei Fragen erreichen Sie uns unter <Telefon_1> oder <EMail_1>."`
+Type `prompt-anonymizer deanonymize --mapping-file mapping.json -t "Sehr geehrte(r) <Name_1>, Ihre Meldung aus <Adresse_1> wurde registriert. Erreichen Sie uns unter <Telefon_1> oder <EMail_1>."`
 Enter
 Sleep 6s
