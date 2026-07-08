@@ -31,7 +31,7 @@ sections:
     葡萄牙语（`pt`）和意大利语（`it`）。默认的 `PromptAnonymizer(languages=…)`
     仍为 `("en", "ja")`；其他所有语言通过 `languages=[...]` 显式启用。各 UI 的
     语言选择器和自动检测覆盖全部十种语言。语言支持由注册表驱动 — 新增一种
-    语言只需一条注册表记录（`languages.py` / `types.ts`）加一个标签文件。
+    语言只需一条注册表记录（`languages.py` / `languages.ts`）加一个标签文件。
     
     检测在设备端运行（浏览器中为 WebGPU / WASM，Python 中为 spaCy 或本地
     transformers）。不必轻信我们的说法：打开 DevTools 盯着网络面板，或者直接
@@ -87,6 +87,7 @@ sections:
     | **Web Component** | `@prompt-anonymizer/element` | 与框架无关的 `<prompt-anonymizer>` 元素：把完整的匿名化 → 还原面板嵌入任意站点（纯 HTML、Svelte、Angular 等）。 |
     | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | 开箱即用的 `<AnonymizerPanel />` 组件，外加面向自定义 UI 的 `useAnonymizer()` hook / 组合式函数。参见下方快速上手。 |
     | **本地代理 + 管理 GUI** | `npx @prompt-anonymizer/proxy` | OpenAI 兼容的反向代理：把 `OPENAI_BASE_URL` 指向它，PII 在离开你的机器前被遮蔽，响应中的标签被还原（含流式）。管理 GUI 位于 `http://127.0.0.1:8787/admin/`。参见下方快速上手。 |
+    | **MCP 服务器** | `npx @prompt-anonymizer/mcp` | 面向任意 MCP 客户端（Claude Desktop、Claude Code、Cursor 等）的 `anonymize` / `deanonymize` / `scan` 工具。标签映射保存在服务器内存中（`mapping_id`），除非显式请求，否则不会展示给模型。参见下方快速上手。 |
     | **提交钩子 / CI 门禁** | `prompt-anonymizer scan`（两个 CLI 均有） + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | 基于退出码的 PII 门禁，用于提交时和 CI 检查：只报告 `file:line:col` 和实体类型，绝不输出匹配到的文本。默认离线、无需模型。见下文。 |
   quickstart_python: |
     ## 快速上手（Python）
@@ -197,14 +198,14 @@ sections:
     显式启用 `--record-mappings` 时，原始值才能在 GUI 中查看。
   quickstart_mcp: |
     ## 快速上手（MCP 服务器）
-
+    
     为任意 MCP 客户端 — Claude Desktop、Claude Code、Cursor 等 — 提供设备端匿名化工具：
-
+    
     ```bash
     # Claude Code:
     claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
     ```
-
+    
     三个工具均旨在让 PII 不进入模型上下文：`anonymize` 返回脱敏文本和
     `mapping_id`（映射默认留在服务器内存，除非你显式要求返回），`deanonymize`
     按 `mapping_id` 还原 — 也可直接写入文件 — `scan` 检查文件中的 PII，只报告
@@ -382,12 +383,15 @@ sections:
     ## 路线图
     
     参见开放的 [issues](https://github.com/akazah/prompt-anonymizer/issues) 和
-    [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md)。重点：npm / PyPI 发布、
-    商店上架（Chrome Web Store）、代码签名、更小的日语 NER 模型、多地区
-    结构化 PII（通过校验和验证支持更多电话 / 国民 ID 格式）、MCP 服务器。
+    [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md)。重点：PyPI / npm
+    注册表发布（启用 Trusted Publishing — 目前可从 GitHub Releases 安装）、
+    Chrome Web Store 上架、代码签名、更小的日语 NER 模型、多地区结构化
+    PII（通过校验和验证支持更多电话 / 国民 ID 格式）。
   contributing: |
     ## Contributing / Security / License
     
+    - [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — LiteLLM、OpenWebUI、MCP 客户端、git 钩子与 CI 的集成示例
     - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — 开发环境（uv / pnpm）、测试与评估命令
+    - [docs/AUDIT.md](../AUDIT.md) — 逐步自行验证设备端声明
     - [SECURITY.md](../../.github/SECURITY.md) — 报告漏洞与匿名化绕过
     - [MIT](../../LICENSE)

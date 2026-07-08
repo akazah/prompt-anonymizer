@@ -33,7 +33,7 @@ sections:
     `languages=[...]`로 명시적으로 활성화합니다. 모든 UI의 언어 선택기와 자동
     감지는 열 개 언어 전부를 지원합니다. 언어 지원은 레지스트리 기반입니다 —
     언어 하나를 추가하는 데 필요한 것은 레지스트리 항목 하나
-    (`languages.py` / `types.ts`)와 레이블 파일 하나뿐입니다.
+    (`languages.py` / `languages.ts`)와 레이블 파일 하나뿐입니다.
     
     감지는 온디바이스에서 실행됩니다(브라우저에서는 WebGPU / WASM, Python에서는
     spaCy 또는 로컬 transformers). 우리 말을 그대로 믿을 필요는 없습니다.
@@ -90,6 +90,7 @@ sections:
     | **Web Component** | `@prompt-anonymizer/element` | 프레임워크에 독립적인 `<prompt-anonymizer>` 요소: 익명화 → 복원 패널 전체를 어떤 사이트에도 삽입할 수 있습니다(순수 HTML, Svelte, Angular 등). |
     | **React / Vue** | `@prompt-anonymizer/react` / `@prompt-anonymizer/vue` | 바로 쓸 수 있는 `<AnonymizerPanel />` 컴포넌트와 커스텀 UI용 `useAnonymizer()` 훅 / 컴포저블. 아래 빠른 시작 참고. |
     | **로컬 프록시 + 관리 GUI** | `npx @prompt-anonymizer/proxy` | OpenAI 호환 리버스 프록시: `OPENAI_BASE_URL`을 이쪽으로 지정하면 PII가 컴퓨터를 떠나기 전에 마스킹되고, 응답의 레이블은 복원됩니다(스트리밍 포함). 관리 GUI는 `http://127.0.0.1:8787/admin/`. 아래 빠른 시작 참고. |
+    | **MCP 서버** | `npx @prompt-anonymizer/mcp` | 모든 MCP 클라이언트(Claude Desktop, Claude Code, Cursor 등)용 `anonymize` / `deanonymize` / `scan` 도구. 레이블 매핑은 서버 메모리에 유지(`mapping_id`)되며, 명시적으로 요청하지 않는 한 모델에 표시되지 않습니다. 아래 빠른 시작 참고. |
     | **커밋 훅 / CI 게이트** | `prompt-anonymizer scan` (두 CLI 모두) + [`.pre-commit-hooks.yaml`](../../.pre-commit-hooks.yaml) | 종료 코드 기반 PII 게이트로 커밋 시·CI 검사에 사용: `file:line:col`과 엔티티 유형만 보고하며, 매칭된 텍스트는 절대 출력하지 않습니다. 기본값은 오프라인·모델 불필요. 아래 참고. |
   quickstart_python: |
     ## 빠른 시작 (Python)
@@ -204,15 +205,15 @@ sections:
     있습니다.
   quickstart_mcp: |
     ## 빠른 시작 (MCP 서버)
-
+    
     Claude Desktop, Claude Code, Cursor 등 모든 MCP 클라이언트에 온디바이스
     익명화 도구를 제공합니다:
-
+    
     ```bash
     # Claude Code:
     claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
     ```
-
+    
     세 가지 도구는 모두 PII가 모델 컨텍스트에 들어가지 않도록 설계되었습니다.
     `anonymize`는 마스킹된 텍스트와 `mapping_id`를 반환하고(매핑은 명시적으로
     요청하지 않는 한 서버 메모리에 유지), `deanonymize`는 `mapping_id`로 복원하며
@@ -408,12 +409,15 @@ sections:
     
     열려 있는 [issues](https://github.com/akazah/prompt-anonymizer/issues)와
     [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md)를 참고하세요. 주요 항목:
-    npm / PyPI 게시, 스토어 게시(Chrome Web Store), 코드 서명, 더 작은 일본어
+    PyPI / npm 레지스트리 게시(Trusted Publishing 활성화 — 현재는 GitHub
+    Releases에서 설치 가능), Chrome Web Store 등록, 코드 서명, 더 작은 일본어
     NER 모델, 다지역 구조화 PII(체크섬 검증을 통한 전화번호 / 국민 ID 형식
-    추가), MCP 서버.
+    추가).
   contributing: |
     ## Contributing / Security / License
     
+    - [docs/INTEGRATIONS.md](../INTEGRATIONS.md) — LiteLLM, OpenWebUI, MCP 클라이언트, git 훅 및 CI 레시피
     - [CONTRIBUTING.md](../../.github/CONTRIBUTING.md) — 개발 환경 설정(uv / pnpm), 테스트·평가 명령
+    - [docs/AUDIT.md](../AUDIT.md) — 온디바이스 주장을 직접 검증하는 절차
     - [SECURITY.md](../../.github/SECURITY.md) — 취약점 및 익명화 우회 보고
     - [MIT](../../LICENSE)
