@@ -51,6 +51,7 @@ projet est sous licence MIT et assez petit pour être audité d'une traite.
 - [Démarrage rapide (Python)](#démarrage-rapide-python)
 - [Démarrage rapide (JavaScript / TypeScript)](#démarrage-rapide-javascript--typescript)
 - [Démarrage rapide (proxy local)](#démarrage-rapide-proxy-local)
+- [Démarrage rapide (serveur MCP)](#démarrage-rapide-serveur-mcp)
 - [Garde-fou au commit / en CI (`scan`)](#garde-fou-au-commit--en-ci-scan)
 - [Pourquoi pas… ?](#pourquoi-pas-)
 - [Comment ça marche](#comment-ça-marche)
@@ -208,6 +209,24 @@ permet d'éditer la configuration du proxy (upstream, NER, listes deny/allow)
 et offre un bac à sable d'anonymisation strictement local. Le proxy écoute
 sur `127.0.0.1` par défaut ; les valeurs originales ne peuvent être révélées
 dans la GUI que si vous activez explicitement `--record-mappings`.
+
+## Démarrage rapide (serveur MCP)
+
+Offrez des outils d'anonymisation sur l'appareil à tout client MCP — Claude
+Desktop, Claude Code, Cursor, … :
+
+```bash
+# Claude Code:
+claude mcp add prompt-anonymizer -- npx -y @prompt-anonymizer/mcp
+```
+
+Trois outils, tous conçus pour que les PII ne pénètrent pas le contexte du
+modèle : `anonymize` renvoie le texte masqué et un `mapping_id` (le mapping
+reste en mémoire serveur sauf demande explicite), `deanonymize` restaure par
+`mapping_id` — éventuellement directement dans un fichier — et `scan` vérifie
+les fichiers pour des PII, en ne rapportant que `file:line:col` et le type
+d'entité, jamais le texte détecté. Passez `--ner` dans les arguments du serveur
+pour masquer aussi noms/lieux (téléchargement unique du modèle au premier usage).
 
 ## Garde-fou au commit / en CI (`scan`)
 
