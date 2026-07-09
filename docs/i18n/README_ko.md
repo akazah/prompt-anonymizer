@@ -7,6 +7,8 @@
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer?logo=pypi&logoColor=white)](https://pypi.org/project/prompt-anonymizer/)
+[![npm](https://img.shields.io/npm/v/%40prompt-anonymizer%2Fcli?logo=npm)](https://www.npmjs.com/package/@prompt-anonymizer/cli)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
@@ -416,8 +418,7 @@ pt, it)의 구조화된 PII 재현율(전화 / 이메일 / 카드)은 골든 세
 
 열려 있는 [issues](https://github.com/akazah/prompt-anonymizer/issues)와
 [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md)를 참고하세요. 주요 항목:
-PyPI / npm 레지스트리 게시(Trusted Publishing 활성화 — 현재는 GitHub
-Releases에서 설치 가능), Chrome Web Store 등록, 코드 서명, 더 작은 일본어
+Chrome Web Store 등록, 코드 서명, 더 작은 일본어
 NER 모델, 다지역 구조화 PII(체크섬 검증을 통한 전화번호 / 국민 ID 형식
 추가).
 

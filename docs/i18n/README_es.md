@@ -7,6 +7,8 @@
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer?logo=pypi&logoColor=white)](https://pypi.org/project/prompt-anonymizer/)
+[![npm](https://img.shields.io/npm/v/%40prompt-anonymizer%2Fcli?logo=npm)](https://www.npmjs.com/package/@prompt-anonymizer/cli)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
@@ -437,8 +439,7 @@ texto del mundo real.
 
 Consulta los [issues](https://github.com/akazah/prompt-anonymizer/issues)
 abiertos y [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Destacados:
-publicación en PyPI / npm (Trusted Publishing — hoy instalable desde
-GitHub Releases), Chrome Web Store, firma de código, modelos NER japoneses
+Chrome Web Store, firma de código, modelos NER japoneses
 más pequeños, PII estructurado multirregión (más formatos de teléfono / ID
 nacional con validación por suma de comprobación).
 

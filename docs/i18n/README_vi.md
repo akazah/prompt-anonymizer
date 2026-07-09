@@ -7,6 +7,8 @@
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer?logo=pypi&logoColor=white)](https://pypi.org/project/prompt-anonymizer/)
+[![npm](https://img.shields.io/npm/v/%40prompt-anonymizer%2Fcli?logo=npm)](https://www.npmjs.com/package/@prompt-anonymizer/cli)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
@@ -416,8 +418,7 @@ tế.
 ## Lộ trình
 
 Xem [issues](https://github.com/akazah/prompt-anonymizer/issues) mở và
-[IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Nổi bật: công bố PyPI /
-npm (Trusted Publishing — hiện cài được từ GitHub Releases), Chrome Web Store,
+[IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Nổi bật: Chrome Web Store,
 ký mã, mô hình NER tiếng Nhật nhỏ hơn, PII có cấu trúc đa vùng (thêm định
 dạng số điện thoại / ID quốc gia qua kiểm tra checksum).
 
