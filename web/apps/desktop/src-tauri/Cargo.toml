@@ -1,6 +1,6 @@
 [package]
 name = "prompt-anonymizer-desktop"
-version = "0.3.0"
+version = "0.3.1"
 description = "A buddy check for PII before it reaches an LLM - on-device desktop app"
 authors = ["akazah"]
 license = "MIT"

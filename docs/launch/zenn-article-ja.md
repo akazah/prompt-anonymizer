@@ -143,7 +143,7 @@ export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
 # .pre-commit-config.yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.3.0
+    rev: v0.3.1
     hooks:
       - id: prompt-anonymizer-scan
 ```

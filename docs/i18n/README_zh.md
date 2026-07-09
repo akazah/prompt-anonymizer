@@ -238,7 +238,7 @@ prompt-anonymizer scan --deny ProjectX --json -t "..."
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.3.0
+    rev: v0.3.1
     hooks:
       - id: prompt-anonymizer-scan
         # args: [--deny, ProjectX, --allow, support@example.com]
