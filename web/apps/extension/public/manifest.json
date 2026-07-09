@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Prompt Anonymizer",
-  "description": "Anonymize PII before it reaches an LLM - on-device, with consistent reversible labels (JA/EN).",
+  "description": "A buddy check for PII before you paste into an LLM - on-device, with consistent reversible labels (JA/EN).",
   "version": "0.3.0",
   "minimum_chrome_version": "116",
   "icons": {

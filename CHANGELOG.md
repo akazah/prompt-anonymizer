@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Positioning: framed the product as a **buddy check / poka-yoke** — a
+  second-layer, on-device double-check that backs up the "don't paste that
+  into an LLM" rule teams already have — rather than a primary "use frontier
+  LLMs without showing them your PII" guarantee. Rewrote the README headline,
+  lead and comparison table (now "lines of defense against a PII slip") across
+  all ten locale sources, plus package descriptions, web/extension/desktop UI
+  copy, the social-preview card, and the Show HN / Chrome Web Store / Zenn
+  launch drafts. Copy only — no behavioural change. (`demo/social-preview.png`
+  regenerated for the new tagline.)
 - README i18n: `README.md` and `docs/i18n/README_*.md` are now generated from
   `docs/i18n/locales/<code>.yaml` via `scripts/render_readme_i18n.py` (CI
   `--check` gate). Added missing MCP quickstart sections to eight translated
