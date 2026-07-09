@@ -7,6 +7,8 @@ English | [日本語](docs/i18n/README_ja.md) | [Español](docs/i18n/README_es.m
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+[![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer?logo=pypi&logoColor=white)](https://pypi.org/project/prompt-anonymizer/)
+[![npm](https://img.shields.io/npm/v/%40prompt-anonymizer%2Fcli?logo=npm)](https://www.npmjs.com/package/@prompt-anonymizer/cli)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -415,9 +417,8 @@ real-world text.
 ## Roadmap
 
 See open [issues](https://github.com/akazah/prompt-anonymizer/issues) and
-[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights: PyPI /
-npm registry publication (enable trusted publishing — packages ship with
-GitHub Releases today), Chrome Web Store listing, code signing, smaller
+[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). Highlights:
+Chrome Web Store listing, code signing, smaller
 Japanese NER models, multi-region structured PII (more phone / national-ID
 formats via checksum validation), **opt-in granular redaction** (locale-aware
 policies that preserve coarse-grained context — e.g. surname-only hints, phone

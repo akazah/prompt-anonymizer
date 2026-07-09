@@ -8,6 +8,8 @@ sections:
     
     [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
     [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
+    [![PyPI](https://img.shields.io/pypi/v/prompt-anonymizer?logo=pypi&logoColor=white)](https://pypi.org/project/prompt-anonymizer/)
+    [![npm](https://img.shields.io/npm/v/%40prompt-anonymizer%2Fcli?logo=npm)](https://www.npmjs.com/package/@prompt-anonymizer/cli)
     [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
     [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
     
@@ -442,8 +444,7 @@ sections:
     
     Consultez les [issues](https://github.com/akazah/prompt-anonymizer/issues)
     ouvertes et [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md). Points
-    saillants : publication PyPI / npm (Trusted Publishing — installable
-    aujourd'hui via GitHub Releases), Chrome Web Store, signature du code,
+    saillants : Chrome Web Store, signature du code,
     modèles NER japonais plus petits, PII structurées multi-régions (plus de
     formats de téléphone / d'identifiants nationaux avec validation par somme
     de contrôle).
