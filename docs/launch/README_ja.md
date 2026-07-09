@@ -1,8 +1,8 @@
 # ローンチ計画（ランチ計画）
 
-**最終更新:** 2026-07-08 · **対象リリース:** v0.3.0
+**最終更新:** 2026-07-09 · **対象リリース:** v0.3.1
 
-v0.3.0 は「リポジトリからビルドして使う」状態から「`pip install` / `npx` で
+v0.3.1 は「リポジトリからビルドして使う」状態から「`pip install` / `npx` で
 ワンコマンド導入できる」状態へ切り替える初回公開リリースです。公開と
 同時に一度だけ大きく告知する前提で、手順と原稿をこのディレクトリに
 集約しています。
@@ -14,7 +14,7 @@ v0.3.0 は「リポジトリからビルドして使う」状態から「`pip in
 
 | 区分 | 状態 | メモ |
 | --- | --- | --- |
-| コード・バージョン | ✅ 完了 | `0.3.0`（PyPI / npm 全パッケージで一致） |
+| コード・バージョン | ✅ 完了 | `0.3.1`（PyPI / npm 全パッケージで一致） |
 | パッケージ README / LICENSE | ✅ 完了 | 公開対象 npm 7 パッケージすべて |
 | ローカル dry-run | ✅ 完了 | `uv build`、全 npm `pnpm pack` 成功（2026-07-08） |
 | デモ GIF（全言語） | ✅ 完了 | README 埋め込み用に再生成済み（PR #33） |
@@ -42,7 +42,7 @@ v0.3.0 は「リポジトリからビルドして使う」状態から「`pip in
 - [x] `pnpm --filter "./packages/*" build && … pack` が成功する
 - [x] tarball に `dist/` / `README.md` / `LICENSE` / `package.json` のみ（余計なファイルなし）
 - [x] 全 `docs/i18n/README_*.md` の PyPI/npm 未公開注記を削除（`README_it.md` 含む）
-- [x] 告知原稿のバージョン表記を `v0.3.0` に統一（Zenn の pre-commit 例など）
+- [x] 告知原稿のバージョン表記を `v0.3.1` に統一（Zenn の pre-commit 例など）
 
 ## 公開スイッチ（リポジトリ管理者 — 外部アカウント）
 
@@ -51,14 +51,14 @@ v0.3.0 は「リポジトリからビルドして使う」状態から「`pip in
 1. [pypi.org](https://pypi.org/manage/account/publishing/) で pending publisher を登録
    （project: `prompt-anonymizer`, workflow: `release.yml`, environment: `pypi`）
 2. GitHub リポジトリ変数 `PYPI_PUBLISH=true`
-3. `v0.3.0` タグを push → `pip install prompt-anonymizer==0.3.0` で確認
+3. `v0.3.1` タグを push → `pip install prompt-anonymizer==0.3.1` で確認
 
 ### npm
 
 1. npm で `@prompt-anonymizer` org を作成
 2. 初回は手動 `pnpm publish` が必要な場合あり → trusted publisher 登録
    （workflow: `release-npm.yml`, environment: `npm`）
-3. `NPM_PUBLISH=true` → `npx @prompt-anonymizer/cli@0.3.0 version` で確認
+3. `NPM_PUBLISH=true` → `npx @prompt-anonymizer/cli@0.3.1 version` で確認
 
 ### README 最終掃除（packages live 確認後、同 PR または follow-up）
 
@@ -81,8 +81,10 @@ v0.3.0 は「リポジトリからビルドして使う」状態から「`pip in
 **ルール:** 最初の 24 時間はコメントに全部返信する。疑われたら DevTools の
 ネットワークタブデモが最強。ソースへのリンクで議論を終わらせる。
 
-## 告知で強調するポイント（v0.3.0）
+## 告知で強調するポイント（v0.3.1）
 
+- **立ち位置は「ポカヨケ／ダブルチェック」** — 「LLM に貼らない」という
+  既存ルールへの二層目。うっかり送信を端末内で捕まえる（一次保証ではなく裏打ち）
 - **10 言語**（en, ja, es, vi, zh, ko, fr, de, pt, it）— レジストリ駆動で
   両コアがパリティ
 - **完全オンデバイス** — ブラウザは WebGPU/WASM、Python は spaCy / ローカル HF
@@ -115,7 +117,7 @@ v0.3.0 は「リポジトリからビルドして使う」状態から「`pip in
 ## 次のアクション（優先順）
 
 1. **PyPI / npm の trusted publisher を登録し、公開フラグを ON**
-2. **`v0.3.0` タグを push** → install 確認
+2. **`v0.3.1` タグを push** → install 確認
 3. **Social preview を GitHub にアップロード**
 4. **Zenn + Show HN を同日投稿**
 5. **Issue 10 件を file**

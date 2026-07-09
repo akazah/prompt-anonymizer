@@ -10,7 +10,7 @@ Japanese summary (status + timeline): [README_ja.md](README_ja.md).
 Everything below is written so a repo admin can execute top-to-bottom in one
 sitting (registry account setup aside).
 
-**Status (2026-07-08, v0.3.0):** code and package metadata are ready; local
+**Status (2026-07-09, v0.3.1):** code and package metadata are ready; local
 dry-runs pass; per-language demo GIFs are regenerated. Remaining work is
 registry admin (PyPI/npm trusted publishing switches), GitHub Social preview
 upload, then tag + announce.
@@ -21,7 +21,7 @@ upload, then tag + announce.
       (`core`, `cli`, `element`, `react`, `vue`, `proxy`, `mcp`) — the npm
       package page renders the README; without one the listing is blank.
 - [x] `homepage` / `bugs` fields in each publishable `package.json`.
-- [x] **Version consistency.** First published release uses `0.3.0` (bumped in
+- [x] **Version consistency.** First published release uses `0.3.1` (bumped in
       the release PR; `rg` one-liner in [../RELEASING.md](../RELEASING.md)
       lists all version files).
 - [x] Local dry-runs pass: `uv build` and
