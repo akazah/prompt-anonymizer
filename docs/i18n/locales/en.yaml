@@ -3,29 +3,37 @@ sections:
   preamble: |
     # Prompt Anonymizer
     
-    > **Use frontier LLMs without showing them your PII.**
-    > Reversible, on-device anonymization — don't trade intelligence for privacy.
+    > **A buddy check for your prompts — before they reach an LLM.**
+    > On-device, reversible anonymization that catches the PII you didn't mean to send.
     
     [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
     [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
     [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
     [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
     
-    Today you get two options. Run a local model — private, but you give up
-    frontier intelligence. Or paste into ChatGPT / Claude / Gemini and police
-    yourself, one prompt at a time. Prompt Anonymizer sits in between:
-    
-    |  | Intelligence | Privacy | What you have to trust |
-    |---|---|---|---|
-    | Local model | ✗ sacrificed | ✓ | nothing |
-    | Frontier model, raw | ✓ | ✗ | the vendor, and your own vigilance |
-    | **Frontier model + Prompt Anonymizer** | **✓** | **✓** | **code you can read + one final review** |
-    
+    Your team already has the rule: *don't paste customer data, secrets, or
+    personal info into ChatGPT / Claude / Gemini.* But people are in a hurry, and
+    a name or a phone number slips through. Prompt Anonymizer is the buddy check —
+    it runs **on your machine** and catches that PII **before** the text leaves,
+    so a slip doesn't become a leak. It doesn't replace the rule or your judgment;
+    it backs them up.
+
+    | Line of defense against a PII slip | Catches it? | What you trust |
+    |---|---|---|
+    | A written policy alone | ✗ relies on memory | everyone, every time |
+    | Your own last-second vigilance | ~ when you remember | your attention, mid-rush |
+    | **+ Prompt Anonymizer** | **✓ automatic, on-device** | **code you can read** |
+
     It replaces PII with consistent labels (`<人名_1>`, `<Name_1>`, `<Nombre_1>`,
     `<Tên_1>`, …) **before** the text leaves your machine. Because the same value
-    always gets the same label, the LLM's answer still makes sense. When the reply
-    comes back, the mapping — which never left your device — restores the real
-    values.
+    always gets the same label, the LLM's answer still makes sense — you're not
+    trading away frontier intelligence to stay safe. When the reply comes back,
+    the mapping — which never left your device — restores the real values.
+
+    For people, it's a second pair of eyes in the browser, desktop app, or Chrome
+    extension. For pipelines, the same check runs automatically — the
+    OpenAI-compatible proxy masks before egress, and the `scan` gate fails a commit
+    or CI run when PII slips in.
     
     Supported languages: English (`en`), Japanese (`ja`), Spanish (`es`),
     Vietnamese (`vi`), and — new — Chinese (`zh`), Korean (`ko`), French (`fr`),
