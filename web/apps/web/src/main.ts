@@ -39,8 +39,9 @@ app.innerHTML = `
         <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
       </header>
       <p class="privacy">
-        <strong>100% on-device.</strong> Detection runs in your browser via WebGPU/WASM —
-        your text is never sent to any server. <span lang="ja">テキストはサーバーへ一切送信されません（全処理がブラウザ内で完結します）。</span>
+        <strong>A second pair of eyes before you paste into an LLM.</strong> 100% on-device —
+        detection runs in your browser via WebGPU/WASM, your text is never sent to any server.
+        <span lang="ja">送る前のダブルチェック。全処理がブラウザ内で完結し、テキストはサーバーへ一切送信されません。</span>
       </p>
     </div>
 

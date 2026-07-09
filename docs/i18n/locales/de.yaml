@@ -3,31 +3,39 @@ sections:
   preamble: |
     # Prompt Anonymizer
     
-    > **Nutzen Sie Frontier-LLMs, ohne ihnen Ihre PII zu zeigen.**
-    > Reversible Anonymisierung direkt auf dem Gerät — tauschen Sie Intelligenz
-    > nicht gegen Privatsphäre ein.
+    > **Das Vier-Augen-Prinzip für Ihre Prompts – bevor sie ein LLM erreichen.**
+    > Reversible Anonymisierung direkt auf dem Gerät, die PII abfängt, die Sie gar nicht senden wollten.
     
     [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
     [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
     [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
     [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
     
-    Heute haben Sie zwei Optionen. Ein lokales Modell ausführen — privat, aber
-    Sie verzichten auf Frontier-Intelligenz. Oder in ChatGPT / Claude / Gemini
-    einfügen und sich selbst kontrollieren, Prompt für Prompt. Prompt Anonymizer
-    liegt dazwischen:
-    
-    |  | Intelligenz | Privatsphäre | Worauf Sie vertrauen müssen |
-    |---|---|---|---|
-    | Lokales Modell | ✗ geopfert | ✓ | nichts |
-    | Frontier-Modell, ungefiltert | ✓ | ✗ | der Anbieter und Ihre eigene Wachsamkeit |
-    | **Frontier-Modell + Prompt Anonymizer** | **✓** | **✓** | **Code, den Sie lesen können + eine letzte Durchsicht** |
-    
+    Ihr Team hat bereits die Regel: *keine Kundendaten, Geheimnisse oder
+    persönlichen Informationen in ChatGPT / Claude / Gemini einfügen.* Aber man
+    ist in Eile, und ein Name oder eine Telefonnummer rutscht durch. Prompt
+    Anonymizer ist dieses zweite Augenpaar – es läuft **auf Ihrem Rechner** und
+    fängt diese PII ab, **bevor** der Text ihn verlässt, damit aus einem
+    Ausrutscher kein Leck wird. Es ersetzt weder die Regel noch Ihr Urteil; es
+    stützt sie.
+
+    | Verteidigungslinie gegen einen PII-Ausrutscher | Fängt sie es ab? | Worauf Sie vertrauen |
+    |---|---|---|
+    | Eine schriftliche Richtlinie allein | ✗ verlässt sich aufs Gedächtnis | auf jeden, jedes Mal |
+    | Ihre eigene Wachsamkeit in letzter Sekunde | ~ wenn Sie daran denken | auf Ihre Aufmerksamkeit, mitten in der Hektik |
+    | **+ Prompt Anonymizer** | **✓ automatisch, auf dem Gerät** | **auf Code, den Sie lesen können** |
+
     Es ersetzt PII durch konsistente Label (`<人名_1>`, `<Name_1>`,
     `<Nombre_1>`, `<Tên_1>`, …), **bevor** der Text Ihren Rechner verlässt. Da
     derselbe Wert immer dasselbe Label erhält, ergibt die Antwort des LLM
-    weiterhin Sinn. Kommt die Antwort zurück, stellt das Mapping — das Ihr Gerät
-    nie verlassen hat — die echten Werte wieder her.
+    weiterhin Sinn — Sie geben für Ihre Sicherheit keine Frontier-Intelligenz
+    auf. Kommt die Antwort zurück, stellt das Mapping — das Ihr Gerät nie
+    verlassen hat — die echten Werte wieder her.
+
+    Für Menschen ist es ein zweites Augenpaar im Browser, in der Desktop-App oder
+    der Chrome-Erweiterung. Für Pipelines wird dieselbe Prüfung automatisch
+    erzwungen — der OpenAI-kompatible Proxy maskiert vor dem Versand, und das
+    `scan`-Gate lässt einen Commit oder CI-Lauf scheitern, wenn PII durchrutscht.
     
     Unterstützte Sprachen: Englisch (`en`), Japanisch (`ja`), Spanisch (`es`),
     Vietnamesisch (`vi`) und — neu — Chinesisch (`zh`), Koreanisch (`ko`),

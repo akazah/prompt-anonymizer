@@ -3,28 +3,36 @@ sections:
   preamble: |
     # Prompt Anonymizer
     
-    > **PII를 보여주지 않고 프런티어 LLM을 사용하세요.**
-    > 되돌릴 수 있는 온디바이스 익명화 — 지능과 프라이버시를 맞바꾸지 마세요.
+    > **프롬프트에 대한 더블 체크 — LLM에 닿기 전에.**
+    > 되돌릴 수 있는 온디바이스 익명화가, 보낼 생각이 없던 PII를 잡아냅니다.
     
     [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
     [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
     [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
     [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
     
-    지금은 선택지가 둘뿐입니다. 로컬 모델을 돌리기 — 프라이빗하지만 프런티어급
-    지능은 포기해야 합니다. 아니면 ChatGPT / Claude / Gemini에 붙여넣고 프롬프트
-    하나하나를 스스로 검열하기. Prompt Anonymizer는 그 중간에 위치합니다:
-    
-    |  | 지능 | 프라이버시 | 신뢰해야 하는 것 |
-    |---|---|---|---|
-    | 로컬 모델 | ✗ 희생됨 | ✓ | 없음 |
-    | 프런티어 모델(그대로) | ✓ | ✗ | 벤더, 그리고 자신의 주의력 |
-    | **프런티어 모델 + Prompt Anonymizer** | **✓** | **✓** | **읽을 수 있는 코드 + 전송 전 마지막 확인** |
-    
+    당신의 팀에는 이미 규칙이 있습니다: *고객 데이터나 기밀, 개인정보를
+    ChatGPT / Claude / Gemini에 붙여넣지 말 것.* 하지만 사람은 늘 바쁘고, 이름이나
+    전화번호가 슬쩍 끼어듭니다. Prompt Anonymizer가 바로 그 더블 체크입니다 —
+    **당신의 컴퓨터에서** 실행되어 텍스트가 떠나기 **전에** 그 PII를 잡아내므로,
+    실수가 유출로 이어지지 않습니다. 규칙이나 당신의 판단을 대체하는 것이 아니라,
+    그것을 뒷받침합니다.
+
+    | PII 실수에 대한 방어선 | 잡아내는가? | 신뢰해야 하는 것 |
+    |---|---|---|
+    | 문서로 된 규칙만 | ✗ 기억에 의존 | 모두가, 매번 |
+    | 전송 직전 자신의 주의력 | ~ 기억날 때만 | 바쁜 와중의 주의력 |
+    | **+ Prompt Anonymizer** | **✓ 자동, 온디바이스** | **읽을 수 있는 코드** |
+
     텍스트가 컴퓨터를 떠나기 **전에** PII를 일관된 레이블(`<人名_1>`, `<Name_1>`,
     `<Nombre_1>`, `<Tên_1>` 등)로 치환합니다. 같은 값에는 항상 같은 레이블이
-    붙기 때문에 LLM의 답변은 여전히 문맥이 통합니다. 응답이 돌아오면, 기기를
-    한 번도 떠난 적 없는 매핑이 실제 값을 복원합니다.
+    붙기 때문에 LLM의 답변은 여전히 문맥이 통합니다 — 안전을 위해 프런티어급
+    지능을 포기할 필요가 없습니다. 응답이 돌아오면, 기기를 한 번도 떠난 적 없는
+    매핑이 실제 값을 복원합니다.
+
+    사람에게는 브라우저, 데스크톱 앱, Chrome 확장에서의 '또 하나의 눈'입니다.
+    파이프라인에는 같은 검사가 자동으로 적용됩니다 — OpenAI 호환 프록시가 전송
+    전에 마스킹하고, `scan` 게이트가 PII가 섞인 커밋이나 CI 실행을 실패시킵니다.
     
     지원 언어: 영어(`en`), 일본어(`ja`), 스페인어(`es`), 베트남어(`vi`),
     그리고 새로 추가된 중국어(`zh`), 한국어(`ko`), 프랑스어(`fr`),

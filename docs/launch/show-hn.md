@@ -6,7 +6,7 @@ source). First comment goes up immediately after submitting.
 ## Title
 
 ```
-Show HN: Use frontier LLMs without showing them your PII (on-device, reversible)
+Show HN: A buddy check for PII before it reaches an LLM (on-device, reversible)
 ```
 
 (80-char limit; alternates below.)
@@ -27,10 +27,12 @@ text full of names, phone numbers and addresses, and the two existing
 options both felt wrong: run a weaker local model, or paste PII into a
 frontier model and rely on my own vigilance, one prompt at a time.
 
-Prompt Anonymizer replaces PII with consistent labels (<Name_1>, <人名_1>)
-*before* the text leaves your machine. Same value → same label, so the
-LLM's answer still makes sense; when the reply comes back, a mapping that
-never left your device restores the real values.
+Prompt Anonymizer is the buddy check I wanted — it replaces PII with
+consistent labels (<Name_1>, <人名_1>) *before* the text leaves your machine.
+Same value → same label, so the LLM's answer still makes sense; when the
+reply comes back, a mapping that never left your device restores the real
+values. It doesn't replace the "don't paste that" rule or the final review —
+it's the second pair of eyes that catches the slip you didn't mean to make.
 
 A few design decisions that might be interesting:
 

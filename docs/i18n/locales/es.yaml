@@ -3,30 +3,39 @@ sections:
   preamble: |
     # Prompt Anonymizer
     
-    > **Usa LLM de frontera sin mostrarles tus PII.**
-    > Anonimización reversible en el dispositivo — no elijas entre inteligencia y
-    > privacidad.
+    > **Una segunda revisión de tus prompts, antes de que lleguen a un LLM.**
+    > Anonimización reversible en el dispositivo que detecta los PII que no querías enviar.
     
     [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
     [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
     [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
     [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
     
-    Hoy tienes dos opciones. Ejecutar un modelo local — privado, pero renuncias
-    a la inteligencia de frontera. O pegar en ChatGPT / Claude / Gemini y
-    vigilarte tú mismo, prompt a prompt. Prompt Anonymizer queda en el medio:
-    
-    |  | Inteligencia | Privacidad | En qué debes confiar |
-    |---|---|---|---|
-    | Modelo local | ✗ sacrificada | ✓ | en nada |
-    | Modelo de frontera, sin filtrar | ✓ | ✗ | en el proveedor y en tu propia vigilancia |
-    | **Modelo de frontera + Prompt Anonymizer** | **✓** | **✓** | **en código que puedes leer + una revisión final** |
-    
+    Tu equipo ya tiene la regla: *no pegar datos de clientes, secretos ni
+    información personal en ChatGPT / Claude / Gemini.* Pero la gente va con
+    prisa, y un nombre o un teléfono se cuela. Prompt Anonymizer es esa segunda
+    revisión: se ejecuta **en tu máquina** y detecta esos PII **antes** de que el
+    texto salga, para que un descuido no se convierta en una filtración. No
+    sustituye la regla ni tu criterio; los respalda.
+
+    | Línea de defensa ante un descuido con PII | ¿Lo detecta? | En qué confías |
+    |---|---|---|
+    | Solo una política escrita | ✗ depende de la memoria | en todos, siempre |
+    | Tu propia vigilancia de último segundo | ~ cuando te acuerdas | en tu atención, con prisa |
+    | **+ Prompt Anonymizer** | **✓ automático, en el dispositivo** | **en código que puedes leer** |
+
     Sustituye los PII por etiquetas coherentes (`<人名_1>`, `<Name_1>`,
     `<Nombre_1>`, `<Tên_1>`, …) **antes** de que el texto salga de tu máquina.
     Como el mismo valor siempre recibe la misma etiqueta, la respuesta del LLM
-    sigue teniendo sentido. Cuando vuelve la respuesta, el mapeo — que nunca
-    salió de tu dispositivo — restaura los valores reales.
+    sigue teniendo sentido — no renuncias a la inteligencia de frontera para
+    estar a salvo. Cuando vuelve la respuesta, el mapeo — que nunca salió de tu
+    dispositivo — restaura los valores reales.
+
+    Para las personas, es una segunda mirada en el navegador, la app de
+    escritorio o la extensión de Chrome. Para las canalizaciones, la misma
+    comprobación se aplica automáticamente: el proxy compatible con OpenAI
+    enmascara antes de la salida, y la puerta `scan` hace fallar un commit o una
+    ejecución de CI cuando se cuela un PII.
     
     Idiomas admitidos: inglés (`en`), japonés (`ja`), español (`es`),
     vietnamita (`vi`) y — nuevos — chino (`zh`), coreano (`ko`), francés (`fr`),

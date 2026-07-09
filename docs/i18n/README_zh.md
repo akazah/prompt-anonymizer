@@ -2,28 +2,34 @@
 
 # Prompt Anonymizer
 
-> **使用前沿 LLM，而不让它们看到你的 PII。**
-> 可逆的设备端匿名化 — 不必用智能换取隐私。
+> **提示词的二次复核 —— 在它们到达 LLM 之前。**
+> 可逆的设备端匿名化，帮你抓住不小心要发出去的 PII。
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
-如今你只有两个选择：运行本地模型 — 私密，但要放弃前沿级智能；或者把内容
-粘贴进 ChatGPT / Claude / Gemini，然后逐条提示词自己盯着。Prompt Anonymizer
-正好位于两者之间：
+你的团队早已有一条规矩：*不要把客户数据、机密或个人信息粘贴进
+ChatGPT / Claude / Gemini。* 但人总在赶时间，一个姓名或电话号码就溜了过去。
+Prompt Anonymizer 就是那次复核 —— 它在**你的机器上**运行，在文本离开**之前**
+抓住这些 PII，让一次疏忽不至于变成一次泄露。它不取代规矩，也不取代你的判断，
+而是为它们兜底。
 
-|  | 智能 | 隐私 | 你需要信任的东西 |
-|---|---|---|---|
-| 本地模型 | ✗ 被牺牲 | ✓ | 无 |
-| 前沿模型（直接使用） | ✓ | ✗ | 厂商，以及你自己的警惕性 |
-| **前沿模型 + Prompt Anonymizer** | **✓** | **✓** | **可以读懂的代码 + 发送前的最后一次检查** |
+| 针对 PII 疏忽的防线 | 能否抓住？ | 你需要信任的东西 |
+|---|---|---|
+| 仅靠一纸制度 | ✗ 依赖记性 | 每个人、每一次 |
+| 你自己临发前的警惕 | ～ 想起来时 | 赶时间中的你的注意力 |
+| **+ Prompt Anonymizer** | **✓ 自动、设备端** | **可以读懂的代码** |
 
 它会在文本离开你的机器**之前**，把 PII 替换为一致的标签（`<人名_1>`、
 `<Name_1>`、`<Nombre_1>`、`<Tên_1>` 等）。由于同一个值总是得到同一个标签，
-LLM 的回答依然保持连贯。回复返回后，从未离开设备的映射表（mapping）
-会把真实值还原回来。
+LLM 的回答依然保持连贯 —— 你无需为了安全而放弃前沿级智能。回复返回后，
+从未离开设备的映射表（mapping）会把真实值还原回来。
+
+对人而言，它是浏览器、桌面应用或 Chrome 扩展里的第二双眼睛。对流水线而言，
+同样的检查会自动执行 —— 兼容 OpenAI 的代理在出站前先做掩码，`scan` 关卡
+会在 PII 混入时让一次提交或 CI 运行失败。
 
 支持的语言：英语（`en`）、日语（`ja`）、西班牙语（`es`）、越南语（`vi`），
 以及新增的中文（`zh`）、韩语（`ko`）、法语（`fr`）、德语（`de`）、

@@ -1,7 +1,7 @@
 {
   "name": "@prompt-anonymizer/proxy",
   "version": "0.3.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. OpenAI-compatible local proxy (prompt-anonymizer-proxy) built on @prompt-anonymizer/core, with a localhost admin GUI.",
+  "description": "A buddy check for PII before it reaches an LLM - consistent, reversible labels. OpenAI-compatible local proxy (prompt-anonymizer-proxy) built on @prompt-anonymizer/core, with a localhost admin GUI.",
   "license": "MIT",
   "type": "module",
   "bin": {

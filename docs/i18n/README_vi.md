@@ -2,28 +2,37 @@
 
 # Prompt Anonymizer
 
-> **Dùng LLM frontier mà không để lộ PII của bạn.**
-> Ẩn danh có thể hoàn nguyên, trên thiết bị — không phải đánh đổi trí tuệ lấy quyền riêng tư.
+> **Một lần kiểm tra kép cho prompt của bạn — trước khi chúng đến một LLM.**
+> Ẩn danh có thể hoàn nguyên, trên thiết bị, bắt được PII bạn không định gửi.
 
 [![CI](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml/badge.svg)](https://github.com/akazah/prompt-anonymizer/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/akazah/prompt-anonymizer)](https://github.com/akazah/prompt-anonymizer/releases)
 [![Python](https://img.shields.io/badge/python-3.12%E2%80%933.13-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](../../LICENSE)
 
-Hiện tại bạn có hai lựa chọn. Chạy mô hình cục bộ — riêng tư, nhưng phải từ bỏ
-trí tuệ frontier. Hoặc dán vào ChatGPT / Claude / Gemini và tự kiểm soát, từng
-prompt một. Prompt Anonymizer nằm ở giữa:
+Đội của bạn đã có quy tắc: *đừng dán dữ liệu khách hàng, thông tin mật hay
+thông tin cá nhân vào ChatGPT / Claude / Gemini.* Nhưng con người thì vội, và
+một cái tên hay số điện thoại lọt qua. Prompt Anonymizer là lần kiểm tra kép
+đó — nó chạy **trên máy của bạn** và bắt PII đó **trước khi** văn bản rời đi,
+để một sơ suất không trở thành rò rỉ. Nó không thay thế quy tắc hay phán đoán
+của bạn; nó hỗ trợ chúng.
 
-|  | Trí tuệ | Quyền riêng tư | Điều bạn phải tin tưởng |
-|---|---|---|---|
-| Mô hình cục bộ | ✗ hy sinh | ✓ | không gì cả |
-| Mô hình frontier, thuần | ✓ | ✗ | nhà cung cấp, và sự cảnh giác của chính bạn |
-| **Mô hình frontier + Prompt Anonymizer** | **✓** | **✓** | **mã nguồn bạn có thể đọc + một lần rà soát cuối** |
+| Tuyến phòng thủ trước một sơ suất PII | Bắt được? | Điều bạn tin tưởng |
+|---|---|---|
+| Chỉ một chính sách bằng văn bản | ✗ dựa vào trí nhớ | mọi người, mọi lúc |
+| Sự cảnh giác phút chót của chính bạn | ~ khi bạn nhớ ra | sự chú ý của bạn, giữa lúc vội |
+| **+ Prompt Anonymizer** | **✓ tự động, trên thiết bị** | **mã nguồn bạn có thể đọc** |
 
 Nó thay thế PII bằng nhãn nhất quán (`<人名_1>`, `<Name_1>`, `<Nombre_1>`,
 `<Tên_1>`, …) **trước khi** văn bản rời khỏi máy của bạn. Vì cùng một giá trị
-luôn nhận cùng một nhãn, câu trả lời của LLM vẫn có nghĩa. Khi phản hồi trở
-về, bảng ánh xạ — không bao giờ rời thiết bị — khôi phục các giá trị thật.
+luôn nhận cùng một nhãn, câu trả lời của LLM vẫn có nghĩa — bạn không phải
+đánh đổi trí tuệ frontier để được an toàn. Khi phản hồi trở về, bảng ánh xạ —
+không bao giờ rời thiết bị — khôi phục các giá trị thật.
+
+Với con người, đó là một cặp mắt thứ hai trong trình duyệt, ứng dụng máy tính
+hay tiện ích Chrome. Với các pipeline, cùng một lần kiểm tra được thực thi tự
+động — proxy tương thích OpenAI che trước khi gửi đi, và cổng `scan` làm hỏng
+một commit hay lần chạy CI khi có PII lọt vào.
 
 Ngôn ngữ hỗ trợ: tiếng Anh (`en`), tiếng Nhật (`ja`), tiếng Tây Ban Nha (`es`),
 tiếng Việt (`vi`), và — mới — tiếng Trung (`zh`), tiếng Hàn (`ko`), tiếng

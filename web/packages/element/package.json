@@ -1,7 +1,7 @@
 {
   "name": "@prompt-anonymizer/element",
   "version": "0.3.0",
-  "description": "Anonymize PII before it reaches an LLM - consistent, reversible labels. Framework-agnostic <prompt-anonymizer> web component built on @prompt-anonymizer/core.",
+  "description": "A buddy check for PII before it reaches an LLM - consistent, reversible labels. Framework-agnostic <prompt-anonymizer> web component built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

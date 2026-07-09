@@ -22,7 +22,8 @@ reaches an LLM. 100% on-device — verifiably: it's open source.
 ## Description
 
 ```
-Use frontier LLMs without showing them your personal data.
+A buddy check for PII before it reaches an LLM — it catches the personal
+data you didn't mean to send.
 
 Prompt Anonymizer replaces PII — names, phone numbers, emails, postal
 codes, credit cards, Japanese My Number — with consistent labels like

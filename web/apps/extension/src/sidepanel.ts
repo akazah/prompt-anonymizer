@@ -41,7 +41,7 @@ const panel = document.querySelector<HTMLDivElement>("#panel")!;
 panel.innerHTML = `
   <div class="wrap">
     <h1><span class="logo-mark">${ICON_SHIELD}</span>Prompt Anonymizer</h1>
-    <p class="privacy"><strong>On-device.</strong> Your text never leaves this browser. / テキストは外部へ送信されません。</p>
+    <p class="privacy"><strong>A second pair of eyes before you paste.</strong> On-device — your text never leaves this browser. / 送る前のダブルチェック。テキストは外部へ送信されません。</p>
 
     <div class="tabs">
       <button id="tab-anon" class="active">Anonymize</button>
