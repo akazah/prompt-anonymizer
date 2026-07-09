@@ -1,7 +1,7 @@
 [project]
 name = "prompt-anonymizer"
 version = "0.3.1"
-description = "Anonymize PII before it reaches an LLM - with consistent, reversible labels. 10 languages: JA/EN/ES/VI/ZH/KO/FR/DE/PT/IT."
+description = "A buddy check for PII before it reaches an LLM - consistent, reversible labels. 10 languages: JA/EN/ES/VI/ZH/KO/FR/DE/PT/IT."
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "akazah", email = "679040+akazah@users.noreply.github.com" }]
