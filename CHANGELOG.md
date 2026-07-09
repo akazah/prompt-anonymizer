@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- PyPI summary (`pyproject.toml` description) now uses the buddy-check
+  wording, matching the npm package descriptions and the rest of the
+  positioning. The old summary predated the reframe and wasn't caught by it,
+  so the published 0.3.1 PyPI page still shows the old line; this lands with
+  the next release.
+
 ## [0.3.1] - 2026-07-09
 
 ### Changed
