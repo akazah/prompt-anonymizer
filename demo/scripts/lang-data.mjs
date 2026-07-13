@@ -25,52 +25,30 @@ export function socialLanguages() {
 export const LANG_DATA = {
   en: {
     labels: { PERSON: "Name", EMAIL_ADDRESS: "Email", LOCATION: "Location", PHONE_NUMBER: "Phone" },
-    // SNS video content (record_social.mjs / social-video.html). `message`
-    // and `reply` are arrays of plain strings and { pii, label } spans; the
-    // pii/label pairs flip between each other during the mask/restore scenes.
+    // SNS / X video content (record_social.mjs / social-video.html).
+    // `message` is plain strings + { pii, label } spans that flip during the punch.
     social: {
-      ui: {
-        app: "Prompt Anonymizer",
-        langPill: "English",
-        anonymize: "Anonymize",
-        restore: "Restore",
-        zoneInside: "Inside your org · on-device",
-        zoneOutside: "Outside · external AI",
-        sentTag: "What the AI receives",
-        replyTag: "LLM reply",
-        restoredTag: "Back inside · restored",
-        badge: "Real PII never leaves",
-      },
       hook: {
-        lines: ["That name, that email —", "safe to paste into an AI?"],
-        sub: "The prompt leaves your org. The PII doesn't have to.",
+        lines: ["That email —", "leaving your org."],
+        sub: "Mute on. Watch the chips.",
       },
       message: [
-        "Draft a follow-up email to ",
+        "Follow up with ",
         { pii: "John Smith", label: "<Name_1>" },
-        " — he's at ",
-        { pii: "john.smith@example.com", label: "<Email_1>" },
-        " or ",
+        " at ",
+        { pii: "john@example.com", label: "<Email_1>" },
+        " / ",
         { pii: "(333) 333-3333", label: "<Phone_1>" },
         ".",
       ],
-      captions: {
-        typed: "3 pieces of PII, about to leave your org",
-        sent: "Only labels cross the line — real data stays inside",
-        restored: "Fully reversible — one click brings the real text back",
+      status: {
+        warn: "3 pieces of PII, leaving now",
+        safe: "Masked on-device",
       },
-      reply: [
-        "Sure! Here's a draft for ",
-        { pii: "John Smith", label: "<Name_1>" },
-        ", ready to send to ",
-        { pii: "john.smith@example.com", label: "<Email_1>" },
-        ".",
-      ],
+      punchline: ["Only the labels leave.", "Real data stays inside."],
       outro: {
         title: "Prompt Anonymizer",
         tag: "A buddy check for PII before it reaches an LLM.",
-        features: "Browser · Extension · Desktop · CLI · Proxy · MCP",
-        langs: "10 languages · MIT · open source",
         url: "github.com/akazah/prompt-anonymizer",
       },
     },
@@ -89,48 +67,27 @@ export const LANG_DATA = {
   ja: {
     labels: { PERSON: "人名", EMAIL_ADDRESS: "メールアドレス", LOCATION: "住所", PHONE_NUMBER: "電話番号" },
     social: {
-      ui: {
-        app: "Prompt Anonymizer",
-        langPill: "日本語",
-        anonymize: "匿名化",
-        restore: "復元",
-        zoneInside: "組織内 · 端末の中",
-        zoneOutside: "組織外 · 外部AI",
-        sentTag: "AIが受け取る内容",
-        replyTag: "LLMの返答",
-        restoredTag: "組織内で復元",
-        badge: "実データは外に出ない",
-      },
       hook: {
-        lines: ["名前もメールも、", "AIに貼って大丈夫？"],
-        sub: "プロンプトは組織の外へ。個人情報まで出す必要はありません。",
+        lines: ["そのメール、", "外に出ます。"],
+        sub: "音なしでOK。チップを見て。",
       },
       message: [
         "",
         { pii: "山田太郎", label: "<人名_1>" },
-        "さん宛のメールを書いて。連絡先は ",
-        { pii: "taro.yamada@example.com", label: "<メールアドレス_1>" },
-        " か ",
+        "さんに連絡して。",
+        { pii: "taro@ex.com", label: "<メールアドレス_1>" },
+        " / ",
         { pii: "090-1234-5678", label: "<電話番号_1>" },
-        " です。",
+        "",
       ],
-      captions: {
-        typed: "個人情報3件が、組織の外へ出る寸前",
-        sent: "境界を越えるのはラベルだけ — 実データは組織内に",
-        restored: "完全に可逆 — ワンクリックで元どおり",
+      status: {
+        warn: "個人情報3件、いま出る",
+        safe: "端末内でマスク済み",
       },
-      reply: [
-        "承知しました。",
-        { pii: "山田太郎", label: "<人名_1>" },
-        "さん宛の下書きです。",
-        { pii: "taro.yamada@example.com", label: "<メールアドレス_1>" },
-        " へ送れます。",
-      ],
+      punchline: ["外に出るのはラベルだけ。", "実データは組織内に残る。"],
       outro: {
         title: "Prompt Anonymizer",
         tag: "LLMに渡す前の、PIIバディチェック。",
-        features: "ブラウザ · 拡張機能 · デスクトップ · CLI · プロキシ · MCP",
-        langs: "10言語対応 · MIT · オープンソース",
         url: "github.com/akazah/prompt-anonymizer",
       },
     },

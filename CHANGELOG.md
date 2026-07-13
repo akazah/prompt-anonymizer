@@ -8,14 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- SNS-sized promo videos (`demo/social/social_<lang>_<fmt>.mp4`): a ~22 s
-  animated mask → LLM reply → restore story, in portrait (1080×1920, Reels /
-  Shorts / TikTok) and square (1080×1080, feed posts), English and Japanese
-  first. Script-generated like every other demo asset — deterministic
-  frame-by-frame rendering via `demo/scripts/record_social.mjs` +
-  `demo/scripts/social-video.html`, per-language copy in
+- SNS-sized promo videos (`demo/social/social_<lang>_<fmt>.mp4`): a ~10 s
+  X-native punch — giant hook → PII chips flip to labels → "only labels
+  leave" — in portrait (1080×1920) and square (1080×1080), English and
+  Japanese first. Script-generated like every other demo asset —
+  deterministic frame-by-frame rendering via `demo/scripts/record_social.mjs`
+  + `demo/scripts/social-video.html`, per-language copy in
   `demo/scripts/lang-data.mjs` (`social` blocks), also wired into the
-  `demo-regen.yml` workflow (`social` target).
+  `demo-regen.yml` workflow (`social` target). OLED true-black; blue =
+  safe / inside, red = PII, green = done.
 
 ### Changed
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
