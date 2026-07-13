@@ -34,12 +34,16 @@ export const LANG_DATA = {
         langPill: "English",
         anonymize: "Anonymize",
         restore: "Restore",
+        zoneInside: "Inside your org · on-device",
+        zoneOutside: "Outside · external AI",
+        sentTag: "What the AI receives",
         replyTag: "LLM reply",
-        badge: "On-device · zero network calls",
+        restoredTag: "Back inside · restored",
+        badge: "Real PII never leaves",
       },
       hook: {
         lines: ["That name, that email —", "safe to paste into an AI?"],
-        sub: "PII slips into prompts more often than you think.",
+        sub: "The prompt leaves your org. The PII doesn't have to.",
       },
       message: [
         "Draft a follow-up email to ",
@@ -51,8 +55,8 @@ export const LANG_DATA = {
         ".",
       ],
       captions: {
-        typed: "3 pieces of PII, about to leave your device",
-        masked: "Masked on-device — nothing leaves your browser",
+        typed: "3 pieces of PII, about to leave your org",
+        sent: "Only labels cross the line — real data stays inside",
         restored: "Fully reversible — one click brings the real text back",
       },
       reply: [
@@ -90,12 +94,16 @@ export const LANG_DATA = {
         langPill: "日本語",
         anonymize: "匿名化",
         restore: "復元",
+        zoneInside: "組織内 · 端末の中",
+        zoneOutside: "組織外 · 外部AI",
+        sentTag: "AIが受け取る内容",
         replyTag: "LLMの返答",
-        badge: "端末内で完結 · 外部送信ゼロ",
+        restoredTag: "組織内で復元",
+        badge: "実データは外に出ない",
       },
       hook: {
         lines: ["名前もメールも、", "AIに貼って大丈夫？"],
-        sub: "個人情報は、思ったよりプロンプトに紛れ込みます。",
+        sub: "プロンプトは組織の外へ。個人情報まで出す必要はありません。",
       },
       message: [
         "",
@@ -107,8 +115,8 @@ export const LANG_DATA = {
         " です。",
       ],
       captions: {
-        typed: "個人情報3件が、端末の外へ出る寸前",
-        masked: "端末内でマスク — ブラウザの外へは何も出ません",
+        typed: "個人情報3件が、組織の外へ出る寸前",
+        sent: "境界を越えるのはラベルだけ — 実データは組織内に",
         restored: "完全に可逆 — ワンクリックで元どおり",
       },
       reply: [

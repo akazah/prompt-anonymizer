@@ -6,6 +6,11 @@
      window.renderSocial(payload) and steps through the timeline with
      window.seekSocial(tMs), so the render is deterministic frame by frame.
 
+     Story: an inside-your-organization zone (blue, trusted) and an
+     outside zone (amber, external AI) separated by a dashed boundary.
+     PII is masked inside; only labels ever cross the boundary; the reply
+     comes back and is restored inside. OLED-friendly true-black palette.
+
      Formats: ?fmt=portrait (1080x1920, Reels/Shorts/TikTok) or
               ?fmt=square   (1080x1080, feed posts).
 
@@ -15,14 +20,19 @@
 <meta charset="utf-8">
 <style>
   :root {
+    /* Palette chosen for the org-boundary story on OLED black, using
+       everyday color semantics rather than dev-tool hues:
+       blue = trusted inside-the-org zone (corporate trust),
+       amber = outside / external AI (caution),
+       red = PII danger, green = restored / success. */
     --ink: #f5f5f4;
-    --muted: #a8a29e;
-    --teal: #2dd4bf;
-    --teal-deep: #0f766e;
-    --rose: #fb7185;
-    --emerald: #34d399;
-    --card: rgba(255, 255, 255, 0.055);
-    --card-line: rgba(255, 255, 255, 0.13);
+    --muted: #9ca3af;
+    --blue: #60a5fa;
+    --blue-soft: #bfdbfe;
+    --amber: #fbbf24;
+    --amber-soft: #fde68a;
+    --red: #f87171;
+    --green: #4ade80;
     --font-ui: "Noto Sans CJK JP", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
     /* Latin glyphs from DejaVu (clean spacing), CJK from Noto Mono. */
     --font-mono: "DejaVu Sans Mono", "Noto Sans Mono CJK JP", "SFMono-Regular", Menlo, Consolas, monospace;
@@ -32,32 +42,26 @@
   body.portrait { width: 1080px; height: 1920px; }
   body.square { width: 1080px; height: 1080px; }
   body {
-    background: radial-gradient(120% 90% at 18% 0%, #123a38 0%, #0c1222 52%, #090d18 100%);
+    background: #000;
     color: var(--ink);
     font-family: var(--font-ui);
     position: relative;
   }
 
-  /* ---- decorative background ---- */
+  /* ---- decorative background (dim glows; true black stays dominant) ---- */
   .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(130px);
-    opacity: 0.5;
+    filter: blur(140px);
   }
-  .b1 { width: 620px; height: 620px; left: -180px; top: -140px; background: #0d9488; animation: drift1 14s ease-in-out infinite alternate; }
-  .b2 { width: 560px; height: 560px; right: -200px; top: 34%; background: #4338ca; opacity: 0.34; animation: drift2 17s ease-in-out infinite alternate; }
-  .b3 { width: 520px; height: 520px; left: 12%; bottom: -220px; background: #9f1239; opacity: 0.22; animation: drift1 19s ease-in-out infinite alternate-reverse; }
+  .b1 { width: 640px; height: 640px; left: -200px; top: -180px; background: #1d4ed8; opacity: 0.28; animation: drift1 14s ease-in-out infinite alternate; }
+  .b2 { width: 600px; height: 600px; right: -220px; bottom: -200px; background: #b45309; opacity: 0.2; animation: drift2 17s ease-in-out infinite alternate; }
   @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(70px, 50px) scale(1.12); } }
   @keyframes drift2 { from { transform: translate(0, 0) scale(1.08); } to { transform: translate(-60px, -70px) scale(0.96); } }
-  .vignette {
-    position: absolute; inset: 0;
-    background: radial-gradient(115% 115% at 50% 45%, transparent 58%, rgba(4, 6, 12, 0.55) 100%);
-  }
 
   #progress {
     position: absolute; left: 0; bottom: 0; height: 10px; width: 0;
-    background: linear-gradient(90deg, var(--teal-deep), var(--teal));
+    background: linear-gradient(90deg, #3b82f6, var(--amber));
     z-index: 40;
   }
 
@@ -75,7 +79,7 @@
     letter-spacing: -0.015em;
     line-height: 1.16;
     opacity: 0;
-    background: linear-gradient(115deg, #fafaf9 30%, #99f6e4 85%);
+    background: linear-gradient(115deg, #fafaf9 30%, var(--blue-soft) 85%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -87,83 +91,122 @@
     color: var(--muted);
     font-weight: 500;
     opacity: 0;
+    line-height: 1.45;
   }
   .portrait .hook-sub { font-size: 40px; }
   .square .hook-sub { font-size: 33px; margin-top: 30px; }
 
-  /* ---- scene 2-4: app ---- */
-  /* The card keeps a constant height (hidden bubbles still occupy layout
-     space), so vertical centering is stable across the whole timeline. */
-  .portrait #scene-app { padding: 0 60px; }
-  .square #scene-app { padding: 0 56px; }
+  /* ---- scene 2-4: zones ---- */
+  .portrait #scene-app { padding: 0 56px; }
+  .square #scene-app { padding: 0 48px; }
 
-  .card {
+  .zone {
     position: relative;
     width: 100%;
-    background: var(--card);
-    border: 2px solid var(--card-line);
-    border-radius: 34px;
-    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+    border-radius: 32px;
+    border: 2.5px solid;
   }
-  .chrome {
-    display: flex; align-items: center; gap: 13px;
-    padding: 26px 34px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  .zone.inside {
+    border-color: rgba(96, 165, 250, 0.45);
+    background: rgba(96, 165, 250, 0.05);
+    box-shadow: 0 0 70px rgba(96, 165, 250, 0.12), inset 0 0 60px rgba(96, 165, 250, 0.04);
   }
-  .chrome i { width: 18px; height: 18px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
-  .chrome i:nth-child(1) { background: #f87171; }
-  .chrome i:nth-child(2) { background: #fbbf24; }
-  .chrome i:nth-child(3) { background: #34d399; }
-  .chrome .app {
-    margin-left: 16px;
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 0.01em;
+  .zone.outside {
+    border-color: rgba(251, 191, 36, 0.42);
+    background: rgba(251, 191, 36, 0.05);
+    box-shadow: 0 0 70px rgba(251, 191, 36, 0.11), inset 0 0 60px rgba(251, 191, 36, 0.04);
   }
-  .chrome .lang-pill {
-    margin-left: auto;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--teal);
-    background: rgba(45, 212, 191, 0.12);
-    border: 1.5px solid rgba(45, 212, 191, 0.35);
+  /* Zone name pill sitting on the border (black plate cuts the border line). */
+  .legend {
+    position: absolute;
+    display: inline-flex; align-items: center; gap: 13px;
+    background: #000;
+    border: 2px solid;
     border-radius: 999px;
-    padding: 6px 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    z-index: 5;
   }
+  .portrait .legend { top: -30px; left: 34px; font-size: 30px; padding: 10px 26px; }
+  .square .legend { top: -22px; left: 28px; font-size: 22px; padding: 5px 17px; }
+  .legend svg { width: 1.15em; height: 1.15em; }
+  .zone.inside .legend { color: var(--blue); border-color: rgba(96, 165, 250, 0.55); }
+  .zone.outside .legend { color: var(--amber); border-color: rgba(251, 191, 36, 0.55); }
 
-  .chat { padding: 40px 38px 8px; }
-  .square .chat { padding: 30px 34px 4px; }
+  .app-row {
+    display: flex; align-items: center; gap: 15px;
+  }
+  .portrait .app-row { padding: 44px 36px 0; }
+  .square .app-row { padding: 22px 28px 0; }
+  .app-row svg { width: 34px; height: 34px; }
+  .square .app-row svg { width: 25px; height: 25px; }
+  .app-row .app { font-weight: 700; font-size: 29px; letter-spacing: 0.01em; }
+  .square .app-row .app { font-size: 22px; }
+  .app-row .lang-pill {
+    margin-left: auto;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--blue);
+    background: rgba(96, 165, 250, 0.1);
+    border: 1.5px solid rgba(96, 165, 250, 0.4);
+    border-radius: 999px;
+    padding: 5px 18px;
+  }
+  .square .app-row .lang-pill { font-size: 17px; padding: 2px 12px; }
+
+  .zone-body { padding: 26px 32px 0; }
+  .square .zone-body { padding: 13px 24px 0; }
+  .zone.outside .zone-body { padding-bottom: 32px; }
+  .square .zone.outside .zone-body { padding-bottom: 17px; }
+
   .bubble {
     border-radius: 26px;
-    line-height: 1.62;
+    line-height: 1.6;
     letter-spacing: 0.005em;
     opacity: 0;
   }
-  .portrait .bubble { font-size: 40px; padding: 30px 36px; }
-  .square .bubble { font-size: 34px; padding: 24px 30px; }
-  .bubble.user {
-    background: rgba(45, 212, 191, 0.09);
-    border: 2px solid rgba(45, 212, 191, 0.22);
-    border-bottom-right-radius: 8px;
-    margin-left: 40px;
-  }
-  .bubble.reply {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.11);
-    border-bottom-left-radius: 8px;
-    margin-top: 30px;
-    margin-right: 40px;
-  }
-  .square .bubble.reply { margin-top: 20px; }
-  .reply-tag {
+  .portrait .bubble { font-size: 37px; padding: 26px 32px; }
+  .square .bubble { font-size: 26px; padding: 13px 22px; }
+  .bubble .tag {
     display: block;
-    font-size: 0.6em;
+    font-size: 0.58em;
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: var(--muted);
     margin-bottom: 10px;
   }
+  .bubble.user {
+    background: rgba(96, 165, 250, 0.09);
+    border: 2px solid rgba(96, 165, 250, 0.28);
+    border-bottom-right-radius: 8px;
+    margin-left: 36px;
+  }
+  .bubble.restored {
+    background: rgba(74, 222, 128, 0.08);
+    border: 2px solid rgba(74, 222, 128, 0.3);
+    border-bottom-left-radius: 8px;
+    margin-right: 36px;
+    margin-top: 24px;
+  }
+  .square .bubble.restored { margin-top: 13px; }
+  .bubble.restored .tag { color: var(--green); }
+  .bubble.sent {
+    background: rgba(251, 191, 36, 0.08);
+    border: 2px solid rgba(251, 191, 36, 0.3);
+    border-bottom-right-radius: 8px;
+    margin-left: 36px;
+  }
+  .bubble.sent .tag { color: var(--amber); }
+  .bubble.reply {
+    background: rgba(251, 191, 36, 0.06);
+    border: 2px solid rgba(251, 191, 36, 0.22);
+    border-bottom-left-radius: 8px;
+    margin-right: 36px;
+    margin-top: 24px;
+  }
+  .square .bubble.reply { margin-top: 13px; }
+  .bubble.reply .tag { color: var(--amber-soft); }
+
   /* Words are inline-block (so lines only break between words / CJK chars),
      chars inside are inline-block so they can be transform-animated. */
   .word { display: inline-block; white-space: nowrap; }
@@ -190,93 +233,136 @@
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.86em;
-    color: #99f6e4;
+    color: var(--blue-soft);
+  }
+  /* Static label chip (what actually crosses the boundary). */
+  .pii-static {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: -0.3em;
+    border-radius: 14px;
+    padding: 2px 14px;
+    background: rgba(96, 165, 250, 0.14);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.86em;
+    color: var(--blue-soft);
   }
 
   .dots {
     display: inline-flex; gap: 12px;
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.11);
+    margin-top: 24px;
+    background: rgba(251, 191, 36, 0.07);
+    border: 2px solid rgba(251, 191, 36, 0.2);
     border-radius: 26px; border-bottom-left-radius: 8px;
-    padding: 26px 34px;
+    padding: 22px 30px;
     opacity: 0;
   }
+  .square .dots { margin-top: 11px; padding: 9px 18px; }
   .dots i {
-    width: 16px; height: 16px; border-radius: 50%;
-    background: var(--muted);
+    width: 15px; height: 15px; border-radius: 50%;
+    background: var(--amber);
     animation: bounce 1s ease-in-out infinite;
   }
   .dots i:nth-child(2) { animation-delay: 0.16s; }
   .dots i:nth-child(3) { animation-delay: 0.32s; }
-  @keyframes bounce { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-12px); opacity: 1; } }
+  @keyframes bounce { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-11px); opacity: 1; } }
 
   .actions {
     position: relative;
-    height: 150px;
     display: flex; align-items: center; justify-content: center;
   }
-  .square .actions { height: 118px; }
+  .portrait .actions { height: 132px; }
+  .square .actions { height: 72px; }
   .btn { position: absolute; opacity: 0; }
   .btn-inner {
     display: inline-flex; align-items: center; gap: 16px;
     font-family: var(--font-ui);
     font-weight: 700;
-    color: #042f2e;
-    background: linear-gradient(150deg, #5eead4, #14b8a6);
+    color: #172554;
+    background: linear-gradient(150deg, #93c5fd, #3b82f6);
     border-radius: 999px;
-    box-shadow: 0 14px 40px rgba(20, 184, 166, 0.4);
+    box-shadow: 0 14px 40px rgba(59, 130, 246, 0.35);
   }
-  .portrait .btn-inner { font-size: 36px; padding: 20px 48px; }
-  .square .btn-inner { font-size: 31px; padding: 16px 40px; }
+  .portrait .btn-inner { font-size: 34px; padding: 18px 44px; }
+  .square .btn-inner { font-size: 25px; padding: 10px 30px; }
   .btn-inner svg { width: 1.15em; height: 1.15em; }
   .btn .ring {
     position: absolute; inset: -14px;
-    border: 4px solid rgba(94, 234, 212, 0.9);
+    border: 4px solid rgba(147, 197, 253, 0.9);
     border-radius: 999px;
     opacity: 0;
   }
+  /* Restore is the success action: green instead of the blue primary. */
+  #btn-restore .btn-inner {
+    color: #052e16;
+    background: linear-gradient(150deg, #86efac, #22c55e);
+    box-shadow: 0 14px 40px rgba(34, 197, 94, 0.35);
+  }
+  #btn-restore .ring { border-color: rgba(134, 239, 172, 0.9); }
 
   .badge {
     position: absolute;
-    top: -34px; right: -20px;
-    display: inline-flex; align-items: center; gap: 14px;
+    display: inline-flex; align-items: center; gap: 13px;
     font-weight: 700;
-    color: #042f2e;
-    background: linear-gradient(150deg, #99f6e4, #2dd4bf);
+    color: #172554;
+    background: linear-gradient(150deg, var(--blue-soft), var(--blue));
     border-radius: 999px;
-    box-shadow: 0 16px 44px rgba(20, 184, 166, 0.45);
+    box-shadow: 0 16px 44px rgba(96, 165, 250, 0.4);
     opacity: 0;
     z-index: 20;
   }
-  .portrait .badge { font-size: 30px; padding: 16px 32px; }
-  .square .badge { font-size: 25px; padding: 12px 26px; top: -28px; }
+  .portrait .badge { font-size: 28px; padding: 13px 28px; top: -30px; right: 26px; }
+  .square .badge { font-size: 20px; padding: 7px 18px; top: -21px; right: 22px; }
   .badge svg { width: 1.2em; height: 1.2em; }
+
+  /* ---- boundary between the zones ---- */
+  .boundary {
+    width: 100%;
+    display: flex; align-items: center; gap: 24px;
+    opacity: 0;
+  }
+  .portrait .boundary { height: 120px; padding: 0 8px; }
+  .square .boundary { height: 54px; padding: 0 6px; }
+  .boundary .line {
+    flex: 1;
+    border-top: 3.5px dashed rgba(148, 163, 184, 0.42);
+  }
+  .boundary .gate {
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: #000;
+    border: 2.5px solid rgba(148, 163, 184, 0.5);
+    color: #cbd5e1;
+  }
+  .portrait .gate { width: 84px; height: 84px; }
+  .square .gate { width: 54px; height: 54px; }
+  .boundary .gate svg { width: 58%; height: 58%; }
 
   .caption-slot {
     position: relative;
     width: 100%;
     display: flex; justify-content: center;
   }
-  .portrait .caption-slot { margin-top: 70px; height: 220px; }
-  .square .caption-slot { margin-top: 34px; height: 150px; }
+  .portrait .caption-slot { margin-top: 58px; height: 210px; }
+  .square .caption-slot { margin-top: 10px; height: 90px; }
   .caption {
     position: absolute;
     display: inline-flex; align-items: center; gap: 20px;
-    max-width: 92%;
+    max-width: 95%;
     font-weight: 600;
     line-height: 1.4;
-    background: rgba(12, 16, 28, 0.72);
+    background: rgba(6, 8, 14, 0.82);
     border: 2px solid rgba(255, 255, 255, 0.14);
     border-radius: 24px;
     opacity: 0;
   }
-  .portrait .caption { font-size: 37px; padding: 26px 38px; }
-  .square .caption { font-size: 30px; padding: 18px 30px; }
+  .portrait .caption { font-size: 36px; padding: 24px 36px; }
+  .square .caption { font-size: 25px; padding: 12px 22px; }
   .caption svg { flex: none; width: 1.4em; height: 1.4em; }
-  .caption.warn { color: #fecdd3; border-color: rgba(251, 113, 133, 0.4); }
-  .caption.safe { color: #99f6e4; border-color: rgba(45, 212, 191, 0.4); }
-  .caption.done { color: #a7f3d0; border-color: rgba(52, 211, 153, 0.4); }
+  .caption.warn { color: #fecaca; border-color: rgba(248, 113, 113, 0.45); }
+  .caption.safe { color: var(--blue-soft); border-color: rgba(96, 165, 250, 0.45); }
+  .caption.done { color: #bbf7d0; border-color: rgba(74, 222, 128, 0.45); }
 
   /* ---- scene 5: outro ---- */
   #scene-outro { text-align: center; padding: 0 70px; }
@@ -287,7 +373,7 @@
     font-weight: 800;
     letter-spacing: -0.015em;
     opacity: 0;
-    background: linear-gradient(115deg, #fafaf9 30%, #99f6e4 85%);
+    background: linear-gradient(115deg, #fafaf9 30%, var(--blue-soft) 85%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -307,10 +393,10 @@
     display: inline-block;
     font-family: var(--font-mono);
     font-weight: 700;
-    color: #042f2e;
-    background: linear-gradient(150deg, #5eead4, #14b8a6);
+    color: #172554;
+    background: linear-gradient(150deg, #93c5fd, #3b82f6);
     border-radius: 999px;
-    box-shadow: 0 16px 44px rgba(20, 184, 166, 0.4);
+    box-shadow: 0 16px 44px rgba(59, 130, 246, 0.35);
     opacity: 0;
   }
   .portrait .outro-url { font-size: 36px; padding: 22px 46px; margin-top: 64px; }
@@ -320,8 +406,6 @@
 <body>
   <div class="blob b1"></div>
   <div class="blob b2"></div>
-  <div class="blob b3"></div>
-  <div class="vignette"></div>
   <div id="progress"></div>
 
   <section class="scene" id="scene-hook">
@@ -331,29 +415,45 @@
   </section>
 
   <section class="scene" id="scene-app">
-    <div class="card">
+    <div class="zone inside" id="zone-inside">
+      <span class="legend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg><span id="legend-inside"></span></span>
       <div class="badge" id="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
         <span id="badge-text"></span>
       </div>
-      <div class="chrome">
-        <i></i><i></i><i></i>
+      <div class="app-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg>
         <span class="app" id="app-name"></span>
         <span class="lang-pill" id="lang-pill"></span>
       </div>
-      <div class="chat">
+      <div class="zone-body">
         <div class="bubble user" id="msg"></div>
-        <div class="dots" id="dots"><i></i><i></i><i></i></div>
-        <div class="bubble reply" id="reply"><span class="reply-tag" id="reply-tag"></span><span id="reply-body"></span></div>
+        <div class="bubble restored" id="restored"><span class="tag" id="restored-tag"></span><span id="restored-body"></span></div>
       </div>
       <div class="actions">
         <span class="btn" id="btn-anon"><span class="ring"></span><span class="btn-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/></svg><span id="btn-anon-text"></span></span></span>
         <span class="btn" id="btn-restore"><span class="ring"></span><span class="btn-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span id="btn-restore-text"></span></span></span>
       </div>
     </div>
+
+    <div class="boundary" id="boundary">
+      <span class="line"></span>
+      <span class="gate" id="gate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg></span>
+      <span class="line"></span>
+    </div>
+
+    <div class="zone outside" id="zone-outside">
+      <span class="legend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A6.5 6.5 0 0 0 5.2 8.8 4.2 4.2 0 0 0 6.2 17"/><path d="M6.2 17h11.3"/></svg><span id="legend-outside"></span></span>
+      <div class="zone-body">
+        <div class="bubble sent" id="sent"><span class="tag" id="sent-tag"></span><span id="sent-body"></span></div>
+        <div class="dots" id="dots"><i></i><i></i><i></i></div>
+        <div class="bubble reply" id="reply"><span class="tag" id="reply-tag"></span><span id="reply-body"></span></div>
+      </div>
+    </div>
+
     <div class="caption-slot">
       <span class="caption warn" id="cap-typed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><span></span></span>
-      <span class="caption safe" id="cap-masked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg><span></span></span>
+      <span class="caption safe" id="cap-sent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg><span></span></span>
       <span class="caption done" id="cap-restored"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M9 12.5l2.2 2.2 4-4.4"/></svg><span></span></span>
     </div>
   </section>
@@ -361,7 +461,7 @@
   <section class="scene" id="scene-outro">
     <div class="logo-mark">
       <svg viewBox="0 0 24 24" fill="none" stroke="url(#lg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#99f6e4"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs>
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>
         <path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/>
         <path d="M8.5 12l2.5 2.5 4.5-4.8"/>
       </svg>
@@ -384,33 +484,36 @@ const T = {
   hookSub: 1600,
   hookOut: 2750,
   appIn: 3250,
-  typeStart: 3950,
+  typeStart: 4000,
   typeDur: 3300,
-  scanStart: 7500,
+  scanStart: 7550,
   scanStep: 260,
-  capTypedIn: 7850,
-  capTypedOut: 10550,
-  btnAnonIn: 8450,
-  btnAnonPress: 9350,
-  btnAnonOut: 11500,
-  maskStart: 9650,
+  capTypedIn: 7900,
+  capTypedOut: 10500,
+  btnAnonIn: 8500,
+  btnAnonPress: 9400,
+  btnAnonOut: 11450,
+  maskStart: 9700,
   maskStep: 220,
-  badgePop: 10600,
-  capMaskedIn: 10900,
-  capMaskedOut: 15550,
-  dotsIn: 11650,
-  dotsOut: 12750,
-  replyIn: 12900,
-  btnRestoreIn: 13850,
-  btnRestorePress: 14800,
-  btnRestoreOut: 17300,
-  restoreStart: 15100,
+  badgePop: 10650,
+  gatePulse: 11550,
+  sentIn: 11650,
+  capSentIn: 11950,
+  capSentOut: 16350,
+  dotsIn: 12650,
+  dotsOut: 13700,
+  replyIn: 13850,
+  restoredIn: 15300,
+  btnRestoreIn: 15750,
+  btnRestorePress: 16650,
+  btnRestoreOut: 19050,
+  restoreStart: 16950,
   restoreStep: 220,
-  capRestoredIn: 16000,
-  capRestoredOut: 17450,
-  appOut: 17650,
-  outroIn: 18150,
-  end: 22000,
+  capRestoredIn: 17850,
+  capRestoredOut: 19450,
+  appOut: 19700,
+  outroIn: 20200,
+  end: 24000,
 };
 
 const EASE_OUT = "cubic-bezier(0.22, 1, 0.36, 1)";
@@ -520,6 +623,21 @@ function buildParts(container, parts) {
   return piiEls;
 }
 
+// Static rendering (no typing, no flips): what the outside world sees -
+// plain text with label chips only. Real PII never appears here.
+function buildStatic(container, parts) {
+  for (const part of parts) {
+    if (typeof part === "string") {
+      container.appendChild(document.createTextNode(part));
+    } else {
+      const chip = document.createElement("span");
+      chip.className = "pii-static";
+      chip.textContent = part.label;
+      container.appendChild(chip);
+    }
+  }
+}
+
 function typeChars(container, start, totalDur) {
   const chars = container.querySelectorAll(".char");
   const step = totalDur / Math.max(chars.length, 1);
@@ -532,13 +650,13 @@ function typeChars(container, start, totalDur) {
 }
 
 // PII chip flip: crossfade orig <-> label while animating the chip width,
-// with a background tint per state (rose = detected, teal = masked,
+// with a background tint per state (red = detected, blue = masked,
 // green = restored).
 const TINT = {
-  none: "rgba(251, 113, 133, 0)",
-  rose: "rgba(251, 113, 133, 0.22)",
-  teal: "rgba(45, 212, 191, 0.17)",
-  green: "rgba(52, 211, 153, 0.15)",
+  none: "rgba(248, 113, 113, 0)",
+  red: "rgba(248, 113, 113, 0.22)",
+  blue: "rgba(96, 165, 250, 0.17)",
+  green: "rgba(74, 222, 128, 0.15)",
 };
 function flip(wrap, delay, dir) {
   const orig = wrap.querySelector(".orig");
@@ -549,13 +667,13 @@ function flip(wrap, delay, dir) {
   anim(wrap, [
     {
       width: (toLbl ? origW : lblW) + "px",
-      backgroundColor: toLbl ? TINT.rose : TINT.teal,
-      boxShadow: toLbl ? "0 0 0 3px rgba(251, 113, 133, 0.35)" : "0 0 0 3px rgba(45, 212, 191, 0.3)",
+      backgroundColor: toLbl ? TINT.red : TINT.blue,
+      boxShadow: toLbl ? "0 0 0 3px rgba(248, 113, 113, 0.35)" : "0 0 0 3px rgba(96, 165, 250, 0.3)",
     },
     {
       width: (toLbl ? lblW : origW) + "px",
-      backgroundColor: toLbl ? TINT.teal : TINT.green,
-      boxShadow: toLbl ? "0 0 0 3px rgba(45, 212, 191, 0.3)" : "0 0 0 3px rgba(52, 211, 153, 0)",
+      backgroundColor: toLbl ? TINT.blue : TINT.green,
+      boxShadow: toLbl ? "0 0 0 3px rgba(96, 165, 250, 0.3)" : "0 0 0 3px rgba(74, 222, 128, 0)",
     },
   ], { delay, duration: 450 });
   anim(toLbl ? orig : lbl, [
@@ -576,14 +694,18 @@ window.renderSocial = (payload) => {
   $("hook-1").textContent = social.hook.lines[0];
   $("hook-2").textContent = social.hook.lines[1] ?? "";
   $("hook-sub").textContent = social.hook.sub;
+  $("legend-inside").textContent = social.ui.zoneInside;
+  $("legend-outside").textContent = social.ui.zoneOutside;
   $("app-name").textContent = social.ui.app;
   $("lang-pill").textContent = social.ui.langPill;
   $("badge-text").textContent = social.ui.badge;
   $("btn-anon-text").textContent = social.ui.anonymize;
   $("btn-restore-text").textContent = social.ui.restore;
+  $("sent-tag").textContent = social.ui.sentTag;
   $("reply-tag").textContent = social.ui.replyTag;
+  $("restored-tag").textContent = social.ui.restoredTag;
   $("cap-typed").querySelector("span:last-child").textContent = social.captions.typed;
-  $("cap-masked").querySelector("span:last-child").textContent = social.captions.masked;
+  $("cap-sent").querySelector("span:last-child").textContent = social.captions.sent;
   $("cap-restored").querySelector("span:last-child").textContent = social.captions.restored;
   $("outro-title").textContent = social.outro.title;
   $("outro-tag").textContent = social.outro.tag;
@@ -592,28 +714,30 @@ window.renderSocial = (payload) => {
   $("outro-url").textContent = social.outro.url;
 
   const msgPii = buildParts($("msg"), social.message);
-  const replyPii = buildParts($("reply-body"), social.reply);
+  const restoredPii = buildParts($("restored-body"), social.reply);
+  buildStatic($("sent-body"), social.message);
+  buildStatic($("reply-body"), social.reply);
 
   // Measure chip widths while both layers still have their natural size
   // (.lbl is absolutely positioned, so offsetWidth is its shrink-wrap width).
   // Chips are border-box, so add their own horizontal padding on top of the
   // content width - otherwise the last characters get clipped.
-  for (const wrap of [...msgPii, ...replyPii]) {
+  for (const wrap of [...msgPii, ...restoredPii]) {
     const cs = getComputedStyle(wrap);
     const pad = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
     wrap.dataset.origW = wrap.querySelector(".orig").offsetWidth + pad;
     wrap.dataset.lblW = wrap.querySelector(".lbl").offsetWidth + pad;
     wrap.style.width = wrap.dataset.origW + "px";
   }
-  // The reply starts in the masked (label) state.
-  for (const wrap of replyPii) {
+  // The restored reply starts in the masked (label) state.
+  for (const wrap of restoredPii) {
     wrap.style.width = wrap.dataset.lblW + "px";
-    wrap.style.backgroundColor = TINT.teal;
+    wrap.style.backgroundColor = TINT.blue;
     wrap.querySelector(".orig").style.opacity = "0";
     wrap.querySelector(".lbl").style.opacity = "1";
   }
-  // Reply text (and its labels) is visible as soon as the bubble pops in.
-  $("reply-body").querySelectorAll(".char").forEach((ch) => { ch.style.opacity = "1"; });
+  // Restored-reply text is visible as soon as its bubble pops in.
+  $("restored-body").querySelectorAll(".char").forEach((ch) => { ch.style.opacity = "1"; });
 
   // ---- scene 1: hook ----
   show($("scene-hook"), 0, { duration: 1, y: 0 });
@@ -622,20 +746,23 @@ window.renderSocial = (payload) => {
   show($("hook-sub"), T.hookSub, { duration: 550 });
   hideAt($("scene-hook"), T.hookOut);
 
-  // ---- scene 2: typing + detection ----
+  // ---- scene 2: zones appear, typing + detection (inside) ----
   show($("scene-app"), T.appIn, { duration: 550, y: 50 });
-  show($("msg"), T.appIn + 350, { duration: 450, y: 20 });
+  show($("zone-inside"), T.appIn + 100, { duration: 500, y: 30 });
+  show($("boundary"), T.appIn + 280, { duration: 500, y: 0 });
+  show($("zone-outside"), T.appIn + 420, { duration: 500, y: 30 });
+  show($("msg"), T.appIn + 600, { duration: 450, y: 20 });
   typeChars($("msg"), T.typeStart, T.typeDur);
   msgPii.forEach((wrap, i) => {
     anim(wrap, [
-      { backgroundColor: TINT.none, boxShadow: "0 0 0 0 rgba(251, 113, 133, 0)" },
-      { backgroundColor: TINT.rose, boxShadow: "0 0 0 3px rgba(251, 113, 133, 0.35)" },
+      { backgroundColor: TINT.none, boxShadow: "0 0 0 0 rgba(248, 113, 113, 0)" },
+      { backgroundColor: TINT.red, boxShadow: "0 0 0 3px rgba(248, 113, 113, 0.35)" },
     ], { delay: T.scanStart + i * T.scanStep, duration: 380 });
   });
   show($("cap-typed"), T.capTypedIn, { duration: 450, y: 22 });
   hideAt($("cap-typed"), T.capTypedOut);
 
-  // ---- scene 3: anonymize ----
+  // ---- scene 3: anonymize inside, labels cross the boundary ----
   show($("btn-anon"), T.btnAnonIn, { duration: 420, y: 18 });
   press($("btn-anon"), T.btnAnonPress);
   hideAt($("btn-anon"), T.btnAnonOut);
@@ -645,19 +772,29 @@ window.renderSocial = (payload) => {
     { opacity: 1, transform: "scale(1.12) rotate(2deg)", offset: 0.65 },
     { opacity: 1, transform: "scale(1) rotate(0deg)" },
   ], { delay: T.badgePop, duration: 550 });
-  show($("cap-masked"), T.capMaskedIn, { duration: 450, y: 22 });
-  hideAt($("cap-masked"), T.capMaskedOut);
+  // Boundary gate lights up blue as the labels pass through.
+  anim($("gate"), [
+    { transform: "scale(1)", color: "#cbd5e1", borderColor: "rgba(148, 163, 184, 0.5)" },
+    { transform: "scale(1.25)", color: "#60a5fa", borderColor: "rgba(96, 165, 250, 0.9)", offset: 0.4 },
+    { transform: "scale(1)", color: "#60a5fa", borderColor: "rgba(96, 165, 250, 0.7)" },
+  ], { delay: T.gatePulse, duration: 700 });
+  // The masked prompt (labels only) slides down across the boundary.
+  show($("sent"), T.sentIn, { duration: 650, y: -120 });
+  show($("cap-sent"), T.capSentIn, { duration: 450, y: 22 });
+  hideAt($("cap-sent"), T.capSentOut);
 
-  // ---- scene 4: reply + restore ----
+  // ---- scene 4: external AI reply, back inside, restore ----
   show($("dots"), T.dotsIn, { duration: 350, y: 16 });
   hideAt($("dots"), T.dotsOut, { duration: 200 });
   anim($("dots"), [{ height: getComputedStyle($("dots")).height }, { height: "0px", marginTop: "0px", paddingTop: "0px", paddingBottom: "0px", borderWidth: "0px" }],
     { delay: T.replyIn - 80, duration: 220, easing: "ease-in" });
   show($("reply"), T.replyIn, { duration: 500, y: 26 });
+  // The reply comes back up into the org zone.
+  show($("restored"), T.restoredIn, { duration: 600, y: 90 });
   show($("btn-restore"), T.btnRestoreIn, { duration: 420, y: 18 });
   press($("btn-restore"), T.btnRestorePress);
   hideAt($("btn-restore"), T.btnRestoreOut);
-  [...replyPii, ...msgPii].forEach((wrap, i) => flip(wrap, T.restoreStart + i * T.restoreStep, "restore"));
+  [...restoredPii, ...msgPii].forEach((wrap, i) => flip(wrap, T.restoreStart + i * T.restoreStep, "restore"));
   show($("cap-restored"), T.capRestoredIn, { duration: 450, y: 22 });
   hideAt($("cap-restored"), T.capRestoredOut);
   hideAt($("scene-app"), T.appOut, { duration: 480 });
