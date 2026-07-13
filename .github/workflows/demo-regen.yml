@@ -101,6 +101,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add demo/demo_*.gif demo/social/social_*.mp4
+          git add demo/demo_*.gif demo/social/social_*.mp4 demo/social/social_*.png
           git diff --cached --quiet || git commit -m "docs: regenerate demo assets (${{ inputs.langs }} / ${{ inputs.targets }})"
           git push

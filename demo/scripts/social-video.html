@@ -1,12 +1,13 @@
 <!doctype html>
-<!-- Source for demo/social/social_<lang>_<fmt>.mp4 (SNS / X-sized promo).
+<!-- Source for demo/social/social_<lang>_<fmt>.{mp4,png} (SNS / X promo).
      Self-contained: system fonts only (needs a CJK font, e.g. fonts-noto-cjk),
-     no network. The recording script (record_social.mjs) injects content via
-     window.renderSocial(payload) and seeks with window.seekSocial(tMs).
+     no network. record_social.mjs injects via window.renderSocial(payload)
+     and seeks with window.seekSocial(tMs). Also exports still PNGs at the
+     hook and punchline beats.
 
-     Tuned for X (Twitter): ~10 s, mute-first, giant hook text, one punch —
-     PII chips flip to labels, then a single line that the real data never
-     leaves the org. OLED true-black. Formats: portrait 1080x1920 /
+     Soft buddy-check tone (not an alarm): ~10.5 s, mute-first,
+     calm hook → PII chips quietly flip to labels → punchline.
+     OLED true-black, muted blue/amber. Formats: portrait 1080x1920 /
      square 1080x1080.
 
      Regeneration: node demo/scripts/record_social.mjs -->
@@ -15,14 +16,13 @@
 <meta charset="utf-8">
 <style>
   :root {
-    /* Everyday color semantics on OLED black:
-       blue = safe / inside, red = PII danger, green = done. */
-    --ink: #f5f5f4;
-    --muted: #9ca3af;
-    --blue: #60a5fa;
-    --blue-soft: #bfdbfe;
-    --red: #f87171;
-    --green: #4ade80;
+    /* Calm engineer palette — buddy check, not a red alert.
+       stone = quiet UI, amber = "noticed", blue = masked / ok. */
+    --ink: #e7e5e4;
+    --muted: #a8a29e;
+    --blue: #7dd3fc;
+    --blue-soft: #bae6fd;
+    --amber: #fcd34d;
     --font-ui: "Noto Sans CJK JP", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
     --font-mono: "DejaVu Sans Mono", "Noto Sans Mono CJK JP", "SFMono-Regular", Menlo, Consolas, monospace;
   }
@@ -31,23 +31,21 @@
   body.portrait { width: 1080px; height: 1920px; }
   body.square { width: 1080px; height: 1080px; }
   body {
-    background: #000;
+    background: #050505;
     color: var(--ink);
     font-family: var(--font-ui);
     position: relative;
   }
 
-  .blob {
-    position: absolute; border-radius: 50%; filter: blur(150px);
-  }
-  .b1 { width: 700px; height: 700px; left: -240px; top: -220px; background: #1d4ed8; opacity: 0.32; animation: drift1 12s ease-in-out infinite alternate; }
-  .b2 { width: 560px; height: 560px; right: -200px; bottom: -180px; background: #7f1d1d; opacity: 0.18; animation: drift2 15s ease-in-out infinite alternate; }
-  @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(60px, 40px) scale(1.1); } }
-  @keyframes drift2 { from { transform: translate(0, 0) scale(1.05); } to { transform: translate(-50px, -40px) scale(0.95); } }
+  .blob { position: absolute; border-radius: 50%; filter: blur(160px); }
+  .b1 { width: 640px; height: 640px; left: -200px; top: -180px; background: #1e3a5f; opacity: 0.35; animation: drift1 14s ease-in-out infinite alternate; }
+  .b2 { width: 480px; height: 480px; right: -160px; bottom: -140px; background: #292524; opacity: 0.4; animation: drift2 16s ease-in-out infinite alternate; }
+  @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(40px, 30px) scale(1.06); } }
+  @keyframes drift2 { from { transform: translate(0, 0) scale(1.04); } to { transform: translate(-30px, -24px) scale(0.97); } }
 
   #progress {
-    position: absolute; left: 0; bottom: 0; height: 8px; width: 0;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    position: absolute; left: 0; bottom: 0; height: 6px; width: 0;
+    background: rgba(125, 211, 252, 0.55);
     z-index: 40;
   }
 
@@ -59,54 +57,52 @@
   }
   .portrait .scene { padding: 0 72px; }
 
-  /* ---- scene 1: giant hook ---- */
+  /* ---- scene 1: calm hook ---- */
   .hook-line {
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.18;
     text-align: center;
     opacity: 0;
-    background: linear-gradient(115deg, #fafaf9 25%, var(--blue-soft) 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--ink);
   }
-  .portrait .hook-line { font-size: 108px; }
-  .square .hook-line { font-size: 86px; }
+  .portrait .hook-line { font-size: 92px; }
+  .square .hook-line { font-size: 72px; }
   .hook-sub {
-    margin-top: 40px;
+    margin-top: 36px;
     color: var(--muted);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
     opacity: 0;
-    line-height: 1.4;
+    line-height: 1.45;
   }
-  .portrait .hook-sub { font-size: 42px; }
-  .square .hook-sub { font-size: 34px; margin-top: 28px; }
+  .portrait .hook-sub { font-size: 38px; }
+  .square .hook-sub { font-size: 30px; margin-top: 24px; }
 
-  /* ---- scene 2: the punch (one card, no chrome) ---- */
+  /* ---- scene 2: the quiet punch ---- */
   .card {
+    position: relative;
     width: 100%;
-    background: rgba(255, 255, 255, 0.04);
-    border: 2.5px solid rgba(96, 165, 250, 0.35);
-    border-radius: 32px;
-    box-shadow: 0 0 80px rgba(59, 130, 246, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(168, 162, 158, 0.28);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
     opacity: 0;
   }
-  .portrait .card { padding: 48px 44px; }
-  .square .card { padding: 36px 36px; }
+  .portrait .card { padding: 44px 40px; }
+  .square .card { padding: 32px 32px; }
 
   .prompt {
     line-height: 1.55;
     letter-spacing: 0.005em;
     font-weight: 500;
+    color: #d6d3d1;
   }
-  .portrait .prompt { font-size: 44px; }
-  .square .prompt { font-size: 36px; }
+  .portrait .prompt { font-size: 42px; }
+  .square .prompt { font-size: 34px; }
 
   .word { display: inline-block; white-space: nowrap; }
   .char { opacity: 0; display: inline-block; }
-  .word.tight { margin-left: -0.28em; }
 
   .pii {
     display: inline-block;
@@ -114,93 +110,93 @@
     white-space: nowrap;
     overflow: hidden;
     vertical-align: -0.34em;
-    border-radius: 14px;
-    padding: 2px 14px;
+    border-radius: 12px;
+    padding: 2px 12px;
   }
   .pii .orig { display: inline-block; white-space: pre; }
   .pii .lbl {
     position: absolute;
-    left: 14px; top: 50%;
+    left: 12px; top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     white-space: nowrap;
     font-family: var(--font-mono);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.86em;
     color: var(--blue-soft);
   }
 
+  .status-row {
+    position: relative;
+    margin-top: 32px;
+    height: 1.5em;
+  }
+  .square .status-row { margin-top: 24px; }
   .status {
-    margin-top: 36px;
-    display: inline-flex; align-items: center; gap: 16px;
-    font-weight: 800;
+    position: absolute; left: 0; top: 0;
+    display: inline-flex; align-items: center; gap: 14px;
+    font-weight: 600;
     letter-spacing: 0.01em;
     opacity: 0;
   }
-  .portrait .status { font-size: 36px; }
-  .square .status { font-size: 30px; margin-top: 28px; }
-  .status svg { width: 1.25em; height: 1.25em; flex: none; }
-  .status.warn { color: #fecaca; }
-  .status.safe { color: var(--blue-soft); }
-  .status.done { color: #bbf7d0; }
+  .portrait .status { font-size: 32px; }
+  .square .status { font-size: 26px; }
+  .status svg { width: 1.15em; height: 1.15em; flex: none; opacity: 0.9; }
+  .status.notice { color: #fde68a; }
+  .status.ok { color: var(--blue-soft); }
 
   .caption {
-    margin-top: 48px;
+    margin-top: 44px;
     text-align: center;
-    font-weight: 800;
-    line-height: 1.3;
+    font-weight: 700;
+    line-height: 1.32;
     letter-spacing: -0.01em;
     opacity: 0;
+    color: var(--ink);
   }
-  .portrait .caption { font-size: 52px; margin-top: 64px; }
-  .square .caption { font-size: 40px; margin-top: 40px; }
+  .portrait .caption { font-size: 48px; margin-top: 56px; }
+  .square .caption { font-size: 38px; margin-top: 36px; }
   .caption .em {
     display: block;
     margin-top: 10px;
-    background: linear-gradient(115deg, #fafaf9 20%, var(--blue-soft) 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .portrait .caption .em { font-size: 58px; }
-  .square .caption .em { font-size: 46px; }
-
-  /* ---- scene 3: outro ---- */
-  .logo-mark { opacity: 0; }
-  .portrait .logo-mark svg { width: 160px; height: 160px; }
-  .square .logo-mark svg { width: 120px; height: 120px; }
-  .outro-title {
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    opacity: 0;
-    background: linear-gradient(115deg, #fafaf9 25%, var(--blue-soft) 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .portrait .outro-title { font-size: 88px; margin-top: 36px; }
-  .square .outro-title { font-size: 68px; margin-top: 24px; }
-  .outro-tag {
-    color: var(--ink);
+    color: var(--blue-soft);
     font-weight: 600;
+  }
+  .portrait .caption .em { font-size: 44px; }
+  .square .caption .em { font-size: 34px; }
+
+  /* ---- scene 3: quiet outro ---- */
+  .logo-mark { opacity: 0; }
+  .portrait .logo-mark svg { width: 140px; height: 140px; }
+  .square .logo-mark svg { width: 108px; height: 108px; }
+  .outro-title {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    opacity: 0;
+    color: var(--ink);
+  }
+  .portrait .outro-title { font-size: 76px; margin-top: 32px; }
+  .square .outro-title { font-size: 58px; margin-top: 22px; }
+  .outro-tag {
+    color: var(--muted);
+    font-weight: 500;
     text-align: center;
     opacity: 0;
-    line-height: 1.4;
+    line-height: 1.45;
   }
-  .portrait .outro-tag { font-size: 40px; margin-top: 28px; }
-  .square .outro-tag { font-size: 32px; margin-top: 20px; }
+  .portrait .outro-tag { font-size: 36px; margin-top: 24px; }
+  .square .outro-tag { font-size: 28px; margin-top: 18px; }
   .outro-url {
     display: inline-block;
     font-family: var(--font-mono);
-    font-weight: 700;
-    color: #172554;
-    background: linear-gradient(150deg, #93c5fd, #3b82f6);
+    font-weight: 600;
+    color: #0c4a6e;
+    background: var(--blue-soft);
     border-radius: 999px;
-    box-shadow: 0 16px 44px rgba(59, 130, 246, 0.35);
     opacity: 0;
   }
-  .portrait .outro-url { font-size: 34px; padding: 20px 42px; margin-top: 52px; }
-  .square .outro-url { font-size: 28px; padding: 15px 34px; margin-top: 34px; }
+  .portrait .outro-url { font-size: 30px; padding: 18px 36px; margin-top: 44px; }
+  .square .outro-url { font-size: 24px; padding: 14px 28px; margin-top: 30px; }
 </style>
 </head>
 <body>
@@ -217,13 +213,15 @@
   <section class="scene" id="scene-punch">
     <div class="card" id="card">
       <div class="prompt" id="msg"></div>
-      <div class="status warn" id="status-warn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-        <span id="status-warn-text"></span>
-      </div>
-      <div class="status safe" id="status-safe">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg>
-        <span id="status-safe-text"></span>
+      <div class="status-row">
+        <div class="status notice" id="status-notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+          <span id="status-notice-text"></span>
+        </div>
+        <div class="status ok" id="status-ok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg>
+          <span id="status-ok-text"></span>
+        </div>
       </div>
     </div>
     <div class="caption" id="punchline">
@@ -234,8 +232,7 @@
 
   <section class="scene" id="scene-outro">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="url(#lg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/>
         <path d="M8.5 12l2.5 2.5 4.5-4.8"/>
       </svg>
@@ -248,27 +245,28 @@
 <script>
 "use strict";
 
-// ~10.5 s timeline. seekSocial() drives the clock.
 const T = {
-  hook1: 120,
-  hook2: 480,
-  hookSub: 900,
-  hookOut: 1800,
-  punchIn: 2100,
-  typeStart: 2400,
+  hook1: 150,
+  hook2: 500,
+  hookSub: 1000,
+  hookOut: 1900,
+  punchIn: 2200,
+  typeStart: 2500,
   typeDur: 1800,
-  scanStart: 4300,
-  scanStep: 180,
-  warnIn: 4600,
-  warnOut: 5600,
-  maskStart: 5800,
-  maskStep: 160,
-  safeIn: 6400,
-  punchlineIn: 7200,
-  punchOut: 8800,
-  outroIn: 9100,
-  end: 10500,
+  scanStart: 4400,
+  scanStep: 200,
+  noticeIn: 4700,
+  noticeOut: 5800,
+  maskStart: 6000,
+  maskStep: 180,
+  okIn: 6700,
+  punchlineIn: 7400,
+  punchOut: 9000,
+  outroIn: 9300,
+  end: 10800,
 };
+
+window.SOCIAL_STILLS = { hook: 1400, punch: 8200 };
 
 const EASE_OUT = "cubic-bezier(0.22, 1, 0.36, 1)";
 const $ = (id) => document.getElementById(id);
@@ -276,13 +274,13 @@ const $ = (id) => document.getElementById(id);
 function anim(el, keyframes, opts) {
   return el.animate(keyframes, { fill: "forwards", easing: EASE_OUT, ...opts });
 }
-function show(el, delay, { duration = 450, y = 24, scale = 1 } = {}) {
+function show(el, delay, { duration = 500, y = 18, scale = 1 } = {}) {
   anim(el, [
     { opacity: 0, transform: `translateY(${y}px) scale(${scale})` },
     { opacity: 1, transform: "translateY(0) scale(1)" },
   ], { delay, duration });
 }
-function hideAt(el, delay, { duration = 320 } = {}) {
+function hideAt(el, delay, { duration = 360 } = {}) {
   anim(el, [{ opacity: 1 }, { opacity: 0 }], { delay, duration, easing: "ease-in" });
 }
 
@@ -317,16 +315,13 @@ function buildParts(container, parts) {
   const piiEls = [];
   for (const part of parts) {
     if (typeof part === "string") {
-      let first = true;
       for (const token of tokenize(part)) {
         if (token.space) {
           container.appendChild(document.createTextNode(token.text));
-          first = false;
           continue;
         }
         const word = document.createElement("span");
         word.className = "word";
-        first = false;
         for (const ch of token.text) {
           const s = document.createElement("span");
           s.className = "char";
@@ -362,40 +357,32 @@ function typeChars(container, start, totalDur) {
   const step = totalDur / Math.max(chars.length, 1);
   chars.forEach((ch, i) => {
     anim(ch, [
-      { opacity: 0, transform: "translateY(6px)" },
-      { opacity: 1, transform: "translateY(0)" },
-    ], { delay: start + i * step, duration: 55, easing: "ease-out" });
+      { opacity: 0 },
+      { opacity: 1 },
+    ], { delay: start + i * step, duration: 50, easing: "ease-out" });
   });
 }
 
 const TINT = {
-  none: "rgba(248, 113, 113, 0)",
-  red: "rgba(248, 113, 113, 0.24)",
-  blue: "rgba(96, 165, 250, 0.18)",
+  none: "rgba(252, 211, 77, 0)",
+  amber: "rgba(252, 211, 77, 0.14)",
+  blue: "rgba(125, 211, 252, 0.14)",
 };
 function flip(wrap, delay) {
   const orig = wrap.querySelector(".orig");
   const lbl = wrap.querySelector(".lbl");
   anim(wrap, [
-    {
-      width: wrap.dataset.origW + "px",
-      backgroundColor: TINT.red,
-      boxShadow: "0 0 0 3px rgba(248, 113, 113, 0.4)",
-    },
-    {
-      width: wrap.dataset.lblW + "px",
-      backgroundColor: TINT.blue,
-      boxShadow: "0 0 0 3px rgba(96, 165, 250, 0.35)",
-    },
-  ], { delay, duration: 380 });
+    { width: wrap.dataset.origW + "px", backgroundColor: TINT.amber },
+    { width: wrap.dataset.lblW + "px", backgroundColor: TINT.blue },
+  ], { delay, duration: 420 });
   anim(orig, [
-    { opacity: 1, transform: "translateY(0) scale(1)" },
-    { opacity: 0, transform: "translateY(-10px) scale(0.9)" },
-  ], { delay, duration: 220, easing: "ease-in" });
+    { opacity: 1 },
+    { opacity: 0 },
+  ], { delay, duration: 240, easing: "ease-in" });
   anim(lbl, [
-    { opacity: 0, transform: "translateY(-50%) translateY(10px) scale(0.9)" },
-    { opacity: 1, transform: "translateY(-50%) translateY(0) scale(1)" },
-  ], { delay: delay + 120, duration: 280 });
+    { opacity: 0 },
+    { opacity: 1 },
+  ], { delay: delay + 140, duration: 280 });
 }
 
 window.renderSocial = (payload) => {
@@ -406,8 +393,8 @@ window.renderSocial = (payload) => {
   $("hook-1").textContent = social.hook.lines[0];
   $("hook-2").textContent = social.hook.lines[1] ?? "";
   $("hook-sub").textContent = social.hook.sub;
-  $("status-warn-text").textContent = social.status.warn;
-  $("status-safe-text").textContent = social.status.safe;
+  $("status-notice-text").textContent = social.status.notice;
+  $("status-ok-text").textContent = social.status.ok;
   $("punch-1").textContent = social.punchline[0];
   $("punch-2").textContent = social.punchline[1] ?? "";
   $("outro-title").textContent = social.outro.title;
@@ -415,7 +402,6 @@ window.renderSocial = (payload) => {
   $("outro-url").textContent = social.outro.url;
 
   const msgPii = buildParts($("msg"), social.message);
-
   for (const wrap of msgPii) {
     const cs = getComputedStyle(wrap);
     const pad = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
@@ -424,40 +410,45 @@ window.renderSocial = (payload) => {
     wrap.style.width = wrap.dataset.origW + "px";
   }
 
-  // ---- scene 1: hook ----
   show($("scene-hook"), 0, { duration: 1, y: 0 });
-  show($("hook-1"), T.hook1, { duration: 500, y: 36 });
-  show($("hook-2"), T.hook2, { duration: 500, y: 36 });
-  show($("hook-sub"), T.hookSub, { duration: 400 });
+  show($("hook-1"), T.hook1, { duration: 550, y: 22 });
+  show($("hook-2"), T.hook2, { duration: 550, y: 22 });
+  show($("hook-sub"), T.hookSub, { duration: 450 });
   hideAt($("scene-hook"), T.hookOut);
 
-  // ---- scene 2: type → detect → flip → punchline ----
   show($("scene-punch"), T.punchIn, { duration: 1, y: 0 });
-  show($("card"), T.punchIn, { duration: 450, y: 40 });
+  show($("card"), T.punchIn, { duration: 500, y: 22 });
   typeChars($("msg"), T.typeStart, T.typeDur);
+
   msgPii.forEach((wrap, i) => {
     anim(wrap, [
-      { backgroundColor: TINT.none, boxShadow: "0 0 0 0 rgba(248, 113, 113, 0)" },
-      { backgroundColor: TINT.red, boxShadow: "0 0 0 3px rgba(248, 113, 113, 0.4)" },
-    ], { delay: T.scanStart + i * T.scanStep, duration: 300 });
+      { backgroundColor: TINT.none },
+      { backgroundColor: TINT.amber },
+    ], { delay: T.scanStart + i * T.scanStep, duration: 360 });
   });
-  show($("status-warn"), T.warnIn, { duration: 350, y: 14 });
-  hideAt($("status-warn"), T.warnOut, { duration: 220 });
+  anim($("card"), [
+    { borderColor: "rgba(168, 162, 158, 0.28)" },
+    { borderColor: "rgba(252, 211, 77, 0.35)" },
+  ], { delay: T.scanStart, duration: 450 });
+
+  show($("status-notice"), T.noticeIn, { duration: 400, y: 10 });
+  hideAt($("status-notice"), T.noticeOut, { duration: 280 });
+
   msgPii.forEach((wrap, i) => flip(wrap, T.maskStart + i * T.maskStep));
-  show($("status-safe"), T.safeIn, { duration: 400, y: 14 });
-  show($("punchline"), T.punchlineIn, { duration: 500, y: 28 });
+  anim($("card"), [
+    { borderColor: "rgba(252, 211, 77, 0.35)" },
+    { borderColor: "rgba(125, 211, 252, 0.4)" },
+  ], { delay: T.maskStart, duration: 600 });
+
+  show($("status-ok"), T.okIn, { duration: 420, y: 10 });
+  show($("punchline"), T.punchlineIn, { duration: 550, y: 18 });
   hideAt($("scene-punch"), T.punchOut);
 
-  // ---- scene 3: outro ----
   show($("scene-outro"), T.outroIn, { duration: 1, y: 0 });
-  anim($("scene-outro").querySelector(".logo-mark"), [
-    { opacity: 0, transform: "scale(0.6)" },
-    { opacity: 1, transform: "scale(1.06)", offset: 0.7 },
-    { opacity: 1, transform: "scale(1)" },
-  ], { delay: T.outroIn + 80, duration: 500 });
-  show($("outro-title"), T.outroIn + 250, { duration: 450, y: 28 });
-  show($("outro-tag"), T.outroIn + 500, { duration: 400 });
-  show($("outro-url"), T.outroIn + 750, { duration: 450, y: 16 });
+  show($("scene-outro").querySelector(".logo-mark"), T.outroIn + 80, { duration: 500, scale: 0.92 });
+  show($("outro-title"), T.outroIn + 280, { duration: 480, y: 16 });
+  show($("outro-tag"), T.outroIn + 520, { duration: 420 });
+  show($("outro-url"), T.outroIn + 760, { duration: 450, y: 12 });
 
   anim($("progress"), [{ width: "0%" }, { width: "100%" }], { delay: 0, duration: T.end, easing: "linear" });
   window.SOCIAL_DURATION_MS = T.end;

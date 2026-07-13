@@ -11,15 +11,17 @@ shared English/Japanese-only pair.
 | `demo_<lang>.gif` | CLI story (anonymize → mapping → LLM reply → deanonymize) | `vhs demo/tapes/demo_<lang>.tape` (needs [vhs](https://github.com/charmbracelet/vhs), ttyd, ffmpeg, a CJK mono / DejaVu Sans Mono font, and the package installed in `.venv` with the `models` dependency group synced) |
 | `demo_web_<lang>.gif` | Browser app round-trip (real NER inference) | `node demo/scripts/record_web.mjs --lang=<lang>` (or `--lang=all`; needs `pnpm --filter @prompt-anonymizer/web build`, playwright + chromium, ffmpeg) |
 | `demo_extension_<lang>.gif` | Extension side panel (regex recognizers) | `node demo/scripts/record_extension.mjs --lang=<lang>` (or `--lang=all`; needs the extension built — regex-only, no model downloads) |
-| `social/social_<lang>_<fmt>.mp4` | SNS / X promo (~10 s punch: hook → PII flip → "only labels leave"; from `scripts/social-video.html`) | `node demo/scripts/record_social.mjs [--lang=<lang>] [--fmt=portrait\|square]` (defaults to all; needs playwright + chromium, ffmpeg, a CJK font — fully offline, no model downloads) |
+| `social/social_<lang>_<fmt>.mp4` | SNS / X promo (~10.5 s punch: hook → PII flip → "only labels leave") | `node demo/scripts/record_social.mjs [--lang=<lang>] [--fmt=portrait\|square]` |
+| `social/social_<lang>_hook_<fmt>.png` | Hook still (same page, seeked to the hook beat) | (same command — stills are emitted alongside the mp4) |
+| `social/social_<lang>_punch_<fmt>.png` | Punchline still (masked chips + takeaway line) | (same command) |
 
 `<lang>` is one of `en`, `ja`, `es`, `vi`, `zh`, `ko`, `fr`, `de`, `pt`, `it`.
 Social videos exist per `<fmt>` — `portrait` (1080×1920, Reels / Shorts /
 TikTok / X) and `square` (1080×1080, feed posts) — and currently for
 `en` and `ja` only; to add a language, give its `demo/scripts/lang-data.mjs`
-entry a `social` block (the script picks it up automatically). Frames are
-rendered deterministically (the page is seeked frame-by-frame, no live
-screencast), so a regeneration reproduces the exact same video.
+entry a `social` block (the script picks it up automatically). Frames and
+stills are rendered deterministically (the page is seeked frame-by-frame,
+no live screencast), so a regeneration reproduces the exact same assets.
 Per-language sample text, phone numbers and label strings live in
 `web/packages/core/src/samples.ts` (UI samples) and
 `demo/scripts/lang-data.mjs` (recording scripts) — keep phone patterns aligned with

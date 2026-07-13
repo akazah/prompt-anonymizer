@@ -29,8 +29,8 @@ export const LANG_DATA = {
     // `message` is plain strings + { pii, label } spans that flip during the punch.
     social: {
       hook: {
-        lines: ["That email —", "leaving your org."],
-        sub: "Mute on. Watch the chips.",
+        lines: ["About to paste that", "into an LLM?"],
+        sub: "One buddy check first.",
       },
       message: [
         "Follow up with ",
@@ -42,10 +42,10 @@ export const LANG_DATA = {
         ".",
       ],
       status: {
-        warn: "3 pieces of PII, leaving now",
-        safe: "Masked on-device",
+        notice: "PII in this prompt",
+        ok: "Swapped for labels",
       },
-      punchline: ["Only the labels leave.", "Real data stays inside."],
+      punchline: ["Labels go out.", "The real values stay with you."],
       outro: {
         title: "Prompt Anonymizer",
         tag: "A buddy check for PII before it reaches an LLM.",
@@ -68,8 +68,8 @@ export const LANG_DATA = {
     labels: { PERSON: "人名", EMAIL_ADDRESS: "メールアドレス", LOCATION: "住所", PHONE_NUMBER: "電話番号" },
     social: {
       hook: {
-        lines: ["そのメール、", "外に出ます。"],
-        sub: "音なしでOK。チップを見て。",
+        lines: ["AIに貼る前に、", "ひと確認どう？"],
+        sub: "バディチェック、くらいの気持ちで。",
       },
       message: [
         "",
@@ -81,10 +81,10 @@ export const LANG_DATA = {
         "",
       ],
       status: {
-        warn: "個人情報3件、いま出る",
-        safe: "端末内でマスク済み",
+        notice: "個人情報が入ってます",
+        ok: "ラベルに差し替え済み",
       },
-      punchline: ["外に出るのはラベルだけ。", "実データは組織内に残る。"],
+      punchline: ["外に出るのはラベル。", "実データは手元に残る。"],
       outro: {
         title: "Prompt Anonymizer",
         tag: "LLMに渡す前の、PIIバディチェック。",

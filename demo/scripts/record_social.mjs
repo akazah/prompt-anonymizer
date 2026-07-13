@@ -1,21 +1,20 @@
 /**
- * Records the SNS-sized promo videos (demo/social/social_<lang>_<fmt>.mp4)
- * from demo/scripts/social-video.html.
+ * Records SNS / X promo assets from demo/scripts/social-video.html:
+ *   - demo/social/social_<lang>_<fmt>.mp4          (~10.5 s video)
+ *   - demo/social/social_<lang>_hook_<fmt>.png      (hook still)
+ *   - demo/social/social_<lang>_punch_<fmt>.png     (punchline still)
  *
  * Usage (from repo root):
  *   node demo/scripts/record_social.mjs                 # all langs, both formats
  *   node demo/scripts/record_social.mjs --lang=ja --fmt=portrait
  *
- * Formats: portrait = 1080x1920 (Reels / Shorts / TikTok),
+ * Formats: portrait = 1080x1920 (Reels / Shorts / TikTok / X),
  *          square   = 1080x1080 (feed posts). Languages come from the
  * `social` blocks in lang-data.mjs (socialLanguages()).
  *
- * Unlike record_web.mjs this does not record a live screencast: the page
- * exposes seekSocial(t) which pins every animation to an exact timestamp,
- * so each frame is screenshotted deterministically and assembled with
- * ffmpeg (H.264 yuv420p, the codec SNS platforms expect). Needs playwright
- * (from the web workspace), ffmpeg, and a CJK font (e.g. fonts-noto-cjk)
- * for the Japanese variant. Fully offline - no model downloads.
+ * Deterministic: seekSocial(t) pins every animation to an exact timestamp,
+ * so each frame / still is reproducible. Needs playwright (web workspace),
+ * ffmpeg, and a CJK font (e.g. fonts-noto-cjk). Fully offline.
  */
 
 import { execSync } from "node:child_process";
@@ -57,7 +56,7 @@ for (const lang of langs) {
 
   for (const fmt of fmts) {
     const { width, height } = FORMATS[fmt];
-    console.log(`[${lang}/${fmt}] rendering frames…`);
+    console.log(`[${lang}/${fmt}] rendering…`);
     rmSync(TMP, { recursive: true, force: true });
     mkdirSync(TMP, { recursive: true });
 
@@ -66,6 +65,16 @@ for (const lang of langs) {
     await page.evaluate((payload) => window.renderSocial(payload), { lang, fmt, social });
     await page.evaluate(() => document.fonts.ready);
     const durationMs = await page.evaluate(() => window.SOCIAL_DURATION_MS);
+    const stills = await page.evaluate(() => window.SOCIAL_STILLS);
+
+    // Still PNGs first (hook + punchline) — same seek path as the video.
+    for (const [name, tMs] of Object.entries(stills)) {
+      await page.evaluate((t) => window.seekSocial(t), tMs);
+      const stillPath = join(OUT_DIR, `social_${lang}_${name}_${fmt}.png`);
+      await page.screenshot({ path: stillPath, type: "png" });
+      const kb = (readFileSync(stillPath).length / 1024).toFixed(0);
+      console.log(`  wrote demo/social/social_${lang}_${name}_${fmt}.png (${kb} KB)`);
+    }
 
     const frames = Math.round((durationMs / 1000) * FPS);
     for (let i = 0; i < frames; i++) {
