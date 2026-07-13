@@ -1,0 +1,352 @@
+<!doctype html>
+<!-- Source for demo/social/social_<lang>_<fmt>.{mp4,png} (SNS / X promo).
+     Self-contained: system fonts only (needs a CJK font, e.g. fonts-noto-cjk),
+     no network. record_social.mjs injects via window.renderSocial(payload)
+     and seeks with window.seekSocial(tMs). Also exports still PNGs.
+
+     Plain matter-of-fact demo — no catchphrases. Type → notice PII →
+     swap to labels → quiet product name. OLED black, muted amber/blue.
+     Formats: portrait 1080x1920 / square 1080x1080.
+
+     Regeneration: node demo/scripts/record_social.mjs -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --ink: #e7e5e4;
+    --muted: #a8a29e;
+    --blue: #7dd3fc;
+    --blue-soft: #bae6fd;
+    --amber: #fcd34d;
+    --font-ui: "Noto Sans CJK JP", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "DejaVu Sans Mono", "Noto Sans Mono CJK JP", "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; }
+  body.portrait { width: 1080px; height: 1920px; }
+  body.square { width: 1080px; height: 1080px; }
+  body {
+    background: #050505;
+    color: var(--ink);
+    font-family: var(--font-ui);
+    position: relative;
+  }
+
+  .blob { position: absolute; border-radius: 50%; filter: blur(160px); }
+  .b1 { width: 560px; height: 560px; left: -180px; top: -160px; background: #1e3a5f; opacity: 0.28; }
+  .b2 { width: 420px; height: 420px; right: -140px; bottom: -120px; background: #292524; opacity: 0.32; }
+
+  #progress {
+    position: absolute; left: 0; bottom: 0; height: 4px; width: 0;
+    background: rgba(125, 211, 252, 0.4);
+    z-index: 40;
+  }
+
+  .scene {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0; z-index: 10;
+    padding: 0 64px;
+  }
+  .portrait .scene { padding: 0 72px; }
+
+  .card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(168, 162, 158, 0.22);
+    border-radius: 24px;
+    opacity: 0;
+  }
+  .portrait .card { padding: 44px 40px; }
+  .square .card { padding: 32px 32px; }
+
+  .prompt {
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+    font-weight: 500;
+    color: #d6d3d1;
+  }
+  .portrait .prompt { font-size: 42px; }
+  .square .prompt { font-size: 34px; }
+
+  .word { display: inline-block; white-space: nowrap; }
+  .char { opacity: 0; display: inline-block; }
+
+  .pii {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: -0.34em;
+    border-radius: 10px;
+    padding: 2px 11px;
+  }
+  .pii .orig { display: inline-block; white-space: pre; }
+  .pii .lbl {
+    position: absolute;
+    left: 11px; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.86em;
+    color: var(--blue-soft);
+  }
+
+  .status-row {
+    position: relative;
+    margin-top: 28px;
+    height: 1.4em;
+  }
+  .square .status-row { margin-top: 22px; }
+  .status {
+    position: absolute; left: 0; top: 0;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    color: var(--muted);
+  }
+  .portrait .status { font-size: 30px; }
+  .square .status { font-size: 24px; }
+  .status.ok { color: var(--blue-soft); }
+
+  .outro-title {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    color: var(--ink);
+  }
+  .portrait .outro-title { font-size: 56px; }
+  .square .outro-title { font-size: 44px; }
+  .outro-url {
+    margin-top: 22px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--muted);
+    opacity: 0;
+  }
+  .portrait .outro-url { font-size: 28px; }
+  .square .outro-url { font-size: 22px; margin-top: 16px; }
+</style>
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div id="progress"></div>
+
+  <section class="scene" id="scene-demo">
+    <div class="card" id="card">
+      <div class="prompt" id="msg"></div>
+      <div class="status-row">
+        <div class="status" id="status-notice"><span id="status-notice-text"></span></div>
+        <div class="status ok" id="status-ok"><span id="status-ok-text"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="scene-outro">
+    <div class="outro-title" id="outro-title"></div>
+    <div class="outro-url" id="outro-url"></div>
+  </section>
+
+<script>
+"use strict";
+
+const T = {
+  cardIn: 200,
+  typeStart: 500,
+  typeDur: 2200,
+  scanStart: 2900,
+  scanStep: 220,
+  noticeIn: 3200,
+  noticeOut: 4300,
+  maskStart: 4500,
+  maskStep: 200,
+  okIn: 5300,
+  demoOut: 7200,
+  outroIn: 7600,
+  end: 9500,
+};
+
+// Stills: mid-typing with PII noticed / after labels swapped.
+window.SOCIAL_STILLS = { before: 3800, after: 6200 };
+
+const EASE_OUT = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+const $ = (id) => document.getElementById(id);
+
+function anim(el, keyframes, opts) {
+  return el.animate(keyframes, { fill: "forwards", easing: EASE_OUT, ...opts });
+}
+function show(el, delay, { duration = 450, y = 12 } = {}) {
+  anim(el, [
+    { opacity: 0, transform: `translateY(${y}px)` },
+    { opacity: 1, transform: "translateY(0)" },
+  ], { delay, duration });
+}
+function hideAt(el, delay, { duration = 350 } = {}) {
+  anim(el, [{ opacity: 1 }, { opacity: 0 }], { delay, duration, easing: "ease-in" });
+}
+
+function tokenize(text) {
+  const isCJK = (ch) => {
+    const cp = ch.codePointAt(0);
+    return cp >= 0x2e80 && cp <= 0x9fff;
+  };
+  const tokens = [];
+  for (const ch of text) {
+    const last = tokens[tokens.length - 1];
+    if (/\s/.test(ch)) {
+      if (last && last.space) last.text += ch;
+      else tokens.push({ text: ch, space: true });
+    } else if ("、。，．！？）」』】ーぁぃぅぇぉっゃゅょァィゥェォッャュョ々".includes(ch)) {
+      if (last && !last.space) last.text += ch;
+      else tokens.push({ text: ch, space: false });
+    } else if (isCJK(ch)) {
+      tokens.push({ text: ch, space: false });
+    } else if (last && !last.space && !last.cjk) {
+      last.text += ch;
+    } else {
+      tokens.push({ text: ch, space: false });
+    }
+    const cur = tokens[tokens.length - 1];
+    if (!cur.space) cur.cjk = isCJK(ch) || cur.cjk;
+  }
+  return tokens;
+}
+
+function buildParts(container, parts) {
+  const piiEls = [];
+  for (const part of parts) {
+    if (typeof part === "string") {
+      for (const token of tokenize(part)) {
+        if (token.space) {
+          container.appendChild(document.createTextNode(token.text));
+          continue;
+        }
+        const word = document.createElement("span");
+        word.className = "word";
+        for (const ch of token.text) {
+          const s = document.createElement("span");
+          s.className = "char";
+          s.textContent = ch;
+          word.appendChild(s);
+        }
+        container.appendChild(word);
+      }
+    } else {
+      const wrap = document.createElement("span");
+      wrap.className = "pii";
+      const orig = document.createElement("span");
+      orig.className = "orig";
+      for (const ch of part.pii) {
+        const s = document.createElement("span");
+        s.className = "char";
+        s.textContent = ch;
+        orig.appendChild(s);
+      }
+      const lbl = document.createElement("span");
+      lbl.className = "lbl";
+      lbl.textContent = part.label;
+      wrap.append(orig, lbl);
+      container.appendChild(wrap);
+      piiEls.push(wrap);
+    }
+  }
+  return piiEls;
+}
+
+function typeChars(container, start, totalDur) {
+  const chars = container.querySelectorAll(".char");
+  const step = totalDur / Math.max(chars.length, 1);
+  chars.forEach((ch, i) => {
+    anim(ch, [{ opacity: 0 }, { opacity: 1 }], {
+      delay: start + i * step,
+      duration: 40,
+      easing: "linear",
+    });
+  });
+}
+
+const TINT = {
+  none: "rgba(252, 211, 77, 0)",
+  amber: "rgba(252, 211, 77, 0.12)",
+  blue: "rgba(125, 211, 252, 0.12)",
+};
+function flip(wrap, delay) {
+  const orig = wrap.querySelector(".orig");
+  const lbl = wrap.querySelector(".lbl");
+  anim(wrap, [
+    { width: wrap.dataset.origW + "px", backgroundColor: TINT.amber },
+    { width: wrap.dataset.lblW + "px", backgroundColor: TINT.blue },
+  ], { delay, duration: 400 });
+  anim(orig, [{ opacity: 1 }, { opacity: 0 }], { delay, duration: 220, easing: "ease-in" });
+  anim(lbl, [{ opacity: 0 }, { opacity: 1 }], { delay: delay + 140, duration: 260 });
+}
+
+window.renderSocial = (payload) => {
+  const { lang, fmt, social } = payload;
+  document.documentElement.lang = lang;
+  document.body.className = fmt;
+
+  $("status-notice-text").textContent = social.status.notice;
+  $("status-ok-text").textContent = social.status.ok;
+  $("outro-title").textContent = social.outro.title;
+  $("outro-url").textContent = social.outro.url;
+
+  const msgPii = buildParts($("msg"), social.message);
+  for (const wrap of msgPii) {
+    const cs = getComputedStyle(wrap);
+    const pad = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+    wrap.dataset.origW = wrap.querySelector(".orig").offsetWidth + pad;
+    wrap.dataset.lblW = wrap.querySelector(".lbl").offsetWidth + pad;
+    wrap.style.width = wrap.dataset.origW + "px";
+  }
+
+  show($("scene-demo"), 0, { duration: 1, y: 0 });
+  show($("card"), T.cardIn, { duration: 400, y: 10 });
+  typeChars($("msg"), T.typeStart, T.typeDur);
+
+  msgPii.forEach((wrap, i) => {
+    anim(wrap, [
+      { backgroundColor: TINT.none },
+      { backgroundColor: TINT.amber },
+    ], { delay: T.scanStart + i * T.scanStep, duration: 320 });
+  });
+  anim($("card"), [
+    { borderColor: "rgba(168, 162, 158, 0.22)" },
+    { borderColor: "rgba(252, 211, 77, 0.28)" },
+  ], { delay: T.scanStart, duration: 400 });
+
+  show($("status-notice"), T.noticeIn, { duration: 350, y: 6 });
+  hideAt($("status-notice"), T.noticeOut, { duration: 250 });
+
+  msgPii.forEach((wrap, i) => flip(wrap, T.maskStart + i * T.maskStep));
+  anim($("card"), [
+    { borderColor: "rgba(252, 211, 77, 0.28)" },
+    { borderColor: "rgba(125, 211, 252, 0.32)" },
+  ], { delay: T.maskStart, duration: 500 });
+
+  show($("status-ok"), T.okIn, { duration: 350, y: 6 });
+  hideAt($("scene-demo"), T.demoOut);
+
+  show($("scene-outro"), T.outroIn, { duration: 1, y: 0 });
+  show($("outro-title"), T.outroIn + 100, { duration: 400, y: 8 });
+  show($("outro-url"), T.outroIn + 350, { duration: 400, y: 6 });
+
+  anim($("progress"), [{ width: "0%" }, { width: "100%" }], {
+    delay: 0, duration: T.end, easing: "linear",
+  });
+  window.SOCIAL_DURATION_MS = T.end;
+};
+
+window.seekSocial = (t) => {
+  for (const a of document.getAnimations()) {
+    a.pause();
+    a.currentTime = t;
+  }
+};
+</script>
+</body>
+</html>

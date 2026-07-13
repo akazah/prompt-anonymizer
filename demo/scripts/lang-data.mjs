@@ -13,9 +13,39 @@
 
 export const LANGUAGES = ["en", "ja", "es", "vi", "zh", "ko", "fr", "de", "pt", "it"];
 
+/**
+ * Languages that have `social` content below (SNS video, record_social.mjs).
+ * Derived, never hardcoded elsewhere; add a `social` block to a language's
+ * LANG_DATA entry to enable it.
+ */
+export function socialLanguages() {
+  return LANGUAGES.filter((lang) => LANG_DATA[lang].social);
+}
+
 export const LANG_DATA = {
   en: {
     labels: { PERSON: "Name", EMAIL_ADDRESS: "Email", LOCATION: "Location", PHONE_NUMBER: "Phone" },
+    // SNS / X video content (record_social.mjs / social-video.html).
+    // Plain demo: message + status labels only — no catchphrases.
+    social: {
+      message: [
+        "Follow up with ",
+        { pii: "John Smith", label: "<Name_1>" },
+        " at ",
+        { pii: "john@example.com", label: "<Email_1>" },
+        " / ",
+        { pii: "(333) 333-3333", label: "<Phone_1>" },
+        ".",
+      ],
+      status: {
+        notice: "PII found",
+        ok: "Replaced with labels",
+      },
+      outro: {
+        title: "Prompt Anonymizer",
+        url: "github.com/akazah/prompt-anonymizer",
+      },
+    },
     web: {
       llmReply:
         "Understood. I'll coordinate with <Name_2> on the data-room access and send the onboarding " +
@@ -30,6 +60,25 @@ export const LANG_DATA = {
   },
   ja: {
     labels: { PERSON: "人名", EMAIL_ADDRESS: "メールアドレス", LOCATION: "住所", PHONE_NUMBER: "電話番号" },
+    social: {
+      message: [
+        "",
+        { pii: "山田太郎", label: "<人名_1>" },
+        "さんに連絡して。",
+        { pii: "taro@example.com", label: "<メールアドレス_1>" },
+        " / ",
+        { pii: "090-1234-5678", label: "<電話番号_1>" },
+        "",
+      ],
+      status: {
+        notice: "個人情報を検出",
+        ok: "ラベルに置換",
+      },
+      outro: {
+        title: "Prompt Anonymizer",
+        url: "github.com/akazah/prompt-anonymizer",
+      },
+    },
     web: {
       llmReply:
         "承知しました。<人名_2>さんに引き継ぎ手順を確認し、<人名_1>さんへは<メールアドレス_1>または" +
