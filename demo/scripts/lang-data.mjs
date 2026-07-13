@@ -65,7 +65,7 @@ export const LANG_DATA = {
         "",
         { pii: "山田太郎", label: "<人名_1>" },
         "さんに連絡して。",
-        { pii: "taro@ex.com", label: "<メールアドレス_1>" },
+        { pii: "taro@example.com", label: "<メールアドレス_1>" },
         " / ",
         { pii: "090-1234-5678", label: "<電話番号_1>" },
         "",
