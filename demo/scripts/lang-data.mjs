@@ -13,9 +13,63 @@
 
 export const LANGUAGES = ["en", "ja", "es", "vi", "zh", "ko", "fr", "de", "pt", "it"];
 
+/**
+ * Languages that have `social` content below (SNS video, record_social.mjs).
+ * Derived, never hardcoded elsewhere; add a `social` block to a language's
+ * LANG_DATA entry to enable it.
+ */
+export function socialLanguages() {
+  return LANGUAGES.filter((lang) => LANG_DATA[lang].social);
+}
+
 export const LANG_DATA = {
   en: {
     labels: { PERSON: "Name", EMAIL_ADDRESS: "Email", LOCATION: "Location", PHONE_NUMBER: "Phone" },
+    // SNS video content (record_social.mjs / social-video.html). `message`
+    // and `reply` are arrays of plain strings and { pii, label } spans; the
+    // pii/label pairs flip between each other during the mask/restore scenes.
+    social: {
+      ui: {
+        app: "Prompt Anonymizer",
+        langPill: "English",
+        anonymize: "Anonymize",
+        restore: "Restore",
+        replyTag: "LLM reply",
+        badge: "On-device · zero network calls",
+      },
+      hook: {
+        lines: ["That name, that email —", "safe to paste into an AI?"],
+        sub: "PII slips into prompts more often than you think.",
+      },
+      message: [
+        "Draft a follow-up email to ",
+        { pii: "John Smith", label: "<Name_1>" },
+        " — he's at ",
+        { pii: "john.smith@example.com", label: "<Email_1>" },
+        " or ",
+        { pii: "(333) 333-3333", label: "<Phone_1>" },
+        ".",
+      ],
+      captions: {
+        typed: "3 pieces of PII, about to leave your device",
+        masked: "Masked on-device — nothing leaves your browser",
+        restored: "Fully reversible — one click brings the real text back",
+      },
+      reply: [
+        "Sure! Here's a draft for ",
+        { pii: "John Smith", label: "<Name_1>" },
+        ", ready to send to ",
+        { pii: "john.smith@example.com", label: "<Email_1>" },
+        ".",
+      ],
+      outro: {
+        title: "Prompt Anonymizer",
+        tag: "A buddy check for PII before it reaches an LLM.",
+        features: "Browser · Extension · Desktop · CLI · Proxy · MCP",
+        langs: "10 languages · MIT · open source",
+        url: "github.com/akazah/prompt-anonymizer",
+      },
+    },
     web: {
       llmReply:
         "Understood. I'll coordinate with <Name_2> on the data-room access and send the onboarding " +
@@ -30,6 +84,48 @@ export const LANG_DATA = {
   },
   ja: {
     labels: { PERSON: "人名", EMAIL_ADDRESS: "メールアドレス", LOCATION: "住所", PHONE_NUMBER: "電話番号" },
+    social: {
+      ui: {
+        app: "Prompt Anonymizer",
+        langPill: "日本語",
+        anonymize: "匿名化",
+        restore: "復元",
+        replyTag: "LLMの返答",
+        badge: "端末内で完結 · 外部送信ゼロ",
+      },
+      hook: {
+        lines: ["名前もメールも、", "AIに貼って大丈夫？"],
+        sub: "個人情報は、思ったよりプロンプトに紛れ込みます。",
+      },
+      message: [
+        "",
+        { pii: "山田太郎", label: "<人名_1>" },
+        "さん宛のメールを書いて。連絡先は ",
+        { pii: "taro.yamada@example.com", label: "<メールアドレス_1>" },
+        " か ",
+        { pii: "090-1234-5678", label: "<電話番号_1>" },
+        " です。",
+      ],
+      captions: {
+        typed: "個人情報3件が、端末の外へ出る寸前",
+        masked: "端末内でマスク — ブラウザの外へは何も出ません",
+        restored: "完全に可逆 — ワンクリックで元どおり",
+      },
+      reply: [
+        "承知しました。",
+        { pii: "山田太郎", label: "<人名_1>" },
+        "さん宛の下書きです。",
+        { pii: "taro.yamada@example.com", label: "<メールアドレス_1>" },
+        " へ送れます。",
+      ],
+      outro: {
+        title: "Prompt Anonymizer",
+        tag: "LLMに渡す前の、PIIバディチェック。",
+        features: "ブラウザ · 拡張機能 · デスクトップ · CLI · プロキシ · MCP",
+        langs: "10言語対応 · MIT · オープンソース",
+        url: "github.com/akazah/prompt-anonymizer",
+      },
+    },
     web: {
       llmReply:
         "承知しました。<人名_2>さんに引き継ぎ手順を確認し、<人名_1>さんへは<メールアドレス_1>または" +

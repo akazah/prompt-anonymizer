@@ -1,9 +1,10 @@
-name: Regenerate demo GIFs
+name: Regenerate demo assets
 
 # Manual workflow: re-records the per-language demo GIFs (browser app, CLI,
-# Chrome extension) used by README.md / README_<lang>.md. Needs real network
-# access for spaCy model / NER model downloads, so it can't run in the
-# sandboxed dev environment - see demo/README.md for the local equivalents.
+# Chrome extension) used by README.md / README_<lang>.md, plus the SNS-sized
+# promo videos (demo/social). The GIFs need real network access for spaCy
+# model / NER model downloads, so they can't be regenerated in the sandboxed
+# dev environment - see demo/README.md for the local equivalents.
 on:
   workflow_dispatch:
     inputs:
@@ -14,7 +15,7 @@ on:
       targets:
         description: "Which demos to regenerate"
         required: false
-        default: "web,extension,cli"
+        default: "web,extension,cli,social"
 
 permissions:
   contents: write
@@ -71,6 +72,13 @@ jobs:
         if: contains(inputs.targets, 'web')
         run: node demo/scripts/record_web.mjs --lang=${{ inputs.langs }}
 
+      # Fully offline (mock UI, no models); langs is intentionally not passed
+      # through - social videos only exist for languages with a `social`
+      # block in lang-data.mjs, and regenerating all of them is cheap.
+      - name: Regenerate SNS promo videos
+        if: contains(inputs.targets, 'social')
+        run: node demo/scripts/record_social.mjs
+
       - name: Regenerate Chrome extension demo GIFs
         if: contains(inputs.targets, 'extension')
         run: node demo/scripts/record_extension.mjs --lang=${{ inputs.langs }}
@@ -93,6 +101,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add demo/demo_*.gif
-          git diff --cached --quiet || git commit -m "docs: regenerate demo GIFs (${{ inputs.langs }} / ${{ inputs.targets }})"
+          git add demo/demo_*.gif demo/social/social_*.mp4
+          git diff --cached --quiet || git commit -m "docs: regenerate demo assets (${{ inputs.langs }} / ${{ inputs.targets }})"
           git push
