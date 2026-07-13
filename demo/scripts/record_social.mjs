@@ -1,8 +1,8 @@
 /**
  * Records SNS / X promo assets from demo/scripts/social-video.html:
- *   - demo/social/social_<lang>_<fmt>.mp4          (~10.5 s video)
- *   - demo/social/social_<lang>_hook_<fmt>.png      (hook still)
- *   - demo/social/social_<lang>_punch_<fmt>.png     (punchline still)
+ *   - demo/social/social_<lang>_<fmt>.mp4          (~9.5 s plain demo)
+ *   - demo/social/social_<lang>_before_<fmt>.png    (PII noticed)
+ *   - demo/social/social_<lang>_after_<fmt>.png     (labels swapped)
  *
  * Usage (from repo root):
  *   node demo/scripts/record_social.mjs                 # all langs, both formats

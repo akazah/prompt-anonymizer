@@ -26,12 +26,8 @@ export const LANG_DATA = {
   en: {
     labels: { PERSON: "Name", EMAIL_ADDRESS: "Email", LOCATION: "Location", PHONE_NUMBER: "Phone" },
     // SNS / X video content (record_social.mjs / social-video.html).
-    // `message` is plain strings + { pii, label } spans that flip during the punch.
+    // Plain demo: message + status labels only — no catchphrases.
     social: {
-      hook: {
-        lines: ["About to paste that", "into an LLM?"],
-        sub: "One buddy check first.",
-      },
       message: [
         "Follow up with ",
         { pii: "John Smith", label: "<Name_1>" },
@@ -42,13 +38,11 @@ export const LANG_DATA = {
         ".",
       ],
       status: {
-        notice: "PII in this prompt",
-        ok: "Swapped for labels",
+        notice: "PII found",
+        ok: "Replaced with labels",
       },
-      punchline: ["Labels go out.", "The real values stay with you."],
       outro: {
         title: "Prompt Anonymizer",
-        tag: "A buddy check for PII before it reaches an LLM.",
         url: "github.com/akazah/prompt-anonymizer",
       },
     },
@@ -67,10 +61,6 @@ export const LANG_DATA = {
   ja: {
     labels: { PERSON: "人名", EMAIL_ADDRESS: "メールアドレス", LOCATION: "住所", PHONE_NUMBER: "電話番号" },
     social: {
-      hook: {
-        lines: ["AIに貼る前に、", "ひと確認どう？"],
-        sub: "バディチェック、くらいの気持ちで。",
-      },
       message: [
         "",
         { pii: "山田太郎", label: "<人名_1>" },
@@ -81,13 +71,11 @@ export const LANG_DATA = {
         "",
       ],
       status: {
-        notice: "個人情報が入ってます",
-        ok: "ラベルに差し替え済み",
+        notice: "個人情報を検出",
+        ok: "ラベルに置換",
       },
-      punchline: ["外に出るのはラベル。", "実データは手元に残る。"],
       outro: {
         title: "Prompt Anonymizer",
-        tag: "LLMに渡す前の、PIIバディチェック。",
         url: "github.com/akazah/prompt-anonymizer",
       },
     },

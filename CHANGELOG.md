@@ -8,14 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- SNS / X promo assets (`demo/social/`): ~11 s videos plus hook/punchline
+- SNS / X promo assets (`demo/social/`): ~9.5 s plain demos plus before/after
   still PNGs, in portrait (1080×1920) and square (1080×1080), English and
-  Japanese first. Soft buddy-check tone (not an alarm): calm hook → PII
-  chips quietly flip to labels → punchline. Script-generated via
-  `demo/scripts/record_social.mjs` + `demo/scripts/social-video.html`
-  (deterministic seek), copy in `demo/scripts/lang-data.mjs` (`social`
-  blocks), wired into `demo-regen.yml` (`social` target). OLED black;
-  muted amber = noticed, soft blue = masked.
+  Japanese first. No catchphrases — type → notice PII → swap to labels →
+  quiet product name. Script-generated via `demo/scripts/record_social.mjs`
+  + `demo/scripts/social-video.html` (deterministic seek), copy in
+  `demo/scripts/lang-data.mjs` (`social` blocks), wired into
+  `demo-regen.yml` (`social` target). OLED black; muted amber = noticed,
+  soft blue = masked.
 
 ### Changed
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check

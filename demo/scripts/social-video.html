@@ -2,13 +2,11 @@
 <!-- Source for demo/social/social_<lang>_<fmt>.{mp4,png} (SNS / X promo).
      Self-contained: system fonts only (needs a CJK font, e.g. fonts-noto-cjk),
      no network. record_social.mjs injects via window.renderSocial(payload)
-     and seeks with window.seekSocial(tMs). Also exports still PNGs at the
-     hook and punchline beats.
+     and seeks with window.seekSocial(tMs). Also exports still PNGs.
 
-     Soft buddy-check tone (not an alarm): ~10.5 s, mute-first,
-     calm hook → PII chips quietly flip to labels → punchline.
-     OLED true-black, muted blue/amber. Formats: portrait 1080x1920 /
-     square 1080x1080.
+     Plain matter-of-fact demo — no catchphrases. Type → notice PII →
+     swap to labels → quiet product name. OLED black, muted amber/blue.
+     Formats: portrait 1080x1920 / square 1080x1080.
 
      Regeneration: node demo/scripts/record_social.mjs -->
 <html lang="en">
@@ -16,8 +14,6 @@
 <meta charset="utf-8">
 <style>
   :root {
-    /* Calm engineer palette — buddy check, not a red alert.
-       stone = quiet UI, amber = "noticed", blue = masked / ok. */
     --ink: #e7e5e4;
     --muted: #a8a29e;
     --blue: #7dd3fc;
@@ -38,14 +34,12 @@
   }
 
   .blob { position: absolute; border-radius: 50%; filter: blur(160px); }
-  .b1 { width: 640px; height: 640px; left: -200px; top: -180px; background: #1e3a5f; opacity: 0.35; animation: drift1 14s ease-in-out infinite alternate; }
-  .b2 { width: 480px; height: 480px; right: -160px; bottom: -140px; background: #292524; opacity: 0.4; animation: drift2 16s ease-in-out infinite alternate; }
-  @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(40px, 30px) scale(1.06); } }
-  @keyframes drift2 { from { transform: translate(0, 0) scale(1.04); } to { transform: translate(-30px, -24px) scale(0.97); } }
+  .b1 { width: 560px; height: 560px; left: -180px; top: -160px; background: #1e3a5f; opacity: 0.28; }
+  .b2 { width: 420px; height: 420px; right: -140px; bottom: -120px; background: #292524; opacity: 0.32; }
 
   #progress {
-    position: absolute; left: 0; bottom: 0; height: 6px; width: 0;
-    background: rgba(125, 211, 252, 0.55);
+    position: absolute; left: 0; bottom: 0; height: 4px; width: 0;
+    background: rgba(125, 211, 252, 0.4);
     z-index: 40;
   }
 
@@ -57,36 +51,11 @@
   }
   .portrait .scene { padding: 0 72px; }
 
-  /* ---- scene 1: calm hook ---- */
-  .hook-line {
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    line-height: 1.18;
-    text-align: center;
-    opacity: 0;
-    color: var(--ink);
-  }
-  .portrait .hook-line { font-size: 92px; }
-  .square .hook-line { font-size: 72px; }
-  .hook-sub {
-    margin-top: 36px;
-    color: var(--muted);
-    font-weight: 500;
-    text-align: center;
-    opacity: 0;
-    line-height: 1.45;
-  }
-  .portrait .hook-sub { font-size: 38px; }
-  .square .hook-sub { font-size: 30px; margin-top: 24px; }
-
-  /* ---- scene 2: the quiet punch ---- */
   .card {
-    position: relative;
     width: 100%;
     background: rgba(255, 255, 255, 0.03);
-    border: 2px solid rgba(168, 162, 158, 0.28);
-    border-radius: 28px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    border: 1.5px solid rgba(168, 162, 158, 0.22);
+    border-radius: 24px;
     opacity: 0;
   }
   .portrait .card { padding: 44px 40px; }
@@ -110,13 +79,13 @@
     white-space: nowrap;
     overflow: hidden;
     vertical-align: -0.34em;
-    border-radius: 12px;
-    padding: 2px 12px;
+    border-radius: 10px;
+    padding: 2px 11px;
   }
   .pii .orig { display: inline-block; white-space: pre; }
   .pii .lbl {
     position: absolute;
-    left: 12px; top: 50%;
+    left: 11px; top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     white-space: nowrap;
@@ -128,75 +97,38 @@
 
   .status-row {
     position: relative;
-    margin-top: 32px;
-    height: 1.5em;
+    margin-top: 28px;
+    height: 1.4em;
   }
-  .square .status-row { margin-top: 24px; }
+  .square .status-row { margin-top: 22px; }
   .status {
     position: absolute; left: 0; top: 0;
-    display: inline-flex; align-items: center; gap: 14px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.01em;
     opacity: 0;
+    color: var(--muted);
   }
-  .portrait .status { font-size: 32px; }
-  .square .status { font-size: 26px; }
-  .status svg { width: 1.15em; height: 1.15em; flex: none; opacity: 0.9; }
-  .status.notice { color: #fde68a; }
+  .portrait .status { font-size: 30px; }
+  .square .status { font-size: 24px; }
   .status.ok { color: var(--blue-soft); }
 
-  .caption {
-    margin-top: 44px;
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.32;
+  .outro-title {
+    font-weight: 600;
     letter-spacing: -0.01em;
     opacity: 0;
     color: var(--ink);
   }
-  .portrait .caption { font-size: 48px; margin-top: 56px; }
-  .square .caption { font-size: 38px; margin-top: 36px; }
-  .caption .em {
-    display: block;
-    margin-top: 10px;
-    color: var(--blue-soft);
-    font-weight: 600;
-  }
-  .portrait .caption .em { font-size: 44px; }
-  .square .caption .em { font-size: 34px; }
-
-  /* ---- scene 3: quiet outro ---- */
-  .logo-mark { opacity: 0; }
-  .portrait .logo-mark svg { width: 140px; height: 140px; }
-  .square .logo-mark svg { width: 108px; height: 108px; }
-  .outro-title {
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    opacity: 0;
-    color: var(--ink);
-  }
-  .portrait .outro-title { font-size: 76px; margin-top: 32px; }
-  .square .outro-title { font-size: 58px; margin-top: 22px; }
-  .outro-tag {
-    color: var(--muted);
-    font-weight: 500;
-    text-align: center;
-    opacity: 0;
-    line-height: 1.45;
-  }
-  .portrait .outro-tag { font-size: 36px; margin-top: 24px; }
-  .square .outro-tag { font-size: 28px; margin-top: 18px; }
+  .portrait .outro-title { font-size: 56px; }
+  .square .outro-title { font-size: 44px; }
   .outro-url {
-    display: inline-block;
+    margin-top: 22px;
     font-family: var(--font-mono);
-    font-weight: 600;
-    color: #0c4a6e;
-    background: var(--blue-soft);
-    border-radius: 999px;
+    font-weight: 500;
+    color: var(--muted);
     opacity: 0;
   }
-  .portrait .outro-url { font-size: 30px; padding: 18px 36px; margin-top: 44px; }
-  .square .outro-url { font-size: 24px; padding: 14px 28px; margin-top: 30px; }
+  .portrait .outro-url { font-size: 28px; }
+  .square .outro-url { font-size: 22px; margin-top: 16px; }
 </style>
 </head>
 <body>
@@ -204,41 +136,18 @@
   <div class="blob b2"></div>
   <div id="progress"></div>
 
-  <section class="scene" id="scene-hook">
-    <div class="hook-line" id="hook-1"></div>
-    <div class="hook-line" id="hook-2"></div>
-    <div class="hook-sub" id="hook-sub"></div>
-  </section>
-
-  <section class="scene" id="scene-punch">
+  <section class="scene" id="scene-demo">
     <div class="card" id="card">
       <div class="prompt" id="msg"></div>
       <div class="status-row">
-        <div class="status notice" id="status-notice">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
-          <span id="status-notice-text"></span>
-        </div>
-        <div class="status ok" id="status-ok">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/><path d="M8.5 12l2.5 2.5 4.5-4.8"/></svg>
-          <span id="status-ok-text"></span>
-        </div>
+        <div class="status" id="status-notice"><span id="status-notice-text"></span></div>
+        <div class="status ok" id="status-ok"><span id="status-ok-text"></span></div>
       </div>
-    </div>
-    <div class="caption" id="punchline">
-      <span id="punch-1"></span>
-      <span class="em" id="punch-2"></span>
     </div>
   </section>
 
   <section class="scene" id="scene-outro">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2l8 3.5v5.2c0 5-3.4 9.4-8 11.3-4.6-1.9-8-6.3-8-11.3V5.5z"/>
-        <path d="M8.5 12l2.5 2.5 4.5-4.8"/>
-      </svg>
-    </div>
     <div class="outro-title" id="outro-title"></div>
-    <div class="outro-tag" id="outro-tag"></div>
     <div class="outro-url" id="outro-url"></div>
   </section>
 
@@ -246,41 +155,37 @@
 "use strict";
 
 const T = {
-  hook1: 150,
-  hook2: 500,
-  hookSub: 1000,
-  hookOut: 1900,
-  punchIn: 2200,
-  typeStart: 2500,
-  typeDur: 1800,
-  scanStart: 4400,
-  scanStep: 200,
-  noticeIn: 4700,
-  noticeOut: 5800,
-  maskStart: 6000,
-  maskStep: 180,
-  okIn: 6700,
-  punchlineIn: 7400,
-  punchOut: 9000,
-  outroIn: 9300,
-  end: 10800,
+  cardIn: 200,
+  typeStart: 500,
+  typeDur: 2200,
+  scanStart: 2900,
+  scanStep: 220,
+  noticeIn: 3200,
+  noticeOut: 4300,
+  maskStart: 4500,
+  maskStep: 200,
+  okIn: 5300,
+  demoOut: 7200,
+  outroIn: 7600,
+  end: 9500,
 };
 
-window.SOCIAL_STILLS = { hook: 1400, punch: 8200 };
+// Stills: mid-typing with PII noticed / after labels swapped.
+window.SOCIAL_STILLS = { before: 3800, after: 6200 };
 
-const EASE_OUT = "cubic-bezier(0.22, 1, 0.36, 1)";
+const EASE_OUT = "cubic-bezier(0.25, 0.1, 0.25, 1)";
 const $ = (id) => document.getElementById(id);
 
 function anim(el, keyframes, opts) {
   return el.animate(keyframes, { fill: "forwards", easing: EASE_OUT, ...opts });
 }
-function show(el, delay, { duration = 500, y = 18, scale = 1 } = {}) {
+function show(el, delay, { duration = 450, y = 12 } = {}) {
   anim(el, [
-    { opacity: 0, transform: `translateY(${y}px) scale(${scale})` },
-    { opacity: 1, transform: "translateY(0) scale(1)" },
+    { opacity: 0, transform: `translateY(${y}px)` },
+    { opacity: 1, transform: "translateY(0)" },
   ], { delay, duration });
 }
-function hideAt(el, delay, { duration = 360 } = {}) {
+function hideAt(el, delay, { duration = 350 } = {}) {
   anim(el, [{ opacity: 1 }, { opacity: 0 }], { delay, duration, easing: "ease-in" });
 }
 
@@ -356,17 +261,18 @@ function typeChars(container, start, totalDur) {
   const chars = container.querySelectorAll(".char");
   const step = totalDur / Math.max(chars.length, 1);
   chars.forEach((ch, i) => {
-    anim(ch, [
-      { opacity: 0 },
-      { opacity: 1 },
-    ], { delay: start + i * step, duration: 50, easing: "ease-out" });
+    anim(ch, [{ opacity: 0 }, { opacity: 1 }], {
+      delay: start + i * step,
+      duration: 40,
+      easing: "linear",
+    });
   });
 }
 
 const TINT = {
   none: "rgba(252, 211, 77, 0)",
-  amber: "rgba(252, 211, 77, 0.14)",
-  blue: "rgba(125, 211, 252, 0.14)",
+  amber: "rgba(252, 211, 77, 0.12)",
+  blue: "rgba(125, 211, 252, 0.12)",
 };
 function flip(wrap, delay) {
   const orig = wrap.querySelector(".orig");
@@ -374,15 +280,9 @@ function flip(wrap, delay) {
   anim(wrap, [
     { width: wrap.dataset.origW + "px", backgroundColor: TINT.amber },
     { width: wrap.dataset.lblW + "px", backgroundColor: TINT.blue },
-  ], { delay, duration: 420 });
-  anim(orig, [
-    { opacity: 1 },
-    { opacity: 0 },
-  ], { delay, duration: 240, easing: "ease-in" });
-  anim(lbl, [
-    { opacity: 0 },
-    { opacity: 1 },
-  ], { delay: delay + 140, duration: 280 });
+  ], { delay, duration: 400 });
+  anim(orig, [{ opacity: 1 }, { opacity: 0 }], { delay, duration: 220, easing: "ease-in" });
+  anim(lbl, [{ opacity: 0 }, { opacity: 1 }], { delay: delay + 140, duration: 260 });
 }
 
 window.renderSocial = (payload) => {
@@ -390,15 +290,9 @@ window.renderSocial = (payload) => {
   document.documentElement.lang = lang;
   document.body.className = fmt;
 
-  $("hook-1").textContent = social.hook.lines[0];
-  $("hook-2").textContent = social.hook.lines[1] ?? "";
-  $("hook-sub").textContent = social.hook.sub;
   $("status-notice-text").textContent = social.status.notice;
   $("status-ok-text").textContent = social.status.ok;
-  $("punch-1").textContent = social.punchline[0];
-  $("punch-2").textContent = social.punchline[1] ?? "";
   $("outro-title").textContent = social.outro.title;
-  $("outro-tag").textContent = social.outro.tag;
   $("outro-url").textContent = social.outro.url;
 
   const msgPii = buildParts($("msg"), social.message);
@@ -410,47 +304,40 @@ window.renderSocial = (payload) => {
     wrap.style.width = wrap.dataset.origW + "px";
   }
 
-  show($("scene-hook"), 0, { duration: 1, y: 0 });
-  show($("hook-1"), T.hook1, { duration: 550, y: 22 });
-  show($("hook-2"), T.hook2, { duration: 550, y: 22 });
-  show($("hook-sub"), T.hookSub, { duration: 450 });
-  hideAt($("scene-hook"), T.hookOut);
-
-  show($("scene-punch"), T.punchIn, { duration: 1, y: 0 });
-  show($("card"), T.punchIn, { duration: 500, y: 22 });
+  show($("scene-demo"), 0, { duration: 1, y: 0 });
+  show($("card"), T.cardIn, { duration: 400, y: 10 });
   typeChars($("msg"), T.typeStart, T.typeDur);
 
   msgPii.forEach((wrap, i) => {
     anim(wrap, [
       { backgroundColor: TINT.none },
       { backgroundColor: TINT.amber },
-    ], { delay: T.scanStart + i * T.scanStep, duration: 360 });
+    ], { delay: T.scanStart + i * T.scanStep, duration: 320 });
   });
   anim($("card"), [
-    { borderColor: "rgba(168, 162, 158, 0.28)" },
-    { borderColor: "rgba(252, 211, 77, 0.35)" },
-  ], { delay: T.scanStart, duration: 450 });
+    { borderColor: "rgba(168, 162, 158, 0.22)" },
+    { borderColor: "rgba(252, 211, 77, 0.28)" },
+  ], { delay: T.scanStart, duration: 400 });
 
-  show($("status-notice"), T.noticeIn, { duration: 400, y: 10 });
-  hideAt($("status-notice"), T.noticeOut, { duration: 280 });
+  show($("status-notice"), T.noticeIn, { duration: 350, y: 6 });
+  hideAt($("status-notice"), T.noticeOut, { duration: 250 });
 
   msgPii.forEach((wrap, i) => flip(wrap, T.maskStart + i * T.maskStep));
   anim($("card"), [
-    { borderColor: "rgba(252, 211, 77, 0.35)" },
-    { borderColor: "rgba(125, 211, 252, 0.4)" },
-  ], { delay: T.maskStart, duration: 600 });
+    { borderColor: "rgba(252, 211, 77, 0.28)" },
+    { borderColor: "rgba(125, 211, 252, 0.32)" },
+  ], { delay: T.maskStart, duration: 500 });
 
-  show($("status-ok"), T.okIn, { duration: 420, y: 10 });
-  show($("punchline"), T.punchlineIn, { duration: 550, y: 18 });
-  hideAt($("scene-punch"), T.punchOut);
+  show($("status-ok"), T.okIn, { duration: 350, y: 6 });
+  hideAt($("scene-demo"), T.demoOut);
 
   show($("scene-outro"), T.outroIn, { duration: 1, y: 0 });
-  show($("scene-outro").querySelector(".logo-mark"), T.outroIn + 80, { duration: 500, scale: 0.92 });
-  show($("outro-title"), T.outroIn + 280, { duration: 480, y: 16 });
-  show($("outro-tag"), T.outroIn + 520, { duration: 420 });
-  show($("outro-url"), T.outroIn + 760, { duration: 450, y: 12 });
+  show($("outro-title"), T.outroIn + 100, { duration: 400, y: 8 });
+  show($("outro-url"), T.outroIn + 350, { duration: 400, y: 6 });
 
-  anim($("progress"), [{ width: "0%" }, { width: "100%" }], { delay: 0, duration: T.end, easing: "linear" });
+  anim($("progress"), [{ width: "0%" }, { width: "100%" }], {
+    delay: 0, duration: T.end, easing: "linear",
+  });
   window.SOCIAL_DURATION_MS = T.end;
 };
 
