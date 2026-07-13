@@ -325,8 +325,7 @@ function buildParts(container, parts) {
           continue;
         }
         const word = document.createElement("span");
-        const afterChip = first && container.lastElementChild?.classList.contains("pii");
-        word.className = afterChip && /^[.,!?;:、。]/.test(token.text) ? "word tight" : "word";
+        word.className = "word";
         first = false;
         for (const ch of token.text) {
           const s = document.createElement("span");
