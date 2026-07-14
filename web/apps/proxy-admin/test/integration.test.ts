@@ -1,21 +1,23 @@
 // @vitest-environment jsdom
 /**
- * Live integration: proxy-admin UI against a real localhost proxy server
- * (regex-only engine). Relative `/admin/api/*` fetches are rewritten to the
- * ephemeral proxy URL so jsdom can talk to the Node HTTP server.
+ * Live integration: proxy-admin UI against a real localhost proxy process
+ * (spawned `dist/cli.js`, regex-only / --no-ner). Relative `/admin/api/*`
+ * fetches are rewritten to the ephemeral proxy URL so jsdom can talk to
+ * the Node HTTP server without importing proxy sources into the jsdom realm.
  */
 
+import { spawn, type ChildProcess } from "node:child_process";
 import { createServer, type Server } from "node:http";
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
-import { Anonymizer } from "@prompt-anonymizer/core";
-import {
-  startProxyServer,
-  type ProxyServer,
-} from "../../../packages/proxy/src/server.js";
 
-const regexEngine = () => new Anonymizer();
+const HERE = dirname(fileURLToPath(import.meta.url));
+const PROXY_CLI = join(HERE, "../../../packages/proxy/dist/cli.js");
 
-let proxy: ProxyServer;
+let proxy: ChildProcess;
+let proxyUrl: string;
 let upstream: Server;
 let realFetch: typeof fetch;
 
@@ -37,14 +39,42 @@ async function startUpstream(): Promise<string> {
   });
 }
 
-beforeAll(async () => {
-  const upstreamUrl = await startUpstream();
-  proxy = await startProxyServer({
-    port: 0,
-    engineFactory: regexEngine,
-    config: { upstreamUrl, ner: false, language: "ja" },
-    version: "0.0.0-integration",
+function startProxy(upstreamUrl: string): Promise<{ child: ChildProcess; url: string }> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(
+      process.execPath,
+      [PROXY_CLI, "-p", "0", "--no-ner", "-u", upstreamUrl, "-l", "ja"],
+      { stdio: ["ignore", "pipe", "pipe"], env: { ...process.env, NO_COLOR: "1" } },
+    );
+    let stderr = "";
+    const onData = (chunk: Buffer): void => {
+      stderr += chunk.toString("utf-8");
+      const match = stderr.match(/OpenAI-compatible endpoint: (http:\/\/127\.0\.0\.1:\d+)\/v1/);
+      if (match) {
+        child.stderr?.off("data", onData);
+        resolve({ child, url: match[1]! });
+      }
+    };
+    child.stderr?.on("data", onData);
+    child.on("error", reject);
+    child.on("exit", (code) => {
+      if (code !== null && code !== 0) {
+        reject(new Error(`proxy exited early (${code}): ${stderr}`));
+      }
+    });
+    setTimeout(() => {
+      reject(new Error(`proxy did not become ready:\n${stderr}`));
+    }, 15_000);
   });
+}
+
+beforeAll(async () => {
+  expect(existsSync(PROXY_CLI), "proxy dist/cli.js missing — build packages first").toBe(true);
+
+  const upstreamUrl = await startUpstream();
+  const started = await startProxy(upstreamUrl);
+  proxy = started.child;
+  proxyUrl = started.url;
 
   realFetch = globalThis.fetch.bind(globalThis);
   vi.stubGlobal("fetch", (input: RequestInfo | URL, init?: RequestInit) => {
@@ -55,7 +85,7 @@ beforeAll(async () => {
           ? input.href
           : input.url;
     if (url.startsWith("/")) {
-      url = `${proxy.url}${url}`;
+      url = `${proxyUrl}${url}`;
     }
     return realFetch(url, init);
   });
@@ -66,7 +96,16 @@ beforeAll(async () => {
 
 afterAll(async () => {
   vi.unstubAllGlobals();
-  await proxy.close();
+  if (proxy && !proxy.killed) {
+    proxy.kill("SIGTERM");
+    await new Promise<void>((resolve) => {
+      proxy.once("exit", () => resolve());
+      setTimeout(() => {
+        proxy.kill("SIGKILL");
+        resolve();
+      }, 2000);
+    });
+  }
   await new Promise<void>((resolve, reject) =>
     upstream.close((e) => (e ? reject(e) : resolve())),
   );
@@ -77,18 +116,18 @@ describe("proxy-admin live integration", () => {
     const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
 
     await vi.waitFor(() => {
-      expect($("#version-badge").textContent).toContain("0.0.0-integration");
+      expect($("#proxy-badge").classList.contains("ok")).toBe(true);
     });
 
-    expect($("#proxy-badge").classList.contains("ok")).toBe(true);
     expect($("#proxy-status-text").textContent).toContain("proxy: online");
     expect($("#stat-listen").textContent).toMatch(/127\.0\.0\.1:\d+/);
     expect($("#stat-upstream").textContent).toContain("127.0.0.1");
+    expect($("#version-badge").textContent).toMatch(/v\d+\.\d+\.\d+/);
   });
 
   it("shows an event after a proxied chat completion", async () => {
     const email = "secret@example.com";
-    const res = await realFetch(`${proxy.url}/v1/chat/completions`, {
+    const res = await realFetch(`${proxyUrl}/v1/chat/completions`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

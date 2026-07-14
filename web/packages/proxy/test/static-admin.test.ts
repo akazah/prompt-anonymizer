@@ -1,10 +1,13 @@
 /**
  * Distribution-boundary checks for the proxy package: healthz, static admin
- * UI (copied into dist/ui by copy-ui.mjs at build time), and CLI help/version.
+ * UI (served from dist/ui next to the built module), and CLI help/version.
  *
  * HTTP anonymize/restore coverage lives in proxy.test.ts / admin.test.ts.
+ * The admin HTML path is exercised via spawned dist/cli.js because
+ * `UI_DIR` resolves relative to the loaded module (`dist/ui`, not `src/ui`).
  */
 
+import { spawn, type ChildProcess } from "node:child_process";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,12 +18,14 @@ import { runCli, type ProxyIo } from "../src/main.js";
 import { startProxyServer, type ProxyServer } from "../src/server.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const PROXY_CLI = join(HERE, "../dist/cli.js");
 const UI_INDEX = join(HERE, "../dist/ui/index.html");
 
 const regexEngine = () => new Anonymizer();
 
 let proxy: ProxyServer | undefined;
 let upstream: Server | undefined;
+let child: ChildProcess | undefined;
 
 afterEach(async () => {
   if (proxy) {
@@ -32,8 +37,19 @@ afterEach(async () => {
       upstream!.close((e) => (e ? reject(e) : resolve())),
     );
   }
+  if (child && !child.killed) {
+    child.kill("SIGTERM");
+    await new Promise<void>((resolve) => {
+      child!.once("exit", () => resolve());
+      setTimeout(() => {
+        child?.kill("SIGKILL");
+        resolve();
+      }, 2000);
+    });
+  }
   proxy = undefined;
   upstream = undefined;
+  child = undefined;
 });
 
 async function startUpstream(): Promise<string> {
@@ -50,6 +66,33 @@ async function startUpstream(): Promise<string> {
   });
 }
 
+function startProxyBin(upstreamUrl: string): Promise<{ process: ChildProcess; url: string }> {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(
+      process.execPath,
+      [PROXY_CLI, "-p", "0", "--no-ner", "-u", upstreamUrl],
+      { stdio: ["ignore", "pipe", "pipe"], env: { ...process.env, NO_COLOR: "1" } },
+    );
+    let stderr = "";
+    const onData = (chunk: Buffer): void => {
+      stderr += chunk.toString("utf-8");
+      const match = stderr.match(/OpenAI-compatible endpoint: (http:\/\/127\.0\.0\.1:\d+)\/v1/);
+      if (match) {
+        proc.stderr?.off("data", onData);
+        resolve({ process: proc, url: match[1]! });
+      }
+    };
+    proc.stderr?.on("data", onData);
+    proc.on("error", reject);
+    proc.on("exit", (code) => {
+      if (code !== null && code !== 0) {
+        reject(new Error(`proxy exited early (${code}): ${stderr}`));
+      }
+    });
+    setTimeout(() => reject(new Error(`proxy did not become ready:\n${stderr}`)), 15_000);
+  });
+}
+
 function makeIo(): { io: ProxyIo; stdout: string[]; stderr: string[] } {
   const stdout: string[] = [];
   const stderr: string[] = [];
@@ -63,7 +106,7 @@ function makeIo(): { io: ProxyIo; stdout: string[]; stderr: string[] } {
   };
 }
 
-describe("proxy healthz and static admin", () => {
+describe("proxy healthz", () => {
   it("GET /healthz returns ok", async () => {
     const upstreamUrl = await startUpstream();
     proxy = await startProxyServer({
@@ -75,21 +118,21 @@ describe("proxy healthz and static admin", () => {
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ ok: true });
   });
+});
 
-  it("GET /admin/ serves the built admin UI HTML when dist/ui exists", async () => {
+describe("proxy static admin (dist/cli.js)", () => {
+  it("GET /admin/ serves the built admin UI HTML", async () => {
+    expect(existsSync(PROXY_CLI), "dist/cli.js missing — build proxy first").toBe(true);
     expect(
       existsSync(UI_INDEX),
       "dist/ui/index.html missing — proxy build (copy-ui.mjs) must run first",
     ).toBe(true);
 
     const upstreamUrl = await startUpstream();
-    proxy = await startProxyServer({
-      port: 0,
-      engineFactory: regexEngine,
-      config: { upstreamUrl, ner: false },
-    });
+    const started = await startProxyBin(upstreamUrl);
+    child = started.process;
 
-    const res = await fetch(`${proxy.url}/admin/`);
+    const res = await fetch(`${started.url}/admin/`);
     expect(res.status).toBe(200);
     const html = await res.text();
     expect(html.toLowerCase()).toContain("<!doctype html>");
