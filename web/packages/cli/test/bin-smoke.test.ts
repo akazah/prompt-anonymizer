@@ -73,7 +73,8 @@ describe("dist/cli.js scan (bin smoke)", () => {
     await writeFile(clean, "nothing sensitive here\n", "utf-8");
     const result = await runCli(["scan", clean]);
     expect(result.code).toBe(0);
-    expect(result.stdout).toContain("No PII found");
+    // Clean summary is written to stderr (findings stay on stdout when present).
+    expect(result.stderr).toContain("No PII found");
   });
 
   it("exits 1 on PII and never prints the matched text (P0)", async () => {
