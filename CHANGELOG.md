@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Distribution-boundary e2e / integration coverage for each user-facing
+  target beyond the existing Playwright web + extension suite: Node CLI
+  and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`
+  + `runCli` help/version, element/react/vue golden-set round trips
+  (jsdom), proxy-admin against a live localhost proxy, Python CLI
+  subprocess `scan` (P0: never prints matched text), and a static
+  `.pre-commit-hooks.yaml` pin. All new tests stay offline / regex-only
+  for PR CI (NER remains weekly `pnpm e2e:ner`).
 - SNS / X promo assets (`demo/social/`): ~9.5 s plain demos plus before/after
   still PNGs, in portrait (1080×1920) and square (1080×1080), English and
   Japanese first. No catchphrases — type → notice PII → swap to labels →
