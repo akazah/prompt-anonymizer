@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- `scan` no longer aborts with `EISDIR: illegal operation on a directory`
+  when a shell glob (e.g. `scan *`) expands to include directories. Both the
+  Python and TypeScript CLIs now skip directory arguments instead of treating
+  the whole scan as a fatal read error.
+
 ### Added
 - SNS / X promo assets (`demo/social/`): ~9.5 s plain demos plus before/after
   still PNGs, in portrait (1080×1920) and square (1080×1080), English and

@@ -147,6 +147,10 @@ def _scan_inputs(files: list[Path] | None, text: str | None) -> list[tuple[str, 
             raise typer.BadParameter("Provide FILES or --text, not both.")
         inputs: list[tuple[str, str]] = []
         for path in files:
+            # A shell glob like `scan *` expands to include directories; skip
+            # them rather than aborting the whole scan.
+            if path.is_dir():
+                continue
             try:
                 inputs.append((str(path), path.read_text(encoding="utf-8")))
             except (OSError, UnicodeDecodeError) as exc:
