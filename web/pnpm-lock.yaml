@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  boolean: file:./vendor/boolean
+
 importers:
 
   .:
@@ -917,9 +920,8 @@ packages:
     resolution: {integrity: sha512-2cGmJupaNgg+QUwVLAucDuWuoMZ6EX9iHDRswZ5lsNYEmwPaRknMPCLZz07yTzVq/83p4o/wzbDZbBrTvGGTIw==}
     engines: {node: '>=18'}
 
-  boolean@3.2.0:
-    resolution: {integrity: sha512-d0II/GO9uf9lfUHH2BQsjxzRJZBdsjgsBiW4BvhWk/3qoKwQFjIDVN19PfX8F2D/r9PCMTtLWjYVCFrpeYUzsw==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+  boolean@file:vendor/boolean:
+    resolution: {directory: vendor/boolean, type: directory}
 
   bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
@@ -2377,7 +2379,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  boolean@3.2.0: {}
+  boolean@file:vendor/boolean: {}
 
   bytes@3.1.2: {}
 
@@ -2604,7 +2606,7 @@ snapshots:
 
   global-agent@3.0.0:
     dependencies:
-      boolean: 3.2.0
+      boolean: file:vendor/boolean
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
@@ -2921,7 +2923,7 @@ snapshots:
 
   roarr@2.15.4:
     dependencies:
-      boolean: 3.2.0
+      boolean: file:vendor/boolean
       detect-node: 2.1.0
       globalthis: 1.0.4
       json-stringify-safe: 5.0.1

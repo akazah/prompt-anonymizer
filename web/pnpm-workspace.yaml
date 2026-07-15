@@ -8,3 +8,8 @@ allowBuilds:
   onnxruntime-node: false
   protobufjs: false
   sharp: false
+# `boolean` (pulled in transitively by global-agent/roarr via onnxruntime-node)
+# is deprecated on every published version with no maintained successor. Point
+# it at a local, behaviour-identical drop-in to silence the deprecation warning.
+overrides:
+  boolean: file:./vendor/boolean
