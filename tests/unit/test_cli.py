@@ -199,6 +199,17 @@ def test_scan_missing_file_exits_two(tmp_path: Path) -> None:
     assert "cannot read" in result.output
 
 
+def test_scan_skips_directories(tmp_path: Path) -> None:
+    # `scan *` expands to include directories; they must be skipped, not fatal.
+    sub = tmp_path / "docs"
+    sub.mkdir()
+    clean = tmp_path / "clean.txt"
+    clean.write_text("hello world", encoding="utf-8")
+    result = runner.invoke(app, ["scan", str(sub), str(clean)])
+    assert result.exit_code == 0
+    assert "cannot read" not in result.output
+
+
 def test_scan_rejects_files_and_text_together(tmp_path: Path) -> None:
     clean = tmp_path / "clean.txt"
     clean.write_text("x", encoding="utf-8")

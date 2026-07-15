@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
@@ -236,6 +236,17 @@ describe("scan (commit-time / CI gate)", () => {
     const { io, stderr } = makeIo();
     expect(await run(["scan", join(dir, "missing.txt")], io, regexOnly)).toBe(2);
     expect(stderr.join("\n")).toContain("cannot read");
+  });
+
+  it("skips directories instead of failing", async () => {
+    // `scan *` expands to include directories; they must be skipped, not fatal.
+    const sub = join(dir, "docs");
+    await mkdir(sub, { recursive: true });
+    const clean = join(dir, "clean-dir.txt");
+    await writeFile(clean, "hello world", "utf-8");
+    const { io, stderr } = makeIo();
+    expect(await run(["scan", sub, clean], io, regexOnly)).toBe(0);
+    expect(stderr.join("\n")).not.toContain("cannot read");
   });
 
   it("exits 2 when FILES and --text are combined", async () => {

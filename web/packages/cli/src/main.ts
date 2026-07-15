@@ -94,6 +94,11 @@ scan options (commit-time / CI gate; exits 0 = clean, 1 = PII found, 2 = error):
 
 class CliError extends Error {}
 
+/** Narrow an unknown error to a Node system error carrying a `code` string. */
+function isErrnoException(error: unknown): error is NodeJS.ErrnoException {
+  return error instanceof Error && typeof (error as NodeJS.ErrnoException).code === "string";
+}
+
 async function readInput(
   io: CliIo,
   text: string | undefined,
@@ -244,6 +249,9 @@ async function runScan(
       try {
         inputs.push({ name: file, content: await readFile(file, "utf-8") });
       } catch (error) {
+        // A shell glob like `scan *` expands to include directories; skip
+        // them rather than aborting the whole scan.
+        if (isErrnoException(error) && error.code === "EISDIR") continue;
         throw new CliError(
           `cannot read ${file}: ${error instanceof Error ? error.message : String(error)}`,
         );
