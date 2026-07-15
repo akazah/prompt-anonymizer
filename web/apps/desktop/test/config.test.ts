@@ -56,5 +56,30 @@ describe("desktop config", () => {
     it("should have single main window configured", () => {
       expect(tauriConf.app.windows).toHaveLength(1);
     });
+
+    it("should pin the product window title to Prompt Anonymizer", () => {
+      expect(tauriConf.productName).toBe("Prompt Anonymizer");
+      expect(tauriConf.app.windows[0].title).toContain("Prompt Anonymizer");
+    });
+  });
+
+  describe("frontend wiring", () => {
+    it("should point frontendDist at the web app dist (shared UI)", () => {
+      expect(tauriConf.build.frontendDist).toBe("../../web/dist");
+      const webDist = path.resolve(__dirname, "../../web/dist");
+      const webApp = path.resolve(__dirname, "../../web");
+      expect(fs.existsSync(webApp)).toBe(true);
+      // dist/ is build output — may be absent before `pnpm build`; the path
+      // relative to src-tauri must still resolve under apps/web.
+      expect(path.normalize(webDist)).toBe(
+        path.normalize(path.join(webApp, "dist")),
+      );
+    });
+
+    it("should build the web app before packaging", () => {
+      expect(tauriConf.build.beforeBuildCommand).toContain(
+        "@prompt-anonymizer/web",
+      );
+    });
   });
 });
