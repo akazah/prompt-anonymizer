@@ -12,6 +12,8 @@ const INPUT_TEXT = "連絡先は 090-1234-5678、メールは taro@example.com �
 
 beforeAll(async () => {
   document.body.innerHTML = '<div id="app"></div>';
+  // Skip the on-load auto demo (it would run with NER on and race this test).
+  window.history.replaceState(null, "", "/?demo=0");
   await import("../src/main.ts");
 });
 
@@ -62,10 +64,9 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("ja");
     expect($("#anonymize").textContent).toBe(t("ja", "anonymize"));
-    expect($(".privacy").textContent).toContain(t("ja", "privacyLead"));
-    expect($(".privacy").textContent).not.toMatch(/second pair|on-device/i);
-    // No leftover bilingual twin spans inside chrome (html[lang] is set on purpose).
-    expect(document.querySelectorAll(".privacy [lang], #ner-off-warning [lang]").length).toBe(0);
+    expect($(".hero-summary").textContent).toContain(t("ja", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/On-device|second pair/i);
+    expect(document.querySelectorAll(".hero-summary [lang], #ner-off-warning [lang]").length).toBe(0);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe(
       t("ja", "auto"),
     );
@@ -74,8 +75,8 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("en");
     expect($("#anonymize").textContent).toBe(t("en", "anonymize"));
-    expect($(".privacy").textContent).toContain(t("en", "privacyLead"));
-    expect($(".privacy").textContent).not.toMatch(/送る前|ダブルチェック|サーバー/);
+    expect($(".hero-summary").textContent).toContain(t("en", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/端末内|ダブルチェック/);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
   });
 });
