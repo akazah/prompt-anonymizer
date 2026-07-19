@@ -107,7 +107,10 @@ function renderShell(uiLang: Language): string {
       <div class="spacer"></div>
       <button id="anonymize" class="primary" title="${t(uiLang, "anonymize")}">
         <span class="anonymize-long" data-i18n="anonymize">${t(uiLang, "anonymize")}</span>
-        <span class="anonymize-short" data-i18n="anonymizeShort">${t(uiLang, "anonymizeShort")}</span>
+        <span class="anonymize-short">
+          <span class="anonymize-short-main" data-i18n="anonymizeShort">${t(uiLang, "anonymizeShort")}</span>
+          <span class="anonymize-short-sub" data-i18n="anonymizeHint">${t(uiLang, "anonymizeHint")}</span>
+        </span>
         <span class="anonymize-working" data-i18n="working" hidden>${t(uiLang, "working")}</span>
       </button>
     </div>

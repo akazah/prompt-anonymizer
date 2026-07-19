@@ -218,6 +218,18 @@ body {
   display: none;
 }
 
+.anonymize-short {
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.2;
+}
+
+.anonymize-short-sub {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.82;
+}
+
 .toolbar #anonymize.busy .anonymize-long,
 .toolbar #anonymize.busy .anonymize-short {
   display: none;
@@ -557,7 +569,7 @@ table.mapping td.value-cell {
   }
 
   .toolbar .anonymize-short {
-    display: inline;
+    display: inline-flex;
   }
 
   .toolbar label {
