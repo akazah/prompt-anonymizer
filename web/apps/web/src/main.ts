@@ -83,7 +83,7 @@ function renderShell(uiLang: Language): string {
       </section>
       <section class="panel">
         <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span></h2>
-        <div id="output" class="output"></div>
+        <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
           <span id="copy-flash" class="flash"></span>
@@ -103,7 +103,7 @@ function renderShell(uiLang: Language): string {
         <button id="copy-restored" data-i18n="copyRestored">${t(uiLang, "copyRestored")}</button>
         <span id="restore-flash" class="flash"></span>
       </div>
-      <div id="restore-output" class="output" style="margin-top:10px"></div>
+      <div id="restore-output" class="output" style="margin-top:10px" data-empty="${t(uiLang, "restoreOutputEmpty")}"></div>
       <p id="restore-warning" class="hint warning" hidden></p>
       <p class="hint" data-i18n="restoreHint">${t(uiLang, "restoreHint")}</p>
     </section>
@@ -160,6 +160,8 @@ function applyUiLocale(lang: Language): void {
   }
 
   $<HTMLTextAreaElement>("#restore-input").placeholder = restorePlaceholderFor(lang);
+  outputEl.dataset.empty = t(lang, "outputEmpty");
+  $("#restore-output").dataset.empty = t(lang, "restoreOutputEmpty");
 
   if (!busy) {
     progressLabel.textContent = t(lang, "loadingModel");
