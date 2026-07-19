@@ -103,9 +103,7 @@ def main() -> None:
         )
         print(f"[{language}] analyzed {len(cases)} cases (batched)")
         detection = evaluate_cases(cases, [r.entities for r in results])
-        parts = evaluate_name_parts(
-            cases, family_name_first=LANGUAGES[language].family_name_first
-        )
+        parts = evaluate_name_parts(cases, family_name_first=LANGUAGES[language].family_name_first)
         reports.append(merge_reports(detection, parts))
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

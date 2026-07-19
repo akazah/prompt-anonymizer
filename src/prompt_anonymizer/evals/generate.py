@@ -473,7 +473,7 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     company: str | None = None
     if halfwidth:
         name: list[tuple[str, str]] | str = _ja_halfwidth_kana_name(fake)
-        name2 = _ja_halfwidth_kana_name(fake)
+        name2: list[tuple[str, str]] | str = _ja_halfwidth_kana_name(fake)
         company = _ja_halfwidth_company(fake, rng)
     else:
         name = _person_parts(fake, rng, "ja")
@@ -515,11 +515,9 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             " で間違いないでしょうか。折り返しは "
         ).pii(phone, "PHONE_NUMBER").lit(" までお願いします。お支払いのカード番号は ").pii(
             card, "CREDIT_CARD"
-        ).lit(
-            " 、ご本人確認のマイナンバーは "
-        ).pii(my_number, "JP_MY_NUMBER").lit(" 、控えは ").pii(email, "EMAIL_ADDRESS").lit(
-            " に送信済みです。"
-        )
+        ).lit(" 、ご本人確認のマイナンバーは ").pii(my_number, "JP_MY_NUMBER").lit(
+            " 、控えは "
+        ).pii(email, "EMAIL_ADDRESS").lit(" に送信済みです。")
 
     return GoldenCase(id=case_id, language="ja", genre=genre, text=b.text, spans=b.spans)
 

@@ -77,11 +77,7 @@ def test_generate_cases_include_name_part_spans() -> None:
         assert persons
         assert parts
         for person in persons:
-            part_spans = [
-                s
-                for s in parts
-                if person.start <= s.start and s.end <= person.end
-            ]
+            part_spans = [s for s in parts if person.start <= s.start and s.end <= person.end]
             assert len(part_spans) >= 2
             assert case.text[person.start : person.end] == " ".join(s.value for s in part_spans)
 
