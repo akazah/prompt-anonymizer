@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- Heuristic language detection now treats halfwidth katakana
+  (`U+FF61`–`U+FF9F`, e.g. `ｶﾀｶﾅ`) as Japanese in both cores. The previous
+  kana range covered only fullwidth hiragana/katakana, so halfwidth-only
+  prose fell through to English and missed language-scoped recognizers.
 - `scan` no longer aborts with `EISDIR: illegal operation on a directory`
   when a shell glob (e.g. `scan *`) expands to include directories. Both the
   Python and TypeScript CLIs now skip directory arguments instead of treating

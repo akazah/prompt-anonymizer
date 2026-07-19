@@ -118,6 +118,7 @@ def test_detection_rules_reference_supported_languages_only() -> None:
     "text",
     [
         "山田太郎の電話は090-1234-5678",
+        "ｶﾀｶﾅﾉﾐ",
         "Xin chào, tôi tên là Nguyễn Văn A",
         "Buenos días, ¿cómo está usted?",
         "Hi, my name is John Smith",
