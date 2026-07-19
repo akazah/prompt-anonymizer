@@ -29,10 +29,10 @@ describe("ui-i18n catalog", () => {
   });
 
   it("Japanese and English catalogs do not embed the other language's chrome", () => {
-    expect(t("ja", "valueOnDevice")).toMatch(/端末/);
-    expect(t("ja", "valueOnDevice")).not.toMatch(/On-device|second pair/i);
-    expect(t("en", "valueOnDevice")).toMatch(/On-device/i);
-    expect(t("en", "valueOnDevice")).not.toMatch(/端末|ダブルチェック/);
+    expect(t("ja", "valuePitch")).toMatch(/ブラウザ|マスク|復元/);
+    expect(t("ja", "valuePitch")).not.toMatch(/On-device|second pair/i);
+    expect(t("en", "valuePitch")).toMatch(/browser|Mask|restore/i);
+    expect(t("en", "valuePitch")).not.toMatch(/端末|ダブルチェック/);
     expect(t("ja", "auto")).toBe("自動判定");
     expect(t("en", "auto")).toBe("Auto");
     expect(UI_MESSAGE_KEYS).toContain("nerOffWarning");

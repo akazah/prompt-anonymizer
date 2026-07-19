@@ -19,8 +19,7 @@ import {
 
 export const UI_MESSAGE_KEYS = [
   "auto",
-  "valueOnDevice",
-  "valueReversible",
+  "valuePitch",
   "tagLocal",
   "tagSafe",
   "language",
@@ -63,8 +62,8 @@ type UiCatalog = Record<UiMessageKey, string>;
 
 const EN: UiCatalog = {
   auto: "Auto",
-  valueOnDevice: "On-device",
-  valueReversible: "Reversible",
+  valuePitch:
+    "Masks personal info in your browser—never sent out—and restores it later",
   tagLocal: "Stays local",
   tagSafe: "Safe to send",
   privacyLead: "A second pair of eyes before you paste into an LLM.",
@@ -105,8 +104,7 @@ const EN: UiCatalog = {
 
 const JA: UiCatalog = {
   auto: "自動判定",
-  valueOnDevice: "端末内のみ",
-  valueReversible: "復元可能",
+  valuePitch: "ブラウザ内で処理。外部に送らず個人情報をマスクし、復元",
   tagLocal: "端末に保持",
   tagSafe: "送信OK",
   privacyLead: "送る前のダブルチェック。",
@@ -145,8 +143,8 @@ const JA: UiCatalog = {
 
 const ES: UiCatalog = {
   auto: "Automático",
-  valueOnDevice: "En dispositivo",
-  valueReversible: "Reversible",
+  valuePitch:
+    "Enmascara datos personales en el navegador sin enviarlos y permite restaurarlos",
   tagLocal: "Queda local",
   tagSafe: "Seguro enviar",
   privacyLead: "Una segunda mirada antes de pegar en un LLM.",
@@ -188,8 +186,8 @@ const ES: UiCatalog = {
 
 const VI: UiCatalog = {
   auto: "Tự động",
-  valueOnDevice: "Trên thiết bị",
-  valueReversible: "Khôi phục được",
+  valuePitch:
+    "Che thông tin cá nhân trong trình duyệt, không gửi ra ngoài, có thể khôi phục",
   tagLocal: "Giữ cục bộ",
   tagSafe: "An toàn gửi",
   privacyLead: "Kiểm tra lần nữa trước khi dán vào LLM.",
@@ -231,8 +229,7 @@ const VI: UiCatalog = {
 
 const ZH: UiCatalog = {
   auto: "自动检测",
-  valueOnDevice: "本地处理",
-  valueReversible: "可还原",
+  valuePitch: "在浏览器内遮蔽个人信息，不外传，并可还原",
   tagLocal: "保留本地",
   tagSafe: "可安全发送",
   privacyLead: "粘贴到 LLM 之前再检查一遍。",
@@ -271,8 +268,7 @@ const ZH: UiCatalog = {
 
 const KO: UiCatalog = {
   auto: "자동 감지",
-  valueOnDevice: "기기 내",
-  valueReversible: "복원 가능",
+  valuePitch: "브라우저에서 개인정보를 마스킹하고 외부로 보내지 않으며 복원 가능",
   tagLocal: "로컬 보관",
   tagSafe: "전송 안전",
   privacyLead: "LLM에 붙여넣기 전에 한 번 더 확인하세요.",
@@ -313,8 +309,8 @@ const KO: UiCatalog = {
 
 const FR: UiCatalog = {
   auto: "Auto",
-  valueOnDevice: "Sur appareil",
-  valueReversible: "Réversible",
+  valuePitch:
+    "Masque les données personnelles dans le navigateur, sans envoi externe, avec restauration",
   tagLocal: "Reste local",
   tagSafe: "Sûr à envoyer",
   privacyLead: "Une seconde vérification avant de coller dans un LLM.",
@@ -356,8 +352,8 @@ const FR: UiCatalog = {
 
 const DE: UiCatalog = {
   auto: "Auto",
-  valueOnDevice: "Auf Gerät",
-  valueReversible: "Reversibel",
+  valuePitch:
+    "Maskiert personenbezogene Daten im Browser, ohne externe Übertragung, mit Wiederherstellung",
   tagLocal: "Bleibt lokal",
   tagSafe: "Sicher senden",
   privacyLead: "Ein zweiter Blick, bevor Sie in ein LLM einfügen.",
@@ -399,8 +395,7 @@ const DE: UiCatalog = {
 
 const PT: UiCatalog = {
   auto: "Automático",
-  valueOnDevice: "No dispositivo",
-  valueReversible: "Reversível",
+  valuePitch: "Mascara dados pessoais no browser sem enviar para fora, com restauração",
   tagLocal: "Fica local",
   tagSafe: "Seguro enviar",
   privacyLead: "Uma segunda verificação antes de colar num LLM.",
@@ -442,8 +437,8 @@ const PT: UiCatalog = {
 
 const IT: UiCatalog = {
   auto: "Automatico",
-  valueOnDevice: "Sul dispositivo",
-  valueReversible: "Reversibile",
+  valuePitch:
+    "Maschera i dati personali nel browser senza inviarli all'esterno, con ripristino",
   tagLocal: "Resta locale",
   tagSafe: "Sicuro inviare",
   privacyLead: "Un doppio controllo prima di incollare in un LLM.",

@@ -64,9 +64,9 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("ja");
     expect($("#anonymize").textContent).toBe(t("ja", "anonymize"));
-    expect($(".value-props").textContent).toContain(t("ja", "valueOnDevice"));
-    expect($(".value-props").textContent).not.toMatch(/On-device|second pair/i);
-    expect(document.querySelectorAll(".value-props [lang], #ner-off-warning [lang]").length).toBe(0);
+    expect($(".hero-summary").textContent).toContain(t("ja", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/On-device|second pair/i);
+    expect(document.querySelectorAll(".hero-summary [lang], #ner-off-warning [lang]").length).toBe(0);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe(
       t("ja", "auto"),
     );
@@ -75,8 +75,8 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("en");
     expect($("#anonymize").textContent).toBe(t("en", "anonymize"));
-    expect($(".value-props").textContent).toContain(t("en", "valueOnDevice"));
-    expect($(".value-props").textContent).not.toMatch(/端末内|ダブルチェック/);
+    expect($(".hero-summary").textContent).toContain(t("en", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/端末内|ダブルチェック/);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
   });
 });

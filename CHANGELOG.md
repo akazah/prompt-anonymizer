@@ -47,9 +47,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   configurable via query params (`?lang=`, `?ner=0`, `?demo=0`), which
   the e2e suites and demo recorder now use. Very short desktop viewports
   fall back to a scrollable single-column layout.
-- Web app UI copy trimmed for scannability: hero privacy paragraph replaced
-  with visual value-prop chips (on-device, reversible) plus a live
-  before→after demo chip; panel headings use short titles with status tags;
+- Web app UI copy trimmed for scannability: hero chips replaced with a short
+  pitch line (mask PII in-browser without sending out, then restore) plus a
+  live before→after demo chip; panel headings use short titles with status tags;
   mapping table shows label → value with colour cues; NER-off warning is a
   compact pill.
 - Primary action button label now reads “anonymize in browser (no server)”

@@ -40,8 +40,6 @@ const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none"
 const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
 const ICON_SEND = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12 20 4l-4.5 16-4-6.5L4 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
 const ICON_RESTORE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-const ICON_DEVICE = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 18h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
-const ICON_REVERSE = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
 type FlowStep = "original" | "anonymized" | "restore";
 
@@ -85,21 +83,14 @@ function renderShell(uiLang: Language): string {
     <header class="hero">
       <span class="logo-mark">${ICON_SHIELD}</span>
       <h1>Prompt Anonymizer</h1>
-      <ul class="value-props">
-        <li class="value-prop">
-          <span class="value-icon">${ICON_DEVICE}</span>
-          <span data-i18n="valueOnDevice">${t(uiLang, "valueOnDevice")}</span>
-        </li>
-        <li class="value-prop">
-          <span class="value-icon">${ICON_REVERSE}</span>
-          <span data-i18n="valueReversible">${t(uiLang, "valueReversible")}</span>
-        </li>
-        <li class="value-demo" aria-hidden="true">
+      <div class="hero-summary">
+        <p class="value-pitch" data-i18n="valuePitch">${t(uiLang, "valuePitch")}</p>
+        <div class="value-demo" aria-hidden="true">
           <span class="demo-pii">${escapeHtml(demo.pii)}</span>
           <span class="demo-arrow">→</span>
           <span class="demo-label">${escapeHtml(demo.label)}</span>
-        </li>
-      </ul>
+        </div>
+      </div>
       <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
