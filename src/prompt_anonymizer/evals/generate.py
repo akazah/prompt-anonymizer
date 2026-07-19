@@ -412,11 +412,11 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
         b.lit("お世話になっております。")
         if company is not None:
             b.lit(f"{company}の")
-        b.pii(name, "PERSON").lit(
-            "と申します。来月の打ち合わせについて相談させてください。"
-        ).lit("会場は").pii(city, "LOCATION").lit("を予定しています。連絡先は ").pii(
-            phone, "PHONE_NUMBER"
-        ).lit("、メールは ").pii(email, "EMAIL_ADDRESS").lit(" です。よろしくお願いいたします。")
+        b.pii(name, "PERSON").lit("と申します。来月の打ち合わせについて相談させてください。").lit(
+            "会場は"
+        ).pii(city, "LOCATION").lit("を予定しています。連絡先は ").pii(phone, "PHONE_NUMBER").lit(
+            "、メールは "
+        ).pii(email, "EMAIL_ADDRESS").lit(" です。よろしくお願いいたします。")
     elif genre == "minutes":
         b.lit("【議事録】出席者: ").pii(name, "PERSON").lit("、").pii(name2, "PERSON")
         if company is not None:
@@ -425,9 +425,7 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
             city, "LOCATION"
         ).lit("。決定事項: 資料は ").pii(email, "EMAIL_ADDRESS").lit(
             " へ送付する。担当者直通は "
-        ).pii(phone, "PHONE_NUMBER").lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit(
-            "。"
-        )
+        ).pii(phone, "PHONE_NUMBER").lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit("。")
     else:
         card = _credit_card(fake, rng)
         my_number = _my_number(rng)

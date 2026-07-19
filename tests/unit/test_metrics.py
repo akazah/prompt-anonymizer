@@ -91,8 +91,7 @@ def test_ja_golden_includes_halfwidth_kana_person_and_company() -> None:
         span.value
         for case in cases
         for span in case.spans
-        if span.entity_type == "PERSON"
-        and any("\uff61" <= ch <= "\uff9f" for ch in span.value)
+        if span.entity_type == "PERSON" and any("\uff61" <= ch <= "\uff9f" for ch in span.value)
     ]
     assert halfwidth_people, "expected some PERSON spans in halfwidth katakana"
     company_markers = ("ｶﾌﾞｼｷｶﾞｲｼｬ", "ﾕｳｹﾞﾝｶﾞｲｼｬ", "ｺﾞｳﾄﾞｳｶｲｼｬ")
