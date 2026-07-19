@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the whole scan as a fatal read error.
 
 ### Added
+- Detection-only text normalization: every analyze path runs on an NFC
+  view, plus per-language folds from the registry (`detect_folds` /
+  `DETECT_FOLDS`). Japanese folds halfwidth katakana → fullwidth for
+  detect; spans map back so labels/mappings keep the original surface.
+  Shared by Python (`normalize.py`) and TypeScript (`normalize.ts`).
 - Japanese golden / eval cases now include halfwidth-katakana person names
   (and synthetic company labels in prose) on ~1/8 of documents, covering
   legacy bank/HR-form spellings. Structured-PII parity also pins phone/email

@@ -18,8 +18,8 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.93 | 0.79 | 0.85 | 200 |
-| ja | PERSON | 0.95 | 0.74 | 0.83 | 267 |
+| ja | LOCATION | 0.91 | 0.79 | 0.85 | 200 |
+| ja | PERSON | 0.94 | 0.73 | 0.82 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
@@ -61,7 +61,7 @@ and copy the table (the default run above owns the marker block).
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | LOCATION | 0.82 | 1.00 | 0.90 | 200 |
-| ja | PERSON | 0.91 | 1.00 | 0.96 | 267 |
+| ja | PERSON | 0.90 | 1.00 | 0.95 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |

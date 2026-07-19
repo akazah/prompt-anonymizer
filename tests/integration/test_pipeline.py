@@ -104,6 +104,16 @@ def test_anonymize_batch_unsupported_language(pa_ja) -> None:
         pa_ja.anonymize_batch(["hello"], language="fr")
 
 
+def test_ja_halfwidth_kana_name_maps_back_to_original_surface(pa_ja) -> None:
+    """Detect-time fold must not rewrite mapping values (original surface)."""
+    text = "お世話になっております。ﾖｼﾀﾞ ｵｻﾑと申します。連絡先は 090-1234-5678 です。"
+    result = pa_ja.anonymize(text, language="ja")
+    assert "090-1234-5678" not in result.text
+    # At least the family name is typically caught after halfwidth→fullwidth fold.
+    assert any("ﾖｼﾀﾞ" in value for value in result.mapping.values())
+    assert pa_ja.deanonymize(result.text, result.mapping) == text
+
+
 def test_en_email_and_consistent_person(pa_en) -> None:
     text = "John lives in New York. Contact John at john@example.com."
     result = pa_en.anonymize(text, language="en")

@@ -63,6 +63,11 @@ class LanguageConfig:
     #: Language-scoped phone recognition. ``None`` for languages whose phone
     #: formats are already covered by the cross-language ja/us recognizers.
     phone: PhoneSpec | None = None
+    #: Extra detect-time folds applied after NFC (see
+    #: :mod:`prompt_anonymizer.normalize`). Spans are mapped back to the
+    #: original text before labeling. Mirror of ``DETECT_FOLDS`` in the TS
+    #: core. Example: ``("halfwidth_katakana",)`` for Japanese.
+    detect_folds: tuple[str, ...] = ()
 
 
 # 9 digits after the prefix (mobile), or 10 for 02x landlines. Each
@@ -99,6 +104,9 @@ LANGUAGES: dict[str, LanguageConfig] = {
         # (with its digit-count validator) plus a JP-region PhoneRecognizer,
         # both registered in recognizers/ja_phone.py.
         phone=None,
+        # Legacy bank/HR forms use halfwidth katakana for names; fold to
+        # fullwidth for detect only (NFC is applied for every language).
+        detect_folds=("halfwidth_katakana",),
     ),
     "es": LanguageConfig(
         code="es",

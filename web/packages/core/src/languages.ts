@@ -69,3 +69,15 @@ export function languagePickerEntries(options?: {
   );
   return options?.auto ? [{ value: "auto", label: AUTO_DISPLAY_NAME }, ...entries] : entries;
 }
+
+/**
+ * Extra detect-time folds applied after NFC (see `normalize.ts`).
+ * Mirror of `LanguageConfig.detect_folds` in the Python core.
+ */
+export type DetectFold = "halfwidth_katakana";
+
+export const DETECT_FOLDS: Readonly<Partial<Record<Language, readonly DetectFold[]>>> = {
+  // Legacy bank/HR forms use halfwidth katakana for names; fold to
+  // fullwidth for detect only (NFC is applied for every language).
+  ja: ["halfwidth_katakana"],
+};
