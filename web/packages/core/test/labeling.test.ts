@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { LABELS, applyLabels, deanonymize, mergeSpans } from "../src/labeling.js";
+import { LABELS, applyLabels, deanonymize, mergeSpans, splitPersonName } from "../src/labeling.js";
 import type { EntitySpan } from "../src/types.js";
 
 const span = (start: number, end: number, entityType: string, score = 0.9): EntitySpan => ({
@@ -48,6 +48,148 @@ describe("applyLabels", () => {
     expect(result).toContain("<Name_63>");
     expect(result).toContain("<Name_70>");
     expect(Object.keys(mapping)).toHaveLength(70);
+  });
+});
+
+describe("splitPersonName", () => {
+  it("splits given-name-first names (parity with Python core)", () => {
+    expect(splitPersonName("John Smith", false)).toEqual([
+      { part: "first", start: 0, end: 4 },
+      { part: "last", start: 5, end: 10 },
+    ]);
+    expect(splitPersonName("John Michael Smith", false)).toEqual([
+      { part: "first", start: 0, end: 4 },
+      { part: "middle", start: 5, end: 12 },
+      { part: "last", start: 13, end: 18 },
+    ]);
+  });
+
+  it("splits family-name-first names", () => {
+    expect(splitPersonName("山田 太郎", true)).toEqual([
+      { part: "last", start: 0, end: 2 },
+      { part: "first", start: 3, end: 5 },
+    ]);
+    expect(splitPersonName("Nguyễn Văn An", true)).toEqual([
+      { part: "last", start: 0, end: 6 },
+      { part: "middle", start: 7, end: 10 },
+      { part: "first", start: 11, end: 13 },
+    ]);
+  });
+
+  it("returns no parts for single tokens and unspaced CJK names", () => {
+    expect(splitPersonName("John", false)).toEqual([]);
+    expect(splitPersonName("山田太郎", true)).toEqual([]);
+    expect(splitPersonName("  John  ", false)).toEqual([]);
+  });
+
+  it("attaches surname particles to the last name", () => {
+    const source = "Vincent van Gogh";
+    expect(splitPersonName(source, false)).toEqual([
+      { part: "first", start: 0, end: 7 },
+      { part: "last", start: 8, end: 16 },
+    ]);
+    expect(source.slice(8, 16)).toBe("van Gogh");
+  });
+
+  it("keeps consecutive middle tokens as one contiguous part", () => {
+    expect(splitPersonName("John Ronald Reuel Tolkien", false)).toEqual([
+      { part: "first", start: 0, end: 4 },
+      { part: "middle", start: 5, end: 17 },
+      { part: "last", start: 18, end: 25 },
+    ]);
+  });
+});
+
+describe("applyLabels with splitPersonNames", () => {
+  it("labels name parts with a shared person index (parity with Python core)", () => {
+    const text = "John Smith met Jane Doe.";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 10, "PERSON"), span(15, 23, "PERSON")],
+      LABELS.en,
+      { splitPersonNames: true },
+    );
+    expect(result).toBe(
+      "<Name_1_First_Name> <Name_1_Last_Name> met <Name_2_First_Name> <Name_2_Last_Name>.",
+    );
+    expect(mapping).toEqual({
+      "<Name_1_First_Name>": "John",
+      "<Name_1_Last_Name>": "Smith",
+      "<Name_2_First_Name>": "Jane",
+      "<Name_2_Last_Name>": "Doe",
+    });
+    expect(deanonymize(result, mapping)).toBe(text);
+  });
+
+  it("shares the person counter with unsplittable names (family-first ja)", () => {
+    const text = "山田 太郎と佐藤花子が出席。";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 5, "PERSON"), span(6, 10, "PERSON")],
+      LABELS.ja,
+      { splitPersonNames: true, familyNameFirst: true },
+    );
+    expect(result).toBe("<人名_1_姓> <人名_1_名>と<人名_2>が出席。");
+    expect(mapping).toEqual({
+      "<人名_1_姓>": "山田",
+      "<人名_1_名>": "太郎",
+      "<人名_2>": "佐藤花子",
+    });
+    expect(deanonymize(result, mapping)).toBe(text);
+  });
+
+  it("reuses a part label for a later single-token mention", () => {
+    const text = "John Smith called. John will call again.";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 10, "PERSON"), span(19, 23, "PERSON")],
+      LABELS.en,
+      { splitPersonNames: true },
+    );
+    expect(result).toBe(
+      "<Name_1_First_Name> <Name_1_Last_Name> called. <Name_1_First_Name> will call again.",
+    );
+    expect(mapping).toEqual({ "<Name_1_First_Name>": "John", "<Name_1_Last_Name>": "Smith" });
+    expect(deanonymize(result, mapping)).toBe(text);
+  });
+
+  it("gives a repeated full name the same person index", () => {
+    const text = "John Smith and John Smith";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 10, "PERSON"), span(15, 25, "PERSON")],
+      LABELS.en,
+      { splitPersonNames: true },
+    );
+    expect(result).toBe(
+      "<Name_1_First_Name> <Name_1_Last_Name> and <Name_1_First_Name> <Name_1_Last_Name>",
+    );
+    expect(Object.keys(mapping)).toHaveLength(2);
+    expect(deanonymize(result, mapping)).toBe(text);
+  });
+
+  it("keeps separate person indices when persons share a part value", () => {
+    const text = "John Smith and John Doe";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 10, "PERSON"), span(15, 23, "PERSON")],
+      LABELS.en,
+      { splitPersonNames: true },
+    );
+    expect(mapping["<Name_1_First_Name>"]).toBe("John");
+    expect(mapping["<Name_2_First_Name>"]).toBe("John");
+    expect(deanonymize(result, mapping)).toBe(text);
+  });
+
+  it("is unchanged when the option is off", () => {
+    const text = "John Smith met Jane.";
+    const { text: result, mapping } = applyLabels(
+      text,
+      [span(0, 10, "PERSON"), span(15, 19, "PERSON")],
+      LABELS.en,
+    );
+    expect(result).toBe("<Name_1> met <Name_2>.");
+    expect(mapping).toEqual({ "<Name_1>": "John Smith", "<Name_2>": "Jane" });
   });
 });
 

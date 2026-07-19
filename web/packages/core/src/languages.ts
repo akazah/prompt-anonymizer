@@ -41,6 +41,24 @@ export const LANGUAGE_DISPLAY_NAMES: Record<Language, string> = {
   it: "Italiano",
 };
 
+/**
+ * Native name order for the opt-in name-part splitting (`splitPersonNames`):
+ * `true` when the family name is written first. Mirrors the
+ * `family_name_first` flag on the Python core's `LanguageConfig`.
+ */
+export const FAMILY_NAME_FIRST: Record<Language, boolean> = {
+  ja: true,
+  en: false,
+  es: false,
+  vi: true,
+  zh: true,
+  ko: true,
+  fr: false,
+  de: false,
+  pt: false,
+  it: false,
+};
+
 export const AUTO_DISPLAY_NAME = "Auto / 自動判定";
 
 /** "ja, en, es, vi" — for help text and error messages. */

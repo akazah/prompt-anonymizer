@@ -69,6 +69,15 @@ def anonymize(
     mapping_file: Annotated[
         Path | None, typer.Option(help="Write the label mapping to this JSON file.")
     ] = None,
+    split_names: Annotated[
+        bool,
+        typer.Option(
+            "--split-names/--no-split-names",
+            help=(
+                "Label name parts individually (<Name_1_First_Name> ...); multi-word names only."
+            ),
+        ),
+    ] = False,
     entities: Annotated[
         str | None,
         typer.Option(
@@ -93,12 +102,14 @@ def anonymize(
                 model_size=model_size,
                 ner_backend=ner_backend,
                 entities=[e.strip() for e in entities.split(",") if e.strip()],
+                split_person_names=split_names,
             )
         else:
             pa = PromptAnonymizer(
                 languages=[language],
                 model_size=model_size,
                 ner_backend=ner_backend,
+                split_person_names=split_names,
             )
         result = pa.anonymize(raw, language=language)
     except PromptAnonymizerError as exc:

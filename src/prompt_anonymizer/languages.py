@@ -63,6 +63,10 @@ class LanguageConfig:
     #: Language-scoped phone recognition. ``None`` for languages whose phone
     #: formats are already covered by the cross-language ja/us recognizers.
     phone: PhoneSpec | None = None
+    #: Native name order for the opt-in name-part splitting
+    #: (``split_person_names``): ``True`` when the family name is written
+    #: first (ja/zh/ko/vi). Mirrors ``FAMILY_NAME_FIRST`` in the TS core.
+    family_name_first: bool = False
 
 
 # 9 digits after the prefix (mobile), or 10 for 02x landlines. Each
@@ -99,6 +103,7 @@ LANGUAGES: dict[str, LanguageConfig] = {
         # (with its digit-count validator) plus a JP-region PhoneRecognizer,
         # both registered in recognizers/ja_phone.py.
         phone=None,
+        family_name_first=True,
     ),
     "es": LanguageConfig(
         code="es",
@@ -169,6 +174,7 @@ LANGUAGES: dict[str, LanguageConfig] = {
                 "phone",
             ),
         ),
+        family_name_first=True,
     ),
     "zh": LanguageConfig(
         code="zh",
@@ -194,6 +200,7 @@ LANGUAGES: dict[str, LanguageConfig] = {
             ),
             context=("电话", "手机", "手机号", "联系", "电话号码", "tel", "phone"),
         ),
+        family_name_first=True,
     ),
     "ko": LanguageConfig(
         code="ko",
@@ -224,6 +231,7 @@ LANGUAGES: dict[str, LanguageConfig] = {
             ),
             context=("전화", "전화번호", "휴대폰", "핸드폰", "연락처", "tel", "phone"),
         ),
+        family_name_first=True,
     ),
     "fr": LanguageConfig(
         code="fr",

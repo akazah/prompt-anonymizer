@@ -52,6 +52,7 @@ app.innerHTML = `
         </select>
       </label>
       <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> NER model (names & locations)</label>
+      <label class="switch-label"><input type="checkbox" id="split-names" class="switch" /> Split name parts (First/Last)</label>
       <div class="spacer"></div>
       <button id="load-sample">Load sample</button>
       <button id="anonymize" class="primary">Anonymize</button>
@@ -111,6 +112,7 @@ const progressLabel = $("#progress-label");
 const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
 const nerOffWarning = $("#ner-off-warning");
+const splitNamesEl = $<HTMLInputElement>("#split-names");
 
 function syncNerWarning(): void {
   nerOffWarning.hidden = useNerEl.checked;
@@ -133,15 +135,18 @@ function onProgress(p: NerProgress): void {
 }
 
 const ner = new TransformersNerBackend({ onProgress });
-const anonymizerWithNer = new Anonymizer({ ner });
-const anonymizerRegexOnly = new Anonymizer();
 
 // Restore flow goes through the core RestoreSession service; this app only
-// injects an engine (NER toggle) and keeps the default in-memory store.
+// injects an engine (NER / split-names toggles; the Anonymizer itself is
+// cheap — the shared NER backend holds the loaded model) and keeps the
+// default in-memory store.
 const session = new RestoreSession({
   engine: {
     anonymize: (text, options) =>
-      (useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly).anonymize(text, options),
+      new Anonymizer({
+        ...(useNerEl.checked ? { ner } : {}),
+        splitPersonNames: splitNamesEl.checked,
+      }).anonymize(text, options),
   },
 });
 

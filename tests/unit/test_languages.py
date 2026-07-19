@@ -67,6 +67,13 @@ def test_hf_ner_models_cover_supported_languages() -> None:
     assert set(DEFAULT_HF_NER_MODELS) == set(SUPPORTED_LANGUAGES)
 
 
+def test_family_name_first_matches_ts_core() -> None:
+    # Cross-core pin: FAMILY_NAME_FIRST in web/packages/core/src/languages.ts
+    # asserts the same set (see web/packages/core/test/languages.test.ts).
+    family_first = {code for code, config in LANGUAGES.items() if config.family_name_first}
+    assert family_first == {"ja", "zh", "ko", "vi"}
+
+
 def test_golden_builders_cover_supported_languages() -> None:
     from prompt_anonymizer.evals.generate import _BESPOKE_BUILDERS, _GENERIC_SPECS, _LOCALES
 

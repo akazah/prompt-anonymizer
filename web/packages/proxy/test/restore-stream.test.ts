@@ -5,6 +5,8 @@ import { StreamingRestorer } from "../src/restore-stream.js";
 const MAPPING = {
   "<Email_1>": "alice@example.com",
   "<人名_1>": "山田太郎",
+  "<Name_1_First_Name>": "John",
+  "<Name_1_Last_Name>": "Smith",
 };
 
 describe("StreamingRestorer", () => {
@@ -50,6 +52,27 @@ describe("StreamingRestorer", () => {
     const r = new StreamingRestorer(MAPPING);
     expect(r.push("tail <Em")).toBe("tail ");
     expect(r.flush()).toBe("<Em");
+  });
+
+  it("restores a name-part label split after the person index", () => {
+    // "<Name_1" alone matches the plain-label prefix; the "_First_Name>"
+    // continuation must still be held and restored as one label.
+    const r = new StreamingRestorer(MAPPING);
+    expect(r.push("Dear <Name_1")).toBe("Dear ");
+    expect(r.push("_First_Name> hi")).toBe("John hi");
+  });
+
+  it("concat(push)+flush matches restoreText for every split of a name-part fixture", () => {
+    const full = "Dear <Name_1_First_Name> <Name_1_Last_Name>, from <人名_1>";
+    const expected = restoreText(full, MAPPING).text;
+    for (let i = 0; i <= full.length; i++) {
+      const r = new StreamingRestorer(MAPPING);
+      let out = "";
+      out += r.push(full.slice(0, i));
+      out += r.push(full.slice(i));
+      out += r.flush();
+      expect(out).toBe(expected);
+    }
   });
 
   it("concat(push)+flush matches restoreText for every split of a fixture", () => {

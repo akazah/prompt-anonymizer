@@ -1,8 +1,33 @@
 import { describe, expect, it } from "vitest";
-import { Anonymizer, deanonymize } from "@prompt-anonymizer/core";
+import {
+  Anonymizer,
+  deanonymize,
+  type EntitySpan,
+  type Language,
+  type NerBackend,
+} from "@prompt-anonymizer/core";
 import { RequestAnonymizer } from "../src/anonymize-request.js";
 
 const engine = new Anonymizer();
+
+/** Deterministic mock NER: marks configured strings wherever they occur. */
+class MockNer implements NerBackend {
+  constructor(private readonly known: Record<string, string>) {}
+
+  detect(text: string, _language: Language): Promise<EntitySpan[]> {
+    const spans: EntitySpan[] = [];
+    for (const [value, entityType] of Object.entries(this.known)) {
+      let from = 0;
+      for (;;) {
+        const at = text.indexOf(value, from);
+        if (at === -1) break;
+        spans.push({ start: at, end: at + value.length, entityType, score: 0.95 });
+        from = at + value.length;
+      }
+    }
+    return Promise.resolve(spans);
+  }
+}
 
 describe("RequestAnonymizer", () => {
   it("reuses the same label for the same value across messages", async () => {
@@ -57,5 +82,50 @@ describe("RequestAnonymizer", () => {
     await ra.anonymize("a@x.com and b@y.com");
     await ra.anonymize("c@z.com");
     expect(ra.entityCounts.EMAIL_ADDRESS).toBe(3);
+  });
+
+  it("renumbers name-part labels per person group across messages", async () => {
+    const splitEngine = new Anonymizer({
+      ner: new MockNer({ "John Smith": "PERSON", "Jane Doe": "PERSON" }),
+      splitPersonNames: true,
+    });
+    const ra = new RequestAnonymizer(splitEngine, "en");
+    // Message 1 fixes John Smith = person 1.
+    const m1 = await ra.anonymize("John Smith wrote.");
+    expect(m1).toBe("<Name_1_First_Name> <Name_1_Last_Name> wrote.");
+    // Message 2 locally numbers Jane Doe as person 1; globally she must
+    // become person 2 while John Smith keeps person 1 — both parts of each
+    // person share one index.
+    const m2 = await ra.anonymize("Jane Doe met John Smith.");
+    expect(m2).toBe(
+      "<Name_2_First_Name> <Name_2_Last_Name> met <Name_1_First_Name> <Name_1_Last_Name>.",
+    );
+    expect(ra.mapping).toEqual({
+      "<Name_1_First_Name>": "John",
+      "<Name_1_Last_Name>": "Smith",
+      "<Name_2_First_Name>": "Jane",
+      "<Name_2_Last_Name>": "Doe",
+    });
+    expect(deanonymize(`${m1}\n${m2}`, ra.mapping)).toBe(
+      "John Smith wrote.\nJane Doe met John Smith.",
+    );
+  });
+
+  it("keeps part labels and plain labels of the same prefix on one counter", async () => {
+    // 山田太郎 has no space (unsplittable, plain <人名_n>); 佐藤 花子 splits.
+    const splitEngine = new Anonymizer({
+      ner: new MockNer({ 山田太郎: "PERSON", "佐藤 花子": "PERSON" }),
+      splitPersonNames: true,
+    });
+    const ra = new RequestAnonymizer(splitEngine, "ja");
+    const m1 = await ra.anonymize("山田太郎です。");
+    expect(m1).toBe("<人名_1>です。");
+    const m2 = await ra.anonymize("佐藤 花子さんへ。");
+    expect(m2).toBe("<人名_2_姓> <人名_2_名>さんへ。");
+    expect(ra.mapping).toEqual({
+      "<人名_1>": "山田太郎",
+      "<人名_2_姓>": "佐藤",
+      "<人名_2_名>": "花子",
+    });
   });
 });

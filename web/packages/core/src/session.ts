@@ -50,10 +50,11 @@ export class InMemoryMappingStore implements MappingStore {
 }
 
 /**
- * Placeholder-shaped tokens such as `<人名_1>` or `<JP_POSTAL_CODE_2>`.
- * Bounded quantifiers only — this runs on untrusted LLM output.
+ * Placeholder-shaped tokens such as `<人名_1>`, `<JP_POSTAL_CODE_2>` or the
+ * name-part form `<Name_1_First_Name>` (optional word suffix after the
+ * index). Bounded quantifiers only — this runs on untrusted LLM output.
  */
-const PLACEHOLDER_PATTERN = /<[^<>\s]{1,64}_\d{1,6}>/gu;
+const PLACEHOLDER_PATTERN = /<[^<>\s]{1,64}_\d{1,6}(?:_[^<>\s]{1,32})?>/gu;
 
 /** Unique placeholder-shaped tokens in `text`, in order of first appearance. */
 export function findPlaceholders(text: string): string[] {

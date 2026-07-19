@@ -34,4 +34,11 @@ export interface AnonymizerOptions {
   /** Strings to never mask even when detected. */
   allowList?: string[];
   scoreThreshold?: number;
+  /**
+   * Label name parts of multi-token PERSON spans individually
+   * (`<Name_1_First_Name>` / `<人名_1_姓>` …), sharing one person index per
+   * full name. Off by default; the split is whitespace-based, so unspaced
+   * names (e.g. `山田太郎`) keep a plain person label.
+   */
+  splitPersonNames?: boolean;
 }

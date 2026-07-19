@@ -16,6 +16,47 @@ import yaml
 
 LABEL_TEMPLATE = "<{label}_{index}>"
 
+# Name-part labels append a localized part word to the person label, e.g.
+# <Name_1_First_Name> / <人名_1_姓>. Parts of the same person share the
+# person index, so an LLM can tell which parts belong together.
+PART_LABEL_TEMPLATE = "<{label}_{index}_{part}>"
+
+# Label-file keys for the localized part words (see labels/<lang>.yaml).
+_NAME_PART_KEYS = {
+    "first": "PERSON_FIRST_NAME",
+    "middle": "PERSON_MIDDLE_NAME",
+    "last": "PERSON_LAST_NAME",
+}
+
+# Surname particles for given-name-first languages: a token from this set
+# (compared lowercase) starts the family name, so "Vincent van Gogh" splits
+# into first="Vincent", last="van Gogh" rather than a bogus middle name.
+_SURNAME_PARTICLES = frozenset(
+    {
+        "al",
+        "bin",
+        "binti",
+        "da",
+        "das",
+        "de",
+        "degli",
+        "del",
+        "della",
+        "den",
+        "der",
+        "di",
+        "dos",
+        "du",
+        "el",
+        "la",
+        "le",
+        "ten",
+        "ter",
+        "van",
+        "von",
+    }
+)
+
 
 @dataclass(frozen=True)
 class EntitySpan:
@@ -132,24 +173,107 @@ def merge_spans(spans: list[EntitySpan], text: str | None = None) -> list[Entity
     return sorted(kept, key=lambda s: s.start)
 
 
+def split_person_name(source: str, family_name_first: bool) -> list[tuple[str, int, int]]:
+    """Split a PERSON source string into name parts, when possible.
+
+    Returns ``(part, start, end)`` triples ("first" / "middle" / "last",
+    offsets relative to ``source``) in text order, or an empty list when the
+    name has fewer than two whitespace-separated tokens (e.g. "山田太郎" -
+    splitting unspaced CJK names would require a name dictionary, so they
+    keep a plain person label). Consecutive middle tokens form one
+    contiguous part so each part label maps to exactly one value.
+
+    ``family_name_first`` follows the language's native order (ja/zh/ko/vi:
+    family name first); given-name-first languages additionally attach
+    surname particles ("van", "de", ...) to the last name.
+    Mirrors ``splitPersonName`` in the TypeScript core.
+    """
+    tokens: list[tuple[int, int]] = []
+    cursor = 0
+    while cursor < len(source):
+        if source[cursor] in _STRIP_CHARS:
+            cursor += 1
+            continue
+        end = cursor
+        while end < len(source) and source[end] not in _STRIP_CHARS:
+            end += 1
+        tokens.append((cursor, end))
+        cursor = end
+    if len(tokens) < 2:
+        return []
+
+    if family_name_first:
+        parts = [("last", tokens[0][0], tokens[0][1])]
+        middle = tokens[1:-1]
+        if middle:
+            parts.append(("middle", middle[0][0], middle[-1][1]))
+        parts.append(("first", tokens[-1][0], tokens[-1][1]))
+        return parts
+
+    last_start = len(tokens) - 1
+    for i in range(1, len(tokens) - 1):
+        if source[tokens[i][0] : tokens[i][1]].lower() in _SURNAME_PARTICLES:
+            last_start = i
+            break
+    parts = [("first", tokens[0][0], tokens[0][1])]
+    middle = tokens[1:last_start]
+    if middle:
+        parts.append(("middle", middle[0][0], middle[-1][1]))
+    parts.append(("last", tokens[last_start][0], tokens[-1][1]))
+    return parts
+
+
 def apply_labels(
     text: str,
     spans: list[EntitySpan],
     labels: dict[str, str],
+    *,
+    split_person_names: bool = False,
+    family_name_first: bool = False,
 ) -> tuple[str, dict[str, str]]:
     """Replace spans (end-first) with consistent labels.
 
     Identical source strings of the same entity type receive the same label.
     Returns the anonymized text and a ``label -> original`` mapping.
+
+    With ``split_person_names``, multi-token PERSON spans are labelled per
+    name part (``<Name_1_First_Name>`` / ``<人名_1_姓>`` ...), sharing one
+    person index per unique full name; a later single-token PERSON span
+    matching an already-seen part value reuses that part's label, so
+    "John Smith ... John" stays consistent.
     """
     merged = merge_spans(spans, text)
 
     label_by_source: dict[tuple[str, str], str] = {}
     counters: dict[str, int] = {}
     mapping: dict[str, str] = {}
+    person_index_by_source: dict[str, int] = {}
+    part_label_by_value: dict[str, str] = {}
+    replacements: list[tuple[int, int, str]] = []
 
     for span in merged:
         source = text[span.start : span.end]
+        if split_person_names and span.entity_type == "PERSON":
+            parts = split_person_name(source, family_name_first)
+            if parts:
+                if source not in person_index_by_source:
+                    counters[span.entity_type] = counters.get(span.entity_type, 0) + 1
+                    person_index_by_source[source] = counters[span.entity_type]
+                index = person_index_by_source[source]
+                person_word = labels.get(span.entity_type, span.entity_type)
+                for part, rel_start, rel_end in parts:
+                    value = source[rel_start:rel_end]
+                    part_word = labels.get(_NAME_PART_KEYS[part], _NAME_PART_KEYS[part])
+                    label = PART_LABEL_TEMPLATE.format(
+                        label=person_word, index=index, part=part_word
+                    )
+                    mapping.setdefault(label, value)
+                    part_label_by_value.setdefault(value, label)
+                    replacements.append((span.start + rel_start, span.start + rel_end, label))
+                continue
+            if source in part_label_by_value:
+                replacements.append((span.start, span.end, part_label_by_value[source]))
+                continue
         key = (span.entity_type, source)
         if key not in label_by_source:
             counters[span.entity_type] = counters.get(span.entity_type, 0) + 1
@@ -157,12 +281,11 @@ def apply_labels(
             label = LABEL_TEMPLATE.format(label=label_name, index=counters[span.entity_type])
             label_by_source[key] = label
             mapping[label] = source
+        replacements.append((span.start, span.end, label_by_source[key]))
 
     result = text
-    for span in reversed(merged):
-        source = text[span.start : span.end]
-        label = label_by_source[(span.entity_type, source)]
-        result = result[: span.start] + label + result[span.end :]
+    for start, end, label in reversed(replacements):
+        result = result[:start] + label + result[end:]
 
     return result, mapping
 

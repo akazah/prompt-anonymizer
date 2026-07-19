@@ -7,6 +7,7 @@ from prompt_anonymizer.labeling import (
     deny_list_spans,
     load_labels,
     merge_spans,
+    split_person_name,
 )
 
 LABELS_JA = {"PERSON": "人名", "PHONE_NUMBER": "電話番号"}
@@ -166,6 +167,139 @@ def test_load_labels_es_vi_packaged() -> None:
     assert vi["PHONE_NUMBER"] == "SốĐiệnThoại"
     assert set(es) == set(en)
     assert set(vi) == set(en)
+
+
+def test_split_person_name_given_first() -> None:
+    assert split_person_name("John Smith", False) == [("first", 0, 4), ("last", 5, 10)]
+    assert split_person_name("John Michael Smith", False) == [
+        ("first", 0, 4),
+        ("middle", 5, 12),
+        ("last", 13, 18),
+    ]
+
+
+def test_split_person_name_family_first() -> None:
+    assert split_person_name("山田 太郎", True) == [("last", 0, 2), ("first", 3, 5)]
+    assert split_person_name("Nguyễn Văn An", True) == [
+        ("last", 0, 6),
+        ("middle", 7, 10),
+        ("first", 11, 13),
+    ]
+
+
+def test_split_person_name_single_token_and_unspaced_cjk() -> None:
+    assert split_person_name("John", False) == []
+    assert split_person_name("山田太郎", True) == []
+    assert split_person_name("  John  ", False) == []
+
+
+def test_split_person_name_surname_particle() -> None:
+    source = "Vincent van Gogh"
+    parts = split_person_name(source, False)
+    assert parts == [("first", 0, 7), ("last", 8, 16)]
+    assert source[8:16] == "van Gogh"
+
+
+def test_split_person_name_contiguous_middle() -> None:
+    # Multiple middle tokens form one part so each label maps to one value.
+    parts = split_person_name("John Ronald Reuel Tolkien", False)
+    assert parts == [("first", 0, 4), ("middle", 5, 17), ("last", 18, 25)]
+
+
+def test_apply_labels_split_person_names_en() -> None:
+    text = "John Smith met Jane Doe."
+    spans = [EntitySpan(0, 10, "PERSON", 0.9), EntitySpan(15, 23, "PERSON", 0.9)]
+    result, mapping = apply_labels(
+        text, spans, load_labels("en"), split_person_names=True, family_name_first=False
+    )
+    assert result == (
+        "<Name_1_First_Name> <Name_1_Last_Name> met <Name_2_First_Name> <Name_2_Last_Name>."
+    )
+    assert mapping == {
+        "<Name_1_First_Name>": "John",
+        "<Name_1_Last_Name>": "Smith",
+        "<Name_2_First_Name>": "Jane",
+        "<Name_2_Last_Name>": "Doe",
+    }
+    assert deanonymize(result, mapping) == text
+
+
+def test_apply_labels_split_person_names_ja_family_first() -> None:
+    text = "山田 太郎と佐藤花子が出席。"
+    spans = [EntitySpan(0, 5, "PERSON", 0.9), EntitySpan(6, 10, "PERSON", 0.9)]
+    result, mapping = apply_labels(
+        text, spans, load_labels("ja"), split_person_names=True, family_name_first=True
+    )
+    # The spaced name splits; the unspaced one keeps a plain person label
+    # with the shared person counter.
+    assert result == "<人名_1_姓> <人名_1_名>と<人名_2>が出席。"
+    assert mapping == {
+        "<人名_1_姓>": "山田",
+        "<人名_1_名>": "太郎",
+        "<人名_2>": "佐藤花子",
+    }
+    assert deanonymize(result, mapping) == text
+
+
+def test_apply_labels_split_reuses_part_label_for_single_token() -> None:
+    text = "John Smith called. John will call again."
+    spans = [EntitySpan(0, 10, "PERSON", 0.9), EntitySpan(19, 23, "PERSON", 0.9)]
+    result, mapping = apply_labels(
+        text, spans, load_labels("en"), split_person_names=True, family_name_first=False
+    )
+    assert result == (
+        "<Name_1_First_Name> <Name_1_Last_Name> called. <Name_1_First_Name> will call again."
+    )
+    assert mapping == {"<Name_1_First_Name>": "John", "<Name_1_Last_Name>": "Smith"}
+    assert deanonymize(result, mapping) == text
+
+
+def test_apply_labels_split_repeated_full_name_shares_index() -> None:
+    text = "John Smith and John Smith"
+    spans = [EntitySpan(0, 10, "PERSON", 0.9), EntitySpan(15, 25, "PERSON", 0.9)]
+    result, mapping = apply_labels(
+        text, spans, load_labels("en"), split_person_names=True, family_name_first=False
+    )
+    assert result == (
+        "<Name_1_First_Name> <Name_1_Last_Name> and <Name_1_First_Name> <Name_1_Last_Name>"
+    )
+    assert len(mapping) == 2
+    assert deanonymize(result, mapping) == text
+
+
+def test_apply_labels_split_shared_part_value_across_persons() -> None:
+    # Two persons sharing a first name keep separate person indices; both
+    # labels restore to the same value.
+    text = "John Smith and John Doe"
+    spans = [EntitySpan(0, 10, "PERSON", 0.9), EntitySpan(15, 23, "PERSON", 0.9)]
+    result, mapping = apply_labels(
+        text, spans, load_labels("en"), split_person_names=True, family_name_first=False
+    )
+    assert mapping["<Name_1_First_Name>"] == "John"
+    assert mapping["<Name_2_First_Name>"] == "John"
+    assert deanonymize(result, mapping) == text
+
+
+def test_apply_labels_split_disabled_is_unchanged() -> None:
+    text = "John Smith met Jane."
+    spans = [EntitySpan(0, 10, "PERSON", 0.9), EntitySpan(15, 19, "PERSON", 0.9)]
+    result, mapping = apply_labels(text, spans, load_labels("en"))
+    assert result == "<Name_1> met <Name_2>."
+    assert mapping == {"<Name_1>": "John Smith", "<Name_2>": "Jane"}
+
+
+def test_apply_labels_split_mixed_with_other_entities_roundtrip() -> None:
+    text = "María García (612 345 678) y maría@example.com"
+    spans = [
+        EntitySpan(0, 12, "PERSON", 0.9),
+        EntitySpan(14, 25, "PHONE_NUMBER", 0.6),
+        EntitySpan(29, 46, "EMAIL_ADDRESS", 1.0),
+    ]
+    result, mapping = apply_labels(
+        text, spans, load_labels("es"), split_person_names=True, family_name_first=False
+    )
+    assert result == "<Nombre_1_Nombre> <Nombre_1_Apellido> (<Teléfono_1>) y <Correo_1>"
+    assert deanonymize(result, mapping) == text
 
 
 def test_apply_labels_roundtrip_es_vi() -> None:

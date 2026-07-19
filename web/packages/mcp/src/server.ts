@@ -47,6 +47,7 @@ export interface EngineOptions {
   entities?: string[];
   denyList?: string[];
   allowList?: string[];
+  splitPersonNames?: boolean;
 }
 export type EngineFactory = (options: EngineOptions) => Engine;
 
@@ -84,9 +85,15 @@ class MappingStore {
 
 let sharedNer: NerBackend | undefined;
 
-const defaultEngineFactory: EngineFactory = ({ ner, entities, denyList, allowList }) => {
+const defaultEngineFactory: EngineFactory = ({
+  ner,
+  entities,
+  denyList,
+  allowList,
+  splitPersonNames,
+}) => {
   const entityOptions = entities !== undefined ? { entities } : {};
-  if (!ner) return new Anonymizer({ ...entityOptions, denyList, allowList });
+  if (!ner) return new Anonymizer({ ...entityOptions, denyList, allowList, splitPersonNames });
   // One backend for the server's lifetime so the model loads once.
   // "cpu" = the native onnxruntime-node binding (as in the Node CLI).
   sharedNer ??= new TransformersNerBackend({
@@ -98,7 +105,7 @@ const defaultEngineFactory: EngineFactory = ({ ner, entities, denyList, allowLis
       }
     },
   });
-  return new Anonymizer({ ...entityOptions, ner: sharedNer, denyList, allowList });
+  return new Anonymizer({ ...entityOptions, ner: sharedNer, denyList, allowList, splitPersonNames });
 };
 
 async function resolveLanguage(value: string, text: string): Promise<Language> {
@@ -185,6 +192,14 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
           .array(z.string())
           .optional()
           .describe("Terms to leave unmasked even when detected."),
+        split_person_names: z
+          .boolean()
+          .default(false)
+          .describe(
+            "Label name parts of multi-word person names individually " +
+              "(<Name_1_First_Name>, <Name_1_Last_Name>, ...), sharing one " +
+              "person index per full name.",
+          ),
         return_mapping: z
           .boolean()
           .default(false)
@@ -207,6 +222,7 @@ export function createServer(options: CreateServerOptions = {}): McpServer {
           entities: args.entities,
           denyList: args.deny_list,
           allowList: args.allow_list,
+          splitPersonNames: args.split_person_names,
         });
         const result = await engine.anonymize(input, { language });
         const mappingId = store.put(result.mapping);
