@@ -146,12 +146,6 @@ body {
   border: 1px solid rgba(4, 120, 87, 0.22);
 }
 
-.panel-tag-safe {
-  color: var(--text);
-  background: var(--chip-bg);
-  border: 1px solid var(--chip-border);
-}
-
 .ner-warning {
   display: inline-flex;
   align-items: center;

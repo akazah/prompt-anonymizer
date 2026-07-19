@@ -132,7 +132,7 @@ function renderShell(uiLang: Language): string {
         <textarea id="input" data-i18n-placeholder="inputPlaceholder" placeholder="${t(uiLang, "inputPlaceholder")}"></textarea>
       </section>
       <section class="panel" data-panel="anonymized">
-        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span><span class="panel-tag panel-tag-safe" data-i18n="tagSafe">${t(uiLang, "tagSafe")}</span></h2>
+        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span><span class="panel-tag panel-tag-local" data-i18n="tagLocal">${t(uiLang, "tagLocal")}</span></h2>
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
