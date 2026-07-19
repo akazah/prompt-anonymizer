@@ -1,4 +1,7 @@
 PERSON: Nombre
+PERSON_FIRST_NAME: Nombre
+PERSON_MIDDLE_NAME: SegundoNombre
+PERSON_LAST_NAME: Apellido
 EMAIL_ADDRESS: Correo
 LOCATION: Dirección
 PHONE_NUMBER: Teléfono

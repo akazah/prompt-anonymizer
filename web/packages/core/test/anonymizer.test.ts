@@ -118,6 +118,32 @@ describe("Anonymizer", () => {
     expect(anonymizerJa.deanonymize(resultJa.text, resultJa.mapping)).toBe(textJa);
   });
 
+  it("splits person names into parts when splitPersonNames is on", async () => {
+    const anonymizer = new Anonymizer({
+      ner: new MockNer({ "Jane Doe": "PERSON" }),
+      splitPersonNames: true,
+    });
+    const text = "Jane Doe wrote to a@b.co";
+    const result = await anonymizer.anonymize(text, { language: "en" });
+    expect(result.text).toBe("<Name_1_First_Name> <Name_1_Last_Name> wrote to <Email_1>");
+    expect(result.mapping["<Name_1_First_Name>"]).toBe("Jane");
+    expect(result.mapping["<Name_1_Last_Name>"]).toBe("Doe");
+    expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
+  });
+
+  it("uses the language's native name order for splitPersonNames", async () => {
+    const anonymizer = new Anonymizer({
+      ner: new MockNer({ "山田 太郎": "PERSON" }),
+      splitPersonNames: true,
+    });
+    const text = "山田 太郎に連絡。";
+    const result = await anonymizer.anonymize(text, { language: "ja" });
+    expect(result.text).toBe("<人名_1_姓> <人名_1_名>に連絡。");
+    expect(result.mapping["<人名_1_姓>"]).toBe("山田");
+    expect(result.mapping["<人名_1_名>"]).toBe("太郎");
+    expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
+  });
+
   it("filters NER spans to the requested entity set", async () => {
     const anonymizer = new Anonymizer({
       ner: new MockNer({ "Jane Doe": "PERSON" }),

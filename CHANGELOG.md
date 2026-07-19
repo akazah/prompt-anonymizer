@@ -14,6 +14,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the whole scan as a fatal read error.
 
 ### Added
+- Opt-in name-part labelling (`split_person_names` in the Python core /
+  `splitPersonNames` in the TS core, `--split-names` on both CLIs,
+  `split_person_names` on the MCP `anonymize` tool, "Split name parts"
+  toggle in the web app): multi-word PERSON detections are labelled per
+  name part — `<Name_1_First_Name>` / `<Name_1_Last_Name>` /
+  `<Name_1_Middle_Name>` (localized, e.g. `<人名_1_姓>` / `<人名_1_名>`) —
+  sharing one person index per full name, so an LLM can tell which parts
+  belong together. Family-name-first languages (ja/zh/ko/vi, tracked in the
+  language registries of both cores) split in native order; surname
+  particles ("van", "de", …) stay attached to the last name; a later
+  single-token mention that equals an already-seen part value reuses that
+  part's label ("John Smith … John" stays consistent). The split is
+  whitespace-based, so unspaced CJK names (e.g. `山田太郎`) keep a plain
+  `<人名_1>` label. Off by default — existing labels, stored mappings and
+  demo assets are unchanged. The placeholder grammar used by
+  `findPlaceholders`, the proxy's streaming restorer and the request-scoped
+  label renumbering now accepts the part suffix; label YAMLs gained
+  `PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME` keys in
+  all ten languages (additive — existing mappings stay valid).
+- Golden-set name-part accuracy metrics: the synthetic eval harness now
+  composes multi-token PERSON names with known first / middle / last spans
+  and reports `PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME`
+  precision / recall / F1 for the ``split_person_name`` heuristic (Python
+  table in `docs/EVAL.md`, TypeScript table under the name-part splitting
+  section; both cores must stay at 1.00 on the seeded set).
+- Detection-only text normalization: every analyze path runs on an NFC
+  view, plus per-language folds from the registry (`detect_folds` /
+  `DETECT_FOLDS`). Japanese folds halfwidth katakana → fullwidth for
+  detect; spans map back so labels/mappings keep the original surface.
+  Shared by Python (`normalize.py`) and TypeScript (`normalize.ts`).
+- Japanese golden / eval cases now include halfwidth-katakana person names
+  (and synthetic company labels in prose) on ~1/8 of documents, covering
+  legacy bank/HR-form spellings. Structured-PII parity also pins phone/email
+  masking around halfwidth name/company context.
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`

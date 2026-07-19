@@ -8,6 +8,7 @@ import { describe, expect, it } from "vitest";
 import { LABELS } from "../src/labeling.js";
 import {
   AUTO_DISPLAY_NAME,
+  FAMILY_NAME_FIRST,
   LANGUAGE_DISPLAY_NAMES,
   SUPPORTED_LANGUAGES,
   isLanguage,
@@ -32,6 +33,14 @@ describe("language registry", () => {
 
   it("DEFAULT_NER_MODELS covers exactly the registry", () => {
     expect(Object.keys(DEFAULT_NER_MODELS).sort()).toEqual([...SUPPORTED_LANGUAGES].sort());
+  });
+
+  it("FAMILY_NAME_FIRST covers exactly the registry and matches the Python core", () => {
+    expect(Object.keys(FAMILY_NAME_FIRST).sort()).toEqual([...SUPPORTED_LANGUAGES].sort());
+    // Cross-core pin: family_name_first on LanguageConfig in
+    // src/prompt_anonymizer/languages.py asserts the same set.
+    const familyFirst = SUPPORTED_LANGUAGES.filter((code) => FAMILY_NAME_FIRST[code]);
+    expect(familyFirst.sort()).toEqual(["ja", "ko", "vi", "zh"]);
   });
 
   it("isLanguage rejects unsupported codes", () => {

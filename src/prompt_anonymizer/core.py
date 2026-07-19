@@ -76,6 +76,11 @@ class PromptAnonymizer:
             (:data:`DEFAULT_HF_NER_MODELS`).
         hf_models: Override the per-language transformer models used when
             ``ner_backend="hf"``.
+        split_person_names: Label name parts of multi-token PERSON spans
+            individually (``<Name_1_First_Name>`` / ``<人名_1_姓>`` ...),
+            sharing one person index per full name. Off by default; the
+            split is whitespace-based, so unspaced names (e.g. ``山田太郎``)
+            keep a plain person label.
     """
 
     def __init__(
@@ -88,6 +93,7 @@ class PromptAnonymizer:
         score_threshold: float = 0.4,
         ner_backend: str = "spacy",
         hf_models: dict[str, str] | None = None,
+        split_person_names: bool = False,
     ) -> None:
         if model_size not in _MODEL_SIZES:
             raise ValueError(f"model_size must be one of {sorted(_MODEL_SIZES)}")
@@ -100,6 +106,7 @@ class PromptAnonymizer:
         self.allow_list = list(allow_list) if allow_list else []
         self.score_threshold = score_threshold
         self.ner_backend = ner_backend
+        self.split_person_names = split_person_names
         self.hf_models = {**DEFAULT_HF_NER_MODELS, **(hf_models or {})}
         self._labels: dict[str, dict[str, str]] = {}
         self._analyzer: AnalyzerEngine | None = None
@@ -343,7 +350,14 @@ class PromptAnonymizer:
             allowed = set(self.allow_list)
             spans = [s for s in spans if text[s.start : s.end] not in allowed]
         labels = self._labels_for(language)
-        anonymized, mapping = labeling.apply_labels(text, spans, labels)
+        config = LANGUAGES.get(language)
+        anonymized, mapping = labeling.apply_labels(
+            text,
+            spans,
+            labels,
+            split_person_names=self.split_person_names,
+            family_name_first=config.family_name_first if config else False,
+        )
         return AnonymizeResult(
             text=anonymized, mapping=mapping, entities=labeling.merge_spans(spans, text)
         )

@@ -32,10 +32,17 @@ the code + a native-script display name in the TS registry. From here on,
 - `LABELS` in `web/packages/core/src/labeling.ts`
 
 Cover **every** entity key that `en.yaml` has (including opt-in entities
-like `US_SSN` / `IBAN_CODE`) — the key sets must be identical across all
+like `US_SSN` / `IBAN_CODE`, and the `PERSON_FIRST_NAME` /
+`PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME` part words used by the opt-in
+name-part splitting) — the key sets must be identical across all
 languages. `web/packages/core/test/labels-parity.test.ts` diffs the YAML
 files against the TS map, so any drift fails CI. Labels are part of the
 reversible-mapping contract: once released they must never change.
+
+Also decide the language's native name order for name-part splitting:
+`family_name_first` on the Python `LanguageConfig` entry and the matching
+entry in `FAMILY_NAME_FIRST` (`web/packages/core/src/languages.ts`); the
+consistency tests in both cores pin the two sets against each other.
 
 ### 3. NER models
 

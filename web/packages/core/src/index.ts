@@ -1,4 +1,5 @@
 import { LABELS, applyLabels, deanonymize as deanonymizeText, mergeSpans } from "./labeling.js";
+import { FAMILY_NAME_FIRST } from "./languages.js";
 import { normalizeForDetect } from "./normalize.js";
 import { detectDenyList, detectWithRegex } from "./recognizers.js";
 import type {
@@ -13,6 +14,7 @@ export * from "./types.js";
 export {
   AUTO_DISPLAY_NAME,
   DETECT_FOLDS,
+  FAMILY_NAME_FIRST,
   LANGUAGE_DISPLAY_NAMES,
   LANGUAGE_LIST,
   SUPPORTED_LANGUAGES,
@@ -25,7 +27,8 @@ export type { DetectFold, LanguageOption } from "./languages.js";
 export { normalizeForDetect } from "./normalize.js";
 export type { DetectView } from "./normalize.js";
 export { SAMPLES } from "./samples.js";
-export { LABELS, applyLabels, mergeSpans } from "./labeling.js";
+export { LABELS, applyLabels, mergeSpans, splitPersonName } from "./labeling.js";
+export type { ApplyLabelsOptions, NamePart, NamePartSpan } from "./labeling.js";
 export {
   InMemoryMappingStore,
   RestoreSession,
@@ -76,6 +79,7 @@ export class Anonymizer {
   private readonly denyList: string[];
   private readonly allowList: string[];
   private readonly scoreThreshold: number;
+  private readonly splitPersonNames: boolean;
 
   constructor(options: AnonymizerOptions = {}) {
     this.ner = options.ner;
@@ -83,6 +87,7 @@ export class Anonymizer {
     this.denyList = options.denyList ?? [];
     this.allowList = options.allowList ?? [];
     this.scoreThreshold = options.scoreThreshold ?? DEFAULT_SCORE_THRESHOLD;
+    this.splitPersonNames = options.splitPersonNames ?? false;
   }
 
   async anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult> {
@@ -112,7 +117,10 @@ export class Anonymizer {
         s.score >= this.scoreThreshold &&
         !this.allowList.includes(text.slice(s.start, s.end)),
     );
-    const { text: anonymized, mapping } = applyLabels(text, spans, LABELS[language]);
+    const { text: anonymized, mapping } = applyLabels(text, spans, LABELS[language], {
+      splitPersonNames: this.splitPersonNames,
+      familyNameFirst: FAMILY_NAME_FIRST[language],
+    });
     return { text: anonymized, mapping, entities: mergeSpans(spans, text) };
   }
 

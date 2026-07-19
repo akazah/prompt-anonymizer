@@ -117,6 +117,24 @@ describe("anonymize", () => {
     expect(payload.text).toBe("<Custom_1> contact: kept@example.com");
   });
 
+  it("passes split_person_names through to the engine factory", async () => {
+    const received: Array<boolean | undefined> = [];
+    const factory: EngineFactory = ({ splitPersonNames }) => {
+      received.push(splitPersonNames);
+      return new Anonymizer({ splitPersonNames });
+    };
+    const { client } = await connect({ engineFactory: factory });
+    await client.callTool({
+      name: "anonymize",
+      arguments: { text: "hello", language: "en", split_person_names: true },
+    });
+    await client.callTool({
+      name: "anonymize",
+      arguments: { text: "hello", language: "en" },
+    });
+    expect(received).toEqual([true, false]);
+  });
+
   it("rejects calls with both text and file", async () => {
     const { client } = await connect();
     const result = await client.callTool({

@@ -9,14 +9,15 @@
 
 import { restoreText } from "@prompt-anonymizer/core";
 
-/** Max length of a complete placeholder: `<` + 64 + `_` + 6 + `>` */
-const MAX_PREFIX_LEN = 73;
+/** Max length of a complete placeholder: `<` + 64 + `_` + 6 + `_` + 32 + `>` */
+const MAX_PREFIX_LEN = 106;
 
-/** Complete placeholder token (bounded quantifiers — runs on untrusted text). */
-const COMPLETE_PLACEHOLDER = /^<[^<>\s]{1,64}_\d{1,6}>$/;
+/** Complete placeholder token, including the name-part form
+ *  `<Name_1_First_Name>` (bounded quantifiers — runs on untrusted text). */
+const COMPLETE_PLACEHOLDER = /^<[^<>\s]{1,64}_\d{1,6}(?:_[^<>\s]{1,32})?>$/;
 
 /** Viable incomplete prefix that could still become a placeholder. */
-const VIABLE_PREFIX = /^<[^<>\s]{0,64}(?:_\d{0,6})?>?$/;
+const VIABLE_PREFIX = /^<[^<>\s]{0,64}(?:_\d{0,6})?(?:_[^<>\s]{0,32})?>?$/;
 
 function findHoldStart(buffer: string): number {
   for (let i = buffer.length - 1; i >= 0; i--) {

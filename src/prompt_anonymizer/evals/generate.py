@@ -8,9 +8,17 @@ from typing import Any
 
 from faker import Faker
 
+from prompt_anonymizer.languages import LANGUAGES
 from prompt_anonymizer.recognizers.my_number import my_number_check_digit
 
 GENRES = ("request", "minutes", "inquiry")
+
+# Ground-truth entity types for name-part spans (see labels/<lang>.yaml keys).
+_NAME_PART_ENTITY = {
+    "first": "PERSON_FIRST_NAME",
+    "middle": "PERSON_MIDDLE_NAME",
+    "last": "PERSON_LAST_NAME",
+}
 
 
 @dataclass(frozen=True)
@@ -71,9 +79,70 @@ class _Builder:
         )
         return self.lit(value)
 
+    def pii_person(self, parts: list[tuple[str, str]]) -> _Builder:
+        """Insert a whitespace-separated PERSON span with per-part ground truth."""
+        name = " ".join(value for _, value in parts)
+        start = self._length
+        self.spans.append(
+            GoldenSpan(
+                start=start,
+                end=start + len(name),
+                entity_type="PERSON",
+                value=name,
+            )
+        )
+        offset = start
+        for i, (part_key, value) in enumerate(parts):
+            if i > 0:
+                offset += 1  # space between tokens
+            self.spans.append(
+                GoldenSpan(
+                    start=offset,
+                    end=offset + len(value),
+                    entity_type=_NAME_PART_ENTITY[part_key],
+                    value=value,
+                )
+            )
+            offset += len(value)
+        return self.lit(name)
+
     @property
     def text(self) -> str:
         return "".join(self._parts)
+
+
+def _single_token(fake: Faker, rng: random.Random, draw: Any) -> str:
+    """Return a one-token name; Faker locales sometimes emit multi-word parts."""
+    for _ in range(30):
+        value = str(draw())
+        if value and " " not in value.strip():
+            return value.strip()
+    return str(draw()).split()[0]
+
+
+def _person_parts(fake: Faker, rng: random.Random, language: str) -> list[tuple[str, str]]:
+    """Compose a splittable full name with known first / middle / last parts.
+
+    Uses Faker's ``first_name`` / ``last_name`` (not ``name()``) so the golden
+    set can record exact part boundaries for name-splitting accuracy metrics.
+    Parts are ordered in the language's native name order
+    (``family_name_first`` from :data:`LANGUAGES`). Each part is one token so
+    the ground truth matches the whitespace-based ``split_person_name`` heuristic.
+    """
+    family_first = LANGUAGES[language].family_name_first
+    first = _single_token(fake, rng, fake.first_name)
+    last = _single_token(fake, rng, fake.last_name)
+    if family_first:
+        parts: list[tuple[str, str]] = [("last", last), ("first", first)]
+        if rng.random() < 0.15:
+            middle = _single_token(fake, rng, fake.first_name)
+            parts = [("last", last), ("middle", middle), ("first", first)]
+    else:
+        parts = [("first", first), ("last", last)]
+        if rng.random() < 0.25:
+            middle = _single_token(fake, rng, fake.first_name)
+            parts = [("first", first), ("middle", middle), ("last", last)]
+    return parts
 
 
 def _ja_phone(rng: random.Random) -> str:
@@ -387,6 +456,13 @@ def _iban(rng: random.Random) -> str:
     return iban
 
 
+def _insert_ja_person(b: _Builder, name: list[tuple[str, str]] | str) -> _Builder:
+    """Insert a ja PERSON span (composed parts or a halfwidth katakana string)."""
+    if isinstance(name, str):
+        return b.pii(name, "PERSON")
+    return b.pii_person(name)
+
+
 def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
     b = _Builder()
     # ~1/8 of cases use halfwidth katakana for person (and company) names —
@@ -394,14 +470,14 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     # is not a supported entity); person names stay labeled PERSON so eval
     # tracks NER recall on this script.
     halfwidth = rng.random() < 0.125
+    company: str | None = None
     if halfwidth:
-        name = _ja_halfwidth_kana_name(fake)
-        name2 = _ja_halfwidth_kana_name(fake)
+        name: list[tuple[str, str]] | str = _ja_halfwidth_kana_name(fake)
+        name2: list[tuple[str, str]] | str = _ja_halfwidth_kana_name(fake)
         company = _ja_halfwidth_company(fake, rng)
     else:
-        name = fake.name()
-        name2 = fake.name()
-        company = None
+        name = _person_parts(fake, rng, "ja")
+        name2 = _person_parts(fake, rng, "ja")
     email = fake.ascii_safe_email()
     phone = _ja_phone(rng)
     postal = _ja_postal(rng)
@@ -412,13 +488,15 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
         b.lit("お世話になっております。")
         if company is not None:
             b.lit(f"{company}の")
-        b.pii(name, "PERSON").lit("と申します。来月の打ち合わせについて相談させてください。").lit(
-            "会場は"
-        ).pii(city, "LOCATION").lit("を予定しています。連絡先は ").pii(phone, "PHONE_NUMBER").lit(
-            "、メールは "
-        ).pii(email, "EMAIL_ADDRESS").lit(" です。よろしくお願いいたします。")
+        _insert_ja_person(b, name).lit(
+            "と申します。来月の打ち合わせについて相談させてください。"
+        ).lit("会場は").pii(city, "LOCATION").lit("を予定しています。連絡先は ").pii(
+            phone, "PHONE_NUMBER"
+        ).lit("、メールは ").pii(email, "EMAIL_ADDRESS").lit(" です。よろしくお願いいたします。")
     elif genre == "minutes":
-        b.lit("【議事録】出席者: ").pii(name, "PERSON").lit("、").pii(name2, "PERSON")
+        b.lit("【議事録】出席者: ")
+        _insert_ja_person(b, name).lit("、")
+        _insert_ja_person(b, name2)
         if company is not None:
             b.lit(f"（{company}）")
         b.lit("。次回会場の住所は ").pii(postal, "JP_POSTAL_CODE").lit(" ").pii(
@@ -429,7 +507,8 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     else:
         card = _credit_card(fake, rng)
         my_number = _my_number(rng)
-        b.lit("お問い合わせありがとうございます。ご登録のお名前は ").pii(name, "PERSON")
+        b.lit("お問い合わせありがとうございます。ご登録のお名前は ")
+        _insert_ja_person(b, name)
         if company is not None:
             b.lit(f"（勤務先: {company}）")
         b.lit(" 様、ご住所は ").pii(city, "LOCATION").lit(
@@ -445,8 +524,8 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
 
 def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
     b = _Builder()
-    name = fake.name()
-    name2 = fake.name()
+    name = _person_parts(fake, rng, "en")
+    name2 = _person_parts(fake, rng, "en")
     email = fake.ascii_safe_email()
     phone = _us_phone(rng)
     city = fake.city()
@@ -454,13 +533,13 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     iban = _iban(rng)
 
     if genre == "request":
-        b.lit("Hi, my name is ").pii(name, "PERSON").lit(
+        b.lit("Hi, my name is ").pii_person(name).lit(
             ". I'd like to schedule a meeting next month. The venue will be in "
         ).pii(city, "LOCATION").lit(". You can reach me at ").pii(phone, "PHONE_NUMBER").lit(
             " or "
         ).pii(email, "EMAIL_ADDRESS").lit(". Thanks!")
     elif genre == "minutes":
-        b.lit("[Minutes] Attendees: ").pii(name, "PERSON").lit(" and ").pii(name2, "PERSON").lit(
+        b.lit("[Minutes] Attendees: ").pii_person(name).lit(" and ").pii_person(name2).lit(
             ". Next meeting will be held in "
         ).pii(city, "LOCATION").lit(". Action item: send the deck to ").pii(
             email, "EMAIL_ADDRESS"
@@ -469,7 +548,7 @@ def _build_en(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
         ).lit(", reimbursement IBAN ").pii(iban, "IBAN_CODE").lit(".")
     else:
         card = _credit_card(fake, rng)
-        b.lit("Thank you for contacting support. We have your name as ").pii(name, "PERSON").lit(
+        b.lit("Thank you for contacting support. We have your name as ").pii_person(name).lit(
             " and your address in "
         ).pii(city, "LOCATION").lit(". We will call you back at ").pii(phone, "PHONE_NUMBER").lit(
             ". The card on file is "
@@ -719,26 +798,26 @@ def _build_generic(
 ) -> GoldenCase:
     spec = _GENERIC_SPECS[language]
     b = _Builder()
-    name = fake.name()
-    name2 = fake.name()
+    name = _person_parts(fake, rng, language)
+    name2 = _person_parts(fake, rng, language)
     email = fake.ascii_safe_email()
     phone = spec.phone(rng)
     city = rng.choice(spec.cities) if spec.cities is not None else fake.city()
 
     if genre == "request":
         intro, after_name, after_city, after_phone, closing = spec.request
-        b.lit(intro).pii(name, "PERSON").lit(after_name).pii(city, "LOCATION").lit(after_city).pii(
+        b.lit(intro).pii_person(name).lit(after_name).pii(city, "LOCATION").lit(after_city).pii(
             phone, "PHONE_NUMBER"
         ).lit(after_phone).pii(email, "EMAIL_ADDRESS").lit(closing)
     elif genre == "minutes":
         header, between, venue, send_to, direct, tail = spec.minutes
-        b.lit(header).pii(name, "PERSON").lit(between).pii(name2, "PERSON").lit(venue).pii(
+        b.lit(header).pii_person(name).lit(between).pii_person(name2).lit(venue).pii(
             city, "LOCATION"
         ).lit(send_to).pii(email, "EMAIL_ADDRESS").lit(direct).pii(phone, "PHONE_NUMBER").lit(tail)
     else:
         card = _credit_card(fake, rng)
         intro, address, callback, card_phrase, copy_phrase, tail = spec.inquiry
-        b.lit(intro).pii(name, "PERSON").lit(address).pii(city, "LOCATION").lit(callback).pii(
+        b.lit(intro).pii_person(name).lit(address).pii(city, "LOCATION").lit(callback).pii(
             phone, "PHONE_NUMBER"
         ).lit(card_phrase).pii(card, "CREDIT_CARD").lit(copy_phrase).pii(
             email, "EMAIL_ADDRESS"

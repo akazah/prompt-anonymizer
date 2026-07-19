@@ -128,6 +128,20 @@ describe("anonymize", () => {
     expect(receivedEntities).toEqual(["US_SSN", "EMAIL_ADDRESS"]);
   });
 
+  it("passes --split-names through to the engine factory", async () => {
+    const received: boolean[] = [];
+    const factory: EngineFactory = ({ splitPersonNames }) => {
+      received.push(splitPersonNames ?? false);
+      return new Anonymizer({ splitPersonNames });
+    };
+    const { io } = makeIo();
+    expect(
+      await run(["anonymize", "--no-ner", "-l", "en", "-t", "x", "--split-names"], io, factory),
+    ).toBe(0);
+    expect(await run(["anonymize", "--no-ner", "-l", "en", "-t", "x"], io, factory)).toBe(0);
+    expect(received).toEqual([true, false]);
+  });
+
   it("exits 2 when the interactive review is rejected", async () => {
     const { io, stderr } = makeIo({ confirm: false });
     const code = await run(

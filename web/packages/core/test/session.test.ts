@@ -29,6 +29,16 @@ describe("findPlaceholders", () => {
   it("ignores angle-bracket text that is not a label", () => {
     expect(findPlaceholders("<div> a < b, x_1 > y <no-number_>")).toEqual([]);
   });
+
+  it("finds name-part labels (word suffix after the person index)", () => {
+    const text = "Dear <Name_1_First_Name> <Name_1_Last_Name>, cc <人名_2_姓> and <Name_3>";
+    expect(findPlaceholders(text)).toEqual([
+      "<Name_1_First_Name>",
+      "<Name_1_Last_Name>",
+      "<人名_2_姓>",
+      "<Name_3>",
+    ]);
+  });
 });
 
 describe("restoreText", () => {
@@ -69,6 +79,16 @@ describe("restoreText", () => {
     expect(result.text).toBe("<人名_1>様");
     expect(result.replacements).toEqual([]);
     expect(result.unresolved).toEqual(["<人名_1>"]);
+  });
+
+  it("restores name-part labels and flags unknown ones", () => {
+    const mapping = { "<Name_1_First_Name>": "John", "<Name_1_Last_Name>": "Smith" };
+    const result = restoreText(
+      "Hi <Name_1_First_Name> <Name_1_Last_Name>, is <Name_2_Last_Name> in?",
+      mapping,
+    );
+    expect(result.text).toBe("Hi John Smith, is <Name_2_Last_Name> in?");
+    expect(result.unresolved).toEqual(["<Name_2_Last_Name>"]);
   });
 });
 

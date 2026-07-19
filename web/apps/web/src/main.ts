@@ -101,6 +101,7 @@ function renderShell(uiLang: Language): string {
         </select>
       </label>
       <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
+      <label class="switch-label"><input type="checkbox" id="split-names" class="switch" /> Split name parts (First/Last)</label>
       <span id="ner-off-warning" class="ner-warning" data-i18n="nerOffWarning" hidden>
         ${t(uiLang, "nerOffWarning")}
       </span>
@@ -185,6 +186,7 @@ const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
 const openRestoreBtn = $<HTMLButtonElement>("#open-restore");
 const nerOffWarning = $("#ner-off-warning");
+const splitNamesEl = $<HTMLInputElement>("#split-names");
 const gridEl = $("#grid");
 const flowStepperEl = $("#flow-stepper");
 
@@ -302,17 +304,13 @@ function onProgress(p: NerProgress): void {
   }
 }
 
-const anonymizerRegexOnly = new Anonymizer();
 let nerBackend: TransformersNerBackend | null = null;
-let anonymizerWithNer: Anonymizer | null = null;
 
 function anonymizerForRun(): Anonymizer {
-  if (!useNerEl.checked) return anonymizerRegexOnly;
-  if (!anonymizerWithNer) {
-    nerBackend = new TransformersNerBackend({ onProgress });
-    anonymizerWithNer = new Anonymizer({ ner: nerBackend });
-  }
-  return anonymizerWithNer;
+  const splitPersonNames = splitNamesEl.checked;
+  if (!useNerEl.checked) return new Anonymizer({ splitPersonNames });
+  if (!nerBackend) nerBackend = new TransformersNerBackend({ onProgress });
+  return new Anonymizer({ ner: nerBackend, splitPersonNames });
 }
 
 const session = new RestoreSession({

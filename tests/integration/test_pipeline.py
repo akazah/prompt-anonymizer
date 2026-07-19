@@ -169,6 +169,21 @@ def test_roundtrip_identity(pa_ja) -> None:
     assert pa_ja.deanonymize(result.text, result.mapping) == text
 
 
+def test_split_person_names_en_roundtrip() -> None:
+    from prompt_anonymizer import PromptAnonymizer
+
+    pa = PromptAnonymizer(languages=["en"], model_size="sm", split_person_names=True)
+    text = "Please ask John Smith to email contact@example.com."
+    result = pa.anonymize(text, language="en")
+    assert "John" not in result.text
+    assert "Smith" not in result.text
+    assert "<Name_1_First_Name>" in result.text
+    assert "<Name_1_Last_Name>" in result.text
+    assert result.mapping["<Name_1_First_Name>"] == "John"
+    assert result.mapping["<Name_1_Last_Name>"] == "Smith"
+    assert pa.deanonymize(result.text, result.mapping) == text
+
+
 def test_deny_and_allow_list() -> None:
     from prompt_anonymizer import PromptAnonymizer
 

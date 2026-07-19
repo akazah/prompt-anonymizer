@@ -44,6 +44,7 @@ export interface EngineOptions {
   entities?: string[];
   denyList?: string[];
   allowList?: string[];
+  splitPersonNames?: boolean;
 }
 export type EngineFactory = (options: EngineOptions) => {
   anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
@@ -72,6 +73,8 @@ anonymize options:
   -l, --language LANG      ${LANGUAGE_LIST} or auto (default: auto).
       --no-ner             Disable the NER model (names/locations NOT masked).
       --entities LIST      Comma-separated entity types (default: built-in set).
+      --split-names        Label name parts individually (<Name_1_First_Name> ...);
+                           multi-word names only.
       --json               Output JSON with text, mapping and entities.
   -i, --interactive        Review the result before printing.
       --mapping-file FILE  Write the label mapping to this JSON file.
@@ -131,11 +134,20 @@ export function resultToDict(result: AnonymizeResult): Record<string, unknown> {
   };
 }
 
-function defaultEngineFactory({ ner, io, entities, denyList, allowList }: EngineOptions): {
+function defaultEngineFactory({
+  ner,
+  io,
+  entities,
+  denyList,
+  allowList,
+  splitPersonNames,
+}: EngineOptions): {
   anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult>;
 } {
   const anonymizerOptions = entities !== undefined ? { entities } : {};
-  if (!ner) return new Anonymizer({ ...anonymizerOptions, denyList, allowList });
+  if (!ner) {
+    return new Anonymizer({ ...anonymizerOptions, denyList, allowList, splitPersonNames });
+  }
   const lastPrinted = new Map<string, number>();
   const onProgress = (p: NerProgress): void => {
     // Download progress goes to stderr so stdout stays pipeable.
@@ -153,6 +165,7 @@ function defaultEngineFactory({ ner, io, entities, denyList, allowList }: Engine
     ner: new TransformersNerBackend({ device: "cpu", onProgress }),
     denyList,
     allowList,
+    splitPersonNames,
   });
 }
 
@@ -170,6 +183,7 @@ async function runAnonymize(
       language: { type: "string", short: "l", default: "auto" },
       ner: { type: "boolean", default: true },
       entities: { type: "string" },
+      "split-names": { type: "boolean", default: false },
       json: { type: "boolean", default: false },
       interactive: { type: "boolean", short: "i", default: false },
       "mapping-file": { type: "string" },
@@ -181,7 +195,12 @@ async function runAnonymize(
   if (!values.ner) io.err(NER_OFF_WARNING);
 
   const entities = values.entities?.split(",").map((s) => s.trim()).filter(Boolean);
-  const engine = engineFactory({ ner: values.ner, entities, io });
+  const engine = engineFactory({
+    ner: values.ner,
+    entities,
+    io,
+    splitPersonNames: values["split-names"],
+  });
   const result = await engine.anonymize(raw, { language });
 
   if (values.interactive) {
