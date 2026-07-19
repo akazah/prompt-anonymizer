@@ -1,7 +1,7 @@
 {
   "name": "prompt-anonymizer-web",
   "private": true,
-  "version": "0.3.1",
+  "version": "0.3.3",
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm --filter \"./packages/*\" build && pnpm -r test",

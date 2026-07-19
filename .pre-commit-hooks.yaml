@@ -4,7 +4,7 @@
 #
 #   repos:
 #     - repo: https://github.com/akazah/prompt-anonymizer
-#       rev: v0.3.1  # tag that ships this hook
+#       rev: v0.3.3  # tag that ships this hook
 #       hooks:
 #         - id: prompt-anonymizer-scan
 #           # args: [--deny, ProjectX, --allow, support@example.com]

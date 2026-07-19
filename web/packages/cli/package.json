@@ -1,6 +1,6 @@
 {
   "name": "@prompt-anonymizer/cli",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "A buddy check for PII before it reaches an LLM - consistent, reversible labels. Node CLI (npx prompt-anonymizer) built on @prompt-anonymizer/core.",
   "license": "MIT",
   "type": "module",

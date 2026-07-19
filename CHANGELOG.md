@@ -1,11 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.3] - 2026-07-19
 
 ### Fixed
 - `scan` no longer aborts with `EISDIR: illegal operation on a directory`
@@ -100,8 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
   wording, matching the npm package descriptions and the rest of the
   positioning. The old summary predated the reframe and wasn't caught by it,
-  so the published 0.3.1 PyPI page still shows the old line; this lands with
-  the next release.
+  the 0.3.3 PyPI page now shows the updated line.
 
 ## [0.3.1] - 2026-07-09
 

@@ -72,7 +72,7 @@ pre-commit framework (Python CLI) — full recipe in the
 ```yaml
 repos:
   - repo: https://github.com/akazah/prompt-anonymizer
-    rev: v0.3.1
+    rev: v0.3.3
     hooks:
       - id: prompt-anonymizer-scan
 ```
@@ -94,7 +94,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
         with: { python-version: "3.13" }
-      - run: pip install prompt-anonymizer==0.3.1
+      - run: pip install prompt-anonymizer==0.3.3
       - run: git ls-files -z '*.md' '*.txt' | xargs -0 prompt-anonymizer scan
 ```
 
