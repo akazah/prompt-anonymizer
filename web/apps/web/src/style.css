@@ -71,6 +71,10 @@ header .spacer,
   color: var(--ok);
 }
 
+.privacy strong + span::before {
+  content: " ";
+}
+
 /* ---------- toolbar ---------- */
 
 .toolbar {
