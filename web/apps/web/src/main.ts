@@ -4,6 +4,7 @@ import {
   TransformersNerBackend,
   detectLanguage,
   detectWebGpu,
+  isLanguageOption,
   languageFromBcp47,
   languagePickerEntries,
   SAMPLES,
@@ -25,10 +26,28 @@ function sampleLanguageFromNavigator(): Language {
   return languageFromBcp47(navigator.language ?? "") ?? "en";
 }
 
+/**
+ * Startup options via query string (shareable / used by tests):
+ *   ?lang=ja   preselect a language ("auto" or a supported code)
+ *   ?ner=0     start with the NER model switched off (offline regex-only)
+ *   ?demo=0    skip the automatic sample demo on load
+ */
+const startupParams = new URLSearchParams(location.search);
+const isOff = (value: string | null): boolean =>
+  value !== null && ["0", "off", "false", "no"].includes(value);
+
 const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4.5 5.6v5.1c0 4.6 3.2 8.9 7.5 10.3 4.3-1.4 7.5-5.7 7.5-10.3V5.6L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
 const ICON_SEND = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12 20 4l-4.5 16-4-6.5L4 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
 const ICON_RESTORE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+type FlowStep = "original" | "anonymized" | "restore";
+
+const FLOW_STEPS: { id: FlowStep; labelKey: UiMessageKey }[] = [
+  { id: "original", labelKey: "flowOriginal" },
+  { id: "anonymized", labelKey: "flowAnonymized" },
+  { id: "restore", labelKey: "flowRestore" },
+];
 
 function languageOptionsMarkup(uiLang: Language): string {
   return languagePickerEntries({ auto: true })
@@ -39,22 +58,30 @@ function languageOptionsMarkup(uiLang: Language): string {
     .join("\n          ");
 }
 
+function flowStepperMarkup(uiLang: Language): string {
+  return FLOW_STEPS.map((step, i) => {
+    const connector = i < FLOW_STEPS.length - 1 ? `<li class="flow-connector" aria-hidden="true"></li>` : "";
+    const label = t(uiLang, step.labelKey);
+    return `<li class="flow-step" data-step="${step.id}">
+        <button type="button" class="flow-dot" aria-label="${label}">${i + 1}</button>
+        <span class="flow-label" data-i18n="${step.labelKey}">${label}</span>
+      </li>${connector}`;
+  }).join("\n        ");
+}
+
 function renderShell(uiLang: Language): string {
   return `
   <div class="container">
-    <div class="hero">
-      <header>
-        <span class="logo-mark">${ICON_SHIELD}</span>
-        <h1>Prompt Anonymizer</h1>
-        <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">${t(uiLang, "checking")}</span></span>
-        <div class="spacer"></div>
-        <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
-      </header>
+    <header class="hero">
+      <span class="logo-mark">${ICON_SHIELD}</span>
+      <h1>Prompt Anonymizer</h1>
+      <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">${t(uiLang, "checking")}</span></span>
       <p class="privacy">
         <strong data-i18n="privacyLead">${t(uiLang, "privacyLead")}</strong>
         <span data-i18n="privacyBody">${t(uiLang, "privacyBody")}</span>
       </p>
-    </div>
+      <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
 
     <div class="toolbar">
       <label><span data-i18n="language">${t(uiLang, "language")}</span>
@@ -63,50 +90,56 @@ function renderShell(uiLang: Language): string {
         </select>
       </label>
       <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
+      <span id="ner-off-warning" class="hint warning" data-i18n="nerOffWarning" hidden>
+        ${t(uiLang, "nerOffWarning")}
+      </span>
       <div class="spacer"></div>
-      <button id="load-sample" data-i18n="loadSample">${t(uiLang, "loadSample")}</button>
       <button id="anonymize" class="primary" data-i18n="anonymize">${t(uiLang, "anonymize")}</button>
     </div>
-    <p id="ner-off-warning" class="hint warning" data-i18n="nerOffWarning" hidden>
-      ${t(uiLang, "nerOffWarning")}
-    </p>
 
     <div id="progress" class="progress">
       <div class="bar-outer"><div id="progress-bar" class="bar-inner"></div></div>
       <div id="progress-label" class="label" data-i18n="loadingModel">${t(uiLang, "loadingModel")}</div>
     </div>
 
-    <div class="grid">
-      <section class="panel">
+    <nav id="flow-stepper" class="flow-stepper" aria-label="Workflow">
+      <ol class="flow-steps">
+        ${flowStepperMarkup(uiLang)}
+      </ol>
+    </nav>
+
+    <div id="grid" class="grid" data-active-step="original">
+      <section class="panel" data-panel="original">
         <h2>${ICON_LOCK}<span data-i18n="originalHeading">${t(uiLang, "originalHeading")}</span></h2>
         <textarea id="input" data-i18n-placeholder="inputPlaceholder" placeholder="${t(uiLang, "inputPlaceholder")}"></textarea>
       </section>
-      <section class="panel">
+      <section class="panel" data-panel="anonymized">
         <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span></h2>
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
           <span id="copy-flash" class="flash"></span>
         </div>
-        <table class="mapping" id="mapping-table" hidden>
-          <thead><tr><th data-i18n="mappingLabel">${t(uiLang, "mappingLabel")}</th><th data-i18n="mappingOriginal">${t(uiLang, "mappingOriginal")}</th></tr></thead>
-          <tbody></tbody>
-        </table>
+        <div class="mapping-wrap">
+          <table class="mapping" id="mapping-table" hidden>
+            <thead><tr><th data-i18n="mappingLabel">${t(uiLang, "mappingLabel")}</th><th data-i18n="mappingOriginal">${t(uiLang, "mappingOriginal")}</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel section-restore" data-panel="restore">
+        <h2>${ICON_RESTORE}<span data-i18n="restoreHeading">${t(uiLang, "restoreHeading")}</span></h2>
+        <textarea id="restore-input" placeholder="${restorePlaceholderFor(uiLang)}"></textarea>
+        <div class="actions">
+          <button id="restore" class="primary" data-i18n="deanonymize">${t(uiLang, "deanonymize")}</button>
+          <button id="copy-restored" data-i18n="copyRestored">${t(uiLang, "copyRestored")}</button>
+          <span id="restore-flash" class="flash"></span>
+        </div>
+        <div id="restore-output" class="output" data-empty="${t(uiLang, "restoreOutputEmpty")}"></div>
+        <p id="restore-warning" class="hint warning" hidden></p>
+        <p class="hint" data-i18n="restoreHint">${t(uiLang, "restoreHint")}</p>
       </section>
     </div>
-
-    <section class="panel section-restore">
-      <h2>${ICON_RESTORE}<span data-i18n="restoreHeading">${t(uiLang, "restoreHeading")}</span></h2>
-      <textarea id="restore-input" placeholder="${restorePlaceholderFor(uiLang)}"></textarea>
-      <div class="actions">
-        <button id="restore" class="primary" data-i18n="deanonymize">${t(uiLang, "deanonymize")}</button>
-        <button id="copy-restored" data-i18n="copyRestored">${t(uiLang, "copyRestored")}</button>
-        <span id="restore-flash" class="flash"></span>
-      </div>
-      <div id="restore-output" class="output" style="margin-top:10px" data-empty="${t(uiLang, "restoreOutputEmpty")}"></div>
-      <p id="restore-warning" class="hint warning" hidden></p>
-      <p class="hint" data-i18n="restoreHint">${t(uiLang, "restoreHint")}</p>
-    </section>
   </div>
 `;
 }
@@ -130,8 +163,43 @@ const progressLabel = $("#progress-label");
 const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
 const nerOffWarning = $("#ner-off-warning");
+const gridEl = $("#grid");
+const flowStepperEl = $("#flow-stepper");
+
+const startupLang = startupParams.get("lang");
+if (startupLang !== null && isLanguageOption(startupLang)) languageEl.value = startupLang;
+if (isOff(startupParams.get("ner"))) useNerEl.checked = false;
 
 let busy = false;
+const completedSteps = new Set<FlowStep>();
+
+function setActiveStep(step: FlowStep): void {
+  gridEl.dataset.activeStep = step;
+  for (const el of flowStepperEl.querySelectorAll<HTMLElement>(".flow-step")) {
+    const id = el.dataset.step as FlowStep;
+    const isActive = id === step;
+    el.classList.toggle("active", isActive);
+    el.classList.toggle("done", completedSteps.has(id));
+    el.querySelector<HTMLButtonElement>(".flow-dot")?.setAttribute(
+      "aria-current",
+      isActive ? "step" : "false",
+    );
+  }
+}
+
+function markStepDone(step: FlowStep): void {
+  completedSteps.add(step);
+  flowStepperEl.querySelector<HTMLElement>(`.flow-step[data-step="${step}"]`)?.classList.add("done");
+}
+
+flowStepperEl.addEventListener("click", (event) => {
+  const btn = (event.target as HTMLElement).closest<HTMLButtonElement>(".flow-dot");
+  if (!btn) return;
+  const step = btn.closest<HTMLElement>(".flow-step")?.dataset.step as FlowStep | undefined;
+  if (step) setActiveStep(step);
+});
+
+setActiveStep("original");
 
 function applyUiLocale(lang: Language): void {
   uiLanguage = lang;
@@ -139,7 +207,6 @@ function applyUiLocale(lang: Language): void {
   document.title = t(lang, "pageTitle");
   if (metaDescription) metaDescription.setAttribute("content", t(lang, "pageDescription"));
 
-  // Keep the selected value while refreshing the Auto option's label.
   const selected = languageEl.value;
   languageEl.innerHTML = languageOptionsMarkup(lang);
   languageEl.value = selected;
@@ -147,7 +214,6 @@ function applyUiLocale(lang: Language): void {
   for (const el of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
     const key = el.dataset.i18n as UiMessageKey | undefined;
     if (!key) continue;
-    // Don't clobber the anonymize button while a run is in progress.
     if (el === anonymizeBtn && busy) continue;
     el.textContent = t(lang, key);
   }
@@ -197,8 +263,6 @@ const ner = new TransformersNerBackend({ onProgress });
 const anonymizerWithNer = new Anonymizer({ ner });
 const anonymizerRegexOnly = new Anonymizer();
 
-// Restore flow goes through the core RestoreSession service; this app only
-// injects an engine (NER toggle) and keeps the default in-memory store.
 const session = new RestoreSession({
   engine: {
     anonymize: (text, options) =>
@@ -209,9 +273,6 @@ const session = new RestoreSession({
 async function updateEngineBadge(): Promise<void> {
   const badge = $("#engine-badge");
   const name = $("#engine-name");
-  // Before the first model load, guess from adapter detection; afterwards
-  // report the device the pipeline actually initialized on (WebGPU adapters
-  // can exist yet fail ONNX Runtime init, triggering the WASM fallback).
   const usesGpu = ner.device ? ner.device === "webgpu" : await detectWebGpu();
   badge.classList.remove("webgpu", "wasm");
   badge.classList.add(usesGpu ? "webgpu" : "wasm");
@@ -237,8 +298,6 @@ function renderWithHighlights(text: string, labels: string[], cls: string): stri
 }
 
 async function resolveLanguage(text: string): Promise<Language> {
-  // "Auto" resolves on-device: Chrome's built-in LanguageDetector when
-  // available, a script heuristic otherwise.
   const value = languageEl.value;
   return value === "auto" ? detectLanguage(text) : (value as Language);
 }
@@ -264,6 +323,8 @@ async function runAnonymize(): Promise<void> {
       )
       .join("");
     mappingTable.hidden = Object.keys(result.mapping).length === 0;
+    markStepDone("original");
+    setActiveStep("anonymized");
   } catch (error) {
     outputEl.textContent = `${t(uiLanguage, "errorPrefix")} ${error instanceof Error ? error.message : String(error)}`;
   } finally {
@@ -287,12 +348,6 @@ function flash(el: HTMLElement, message: string): void {
 }
 
 $("#anonymize").addEventListener("click", () => void runAnonymize());
-$("#load-sample").addEventListener("click", () => {
-  const value = languageEl.value;
-  const language: Language =
-    value === "auto" ? sampleLanguageFromNavigator() : (value as Language);
-  inputEl.value = SAMPLES[language];
-});
 $("#copy").addEventListener("click", () => {
   if (!lastResult) return;
   void navigator.clipboard.writeText(lastResult.text);
@@ -315,6 +370,7 @@ $("#restore").addEventListener("click", () => {
     warning.textContent = result.unresolved.length
       ? `${t(uiLanguage, "unresolvedLabels")} ${result.unresolved.join(", ")}`
       : "";
+    markStepDone("restore");
   })();
 });
 $("#copy-restored").addEventListener("click", () => {
@@ -323,3 +379,11 @@ $("#copy-restored").addEventListener("click", () => {
   void navigator.clipboard.writeText(restored);
   flash($("#restore-flash"), t(uiLanguage, "copied"));
 });
+
+if (!isOff(startupParams.get("demo"))) {
+  const value = languageEl.value;
+  const language: Language =
+    value === "auto" ? sampleLanguageFromNavigator() : (value as Language);
+  inputEl.value = SAMPLES[language];
+  void runAnonymize();
+}

@@ -39,9 +39,8 @@ function goldenSlice(language: E2eLanguage): GoldenCase[] {
 for (const language of E2E_LANGUAGES) {
   test(`golden ${language}: UI round trip restores the original text`, async ({ page }) => {
     for (const goldenCase of goldenSlice(language)) {
-      // Fresh page per case so "output is non-empty" waits cannot race with
-      // the previous case's result.
-      await page.goto("/");
+      // anonymizeRegexOnly navigates to a fresh page per case, so "output is
+      // non-empty" waits cannot race with the previous case's result.
       const anonymized = await anonymizeRegexOnly(page, { language, text: goldenCase.text });
 
       for (const span of goldenCase.spans) {
