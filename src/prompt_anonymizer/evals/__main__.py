@@ -11,7 +11,12 @@ import argparse
 import json
 from pathlib import Path
 
-from prompt_anonymizer.core import DEFAULT_ENTITIES, OPTIONAL_ENTITIES, PromptAnonymizer
+from prompt_anonymizer.core import (
+    _NER_BACKENDS,
+    DEFAULT_ENTITIES,
+    OPTIONAL_ENTITIES,
+    PromptAnonymizer,
+)
 from prompt_anonymizer.evals.generate import generate_cases
 from prompt_anonymizer.evals.metrics import EvalReport, evaluate_cases
 from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
@@ -64,8 +69,11 @@ def main() -> None:
     parser.add_argument(
         "--ner-backend",
         default="spacy",
-        choices=["spacy", "hf"],
-        help="NER backend; 'hf' needs the hf extra and downloads models on first use",
+        choices=list(_NER_BACKENDS),
+        help=(
+            "NER backend; 'hf' / 'gliner' need the matching extra and "
+            "download models on first use"
+        ),
     )
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--output", type=Path, default=Path("docs/EVAL.md"))

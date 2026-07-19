@@ -1,8 +1,32 @@
 """Unit tests for custom recognizer logic (regex + check digit)."""
 
+import re
+from pathlib import Path
+
 import pytest
 
+from prompt_anonymizer.recognizers.gliner_ner import _MULTI_PII, DEFAULT_GLINER_MODELS
 from prompt_anonymizer.recognizers.my_number import is_valid_my_number, my_number_check_digit
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_gliner_specs_are_revision_pinned_and_scoped() -> None:
+    # Licensing policy: model cards can change license, so every GLiNER
+    # checkpoint must pin a commit hash. Contextual-PII track: the specs
+    # may only ever map to PERSON / LOCATION (structured PII stays regex).
+    for spec in (*DEFAULT_GLINER_MODELS.values(), _MULTI_PII):
+        assert re.fullmatch(r"[0-9a-f]{40}", spec.revision), spec.model_name
+        assert set(spec.entity_mapping.values()) <= {"PERSON", "LOCATION"}, spec.model_name
+
+
+def test_gliner_specs_documented_in_license_audit() -> None:
+    # PLAN_INTL_PII.md audit table must list every pinned checkpoint so
+    # revision bumps force a deliberate re-audit (Piiranha precedent).
+    audit = (REPO_ROOT / "docs" / "PLAN_INTL_PII.md").read_text(encoding="utf-8")
+    for spec in (*DEFAULT_GLINER_MODELS.values(), _MULTI_PII):
+        assert spec.model_name in audit, spec.model_name
+        assert spec.revision in audit, spec.model_name
 
 
 def test_check_digit_known_value() -> None:

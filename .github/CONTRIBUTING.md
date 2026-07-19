@@ -70,6 +70,12 @@ satisfy the following before they are added:
   data of any adopted model in `docs/PLAN_INTL_PII.md`'s audit table, and
   re-audit when bumping the revision: model-card licenses do change
   (Piiranha was announced as MIT and later relicensed CC-BY-NC-ND-4.0).
+- **Opt-in NER backends** (e.g. `ner_backend="gliner"` behind the `gliner`
+  extra) follow the same three criteria even though they are not defaults.
+  Pin model revisions in code (`recognizers/gliner_ner.py`) and keep the
+  audit table in `docs/PLAN_INTL_PII.md` in sync. New transitive
+  dependencies introduced by an extra must also satisfy the code-dependency
+  rules above (MIT / Apache-2.0 / BSD; LGPL import-only if unavoidable).
 
 ## Versioning
 

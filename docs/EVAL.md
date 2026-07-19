@@ -56,9 +56,10 @@ and copy the table (the default run above owns the marker block).
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.89 | 1.00 | 0.94 | 200 |
-| ja | PERSON | 0.94 | 1.00 | 0.97 | 267 |
+| ja | LOCATION | 0.88 | 1.00 | 0.94 | 200 |
+| ja | PERSON | 0.91 | 1.00 | 0.95 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
@@ -77,6 +78,63 @@ and copy the table (the default run above owns the marker block).
 | vi | LOCATION | 0.77 | 1.00 | 0.87 | 200 |
 | vi | PERSON | 0.37 | 1.00 | 0.54 | 267 |
 | vi | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+
+## Python core with the GLiNER PII backend (`ner_backend="gliner"`)
+
+Evaluation-gated backend (see `PLAN_INTL_PII.md`, P17): PII-specialised
+GLiNER models added on top of spaCy, contextual PII (PERSON / LOCATION)
+only — structured entities stay on the regex + checksum track. Per-language
+models (revision-pinned in `src/prompt_anonymizer/recognizers/gliner_ner.py`):
+`ja` → `DataSign/gliner-ja-pii-v1`, all others →
+`urchade/gliner_multi_pii-v1` (trained on en/fr/de/es/it/pt; best-effort
+elsewhere). Requires `pip install "prompt-anonymizer[gliner]"`. Regenerate with
+`uv run python -m prompt_anonymizer.evals --ner-backend gliner --output /tmp/eval_gliner.md --golden-dir /tmp/golden_gliner`
+and copy the table (the default run above owns the marker block).
+
+| Language | Entity | Precision | Recall | F1 | Support |
+|---|---|---|---|---|---|
+| ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
+| ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | LOCATION | 0.99 | 1.00 | 1.00 | 200 |
+| ja | PERSON | 0.93 | 1.00 | 0.96 | 267 |
+| ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| en | LOCATION | 1.00 | 1.00 | 1.00 | 200 |
+| en | PERSON | 1.00 | 1.00 | 1.00 | 267 |
+| en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
+| es | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| es | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| es | LOCATION | 0.58 | 1.00 | 0.74 | 200 |
+| es | PERSON | 0.79 | 0.99 | 0.88 | 267 |
+| es | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| vi | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| vi | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| vi | LOCATION | 0.78 | 1.00 | 0.88 | 200 |
+| vi | PERSON | 0.38 | 1.00 | 0.56 | 267 |
+| vi | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+
+### Backend comparison (PERSON / LOCATION F1, plus cost)
+
+Warm per-case latency measured on 50 golden cases per language
+(CPU-only GitHub-runner-class hardware, single text at a time).
+
+| Backend | ja PERSON | ja LOCATION | en PERSON | en LOCATION | Download (per lang) | Median latency (ja) |
+|---|---|---|---|---|---|---|
+| `spacy` (default) | 0.89 | 0.85 | 0.98 | 0.97 | ~40 MB wheel | ~9 ms |
+| `hf` | 0.95 | 0.94 | 0.95 | 1.00 | ~0.4–1.1 GB | ~46 ms |
+| `gliner` | 0.96 | 1.00 | 1.00 | 1.00 | ~1.1 GB | ~135 ms |
+
+`gliner` is equal or better than `hf` on every PERSON / LOCATION cell of the
+golden set (biggest gains: ja LOCATION 0.94 → 1.00, en PERSON 0.95 → 1.00)
+at a similar download size but ~3× the CPU latency. es / vi numbers are
+dominated by spaCy-union false positives and barely move. Verdict and
+TypeScript-core implications are recorded in `PLAN_INTL_PII.md` (P17).
 
 ## TypeScript core (regex recognizers, structured PII only)
 
