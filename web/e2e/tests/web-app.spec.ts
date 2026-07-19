@@ -127,7 +127,8 @@ test("copy button puts the anonymized text on the clipboard", async ({ page }) =
   const output = await anonymizeRegexOnly(page, { language: "ja" });
 
   await page.locator("#copy").click();
-  await expect(page.locator("#copy-flash")).toHaveText("Copied!");
+  // Flash copy follows the UI locale (same as the language select).
+  await expect(page.locator("#copy-flash")).toHaveText("コピーしました");
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
   expect(clipboard).toBe(output);
   expect(clipboard).toContain("<メールアドレス_1>");
