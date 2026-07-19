@@ -11,7 +11,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { splitPersonName } from "../src/labeling.js";
+import { LABELS, applyLabels, deanonymize, splitPersonName } from "../src/labeling.js";
 import { FAMILY_NAME_FIRST, SUPPORTED_LANGUAGES } from "../src/languages.js";
 import { detectWithRegex } from "../src/recognizers.js";
 import type { Language } from "../src/types.js";
@@ -136,6 +136,27 @@ describe.each(SUPPORTED_LANGUAGES)("golden set parity (%s)", (language) => {
     for (const [entityType, { tp, fn }] of perEntity) {
       const recall = tp / (tp + fn);
       expect(recall, `${entityType}: recall ${recall.toFixed(3)} (${tp}/${tp + fn})`).toBe(1);
+    }
+  });
+
+  it("split name-part labels round-trip to original text on golden cases", () => {
+    const cases = loadGolden(language);
+    for (const goldenCase of cases) {
+      const spans = goldenCase.spans
+        .filter((s) => !NAME_PART_TYPES.has(s.entity_type))
+        .map((s) => ({
+          start: s.start,
+          end: s.end,
+          entityType: s.entity_type,
+          score: 1,
+        }));
+      const { text: anonymized, mapping } = applyLabels(
+        goldenCase.text,
+        spans,
+        LABELS[language],
+        { splitPersonNames: true, familyNameFirst: FAMILY_NAME_FIRST[language] },
+      );
+      expect(deanonymize(anonymized, mapping)).toBe(goldenCase.text);
     }
   });
 });
