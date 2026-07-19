@@ -145,7 +145,10 @@ function renderShell(uiLang: Language): string {
 }
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
-let uiLanguage: Language = resolveUiLanguage("auto");
+const startupLang = startupParams.get("lang");
+const initialLangOption: LanguageOption =
+  startupLang !== null && isLanguageOption(startupLang) ? startupLang : "auto";
+let uiLanguage: Language = resolveUiLanguage(initialLangOption);
 app.innerHTML = renderShell(uiLanguage);
 document.documentElement.lang = uiLanguage;
 document.title = t(uiLanguage, "pageTitle");
@@ -166,8 +169,7 @@ const nerOffWarning = $("#ner-off-warning");
 const gridEl = $("#grid");
 const flowStepperEl = $("#flow-stepper");
 
-const startupLang = startupParams.get("lang");
-if (startupLang !== null && isLanguageOption(startupLang)) languageEl.value = startupLang;
+if (initialLangOption !== "auto") languageEl.value = initialLangOption;
 if (isOff(startupParams.get("ner"))) useNerEl.checked = false;
 
 let busy = false;
