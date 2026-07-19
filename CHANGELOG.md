@@ -24,7 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   and en PERSON 0.95 → 1.00 at ~3× the CPU latency; the default backend
   stays `spacy` and the TypeScript core keeps its current models (evaluation
   and decision recorded in `docs/EVAL.md` and `docs/PLAN_INTL_PII.md` P17).
-  Weekly CI tracks the backend via a new `eval-gliner` job.
+  Weekly CI tracks the backend via a new `eval-gliner` job. License audit
+  (Apache-2.0 models + MIT/BSD transitive deps, revision-pinned, opt-in
+  only) recorded in `docs/PLAN_INTL_PII.md` P17 with a CI-enforced doc sync
+  test.
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`
