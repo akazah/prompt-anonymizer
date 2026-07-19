@@ -45,10 +45,10 @@ export interface AnonymizeOptions {
 /**
  * Drive the UI end to end with the NER model switched off (offline path).
  *
- * Navigates itself: `?ner=0` keeps the on-load auto demo offline. Without
- * explicit `text`, the auto demo IS the run under test (the app fills the
- * language's sample and anonymizes it on load); with `text`, `?demo=0`
- * skips the auto demo so the output can only come from the explicit input.
+ * Navigates itself: `?ner=0` keeps model download off. Without explicit
+ * `text`, the built-in sample is prefilled and anonymized via a button click;
+ * with `text`, `?demo=0` skips sample prefill so output only comes from the
+ * explicit input.
  */
 export async function anonymizeRegexOnly(
   page: Page,
@@ -56,6 +56,7 @@ export async function anonymizeRegexOnly(
 ): Promise<string> {
   if (text === undefined) {
     await page.goto(`/?lang=${language}&ner=0`);
+    await page.locator("#anonymize").click();
   } else {
     await page.goto(`/?lang=${language}&ner=0&demo=0`);
     await page.locator("#input").fill(text);

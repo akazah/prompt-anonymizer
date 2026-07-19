@@ -12,7 +12,7 @@ const INPUT_TEXT = "連絡先は 090-1234-5678、メールは taro@example.com �
 
 beforeAll(async () => {
   document.body.innerHTML = '<div id="app"></div>';
-  // Skip the on-load auto demo (it would run with NER on and race this test).
+  // No auto-anonymize on load; tests use ?demo=0 to skip sample prefill.
   window.history.replaceState(null, "", "/?demo=0");
   await import("../src/main.ts");
 });
@@ -47,8 +47,12 @@ describe("web app (jsdom, NER off)", () => {
     expect(mappingRows.length).toBe(2);
     expect($("#mapping-table").hidden).toBe(false);
 
-    // Round-trip: paste the anonymized text back as if it were an LLM reply.
-    $<HTMLTextAreaElement>("#restore-input").value = anonymized;
+    expect($<HTMLButtonElement>("#open-restore").disabled).toBe(false);
+    $("#open-restore").click();
+    expect($<HTMLTextAreaElement>("#restore-input").value).toBe(anonymized);
+    expect($("#grid").dataset.activeStep).toBe("restore");
+
+    // Round-trip: run restore on the prefilled anonymized text.
     $("#restore").click();
     await vi.waitFor(() => {
       expect($("#restore-output").textContent).toBe(INPUT_TEXT);

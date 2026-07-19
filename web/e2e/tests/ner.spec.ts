@@ -49,10 +49,9 @@ test.afterAll(async () => {
 });
 
 async function anonymizeSample(language: "ja" | "en" | "es" | "vi" | "zh" | "ko" | "fr" | "de" | "pt" | "it"): Promise<string> {
-  // The on-load auto demo fills the language's sample and anonymizes it
-  // with the NER model (on by default) — no clicks needed.
   await page.goto(`${BASE_URL}?lang=${language}`);
   await expect(page.locator("#use-ner")).toBeChecked();
+  await page.locator("#anonymize").click();
   const output = page.locator("#output");
   await expect(output).not.toBeEmpty({ timeout: MODEL_READY_TIMEOUT });
   return (await output.textContent()) ?? "";
