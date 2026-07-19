@@ -47,8 +47,12 @@ describe("web app (jsdom, NER off)", () => {
     expect(mappingRows.length).toBe(2);
     expect($("#mapping-table").hidden).toBe(false);
 
-    // Round-trip: paste the anonymized text back as if it were an LLM reply.
-    $<HTMLTextAreaElement>("#restore-input").value = anonymized;
+    expect($<HTMLButtonElement>("#open-restore").disabled).toBe(false);
+    $("#open-restore").click();
+    expect($<HTMLTextAreaElement>("#restore-input").value).toBe(anonymized);
+    expect($("#grid").dataset.activeStep).toBe("restore");
+
+    // Round-trip: run restore on the prefilled anonymized text.
     $("#restore").click();
     await vi.waitFor(() => {
       expect($("#restore-output").textContent).toBe(INPUT_TEXT);

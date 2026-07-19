@@ -129,6 +129,7 @@ function renderShell(uiLang: Language): string {
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
+          <button id="open-restore" type="button" data-i18n="openRestore" disabled>${t(uiLang, "openRestore")}</button>
           <span id="copy-flash" class="flash"></span>
         </div>
         <div class="mapping-wrap">
@@ -175,6 +176,7 @@ const progressBar = $("#progress-bar");
 const progressLabel = $("#progress-label");
 const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
+const openRestoreBtn = $<HTMLButtonElement>("#open-restore");
 const nerOffWarning = $("#ner-off-warning");
 const gridEl = $("#grid");
 const flowStepperEl = $("#flow-stepper");
@@ -264,6 +266,10 @@ languageEl.addEventListener("change", () => {
 
 let lastResult: AnonymizeResult | null = null;
 
+function syncOpenRestoreBtn(): void {
+  openRestoreBtn.disabled = !lastResult;
+}
+
 function onProgress(p: NerProgress): void {
   progressEl.classList.add("visible");
   if (p.status === "progress" && typeof p.progress === "number") {
@@ -332,6 +338,7 @@ async function runAnonymize(): Promise<void> {
     mappingTable.hidden = Object.keys(result.mapping).length === 0;
     markStepDone("original");
     setActiveStep("anonymized");
+    syncOpenRestoreBtn();
   } catch (error) {
     outputEl.textContent = `${t(uiLanguage, "errorPrefix")} ${error instanceof Error ? error.message : String(error)}`;
   } finally {
@@ -358,6 +365,15 @@ $("#copy").addEventListener("click", () => {
   if (!lastResult) return;
   void navigator.clipboard.writeText(lastResult.text);
   flash($("#copy-flash"), t(uiLanguage, "copied"));
+});
+$("#open-restore").addEventListener("click", () => {
+  if (!lastResult) return;
+  const restoreInput = $<HTMLTextAreaElement>("#restore-input");
+  restoreInput.value = lastResult.text;
+  $("#restore-output").textContent = "";
+  $("#restore-warning").hidden = true;
+  setActiveStep("restore");
+  restoreInput.focus();
 });
 $("#restore").addEventListener("click", () => {
   void (async () => {

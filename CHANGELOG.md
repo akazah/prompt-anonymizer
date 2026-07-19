@@ -54,6 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   compact pill.
 - Primary action button label now reads “anonymize in browser (no server)”
   (and locale equivalents) instead of a bare “Anonymize”.
+- Masked panel: “Restore” button beside Copy prefills the restore tab and
+  switches to it.
 - Web app hero no longer shows a WebGPU/WASM engine badge; on-device value
   is communicated by the value-prop chips instead.
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
