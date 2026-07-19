@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the whole scan as a fatal read error.
 
 ### Added
+- Japanese golden / eval cases now include halfwidth-katakana person names
+  (and synthetic company labels in prose) on ~1/8 of documents, covering
+  legacy bank/HR-form spellings. Structured-PII parity also pins phone/email
+  masking around halfwidth name/company context.
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`
