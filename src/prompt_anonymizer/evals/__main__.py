@@ -13,8 +13,13 @@ from pathlib import Path
 
 from prompt_anonymizer.core import DEFAULT_ENTITIES, OPTIONAL_ENTITIES, PromptAnonymizer
 from prompt_anonymizer.evals.generate import generate_cases
-from prompt_anonymizer.evals.metrics import EvalReport, evaluate_cases
-from prompt_anonymizer.languages import SUPPORTED_LANGUAGES
+from prompt_anonymizer.evals.metrics import (
+    EvalReport,
+    evaluate_cases,
+    evaluate_name_parts,
+    merge_reports,
+)
+from prompt_anonymizer.languages import LANGUAGES, SUPPORTED_LANGUAGES
 
 PY_START = "<!-- python-eval:start -->"
 PY_END = "<!-- python-eval:end -->"
@@ -23,7 +28,10 @@ DOC_TEMPLATE = f"""# Accuracy (span-level, synthetic golden set)
 
 Cases are seeded Faker documents (request / minutes / inquiry genres) with
 ground-truth spans. Detection is best-effort; these numbers exist to catch
-regressions, not to promise recall on real-world text.
+regressions, not to promise recall on real-world text. PERSON name-part rows
+(`PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME`) score the
+``split_person_name`` heuristic on composed multi-token names in the golden
+set (exact span match, no NER).
 
 ## Python core (Presidio + spaCy)
 
@@ -94,7 +102,11 @@ def main() -> None:
             [case.text for case in cases], language=language, batch_size=args.batch_size
         )
         print(f"[{language}] analyzed {len(cases)} cases (batched)")
-        reports.append(evaluate_cases(cases, [r.entities for r in results]))
+        detection = evaluate_cases(cases, [r.entities for r in results])
+        parts = evaluate_name_parts(
+            cases, family_name_first=LANGUAGES[language].family_name_first
+        )
+        reports.append(merge_reports(detection, parts))
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     section = [TABLE_HEADER]

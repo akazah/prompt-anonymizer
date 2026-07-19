@@ -3,7 +3,7 @@
 import pytest
 
 from prompt_anonymizer.evals.generate import GoldenCase, GoldenSpan, generate_cases
-from prompt_anonymizer.evals.metrics import EntityMetrics, evaluate_cases
+from prompt_anonymizer.evals.metrics import EntityMetrics, evaluate_cases, evaluate_name_parts
 from prompt_anonymizer.labeling import EntitySpan
 
 
@@ -67,6 +67,41 @@ def test_markdown_rows() -> None:
 def test_empty_metrics_are_zero() -> None:
     m = EntityMetrics(entity_type="PERSON")
     assert (m.precision, m.recall, m.f1) == (0.0, 0.0, 0.0)
+
+
+def test_generate_cases_include_name_part_spans() -> None:
+    cases = generate_cases("en", count=5)
+    for case in cases:
+        persons = [s for s in case.spans if s.entity_type == "PERSON"]
+        parts = [s for s in case.spans if s.entity_type.startswith("PERSON_")]
+        assert persons
+        assert parts
+        for person in persons:
+            part_spans = [
+                s
+                for s in parts
+                if person.start <= s.start and s.end <= person.end
+            ]
+            assert len(part_spans) >= 2
+            assert case.text[person.start : person.end] == " ".join(s.value for s in part_spans)
+
+
+def test_evaluate_name_parts_perfect_on_generated() -> None:
+    cases = generate_cases("en", count=20)
+    report = evaluate_name_parts(cases, family_name_first=False)
+    for entity in ("PERSON_FIRST_NAME", "PERSON_LAST_NAME"):
+        assert entity in report.per_entity
+        m = report.per_entity[entity]
+        assert m.recall == 1.0
+        assert m.precision == 1.0
+
+
+def test_evaluate_name_parts_family_first() -> None:
+    cases = generate_cases("ja", count=20)
+    report = evaluate_name_parts(cases, family_name_first=True)
+    for entity in ("PERSON_FIRST_NAME", "PERSON_LAST_NAME"):
+        m = report.per_entity[entity]
+        assert m.recall == 1.0
 
 
 def test_generate_cases_is_seeded_and_offsets_correct() -> None:

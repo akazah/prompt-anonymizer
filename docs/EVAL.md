@@ -2,7 +2,10 @@
 
 Cases are seeded Faker documents (request / minutes / inquiry genres) with
 ground-truth spans. Detection is best-effort; these numbers exist to catch
-regressions, not to promise recall on real-world text.
+regressions, not to promise recall on real-world text. PERSON name-part rows
+(`PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME`) score the
+``split_person_name`` heuristic on composed multi-token names in the golden
+set (exact span match, no NER).
 
 ## Python core (Presidio + spaCy)
 
@@ -14,27 +17,88 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.92 | 0.79 | 0.85 | 200 |
-| ja | PERSON | 0.98 | 0.82 | 0.89 | 267 |
+| ja | LOCATION | 0.91 | 0.80 | 0.85 | 200 |
+| ja | PERSON | 0.94 | 0.88 | 0.91 | 267 |
+| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 41 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | en | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| en | LOCATION | 0.99 | 0.94 | 0.97 | 200 |
-| en | PERSON | 0.99 | 0.97 | 0.98 | 267 |
+| en | LOCATION | 0.98 | 0.94 | 0.96 | 200 |
+| en | PERSON | 0.99 | 0.95 | 0.97 | 267 |
+| en | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| en | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| en | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 63 |
 | en | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | US_SSN | 1.00 | 1.00 | 1.00 | 67 |
 | es | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | es | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| es | LOCATION | 0.48 | 0.71 | 0.57 | 200 |
-| es | PERSON | 0.72 | 0.67 | 0.69 | 267 |
+| es | LOCATION | 0.47 | 0.72 | 0.57 | 200 |
+| es | PERSON | 0.72 | 0.65 | 0.68 | 267 |
+| es | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| es | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| es | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 60 |
 | es | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | vi | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | vi | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
-| vi | LOCATION | 0.35 | 0.28 | 0.31 | 200 |
-| vi | PERSON | 0.20 | 0.52 | 0.29 | 267 |
+| vi | LOCATION | 0.45 | 0.24 | 0.32 | 200 |
+| vi | PERSON | 0.29 | 0.89 | 0.44 | 267 |
+| vi | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| vi | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| vi | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 50 |
 | vi | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| zh | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| zh | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| zh | LOCATION | 0.91 | 0.20 | 0.33 | 200 |
+| zh | PERSON | 0.88 | 0.54 | 0.67 | 267 |
+| zh | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| zh | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| zh | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 42 |
+| zh | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| ko | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| ko | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| ko | LOCATION | 0.00 | 0.00 | 0.00 | 200 |
+| ko | PERSON | 0.00 | 0.00 | 0.00 | 267 |
+| ko | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ko | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ko | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 51 |
+| ko | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| fr | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| fr | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| fr | LOCATION | 0.83 | 0.64 | 0.72 | 200 |
+| fr | PERSON | 0.82 | 0.87 | 0.85 | 267 |
+| fr | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| fr | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| fr | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 71 |
+| fr | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| de | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| de | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| de | LOCATION | 0.98 | 1.00 | 0.99 | 200 |
+| de | PERSON | 1.00 | 0.92 | 0.96 | 267 |
+| de | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| de | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| de | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 65 |
+| de | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| pt | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| pt | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| pt | LOCATION | 0.76 | 0.99 | 0.86 | 200 |
+| pt | PERSON | 1.00 | 0.79 | 0.88 | 267 |
+| pt | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| pt | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| pt | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 66 |
+| pt | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+| it | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
+| it | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
+| it | LOCATION | 0.56 | 1.00 | 0.72 | 200 |
+| it | PERSON | 0.80 | 0.94 | 0.86 | 267 |
+| it | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| it | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| it | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 67 |
+| it | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 
 Model size: `sm` / NER backend: `spacy` / cases per language: 200 (seed fixed).
 <!-- python-eval:end -->
@@ -122,3 +186,44 @@ and are not measured here. Regenerate with
 | it | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | it | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | it | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
+
+## TypeScript core — name part splitting (heuristic)
+
+Same golden set; scores ``splitPersonName`` on each golden PERSON span (exact
+span match, no NER). Regenerate with `node scripts/eval-golden.mjs` in
+`web/packages/core` (after `pnpm build`).
+
+<!-- ts-name-parts-eval:start -->
+| Language | Entity | Precision | Recall | F1 | Support |
+|---|---|---|---|---|---|
+| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 41 |
+| en | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| en | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| en | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 63 |
+| es | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| es | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| es | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 60 |
+| vi | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| vi | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| vi | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 50 |
+| zh | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| zh | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| zh | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 42 |
+| ko | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ko | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| ko | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 51 |
+| fr | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| fr | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| fr | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 71 |
+| de | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| de | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| de | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 65 |
+| pt | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| pt | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| pt | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 66 |
+| it | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| it | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
+| it | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 67 |
+<!-- ts-name-parts-eval:end -->

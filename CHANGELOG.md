@@ -33,6 +33,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   label renumbering now accepts the part suffix; label YAMLs gained
   `PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME` keys in
   all ten languages (additive — existing mappings stay valid).
+- Golden-set name-part accuracy metrics: the synthetic eval harness now
+  composes multi-token PERSON names with known first / middle / last spans
+  and reports `PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME`
+  precision / recall / F1 for the ``split_person_name`` heuristic (Python
+  table in `docs/EVAL.md`, TypeScript table under the name-part splitting
+  section; both cores must stay at 1.00 on the seeded set).
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`

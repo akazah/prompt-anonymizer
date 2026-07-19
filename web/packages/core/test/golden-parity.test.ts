@@ -11,7 +11,8 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { SUPPORTED_LANGUAGES } from "../src/languages.js";
+import { splitPersonName } from "../src/labeling.js";
+import { FAMILY_NAME_FIRST, SUPPORTED_LANGUAGES } from "../src/languages.js";
 import { detectWithRegex } from "../src/recognizers.js";
 import type { Language } from "../src/types.js";
 
@@ -42,6 +43,16 @@ const REGEX_ENTITIES = new Set([
   "IBAN_CODE",
 ]);
 const MIN_RECALL = 0.95;
+const NAME_PART_TYPES = new Set([
+  "PERSON_FIRST_NAME",
+  "PERSON_MIDDLE_NAME",
+  "PERSON_LAST_NAME",
+]);
+const PART_TYPE_BY_KEY: Record<string, string> = {
+  first: "PERSON_FIRST_NAME",
+  middle: "PERSON_MIDDLE_NAME",
+  last: "PERSON_LAST_NAME",
+};
 
 function loadGolden(language: Language): GoldenCase[] {
   return JSON.parse(readFileSync(join(GOLDEN_DIR, `golden_${language}.json`), "utf-8"));
@@ -77,6 +88,54 @@ describe.each(SUPPORTED_LANGUAGES)("golden set parity (%s)", (language) => {
       const recall = tp / (tp + fn);
       expect(recall, `${entityType}: recall ${recall.toFixed(3)} (${tp}/${tp + fn})`)
         .toBeGreaterThanOrEqual(MIN_RECALL);
+    }
+  });
+
+  it("name-part splitting recall is 1.0 on golden PERSON spans", () => {
+    const cases = loadGolden(language);
+    const perEntity = new Map<string, { tp: number; fn: number }>();
+    const familyNameFirst = FAMILY_NAME_FIRST[language];
+
+    for (const goldenCase of cases) {
+      const persons = goldenCase.spans.filter((s) => s.entity_type === "PERSON");
+      const goldParts = goldenCase.spans.filter((s) => NAME_PART_TYPES.has(s.entity_type));
+      const predicted: { start: number; end: number; entityType: string }[] = [];
+      for (const person of persons) {
+        const source = goldenCase.text.slice(person.start, person.end);
+        for (const { part, start: relStart, end: relEnd } of splitPersonName(
+          source,
+          familyNameFirst,
+        )) {
+          predicted.push({
+            start: person.start + relStart,
+            end: person.start + relEnd,
+            entityType: PART_TYPE_BY_KEY[part],
+          });
+        }
+      }
+      const used = new Set<number>();
+      for (const gold of goldParts) {
+        const tally = perEntity.get(gold.entity_type) ?? { tp: 0, fn: 0 };
+        const hitIndex = predicted.findIndex(
+          (p, i) =>
+            !used.has(i) &&
+            p.entityType === gold.entity_type &&
+            p.start === gold.start &&
+            p.end === gold.end,
+        );
+        if (hitIndex >= 0) {
+          used.add(hitIndex);
+          tally.tp++;
+        } else {
+          tally.fn++;
+        }
+        perEntity.set(gold.entity_type, tally);
+      }
+    }
+
+    for (const [entityType, { tp, fn }] of perEntity) {
+      const recall = tp / (tp + fn);
+      expect(recall, `${entityType}: recall ${recall.toFixed(3)} (${tp}/${tp + fn})`).toBe(1);
     }
   });
 });
