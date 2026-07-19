@@ -21,7 +21,6 @@ export const UI_MESSAGE_KEYS = [
   "auto",
   "valuePitch",
   "tagLocal",
-  "tagSafe",
   "language",
   "nerModel",
   "loadSample",
@@ -68,7 +67,6 @@ const EN: UiCatalog = {
   valuePitch:
     "Masks personal info in your browser—never sent out—and restores it later",
   tagLocal: "Stays local",
-  tagSafe: "Safe to send",
   privacyLead: "A second pair of eyes before you paste into an LLM.",
   privacyBody:
     "100% on-device — detection runs in your browser via WebGPU/WASM, your text is never sent to any server.",
@@ -112,7 +110,6 @@ const JA: UiCatalog = {
   auto: "自動判定",
   valuePitch: "ブラウザ内で処理。外部に送らず個人情報をマスクし、復元",
   tagLocal: "端末に保持",
-  tagSafe: "送信OK",
   privacyLead: "送る前のダブルチェック。",
   privacyBody: "全処理がブラウザ内で完結し、テキストはサーバーへ一切送信されません。",
   language: "言語",
@@ -155,7 +152,6 @@ const ES: UiCatalog = {
   valuePitch:
     "Enmascara datos personales en el navegador sin enviarlos y permite restaurarlos",
   tagLocal: "Queda local",
-  tagSafe: "Seguro enviar",
   privacyLead: "Una segunda mirada antes de pegar en un LLM.",
   privacyBody:
     "100% en el dispositivo: la detección se ejecuta en tu navegador con WebGPU/WASM; tu texto nunca se envía a ningún servidor.",
@@ -201,7 +197,6 @@ const VI: UiCatalog = {
   valuePitch:
     "Che thông tin cá nhân trong trình duyệt, không gửi ra ngoài, có thể khôi phục",
   tagLocal: "Giữ cục bộ",
-  tagSafe: "An toàn gửi",
   privacyLead: "Kiểm tra lần nữa trước khi dán vào LLM.",
   privacyBody:
     "100% trên thiết bị — phát hiện chạy trong trình duyệt qua WebGPU/WASM, văn bản của bạn không bao giờ được gửi lên máy chủ.",
@@ -246,7 +241,6 @@ const ZH: UiCatalog = {
   auto: "自动检测",
   valuePitch: "在浏览器内遮蔽个人信息，不外传，并可还原",
   tagLocal: "保留本地",
-  tagSafe: "可安全发送",
   privacyLead: "粘贴到 LLM 之前再检查一遍。",
   privacyBody: "100% 本地处理——检测在浏览器中通过 WebGPU/WASM 运行，文本不会发送到任何服务器。",
   language: "语言",
@@ -288,7 +282,6 @@ const KO: UiCatalog = {
   auto: "자동 감지",
   valuePitch: "브라우저에서 개인정보를 마스킹하고 외부로 보내지 않으며 복원 가능",
   tagLocal: "로컬 보관",
-  tagSafe: "전송 안전",
   privacyLead: "LLM에 붙여넣기 전에 한 번 더 확인하세요.",
   privacyBody:
     "100% 기기 내에서 처리됩니다. 감지는 브라우저의 WebGPU/WASM으로 실행되며, 텍스트는 어떤 서버에도 전송되지 않습니다.",
@@ -333,7 +326,6 @@ const FR: UiCatalog = {
   valuePitch:
     "Masque les données personnelles dans le navigateur, sans envoi externe, avec restauration",
   tagLocal: "Reste local",
-  tagSafe: "Sûr à envoyer",
   privacyLead: "Une seconde vérification avant de coller dans un LLM.",
   privacyBody:
     "100 % sur l’appareil — la détection s’exécute dans votre navigateur via WebGPU/WASM ; votre texte n’est jamais envoyé à un serveur.",
@@ -379,7 +371,6 @@ const DE: UiCatalog = {
   valuePitch:
     "Maskiert personenbezogene Daten im Browser, ohne externe Übertragung, mit Wiederherstellung",
   tagLocal: "Bleibt lokal",
-  tagSafe: "Sicher senden",
   privacyLead: "Ein zweiter Blick, bevor Sie in ein LLM einfügen.",
   privacyBody:
     "100 % auf dem Gerät — die Erkennung läuft in Ihrem Browser über WebGPU/WASM; Ihr Text wird nie an einen Server gesendet.",
@@ -424,7 +415,6 @@ const PT: UiCatalog = {
   auto: "Automático",
   valuePitch: "Mascara dados pessoais no browser sem enviar para fora, com restauração",
   tagLocal: "Fica local",
-  tagSafe: "Seguro enviar",
   privacyLead: "Uma segunda verificação antes de colar num LLM.",
   privacyBody:
     "100% no dispositivo — a deteção corre no seu browser via WebGPU/WASM; o seu texto nunca é enviado para nenhum servidor.",
@@ -470,7 +460,6 @@ const IT: UiCatalog = {
   valuePitch:
     "Maschera i dati personali nel browser senza inviarli all'esterno, con ripristino",
   tagLocal: "Resta locale",
-  tagSafe: "Sicuro inviare",
   privacyLead: "Un doppio controllo prima di incollare in un LLM.",
   privacyBody:
     "100% sul dispositivo — il rilevamento gira nel browser via WebGPU/WASM; il testo non viene mai inviato ad alcun server.",

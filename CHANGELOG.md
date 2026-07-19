@@ -57,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Masked panel: “Restore” button beside Copy prefills the restore tab and
   switches to it.
 - Masked panel: open-restore uses secondary button styling.
+- Masked panel tag reuses `Stays local` / `端末に保持` instead of `Safe to send`.
 - Mobile: flow stepper only highlights the current step (completed steps use
   an outline); toolbar uses a two-line anonymize button (`ブラウザ内で匿名化` /
   `外部サーバー送信なし`) on a full-width row.
