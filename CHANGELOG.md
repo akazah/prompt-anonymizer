@@ -57,7 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Masked panel: “Restore” button beside Copy prefills the restore tab and
   switches to it.
 - Mobile: flow stepper only highlights the current step (completed steps use
-  an outline); toolbar uses a short anonymize label and full-width action row.
+  an outline); toolbar uses a two-line anonymize button (`ブラウザ内で匿名化` /
+  `外部サーバー送信なし`) on a full-width row.
 - Web app hero no longer shows a WebGPU/WASM engine badge; on-device value
   is communicated by the value-prop chips instead.
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check

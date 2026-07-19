@@ -68,6 +68,7 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("ja");
     expect($("#anonymize .anonymize-long").textContent).toBe(t("ja", "anonymize"));
+    expect($("#anonymize .anonymize-short-main").textContent).toBe(t("ja", "anonymizeShort"));
     expect($(".hero-summary").textContent).toContain(t("ja", "valuePitch"));
     expect($(".hero-summary").textContent).not.toMatch(/On-device|second pair/i);
     expect(document.querySelectorAll(".hero-summary [lang], #ner-off-warning [lang]").length).toBe(0);
