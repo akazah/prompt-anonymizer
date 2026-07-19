@@ -3,7 +3,6 @@ import {
   RestoreSession,
   TransformersNerBackend,
   detectLanguage,
-  detectWebGpu,
   isLanguageOption,
   languageFromBcp47,
   languagePickerEntries,
@@ -86,7 +85,6 @@ function renderShell(uiLang: Language): string {
     <header class="hero">
       <span class="logo-mark">${ICON_SHIELD}</span>
       <h1>Prompt Anonymizer</h1>
-      <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">${t(uiLang, "checking")}</span></span>
       <ul class="value-props">
         <li class="value-prop">
           <span class="value-icon">${ICON_DEVICE}</span>
@@ -261,7 +259,6 @@ function applyUiLocale(lang: Language): void {
   if (!busy) {
     progressLabel.textContent = t(lang, "loadingModel");
   }
-  void updateEngineBadge();
 }
 
 function syncNerWarning(): void {
@@ -298,17 +295,6 @@ const session = new RestoreSession({
       (useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly).anonymize(text, options),
   },
 });
-
-async function updateEngineBadge(): Promise<void> {
-  const badge = $("#engine-badge");
-  const name = $("#engine-name");
-  const usesGpu = ner.device ? ner.device === "webgpu" : await detectWebGpu();
-  badge.classList.remove("webgpu", "wasm");
-  badge.classList.add(usesGpu ? "webgpu" : "wasm");
-  name.textContent = usesGpu ? "WebGPU" : t(uiLanguage, "wasmBadge");
-  badge.title = usesGpu ? t(uiLanguage, "engineWebgpuTitle") : t(uiLanguage, "engineWasmTitle");
-}
-void updateEngineBadge();
 
 function renderWithHighlights(text: string, labels: string[], cls: string): string {
   let html = escapeHtml(text);
@@ -354,7 +340,6 @@ async function runAnonymize(): Promise<void> {
     anonymizeBtn.disabled = false;
     anonymizeBtn.textContent = t(uiLanguage, "anonymize");
     progressEl.classList.remove("visible");
-    void updateEngineBadge();
   }
 }
 

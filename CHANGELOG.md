@@ -52,6 +52,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   before→after demo chip; panel headings use short titles with status tags;
   mapping table shows label → value with colour cues; NER-off warning is a
   compact pill.
+- Web app hero no longer shows a WebGPU/WASM engine badge; on-device value
+  is communicated by the value-prop chips instead.
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
   wording, matching the npm package descriptions and the rest of the
   positioning. The old summary predated the reframe and wasn't caught by it,

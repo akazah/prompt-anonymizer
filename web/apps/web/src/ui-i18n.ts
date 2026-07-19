@@ -48,10 +48,6 @@ export const UI_MESSAGE_KEYS = [
   "deanonymize",
   "copyRestored",
   "unresolvedLabels",
-  "checking",
-  "wasmBadge",
-  "engineWebgpuTitle",
-  "engineWasmTitle",
   "pageTitle",
   "pageDescription",
   "errorPrefix",
@@ -101,11 +97,6 @@ const EN: UiCatalog = {
   restoreHint:
     "Detection is best-effort — always review the anonymized text before sending it anywhere.",
   unresolvedLabels: "Unresolved labels:",
-  checking: "checking…",
-  wasmBadge: "WASM (no WebGPU)",
-  engineWebgpuTitle: "Inference is GPU-accelerated in your browser.",
-  engineWasmTitle:
-    "WebGPU unavailable; falling back to WebAssembly (slower, still on-device).",
   pageTitle: "Prompt Anonymizer — a buddy check for PII before it reaches an LLM",
   pageDescription:
     "A buddy check for PII before it reaches an LLM: catches the personal info you didn't mean to send, with consistent reversible labels. Runs 100% in your browser (WebGPU / WASM) — your text never leaves your device.",
@@ -146,10 +137,6 @@ const JA: UiCatalog = {
   copyRestored: "コピー",
   restoreHint: "検出はベストエフォートです。送信前に必ず匿名化結果を確認してください。",
   unresolvedLabels: "未解決ラベル:",
-  checking: "確認中…",
-  wasmBadge: "WASM（WebGPUなし）",
-  engineWebgpuTitle: "ブラウザ内でGPU加速により推論しています。",
-  engineWasmTitle: "WebGPUが使えないため、WebAssemblyにフォールバックしています（低速ですが端末内処理）。",
   pageTitle: "Prompt Anonymizer — LLMに送る前のPIIダブルチェック",
   pageDescription:
     "LLMに送る前のPIIダブルチェック。意図せず含めがちな個人情報を、一貫した可逆ラベルで置き換えます。処理はすべてブラウザ内（WebGPU / WASM）で完結し、テキストは端末から出ません。",
@@ -193,11 +180,6 @@ const ES: UiCatalog = {
   restoreHint:
     "La detección es de mejor esfuerzo: revisa siempre el texto anonimizado antes de enviarlo.",
   unresolvedLabels: "Sin resolver:",
-  checking: "comprobando…",
-  wasmBadge: "WASM (sin WebGPU)",
-  engineWebgpuTitle: "La inferencia se acelera con GPU en tu navegador.",
-  engineWasmTitle:
-    "WebGPU no disponible; se usa WebAssembly (más lento, sigue en el dispositivo).",
   pageTitle: "Prompt Anonymizer — una revisión de PII antes de llegar a un LLM",
   pageDescription:
     "Una revisión de PII antes de llegar a un LLM: captura la información personal que no querías enviar, con etiquetas reversibles coherentes. Se ejecuta 100% en tu navegador (WebGPU / WASM); tu texto nunca sale del dispositivo.",
@@ -241,11 +223,6 @@ const VI: UiCatalog = {
   restoreHint:
     "Phát hiện mang tính tốt nhất có thể — luôn xem lại văn bản đã ẩn danh trước khi gửi đi.",
   unresolvedLabels: "Chưa giải:",
-  checking: "đang kiểm tra…",
-  wasmBadge: "WASM (không có WebGPU)",
-  engineWebgpuTitle: "Suy luận được tăng tốc GPU trong trình duyệt của bạn.",
-  engineWasmTitle:
-    "Không có WebGPU; chuyển sang WebAssembly (chậm hơn, vẫn trên thiết bị).",
   pageTitle: "Prompt Anonymizer — kiểm tra PII trước khi đến LLM",
   pageDescription:
     "Kiểm tra PII trước khi đến LLM: phát hiện thông tin cá nhân bạn không định gửi, với nhãn đảo ngược nhất quán. Chạy 100% trong trình duyệt (WebGPU / WASM) — văn bản không rời thiết bị.",
@@ -286,10 +263,6 @@ const ZH: UiCatalog = {
   copyRestored: "复制",
   restoreHint: "检测为尽力而为——发送前请务必检查匿名化结果。",
   unresolvedLabels: "未解析:",
-  checking: "检查中…",
-  wasmBadge: "WASM（无 WebGPU）",
-  engineWebgpuTitle: "正在浏览器中使用 GPU 加速推理。",
-  engineWasmTitle: "无法使用 WebGPU；回退到 WebAssembly（较慢，仍在本地）。",
   pageTitle: "Prompt Anonymizer — 发送到 LLM 前的 PII 检查",
   pageDescription:
     "发送到 LLM 前的 PII 检查：用一致且可逆的标签替换你无意发送的个人信息。100% 在浏览器中运行（WebGPU / WASM）——文本不会离开你的设备。",
@@ -332,10 +305,6 @@ const KO: UiCatalog = {
   copyRestored: "복사",
   restoreHint: "감지는 최선을 다하는 방식입니다. 전송 전에 익명화 결과를 반드시 확인하세요.",
   unresolvedLabels: "미해결:",
-  checking: "확인 중…",
-  wasmBadge: "WASM (WebGPU 없음)",
-  engineWebgpuTitle: "브라우저에서 GPU 가속으로 추론합니다.",
-  engineWasmTitle: "WebGPU를 사용할 수 없어 WebAssembly로 대체합니다(더 느리지만 여전히 기기 내).",
   pageTitle: "Prompt Anonymizer — LLM에 도달하기 전 PII 점검",
   pageDescription:
     "LLM에 도달하기 전 PII 점검: 보내지 않으려던 개인정보를 일관된 가역 레이블로 바꿉니다. 브라우저에서 100% 실행(WebGPU / WASM)되며 텍스트는 기기를 떠나지 않습니다.",
@@ -379,11 +348,6 @@ const FR: UiCatalog = {
   restoreHint:
     "La détection est au mieux de ses capacités — vérifiez toujours le texte anonymisé avant de l’envoyer.",
   unresolvedLabels: "Non résolus:",
-  checking: "vérification…",
-  wasmBadge: "WASM (pas de WebGPU)",
-  engineWebgpuTitle: "L’inférence est accélérée par le GPU dans votre navigateur.",
-  engineWasmTitle:
-    "WebGPU indisponible ; bascule vers WebAssembly (plus lent, toujours sur l’appareil).",
   pageTitle: "Prompt Anonymizer — une vérification PII avant d’atteindre un LLM",
   pageDescription:
     "Une vérification PII avant d’atteindre un LLM : intercepte les infos personnelles que vous n’aviez pas l’intention d’envoyer, avec des libellés cohérents et réversibles. S’exécute à 100 % dans votre navigateur (WebGPU / WASM) — votre texte ne quitte jamais votre appareil.",
@@ -427,11 +391,6 @@ const DE: UiCatalog = {
   restoreHint:
     "Die Erkennung ist bestmöglich — prüfen Sie den anonymisierten Text immer vor dem Senden.",
   unresolvedLabels: "Ungelöst:",
-  checking: "prüft…",
-  wasmBadge: "WASM (kein WebGPU)",
-  engineWebgpuTitle: "Die Inferenz wird in Ihrem Browser per GPU beschleunigt.",
-  engineWasmTitle:
-    "WebGPU nicht verfügbar; Fallback auf WebAssembly (langsamer, weiterhin auf dem Gerät).",
   pageTitle: "Prompt Anonymizer — ein PII-Check, bevor es ein LLM erreicht",
   pageDescription:
     "Ein PII-Check, bevor es ein LLM erreicht: fängt persönliche Daten ab, die Sie nicht senden wollten, mit konsistenten umkehrbaren Labels. Läuft zu 100 % in Ihrem Browser (WebGPU / WASM) — Ihr Text verlässt Ihr Gerät nie.",
@@ -475,11 +434,6 @@ const PT: UiCatalog = {
   restoreHint:
     "A deteção é de melhor esforço — reveja sempre o texto anonimizado antes de o enviar.",
   unresolvedLabels: "Por resolver:",
-  checking: "a verificar…",
-  wasmBadge: "WASM (sem WebGPU)",
-  engineWebgpuTitle: "A inferência é acelerada por GPU no seu browser.",
-  engineWasmTitle:
-    "WebGPU indisponível; a usar WebAssembly (mais lento, ainda no dispositivo).",
   pageTitle: "Prompt Anonymizer — uma verificação de PII antes de chegar a um LLM",
   pageDescription:
     "Uma verificação de PII antes de chegar a um LLM: captura a informação pessoal que não queria enviar, com etiquetas reversíveis consistentes. Corre 100% no seu browser (WebGPU / WASM) — o seu texto nunca sai do dispositivo.",
@@ -523,11 +477,6 @@ const IT: UiCatalog = {
   restoreHint:
     "Il rilevamento è best-effort — controlla sempre il testo anonimizzato prima di inviarlo.",
   unresolvedLabels: "Non risolti:",
-  checking: "verifica…",
-  wasmBadge: "WASM (senza WebGPU)",
-  engineWebgpuTitle: "L'inferenza è accelerata dalla GPU nel browser.",
-  engineWasmTitle:
-    "WebGPU non disponibile; fallback a WebAssembly (più lento, sempre sul dispositivo).",
   pageTitle: "Prompt Anonymizer — un controllo PII prima che raggiunga un LLM",
   pageDescription:
     "Un controllo PII prima che raggiunga un LLM: intercetta le informazioni personali che non volevi inviare, con etichette coerenti e reversibili. Gira al 100% nel browser (WebGPU / WASM) — il testo non lascia mai il dispositivo.",
