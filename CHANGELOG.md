@@ -8,10 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
-- Heuristic language detection now treats halfwidth katakana
-  (`U+FF61`–`U+FF9F`, e.g. `ｶﾀｶﾅ`) as Japanese in both cores. The previous
-  kana range covered only fullwidth hiragana/katakana, so halfwidth-only
-  prose fell through to English and missed language-scoped recognizers.
 - `scan` no longer aborts with `EISDIR: illegal operation on a directory`
   when a shell glob (e.g. `scan *`) expands to include directories. Both the
   Python and TypeScript CLIs now skip directory arguments instead of treating
@@ -75,16 +71,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   always showing English with Japanese appended. `auto` still auto-detects
   input for anonymization; UI locale then follows `navigator.language`
   (fallback: English).
-- Web app: the demo now runs itself — on load the sample for the current
-  language is filled in and anonymized automatically (the "Load sample"
-  button is gone), and the page is a single-viewport three-column layout
-  (Original / Anonymized / Restore) that needs no scrolling on desktop;
-  long content scrolls inside the panels instead. On mobile (≤1000px) a
-  connected-dot flow stepper at the top drives tabbed single-panel
-  navigation so only one text area is visible at a time. Startup is
-  configurable via query params (`?lang=`, `?ner=0`, `?demo=0`), which
-  the e2e suites and demo recorder now use. Very short desktop viewports
-  fall back to a scrollable single-column layout.
+- Web app: the sample for the current language is prefilled on load, but
+  anonymization and NER model download wait until the user clicks the
+  primary action button (`?demo=0` skips sample prefill). The page is a
+  single-viewport three-column layout (Original / Anonymized / Restore)
+  that needs no scrolling on desktop; long content scrolls inside the panels
+  instead. On mobile (≤1000px) a connected-dot flow stepper at the top
+  drives tabbed single-panel navigation so only one text area is visible at
+  a time. Startup is configurable via query params (`?lang=`, `?ner=0`,
+  `?demo=0`), which the e2e suites and demo recorder now use. Very short
+  desktop viewports fall back to a scrollable single-column layout.
 - Web app UI copy trimmed for scannability: hero chips replaced with a short
   pitch line (mask PII in-browser without sending out, then restore) plus a
   live before→after demo chip; panel headings use short titles with status tags;
@@ -92,6 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   compact pill.
 - Primary action button label now reads “anonymize in browser (no server)”
   (and locale equivalents) instead of a bare “Anonymize”.
+- Masked panel: “Restore” button beside Copy prefills the restore tab and
+  switches to it.
 - Web app hero no longer shows a WebGPU/WASM engine badge; on-device value
   is communicated by the value-prop chips instead.
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check

@@ -2,19 +2,20 @@
  * Browser app e2e: anonymize -> mapping -> restore, all regex-only so the
  * suite is offline and fast. The NER-dependent path lives in ner.spec.ts.
  *
- * Navigation happens inside `anonymizeRegexOnly` (`?ner=0` keeps the
- * on-load auto demo offline); tests that need a pristine page load with
- * `?demo=0`.
+ * Navigation happens inside `anonymizeRegexOnly` (`?ner=0` keeps model
+ * download off); tests that need an empty input use `?demo=0`.
  */
 
 import { anonymizeRegexOnly, expect, restore, test } from "./fixtures";
 
-test("auto demo: sample is loaded and anonymized without any click", async ({ page }) => {
+test("sample prefill: JA sample is loaded but waits for a click", async ({ page }) => {
   await page.goto("/?lang=ja&ner=0");
 
-  // The Load sample button is gone; the demo drives itself.
   await expect(page.locator("#load-sample")).toHaveCount(0);
   await expect(page.locator("#input")).toHaveValue(/090-1234-5678/);
+  await expect(page.locator("#output")).toBeEmpty();
+
+  await page.locator("#anonymize").click();
   await expect(page.locator("#output")).toContainText("<メールアドレス_1>");
   await expect(page.locator("#mapping-table")).toBeVisible();
 });
