@@ -30,7 +30,7 @@ function sampleLanguageFromNavigator(): Language {
  * Startup options via query string (shareable / used by tests):
  *   ?lang=ja   preselect a language ("auto" or a supported code)
  *   ?ner=0     start with the NER model switched off (offline regex-only)
- *   ?demo=0    skip the automatic sample demo on load
+ *   ?demo=0    skip pre-filling the sample text on load
  */
 const startupParams = new URLSearchParams(location.search);
 const isOff = (value: string | null): boolean =>
@@ -276,14 +276,22 @@ function onProgress(p: NerProgress): void {
   }
 }
 
-const ner = new TransformersNerBackend({ onProgress });
-const anonymizerWithNer = new Anonymizer({ ner });
 const anonymizerRegexOnly = new Anonymizer();
+let nerBackend: TransformersNerBackend | null = null;
+let anonymizerWithNer: Anonymizer | null = null;
+
+function anonymizerForRun(): Anonymizer {
+  if (!useNerEl.checked) return anonymizerRegexOnly;
+  if (!anonymizerWithNer) {
+    nerBackend = new TransformersNerBackend({ onProgress });
+    anonymizerWithNer = new Anonymizer({ ner: nerBackend });
+  }
+  return anonymizerWithNer;
+}
 
 const session = new RestoreSession({
   engine: {
-    anonymize: (text, options) =>
-      (useNerEl.checked ? anonymizerWithNer : anonymizerRegexOnly).anonymize(text, options),
+    anonymize: (text, options) => anonymizerForRun().anonymize(text, options),
   },
 });
 
@@ -383,5 +391,4 @@ if (!isOff(startupParams.get("demo"))) {
   const language: Language =
     value === "auto" ? sampleLanguageFromNavigator() : (value as Language);
   inputEl.value = SAMPLES[language];
-  void runAnonymize();
 }

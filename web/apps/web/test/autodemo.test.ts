@@ -1,7 +1,7 @@
 /**
- * jsdom test for the on-load auto demo: the sample for the selected language
- * is filled into the input and anonymized without any click. `?ner=0` keeps
- * the run offline (regex-only); the NER path is covered by the e2e suite.
+ * jsdom test for on-load sample prefill: the sample for the selected language
+ * is filled into the input, but anonymization waits for a button click.
+ * `?ner=0` keeps the run offline (regex-only).
  */
 
 import { beforeAll, describe, expect, it, vi } from "vitest";
@@ -12,16 +12,17 @@ beforeAll(async () => {
   await import("../src/main.ts");
 });
 
-describe("web app auto demo (jsdom, NER off)", () => {
-  it("fills the JA sample and anonymizes it on load", async () => {
+describe("web app sample prefill (jsdom, NER off)", () => {
+  it("prefills the JA sample and anonymizes only after click", async () => {
     const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
 
-    // The Load sample button is gone; the demo runs by itself.
     expect(document.querySelector("#load-sample")).toBeNull();
     expect($<HTMLSelectElement>("#language").value).toBe("ja");
     expect($<HTMLInputElement>("#use-ner").checked).toBe(false);
     expect($<HTMLTextAreaElement>("#input").value).toContain("090-1234-5678");
+    expect($("#output").textContent).toBe("");
 
+    $("#anonymize").click();
     await vi.waitFor(() => {
       expect($("#output").textContent).not.toBe("");
     });

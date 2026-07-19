@@ -12,7 +12,7 @@ const INPUT_TEXT = "連絡先は 090-1234-5678、メールは taro@example.com �
 
 beforeAll(async () => {
   document.body.innerHTML = '<div id="app"></div>';
-  // Skip the on-load auto demo (it would run with NER on and race this test).
+  // No auto-anonymize on load; tests use ?demo=0 to skip sample prefill.
   window.history.replaceState(null, "", "/?demo=0");
   await import("../src/main.ts");
 });
