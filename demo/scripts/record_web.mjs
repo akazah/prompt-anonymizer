@@ -45,13 +45,8 @@ async function runPass({ lang, record }) {
     recordVideo: record ? { dir: OUT, size: { width: 1240, height: 800 } } : undefined,
   });
   const page = context.pages()[0] ?? (await context.newPage());
-  await page.goto(`http://localhost:${PORT}/`);
-  await page.waitForTimeout(record ? 1500 : 300);
-
-  await page.selectOption("#language", lang);
-  await page.click("#load-sample");
-  await page.waitForTimeout(record ? 1200 : 100);
-  await page.click("#anonymize");
+  // The on-load auto demo fills the language's sample and anonymizes it.
+  await page.goto(`http://localhost:${PORT}/?lang=${lang}`);
 
   // Wait until the anonymized output contains a label.
   await page.waitForFunction(

@@ -139,6 +139,11 @@ def evaluate_name_parts(
         gold_parts = [s for s in case.spans if s.entity_type in NAME_PART_TYPES]
         predicted: list[EntitySpan] = []
         for person in persons:
+            has_gold_parts = any(
+                person.start <= part.start and part.end <= person.end for part in gold_parts
+            )
+            if not has_gold_parts:
+                continue
             source = case.text[person.start : person.end]
             for part, rel_start, rel_end in split_person_name(source, family_name_first):
                 predicted.append(

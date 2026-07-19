@@ -6,11 +6,14 @@
  */
 
 import { beforeAll, describe, expect, it, vi } from "vitest";
+import { t } from "../src/ui-i18n.js";
 
 const INPUT_TEXT = "連絡先は 090-1234-5678、メールは taro@example.com です。";
 
 beforeAll(async () => {
   document.body.innerHTML = '<div id="app"></div>';
+  // Skip the on-load auto demo (it would run with NER on and race this test).
+  window.history.replaceState(null, "", "/?demo=0");
   await import("../src/main.ts");
 });
 
@@ -19,7 +22,9 @@ describe("web app (jsdom, NER off)", () => {
     const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
 
     // Deterministic offline path: fixed language, NER checkbox off.
-    $<HTMLSelectElement>("#language").value = "ja";
+    const language = $<HTMLSelectElement>("#language");
+    language.value = "ja";
+    language.dispatchEvent(new Event("change"));
     const useNer = $<HTMLInputElement>("#use-ner");
     useNer.checked = false;
     useNer.dispatchEvent(new Event("change"));
@@ -49,5 +54,29 @@ describe("web app (jsdom, NER off)", () => {
       expect($("#restore-output").textContent).toBe(INPUT_TEXT);
     });
     expect($("#restore-warning").hidden).toBe(true);
+  });
+
+  it("shows chrome in only the selected language (no JP/EN mix)", () => {
+    const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
+    const language = $<HTMLSelectElement>("#language");
+
+    language.value = "ja";
+    language.dispatchEvent(new Event("change"));
+    expect(document.documentElement.lang).toBe("ja");
+    expect($("#anonymize").textContent).toBe(t("ja", "anonymize"));
+    expect($(".hero-summary").textContent).toContain(t("ja", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/On-device|second pair/i);
+    expect(document.querySelectorAll(".hero-summary [lang], #ner-off-warning [lang]").length).toBe(0);
+    expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe(
+      t("ja", "auto"),
+    );
+
+    language.value = "en";
+    language.dispatchEvent(new Event("change"));
+    expect(document.documentElement.lang).toBe("en");
+    expect($("#anonymize").textContent).toBe(t("en", "anonymize"));
+    expect($(".hero-summary").textContent).toContain(t("en", "valuePitch"));
+    expect($(".hero-summary").textContent).not.toMatch(/端末内|ダブルチェック/);
+    expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
   });
 });

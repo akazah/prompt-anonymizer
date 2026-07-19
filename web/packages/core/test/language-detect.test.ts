@@ -12,6 +12,9 @@ describe("guessLanguage", () => {
   it("detects Japanese by script", () => {
     expect(guessLanguage("山田太郎の電話番号")).toBe("ja");
     expect(guessLanguage("カタカナのみ")).toBe("ja");
+    // Halfwidth katakana (U+FF61–FF9F) must count as Japanese too.
+    expect(guessLanguage("ｶﾀｶﾅﾉﾐ")).toBe("ja");
+    expect(guessLanguage("ﾔﾏﾀﾞﾀﾛｳﾆﾞｬﾅｲ")).toBe("ja");
   });
 
   it("detects Vietnamese by diacritics", () => {

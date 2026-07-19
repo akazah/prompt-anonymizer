@@ -1,5 +1,6 @@
 import { LABELS, applyLabels, deanonymize as deanonymizeText, mergeSpans } from "./labeling.js";
 import { FAMILY_NAME_FIRST } from "./languages.js";
+import { normalizeForDetect } from "./normalize.js";
 import { detectDenyList, detectWithRegex } from "./recognizers.js";
 import type {
   AnonymizeResult,
@@ -12,6 +13,7 @@ import type {
 export * from "./types.js";
 export {
   AUTO_DISPLAY_NAME,
+  DETECT_FOLDS,
   FAMILY_NAME_FIRST,
   LANGUAGE_DISPLAY_NAMES,
   LANGUAGE_LIST,
@@ -21,7 +23,9 @@ export {
   languageFromBcp47,
   languagePickerEntries,
 } from "./languages.js";
-export type { LanguageOption } from "./languages.js";
+export type { DetectFold, LanguageOption } from "./languages.js";
+export { normalizeForDetect } from "./normalize.js";
+export type { DetectView } from "./normalize.js";
 export { SAMPLES } from "./samples.js";
 export { LABELS, applyLabels, mergeSpans, splitPersonName } from "./labeling.js";
 export type { ApplyLabelsOptions, NamePart, NamePartSpan } from "./labeling.js";
@@ -88,16 +92,20 @@ export class Anonymizer {
 
   async anonymize(text: string, options: { language: Language }): Promise<AnonymizeResult> {
     const { language } = options;
-    const regexSpans = detectWithRegex(text, language).filter((s) =>
-      this.entities.has(s.entityType),
+    // Detection runs on an NFC (+ language-fold) view; spans are mapped
+    // back so labels/mapping always use the original surface form.
+    const view = normalizeForDetect(text, language);
+    const regexSpans = view.mapSpans(
+      detectWithRegex(view.text, language).filter((s) => this.entities.has(s.entityType)),
     );
-    const denySpans = detectDenyList(text, this.denyList);
+    const denyNeedles = this.denyList.map((item) => normalizeForDetect(item, language).text);
+    const denySpans = view.mapSpans(detectDenyList(view.text, denyNeedles));
     const structured: EntitySpan[] = [...regexSpans, ...denySpans];
     let spans = [...structured];
     if (this.ner) {
       // Structured recognizers (regex, deny list) win over NER on overlap:
       // e.g. NER may claim the local part of an email address as PERSON.
-      const nerSpans = await this.ner.detect(text, language);
+      const nerSpans = view.mapSpans(await this.ner.detect(view.text, language));
       spans.push(
         ...nerSpans
           .filter((n) => this.entities.has(n.entityType))

@@ -1,12 +1,22 @@
 /**
  * Browser app e2e: anonymize -> mapping -> restore, all regex-only so the
  * suite is offline and fast. The NER-dependent path lives in ner.spec.ts.
+ *
+ * Navigation happens inside `anonymizeRegexOnly` (`?ner=0` keeps the
+ * on-load auto demo offline); tests that need a pristine page load with
+ * `?demo=0`.
  */
 
 import { anonymizeRegexOnly, expect, restore, test } from "./fixtures";
 
-test.beforeEach(async ({ page }) => {
-  await page.goto("/");
+test("auto demo: sample is loaded and anonymized without any click", async ({ page }) => {
+  await page.goto("/?lang=ja&ner=0");
+
+  // The Load sample button is gone; the demo drives itself.
+  await expect(page.locator("#load-sample")).toHaveCount(0);
+  await expect(page.locator("#input")).toHaveValue(/090-1234-5678/);
+  await expect(page.locator("#output")).toContainText("<メールアドレス_1>");
+  await expect(page.locator("#mapping-table")).toBeVisible();
 });
 
 test("JA sample: structured PII is masked with consistent labels", async ({ page }) => {
@@ -127,20 +137,22 @@ test("copy button puts the anonymized text on the clipboard", async ({ page }) =
   const output = await anonymizeRegexOnly(page, { language: "ja" });
 
   await page.locator("#copy").click();
-  await expect(page.locator("#copy-flash")).toHaveText("Copied!");
+  // Flash copy follows the UI locale (same as the language select).
+  await expect(page.locator("#copy-flash")).toHaveText("コピーしました");
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
   expect(clipboard).toBe(output);
   expect(clipboard).toContain("<メールアドレス_1>");
 });
 
 test("empty input is a no-op", async ({ page }) => {
-  await page.locator("#use-ner").uncheck();
+  await page.goto("/?ner=0&demo=0");
   await page.locator("#anonymize").click();
   await expect(page.locator("#output")).toBeEmpty();
   await expect(page.locator("#mapping-table")).toBeHidden();
 });
 
 test("NER toggle: on by default, warning shown only while off", async ({ page }) => {
+  await page.goto("/?demo=0");
   const useNer = page.locator("#use-ner");
   const warning = page.locator("#ner-off-warning");
 

@@ -67,6 +67,11 @@ class LanguageConfig:
     #: (``split_person_names``): ``True`` when the family name is written
     #: first (ja/zh/ko/vi). Mirrors ``FAMILY_NAME_FIRST`` in the TS core.
     family_name_first: bool = False
+    #: Extra detect-time folds applied after NFC (see
+    #: :mod:`prompt_anonymizer.normalize`). Spans are mapped back to the
+    #: original text before labeling. Mirror of ``DETECT_FOLDS`` in the TS
+    #: core. Example: ``("halfwidth_katakana",)`` for Japanese.
+    detect_folds: tuple[str, ...] = ()
 
 
 # 9 digits after the prefix (mobile), or 10 for 02x landlines. Each
@@ -104,6 +109,9 @@ LANGUAGES: dict[str, LanguageConfig] = {
         # both registered in recognizers/ja_phone.py.
         phone=None,
         family_name_first=True,
+        # Legacy bank/HR forms use halfwidth katakana for names; fold to
+        # fullwidth for detect only (NFC is applied for every language).
+        detect_folds=("halfwidth_katakana",),
     ),
     "es": LanguageConfig(
         code="es",
@@ -366,7 +374,9 @@ DEFAULT_LANGUAGES: tuple[str, ...] = ("en", "ja")
 DETECTION_RULES: tuple[tuple[str, str], ...] = (
     # Kana is uniquely Japanese; han without kana (checked next) counts as
     # Chinese - kanji-only Japanese fragments are the known blind spot.
-    ("ja", r"[\u3040-\u30ff]"),
+    # Include halfwidth katakana (FF61-FF9F); fullwidth-only ranges miss
+    # strings such as 「ｶﾀｶﾅﾉﾐ」.
+    ("ja", r"[\u3040-\u30ff\uff61-\uff9f]"),
     ("ko", r"[\uac00-\ud7a3\u1100-\u11ff]"),
     ("zh", r"[\u4e00-\u9fff]"),
     # Vietnamese-specific letters (also claims ă/â/ơ/ư before the Latin

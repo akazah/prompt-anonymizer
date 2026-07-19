@@ -8,8 +8,8 @@ failing tests walk you through the rest.**
 
 | Registry | File |
 |---|---|
-| Python | `src/prompt_anonymizer/languages.py` (`SUPPORTED_LANGUAGES` + a `LanguageConfig` entry in `LANGUAGES`: spaCy models, HF NER model, phone spec, detection markers) |
-| TypeScript | `web/packages/core/src/languages.ts` (`SUPPORTED_LANGUAGES`, `LANGUAGE_DISPLAY_NAMES`) |
+| Python | `src/prompt_anonymizer/languages.py` (`SUPPORTED_LANGUAGES` + a `LanguageConfig` entry in `LANGUAGES`: spaCy models, HF NER model, phone spec, `detect_folds`, detection markers) |
+| TypeScript | `web/packages/core/src/languages.ts` (`SUPPORTED_LANGUAGES`, `LANGUAGE_DISPLAY_NAMES`, `DETECT_FOLDS`) |
 
 Everything that is a *list of languages* (type unions, CLI validation and
 help text, `<select>` pickers, detector tags, eval loops, test
@@ -82,6 +82,12 @@ languages.
 
 Document the ordering rationale in the comment (more-specific scripts
 must be tested first).
+
+Detection always NFC-normalizes the analyze view (spans map back to the
+original before labeling). If the language needs an extra script fold —
+e.g. Japanese halfwidth katakana → fullwidth — register it on
+`LanguageConfig.detect_folds` / `DETECT_FOLDS` and implement the fold in
+both `normalize` modules.
 
 ### 6. Golden set + evaluation
 

@@ -124,6 +124,10 @@ function buildNamePartsTable() {
       const goldParts = goldenCase.spans.filter((s) => NAME_PART_TYPES.has(s.entity_type));
       const predicted = [];
       for (const person of persons) {
+        const hasGoldParts = goldParts.some(
+          (part) => person.start <= part.start && part.end <= person.end,
+        );
+        if (!hasGoldParts) continue;
         const source = goldenCase.text.slice(person.start, person.end);
         for (const { part, start: relStart, end: relEnd } of splitPersonName(
           source,

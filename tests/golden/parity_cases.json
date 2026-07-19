@@ -46,6 +46,17 @@
       "must_mask": [{ "entity_type": "PHONE_NUMBER", "value": "090-1234-5678" }]
     },
     {
+      "id": "phone-ja-halfwidth-kana-name-context",
+      "language": "ja",
+      "text": "ｶﾌﾞｼｷｶﾞｲｼｬﾔﾏﾀﾞのﾔﾏﾀﾞ ﾀﾛｳです。電話は090-1234-5678、メールは taro@example.com です。",
+      "cores": ["python", "ts"],
+      "must_mask": [
+        { "entity_type": "PHONE_NUMBER", "value": "090-1234-5678" },
+        { "entity_type": "EMAIL_ADDRESS", "value": "taro@example.com" }
+      ],
+      "notes": "Halfwidth katakana names/companies appear in legacy forms; structured PII must still mask around them. PERSON/ORG on halfwidth script is NER-dependent and not asserted here."
+    },
+    {
       "id": "phone-ja-mobile-bare",
       "language": "ja",
       "text": "携帯は09012345678までお願いします。",

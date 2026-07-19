@@ -1,11 +1,14 @@
 # Accuracy (span-level, synthetic golden set)
 
 Cases are seeded Faker documents (request / minutes / inquiry genres) with
-ground-truth spans. Detection is best-effort; these numbers exist to catch
-regressions, not to promise recall on real-world text. PERSON name-part rows
+ground-truth spans. The Japanese set also mixes in halfwidth-katakana person
+names (and synthetic company labels in prose) on a minority of cases.
+Detection is best-effort; these numbers exist to catch regressions, not to
+promise recall on real-world text. PERSON name-part rows
 (`PERSON_FIRST_NAME` / `PERSON_MIDDLE_NAME` / `PERSON_LAST_NAME`) score the
 ``split_person_name`` heuristic on composed multi-token names in the golden
-set (exact span match, no NER).
+set (exact span match, no NER; Japanese halfwidth-katakana PERSON spans are
+excluded because they have no part ground truth).
 
 ## Python core (Presidio + spaCy)
 
@@ -19,11 +22,11 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.91 | 0.80 | 0.85 | 200 |
-| ja | PERSON | 0.94 | 0.88 | 0.91 | 267 |
-| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
-| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
-| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 41 |
+| ja | LOCATION | 0.94 | 0.81 | 0.87 | 200 |
+| ja | PERSON | 0.94 | 0.72 | 0.81 | 267 |
+| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 224 |
+| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 224 |
+| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 30 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
@@ -121,8 +124,8 @@ and copy the table (the default run above owns the marker block).
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.89 | 1.00 | 0.94 | 200 |
-| ja | PERSON | 0.94 | 1.00 | 0.97 | 267 |
+| ja | LOCATION | 0.82 | 1.00 | 0.90 | 200 |
+| ja | PERSON | 0.90 | 1.00 | 0.95 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
@@ -196,9 +199,9 @@ span match, no NER). Regenerate with `node scripts/eval-golden.mjs` in
 <!-- ts-name-parts-eval:start -->
 | Language | Entity | Precision | Recall | F1 | Support |
 |---|---|---|---|---|---|
-| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
-| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
-| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 41 |
+| ja | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 224 |
+| ja | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 224 |
+| ja | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 30 |
 | en | PERSON_FIRST_NAME | 1.00 | 1.00 | 1.00 | 267 |
 | en | PERSON_LAST_NAME | 1.00 | 1.00 | 1.00 | 267 |
 | en | PERSON_MIDDLE_NAME | 1.00 | 1.00 | 1.00 | 63 |

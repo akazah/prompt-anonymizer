@@ -158,6 +158,118 @@ def _ja_postal(rng: random.Random) -> str:
     return f"〒{rng.randint(100, 999)}-{rng.randint(1000, 9999):04d}"
 
 
+# Fullwidth katakana / punctuation → halfwidth. Voiced/semi-voiced kana become
+# base + combining mark (e.g. ガ → ｶﾞ). Used for legacy-form name/company
+# variants in the ja golden set; NFKC goes the other direction.
+_HALFWIDTH_KATAKANA = str.maketrans(
+    {
+        "ァ": "ｧ",
+        "ア": "ｱ",
+        "ィ": "ｨ",
+        "イ": "ｲ",
+        "ゥ": "ｩ",
+        "ウ": "ｳ",
+        "ェ": "ｪ",
+        "エ": "ｴ",
+        "ォ": "ｫ",
+        "オ": "ｵ",
+        "カ": "ｶ",
+        "キ": "ｷ",
+        "ク": "ｸ",
+        "ケ": "ｹ",
+        "コ": "ｺ",
+        "サ": "ｻ",
+        "シ": "ｼ",
+        "ス": "ｽ",
+        "セ": "ｾ",
+        "ソ": "ｿ",
+        "タ": "ﾀ",
+        "チ": "ﾁ",
+        "ッ": "ｯ",
+        "ツ": "ﾂ",
+        "テ": "ﾃ",
+        "ト": "ﾄ",
+        "ナ": "ﾅ",
+        "ニ": "ﾆ",
+        "ヌ": "ﾇ",
+        "ネ": "ﾈ",
+        "ノ": "ﾉ",
+        "ハ": "ﾊ",
+        "ヒ": "ﾋ",
+        "フ": "ﾌ",
+        "ヘ": "ﾍ",
+        "ホ": "ﾎ",
+        "マ": "ﾏ",
+        "ミ": "ﾐ",
+        "ム": "ﾑ",
+        "メ": "ﾒ",
+        "モ": "ﾓ",
+        "ャ": "ｬ",
+        "ヤ": "ﾔ",
+        "ュ": "ｭ",
+        "ユ": "ﾕ",
+        "ョ": "ｮ",
+        "ヨ": "ﾖ",
+        "ラ": "ﾗ",
+        "リ": "ﾘ",
+        "ル": "ﾙ",
+        "レ": "ﾚ",
+        "ロ": "ﾛ",
+        "ワ": "ﾜ",
+        "ヲ": "ｦ",
+        "ン": "ﾝ",
+        "ー": "ｰ",
+        "・": "･",
+        "。": "｡",
+        "「": "｢",
+        "」": "｣",
+        "、": "､",
+        "ガ": "ｶﾞ",
+        "ギ": "ｷﾞ",
+        "グ": "ｸﾞ",
+        "ゲ": "ｹﾞ",
+        "ゴ": "ｺﾞ",
+        "ザ": "ｻﾞ",
+        "ジ": "ｼﾞ",
+        "ズ": "ｽﾞ",
+        "ゼ": "ｾﾞ",
+        "ゾ": "ｿﾞ",
+        "ダ": "ﾀﾞ",
+        "ヂ": "ﾁﾞ",
+        "ヅ": "ﾂﾞ",
+        "デ": "ﾃﾞ",
+        "ド": "ﾄﾞ",
+        "バ": "ﾊﾞ",
+        "ビ": "ﾋﾞ",
+        "ブ": "ﾌﾞ",
+        "ベ": "ﾍﾞ",
+        "ボ": "ﾎﾞ",
+        "パ": "ﾊﾟ",
+        "ピ": "ﾋﾟ",
+        "プ": "ﾌﾟ",
+        "ペ": "ﾍﾟ",
+        "ポ": "ﾎﾟ",
+        "ヴ": "ｳﾞ",
+    }
+)
+
+
+def _to_halfwidth_katakana(text: str) -> str:
+    """Convert fullwidth katakana (and related punctuation) to halfwidth."""
+    return text.translate(_HALFWIDTH_KATAKANA)
+
+
+def _ja_halfwidth_kana_name(fake: Faker) -> str:
+    """A person name in halfwidth katakana (legacy form / bank-transfer style)."""
+    return _to_halfwidth_katakana(fake.kana_name())
+
+
+def _ja_halfwidth_company(fake: Faker, rng: random.Random) -> str:
+    """A synthetic company label in halfwidth katakana (not an ORG span)."""
+    prefix = rng.choice(["ｶﾌﾞｼｷｶﾞｲｼｬ", "ﾕｳｹﾞﾝｶﾞｲｼｬ", "ｺﾞｳﾄﾞｳｶｲｼｬ"])
+    return prefix + _to_halfwidth_katakana(fake.last_kana_name())
+
+
 def _us_phone(rng: random.Random) -> str:
     return f"({rng.randint(201, 989)}) {rng.randint(200, 999)}-{rng.randint(1000, 9999)}"
 
@@ -344,10 +456,28 @@ def _iban(rng: random.Random) -> str:
     return iban
 
 
+def _insert_ja_person(b: _Builder, name: list[tuple[str, str]] | str) -> _Builder:
+    """Insert a ja PERSON span (composed parts or a halfwidth katakana string)."""
+    if isinstance(name, str):
+        return b.pii(name, "PERSON")
+    return b.pii_person(name)
+
+
 def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> GoldenCase:
     b = _Builder()
-    name = _person_parts(fake, rng, "ja")
-    name2 = _person_parts(fake, rng, "ja")
+    # ~1/8 of cases use halfwidth katakana for person (and company) names —
+    # common in legacy bank / HR forms. Company strings are prose only (ORG
+    # is not a supported entity); person names stay labeled PERSON so eval
+    # tracks NER recall on this script.
+    halfwidth = rng.random() < 0.125
+    company: str | None = None
+    if halfwidth:
+        name: list[tuple[str, str]] | str = _ja_halfwidth_kana_name(fake)
+        name2 = _ja_halfwidth_kana_name(fake)
+        company = _ja_halfwidth_company(fake, rng)
+    else:
+        name = _person_parts(fake, rng, "ja")
+        name2 = _person_parts(fake, rng, "ja")
     email = fake.ascii_safe_email()
     phone = _ja_phone(rng)
     postal = _ja_postal(rng)
@@ -355,27 +485,37 @@ def _build_ja(genre: str, fake: Faker, rng: random.Random, case_id: str) -> Gold
     iban = _iban(rng)
 
     if genre == "request":
-        b.lit("お世話になっております。").pii_person(name).lit(
+        b.lit("お世話になっております。")
+        if company is not None:
+            b.lit(f"{company}の")
+        _insert_ja_person(b, name).lit(
             "と申します。来月の打ち合わせについて相談させてください。"
         ).lit("会場は").pii(city, "LOCATION").lit("を予定しています。連絡先は ").pii(
             phone, "PHONE_NUMBER"
         ).lit("、メールは ").pii(email, "EMAIL_ADDRESS").lit(" です。よろしくお願いいたします。")
     elif genre == "minutes":
-        b.lit("【議事録】出席者: ").pii_person(name).lit("、").pii_person(name2).lit(
-            "。次回会場の住所は "
-        ).pii(postal, "JP_POSTAL_CODE").lit(" ").pii(city, "LOCATION").lit(
-            "。決定事項: 資料は "
-        ).pii(email, "EMAIL_ADDRESS").lit(" へ送付する。担当者直通は ").pii(
-            phone, "PHONE_NUMBER"
-        ).lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit("。")
+        b.lit("【議事録】出席者: ")
+        _insert_ja_person(b, name).lit("、")
+        _insert_ja_person(b, name2)
+        if company is not None:
+            b.lit(f"（{company}）")
+        b.lit("。次回会場の住所は ").pii(postal, "JP_POSTAL_CODE").lit(" ").pii(
+            city, "LOCATION"
+        ).lit("。決定事項: 資料は ").pii(email, "EMAIL_ADDRESS").lit(
+            " へ送付する。担当者直通は "
+        ).pii(phone, "PHONE_NUMBER").lit("。経費精算の振込先は ").pii(iban, "IBAN_CODE").lit("。")
     else:
         card = _credit_card(fake, rng)
         my_number = _my_number(rng)
-        b.lit("お問い合わせありがとうございます。ご登録のお名前は ").pii_person(name).lit(
-            " 様、ご住所は "
-        ).pii(city, "LOCATION").lit(" で間違いないでしょうか。折り返しは ").pii(
-            phone, "PHONE_NUMBER"
-        ).lit(" までお願いします。お支払いのカード番号は ").pii(card, "CREDIT_CARD").lit(
+        b.lit("お問い合わせありがとうございます。ご登録のお名前は ")
+        _insert_ja_person(b, name)
+        if company is not None:
+            b.lit(f"（勤務先: {company}）")
+        b.lit(" 様、ご住所は ").pii(city, "LOCATION").lit(
+            " で間違いないでしょうか。折り返しは "
+        ).pii(phone, "PHONE_NUMBER").lit(" までお願いします。お支払いのカード番号は ").pii(
+            card, "CREDIT_CARD"
+        ).lit(
             " 、ご本人確認のマイナンバーは "
         ).pii(my_number, "JP_MY_NUMBER").lit(" 、控えは ").pii(email, "EMAIL_ADDRESS").lit(
             " に送信済みです。"
