@@ -32,6 +32,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   soft blue = masked.
 
 ### Changed
+- GitHub Pages web app UI is monolingual per the language picker: chrome
+  strings (and the Auto option label) follow the selected language instead of
+  always showing English with Japanese appended. `auto` still auto-detects
+  input for anonymization; UI locale then follows `navigator.language`
+  (fallback: English).
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
   wording, matching the npm package descriptions and the rest of the
   positioning. The old summary predated the reframe and wasn't caught by it,

@@ -71,6 +71,10 @@ header .spacer,
   color: var(--ok);
 }
 
+.privacy strong + span::before {
+  content: " ";
+}
+
 /* ---------- toolbar ---------- */
 
 .toolbar {
@@ -186,12 +190,8 @@ textarea {
 }
 
 .output:empty::before {
-  content: "Anonymized text will appear here…";
+  content: attr(data-empty);
   color: var(--text-faint);
-}
-
-#restore-output:empty::before {
-  content: "Restored text will appear here…";
 }
 
 .actions {

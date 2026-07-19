@@ -6,6 +6,7 @@
  */
 
 import { beforeAll, describe, expect, it, vi } from "vitest";
+import { t } from "../src/ui-i18n.js";
 
 const INPUT_TEXT = "連絡先は 090-1234-5678、メールは taro@example.com です。";
 
@@ -19,7 +20,9 @@ describe("web app (jsdom, NER off)", () => {
     const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
 
     // Deterministic offline path: fixed language, NER checkbox off.
-    $<HTMLSelectElement>("#language").value = "ja";
+    const language = $<HTMLSelectElement>("#language");
+    language.value = "ja";
+    language.dispatchEvent(new Event("change"));
     const useNer = $<HTMLInputElement>("#use-ner");
     useNer.checked = false;
     useNer.dispatchEvent(new Event("change"));
@@ -49,5 +52,30 @@ describe("web app (jsdom, NER off)", () => {
       expect($("#restore-output").textContent).toBe(INPUT_TEXT);
     });
     expect($("#restore-warning").hidden).toBe(true);
+  });
+
+  it("shows chrome in only the selected language (no JP/EN mix)", () => {
+    const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
+    const language = $<HTMLSelectElement>("#language");
+
+    language.value = "ja";
+    language.dispatchEvent(new Event("change"));
+    expect(document.documentElement.lang).toBe("ja");
+    expect($("#anonymize").textContent).toBe(t("ja", "anonymize"));
+    expect($(".privacy").textContent).toContain(t("ja", "privacyLead"));
+    expect($(".privacy").textContent).not.toMatch(/second pair|on-device/i);
+    // No leftover bilingual twin spans inside chrome (html[lang] is set on purpose).
+    expect(document.querySelectorAll(".privacy [lang], #ner-off-warning [lang]").length).toBe(0);
+    expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe(
+      t("ja", "auto"),
+    );
+
+    language.value = "en";
+    language.dispatchEvent(new Event("change"));
+    expect(document.documentElement.lang).toBe("en");
+    expect($("#anonymize").textContent).toBe(t("en", "anonymize"));
+    expect($(".privacy").textContent).toContain(t("en", "privacyLead"));
+    expect($(".privacy").textContent).not.toMatch(/送る前|ダブルチェック|サーバー/);
+    expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
   });
 });
