@@ -136,7 +136,7 @@ function renderShell(uiLang: Language): string {
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
-          <button id="open-restore" type="button" data-i18n="openRestore" disabled>${t(uiLang, "openRestore")}</button>
+          <button id="open-restore" type="button" class="secondary" data-i18n="openRestore" disabled>${t(uiLang, "openRestore")}</button>
           <span id="copy-flash" class="flash"></span>
         </div>
         <div class="mapping-wrap">
