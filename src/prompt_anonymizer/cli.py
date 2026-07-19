@@ -57,7 +57,10 @@ def anonymize(
     ner_backend: Annotated[
         str,
         typer.Option(
-            help="NER backend: spacy (default) or hf (transformer; requires the hf extra)."
+            help=(
+                "NER backend: spacy (default), hf (transformer; requires the hf"
+                " extra) or gliner (PII-specialised; requires the gliner extra)."
+            )
         ),
     ] = "spacy",
     as_json: Annotated[

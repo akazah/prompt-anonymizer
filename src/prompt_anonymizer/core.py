@@ -28,7 +28,7 @@ OPTIONAL_ENTITIES = ["US_SSN", "IBAN_CODE"]
 
 _MODEL_SIZES = ("sm", "lg")
 
-_NER_BACKENDS = ("spacy", "hf")
+_NER_BACKENDS = ("spacy", "hf", "gliner")
 
 # Same model family as the TypeScript core (web/packages/core/src/ner.ts),
 # which runs ONNX exports of these models via transformers.js. Using the
@@ -72,7 +72,10 @@ class PromptAnonymizer:
             model (requires the ``hf`` extra: ``pip install
             "prompt-anonymizer[hf]"``) for markedly better ja PERSON recall.
             Defaults mirror the TypeScript core's models
-            (:data:`DEFAULT_HF_NER_MODELS`).
+            (:data:`DEFAULT_HF_NER_MODELS`). ``"gliner"`` additionally runs
+            a PII-specialised GLiNER model (requires the ``gliner`` extra;
+            evaluation-gated, see ``docs/PLAN_INTL_PII.md`` P17 and
+            ``docs/EVAL.md``).
         hf_models: Override the per-language transformer models used when
             ``ner_backend="hf"``.
     """
@@ -197,6 +200,8 @@ class PromptAnonymizer:
 
         if self.ner_backend == "hf":
             self._add_hf_ner(analyzer)
+        elif self.ner_backend == "gliner":
+            self._add_gliner_ner(analyzer)
         return analyzer
 
     def _add_hf_ner(self, analyzer: AnalyzerEngine) -> None:
@@ -224,6 +229,21 @@ class PromptAnonymizer:
                     label_mapping=_HF_LABEL_MAPPING,
                 )
             )
+
+    def _add_gliner_ner(self, analyzer: AnalyzerEngine) -> None:
+        """Add a GLiNER PII-specialised NER recognizer on top of spaCy.
+
+        Evaluation-gated backend (docs/PLAN_INTL_PII.md P17): PII-specific
+        GLiNER checkpoints (revision-pinned in
+        ``recognizers/gliner_ner.py``) handle PERSON / LOCATION only;
+        structured entities stay on the regex + checksum track. Union with
+        spaCy for the same reason as the hf backend: over-masking beats
+        leaking. Requires the ``gliner`` extra.
+        """
+        from prompt_anonymizer.recognizers.gliner_ner import build_gliner_recognizer
+
+        for language in self.languages:
+            analyzer.registry.add_recognizer(build_gliner_recognizer(language))
 
     @property
     def analyzer(self) -> AnalyzerEngine:

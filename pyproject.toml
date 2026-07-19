@@ -28,6 +28,10 @@ demo = ["openai>=2", "rich>=13"]
 # Transformer NER backend (ner_backend="hf"): same model family as the
 # TypeScript core, better ja PERSON/LOCATION recall than spaCy `sm`.
 hf = ["transformers>=4.48", "torch>=2.6"]
+# GLiNER PII backend (ner_backend="gliner"): evaluation-gated PII-specific
+# NER models (docs/PLAN_INTL_PII.md P17). janome provides the ja word
+# splitter required by DataSign/gliner-ja-pii-v1.
+gliner = ["gliner>=0.2.20", "janome>=0.5"]
 
 [project.scripts]
 prompt-anonymizer = "prompt_anonymizer.cli:app"
@@ -102,7 +106,7 @@ strict = true
 files = ["src"]
 
 [[tool.mypy.overrides]]
-module = ["presidio_analyzer.*"]
+module = ["presidio_analyzer.*", "gliner.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

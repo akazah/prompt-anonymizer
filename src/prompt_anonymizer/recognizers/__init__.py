@@ -10,6 +10,11 @@ from prompt_anonymizer.recognizers.credit_card import (
     CreditCardLookaroundRecognizer,
     build_credit_card_recognizers,
 )
+from prompt_anonymizer.recognizers.gliner_ner import (
+    DEFAULT_GLINER_MODELS,
+    GlinerModelSpec,
+    build_gliner_recognizer,
+)
 from prompt_anonymizer.recognizers.ja_phone import (
     JaPhoneRegexRecognizer,
     build_ja_phone_recognizers,
@@ -28,7 +33,9 @@ from prompt_anonymizer.recognizers.us_ssn import (
 )
 
 __all__ = [
+    "DEFAULT_GLINER_MODELS",
     "CreditCardLookaroundRecognizer",
+    "GlinerModelSpec",
     "JaPhoneRegexRecognizer",
     "JaPostalCodeRecognizer",
     "MyNumberRecognizer",
@@ -36,6 +43,7 @@ __all__ = [
     "UsPhoneRegexRecognizer",
     "UsSsnLookaroundRecognizer",
     "build_credit_card_recognizers",
+    "build_gliner_recognizer",
     "build_ja_phone_recognizers",
     "build_phone_recognizers",
     "build_phone_regex_recognizer",

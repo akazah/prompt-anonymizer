@@ -1,8 +1,20 @@
 """Unit tests for custom recognizer logic (regex + check digit)."""
 
+import re
+
 import pytest
 
+from prompt_anonymizer.recognizers.gliner_ner import _MULTI_PII, DEFAULT_GLINER_MODELS
 from prompt_anonymizer.recognizers.my_number import is_valid_my_number, my_number_check_digit
+
+
+def test_gliner_specs_are_revision_pinned_and_scoped() -> None:
+    # Licensing policy: model cards can change license, so every GLiNER
+    # checkpoint must pin a commit hash. Contextual-PII track: the specs
+    # may only ever map to PERSON / LOCATION (structured PII stays regex).
+    for spec in (*DEFAULT_GLINER_MODELS.values(), _MULTI_PII):
+        assert re.fullmatch(r"[0-9a-f]{40}", spec.revision), spec.model_name
+        assert set(spec.entity_mapping.values()) <= {"PERSON", "LOCATION"}, spec.model_name
 
 
 def test_check_digit_known_value() -> None:
