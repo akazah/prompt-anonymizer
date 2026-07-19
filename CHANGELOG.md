@@ -47,6 +47,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   configurable via query params (`?lang=`, `?ner=0`, `?demo=0`), which
   the e2e suites and demo recorder now use. Very short desktop viewports
   fall back to a scrollable single-column layout.
+- Web app UI copy trimmed for scannability: hero privacy paragraph replaced
+  with visual value-prop chips (on-device, reversible) plus a live
+  before→after demo chip; panel headings use short titles with status tags;
+  mapping table shows label → value with colour cues; NER-off warning is a
+  compact pill.
 - PyPI summary (`pyproject.toml` description) now uses the buddy-check
   wording, matching the npm package descriptions and the rest of the
   positioning. The old summary predated the reframe and wasn't caught by it,

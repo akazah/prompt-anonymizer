@@ -29,11 +29,10 @@ describe("ui-i18n catalog", () => {
   });
 
   it("Japanese and English catalogs do not embed the other language's chrome", () => {
-    // Spot-check the privacy lead: each locale should be monolingual.
-    expect(t("ja", "privacyLead")).toMatch(/送る前/);
-    expect(t("ja", "privacyLead")).not.toMatch(/second pair|on-device/i);
-    expect(t("en", "privacyLead")).toMatch(/second pair/i);
-    expect(t("en", "privacyLead")).not.toMatch(/送る前|ダブルチェック/);
+    expect(t("ja", "valueOnDevice")).toMatch(/端末/);
+    expect(t("ja", "valueOnDevice")).not.toMatch(/On-device|second pair/i);
+    expect(t("en", "valueOnDevice")).toMatch(/On-device/i);
+    expect(t("en", "valueOnDevice")).not.toMatch(/端末|ダブルチェック/);
     expect(t("ja", "auto")).toBe("自動判定");
     expect(t("en", "auto")).toBe("Auto");
     expect(UI_MESSAGE_KEYS).toContain("nerOffWarning");

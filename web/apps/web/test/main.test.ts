@@ -64,10 +64,9 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("ja");
     expect($("#anonymize").textContent).toBe(t("ja", "anonymize"));
-    expect($(".privacy").textContent).toContain(t("ja", "privacyLead"));
-    expect($(".privacy").textContent).not.toMatch(/second pair|on-device/i);
-    // No leftover bilingual twin spans inside chrome (html[lang] is set on purpose).
-    expect(document.querySelectorAll(".privacy [lang], #ner-off-warning [lang]").length).toBe(0);
+    expect($(".value-props").textContent).toContain(t("ja", "valueOnDevice"));
+    expect($(".value-props").textContent).not.toMatch(/On-device|second pair/i);
+    expect(document.querySelectorAll(".value-props [lang], #ner-off-warning [lang]").length).toBe(0);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe(
       t("ja", "auto"),
     );
@@ -76,8 +75,8 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("en");
     expect($("#anonymize").textContent).toBe(t("en", "anonymize"));
-    expect($(".privacy").textContent).toContain(t("en", "privacyLead"));
-    expect($(".privacy").textContent).not.toMatch(/送る前|ダブルチェック|サーバー/);
+    expect($(".value-props").textContent).toContain(t("en", "valueOnDevice"));
+    expect($(".value-props").textContent).not.toMatch(/端末内|ダブルチェック/);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
   });
 });

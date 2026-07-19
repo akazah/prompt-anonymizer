@@ -18,6 +18,7 @@ import "./style.css";
 import {
   resolveUiLanguage,
   restorePlaceholderFor,
+  demoTransformFor,
   t,
   type UiMessageKey,
 } from "./ui-i18n.js";
@@ -40,6 +41,8 @@ const ICON_SHIELD = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none"
 const ICON_LOCK = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>`;
 const ICON_SEND = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12 20 4l-4.5 16-4-6.5L4 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`;
 const ICON_RESTORE = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ICON_DEVICE = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 18h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+const ICON_REVERSE = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9a8 8 0 1 1-1 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
 type FlowStep = "original" | "anonymized" | "restore";
 
@@ -69,17 +72,36 @@ function flowStepperMarkup(uiLang: Language): string {
   }).join("\n        ");
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function renderShell(uiLang: Language): string {
+  const demo = demoTransformFor(uiLang);
   return `
   <div class="container">
     <header class="hero">
       <span class="logo-mark">${ICON_SHIELD}</span>
       <h1>Prompt Anonymizer</h1>
       <span id="engine-badge" class="badge"><span class="dot"></span><span id="engine-name">${t(uiLang, "checking")}</span></span>
-      <p class="privacy">
-        <strong data-i18n="privacyLead">${t(uiLang, "privacyLead")}</strong>
-        <span data-i18n="privacyBody">${t(uiLang, "privacyBody")}</span>
-      </p>
+      <ul class="value-props">
+        <li class="value-prop">
+          <span class="value-icon">${ICON_DEVICE}</span>
+          <span data-i18n="valueOnDevice">${t(uiLang, "valueOnDevice")}</span>
+        </li>
+        <li class="value-prop">
+          <span class="value-icon">${ICON_REVERSE}</span>
+          <span data-i18n="valueReversible">${t(uiLang, "valueReversible")}</span>
+        </li>
+        <li class="value-demo" aria-hidden="true">
+          <span class="demo-pii">${escapeHtml(demo.pii)}</span>
+          <span class="demo-arrow">→</span>
+          <span class="demo-label">${escapeHtml(demo.label)}</span>
+        </li>
+      </ul>
       <a class="badge" href="https://github.com/akazah/prompt-anonymizer" target="_blank" rel="noreferrer">GitHub</a>
     </header>
 
@@ -89,8 +111,8 @@ function renderShell(uiLang: Language): string {
           ${languageOptionsMarkup(uiLang)}
         </select>
       </label>
-      <label class="switch-label"><input type="checkbox" id="use-ner" class="switch" checked /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
-      <span id="ner-off-warning" class="hint warning" data-i18n="nerOffWarning" hidden>
+      <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
+      <span id="ner-off-warning" class="ner-warning" data-i18n="nerOffWarning" hidden>
         ${t(uiLang, "nerOffWarning")}
       </span>
       <div class="spacer"></div>
@@ -110,11 +132,11 @@ function renderShell(uiLang: Language): string {
 
     <div id="grid" class="grid" data-active-step="original">
       <section class="panel" data-panel="original">
-        <h2>${ICON_LOCK}<span data-i18n="originalHeading">${t(uiLang, "originalHeading")}</span></h2>
+        <h2>${ICON_LOCK}<span data-i18n="originalHeading">${t(uiLang, "originalHeading")}</span><span class="panel-tag panel-tag-local" data-i18n="tagLocal">${t(uiLang, "tagLocal")}</span></h2>
         <textarea id="input" data-i18n-placeholder="inputPlaceholder" placeholder="${t(uiLang, "inputPlaceholder")}"></textarea>
       </section>
       <section class="panel" data-panel="anonymized">
-        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span></h2>
+        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span><span class="panel-tag panel-tag-safe" data-i18n="tagSafe">${t(uiLang, "tagSafe")}</span></h2>
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
@@ -122,7 +144,7 @@ function renderShell(uiLang: Language): string {
         </div>
         <div class="mapping-wrap">
           <table class="mapping" id="mapping-table" hidden>
-            <thead><tr><th data-i18n="mappingLabel">${t(uiLang, "mappingLabel")}</th><th data-i18n="mappingOriginal">${t(uiLang, "mappingOriginal")}</th></tr></thead>
+            <thead><tr><th data-i18n="mappingLabel">${t(uiLang, "mappingLabel")}</th><th aria-hidden="true">→</th><th data-i18n="mappingOriginal">${t(uiLang, "mappingOriginal")}</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -137,7 +159,6 @@ function renderShell(uiLang: Language): string {
         </div>
         <div id="restore-output" class="output" data-empty="${t(uiLang, "restoreOutputEmpty")}"></div>
         <p id="restore-warning" class="hint warning" hidden></p>
-        <p class="hint" data-i18n="restoreHint">${t(uiLang, "restoreHint")}</p>
       </section>
     </div>
   </div>
@@ -231,6 +252,12 @@ function applyUiLocale(lang: Language): void {
   outputEl.dataset.empty = t(lang, "outputEmpty");
   $("#restore-output").dataset.empty = t(lang, "restoreOutputEmpty");
 
+  const demo = demoTransformFor(lang);
+  const demoPii = document.querySelector(".demo-pii");
+  const demoLabel = document.querySelector(".demo-label");
+  if (demoPii) demoPii.textContent = demo.pii;
+  if (demoLabel) demoLabel.textContent = demo.label;
+
   if (!busy) {
     progressLabel.textContent = t(lang, "loadingModel");
   }
@@ -283,13 +310,6 @@ async function updateEngineBadge(): Promise<void> {
 }
 void updateEngineBadge();
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
 function renderWithHighlights(text: string, labels: string[], cls: string): string {
   let html = escapeHtml(text);
   for (const label of [...labels].sort((a, b) => b.length - a.length)) {
@@ -321,7 +341,7 @@ async function runAnonymize(): Promise<void> {
     tbody.innerHTML = Object.entries(result.mapping)
       .map(
         ([label, original]) =>
-          `<tr><td class="label-cell">${escapeHtml(label)}</td><td>${escapeHtml(original)}</td></tr>`,
+          `<tr><td class="label-cell">${escapeHtml(label)}</td><td class="mapping-arrow" aria-hidden="true">→</td><td class="value-cell">${escapeHtml(original)}</td></tr>`,
       )
       .join("");
     mappingTable.hidden = Object.keys(result.mapping).length === 0;
