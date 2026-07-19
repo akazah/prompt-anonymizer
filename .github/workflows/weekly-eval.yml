@@ -29,6 +29,42 @@ jobs:
           name: eval-report
           path: eval-lg.md
 
+  # Evaluation-gated GLiNER PII backend (docs/PLAN_INTL_PII.md P17): keep
+  # tracking the candidate models weekly without adding them to PR CI.
+  eval-gliner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v8.3.0
+        with:
+          enable-cache: true
+
+      - name: Sync dependencies (incl. the gliner extra)
+        run: uv sync --group models --extra gliner
+
+      - name: Cache GLiNER models
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/huggingface
+          # Model names + revision pins live in gliner_ner.py; a change
+          # there invalidates the cache.
+          key: gliner-models-${{ runner.os }}-${{ hashFiles('src/prompt_anonymizer/recognizers/gliner_ner.py') }}
+
+      - name: GLiNER backend tests
+        run: uv run pytest tests/integration/test_gliner_backend.py -q
+
+      - name: Evaluation (gliner backend)
+        run: >
+          uv run python -m prompt_anonymizer.evals --ner-backend gliner
+          --languages ja en es vi --output eval-gliner.md --golden-dir /tmp/golden
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: eval-report-gliner
+          path: eval-gliner.md
+
   # Full-pipeline browser e2e including the transformers.js NER models.
   # Kept out of PR CI (model download is large/slow); the browser profile is
   # cached so subsequent weekly runs skip the download.

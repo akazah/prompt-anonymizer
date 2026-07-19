@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the whole scan as a fatal read error.
 
 ### Added
+- Python: opt-in GLiNER PII NER backend (`PromptAnonymizer(ner_backend="gliner")`,
+  CLI `--ner-backend gliner`, `pip install "prompt-anonymizer[gliner]"`).
+  Adds PII-specialised, revision-pinned GLiNER models
+  (`DataSign/gliner-ja-pii-v1` for ja with the Janome word splitter,
+  `urchade/gliner_multi_pii-v1` elsewhere; both Apache-2.0) on top of spaCy
+  for PERSON / LOCATION only — structured PII stays on the regex + checksum
+  track. Golden-set gains over the `hf` backend: ja LOCATION F1 0.94 → 1.00
+  and en PERSON 0.95 → 1.00 at ~3× the CPU latency; the default backend
+  stays `spacy` and the TypeScript core keeps its current models (evaluation
+  and decision recorded in `docs/EVAL.md` and `docs/PLAN_INTL_PII.md` P17).
+  Weekly CI tracks the backend via a new `eval-gliner` job.
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`
