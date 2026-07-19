@@ -105,7 +105,11 @@ function renderShell(uiLang: Language): string {
         ${t(uiLang, "nerOffWarning")}
       </span>
       <div class="spacer"></div>
-      <button id="anonymize" class="primary" data-i18n="anonymize">${t(uiLang, "anonymize")}</button>
+      <button id="anonymize" class="primary" title="${t(uiLang, "anonymize")}">
+        <span class="anonymize-long" data-i18n="anonymize">${t(uiLang, "anonymize")}</span>
+        <span class="anonymize-short" data-i18n="anonymizeShort">${t(uiLang, "anonymizeShort")}</span>
+        <span class="anonymize-working" data-i18n="working" hidden>${t(uiLang, "working")}</span>
+      </button>
     </div>
 
     <div id="progress" class="progress">
@@ -228,9 +232,10 @@ function applyUiLocale(lang: Language): void {
   for (const el of document.querySelectorAll<HTMLElement>("[data-i18n]")) {
     const key = el.dataset.i18n as UiMessageKey | undefined;
     if (!key) continue;
-    if (el === anonymizeBtn && busy) continue;
+    if (anonymizeBtn.contains(el) && busy) continue;
     el.textContent = t(lang, key);
   }
+  anonymizeBtn.title = t(lang, "anonymize");
 
   for (const el of document.querySelectorAll<HTMLTextAreaElement | HTMLInputElement>(
     "[data-i18n-placeholder]",
@@ -252,6 +257,18 @@ function applyUiLocale(lang: Language): void {
   if (!busy) {
     progressLabel.textContent = t(lang, "loadingModel");
   }
+  syncAnonymizeBtnLabel();
+}
+
+function syncAnonymizeBtnLabel(): void {
+  const long = anonymizeBtn.querySelector<HTMLElement>(".anonymize-long");
+  const short = anonymizeBtn.querySelector<HTMLElement>(".anonymize-short");
+  const working = anonymizeBtn.querySelector<HTMLElement>(".anonymize-working");
+  if (!long || !short || !working) return;
+  working.hidden = !busy;
+  long.hidden = busy;
+  short.hidden = busy;
+  anonymizeBtn.classList.toggle("busy", busy);
 }
 
 function syncNerWarning(): void {
@@ -321,7 +338,7 @@ async function runAnonymize(): Promise<void> {
   const language = await resolveLanguage(text);
   busy = true;
   anonymizeBtn.disabled = true;
-  anonymizeBtn.textContent = t(uiLanguage, "working");
+  syncAnonymizeBtnLabel();
   try {
     const result = await session.anonymize(text, { language });
     lastResult = result;
@@ -344,7 +361,7 @@ async function runAnonymize(): Promise<void> {
   } finally {
     busy = false;
     anonymizeBtn.disabled = false;
-    anonymizeBtn.textContent = t(uiLanguage, "anonymize");
+    syncAnonymizeBtnLabel();
     progressEl.classList.remove("visible");
   }
 }

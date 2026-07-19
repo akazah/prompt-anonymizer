@@ -213,6 +213,20 @@ body {
   line-height: 1.25;
 }
 
+.anonymize-short,
+.anonymize-working {
+  display: none;
+}
+
+.toolbar #anonymize.busy .anonymize-long,
+.toolbar #anonymize.busy .anonymize-short {
+  display: none;
+}
+
+.toolbar #anonymize.busy .anonymize-working {
+  display: inline;
+}
+
 /* NER toggle switch — the real checkbox is styled directly so it stays
    visible and clickable for tests and assistive tech. */
 input.switch {
@@ -339,13 +353,16 @@ input.switch:focus-visible {
   box-shadow: 0 2px 8px rgba(16, 17, 20, 0.15);
 }
 
-.flow-step.done .flow-dot {
-  background: var(--ok);
+.flow-step.done:not(.active) .flow-dot {
+  background: var(--bg-panel);
   border-color: var(--ok);
-  color: #fff;
+  color: var(--ok);
 }
 
 .flow-step.done.active .flow-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
   box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.2);
 }
 
@@ -362,8 +379,12 @@ input.switch:focus-visible {
   color: var(--text);
 }
 
-.flow-step.done .flow-label {
-  color: var(--ok);
+.flow-step.done:not(.active) .flow-label {
+  color: var(--text-faint);
+}
+
+.flow-step.done.active .flow-label {
+  color: var(--text);
 }
 
 .flow-connector {
@@ -469,7 +490,7 @@ table.mapping td.value-cell {
 
 @media (max-width: 1000px) {
   .container {
-    padding: var(--sp-2) 12px var(--sp-3);
+    padding: var(--sp-2) 12px max(var(--sp-3), env(safe-area-inset-bottom, 0px));
     gap: var(--sp-2);
   }
 
@@ -497,8 +518,46 @@ table.mapping td.value-cell {
   }
 
   .toolbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "lang ner"
+      "warn warn"
+      "action action";
+    align-items: center;
     padding: var(--sp-2) var(--sp-3);
     gap: var(--sp-2);
+  }
+
+  .toolbar label:first-of-type {
+    grid-area: lang;
+  }
+
+  .toolbar .switch-label {
+    grid-area: ner;
+    justify-self: end;
+  }
+
+  .toolbar .ner-warning {
+    grid-area: warn;
+  }
+
+  .toolbar .spacer {
+    display: none;
+  }
+
+  .toolbar #anonymize {
+    grid-area: action;
+    width: 100%;
+    text-align: center;
+  }
+
+  .toolbar .anonymize-long {
+    display: none;
+  }
+
+  .toolbar .anonymize-short {
+    display: inline;
   }
 
   .toolbar label {
@@ -566,18 +625,9 @@ table.mapping td.value-cell {
 }
 
 @media (max-width: 520px) {
-  .toolbar .spacer {
-    display: none;
-  }
-
-  .toolbar #anonymize {
-    flex: 1;
-    text-align: center;
-  }
-
   .toolbar .hint,
   .toolbar .ner-warning {
-    flex-basis: 100%;
+    flex-basis: auto;
   }
 }
 

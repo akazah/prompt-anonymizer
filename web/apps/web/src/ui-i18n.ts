@@ -26,6 +26,7 @@ export const UI_MESSAGE_KEYS = [
   "nerModel",
   "loadSample",
   "anonymize",
+  "anonymizeShort",
   "working",
   "nerOffWarning",
   "flowOriginal",
@@ -74,6 +75,7 @@ const EN: UiCatalog = {
   nerModel: "Names & places",
   loadSample: "Load sample",
   anonymize: "Anonymize in browser (no server)",
+  anonymizeShort: "Anonymize",
   working: "Working…",
   nerOffWarning: "Names not masked",
   flowOriginal: "Original",
@@ -115,6 +117,7 @@ const JA: UiCatalog = {
   nerModel: "人名・場所",
   loadSample: "サンプルを読み込む",
   anonymize: "ブラウザ内で匿名化（外部サーバー送信なし）",
+  anonymizeShort: "匿名化",
   working: "処理中…",
   nerOffWarning: "人名はマスクされません",
   flowOriginal: "原文",
@@ -157,6 +160,7 @@ const ES: UiCatalog = {
   nerModel: "Nombres y lugares",
   loadSample: "Cargar ejemplo",
   anonymize: "Anonimizar en el navegador (sin servidor)",
+  anonymizeShort: "Anonimizar",
   working: "Procesando…",
   nerOffWarning:
     "El modelo NER está desactivado: los nombres y ubicaciones NO se enmascararán (solo correos, teléfonos, etc.).",
@@ -201,6 +205,7 @@ const VI: UiCatalog = {
   nerModel: "Tên & địa điểm",
   loadSample: "Tải mẫu",
   anonymize: "Ẩn danh trong trình duyệt (không gửi server)",
+  anonymizeShort: "Ẩn danh",
   working: "Đang xử lý…",
   nerOffWarning:
     "Mô hình NER đang tắt: tên và địa điểm sẽ KHÔNG được che (chỉ email, số điện thoại, v.v.).",
@@ -243,6 +248,7 @@ const ZH: UiCatalog = {
   nerModel: "姓名与地点",
   loadSample: "加载示例",
   anonymize: "浏览器内匿名化（无外部服务器）",
+  anonymizeShort: "匿名化",
   working: "处理中…",
   nerOffWarning: "姓名未遮蔽",
   flowOriginal: "原文",
@@ -284,6 +290,7 @@ const KO: UiCatalog = {
   nerModel: "이름·장소",
   loadSample: "샘플 불러오기",
   anonymize: "브라우저에서 익명화 (외부 전송 없음)",
+  anonymizeShort: "익명화",
   working: "처리 중…",
   nerOffWarning:
     "NER 모델이 꺼져 있어 이름과 위치는 마스킹되지 않습니다(이메일, 전화번호 등만 처리).",
@@ -327,6 +334,7 @@ const FR: UiCatalog = {
   nerModel: "Noms & lieux",
   loadSample: "Charger un exemple",
   anonymize: "Anonymiser dans le navigateur (pas de serveur)",
+  anonymizeShort: "Anonymiser",
   working: "Traitement…",
   nerOffWarning:
     "Le modèle NER est désactivé : les noms et lieux ne seront PAS masqués (uniquement e-mails, téléphones, etc.).",
@@ -371,6 +379,7 @@ const DE: UiCatalog = {
   nerModel: "Namen & Orte",
   loadSample: "Beispiel laden",
   anonymize: "Im Browser anonymisieren (kein Server)",
+  anonymizeShort: "Anonymisieren",
   working: "Arbeitet…",
   nerOffWarning:
     "NER-Modell ist aus: Namen und Orte werden NICHT maskiert (nur E-Mails, Telefonnummern usw.).",
@@ -414,6 +423,7 @@ const PT: UiCatalog = {
   nerModel: "Nomes e locais",
   loadSample: "Carregar exemplo",
   anonymize: "Anonimizar no browser (sem servidor)",
+  anonymizeShort: "Anonimizar",
   working: "A processar…",
   nerOffWarning:
     "O modelo NER está desligado: nomes e locais NÃO serão mascarados (apenas e-mails, telefones, etc.).",
@@ -458,6 +468,7 @@ const IT: UiCatalog = {
   nerModel: "Nomi e luoghi",
   loadSample: "Carica esempio",
   anonymize: "Anonimizza nel browser (nessun server)",
+  anonymizeShort: "Anonimizza",
   working: "Elaborazione…",
   nerOffWarning:
     "Il modello NER è disattivato: nomi e luoghi NON verranno mascherati (solo e-mail, telefoni, ecc.).",
