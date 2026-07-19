@@ -9,6 +9,7 @@ from prompt_anonymizer import labeling
 from prompt_anonymizer.exceptions import ModelNotDownloadedError, UnsupportedLanguageError
 from prompt_anonymizer.labeling import AnonymizeResult, EntitySpan
 from prompt_anonymizer.languages import DEFAULT_LANGUAGES, LANGUAGES
+from prompt_anonymizer.normalize import DetectView, normalize_for_detect
 
 if TYPE_CHECKING:
     from presidio_analyzer import AnalyzerEngine, BatchAnalyzerEngine, RecognizerResult
@@ -253,18 +254,28 @@ class PromptAnonymizer:
         original values to be restored with :meth:`deanonymize`. The mapping
         is never persisted by this library; storing it safely is the
         caller's responsibility.
+
+        Detection runs on an NFC (+ language-fold) view of ``text``; spans
+        are mapped back so labels and mapping values always use the original
+        surface form.
         """
         if language not in self.languages:
             raise UnsupportedLanguageError(language, self.languages)
 
+        view = normalize_for_detect(text, language)
+        allow = (
+            [normalize_for_detect(item, language).text for item in self.allow_list]
+            if self.allow_list
+            else None
+        )
         results = self.analyzer.analyze(
-            text=text,
+            text=view.text,
             language=language,
             entities=list(self.entities),
-            allow_list=self.allow_list or None,
+            allow_list=allow,
             score_threshold=self.score_threshold,
         )
-        return self._finalize(text, results, language)
+        return self._finalize(text, view, results, language)
 
     def anonymize_batch(
         self,
@@ -284,33 +295,53 @@ class PromptAnonymizer:
         if language not in self.languages:
             raise UnsupportedLanguageError(language, self.languages)
 
+        views = [normalize_for_detect(text, language) for text in texts]
+        allow = (
+            [normalize_for_detect(item, language).text for item in self.allow_list]
+            if self.allow_list
+            else None
+        )
         results_per_text = self.batch_analyzer.analyze_iterator(
-            texts=list(texts),
+            texts=[view.text for view in views],
             language=language,
             batch_size=batch_size,
             n_process=n_process,
             entities=list(self.entities),
-            allow_list=self.allow_list or None,
+            allow_list=allow,
             score_threshold=self.score_threshold,
         )
         return [
-            self._finalize(text, results, language)
-            for text, results in zip(texts, results_per_text, strict=True)
+            self._finalize(text, view, results, language)
+            for text, view, results in zip(texts, views, results_per_text, strict=True)
         ]
 
     def _finalize(
-        self, text: str, results: Sequence[RecognizerResult], language: str
+        self,
+        text: str,
+        view: DetectView,
+        results: Sequence[RecognizerResult],
+        language: str,
     ) -> AnonymizeResult:
         # Some recognizers (e.g. Presidio's HuggingFaceNerRecognizer) pass
         # through entity types outside the requested list as "discovery"
         # results; keep the output limited to what was asked for.
         requested = set(self.entities)
-        spans = [
-            EntitySpan(start=r.start, end=r.end, entity_type=r.entity_type, score=r.score)
-            for r in results
-            if r.entity_type in requested
-        ]
-        spans.extend(labeling.deny_list_spans(text, self.deny_list))
+        spans = view.map_spans(
+            [
+                EntitySpan(start=r.start, end=r.end, entity_type=r.entity_type, score=r.score)
+                for r in results
+                if r.entity_type in requested
+            ]
+        )
+        # Deny-list match on the same detect view so halfwidth/fullwidth
+        # (and NFC) variants of a denied term still hit; map back after.
+        if self.deny_list:
+            needles = [normalize_for_detect(item, language).text for item in self.deny_list]
+            spans.extend(view.map_spans(labeling.deny_list_spans(view.text, needles)))
+        # Re-check allow_list against the original surface (parity with TS).
+        if self.allow_list:
+            allowed = set(self.allow_list)
+            spans = [s for s in spans if text[s.start : s.end] not in allowed]
         labels = self._labels_for(language)
         anonymized, mapping = labeling.apply_labels(text, spans, labels)
         return AnonymizeResult(

@@ -23,7 +23,9 @@ import type { Language } from "./types.js";
 const DETECTION_RULES: ReadonlyArray<readonly [Language, RegExp]> = [
   // Kana is uniquely Japanese; han without kana (checked next) counts as
   // Chinese — kanji-only Japanese fragments are the known blind spot.
-  ["ja", /[\u3040-\u30ff]/],
+  // Include halfwidth katakana (FF61-FF9F); fullwidth-only ranges miss
+  // strings such as 「ｶﾀｶﾅﾉﾐ」.
+  ["ja", /[\u3040-\u30ff\uff61-\uff9f]/],
   ["ko", /[\uac00-\ud7a3\u1100-\u11ff]/],
   ["zh", /[\u4e00-\u9fff]/],
   // Vietnamese-specific letters (also claims ă/â/ơ/ư before the Latin

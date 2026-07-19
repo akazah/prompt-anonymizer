@@ -11,6 +11,9 @@ from prompt_anonymizer.scan import (
 def test_guess_language_matches_ts_heuristic() -> None:
     assert guess_language("山田さんに連絡") == "ja"
     assert guess_language("カタカナのみ") == "ja"
+    # Halfwidth katakana (U+FF61–FF9F) must count as Japanese too.
+    assert guess_language("ｶﾀｶﾅﾉﾐ") == "ja"
+    assert guess_language("ﾔﾏﾀﾞﾀﾛｳﾆﾞｬﾅｲ") == "ja"
     assert guess_language("Call me maybe") == "en"
     assert guess_language("") == "en"
     assert guess_language("Gọi cho tôi nhé") == "vi"

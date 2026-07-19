@@ -1,8 +1,10 @@
 # Accuracy (span-level, synthetic golden set)
 
 Cases are seeded Faker documents (request / minutes / inquiry genres) with
-ground-truth spans. Detection is best-effort; these numbers exist to catch
-regressions, not to promise recall on real-world text.
+ground-truth spans. The Japanese set also mixes in halfwidth-katakana person
+names (and synthetic company labels in prose) on a minority of cases.
+Detection is best-effort; these numbers exist to catch regressions, not to
+promise recall on real-world text.
 
 ## Python core (Presidio + spaCy)
 
@@ -14,9 +16,10 @@ Regenerate with `uv run python -m prompt_anonymizer.evals`.
 | ja | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
+| ja | JP_MY_NUMBER | 1.00 | 1.00 | 1.00 | 66 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.92 | 0.79 | 0.85 | 200 |
-| ja | PERSON | 0.98 | 0.82 | 0.89 | 267 |
+| ja | LOCATION | 0.91 | 0.79 | 0.85 | 200 |
+| ja | PERSON | 0.94 | 0.73 | 0.82 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
@@ -57,8 +60,8 @@ and copy the table (the default run above owns the marker block).
 | ja | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |
 | ja | IBAN_CODE | 1.00 | 1.00 | 1.00 | 67 |
 | ja | JP_POSTAL_CODE | 1.00 | 1.00 | 1.00 | 67 |
-| ja | LOCATION | 0.89 | 1.00 | 0.94 | 200 |
-| ja | PERSON | 0.94 | 1.00 | 0.97 | 267 |
+| ja | LOCATION | 0.82 | 1.00 | 0.90 | 200 |
+| ja | PERSON | 0.90 | 1.00 | 0.95 | 267 |
 | ja | PHONE_NUMBER | 1.00 | 1.00 | 1.00 | 200 |
 | en | CREDIT_CARD | 1.00 | 1.00 | 1.00 | 66 |
 | en | EMAIL_ADDRESS | 1.00 | 1.00 | 1.00 | 200 |

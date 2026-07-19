@@ -97,18 +97,22 @@ def detect_structured(text: str, language: str = "auto") -> list[EntitySpan]:
     """Detect structured PII with pattern recognizers only (no NLP engine).
 
     ``language`` selects the language-scoped phone patterns (registry);
-    ``"auto"`` uses :func:`guess_language`. Returns raw, unmerged spans;
-    scores below recognizer context boosts (which require the full engine)
-    are reported as-is.
+    ``"auto"`` uses :func:`guess_language`. Returns raw, unmerged spans
+    in **original** text coordinates (detection runs on an NFC + language-
+    fold view). Scores below recognizer context boosts (which require the
+    full engine) are reported as-is.
     """
+    from prompt_anonymizer.normalize import normalize_for_detect
+
     if language == "auto":
         language = guess_language(text)
+    view = normalize_for_detect(text, language)
     spans: list[EntitySpan] = []
     for recognizer in _structured_recognizers(language):
         # Pattern-based recognizers never read nlp_artifacts; the base
         # class annotates it as required, hence the ignore.
         results = recognizer.analyze(
-            text,
+            view.text,
             entities=list(STRUCTURED_ENTITIES),
             nlp_artifacts=None,  # type: ignore[arg-type]
         )
@@ -121,7 +125,7 @@ def detect_structured(text: str, language: str = "auto") -> list[EntitySpan]:
                     score=result.score,
                 )
             )
-    return spans
+    return view.map_spans(spans)
 
 
 def scan_text(
@@ -139,10 +143,16 @@ def scan_text(
     (deny list). Returns merged spans sorted by start offset; an empty
     list means the text is clean.
     """
+    from prompt_anonymizer.normalize import normalize_for_detect
+
+    resolved = guess_language(text) if language == "auto" else language
+    view = normalize_for_detect(text, resolved)
     spans = [
         span
-        for span in detect_structured(text, language=language)
+        for span in detect_structured(text, language=resolved)
         if span.score >= score_threshold and text[span.start : span.end] not in allow_list
     ]
-    spans.extend(deny_list_spans(text, deny_list))
+    if deny_list:
+        needles = [normalize_for_detect(item, resolved).text for item in deny_list]
+        spans.extend(view.map_spans(deny_list_spans(view.text, needles)))
     return merge_spans(spans, text)

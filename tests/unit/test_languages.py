@@ -51,11 +51,15 @@ def test_every_language_has_labels(language: str) -> None:
 
 @pytest.mark.parametrize("language", SUPPORTED_LANGUAGES)
 def test_registry_config_is_consistent(language: str) -> None:
+    from prompt_anonymizer.normalize import FOLD_HALFWIDTH_KATAKANA
+
     config = LANGUAGES[language]
     assert config.code == language
     assert config.spacy_sm
     assert config.spacy_lg
     assert config.hf_ner_model
+    known_folds = {FOLD_HALFWIDTH_KATAKANA}
+    assert set(config.detect_folds) <= known_folds
     if config.phone is not None:
         assert config.phone.region
         assert config.phone.patterns
@@ -118,6 +122,7 @@ def test_detection_rules_reference_supported_languages_only() -> None:
     "text",
     [
         "山田太郎の電話は090-1234-5678",
+        "ｶﾀｶﾅﾉﾐ",
         "Xin chào, tôi tên là Nguyễn Văn A",
         "Buenos días, ¿cómo está usted?",
         "Hi, my name is John Smith",

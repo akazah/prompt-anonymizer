@@ -76,3 +76,23 @@ def test_generate_cases_is_seeded_and_offsets_correct() -> None:
     for case in a:
         for span in case.spans:
             assert case.text[span.start : span.end] == span.value
+
+
+def test_to_halfwidth_katakana_maps_voiced_kana() -> None:
+    from prompt_anonymizer.evals.generate import _to_halfwidth_katakana
+
+    assert _to_halfwidth_katakana("ヤマダ タロウ") == "ﾔﾏﾀﾞ ﾀﾛｳ"
+    assert _to_halfwidth_katakana("株式会社") == "株式会社"  # kanji unchanged
+
+
+def test_ja_golden_includes_halfwidth_kana_person_and_company() -> None:
+    cases = generate_cases("ja", count=200)
+    halfwidth_people = [
+        span.value
+        for case in cases
+        for span in case.spans
+        if span.entity_type == "PERSON" and any("\uff61" <= ch <= "\uff9f" for ch in span.value)
+    ]
+    assert halfwidth_people, "expected some PERSON spans in halfwidth katakana"
+    company_markers = ("ｶﾌﾞｼｷｶﾞｲｼｬ", "ﾕｳｹﾞﾝｶﾞｲｼｬ", "ｺﾞｳﾄﾞｳｶｲｼｬ")
+    assert any(any(marker in case.text for marker in company_markers) for case in cases)

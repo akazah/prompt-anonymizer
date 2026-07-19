@@ -8,12 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- Heuristic language detection now treats halfwidth katakana
+  (`U+FF61`–`U+FF9F`, e.g. `ｶﾀｶﾅ`) as Japanese in both cores. The previous
+  kana range covered only fullwidth hiragana/katakana, so halfwidth-only
+  prose fell through to English and missed language-scoped recognizers.
 - `scan` no longer aborts with `EISDIR: illegal operation on a directory`
   when a shell glob (e.g. `scan *`) expands to include directories. Both the
   Python and TypeScript CLIs now skip directory arguments instead of treating
   the whole scan as a fatal read error.
 
 ### Added
+- Detection-only text normalization: every analyze path runs on an NFC
+  view, plus per-language folds from the registry (`detect_folds` /
+  `DETECT_FOLDS`). Japanese folds halfwidth katakana → fullwidth for
+  detect; spans map back so labels/mappings keep the original surface.
+  Shared by Python (`normalize.py`) and TypeScript (`normalize.ts`).
+- Japanese golden / eval cases now include halfwidth-katakana person names
+  (and synthetic company labels in prose) on ~1/8 of documents, covering
+  legacy bank/HR-form spellings. Structured-PII parity also pins phone/email
+  masking around halfwidth name/company context.
 - Distribution-boundary e2e / integration coverage for each user-facing
   target beyond the existing Playwright web + extension suite: Node CLI
   and MCP `dist/cli.js` spawn smokes, proxy `/healthz` + static `/admin/`
