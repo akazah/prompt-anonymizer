@@ -35,6 +35,10 @@ describe("ui-i18n catalog", () => {
     expect(t("en", "valuePitch")).not.toMatch(/端末|ダブルチェック/);
     expect(t("ja", "auto")).toBe("自動判定");
     expect(t("en", "auto")).toBe("Auto");
+    expect(t("ja", "splitNames")).toMatch(/姓|名/);
+    expect(t("ja", "splitNames")).not.toMatch(/First|Last|Split/i);
+    expect(t("en", "splitNames")).toMatch(/First|Last/i);
     expect(UI_MESSAGE_KEYS).toContain("nerOffWarning");
+    expect(UI_MESSAGE_KEYS).toContain("splitNames");
   });
 });

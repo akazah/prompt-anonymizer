@@ -100,8 +100,10 @@ function renderShell(uiLang: Language): string {
           ${languageOptionsMarkup(uiLang)}
         </select>
       </label>
-      <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
-      <label class="switch-label"><input type="checkbox" id="split-names" class="switch" /> Split name parts (First/Last)</label>
+      <div class="toolbar-switches">
+        <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
+        <label class="switch-label" title="${t(uiLang, "splitNames")}"><input type="checkbox" id="split-names" class="switch" aria-label="${t(uiLang, "splitNames")}" /> <span data-i18n="splitNames">${t(uiLang, "splitNames")}</span></label>
+      </div>
       <span id="ner-off-warning" class="ner-warning" data-i18n="nerOffWarning" hidden>
         ${t(uiLang, "nerOffWarning")}
       </span>
@@ -241,6 +243,12 @@ function applyUiLocale(lang: Language): void {
     el.textContent = t(lang, key);
   }
   anonymizeBtn.title = t(lang, "anonymize");
+  useNerEl.title = t(lang, "nerModel");
+  useNerEl.setAttribute("aria-label", t(lang, "nerModel"));
+  useNerEl.closest(".switch-label")?.setAttribute("title", t(lang, "nerModel"));
+  splitNamesEl.title = t(lang, "splitNames");
+  splitNamesEl.setAttribute("aria-label", t(lang, "splitNames"));
+  splitNamesEl.closest(".switch-label")?.setAttribute("title", t(lang, "splitNames"));
 
   for (const el of document.querySelectorAll<HTMLTextAreaElement | HTMLInputElement>(
     "[data-i18n-placeholder]",

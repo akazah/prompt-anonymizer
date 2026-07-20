@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### Fixed
+- Web app: the "Split name parts" toolbar toggle is now wired through the UI
+  i18n catalog (all ten languages) instead of a hardcoded English string, and
+  the mobile toolbar grid no longer stacks both switches into the same cell
+  (which made "人名・場所" and "Split name (First/Last)" overlap).
+
 ## [0.3.3] - 2026-07-19
 
 ### Fixed
