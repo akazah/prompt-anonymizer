@@ -202,6 +202,13 @@ body {
   gap: 8px;
 }
 
+.toolbar-switches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
 .toolbar #anonymize {
   white-space: normal;
   line-height: 1.25;
@@ -527,7 +534,7 @@ table.mapping td.value-cell {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas:
-      "lang ner"
+      "lang switches"
       "warn warn"
       "action action";
     align-items: center;
@@ -535,13 +542,16 @@ table.mapping td.value-cell {
     gap: var(--sp-2);
   }
 
-  .toolbar label:first-of-type {
+  .toolbar > label:first-of-type {
     grid-area: lang;
   }
 
-  .toolbar .switch-label {
-    grid-area: ner;
+  .toolbar-switches {
+    grid-area: switches;
     justify-self: end;
+    justify-content: flex-end;
+    gap: var(--sp-2);
+    max-width: 100%;
   }
 
   .toolbar .ner-warning {
