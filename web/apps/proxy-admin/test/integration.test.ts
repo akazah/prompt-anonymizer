@@ -115,12 +115,15 @@ describe("proxy-admin live integration", () => {
   it("renders status from the live /admin/api/status", async () => {
     const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
 
+    // Wait for status cards, not just the online badge — loadInitialConfig can
+    // finish first and must not mark the proxy online before /admin/api/status
+    // has populated Listen/Upstream.
     await vi.waitFor(() => {
       expect($("#proxy-badge").classList.contains("ok")).toBe(true);
+      expect($("#stat-listen").textContent).toMatch(/127\.0\.0\.1:\d+/);
     });
 
     expect($("#proxy-status-text").textContent).toContain("proxy: online");
-    expect($("#stat-listen").textContent).toMatch(/127\.0\.0\.1:\d+/);
     expect($("#stat-upstream").textContent).toContain("127.0.0.1");
     expect($("#version-badge").textContent).toMatch(/v\d+\.\d+\.\d+/);
   });

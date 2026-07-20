@@ -373,10 +373,12 @@ async function refreshStatusAndEvents(): Promise<void> {
 }
 
 async function loadInitialConfig(): Promise<void> {
+  // Do not setProxyOnline(true) here — that belongs to refreshStatusAndEvents,
+  // which also fills Listen/Upstream. Otherwise the badge can flip to online
+  // while status cards still show the "—" placeholders.
   try {
     const config = await getConfig();
     populateConfigForm(config);
-    setProxyOnline(true);
   } catch {
     setProxyOnline(false);
   }
