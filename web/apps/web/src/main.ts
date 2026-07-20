@@ -102,7 +102,6 @@ function renderShell(uiLang: Language): string {
       </label>
       <div class="toolbar-switches">
         <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
-        <label class="switch-label" title="${t(uiLang, "splitNames")}"><input type="checkbox" id="split-names" class="switch" aria-label="${t(uiLang, "splitNames")}" /> <span data-i18n="splitNames">${t(uiLang, "splitNames")}</span></label>
       </div>
       <span id="ner-off-warning" class="ner-warning" data-i18n="nerOffWarning" hidden>
         ${t(uiLang, "nerOffWarning")}
@@ -188,7 +187,6 @@ const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
 const openRestoreBtn = $<HTMLButtonElement>("#open-restore");
 const nerOffWarning = $("#ner-off-warning");
-const splitNamesEl = $<HTMLInputElement>("#split-names");
 const gridEl = $("#grid");
 const flowStepperEl = $("#flow-stepper");
 
@@ -246,9 +244,6 @@ function applyUiLocale(lang: Language): void {
   useNerEl.title = t(lang, "nerModel");
   useNerEl.setAttribute("aria-label", t(lang, "nerModel"));
   useNerEl.closest(".switch-label")?.setAttribute("title", t(lang, "nerModel"));
-  splitNamesEl.title = t(lang, "splitNames");
-  splitNamesEl.setAttribute("aria-label", t(lang, "splitNames"));
-  splitNamesEl.closest(".switch-label")?.setAttribute("title", t(lang, "splitNames"));
 
   for (const el of document.querySelectorAll<HTMLTextAreaElement | HTMLInputElement>(
     "[data-i18n-placeholder]",
@@ -315,10 +310,9 @@ function onProgress(p: NerProgress): void {
 let nerBackend: TransformersNerBackend | null = null;
 
 function anonymizerForRun(): Anonymizer {
-  const splitPersonNames = splitNamesEl.checked;
-  if (!useNerEl.checked) return new Anonymizer({ splitPersonNames });
+  if (!useNerEl.checked) return new Anonymizer();
   if (!nerBackend) nerBackend = new TransformersNerBackend({ onProgress });
-  return new Anonymizer({ ner: nerBackend, splitPersonNames });
+  return new Anonymizer({ ner: nerBackend });
 }
 
 const session = new RestoreSession({

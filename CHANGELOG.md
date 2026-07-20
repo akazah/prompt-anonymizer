@@ -7,11 +7,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Fixed
-- Web app: the "Split name parts" toolbar toggle is now wired through the UI
-  i18n catalog (all ten languages) instead of a hardcoded English string, and
-  the mobile toolbar grid no longer stacks both switches into the same cell
-  (which made "人名・場所" and "Split name (First/Last)" overlap).
+### Changed
+- Web app: removed the "Split name parts" / 「姓名分割」 toolbar toggle.
+  Name-part labelling stays available on both CLIs (`--split-names`), the
+  MCP `anonymize` tool (`split_person_names`), and the core APIs, but the
+  Pages UI hid the control because the split is whitespace-based and the
+  Japanese sample (e.g. `山田太郎`) therefore never produces
+  `<人名_n_姓>` / `<人名_n_名>` — which looked like the toggle was broken.
+  Re-expose the control once unspaced CJK name splitting lands (#64).
 
 ## [0.3.3] - 2026-07-19
 

@@ -70,8 +70,7 @@ describe("web app (jsdom, NER off)", () => {
     expect($("#anonymize .anonymize-long").textContent).toBe(t("ja", "anonymize"));
     expect($("#anonymize .anonymize-short-main").textContent).toBe(t("ja", "anonymizeShort"));
     expect($("[data-i18n='nerModel']").textContent).toBe(t("ja", "nerModel"));
-    expect($("[data-i18n='splitNames']").textContent).toBe(t("ja", "splitNames"));
-    expect($(".toolbar-switches").textContent).not.toMatch(/Split name|First\/Last/i);
+    expect($(".toolbar-switches").textContent).not.toMatch(/Split name|First\/Last|姓名分割/i);
     expect($(".hero-summary").textContent).toContain(t("ja", "valuePitch"));
     expect($(".hero-summary").textContent).not.toMatch(/On-device|second pair/i);
     expect(document.querySelectorAll(".hero-summary [lang], #ner-off-warning [lang]").length).toBe(0);
@@ -83,8 +82,8 @@ describe("web app (jsdom, NER off)", () => {
     language.dispatchEvent(new Event("change"));
     expect(document.documentElement.lang).toBe("en");
     expect($("#anonymize .anonymize-long").textContent).toBe(t("en", "anonymize"));
-    expect($("[data-i18n='splitNames']").textContent).toBe(t("en", "splitNames"));
-    expect($(".toolbar-switches").textContent).not.toMatch(/姓名分割|人名・場所/);
+    expect($("[data-i18n='nerModel']").textContent).toBe(t("en", "nerModel"));
+    expect($(".toolbar-switches").textContent).not.toMatch(/姓名分割|人名・場所|Split name/i);
     expect($(".hero-summary").textContent).toContain(t("en", "valuePitch"));
     expect($(".hero-summary").textContent).not.toMatch(/端末内|ダブルチェック/);
     expect([...language.options].find((o) => o.value === "auto")?.textContent).toBe("Auto");
