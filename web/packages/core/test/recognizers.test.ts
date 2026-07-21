@@ -7,7 +7,9 @@ import {
   isValidMyNumber,
   isValidUsSsn,
   myNumberCheckDigit,
+  propagateEntityValues,
 } from "../src/recognizers.js";
+import type { EntitySpan } from "../src/types.js";
 
 describe("myNumberCheckDigit", () => {
   it("computes a digit that validates", () => {
@@ -323,5 +325,56 @@ describe("detectWithRegex score pins", () => {
     const spans = detectWithRegex("taro@example.com", "en");
     const email = spans.find((s) => s.entityType === "EMAIL_ADDRESS" && s.score === 0.9);
     expect(email).toBeDefined();
+  });
+});
+
+describe("propagateEntityValues", () => {
+  const span = (
+    text: string,
+    value: string,
+    entityType: string,
+    occurrence = 0,
+  ): EntitySpan => {
+    let at = -1;
+    for (let i = 0; i <= occurrence; i++) at = text.indexOf(value, at + 1);
+    return { start: at, end: at + value.length, entityType, score: 0.9 };
+  };
+
+  it("covers exact repeats the seed spans missed", () => {
+    const text = "Khách hàng Nguyễn Văn An báo lỗi. Liên hệ Nguyễn Văn An ngay.";
+    const seed = span(text, "Nguyễn Văn An", "PERSON", 1);
+    const extra = propagateEntityValues(text, [seed]);
+    expect(extra).toEqual([
+      { start: 11, end: 11 + "Nguyễn Văn An".length, entityType: "PERSON", score: 0.9 },
+    ]);
+  });
+
+  it("never matches inside a longer Latin word", () => {
+    const text = "An gặp Anh hôm qua. An sẽ quay lại.";
+    const seed = span(text, "An", "PERSON", 0);
+    const extra = propagateEntityValues(text, [seed]);
+    expect(extra).toEqual([
+      { start: text.lastIndexOf("An"), end: text.lastIndexOf("An") + 2, entityType: "PERSON", score: 0.9 },
+    ]);
+  });
+
+  it("matches repeats adjacent to CJK characters", () => {
+    const text = "山田太郎さんへ。担当は山田太郎です。";
+    const seed = span(text, "山田太郎", "PERSON", 1);
+    const extra = propagateEntityValues(text, [seed]);
+    expect(extra).toEqual([{ start: 0, end: 4, entityType: "PERSON", score: 0.9 }]);
+  });
+
+  it("skips occurrences already covered by any span", () => {
+    const text = "Nguyễn Văn An và Nguyễn Văn An.";
+    const seed = span(text, "Nguyễn Văn An", "PERSON", 0);
+    const custom = span(text, "Nguyễn Văn An", "CUSTOM", 1);
+    expect(propagateEntityValues(text, [seed, custom])).toEqual([]);
+  });
+
+  it("only propagates PERSON and LOCATION values", () => {
+    const text = "code 12-34 and code 12-34";
+    const seed = span(text, "12-34", "PHONE_NUMBER", 0);
+    expect(propagateEntityValues(text, [seed])).toEqual([]);
   });
 });

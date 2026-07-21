@@ -21,6 +21,22 @@ class MockNer implements NerBackend {
   }
 }
 
+/** NER that reports only the LAST occurrence of each known string. */
+class LastOccurrenceNer implements NerBackend {
+  constructor(private readonly known: Record<string, string>) {}
+
+  detect(text: string, _language: Language): Promise<EntitySpan[]> {
+    const spans: EntitySpan[] = [];
+    for (const [value, entityType] of Object.entries(this.known)) {
+      const at = text.lastIndexOf(value);
+      if (at !== -1) {
+        spans.push({ start: at, end: at + value.length, entityType, score: 0.95 });
+      }
+    }
+    return Promise.resolve(spans);
+  }
+}
+
 describe("Anonymizer", () => {
   it("combines regex and NER detections with consistent labels", async () => {
     const anonymizer = new Anonymizer({
@@ -34,6 +50,21 @@ describe("Anonymizer", () => {
     expect(result.text).not.toContain("090-1234-5678");
     expect(result.text).not.toContain("taro@example.com");
     expect(result.text.match(/<人名_1>/g)).toHaveLength(2);
+    expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
+  });
+
+  it("masks repeats of a name the NER model missed", async () => {
+    // Weekly-eval regression: the multilingual model skipped the first
+    // "Nguyễn Văn An" (after "Khách hàng") while catching the second one.
+    const text =
+      "Khách hàng Nguyễn Văn An báo lỗi bảo hành. Liên hệ Nguyễn Văn An qua an.nguyen@example.com.";
+    const anonymizer = new Anonymizer({
+      ner: new LastOccurrenceNer({ "Nguyễn Văn An": "PERSON" }),
+    });
+    const result = await anonymizer.anonymize(text, { language: "vi" });
+
+    expect(result.text).not.toContain("Nguyễn Văn An");
+    expect(result.text.match(/<Tên_1>/g)).toHaveLength(2);
     expect(anonymizer.deanonymize(result.text, result.mapping)).toBe(text);
   });
 

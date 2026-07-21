@@ -1,13 +1,20 @@
 # Changelog
 
-## [Unreleased]
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ### Fixed
+- Exact repeats of an NER-detected PERSON/LOCATION value are now always
+  masked, even when the NER model misses one of the occurrences (e.g. the
+  weekly-eval Vietnamese sample, where "Khách hàng Nguyễn Văn An…" at
+  sentence start was left unmasked while the later mention was labelled).
+  Both cores propagate detected values to uncovered exact occurrences,
+  with a Latin-script word-boundary guard so a short name never matches
+  inside a longer word.
 - Web app: the "Split name parts" toolbar toggle is now wired through the UI
   i18n catalog (all ten languages) instead of a hardcoded English string, and
   the mobile toolbar grid no longer stacks both switches into the same cell

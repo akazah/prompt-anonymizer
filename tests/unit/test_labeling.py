@@ -7,6 +7,7 @@ from prompt_anonymizer.labeling import (
     deny_list_spans,
     load_labels,
     merge_spans,
+    propagate_entity_values,
     split_person_name,
 )
 
@@ -320,3 +321,51 @@ def test_apply_labels_roundtrip_es_vi() -> None:
     anonymized, mapping = apply_labels(vi_text, vi_spans, load_labels("vi"))
     assert anonymized == "Tôi tên là <Tên_1>, số điện thoại <SốĐiệnThoại_1>."
     assert deanonymize(anonymized, mapping) == vi_text
+
+
+def test_propagate_entity_values_covers_missed_repeats() -> None:
+    text = "Khách hàng Nguyễn Văn An báo lỗi. Liên hệ Nguyễn Văn An ngay."
+    second = text.rindex("Nguyễn Văn An")
+    seed = EntitySpan(second, second + len("Nguyễn Văn An"), "PERSON", 0.9)
+    extra = propagate_entity_values(text, [seed])
+    assert extra == [EntitySpan(11, 11 + len("Nguyễn Văn An"), "PERSON", 0.9)]
+
+
+def test_propagate_entity_values_respects_latin_word_boundaries() -> None:
+    text = "An gặp Anh hôm qua. An sẽ quay lại."
+    seed = EntitySpan(0, 2, "PERSON", 0.9)
+    extra = propagate_entity_values(text, [seed])
+    assert extra == [EntitySpan(20, 22, "PERSON", 0.9)]
+
+
+def test_propagate_entity_values_allows_cjk_neighbours() -> None:
+    text = "山田太郎さんへ。担当は山田太郎です。"
+    second = text.rindex("山田太郎")
+    seed = EntitySpan(second, second + 4, "PERSON", 0.9)
+    extra = propagate_entity_values(text, [seed])
+    assert extra == [EntitySpan(0, 4, "PERSON", 0.9)]
+
+
+def test_propagate_entity_values_skips_covered_occurrences() -> None:
+    text = "Nguyễn Văn An và Nguyễn Văn An."
+    name_len = len("Nguyễn Văn An")
+    seed = EntitySpan(0, name_len, "PERSON", 0.9)
+    custom = EntitySpan(17, 17 + name_len, "CUSTOM", 1.0)
+    assert propagate_entity_values(text, [seed, custom]) == []
+
+
+def test_propagate_entity_values_only_person_and_location() -> None:
+    text = "code 12-34 and code 12-34"
+    seed = EntitySpan(5, 10, "PHONE_NUMBER", 0.7)
+    assert propagate_entity_values(text, [seed]) == []
+
+
+def test_propagate_entity_values_roundtrip() -> None:
+    text = "Khách hàng Nguyễn Văn An báo lỗi. Liên hệ Nguyễn Văn An ngay."
+    second = text.rindex("Nguyễn Văn An")
+    spans = [EntitySpan(second, second + len("Nguyễn Văn An"), "PERSON", 0.9)]
+    spans += propagate_entity_values(text, spans)
+    anonymized, mapping = apply_labels(text, spans, load_labels("vi"))
+    assert "Nguyễn Văn An" not in anonymized
+    assert anonymized.count("<Tên_1>") == 2
+    assert deanonymize(anonymized, mapping) == text
