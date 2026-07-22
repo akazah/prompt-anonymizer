@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Web app: "Simulate an LLM reply" button in the restore panel. It builds a
+  plausible localized reply from the labels of the live run (person labels
+  first, then emails and phones), so the anonymize → reply → restore round
+  trip is clickable end to end without inventing a reply by hand — and every
+  label is guaranteed to resolve on restore.
+- Web app: instant pattern preview. With the NER model enabled, emails,
+  phone numbers and other structured PII are masked in milliseconds and
+  shown immediately (with a "detecting names & places…" note) while the NER
+  pass — possibly a first-time model download — finishes and upgrades the
+  result in place. If the model fails to load (offline, blocked download),
+  the run degrades to the pattern-only result and says so instead of erroring.
+- Web app: on-device engine badge (`WebGPU` / `WASM` / patterns) on the
+  masked panel after each run, plus a "verify it in DevTools → Network"
+  footer hint and a compact footer linking the other surfaces (Chrome
+  extension, desktop app, `pip install prompt-anonymizer`,
+  `npx @prompt-anonymizer/proxy`).
+
+### Changed
+- Web app: removed the "Split name parts" / 「姓名分割」 toolbar toggle.
+  Name-part labelling stays available on both CLIs (`--split-names`), the
+  MCP `anonymize` tool (`split_person_names`), and the core APIs, but the
+  Pages UI hid the control because the split is whitespace-based and the
+  Japanese sample (e.g. `山田太郎`) therefore never produces
+  `<人名_n_姓>` / `<人名_n_名>` — which looked like the toggle was broken.
+  Re-expose the control once unspaced CJK name splitting lands (#64).
+
 ### Fixed
 - Exact repeats of an NER-detected PERSON/LOCATION value are now always
   masked, even when the NER model misses one of the occurrences (e.g. the
@@ -15,10 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Both cores propagate detected values to uncovered exact occurrences,
   with a Latin-script word-boundary guard so a short name never matches
   inside a longer word.
-- Web app: the "Split name parts" toolbar toggle is now wired through the UI
-  i18n catalog (all ten languages) instead of a hardcoded English string, and
-  the mobile toolbar grid no longer stacks both switches into the same cell
-  (which made "人名・場所" and "Split name (First/Last)" overlap).
 
 ## [0.3.3] - 2026-07-19
 

@@ -21,6 +21,7 @@ import {
   t,
   type UiMessageKey,
 } from "./ui-i18n.js";
+import { buildSimulatedReply } from "./simulate-reply.js";
 
 function sampleLanguageFromNavigator(): Language {
   return languageFromBcp47(navigator.language ?? "") ?? "en";
@@ -102,7 +103,6 @@ function renderShell(uiLang: Language): string {
       </label>
       <div class="toolbar-switches">
         <label class="switch-label" title="${t(uiLang, "nerModel")}"><input type="checkbox" id="use-ner" class="switch" checked aria-label="${t(uiLang, "nerModel")}" /> <span data-i18n="nerModel">${t(uiLang, "nerModel")}</span></label>
-        <label class="switch-label" title="${t(uiLang, "splitNames")}"><input type="checkbox" id="split-names" class="switch" aria-label="${t(uiLang, "splitNames")}" /> <span data-i18n="splitNames">${t(uiLang, "splitNames")}</span></label>
       </div>
       <span id="ner-off-warning" class="ner-warning" data-i18n="nerOffWarning" hidden>
         ${t(uiLang, "nerOffWarning")}
@@ -135,8 +135,9 @@ function renderShell(uiLang: Language): string {
         <textarea id="input" data-i18n-placeholder="inputPlaceholder" placeholder="${t(uiLang, "inputPlaceholder")}"></textarea>
       </section>
       <section class="panel" data-panel="anonymized">
-        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span><span class="panel-tag panel-tag-local" data-i18n="tagLocal">${t(uiLang, "tagLocal")}</span></h2>
+        <h2>${ICON_SEND}<span data-i18n="anonymizedHeading">${t(uiLang, "anonymizedHeading")}</span><span class="panel-tag panel-tag-local" data-i18n="tagLocal">${t(uiLang, "tagLocal")}</span><span id="engine-badge" class="badge engine-badge" hidden><span class="dot"></span><span id="engine-badge-text"></span></span></h2>
         <div id="output" class="output" data-empty="${t(uiLang, "outputEmpty")}"></div>
+        <p id="ner-upgrading" class="hint upgrading" data-i18n="nerUpgrading" hidden>${t(uiLang, "nerUpgrading")}</p>
         <div class="actions">
           <button id="copy" data-i18n="copyAnonymized">${t(uiLang, "copyAnonymized")}</button>
           <button id="open-restore" type="button" class="secondary" data-i18n="openRestore" disabled>${t(uiLang, "openRestore")}</button>
@@ -153,6 +154,7 @@ function renderShell(uiLang: Language): string {
         <h2>${ICON_RESTORE}<span data-i18n="restoreHeading">${t(uiLang, "restoreHeading")}</span></h2>
         <textarea id="restore-input" placeholder="${restorePlaceholderFor(uiLang)}"></textarea>
         <div class="actions">
+          <button id="simulate-reply" type="button" class="secondary" data-i18n="simulateReply" disabled>${t(uiLang, "simulateReply")}</button>
           <button id="restore" class="primary" data-i18n="deanonymize">${t(uiLang, "deanonymize")}</button>
           <button id="copy-restored" data-i18n="copyRestored">${t(uiLang, "copyRestored")}</button>
           <span id="restore-flash" class="flash"></span>
@@ -161,6 +163,17 @@ function renderShell(uiLang: Language): string {
         <p id="restore-warning" class="hint warning" hidden></p>
       </section>
     </div>
+
+    <footer id="site-footer" class="site-footer">
+      <p class="network-hint" data-i18n="networkHint">${t(uiLang, "networkHint")}</p>
+      <nav class="funnel" aria-label="Prompt Anonymizer surfaces">
+        <span class="funnel-heading" data-i18n="funnelHeading">${t(uiLang, "funnelHeading")}</span>
+        <a class="funnel-link" href="https://github.com/akazah/prompt-anonymizer#try-it" target="_blank" rel="noreferrer" data-i18n="funnelExtension">${t(uiLang, "funnelExtension")}</a>
+        <a class="funnel-link" href="https://github.com/akazah/prompt-anonymizer#try-it" target="_blank" rel="noreferrer" data-i18n="funnelDesktop">${t(uiLang, "funnelDesktop")}</a>
+        <a class="funnel-link" href="https://github.com/akazah/prompt-anonymizer#quickstart-python" target="_blank" rel="noreferrer"><code>pip install prompt-anonymizer</code></a>
+        <a class="funnel-link" href="https://github.com/akazah/prompt-anonymizer#quickstart-local-proxy" target="_blank" rel="noreferrer"><code>npx @prompt-anonymizer/proxy</code></a>
+      </nav>
+    </footer>
   </div>
 `;
 }
@@ -187,8 +200,10 @@ const progressLabel = $("#progress-label");
 const mappingTable = $<HTMLTableElement>("#mapping-table");
 const anonymizeBtn = $<HTMLButtonElement>("#anonymize");
 const openRestoreBtn = $<HTMLButtonElement>("#open-restore");
+const simulateReplyBtn = $<HTMLButtonElement>("#simulate-reply");
 const nerOffWarning = $("#ner-off-warning");
-const splitNamesEl = $<HTMLInputElement>("#split-names");
+const nerUpgradingEl = $("#ner-upgrading");
+const engineBadgeEl = $("#engine-badge");
 const gridEl = $("#grid");
 const flowStepperEl = $("#flow-stepper");
 
@@ -246,9 +261,6 @@ function applyUiLocale(lang: Language): void {
   useNerEl.title = t(lang, "nerModel");
   useNerEl.setAttribute("aria-label", t(lang, "nerModel"));
   useNerEl.closest(".switch-label")?.setAttribute("title", t(lang, "nerModel"));
-  splitNamesEl.title = t(lang, "splitNames");
-  splitNamesEl.setAttribute("aria-label", t(lang, "splitNames"));
-  splitNamesEl.closest(".switch-label")?.setAttribute("title", t(lang, "splitNames"));
 
   for (const el of document.querySelectorAll<HTMLTextAreaElement | HTMLInputElement>(
     "[data-i18n-placeholder]",
@@ -271,6 +283,7 @@ function applyUiLocale(lang: Language): void {
     progressLabel.textContent = t(lang, "loadingModel");
   }
   syncAnonymizeBtnLabel();
+  syncEngineBadge();
 }
 
 function syncAnonymizeBtnLabel(): void {
@@ -295,9 +308,37 @@ languageEl.addEventListener("change", () => {
 });
 
 let lastResult: AnonymizeResult | null = null;
+let lastRunLanguage: Language | null = null;
+/** Engine of the last successful run, for the on-device badge. */
+let lastEngine: "webgpu" | "wasm" | "cpu" | "patterns" | null = null;
 
 function syncOpenRestoreBtn(): void {
   openRestoreBtn.disabled = !lastResult;
+  simulateReplyBtn.disabled = !lastResult;
+}
+
+function syncEngineBadge(): void {
+  if (!lastEngine) {
+    engineBadgeEl.hidden = true;
+    return;
+  }
+  const engineName =
+    lastEngine === "patterns"
+      ? t(uiLanguage, "enginePatterns")
+      : lastEngine === "webgpu"
+        ? "WebGPU"
+        : lastEngine === "wasm"
+          ? "WASM"
+          : "CPU";
+  engineBadgeEl.classList.remove("webgpu", "wasm", "ok");
+  if (lastEngine === "webgpu") engineBadgeEl.classList.add("webgpu");
+  else if (lastEngine === "wasm") engineBadgeEl.classList.add("wasm");
+  else if (lastEngine === "patterns") engineBadgeEl.classList.add("ok");
+  $("#engine-badge-text").textContent = t(uiLanguage, "engineBadge").replace(
+    "{engine}",
+    engineName,
+  );
+  engineBadgeEl.hidden = false;
 }
 
 function onProgress(p: NerProgress): void {
@@ -313,12 +354,14 @@ function onProgress(p: NerProgress): void {
 }
 
 let nerBackend: TransformersNerBackend | null = null;
+/** Whether the run currently in flight uses the NER model (snapshotted per
+ * run so a mid-run fallback can retry the same session engine regex-only). */
+let currentRunUsesNer = false;
 
 function anonymizerForRun(): Anonymizer {
-  const splitPersonNames = splitNamesEl.checked;
-  if (!useNerEl.checked) return new Anonymizer({ splitPersonNames });
+  if (!currentRunUsesNer) return new Anonymizer();
   if (!nerBackend) nerBackend = new TransformersNerBackend({ onProgress });
-  return new Anonymizer({ ner: nerBackend, splitPersonNames });
+  return new Anonymizer({ ner: nerBackend });
 }
 
 const session = new RestoreSession({
@@ -341,6 +384,22 @@ async function resolveLanguage(text: string): Promise<Language> {
   return value === "auto" ? detectLanguage(text) : (value as Language);
 }
 
+function renderResult(result: AnonymizeResult, opts: { partial: boolean }): void {
+  outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
+  outputEl.classList.toggle("partial", opts.partial);
+  replayAppear(outputEl);
+
+  const tbody = mappingTable.querySelector("tbody")!;
+  tbody.innerHTML = Object.entries(result.mapping)
+    .map(
+      ([label, original]) =>
+        `<tr><td class="label-cell">${escapeHtml(label)}</td><td class="mapping-arrow" aria-hidden="true">→</td><td class="value-cell">${escapeHtml(original)}</td></tr>`,
+    )
+    .join("");
+  mappingTable.hidden = Object.keys(result.mapping).length === 0;
+  nerUpgradingEl.hidden = !opts.partial;
+}
+
 async function runAnonymize(): Promise<void> {
   const text = inputEl.value;
   if (!text.trim()) return;
@@ -348,24 +407,43 @@ async function runAnonymize(): Promise<void> {
   busy = true;
   anonymizeBtn.disabled = true;
   syncAnonymizeBtnLabel();
+  currentRunUsesNer = useNerEl.checked;
   try {
-    const result = await session.anonymize(text, { language });
-    lastResult = result;
-    outputEl.innerHTML = renderWithHighlights(result.text, Object.keys(result.mapping), "pii-label");
-    replayAppear(outputEl);
+    if (currentRunUsesNer) {
+      // Instant preview: patterns (emails, phones, …) mask in milliseconds
+      // while the NER pass (possibly a first-time model download) runs.
+      // Pattern label numbering is per-type, so these labels survive the
+      // upgrade unchanged — the NER pass only adds name/place labels.
+      const preview = await new Anonymizer().anonymize(text, { language });
+      renderResult(preview, { partial: true });
+      markStepDone("original");
+      setActiveStep("anonymized");
+    }
 
-    const tbody = mappingTable.querySelector("tbody")!;
-    tbody.innerHTML = Object.entries(result.mapping)
-      .map(
-        ([label, original]) =>
-          `<tr><td class="label-cell">${escapeHtml(label)}</td><td class="mapping-arrow" aria-hidden="true">→</td><td class="value-cell">${escapeHtml(original)}</td></tr>`,
-      )
-      .join("");
-    mappingTable.hidden = Object.keys(result.mapping).length === 0;
+    let result: AnonymizeResult;
+    try {
+      result = await session.anonymize(text, { language });
+    } catch (error) {
+      if (!currentRunUsesNer) throw error;
+      // Model unavailable (offline, blocked download, WebGPU/WASM init
+      // failure) — degrade to the pattern-only result so the flow still
+      // completes, and say so with the existing "names not masked" warning.
+      currentRunUsesNer = false;
+      nerBackend = null;
+      result = await session.anonymize(text, { language });
+      nerOffWarning.hidden = false;
+    }
+    lastResult = result;
+    lastRunLanguage = language;
+    lastEngine = currentRunUsesNer ? (nerBackend?.device ?? null) : "patterns";
+    renderResult(result, { partial: false });
     markStepDone("original");
     setActiveStep("anonymized");
     syncOpenRestoreBtn();
+    syncEngineBadge();
   } catch (error) {
+    nerUpgradingEl.hidden = true;
+    outputEl.classList.remove("partial");
     outputEl.textContent = `${t(uiLanguage, "errorPrefix")} ${error instanceof Error ? error.message : String(error)}`;
   } finally {
     busy = false;
@@ -401,6 +479,20 @@ $("#open-restore").addEventListener("click", () => {
   setActiveStep("restore");
   restoreInput.focus();
 });
+simulateReplyBtn.addEventListener("click", () => {
+  if (!lastResult) return;
+  const restoreInput = $<HTMLTextAreaElement>("#restore-input");
+  restoreInput.value = buildSimulatedReply(lastResult.mapping, {
+    labelLanguage: lastRunLanguage ?? uiLanguage,
+    uiLanguage,
+    template: t(uiLanguage, "simulatedReplyTemplate"),
+  });
+  $("#restore-output").textContent = "";
+  $("#restore-warning").hidden = true;
+  setActiveStep("restore");
+  replayAppear(restoreInput);
+  $<HTMLButtonElement>("#restore").focus();
+});
 $("#restore").addEventListener("click", () => {
   void (async () => {
     const restoreInput = $<HTMLTextAreaElement>("#restore-input");
@@ -419,6 +511,8 @@ $("#restore").addEventListener("click", () => {
       ? `${t(uiLanguage, "unresolvedLabels")} ${result.unresolved.join(", ")}`
       : "";
     markStepDone("restore");
+    // The round trip just completed — nudge once toward the other surfaces.
+    $("#site-footer").classList.add("pulse");
   })();
 });
 $("#copy-restored").addEventListener("click", () => {

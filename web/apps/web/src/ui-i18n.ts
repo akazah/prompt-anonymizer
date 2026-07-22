@@ -23,7 +23,6 @@ export const UI_MESSAGE_KEYS = [
   "tagLocal",
   "language",
   "nerModel",
-  "splitNames",
   "loadSample",
   "anonymize",
   "anonymizeShort",
@@ -50,6 +49,15 @@ export const UI_MESSAGE_KEYS = [
   "deanonymize",
   "copyRestored",
   "unresolvedLabels",
+  "simulateReply",
+  "simulatedReplyTemplate",
+  "nerUpgrading",
+  "engineBadge",
+  "enginePatterns",
+  "networkHint",
+  "funnelHeading",
+  "funnelExtension",
+  "funnelDesktop",
   "pageTitle",
   "pageDescription",
   "errorPrefix",
@@ -73,7 +81,6 @@ const EN: UiCatalog = {
     "100% on-device — detection runs in your browser via WebGPU/WASM, your text is never sent to any server.",
   language: "Language",
   nerModel: "Names & places",
-  splitNames: "Split name (First/Last)",
   loadSample: "Load sample",
   anonymize: "Anonymize in browser (no server)",
   anonymizeShort: "Anonymize in browser",
@@ -102,6 +109,17 @@ const EN: UiCatalog = {
   restoreHint:
     "Detection is best-effort — always review the anonymized text before sending it anywhere.",
   unresolvedLabels: "Unresolved labels:",
+  simulateReply: "Simulate an LLM reply",
+  simulatedReplyTemplate:
+    "Understood — I drafted the follow-up. I'll contact {labels} with the next steps and keep you posted.",
+  nerUpgrading: "Patterns masked instantly — now detecting names & places on-device…",
+  engineBadge: "On-device: {engine}",
+  enginePatterns: "patterns",
+  networkHint:
+    "Don't take our word for it — open DevTools → Network: your text never leaves this page.",
+  funnelHeading: "Take it with you — the same engine, where you actually work:",
+  funnelExtension: "Chrome extension",
+  funnelDesktop: "Desktop app",
   pageTitle: "Prompt Anonymizer — a buddy check for PII before it reaches an LLM",
   pageDescription:
     "A buddy check for PII before it reaches an LLM: catches the personal info you didn't mean to send, with consistent reversible labels. Runs 100% in your browser (WebGPU / WASM) — your text never leaves your device.",
@@ -116,7 +134,6 @@ const JA: UiCatalog = {
   privacyBody: "全処理がブラウザ内で完結し、テキストはサーバーへ一切送信されません。",
   language: "言語",
   nerModel: "人名・場所",
-  splitNames: "姓名分割（姓/名）",
   loadSample: "サンプルを読み込む",
   anonymize: "ブラウザ内で匿名化（外部サーバー送信なし）",
   anonymizeShort: "ブラウザ内で匿名化",
@@ -144,6 +161,17 @@ const JA: UiCatalog = {
   copyRestored: "コピー",
   restoreHint: "検出はベストエフォートです。送信前に必ず匿名化結果を確認してください。",
   unresolvedLabels: "未解決ラベル:",
+  simulateReply: "LLMの返答をシミュレート",
+  simulatedReplyTemplate:
+    "承知しました。フォローアップの下書きを作成しました。{labels} に今後の手順を連絡し、進捗を随時共有します。",
+  nerUpgrading: "パターン検出は即時適用済み——人名・場所を端末内で検出中…",
+  engineBadge: "端末内処理: {engine}",
+  enginePatterns: "パターン照合",
+  networkHint:
+    "言葉だけを信じる必要はありません。DevTools の Network タブを開いて確認してください——テキストはこのページから外へ出ません。",
+  funnelHeading: "同じエンジンを、ふだんの作業場所でも:",
+  funnelExtension: "Chrome 拡張機能",
+  funnelDesktop: "デスクトップアプリ",
   pageTitle: "Prompt Anonymizer — LLMに送る前のPIIダブルチェック",
   pageDescription:
     "LLMに送る前のPIIダブルチェック。意図せず含めがちな個人情報を、一貫した可逆ラベルで置き換えます。処理はすべてブラウザ内（WebGPU / WASM）で完結し、テキストは端末から出ません。",
@@ -160,7 +188,6 @@ const ES: UiCatalog = {
     "100% en el dispositivo: la detección se ejecuta en tu navegador con WebGPU/WASM; tu texto nunca se envía a ningún servidor.",
   language: "Idioma",
   nerModel: "Nombres y lugares",
-  splitNames: "Separar nombre (Nombre/Apellido)",
   loadSample: "Cargar ejemplo",
   anonymize: "Anonimizar en el navegador (sin servidor)",
   anonymizeShort: "Anonimizar en el navegador",
@@ -190,6 +217,18 @@ const ES: UiCatalog = {
   restoreHint:
     "La detección es de mejor esfuerzo: revisa siempre el texto anonimizado antes de enviarlo.",
   unresolvedLabels: "Sin resolver:",
+  simulateReply: "Simular respuesta del LLM",
+  simulatedReplyTemplate:
+    "Entendido: preparé el seguimiento. Contactaré a {labels} con los próximos pasos y te mantendré al tanto.",
+  nerUpgrading:
+    "Patrones aplicados al instante; detectando nombres y lugares en el dispositivo…",
+  engineBadge: "En el dispositivo: {engine}",
+  enginePatterns: "patrones",
+  networkHint:
+    "No te fíes solo de nuestra palabra: abre DevTools → Red y compruébalo; tu texto nunca sale de esta página.",
+  funnelHeading: "Llévatelo: el mismo motor, donde realmente trabajas:",
+  funnelExtension: "Extensión de Chrome",
+  funnelDesktop: "App de escritorio",
   pageTitle: "Prompt Anonymizer — una revisión de PII antes de llegar a un LLM",
   pageDescription:
     "Una revisión de PII antes de llegar a un LLM: captura la información personal que no querías enviar, con etiquetas reversibles coherentes. Se ejecuta 100% en tu navegador (WebGPU / WASM); tu texto nunca sale del dispositivo.",
@@ -206,7 +245,6 @@ const VI: UiCatalog = {
     "100% trên thiết bị — phát hiện chạy trong trình duyệt qua WebGPU/WASM, văn bản của bạn không bao giờ được gửi lên máy chủ.",
   language: "Ngôn ngữ",
   nerModel: "Tên & địa điểm",
-  splitNames: "Tách tên (Họ/Tên)",
   loadSample: "Tải mẫu",
   anonymize: "Ẩn danh trong trình duyệt (không gửi server)",
   anonymizeShort: "Ẩn danh trong trình duyệt",
@@ -236,6 +274,18 @@ const VI: UiCatalog = {
   restoreHint:
     "Phát hiện mang tính tốt nhất có thể — luôn xem lại văn bản đã ẩn danh trước khi gửi đi.",
   unresolvedLabels: "Chưa giải:",
+  simulateReply: "Mô phỏng phản hồi LLM",
+  simulatedReplyTemplate:
+    "Đã hiểu — tôi đã soạn nội dung tiếp theo. Tôi sẽ liên hệ {labels} về các bước tiếp theo và cập nhật cho bạn.",
+  nerUpgrading:
+    "Đã che theo mẫu ngay lập tức — đang phát hiện tên & địa điểm trên thiết bị…",
+  engineBadge: "Trên thiết bị: {engine}",
+  enginePatterns: "mẫu",
+  networkHint:
+    "Đừng chỉ tin lời chúng tôi — mở DevTools → Network để kiểm chứng: văn bản của bạn không bao giờ rời trang này.",
+  funnelHeading: "Mang theo — cùng một công cụ, ngay nơi bạn làm việc:",
+  funnelExtension: "Tiện ích Chrome",
+  funnelDesktop: "Ứng dụng máy tính",
   pageTitle: "Prompt Anonymizer — kiểm tra PII trước khi đến LLM",
   pageDescription:
     "Kiểm tra PII trước khi đến LLM: phát hiện thông tin cá nhân bạn không định gửi, với nhãn đảo ngược nhất quán. Chạy 100% trong trình duyệt (WebGPU / WASM) — văn bản không rời thiết bị.",
@@ -250,7 +300,6 @@ const ZH: UiCatalog = {
   privacyBody: "100% 本地处理——检测在浏览器中通过 WebGPU/WASM 运行，文本不会发送到任何服务器。",
   language: "语言",
   nerModel: "姓名与地点",
-  splitNames: "拆分姓名（姓/名）",
   loadSample: "加载示例",
   anonymize: "浏览器内匿名化（无外部服务器）",
   anonymizeShort: "浏览器内匿名化",
@@ -278,6 +327,17 @@ const ZH: UiCatalog = {
   copyRestored: "复制",
   restoreHint: "检测为尽力而为——发送前请务必检查匿名化结果。",
   unresolvedLabels: "未解析:",
+  simulateReply: "模拟 LLM 回复",
+  simulatedReplyTemplate:
+    "好的——我已起草后续内容，将通过 {labels} 联系并同步后续步骤，随时向你汇报进展。",
+  nerUpgrading: "模式匹配已即时完成——正在本地检测姓名与地点…",
+  engineBadge: "本地运行: {engine}",
+  enginePatterns: "模式匹配",
+  networkHint:
+    "不必只听我们说——打开 DevTools → Network 自行验证：你的文本不会离开此页面。",
+  funnelHeading: "带走它——同一引擎，用在你的工作流中:",
+  funnelExtension: "Chrome 扩展",
+  funnelDesktop: "桌面应用",
   pageTitle: "Prompt Anonymizer — 发送到 LLM 前的 PII 检查",
   pageDescription:
     "发送到 LLM 前的 PII 检查：用一致且可逆的标签替换你无意发送的个人信息。100% 在浏览器中运行（WebGPU / WASM）——文本不会离开你的设备。",
@@ -293,7 +353,6 @@ const KO: UiCatalog = {
     "100% 기기 내에서 처리됩니다. 감지는 브라우저의 WebGPU/WASM으로 실행되며, 텍스트는 어떤 서버에도 전송되지 않습니다.",
   language: "언어",
   nerModel: "이름·장소",
-  splitNames: "이름 분리(성/이름)",
   loadSample: "샘플 불러오기",
   anonymize: "브라우저에서 익명화 (외부 전송 없음)",
   anonymizeShort: "브라우저에서 익명화",
@@ -322,6 +381,17 @@ const KO: UiCatalog = {
   copyRestored: "복사",
   restoreHint: "감지는 최선을 다하는 방식입니다. 전송 전에 익명화 결과를 반드시 확인하세요.",
   unresolvedLabels: "미해결:",
+  simulateReply: "LLM 응답 시뮬레이션",
+  simulatedReplyTemplate:
+    "알겠습니다. 후속 초안을 작성했습니다. {labels} 쪽으로 다음 단계를 안내하고 진행 상황을 공유하겠습니다.",
+  nerUpgrading: "패턴은 즉시 마스킹됨 — 기기에서 이름·장소 감지 중…",
+  engineBadge: "기기 내 처리: {engine}",
+  enginePatterns: "패턴",
+  networkHint:
+    "말만 믿지 마세요 — DevTools → Network 탭을 열어 확인하세요. 텍스트는 이 페이지를 떠나지 않습니다.",
+  funnelHeading: "그대로 가져가세요 — 같은 엔진을 실제 작업 환경에서:",
+  funnelExtension: "Chrome 확장 프로그램",
+  funnelDesktop: "데스크톱 앱",
   pageTitle: "Prompt Anonymizer — LLM에 도달하기 전 PII 점검",
   pageDescription:
     "LLM에 도달하기 전 PII 점검: 보내지 않으려던 개인정보를 일관된 가역 레이블로 바꿉니다. 브라우저에서 100% 실행(WebGPU / WASM)되며 텍스트는 기기를 떠나지 않습니다.",
@@ -338,7 +408,6 @@ const FR: UiCatalog = {
     "100 % sur l’appareil — la détection s’exécute dans votre navigateur via WebGPU/WASM ; votre texte n’est jamais envoyé à un serveur.",
   language: "Langue",
   nerModel: "Noms & lieux",
-  splitNames: "Séparer le nom (Prénom/Nom)",
   loadSample: "Charger un exemple",
   anonymize: "Anonymiser dans le navigateur (pas de serveur)",
   anonymizeShort: "Anonymiser dans le navigateur",
@@ -368,6 +437,18 @@ const FR: UiCatalog = {
   restoreHint:
     "La détection est au mieux de ses capacités — vérifiez toujours le texte anonymisé avant de l’envoyer.",
   unresolvedLabels: "Non résolus:",
+  simulateReply: "Simuler une réponse LLM",
+  simulatedReplyTemplate:
+    "Bien noté — j’ai rédigé le suivi. Je contacterai {labels} pour les prochaines étapes et vous tiendrai informé.",
+  nerUpgrading:
+    "Motifs masqués instantanément — détection des noms et lieux sur l’appareil…",
+  engineBadge: "Sur l’appareil : {engine}",
+  enginePatterns: "motifs",
+  networkHint:
+    "Ne nous croyez pas sur parole — ouvrez DevTools → Réseau : votre texte ne quitte jamais cette page.",
+  funnelHeading: "Emportez-le — le même moteur, là où vous travaillez :",
+  funnelExtension: "Extension Chrome",
+  funnelDesktop: "App de bureau",
   pageTitle: "Prompt Anonymizer — une vérification PII avant d’atteindre un LLM",
   pageDescription:
     "Une vérification PII avant d’atteindre un LLM : intercepte les infos personnelles que vous n’aviez pas l’intention d’envoyer, avec des libellés cohérents et réversibles. S’exécute à 100 % dans votre navigateur (WebGPU / WASM) — votre texte ne quitte jamais votre appareil.",
@@ -384,7 +465,6 @@ const DE: UiCatalog = {
     "100 % auf dem Gerät — die Erkennung läuft in Ihrem Browser über WebGPU/WASM; Ihr Text wird nie an einen Server gesendet.",
   language: "Sprache",
   nerModel: "Namen & Orte",
-  splitNames: "Name teilen (Vor-/Nachname)",
   loadSample: "Beispiel laden",
   anonymize: "Im Browser anonymisieren (kein Server)",
   anonymizeShort: "Im Browser anonymisieren",
@@ -414,6 +494,18 @@ const DE: UiCatalog = {
   restoreHint:
     "Die Erkennung ist bestmöglich — prüfen Sie den anonymisierten Text immer vor dem Senden.",
   unresolvedLabels: "Ungelöst:",
+  simulateReply: "LLM-Antwort simulieren",
+  simulatedReplyTemplate:
+    "Verstanden — ich habe das Follow-up entworfen. Ich kontaktiere {labels} zu den nächsten Schritten und halte Sie auf dem Laufenden.",
+  nerUpgrading:
+    "Muster sofort maskiert — Namen & Orte werden auf dem Gerät erkannt…",
+  engineBadge: "Auf dem Gerät: {engine}",
+  enginePatterns: "Muster",
+  networkHint:
+    "Verlassen Sie sich nicht auf unser Wort — öffnen Sie DevTools → Netzwerk: Ihr Text verlässt diese Seite nie.",
+  funnelHeading: "Nehmen Sie es mit — dieselbe Engine, wo Sie wirklich arbeiten:",
+  funnelExtension: "Chrome-Erweiterung",
+  funnelDesktop: "Desktop-App",
   pageTitle: "Prompt Anonymizer — ein PII-Check, bevor es ein LLM erreicht",
   pageDescription:
     "Ein PII-Check, bevor es ein LLM erreicht: fängt persönliche Daten ab, die Sie nicht senden wollten, mit konsistenten umkehrbaren Labels. Läuft zu 100 % in Ihrem Browser (WebGPU / WASM) — Ihr Text verlässt Ihr Gerät nie.",
@@ -429,7 +521,6 @@ const PT: UiCatalog = {
     "100% no dispositivo — a deteção corre no seu browser via WebGPU/WASM; o seu texto nunca é enviado para nenhum servidor.",
   language: "Idioma",
   nerModel: "Nomes e locais",
-  splitNames: "Separar nome (Nome/Sobrenome)",
   loadSample: "Carregar exemplo",
   anonymize: "Anonimizar no browser (sem servidor)",
   anonymizeShort: "Anonimizar no browser",
@@ -459,6 +550,18 @@ const PT: UiCatalog = {
   restoreHint:
     "A deteção é de melhor esforço — reveja sempre o texto anonimizado antes de o enviar.",
   unresolvedLabels: "Por resolver:",
+  simulateReply: "Simular resposta do LLM",
+  simulatedReplyTemplate:
+    "Entendido — preparei o seguimento. Vou contactar {labels} sobre os próximos passos e mantenho-o informado.",
+  nerUpgrading:
+    "Padrões mascarados de imediato — a detetar nomes e locais no dispositivo…",
+  engineBadge: "No dispositivo: {engine}",
+  enginePatterns: "padrões",
+  networkHint:
+    "Não acredite apenas na nossa palavra — abra DevTools → Rede: o seu texto nunca sai desta página.",
+  funnelHeading: "Leve consigo — o mesmo motor, onde realmente trabalha:",
+  funnelExtension: "Extensão Chrome",
+  funnelDesktop: "App de desktop",
   pageTitle: "Prompt Anonymizer — uma verificação de PII antes de chegar a um LLM",
   pageDescription:
     "Uma verificação de PII antes de chegar a um LLM: captura a informação pessoal que não queria enviar, com etiquetas reversíveis consistentes. Corre 100% no seu browser (WebGPU / WASM) — o seu texto nunca sai do dispositivo.",
@@ -475,7 +578,6 @@ const IT: UiCatalog = {
     "100% sul dispositivo — il rilevamento gira nel browser via WebGPU/WASM; il testo non viene mai inviato ad alcun server.",
   language: "Lingua",
   nerModel: "Nomi e luoghi",
-  splitNames: "Dividi nome (Nome/Cognome)",
   loadSample: "Carica esempio",
   anonymize: "Anonimizza nel browser (nessun server)",
   anonymizeShort: "Anonimizza nel browser",
@@ -505,6 +607,18 @@ const IT: UiCatalog = {
   restoreHint:
     "Il rilevamento è best-effort — controlla sempre il testo anonimizzato prima di inviarlo.",
   unresolvedLabels: "Non risolti:",
+  simulateReply: "Simula risposta LLM",
+  simulatedReplyTemplate:
+    "Capito — ho preparato il follow-up. Contatterò {labels} per i prossimi passi e ti terrò aggiornato.",
+  nerUpgrading:
+    "Pattern mascherati all'istante — rilevamento di nomi e luoghi sul dispositivo…",
+  engineBadge: "Sul dispositivo: {engine}",
+  enginePatterns: "pattern",
+  networkHint:
+    "Non fidarti solo della nostra parola — apri DevTools → Rete: il tuo testo non lascia mai questa pagina.",
+  funnelHeading: "Portalo con te — lo stesso motore, dove lavori davvero:",
+  funnelExtension: "Estensione Chrome",
+  funnelDesktop: "App desktop",
   pageTitle: "Prompt Anonymizer — un controllo PII prima che raggiunga un LLM",
   pageDescription:
     "Un controllo PII prima che raggiunga un LLM: intercetta le informazioni personali che non volevi inviare, con etichette coerenti e reversibili. Gira al 100% nel browser (WebGPU / WASM) — il testo non lascia mai il dispositivo.",

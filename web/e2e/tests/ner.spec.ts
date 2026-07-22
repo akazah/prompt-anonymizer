@@ -48,12 +48,30 @@ test.afterAll(async () => {
   await context?.close();
 });
 
-async function anonymizeSample(language: "ja" | "en" | "es" | "vi" | "zh" | "ko" | "fr" | "de" | "pt" | "it"): Promise<string> {
+/** PERSON label word per language (mirror of core LABELS; e2e runs against the built app). */
+const PERSON_LABELS = {
+  ja: "人名",
+  en: "Name",
+  es: "Nombre",
+  vi: "Tên",
+  zh: "姓名",
+  ko: "이름",
+  fr: "Nom",
+  de: "Name",
+  pt: "Nome",
+  it: "Nome",
+} as const;
+
+async function anonymizeSample(language: keyof typeof PERSON_LABELS): Promise<string> {
   await page.goto(`${BASE_URL}?lang=${language}`);
   await expect(page.locator("#use-ner")).toBeChecked();
   await page.locator("#anonymize").click();
   const output = page.locator("#output");
-  await expect(output).not.toBeEmpty({ timeout: MODEL_READY_TIMEOUT });
+  // The app renders an instant pattern-only preview first; wait for the NER
+  // pass (person labels) rather than merely a non-empty output.
+  await expect(output).toContainText(`<${PERSON_LABELS[language]}_1>`, {
+    timeout: MODEL_READY_TIMEOUT,
+  });
   return (await output.textContent()) ?? "";
 }
 
