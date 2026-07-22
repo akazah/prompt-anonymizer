@@ -102,7 +102,35 @@ yourself. Add a CI job that builds `web/apps/web` twice (or compares
 against the Pages artifact) and documents the diff procedure, moving the
 claim from "trust CI" toward "verify yourself".
 
-## 11. Opt-in granular redaction policies (per-locale)
+## 11. Unspaced CJK name-part splitting (re-enable web toggle)
+
+Labels: `help wanted`, `enhancement`
+
+Filed as [#64](https://github.com/akazah/prompt-anonymizer/issues/64).
+
+`split_person_names` / `splitPersonNames` only splits on whitespace, so
+unspaced Japanese names in the sample (`山田太郎`, `佐藤花子`) keep a plain
+`<人名_1>` even when the option is on. The Pages web app therefore hides the
+toolbar toggle until this works for real JA/ZH/KO text.
+
+**Acceptance:**
+
+- [ ] Both cores split common unspaced family-name-first names into
+  `<人名_n_姓>` / `<人名_n_名>` (and localized equivalents) when the option
+  is on — surname gazetteer or equivalent heuristic; document license of
+  any bundled list
+- [ ] Surname-only spans (e.g. `山田`) stay unsplittable; round-trip
+  anonymize → deanonymize identity tests in both cores
+- [ ] Re-add the web app "Split name parts" / 「姓名分割」 toggle (i18n in
+  all ten UI locales) once the above lands
+- [ ] CHANGELOG + `docs/EVAL.md` name-part metrics stay at 1.00 on the
+  seeded set (or update the table with a clear reason)
+
+Related: CLI `--split-names`, MCP `split_person_names` already expose the
+whitespace path; #55 (Sudachi PERSON recall) is complementary, not a
+substitute.
+
+## 12. Opt-in granular redaction policies (per-locale)
 
 Labels: `help wanted`
 
