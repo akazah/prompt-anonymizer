@@ -7,6 +7,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### Added
+- Web app: "Simulate an LLM reply" button in the restore panel. It builds a
+  plausible localized reply from the labels of the live run (person labels
+  first, then emails and phones), so the anonymize → reply → restore round
+  trip is clickable end to end without inventing a reply by hand — and every
+  label is guaranteed to resolve on restore.
+- Web app: instant pattern preview. With the NER model enabled, emails,
+  phone numbers and other structured PII are masked in milliseconds and
+  shown immediately (with a "detecting names & places…" note) while the NER
+  pass — possibly a first-time model download — finishes and upgrades the
+  result in place. If the model fails to load (offline, blocked download),
+  the run degrades to the pattern-only result and says so instead of erroring.
+- Web app: on-device engine badge (`WebGPU` / `WASM` / patterns) on the
+  masked panel after each run, plus a "verify it in DevTools → Network"
+  footer hint and a compact footer linking the other surfaces (Chrome
+  extension, desktop app, `pip install prompt-anonymizer`,
+  `npx @prompt-anonymizer/proxy`).
+
 ### Changed
 - Web app: removed the "Split name parts" / 「姓名分割」 toolbar toggle.
   Name-part labelling stays available on both CLIs (`--split-names`), the

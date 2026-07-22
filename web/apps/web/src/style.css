@@ -685,3 +685,118 @@ table.mapping td.value-cell {
     overflow: visible;
   }
 }
+
+/* ---------- demo flow: preview state, engine badge, footer funnel ---------- */
+
+.output.partial {
+  border-style: dashed;
+  border-color: var(--accent);
+}
+
+.hint.upgrading {
+  color: var(--accent);
+  animation: upgrading-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes upgrading-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.engine-badge {
+  padding: 1px 8px;
+  margin-left: var(--sp-2);
+  font-weight: 500;
+}
+
+.site-footer {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+}
+
+.network-hint {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+.funnel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.funnel-heading {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+.funnel-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: var(--fs-xs);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.funnel-link:hover {
+  border-color: var(--accent);
+}
+
+.funnel-link code {
+  font-family: var(--font-mono);
+  font-size: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.site-footer.pulse .funnel-link {
+  animation: funnel-pulse 1.4s ease-out 1;
+}
+
+@keyframes funnel-pulse {
+  0%,
+  100% {
+    border-color: var(--border);
+    box-shadow: none;
+  }
+  40% {
+    border-color: var(--accent);
+    box-shadow: var(--focus-ring);
+  }
+}
+
+@media (max-width: 1000px) {
+  /* The DevTools verification hint only makes sense on desktop. */
+  .network-hint {
+    display: none;
+  }
+
+  .site-footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 640px) {
+  /* Short phone viewports: keep the single-panel flow unobstructed. */
+  .site-footer {
+    display: none;
+  }
+}
