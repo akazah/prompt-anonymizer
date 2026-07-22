@@ -1,7 +1,7 @@
 import { LABELS, applyLabels, deanonymize as deanonymizeText, mergeSpans } from "./labeling.js";
 import { FAMILY_NAME_FIRST } from "./languages.js";
 import { normalizeForDetect } from "./normalize.js";
-import { detectDenyList, detectWithRegex } from "./recognizers.js";
+import { detectDenyList, detectWithRegex, propagateEntityValues } from "./recognizers.js";
 import type {
   AnonymizeResult,
   AnonymizerOptions,
@@ -49,6 +49,7 @@ export {
   isValidMyNumber,
   isValidUsSsn,
   myNumberCheckDigit,
+  propagateEntityValues,
 } from "./recognizers.js";
 export {
   DEFAULT_NER_MODELS,
@@ -111,6 +112,9 @@ export class Anonymizer {
           .filter((n) => this.entities.has(n.entityType))
           .filter((n) => !structured.some((s) => n.start < s.end && s.start < n.end)),
       );
+      // NER models can miss a repeat of a name they detected elsewhere in
+      // the same text; an exact repeat of a detected value is the same PII.
+      spans.push(...propagateEntityValues(text, spans));
     }
     spans = spans.filter(
       (s) =>

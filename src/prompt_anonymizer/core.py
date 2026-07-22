@@ -345,6 +345,9 @@ class PromptAnonymizer:
         if self.deny_list:
             needles = [normalize_for_detect(item, language).text for item in self.deny_list]
             spans.extend(view.map_spans(labeling.deny_list_spans(view.text, needles)))
+        # NER models can miss a repeat of a name they detected elsewhere in
+        # the same text; an exact repeat of a detected value is the same PII.
+        spans.extend(labeling.propagate_entity_values(text, spans))
         # Re-check allow_list against the original surface (parity with TS).
         if self.allow_list:
             allowed = set(self.allow_list)

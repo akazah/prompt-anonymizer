@@ -1,11 +1,11 @@
 # Changelog
 
-## [Unreleased]
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
 
 ### Added
 - Web app: "Simulate an LLM reply" button in the restore panel. It builds a
@@ -33,6 +33,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Japanese sample (e.g. `山田太郎`) therefore never produces
   `<人名_n_姓>` / `<人名_n_名>` — which looked like the toggle was broken.
   Re-expose the control once unspaced CJK name splitting lands (#64).
+
+### Fixed
+- Exact repeats of an NER-detected PERSON/LOCATION value are now always
+  masked, even when the NER model misses one of the occurrences (e.g. the
+  weekly-eval Vietnamese sample, where "Khách hàng Nguyễn Văn An…" at
+  sentence start was left unmasked while the later mention was labelled).
+  Both cores propagate detected values to uncovered exact occurrences,
+  with a Latin-script word-boundary guard so a short name never matches
+  inside a longer word.
 
 ## [0.3.3] - 2026-07-19
 

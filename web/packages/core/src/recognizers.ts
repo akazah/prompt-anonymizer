@@ -332,3 +332,64 @@ export function detectDenyList(text: string, denyList: string[]): EntitySpan[] {
   }
   return spans;
 }
+
+/** NER entity types whose detected values are propagated to exact repeats. */
+const PROPAGATE_TYPES = new Set(["PERSON", "LOCATION"]);
+
+// Word characters of space-delimited (Latin-script) text, used as a boundary
+// guard so a propagated value never matches inside a longer word ("An" in
+// "Anh"). CJK/kana neighbours are intentionally word-like-free here so
+// "山田太郎さん" still matches. Keep in parity with _LATIN_WORD in the
+// Python core's labeling.py.
+const LATIN_WORD = /[0-9A-Za-z\u00C0-\u024F\u1E00-\u1EFF]/;
+
+/**
+ * Propagate NER-detected values to exact occurrences the model missed.
+ *
+ * NER models can skip a repeat of an entity they detected elsewhere in the
+ * same text (e.g. a person name right after an honorific at sentence
+ * start). An exact repeat of a detected value is the same PII, so every
+ * uncovered occurrence gets a span with the seed detection's type and
+ * score. Mirrors `propagate_entity_values` in the Python core.
+ */
+export function propagateEntityValues(text: string, spans: EntitySpan[]): EntitySpan[] {
+  const occupied = spans.map((s) => ({ start: s.start, end: s.end }));
+  const overlaps = (start: number, end: number) =>
+    occupied.some((o) => start < o.end && o.start < end);
+
+  const seeds = new Map<string, { entityType: string; value: string; score: number }>();
+  for (const span of [...spans].sort((a, b) => a.start - b.start)) {
+    if (!PROPAGATE_TYPES.has(span.entityType)) continue;
+    const value = text.slice(span.start, span.end);
+    if (value.trim().length < 2) continue;
+    const key = `${span.entityType}\u0000${value}`;
+    const seen = seeds.get(key);
+    if (!seen) seeds.set(key, { entityType: span.entityType, value, score: span.score });
+    else if (span.score > seen.score) seen.score = span.score;
+  }
+
+  const extra: EntitySpan[] = [];
+  for (const { entityType, value, score } of seeds.values()) {
+    let from = 0;
+    for (;;) {
+      const at = text.indexOf(value, from);
+      if (at === -1) break;
+      const end = at + value.length;
+      from = end;
+      if (overlaps(at, end)) continue;
+      const before = text[at - 1];
+      const after = text[end];
+      if (
+        (before !== undefined && LATIN_WORD.test(before) && LATIN_WORD.test(value[0]!)) ||
+        (after !== undefined &&
+          LATIN_WORD.test(after) &&
+          LATIN_WORD.test(value[value.length - 1]!))
+      ) {
+        continue;
+      }
+      extra.push({ start: at, end, entityType, score });
+      occupied.push({ start: at, end });
+    }
+  }
+  return extra;
+}

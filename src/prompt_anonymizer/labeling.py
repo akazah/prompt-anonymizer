@@ -7,6 +7,7 @@ isolation and kept in behavioural parity with the TypeScript core in
 
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 from importlib import resources
@@ -120,6 +121,61 @@ def deny_list_spans(text: str, deny_list: Sequence[str]) -> list[EntitySpan]:
             )
             start = text.find(needle, start + len(needle))
     return spans
+
+
+# NER entity types whose detected values are propagated to exact repeats.
+_PROPAGATE_TYPES = frozenset({"PERSON", "LOCATION"})
+
+# Word characters of space-delimited (Latin-script) text, used as a boundary
+# guard so a propagated value never matches inside a longer word ("An" in
+# "Anh"). CJK/kana neighbours are intentionally not word-like here so
+# "山田太郎さん" still matches. Keep in parity with LATIN_WORD in the
+# TypeScript core's recognizers.ts.
+_LATIN_WORD = re.compile("[0-9A-Za-z\\u00C0-\\u024F\\u1E00-\\u1EFF]")
+
+
+def propagate_entity_values(text: str, spans: Sequence[EntitySpan]) -> list[EntitySpan]:
+    """Propagate NER-detected values to exact occurrences the model missed.
+
+    NER models can skip a repeat of an entity they detected elsewhere in
+    the same text (e.g. a person name right after an honorific at sentence
+    start). An exact repeat of a detected value is the same PII, so every
+    uncovered occurrence gets a span with the seed detection's type and
+    score. Mirrors ``propagateEntityValues`` in the TypeScript core.
+    """
+    occupied = [(span.start, span.end) for span in spans]
+
+    def overlaps(start: int, end: int) -> bool:
+        return any(start < o_end and o_start < end for o_start, o_end in occupied)
+
+    seeds: dict[tuple[str, str], float] = {}
+    for span in sorted(spans, key=lambda s: s.start):
+        if span.entity_type not in _PROPAGATE_TYPES:
+            continue
+        value = text[span.start : span.end]
+        if len(value.strip()) < 2:
+            continue
+        key = (span.entity_type, value)
+        seeds[key] = max(seeds.get(key, span.score), span.score)
+
+    extra: list[EntitySpan] = []
+    for (entity_type, value), score in seeds.items():
+        start = text.find(value)
+        while start != -1:
+            end = start + len(value)
+            at = start
+            start = text.find(value, end)
+            if overlaps(at, end):
+                continue
+            before = text[at - 1] if at > 0 else ""
+            after = text[end] if end < len(text) else ""
+            if (before and _LATIN_WORD.match(before) and _LATIN_WORD.match(value[0])) or (
+                after and _LATIN_WORD.match(after) and _LATIN_WORD.match(value[-1])
+            ):
+                continue
+            extra.append(EntitySpan(start=at, end=end, entity_type=entity_type, score=score))
+            occupied.append((at, end))
+    return extra
 
 
 # Whitespace trimmed from the edges of remainder segments. An explicit set
