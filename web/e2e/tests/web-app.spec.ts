@@ -134,6 +134,24 @@ test("unresolved placeholders in the reply are surfaced, not silently kept", asy
   await expect(warning).toContainText("<Name_42>");
 });
 
+test("simulated LLM reply restores with no unresolved labels", async ({ page }) => {
+  await anonymizeRegexOnly(page, { language: "ja" });
+
+  // Pattern-only run shows the on-device engine badge.
+  await expect(page.locator("#engine-badge")).toBeVisible();
+  await expect(page.locator("#engine-badge")).toContainText("パターン照合");
+
+  await page.locator("#simulate-reply").click();
+  const restoreInput = page.locator("#restore-input");
+  await expect(restoreInput).toHaveValue(/<メールアドレス_1>/);
+  await expect(restoreInput).not.toHaveValue(/\{labels\}/);
+
+  await page.locator("#restore").click();
+  const restored = page.locator("#restore-output");
+  await expect(restored).toContainText("taro.yamada@example.com");
+  await expect(page.locator("#restore-warning")).toBeHidden();
+});
+
 test("copy button puts the anonymized text on the clipboard", async ({ page }) => {
   const output = await anonymizeRegexOnly(page, { language: "ja" });
 
